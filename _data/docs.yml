@@ -1,0 +1,17 @@
+- title: Getting Started
+  docs:
+  - home
+  - configuration
+  - Setup
+  - InputFiles
+  - Run
+
+- title: Verification
+  docs:
+  - ShockTube
+  - 2DSmooth Bump
+  - 15Degree Ramp
+  - LaminarFlatPlate
+  - LidDrivenCavity
+  - TurbulentFlatPlateSubsonic
+  - 3DSmoothBump
