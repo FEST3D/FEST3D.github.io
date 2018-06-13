@@ -1,14 +1,14 @@
 # Site settings
 title: FEST3D
-#email: your-email@domain.com
+email: fest3dcode@gmail.com
 description: >
-  Finite-volume Explicit Structred 3-Dimensional code
+  Website for Finite-volume Explicit Structred 3-Dimensional (FEST3D) code.
 
 #baseurl: "/jekyll-doc-theme" # the subpath of your site, e.g. /blog/
 baseurl: "" # the subpath of your site, e.g. /blog/
-#url: https://aksakalli.github.io/jekyll-doc-theme # the base hostname & protocol for your site
-#git_address: https://github.com/aksakalli/jekyll-doc-theme
-#git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
+url: https://fest3d.github.io # the base hostname & protocol for your site
+git_address: https://github.com/FEST3D/FEST3D.git
+git_edit_address: https://github.com/FEST3D/FEST3D.github.io/blob/master
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap

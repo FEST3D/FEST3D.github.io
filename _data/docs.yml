@@ -4,13 +4,15 @@
   - configuration
   - Setup
   - InputFiles
+  - Mesh
+  - BoundaryConditions
   - Run
 
 - title: Verification
   docs:
   - ShockTube
-  - 2DSmooth Bump
-  - 15Degree Ramp
+  - 2DSmoothBump
+  - 15DegreeRamp
   - LaminarFlatPlate
   - LidDrivenCavity
   - TurbulentFlatPlateSubsonic
