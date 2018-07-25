@@ -3,10 +3,19 @@
   - home
   - configuration
   - Setup
-  - InputFiles
-  - Mesh
-  - BoundaryConditions
   - Run
+
+- title: Input Files
+  docs: 
+  - Control
+  - Scheme
+  - Flow
+  - Output
+  - Residue
+  - Mesh
+  - Layout
+  - BoundaryConditions
+  - Stopfile
 
 - title: Verification
   docs:
