@@ -135,40 +135,50 @@
   
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
-      <div style="display: flex; justify-content: center;">
-  <figure>
-    <img src="../../media/tutorials/15DegreeRampContour.png" alt="Contour of u speed" width="400">
-    <figcaption> Fig.1 Mach contours simlulated with FEST-3D for supersonic flow over a 15-degree ramp.</figcaption>
-  </figure>
-</div>
+      <figure>
+  <div style="display: flex; justify-content: center;">
+    <img src="../../media/tutorials/15DegreeRampContour.png" alt="Contour of u speed" width="350">
+  </div>
+  <figcaption> Fig.1 Mach contours simlulated with FEST-3D for supersonic flow over a 15-degree ramp.</figcaption>
+</figure>
 
 <h2 id="problem-statement">Problem Statement</h2>
-<p>The supersonic inviscid flow of Mach 2.0 past a 15-degree ramp has to be simulated. The domain used, and boundary
+<p>In this test case a supersonic inviscid flow of Mach 2.0 past a 15-degree ramp will be simulated. The domain used, and boundary
 condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained form <a href="https://www.grc.nasa.gov/WWW/wind/valid/wedge/wedge.html">NPARC
 Alliance Validation Archive</a>. 
-<div style="display: flex; justify-content: center;">
-  <figure>
-    <img src="../../media/tutorials/15DegreeRampDomain.png" alt="Domain" width="400">
-    <figcaption> Fig.2 Domain and boundary conditions for supersonic flow over a 15-degree ramp.</figcaption>
-  </figure>
-</div></p>
+<figure>
+  <div style="display: flex; justify-content: center;">
+    <img src="../../media/tutorials/15DegreeRampDomain.png" alt="Domain" width="350">
+  </div>
+  <figcaption> Fig.2 Domain and boundary conditions for supersonic flow over a 15-degree ramp.</figcaption>
+</figure></p>
 <h2 id="mesh">Mesh</h2>
-<p>A structured grid of size 153 × 91 × 2 to be used is shown in Fig. 3. The grid is available in the 
+<p>A structured grid of size 153 × 91 × 2 will be used as shown in Fig. 3. The grid is available in the 
 tutorial folder <strong>|rootFolder|/run/Tutorial/Ramp/CreateBlocks/</strong>. In the <code>blocking_point.f90</code>
 edit the number of blocks in the I-direction and J-direction. In this test case only one block will
 be used. <br>
 <code>integer, parameter :: xblocks = 1</code><br>
 <code>integer, parameter :: yblocks = 1</code><br>
 In order to compile the <code>blocking_point.f90</code> code with gfortran and execute it, commands are written 
-in the makefile. Just use following command to generate gridfiles in the <strong>grid/</strong> folder.<br>
-<code>$make</code><br></p>
+in the makefile. Just use following command to generate gridfiles in the <strong>grid/</strong> folder.<br></p>
+<div class="codehilite"><pre><span></span>$make
+</pre></div>
+
+
+<figure>
+  <div style="display: flex; justify-content: center;">
+    <img src="../../media/tutorials/15DegreeRampMesh.png" alt="mesh" width="350">
+  </div>
+  <figcaption> Fig.3 The Mesh for supersonic flow over a 15-degree ramp.</figcaption>
+</figure>
+
 <h2 id="setup">Setup</h2>
 <p>In order to setup the case directory, a python automation script is provided. First setup the most important
 parameters, the paths to the grid files and main executable binary to FEST-3D<br>
 <code>RunDir = 'GiveAnyName'</code>   Name of the run directory to create for current case. <br>
 <code>GridDir= 'CreateBlocks/grid/'</code>  Path to the folder which only contains grid file. <br>
 <code>NumberOfBlocks = 1</code> Total number of blocks. It should match with number of gridfiles avaiable in the <strong>GridDir</strong> folder <br>
-<code>AbsBinaryPath="/home/user/solver/FEST3D2/bin/FEST3D"</code> Absolute path to the FEST-3D binary. Should be in <strong>|rootfolder|/bin/FEST3D</strong><br>
+<code>AbsBinaryPath="/home/usr/FEST3D/bin/FEST3D"</code> Absolute path to the FEST-3D binary. Should be in <strong>|rootfolder|/bin/FEST3D</strong><br>
 Now provide the common control parameters.<br>
 <code>Control['CFL'] = 10.0</code> High CFL since implicit time-integration method will be used.<br>
 <code>Control['LoadLevel'] = 0</code>Since simulation will be started from scratch, <strong>0</strong> is specified.<br>
@@ -180,30 +190,63 @@ Now provide the common control parameters.<br>
 <code>Control['Tolerance'] = "1e-13 Continuity_abs"</code> Stop the iteration if the absolute residual value of <em>continuity</em> equation is less than 1e-13. <br>
 Few scheme parameters for inviscid flow:<br>
 <code>Scheme['InviscidFlux'] = 'slau'</code> Inviscid flux-reconstruction shceme. You can use: <strong>ausm</strong>, <strong>ldfss0</strong>, <strong>ausmP</strong> , and <strong>ausmUP instead of __slau</strong>.<br>
-<code>Scheme['FaceState'] = 'muscl'</code> Higher order method. 
-<code>Scheme['Limiter'] = '1 1 1  0 0 0'</code>
-<code>Scheme['TimeStep']='l'</code>
-<code>Scheme['TimeIntegration']='implicit'</code></p>
-<div style="display: flex; justify-content: center;">
-  <figure>
-    <img src="../../media/tutorials/15DegreeRampMesh.png" alt="mesh" width="400">
-    <figcaption> Fig.3 The Mesh for supersonic flow over a 15-degree ramp.</figcaption>
-  </figure>
-</div>
+<code>Scheme['FaceState'] = 'muscl'</code> Higher-order  face-state reconstruction method. <br>
+<code>Scheme['Limiter'] = '1 1 1  0 0 0'</code> Switch on the limiter for I,J,and K direction and switch of pressure based switching for all direction.<br>
+<code>Scheme['TimeStep']='l'</code> Local time-stepping method. You can use global time-stepping method also <strong>g</strong>.<br>
+<code>Scheme['TimeIntegration']='implicit'</code> LU-SGS matrix-free time integration method.<br>
+Now, lets define the flow feature of test case:<br>
+<code>Flow["DensityInf"] = 1.225</code> Free-stream density.<br>
+<code>Flow["UInf"] = 680.588</code> Free-stream x-component of velcotiy vector. <br>
+<code>Flow["VInf"] = 0.0</code> Free-stream y-component of velcotiy vector. <br>
+<code>Flow["WInf"] = 0.0</code> Free-stream z-component of velcotiy vector. <br>
+<code>Flow["PressureInf"] = 101325.0</code> Free-stream pressure. <br>
+<code>Flow["ReferenceViscosity"] = 0.0</code> Set reference viscosity to zero for inviscid flow.<br></p>
+<p><code>OutputControl['Out'] = ["Velocity", "Density", "Pressure"]</code> Variables to write in the output file.<br>
+<code>ResidualControl['Out'] = ["Mass_abs", "Viscous_abs", "Continuity_abs"]</code> Residual to write in the resnorm file. <br>
+<code>BoundaryConditions = [-1, -2, -6, -6, -6, -6]</code> Broad boundary condition.[supersonic inlet, supersonic outlet, rest are Slip-walls].<br></p>
+<p>Rest of the variables should be left to thier default value. In order to execute this script use following command:</p>
+<div class="codehilite"><pre><span></span>$python automaton.py
+</pre></div>
 
-<div style="display: flex; justify-content: center;">
-  <figure>
-    <img src="../../media/tutorials/15DegreeRampContour.png" alt="Contour of u speed" width="400">
-    <figcaption> Fig.4 Mach contours simlulated with FEST-3D for supersonic flow over a 15-degree ramp.</figcaption>
-  </figure>
-</div>
 
-<div style="display: flex; justify-content: center;">
-  <figure>
-    <img src="../../media/tutorials/15DegreeRampPressure.png" alt="Contour of v speed" width="400">
-    <figcaption> Fig.5 Surface pressure comparasion with theory. </figcaption>
-  </figure>
-</div>
+<p>Now you will see a new folder create with <code>RunDir</code> name. Switch to that directory to run the test case. To make sure setup is correct, check
+the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md</strong>. The file should look like following:</p>
+<div class="codehilite"><pre><span></span>## BLOCK LAYOUT FILE
+## ==========================
+## NUMBER OF PROCESSES
+1
+## NUMBER OF ENTRIES PER PROCESS
+9
+## PROCESS_NO GRID BC_FILE IMIN IMAX JMIN JMAX KMIN KMAX
+## ===================================
+## PROCESS 0
+00  grid_00.txt  bc_00.md  -001  -002  -006  -006  -006  -006
+</pre></div>
+
+
+<p>The last line, in sequence, indicates following:</p>
+<div class="codehilite"><pre><span></span>Block_Number    GridFile   Boundary_condition_file   Imin_boundary_condition_number    Imax_boundary_condition_number Jmin_boundary_condition_number Jmax_boundary_condition_number Kmin_boundary_condition_number  Kmax_boundary_condition_number
+</pre></div>
+
+
+<p>Finally to run the simulation use following command:</p>
+<div class="codehilite"><pre><span></span>$nohup bash run.sh &amp;
+</pre></div>
+
+
+<p>nohup helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in background, allowing you to keep using the terminal.
+<figure>
+  <div style="display: flex; justify-content: center;">
+    <img src="../../media/tutorials/15DegreeRampContour.png" alt="Contour of u speed" width="350">
+  </div>
+  <figcaption> Fig.4 Mach contours simlulated with FEST-3D for supersonic flow over a 15-degree ramp.</figcaption>
+</figure>
+<figure>
+  <div style="display: flex; justify-content: center;">
+    <img src="../../media/tutorials/15DegreeRampPressure.png" alt="Contour of v speed" width="350">
+  </div>
+  <figcaption> Fig.5 Surface pressure comparasion with theory. </figcaption>
+</figure></p>
     </div>
     
     <div class="col-md-3 col-md-pull-9">
@@ -271,7 +314,7 @@ Few scheme parameters for inviscid flow:<br>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-14T20:25:48.372803 
+             on 2019-05-14T21:49:25.151673 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
