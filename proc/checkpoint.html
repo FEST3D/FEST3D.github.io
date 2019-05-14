@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>checkpoint &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>checkpoint
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.1% of total for procedures.">13 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/dump_solution.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/dump_solution.f90.html'>dump_solution.f90</a></li>
+    
+     <li><a href='../module/dump_solution.html'>dump_solution</a></li>
+    
+  
+     <li class="active">checkpoint</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/checkpoint.html#src">checkpoint</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+public subroutine checkpoint()
+    
+    
+   
+</h2>
+    
+  
+
+
+    
+    <p>Create a checkpoint dump file if the time has come</p>
+    
+
+    <h3>Arguments</h3>
+    
+    <em>None</em>
+    <br>
+    
+    
+    
+    <br>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~checkpoint~~CallsGraph Pages: 1 -->
+<svg id="proccheckpointCallsGraph" width="568pt" height="466pt"
+ viewBox="0.00 0.00 568.00 466.34" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~checkpoint~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 462.3403)">
+<title>proc~~checkpoint~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-462.3403 564,-462.3403 564,4 -4,4"/>
+<!-- proc~checkpoint -->
+<g id="proc~~checkpoint~~CallsGraph_node1" class="node">
+<title>proc~checkpoint</title>
+<polygon fill="none" stroke="#000000" points="64,-84 0,-84 0,-60 64,-60 64,-84"/>
+<text text-anchor="middle" x="32" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">checkpoint</text>
+</g>
+<!-- proc~dump_data -->
+<g id="proc~~checkpoint~~CallsGraph_node2" class="node">
+<title>proc~dump_data</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node2"><a xlink:href=".././proc/dump_data.html" xlink:title="dump_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="179,-333 112,-333 112,-309 179,-309 179,-333"/>
+<text text-anchor="middle" x="145.5" y="-318.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dump_data</text>
+</a>
+</g>
+</g>
+<!-- proc~checkpoint&#45;&gt;proc~dump_data -->
+<g id="proc~~checkpoint~~CallsGraph_edge1" class="edge">
+<title>proc~checkpoint&#45;&gt;proc~dump_data</title>
+<path fill="none" stroke="#ff0000" d="M37.4743,-84.0098C55.4124,-123.3628 112.5884,-248.7974 135.6835,-299.4643"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="132.6152,-301.1714 139.9476,-308.819 138.9847,-298.268 132.6152,-301.1714"/>
+</g>
+<!-- proc~purge_dump_dir -->
+<g id="proc~~checkpoint~~CallsGraph_node3" class="node">
+<title>proc~purge_dump_dir</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node3"><a xlink:href=".././proc/purge_dump_dir.html" xlink:title="purge_dump_dir">
+<polygon fill="#d9534f" stroke="#d9534f" points="191,-104 100,-104 100,-80 191,-80 191,-104"/>
+<text text-anchor="middle" x="145.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">purge_dump_dir</text>
+</a>
+</g>
+</g>
+<!-- proc~checkpoint&#45;&gt;proc~purge_dump_dir -->
+<g id="proc~~checkpoint~~CallsGraph_edge2" class="edge">
+<title>proc~checkpoint&#45;&gt;proc~purge_dump_dir</title>
+<path fill="none" stroke="#ff0000" d="M64.2209,-77.6777C72.1347,-79.0722 80.8365,-80.6055 89.5144,-82.1347"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="89.1862,-85.6307 99.6419,-83.9193 90.4011,-78.7369 89.1862,-85.6307"/>
+</g>
+<!-- proc~dmsg -->
+<g id="proc~~checkpoint~~CallsGraph_node4" class="node">
+<title>proc~dmsg</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node4"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
+<polygon fill="#d9534f" stroke="#d9534f" points="560,-272 506,-272 506,-248 560,-248 560,-272"/>
+<text text-anchor="middle" x="533" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
+</a>
+</g>
+</g>
+<!-- proc~checkpoint&#45;&gt;proc~dmsg -->
+<g id="proc~~checkpoint~~CallsGraph_edge3" class="edge">
+<title>proc~checkpoint&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#ff0000" d="M64.0285,-67.2581C153.793,-54.6778 405.4585,-24.4812 470,-71 497.6712,-90.9443 520.1006,-192.3476 528.9395,-237.8493"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="525.5413,-238.7151 530.8441,-247.8874 532.4186,-237.4102 525.5413,-238.7151"/>
+</g>
+<!-- proc~make_dump_dir -->
+<g id="proc~~checkpoint~~CallsGraph_node5" class="node">
+<title>proc~make_dump_dir</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node5"><a xlink:href=".././proc/make_dump_dir.html" xlink:title="make_dump_dir">
+<polygon fill="#d9534f" stroke="#d9534f" points="190.5,-24 100.5,-24 100.5,0 190.5,0 190.5,-24"/>
+<text text-anchor="middle" x="145.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">make_dump_dir</text>
+</a>
+</g>
+</g>
+<!-- proc~checkpoint&#45;&gt;proc~make_dump_dir -->
+<g id="proc~~checkpoint~~CallsGraph_edge4" class="edge">
+<title>proc~checkpoint&#45;&gt;proc~make_dump_dir</title>
+<path fill="none" stroke="#ff0000" d="M54.9684,-59.8581C71.8141,-50.9529 94.9037,-38.747 113.5481,-28.8909"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="115.3608,-31.8917 122.5657,-24.1238 112.0893,-25.7031 115.3608,-31.8917"/>
+</g>
+<!-- proc~dump_data&#45;&gt;proc~dmsg -->
+<g id="proc~~checkpoint~~CallsGraph_edge5" class="edge">
+<title>proc~dump_data&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#ff0000" d="M153.6409,-333.0883C166.7416,-351.4839 194.3657,-386.1426 227,-403 323.3469,-452.7683 380.6852,-486.5018 470,-425 494.3421,-408.2382 517.7475,-323.1586 527.824,-282.1554"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="531.259,-282.8406 530.1972,-272.2991 524.4535,-281.2019 531.259,-282.8406"/>
+</g>
+<!-- proc~write_restart_log -->
+<g id="proc~~checkpoint~~CallsGraph_node8" class="node">
+<title>proc~write_restart_log</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node8"><a xlink:href=".././proc/write_restart_log.html" xlink:title="write_restart_log">
+<polygon fill="#d9534f" stroke="#d9534f" points="321,-394 229,-394 229,-370 321,-370 321,-394"/>
+<text text-anchor="middle" x="275" y="-379.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_restart_log</text>
+</a>
+</g>
+</g>
+<!-- proc~dump_data&#45;&gt;proc~write_restart_log -->
+<g id="proc~~checkpoint~~CallsGraph_edge6" class="edge">
+<title>proc~dump_data&#45;&gt;proc~write_restart_log</title>
+<path fill="none" stroke="#ff0000" d="M171.085,-333.0516C190.8616,-342.3672 218.4461,-355.3607 240.225,-365.6195"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="238.93,-368.8783 249.4681,-369.9734 241.913,-362.5457 238.93,-368.8783"/>
+</g>
+<!-- proc~write_file -->
+<g id="proc~~checkpoint~~CallsGraph_node9" class="node">
+<title>proc~write_file</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node9"><a xlink:href=".././proc/write_file.html" xlink:title="write_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="302.5,-251 247.5,-251 247.5,-227 302.5,-227 302.5,-251"/>
+<text text-anchor="middle" x="275" y="-236.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_file</text>
+</a>
+</g>
+</g>
+<!-- proc~dump_data&#45;&gt;proc~write_file -->
+<g id="proc~~checkpoint~~CallsGraph_edge7" class="edge">
+<title>proc~dump_data&#45;&gt;proc~write_file</title>
+<path fill="none" stroke="#ff0000" d="M164.6082,-308.9006C186.4143,-295.0929 222.2724,-272.3874 247.1791,-256.6163"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="249.2372,-259.4559 255.8134,-251.149 245.4923,-253.5418 249.2372,-259.4559"/>
+</g>
+<!-- proc~remove_directory -->
+<g id="proc~~checkpoint~~CallsGraph_node7" class="node">
+<title>proc~remove_directory</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node7"><a xlink:href=".././proc/remove_directory.html" xlink:title="remove_directory">
+<polygon fill="#d9534f" stroke="#d9534f" points="323,-104 227,-104 227,-80 323,-80 323,-104"/>
+<text text-anchor="middle" x="275" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">remove_directory</text>
+</a>
+</g>
+</g>
+<!-- proc~purge_dump_dir&#45;&gt;proc~remove_directory -->
+<g id="proc~~checkpoint~~CallsGraph_edge8" class="edge">
+<title>proc~purge_dump_dir&#45;&gt;proc~remove_directory</title>
+<path fill="none" stroke="#7fff00" d="M191.1569,-92C199.3366,-92 207.9628,-92 216.4458,-92"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="216.6826,-95.5001 226.6826,-92 216.6826,-88.5001 216.6826,-95.5001"/>
+</g>
+<!-- proc~create_directory -->
+<g id="proc~~checkpoint~~CallsGraph_node6" class="node">
+<title>proc~create_directory</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node6"><a xlink:href=".././proc/create_directory.html" xlink:title="create_directory">
+<polygon fill="#d9534f" stroke="#d9534f" points="320,-24 230,-24 230,0 320,0 320,-24"/>
+<text text-anchor="middle" x="275" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">create_directory</text>
+</a>
+</g>
+</g>
+<!-- proc~make_dump_dir&#45;&gt;proc~create_directory -->
+<g id="proc~~checkpoint~~CallsGraph_edge9" class="edge">
+<title>proc~make_dump_dir&#45;&gt;proc~create_directory</title>
+<path fill="none" stroke="#7f00ff" d="M190.7928,-12C200.1129,-12 210.0258,-12 219.6553,-12"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="219.9515,-15.5001 229.9514,-12 219.9514,-8.5001 219.9515,-15.5001"/>
+</g>
+<!-- proc~write_restart_log&#45;&gt;proc~dmsg -->
+<g id="proc~~checkpoint~~CallsGraph_edge10" class="edge">
+<title>proc~write_restart_log&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#00ffff" d="M299.8228,-394.0305C339.3212,-411.2622 417.3798,-437.3181 470,-403 511.2393,-376.1043 525.6697,-315.4747 530.5763,-282.4578"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="534.0641,-282.7794 531.9002,-272.4079 527.124,-281.8652 534.0641,-282.7794"/>
+</g>
+<!-- proc~write_initial_resnorm -->
+<g id="proc~~checkpoint~~CallsGraph_node16" class="node">
+<title>proc~write_initial_resnorm</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node16"><a xlink:href=".././proc/write_initial_resnorm.html" xlink:title="write_initial_resnorm">
+<polygon fill="#d9534f" stroke="#d9534f" points="470,-394 359,-394 359,-370 470,-370 470,-394"/>
+<text text-anchor="middle" x="414.5" y="-379.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_initial_resnorm</text>
+</a>
+</g>
+</g>
+<!-- proc~write_restart_log&#45;&gt;proc~write_initial_resnorm -->
+<g id="proc~~checkpoint~~CallsGraph_edge11" class="edge">
+<title>proc~write_restart_log&#45;&gt;proc~write_initial_resnorm</title>
+<path fill="none" stroke="#00ffff" d="M321.0641,-382C329.9229,-382 339.3601,-382 348.7024,-382"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="348.7708,-385.5001 358.7708,-382 348.7707,-378.5001 348.7708,-385.5001"/>
+</g>
+<!-- proc~write_file&#45;&gt;proc~dmsg -->
+<g id="proc~~checkpoint~~CallsGraph_edge12" class="edge">
+<title>proc~write_file&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#7f00ff" d="M282.4574,-251.1141C295.2754,-270.6289 323.5595,-308.3201 359,-323 404.5781,-341.879 424.4219,-341.879 470,-323 490.786,-314.3901 508.2897,-295.2262 519.5307,-280.2808"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="522.4265,-282.2485 525.4031,-272.0803 516.7353,-278.1729 522.4265,-282.2485"/>
+</g>
+<!-- write_file_tec_nodal -->
+<g id="proc~~checkpoint~~CallsGraph_node10" class="node">
+<title>write_file_tec_nodal</title>
+<polygon fill="#777777" stroke="#777777" points="468,-314 361,-314 361,-290 468,-290 468,-314"/>
+<text text-anchor="middle" x="414.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_file_tec_nodal</text>
+</g>
+<!-- proc~write_file&#45;&gt;write_file_tec_nodal -->
+<g id="proc~~checkpoint~~CallsGraph_edge13" class="edge">
+<title>proc~write_file&#45;&gt;write_file_tec_nodal</title>
+<path fill="none" stroke="#7f00ff" d="M297.5195,-251.0442C314.2659,-259.8073 337.7911,-271.7141 359,-281 363.0919,-282.7916 367.3898,-284.5787 371.7066,-286.3114"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="370.5266,-289.6081 381.1142,-289.9986 373.081,-283.0908 370.5266,-289.6081"/>
+</g>
+<!-- proc~open_file~2 -->
+<g id="proc~~checkpoint~~CallsGraph_node11" class="node">
+<title>proc~open_file~2</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node11"><a xlink:href=".././proc/open_file%7E2.html" xlink:title="open_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="442.5,-272 386.5,-272 386.5,-248 442.5,-248 442.5,-272"/>
+<text text-anchor="middle" x="414.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">open_file</text>
+</a>
+</g>
+</g>
+<!-- proc~write_file&#45;&gt;proc~open_file~2 -->
+<g id="proc~~checkpoint~~CallsGraph_edge14" class="edge">
+<title>proc~write_file&#45;&gt;proc~open_file~2</title>
+<path fill="none" stroke="#7f00ff" d="M302.5607,-243.1489C323.5877,-246.3143 352.8086,-250.7131 376.1225,-254.2227"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="375.6292,-257.6878 386.0388,-255.7155 376.6713,-250.7658 375.6292,-257.6878"/>
+</g>
+<!-- write_file_tec -->
+<g id="proc~~checkpoint~~CallsGraph_node12" class="node">
+<title>write_file_tec</title>
+<polygon fill="#777777" stroke="#777777" points="452,-230 377,-230 377,-206 452,-206 452,-230"/>
+<text text-anchor="middle" x="414.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_file_tec</text>
+</g>
+<!-- proc~write_file&#45;&gt;write_file_tec -->
+<g id="proc~~checkpoint~~CallsGraph_edge15" class="edge">
+<title>proc~write_file&#45;&gt;write_file_tec</title>
+<path fill="none" stroke="#7f00ff" d="M302.5607,-234.8511C320.9314,-232.0856 345.5565,-228.3786 367.0325,-225.1456"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="367.5942,-228.6006 376.9617,-223.6509 366.5521,-221.6786 367.5942,-228.6006"/>
+</g>
+<!-- proc~setup_file~3 -->
+<g id="proc~~checkpoint~~CallsGraph_node13" class="node">
+<title>proc~setup_file~3</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node13"><a xlink:href=".././proc/setup_file%7E3.html" xlink:title="setup_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="443.5,-188 385.5,-188 385.5,-164 443.5,-164 443.5,-188"/>
+<text text-anchor="middle" x="414.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_file</text>
+</a>
+</g>
+</g>
+<!-- proc~write_file&#45;&gt;proc~setup_file~3 -->
+<g id="proc~~checkpoint~~CallsGraph_edge16" class="edge">
+<title>proc~write_file&#45;&gt;proc~setup_file~3</title>
+<path fill="none" stroke="#7f00ff" d="M297.5195,-226.9558C314.2659,-218.1927 337.7911,-206.2859 359,-197 364.4411,-194.6177 370.2465,-192.2433 375.9762,-189.994"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="377.3894,-193.2006 385.4694,-186.3476 374.8794,-186.6661 377.3894,-193.2006"/>
+</g>
+<!-- proc~close_file~3 -->
+<g id="proc~~checkpoint~~CallsGraph_node14" class="node">
+<title>proc~close_file~3</title>
+<g id="a_proc~~checkpoint~~CallsGraph_node14"><a xlink:href=".././proc/close_file%7E3.html" xlink:title="close_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="443,-146 386,-146 386,-122 443,-122 443,-146"/>
+<text text-anchor="middle" x="414.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">close_file</text>
+</a>
+</g>
+</g>
+<!-- proc~write_file&#45;&gt;proc~close_file~3 -->
+<g id="proc~~checkpoint~~CallsGraph_edge17" class="edge">
+<title>proc~write_file&#45;&gt;proc~close_file~3</title>
+<path fill="none" stroke="#7f00ff" d="M284.331,-226.8109C298.6365,-208.8598 327.6444,-175.256 359,-155 364.3381,-151.5515 370.3262,-148.5456 376.3411,-145.9692"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="377.7043,-149.1941 385.7256,-142.2723 375.1386,-142.6812 377.7043,-149.1941"/>
+</g>
+<!-- write_file_vtk -->
+<g id="proc~~checkpoint~~CallsGraph_node15" class="node">
+<title>write_file_vtk</title>
+<polygon fill="#777777" stroke="#777777" points="451.5,-104 377.5,-104 377.5,-80 451.5,-80 451.5,-104"/>
+<text text-anchor="middle" x="414.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_file_vtk</text>
+</g>
+<!-- proc~write_file&#45;&gt;write_file_vtk -->
+<g id="proc~~checkpoint~~CallsGraph_edge18" class="edge">
+<title>proc~write_file&#45;&gt;write_file_vtk</title>
+<path fill="none" stroke="#7f00ff" d="M280.0357,-226.7686C290.862,-201.9012 318.6827,-145.0903 359,-113 361.7847,-110.7836 364.8285,-108.7829 368.0108,-106.9802"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="369.8363,-109.9819 377.2457,-102.4088 366.7308,-103.7084 369.8363,-109.9819"/>
+</g>
+<!-- proc~open_file~2&#45;&gt;proc~dmsg -->
+<g id="proc~~checkpoint~~CallsGraph_edge19" class="edge">
+<title>proc~open_file~2&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#ffda00" d="M442.5828,-260C458.4527,-260 478.4929,-260 495.6712,-260"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="495.9344,-263.5001 505.9344,-260 495.9344,-256.5001 495.9344,-263.5001"/>
+</g>
+<!-- proc~setup_file~3&#45;&gt;proc~dmsg -->
+<g id="proc~~checkpoint~~CallsGraph_edge20" class="edge">
+<title>proc~setup_file~3&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#00ff91" d="M443.5602,-184.3762C452.4272,-187.6081 461.9523,-191.8011 470,-197 488.076,-208.6773 505.1117,-226.2691 516.8992,-239.8981"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="514.4109,-242.3775 523.5227,-247.7836 519.771,-237.8753 514.4109,-242.3775"/>
+</g>
+<!-- proc~close_file~3&#45;&gt;proc~dmsg -->
+<g id="proc~~checkpoint~~CallsGraph_edge21" class="edge">
+<title>proc~close_file~3&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#0091ff" d="M443.2595,-140.8247C452.5062,-144.0257 462.3316,-148.5925 470,-155 497.0001,-177.5603 515.4211,-214.8375 525.0705,-238.3724"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="521.8682,-239.7936 528.7774,-247.8256 528.3851,-237.2381 521.8682,-239.7936"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~checkpoint~~CalledByGraph Pages: 1 -->
+<svg id="proccheckpointCalledByGraph" width="439pt" height="74pt"
+ viewBox="0.00 0.00 439.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~checkpoint~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>proc~~checkpoint~~CalledByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 435,-70 435,4 -4,4"/>
+<!-- proc~checkpoint -->
+<g id="proc~~checkpoint~~CalledByGraph_node1" class="node">
+<title>proc~checkpoint</title>
+<polygon fill="none" stroke="#000000" points="431,-45 367,-45 367,-21 431,-21 431,-45"/>
+<text text-anchor="middle" x="399" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">checkpoint</text>
+</g>
+<!-- proc~setup_solver -->
+<g id="proc~~checkpoint~~CalledByGraph_node2" class="node">
+<title>proc~setup_solver</title>
+<g id="a_proc~~checkpoint~~CalledByGraph_node2"><a xlink:href=".././proc/setup_solver.html" xlink:title="setup_solver">
+<polygon fill="#d9534f" stroke="#d9534f" points="292.5,-24 219.5,-24 219.5,0 292.5,0 292.5,-24"/>
+<text text-anchor="middle" x="256" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_solver</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_solver&#45;&gt;proc~checkpoint -->
+<g id="proc~~checkpoint~~CalledByGraph_edge1" class="edge">
+<title>proc~setup_solver&#45;&gt;proc~checkpoint</title>
+<path fill="none" stroke="#ff0000" d="M292.8261,-17.408C312.365,-20.2774 336.4621,-23.8161 356.7582,-26.7967"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="356.2771,-30.2635 366.6795,-28.2536 357.2942,-23.3377 356.2771,-30.2635"/>
+</g>
+<!-- proc~iterate_one_more_time_step -->
+<g id="proc~~checkpoint~~CalledByGraph_node3" class="node">
+<title>proc~iterate_one_more_time_step</title>
+<g id="a_proc~~checkpoint~~CalledByGraph_node3"><a xlink:href=".././proc/iterate_one_more_time_step.html" xlink:title="iterate_one_more_time_step">
+<polygon fill="#d9534f" stroke="#d9534f" points="331,-66 181,-66 181,-42 331,-42 331,-66"/>
+<text text-anchor="middle" x="256" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iterate_one_more_time_step</text>
+</a>
+</g>
+</g>
+<!-- proc~iterate_one_more_time_step&#45;&gt;proc~checkpoint -->
+<g id="proc~~checkpoint~~CalledByGraph_edge2" class="edge">
+<title>proc~iterate_one_more_time_step&#45;&gt;proc~checkpoint</title>
+<path fill="none" stroke="#ff0000" d="M331.269,-42.9465C340.0687,-41.6542 348.7922,-40.3732 356.9041,-39.1819"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="357.4266,-42.6428 366.8119,-37.7269 356.4095,-35.7171 357.4266,-42.6428"/>
+</g>
+<!-- program~main -->
+<g id="proc~~checkpoint~~CalledByGraph_node4" class="node">
+<title>program~main</title>
+<g id="a_proc~~checkpoint~~CalledByGraph_node4"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-45 0,-45 0,-21 54,-21 54,-45"/>
+<text text-anchor="middle" x="27" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~iterate_one_more_time_step -->
+<g id="proc~~checkpoint~~CalledByGraph_edge4" class="edge">
+<title>program~main&#45;&gt;proc~iterate_one_more_time_step</title>
+<path fill="none" stroke="#00ffff" d="M54.1686,-35.4914C82.8449,-38.1211 129.5142,-42.4009 170.7559,-46.1829"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="170.5556,-49.6791 180.8335,-47.107 171.1949,-42.7083 170.5556,-49.6791"/>
+</g>
+<!-- proc~start_run -->
+<g id="proc~~checkpoint~~CalledByGraph_node5" class="node">
+<title>proc~start_run</title>
+<g id="a_proc~~checkpoint~~CalledByGraph_node5"><a xlink:href=".././proc/start_run.html" xlink:title="start_run">
+<polygon fill="#d9534f" stroke="#d9534f" points="145,-25 90,-25 90,-1 145,-1 145,-25"/>
+<text text-anchor="middle" x="117.5" y="-10.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_run</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~start_run -->
+<g id="proc~~checkpoint~~CalledByGraph_edge5" class="edge">
+<title>program~main&#45;&gt;proc~start_run</title>
+<path fill="none" stroke="#00ffff" d="M54.153,-26.9993C62.2361,-25.213 71.2416,-23.2228 79.867,-21.3167"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="80.7306,-24.7104 89.7397,-19.1349 79.22,-17.8753 80.7306,-24.7104"/>
+</g>
+<!-- proc~start_run&#45;&gt;proc~setup_solver -->
+<g id="proc~~checkpoint~~CalledByGraph_edge3" class="edge">
+<title>proc~start_run&#45;&gt;proc~setup_solver</title>
+<path fill="none" stroke="#ff0000" d="M145.1947,-12.8C163.5115,-12.6678 187.9834,-12.4911 209.2697,-12.3374"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="209.4481,-15.8363 219.4225,-12.2641 209.3975,-8.8365 209.4481,-15.8363"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/checkpoint.html#src">checkpoint</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">checkpoint</span><span class="p">()</span>
+      <span class="c">!&lt; Create a checkpoint dump file if the time has come</span>
+      <span class="c">!-----------------------------------------------------------</span>
+
+      <span class="k">implicit none</span>
+
+
+<span class="k">      if</span> <span class="p">(</span><span class="n">checkpoint_iter</span> <span class="p">.</span><span class="n">ne</span><span class="p">.</span> <span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">          if</span> <span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">current_iter</span><span class="p">,</span> <span class="n">checkpoint_iter</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">&amp;</span>
+             <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">current_iter</span> <span class="o">==</span> <span class="n">max_iters</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">              call </span><span class="n">make_dump_dir</span><span class="p">()</span>
+              <span class="k">call </span><span class="n">dump_data</span><span class="p">()</span>
+              <span class="k">print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;writing data at: &quot;</span><span class="p">,</span> <span class="n">current_iter</span><span class="p">,</span> <span class="n">checkpoint_iter_count</span>
+              <span class="k">call </span><span class="n">purge_dump_dir</span><span class="p">()</span>
+              <span class="n">checkpoint_iter_count</span> <span class="o">=</span> <span class="n">checkpoint_iter_count</span> <span class="o">+</span> <span class="mi">1</span>
+              <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;dump_solution&#39;</span><span class="p">,</span> <span class="s1">&#39;checkpoint&#39;</span><span class="p">,</span> <span class="p">&amp;</span>
+                      <span class="s1">&#39;Checkpoint created at iteration: &#39;</span> <span class="o">+</span> <span class="n">current_iter</span><span class="p">)</span>
+
+          <span class="k">end if</span>
+<span class="k">      end if</span>
+
+<span class="k">    end subroutine </span><span class="n">checkpoint</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>write_output.f90 &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>write_output.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.3% of total for source files.">67 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/write_output.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+  
+     <li class="active">write_output.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/write_output.html">write_output</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/write_output.f90.html#src">write_output.f90</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      <p>Open/close and call other modules for writing solution</p>
+      <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">This file depends on</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~write_output.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilewrite_outputf90EfferentGraph" width="603pt" height="283pt"
+ viewBox="0.00 0.00 603.00 283.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~write_output.f90~~EfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 279.2352)">
+<title>sourcefile~~write_output.f90~~EfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-279.2352 599,-279.2352 599,4 -4,4"/>
+<!-- sourcefile~write_output.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~write_output.f90</title>
+<polygon fill="none" stroke="#000000" points="595,-147.0908 506,-147.0908 506,-123.0908 595,-123.0908 595,-147.0908"/>
+<text text-anchor="middle" x="550.5" y="-132.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_output.f90</text>
+</g>
+<!-- sourcefile~write_output_vtk.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~write_output_vtk.f90</title>
+<g id="a_sourcefile~~write_output.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/write_output_vtk.f90.html" xlink:title="write_output_vtk.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="455,-227.0908 346,-227.0908 346,-203.0908 455,-203.0908 455,-227.0908"/>
+<text text-anchor="middle" x="400.5" y="-212.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output_vtk.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output.f90&#45;&gt;sourcefile~write_output_vtk.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~write_output.f90&#45;&gt;sourcefile~write_output_vtk.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M534.8382,-147.2091C519.0914,-158.9966 493.8027,-176.8671 470,-189.0908 462.749,-192.8145 454.8366,-196.2858 447.0328,-199.402"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="445.698,-196.1653 437.6194,-203.02 448.2094,-202.6993 445.698,-196.1653"/>
+</g>
+<!-- sourcefile~write_output_tec.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~write_output_tec.f90</title>
+<g id="a_sourcefile~~write_output.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/write_output_tec.f90.html" xlink:title="write_output_tec.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="455,-147.0908 346,-147.0908 346,-123.0908 455,-123.0908 455,-147.0908"/>
+<text text-anchor="middle" x="400.5" y="-132.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output_tec.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output.f90&#45;&gt;sourcefile~write_output_tec.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~write_output.f90&#45;&gt;sourcefile~write_output_tec.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M505.9012,-135.0908C493.1699,-135.0908 479.0319,-135.0908 465.3526,-135.0908"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="465.0123,-131.5908 455.0123,-135.0908 465.0122,-138.5908 465.0123,-131.5908"/>
+</g>
+<!-- sourcefile~global.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node4" class="node">
+<title>sourcefile~global.f90</title>
+<g id="a_sourcefile~~write_output.f90~~EfferentGraph_node4"><a xlink:href=".././sourcefile/global.f90.html" xlink:title="global.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="59,-187.0908 0,-187.0908 0,-163.0908 59,-163.0908 59,-187.0908"/>
+<text text-anchor="middle" x="29.5" y="-172.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output.f90&#45;&gt;sourcefile~global.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge3" class="edge">
+<title>sourcefile~write_output.f90&#45;&gt;sourcefile~global.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M545.1942,-122.8129C534.6742,-100.2457 508.786,-52.7756 470,-34.0908 336.6483,30.1503 278.6157,-8.4149 137.5,-53.0908"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M137.5,-53.0908C88.5875,-68.576 54.7721,-123.3565 39.2131,-153.9797"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="36.0544,-152.4719 34.807,-162.993 42.3433,-155.5461 36.0544,-152.4719"/>
+</g>
+<!-- sourcefile~write_output_tec_node.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node5" class="node">
+<title>sourcefile~write_output_tec_node.f90</title>
+<g id="a_sourcefile~~write_output.f90~~EfferentGraph_node5"><a xlink:href=".././sourcefile/write_output_tec_node.f90.html" xlink:title="write_output_tec_node.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="470,-67.0908 331,-67.0908 331,-43.0908 470,-43.0908 470,-67.0908"/>
+<text text-anchor="middle" x="400.5" y="-52.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output_tec_node.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output.f90&#45;&gt;sourcefile~write_output_tec_node.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge4" class="edge">
+<title>sourcefile~write_output.f90&#45;&gt;sourcefile~write_output_tec_node.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M534.8382,-122.9724C519.0914,-111.1849 493.8027,-93.3144 470,-81.0908 462.749,-77.367 454.8366,-73.8957 447.0328,-70.7795"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="448.2094,-67.4822 437.6194,-67.1615 445.698,-74.0162 448.2094,-67.4822"/>
+</g>
+<!-- sourcefile~utils.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node6" class="node">
+<title>sourcefile~utils.f90</title>
+<g id="a_sourcefile~~write_output.f90~~EfferentGraph_node6"><a xlink:href=".././sourcefile/utils.f90.html" xlink:title="utils.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="282.5,-227.0908 228.5,-227.0908 228.5,-203.0908 282.5,-203.0908 282.5,-227.0908"/>
+<text text-anchor="middle" x="255.5" y="-212.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output.f90&#45;&gt;sourcefile~utils.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge5" class="edge">
+<title>sourcefile~write_output.f90&#45;&gt;sourcefile~utils.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M505.907,-146.9553C461.5364,-158.7893 391.5197,-177.5408 331,-194.0908 318.4918,-197.5113 304.8319,-201.2958 292.6117,-204.6991"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="291.4343,-201.3938 282.7423,-207.4518 293.315,-208.1364 291.4343,-201.3938"/>
+</g>
+<!-- sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node7" class="node">
+<title>sourcefile~global_vars.f90</title>
+<g id="a_sourcefile~~write_output.f90~~EfferentGraph_node7"><a xlink:href=".././sourcefile/global_vars.f90.html" xlink:title="global_vars.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="180,-187.0908 95,-187.0908 95,-163.0908 180,-163.0908 180,-187.0908"/>
+<text text-anchor="middle" x="137.5" y="-172.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_vars.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output.f90&#45;&gt;sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge6" class="edge">
+<title>sourcefile~write_output.f90&#45;&gt;sourcefile~global_vars.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M544.8626,-147.3972C533.9683,-169.5735 507.7255,-215.8175 470,-236.0908 385.6953,-281.395 348.7003,-276.85 255.5,-255.0908"/>
+</g>
+<!-- sourcefile~string.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node8" class="node">
+<title>sourcefile~string.f90</title>
+<g id="a_sourcefile~~write_output.f90~~EfferentGraph_node8"><a xlink:href=".././sourcefile/string.f90.html" xlink:title="string.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="284,-105.0908 227,-105.0908 227,-81.0908 284,-81.0908 284,-105.0908"/>
+<text text-anchor="middle" x="255.5" y="-90.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">string.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output.f90&#45;&gt;sourcefile~string.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge7" class="edge">
+<title>sourcefile~write_output.f90&#45;&gt;sourcefile~string.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M509.41,-123.0391C496.8517,-119.7173 482.9396,-116.3971 470,-114.0908 409.0843,-103.2332 337.3639,-97.6402 294.2154,-95.0408"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="294.3328,-91.5419 284.1471,-94.4576 293.9279,-98.5301 294.3328,-91.5419"/>
+</g>
+<!-- sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~global.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge12" class="edge">
+<title>sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~global.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M383.2248,-227.213C363.1226,-240.512 328.4048,-261.0384 295,-269.0908 260.8666,-277.3187 250.1589,-277.2125 216,-269.0908 154.1512,-254.3853 89.5392,-215.73 54.9607,-192.8289"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="56.6851,-189.7708 46.4336,-187.0952 52.7791,-195.5797 56.6851,-189.7708"/>
+</g>
+<!-- sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~utils.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge10" class="edge">
+<title>sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~utils.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M345.6817,-215.0908C328.0507,-215.0908 308.9338,-215.0908 292.8577,-215.0908"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="292.7787,-211.5909 282.7787,-215.0908 292.7787,-218.5909 292.7787,-211.5909"/>
+</g>
+<!-- sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge11" class="edge">
+<title>sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~global_vars.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M370.0361,-227.1896C334.2996,-240.7285 277.1791,-260.1521 255.5,-255.0908"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M255.5,-255.0908C215.3585,-245.719 177.5039,-214.6816 155.9504,-194.1353"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="158.3645,-191.6006 148.7732,-187.0998 153.4644,-196.5995 158.3645,-191.6006"/>
+</g>
+<!-- sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~string.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge8" class="edge">
+<title>sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~string.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M384.9816,-203.0891C370.4803,-191.6071 348.5005,-173.5082 331,-156.0908 313.5741,-138.7476 314.1878,-129.4619 295,-114.0908 293.6248,-112.9891 292.1831,-111.9178 290.6976,-110.8801"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="292.195,-107.6872 281.8664,-105.327 288.4688,-113.6131 292.195,-107.6872"/>
+</g>
+<!-- sourcefile~global_sst.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_node9" class="node">
+<title>sourcefile~global_sst.f90</title>
+<g id="a_sourcefile~~write_output.f90~~EfferentGraph_node9"><a xlink:href=".././sourcefile/global_sst.f90.html" xlink:title="global_sst.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="295,-147.0908 216,-147.0908 216,-123.0908 295,-123.0908 295,-147.0908"/>
+<text text-anchor="middle" x="255.5" y="-132.6908" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sst.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~global_sst.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge9" class="edge">
+<title>sourcefile~write_output_vtk.f90&#45;&gt;sourcefile~global_sst.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M378.4776,-202.9405C353.8497,-189.3527 313.7944,-167.2532 286.1236,-151.9865"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="287.7011,-148.8595 277.2545,-147.0933 284.3195,-154.9886 287.7011,-148.8595"/>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge17" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global.f90</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M353.3437,-147.0993C345.8589,-149.0643 338.2105,-151.107 331,-153.0908 297.301,-162.3622 290.2624,-178.7182 255.5,-175.0908"/>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M255.5,-175.0908C236.1243,-173.0689 231.0992,-168.4001 216,-156.0908 171.3886,-119.7223 192.373,-35.7185 137.5,-53.0908"/>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~utils.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge15" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~utils.f90</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M362.0556,-147.1106C351.6888,-150.9796 340.6718,-155.6869 331,-161.0908 313.3048,-170.9774 311.4784,-177.2871 295,-189.0908 291.2186,-191.7994 287.1763,-194.5826 283.1737,-197.2747"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="280.9965,-194.5185 274.5917,-202.9582 284.8617,-200.3547 280.9965,-194.5185"/>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge16" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global_vars.f90</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M255.5,-175.0908C234.2347,-172.8717 210.6961,-172.462 190.2722,-172.7552"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="190.1402,-169.257 180.213,-172.9586 190.2818,-176.2556 190.1402,-169.257"/>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~string.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge13" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~string.f90</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M358.9488,-123.0552C338.4739,-117.1246 313.9447,-110.0196 293.9115,-104.2168"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="294.7628,-100.8196 284.1839,-101.3992 292.8153,-107.5433 294.7628,-100.8196"/>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global_sst.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge14" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global_sst.f90</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M345.6817,-135.0908C332.3926,-135.0908 318.2594,-135.0908 305.2205,-135.0908"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="305.0351,-131.5909 295.0351,-135.0908 305.035,-138.5909 305.0351,-131.5909"/>
+</g>
+<!-- sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~global.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge22" class="edge">
+<title>sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~global.f90</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M330.7876,-47.2859C306.6649,-46.3811 279.6359,-47.3972 255.5,-53.0908"/>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M255.5,-53.0908C204.4565,-65.1317 187.4986,-37.2617 137.5,-53.0908"/>
+</g>
+<!-- sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~utils.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge20" class="edge">
+<title>sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~utils.f90</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M382.3841,-67.176C367.1573,-78.0426 345.6007,-95.1698 331,-114.0908 308.4115,-143.3631 319.3272,-161.2466 295,-189.0908 292.5321,-191.9154 289.687,-194.56 286.6779,-196.9987"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="284.5103,-194.2473 278.4762,-202.956 288.6241,-199.911 284.5103,-194.2473"/>
+</g>
+<!-- sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge21" class="edge">
+<title>sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~global_vars.f90</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M255.5,-53.0908C202.9982,-65.4757 165.2438,-122.5328 147.9923,-154.0399"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="144.8777,-152.4428 143.303,-162.92 151.0676,-155.7116 144.8777,-152.4428"/>
+</g>
+<!-- sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~string.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge18" class="edge">
+<title>sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~string.f90</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M354.6211,-67.1142C335.1595,-72.2145 312.726,-78.0936 294.1282,-82.9675"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="293.02,-79.6396 284.234,-85.5605 294.7946,-86.411 293.02,-79.6396"/>
+</g>
+<!-- sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~global_sst.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge19" class="edge">
+<title>sourcefile~write_output_tec_node.f90&#45;&gt;sourcefile~global_sst.f90</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M379.1556,-67.2025C357.8967,-79.2244 324.2939,-98.1149 295,-114.0908 292.5901,-115.405 290.0927,-116.7567 287.5779,-118.1103"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="285.6851,-115.1536 278.52,-122.9581 288.9882,-121.3253 285.6851,-115.1536"/>
+</g>
+<!-- sourcefile~utils.f90&#45;&gt;sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge23" class="edge">
+<title>sourcefile~utils.f90&#45;&gt;sourcefile~global_vars.f90</title>
+<path fill="none" stroke="#0091ff" stroke-dasharray="5,2" d="M228.4284,-205.9139C214.921,-201.3351 198.2185,-195.6733 182.8292,-190.4566"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="183.547,-187.0043 172.9526,-187.1086 181.2996,-193.6338 183.547,-187.0043"/>
+</g>
+<!-- sourcefile~global_vars.f90&#45;&gt;sourcefile~global.f90 -->
+<g id="sourcefile~~write_output.f90~~EfferentGraph_edge24" class="edge">
+<title>sourcefile~global_vars.f90&#45;&gt;sourcefile~global.f90</title>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M94.8155,-175.0908C86.4413,-175.0908 77.6869,-175.0908 69.4077,-175.0908"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="69.2393,-171.5909 59.2392,-175.0908 69.2392,-178.5909 69.2393,-171.5909"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    
+      
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Files dependent on this one</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~write_output.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilewrite_outputf90AfferentGraph" width="641pt" height="83pt"
+ viewBox="0.00 0.00 641.00 82.90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~write_output.f90~~AfferentGraph" class="graph" transform="scale(.8124 .8124) rotate(0) translate(4 98.0388)">
+<title>sourcefile~~write_output.f90~~AfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-98.0388 785,-98.0388 785,4 -4,4"/>
+<!-- sourcefile~write_output.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_node1" class="node">
+<title>sourcefile~write_output.f90</title>
+<polygon fill="none" stroke="#000000" points="89,-86 0,-86 0,-62 89,-62 89,-86"/>
+<text text-anchor="middle" x="44.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_output.f90</text>
+</g>
+<!-- sourcefile~dump_solution.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_node2" class="node">
+<title>sourcefile~dump_solution.f90</title>
+<g id="a_sourcefile~~write_output.f90~~AfferentGraph_node2"><a xlink:href=".././sourcefile/dump_solution.f90.html" xlink:title="dump_solution.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="225,-86 125,-86 125,-62 225,-62 225,-86"/>
+<text text-anchor="middle" x="175" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dump_solution.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~dump_solution.f90&#45;&gt;sourcefile~write_output.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge1" class="edge">
+<title>sourcefile~dump_solution.f90&#45;&gt;sourcefile~write_output.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M124.9185,-74C116.538,-74 107.804,-74 99.3121,-74"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="99.1141,-70.5001 89.1141,-74 99.1141,-77.5001 99.1141,-70.5001"/>
+</g>
+<!-- sourcefile~source.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_node3" class="node">
+<title>sourcefile~source.f90</title>
+<g id="a_sourcefile~~write_output.f90~~AfferentGraph_node3"><a xlink:href=".././sourcefile/source.f90.html" xlink:title="source.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="324,-66 261,-66 261,-42 324,-42 324,-66"/>
+<text text-anchor="middle" x="292.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">source.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~source.f90&#45;&gt;sourcefile~dump_solution.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge2" class="edge">
+<title>sourcefile~source.f90&#45;&gt;sourcefile~dump_solution.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M260.7028,-59.4123C252.8019,-60.7571 244.0706,-62.2433 235.2934,-63.7373"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="234.6768,-60.2918 225.4059,-65.4203 235.8514,-67.1926 234.6768,-60.2918"/>
+</g>
+<!-- sourcefile~solver.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_node4" class="node">
+<title>sourcefile~solver.f90</title>
+<g id="a_sourcefile~~write_output.f90~~AfferentGraph_node4"><a xlink:href=".././sourcefile/solver.f90.html" xlink:title="solver.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="573,-86 514,-86 514,-62 573,-62 573,-86"/>
+<text text-anchor="middle" x="543.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">solver.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~solver.f90&#45;&gt;sourcefile~dump_solution.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge3" class="edge">
+<title>sourcefile~solver.f90&#45;&gt;sourcefile~dump_solution.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M419,-94C356.3045,-94.0776 284.8494,-87.4256 235.5447,-81.7735"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="235.7095,-78.269 225.371,-80.5853 234.8974,-85.2217 235.7095,-78.269"/>
+</g>
+<!-- sourcefile~solver.f90&#45;&gt;sourcefile~source.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge5" class="edge">
+<title>sourcefile~solver.f90&#45;&gt;sourcefile~source.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M513.7792,-81.4831C488.69,-87.1455 451.7281,-93.9595 419,-94"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M419,-94C385.8551,-94.041 350.0029,-81.3975 324.9595,-70.3166"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="326.1382,-67.0067 315.5895,-66.0197 323.2204,-73.3696 326.1382,-67.0067"/>
+</g>
+<!-- sourcefile~update.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_node8" class="node">
+<title>sourcefile~update.f90</title>
+<g id="a_sourcefile~~write_output.f90~~AfferentGraph_node8"><a xlink:href=".././sourcefile/update.f90.html" xlink:title="update.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="451,-66 387,-66 387,-42 451,-42 451,-66"/>
+<text text-anchor="middle" x="419" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~solver.f90&#45;&gt;sourcefile~update.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge10" class="edge">
+<title>sourcefile~solver.f90&#45;&gt;sourcefile~update.f90</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M513.9952,-69.2603C498.2465,-66.7304 478.5888,-63.5725 461.2481,-60.7868"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="461.7815,-57.3277 451.3529,-59.1973 460.6712,-64.2391 461.7815,-57.3277"/>
+</g>
+<!-- sourcefile~create_and_erase.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_node5" class="node">
+<title>sourcefile~create_and_erase.f90</title>
+<g id="a_sourcefile~~write_output.f90~~AfferentGraph_node5"><a xlink:href=".././sourcefile/create_and_erase.f90.html" xlink:title="create_and_erase.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="478,-24 360,-24 360,0 478,0 478,-24"/>
+<text text-anchor="middle" x="419" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">create_and_erase.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~create_and_erase.f90&#45;&gt;sourcefile~source.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge4" class="edge">
+<title>sourcefile~create_and_erase.f90&#45;&gt;sourcefile~source.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M382.7502,-24.0355C367.3932,-29.1343 349.422,-35.101 333.5765,-40.3619"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="332.4152,-37.0596 324.0275,-43.5324 334.621,-43.703 332.4152,-37.0596"/>
+</g>
+<!-- sourcefile~main.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_node6" class="node">
+<title>sourcefile~main.f90</title>
+<g id="a_sourcefile~~write_output.f90~~AfferentGraph_node6"><a xlink:href=".././sourcefile/main.f90.html" xlink:title="main.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="781,-86 727,-86 727,-62 781,-62 781,-86"/>
+<text text-anchor="middle" x="754" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~main.f90&#45;&gt;sourcefile~solver.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge7" class="edge">
+<title>sourcefile~main.f90&#45;&gt;sourcefile~solver.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M726.7124,-74.5275C715.6304,-74.7172 702.7042,-74.9071 691,-75 654.5567,-75.2892 645.4434,-75.2782 609,-75 600.6723,-74.9364 591.7495,-74.8274 583.2535,-74.7041"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="583.2233,-71.2034 573.1706,-74.5488 583.1154,-78.2025 583.2233,-71.2034"/>
+</g>
+<!-- sourcefile~start_finish.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_node7" class="node">
+<title>sourcefile~start_finish.f90</title>
+<g id="a_sourcefile~~write_output.f90~~AfferentGraph_node7"><a xlink:href=".././sourcefile/start_finish.f90.html" xlink:title="start_finish.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="691,-66 609,-66 609,-42 691,-42 691,-66"/>
+<text text-anchor="middle" x="650" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_finish.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~main.f90&#45;&gt;sourcefile~start_finish.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge9" class="edge">
+<title>sourcefile~main.f90&#45;&gt;sourcefile~start_finish.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M726.9467,-68.7974C718.9882,-67.267 710.0079,-65.54 701.0646,-63.8201"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="701.5205,-60.3437 691.0394,-61.8922 700.1985,-67.2178 701.5205,-60.3437"/>
+</g>
+<!-- sourcefile~start_finish.f90&#45;&gt;sourcefile~solver.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge8" class="edge">
+<title>sourcefile~start_finish.f90&#45;&gt;sourcefile~solver.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M608.8243,-61.7325C600.3352,-63.3267 591.4138,-65.0021 582.9863,-66.5847"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="582.1959,-63.1719 573.0137,-68.4575 583.4879,-70.0516 582.1959,-63.1719"/>
+</g>
+<!-- sourcefile~update.f90&#45;&gt;sourcefile~source.f90 -->
+<g id="sourcefile~~write_output.f90~~AfferentGraph_edge6" class="edge">
+<title>sourcefile~update.f90&#45;&gt;sourcefile~source.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M386.7514,-54C370.8691,-54 351.5221,-54 334.4989,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="334.2517,-50.5001 324.2516,-54 334.2516,-57.5001 334.2517,-50.5001"/>
+</g>
+</g>
+</svg>
+</div><script>var pansourcefilewrite_outputf90AfferentGraph = svgPanZoom('#sourcefilewrite_outputf90AfferentGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/write_output.html">write_output</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/write_output.f90.html#src">write_output.f90</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a>  <span class="c">!&lt; Open/close and call other modules for writing solution</span>
+<a name="ln-2"></a><span class="k">module </span><span class="n">write_output</span>
+<a name="ln-3"></a>  <span class="c">!&lt; Open/close and call other modules for writing solution</span>
+<a name="ln-4"></a>  <span class="c">!&lt; based on the input: type of file, either vtk or tecplot</span>
+<a name="ln-5"></a>  <span class="c">!&lt; modules are called.</span>
+<a name="ln-6"></a>  <span class="k">use </span><span class="n">global</span>                 <span class="p">,</span><span class="n">only</span> <span class="p">:</span> <span class="n">OUT_FILE_UNIT</span>
+<a name="ln-7"></a>  <span class="k">use </span><span class="n">global_vars</span>            <span class="p">,</span><span class="n">only</span> <span class="p">:</span> <span class="n">outfile</span>
+<a name="ln-8"></a>  <span class="k">use </span><span class="n">global_vars</span>            <span class="p">,</span><span class="n">only</span> <span class="p">:</span> <span class="n">outfile</span>
+<a name="ln-9"></a>  <span class="k">use </span><span class="n">global_vars</span>            <span class="p">,</span><span class="n">only</span> <span class="p">:</span> <span class="n">write_data_format</span>
+<a name="ln-10"></a>  <span class="k">use </span><span class="n">global_vars</span>            <span class="p">,</span><span class="n">only</span> <span class="p">:</span> <span class="n">write_file_format</span>
+<a name="ln-11"></a>  <span class="k">use </span><span class="n">utils</span>
+<a name="ln-12"></a>  <span class="k">use </span><span class="n">string</span>
+<a name="ln-13"></a>  <span class="k">use </span><span class="n">write_output_vtk</span>       <span class="p">,</span><span class="n">only</span> <span class="p">:</span> <span class="n">write_file_vtk</span>     <span class="o">=&gt;</span> <span class="n">write_file</span>
+<a name="ln-14"></a>  <span class="k">use </span><span class="n">write_output_tec</span>       <span class="p">,</span><span class="n">only</span> <span class="p">:</span> <span class="n">write_file_tec</span> <span class="o">=&gt;</span> <span class="n">write_file</span>
+<a name="ln-15"></a>  <span class="k">use </span><span class="n">write_output_tec_node</span>  <span class="p">,</span><span class="n">only</span> <span class="p">:</span> <span class="n">write_file_tec_nodal</span> <span class="o">=&gt;</span> <span class="n">write_file</span>
+<a name="ln-16"></a>
+<a name="ln-17"></a>  <span class="k">implicit none</span>
+<a name="ln-18"></a><span class="k">  private</span>
+<a name="ln-19"></a>
+<a name="ln-20"></a><span class="k">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="kd">::</span> <span class="n">data_format</span>
+<a name="ln-21"></a>  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="kd">::</span> <span class="n">file_format</span>
+<a name="ln-22"></a>  <span class="k">public </span><span class="n">write_file</span>
+<a name="ln-23"></a>
+<a name="ln-24"></a>  <span class="k">contains</span>
+<a name="ln-25"></a>
+<a name="ln-26"></a><span class="k">    subroutine </span><span class="n">setup_file</span><span class="p">()</span>
+<a name="ln-27"></a>      <span class="c">!&lt; Setup the file type based on the input</span>
+<a name="ln-28"></a>      <span class="k">implicit none</span>
+<a name="ln-29"></a><span class="k">      call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;write_output_vtk&#39;</span><span class="p">,</span> <span class="s1">&#39;setup_file&#39;</span><span class="p">)</span>
+<a name="ln-30"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">write_file_format</span> <span class="o">==</span> <span class="s2">&quot;vtk&quot;</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-31"></a><span class="k">        </span><span class="n">file_format</span> <span class="o">=</span> <span class="s2">&quot;.vtk&quot;</span>
+<a name="ln-32"></a>      <span class="n">elseif</span> <span class="p">(</span><span class="n">write_file_format</span> <span class="o">==</span> <span class="s2">&quot;tecplot&quot;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">write_file_format</span> <span class="o">==</span> <span class="s2">&quot;tecplot_nodal&quot;</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-33"></a><span class="k">        </span><span class="n">file_format</span> <span class="o">=</span> <span class="s2">&quot;.dat&quot;</span>
+<a name="ln-34"></a>      <span class="k">else</span>
+<a name="ln-35"></a><span class="k">        print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;File format not recoganised. Accepted formats are&quot;</span>
+<a name="ln-36"></a>        <span class="k">print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;&#39;vtk&#39;, &#39;tecplot&#39; and &#39;tecplot_nodal&#39; &quot;</span>
+<a name="ln-37"></a>      <span class="k">end if</span>
+<a name="ln-38"></a>
+<a name="ln-39"></a><span class="k">      if</span> <span class="p">(</span><span class="n">write_data_format</span> <span class="o">==</span> <span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-40"></a><span class="k">        </span><span class="n">data_format</span> <span class="o">=</span> <span class="s2">&quot;formatted&quot;</span>
+<a name="ln-41"></a>      <span class="n">elseif</span> <span class="p">(</span><span class="n">write_data_format</span> <span class="o">==</span> <span class="s2">&quot;BINARY&quot;</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-42"></a><span class="k">        </span><span class="n">data_format</span> <span class="o">=</span> <span class="s2">&quot;unformatted&quot;</span>
+<a name="ln-43"></a>      <span class="k">else</span>
+<a name="ln-44"></a><span class="k">        print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Data format not recoganised. Accepted formats are&quot;</span>
+<a name="ln-45"></a>        <span class="k">print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;&#39;ASCII&#39; and &#39;BINARY&#39; &quot;</span>
+<a name="ln-46"></a>      <span class="k">end if</span>
+<a name="ln-47"></a>
+<a name="ln-48"></a><span class="k">    end subroutine </span><span class="n">setup_file</span>
+<a name="ln-49"></a>
+<a name="ln-50"></a>    <span class="k">subroutine </span><span class="n">open_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<a name="ln-51"></a>      <span class="c">!&lt; open the file to write the solution</span>
+<a name="ln-52"></a>      <span class="k">implicit none</span>
+<a name="ln-53"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">filename</span> 
+<a name="ln-54"></a>      <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;write_output_vtk&#39;</span><span class="p">,</span> <span class="s1">&#39;open_file&#39;</span><span class="p">)</span>
+<a name="ln-55"></a>
+<a name="ln-56"></a>      <span class="k">open</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">file_format</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.part&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">data_format</span><span class="p">))</span>
+<a name="ln-57"></a>
+<a name="ln-58"></a>    <span class="k">end subroutine </span><span class="n">open_file</span>
+<a name="ln-59"></a>
+<a name="ln-60"></a>    <span class="k">subroutine </span><span class="n">close_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<a name="ln-61"></a>      <span class="c">!&lt; close the file after writing solution.</span>
+<a name="ln-62"></a>      <span class="k">implicit none</span>
+<a name="ln-63"></a>
+<a name="ln-64"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">filename</span> 
+<a name="ln-65"></a>      <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;write_output_vtk&#39;</span><span class="p">,</span> <span class="s1">&#39;close_file&#39;</span><span class="p">)</span>
+<a name="ln-66"></a>      <span class="k">call </span><span class="nb">rename</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">file_format</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.part&#39;</span><span class="p">,</span> <span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">file_format</span><span class="p">))</span>
+<a name="ln-67"></a>      <span class="k">close</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span>
+<a name="ln-68"></a>    <span class="k">end subroutine </span><span class="n">close_file</span>
+<a name="ln-69"></a>
+<a name="ln-70"></a>    <span class="k">subroutine </span><span class="n">write_file</span><span class="p">()</span>
+<a name="ln-71"></a>      <span class="c">!&lt; Writing output in the file according to the input file type</span>
+<a name="ln-72"></a>      <span class="k">implicit none</span>
+<a name="ln-73"></a>
+<a name="ln-74"></a><span class="k">      call </span><span class="n">setup_file</span><span class="p">()</span>
+<a name="ln-75"></a>      <span class="k">call </span><span class="n">open_file</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+<a name="ln-76"></a>
+<a name="ln-77"></a>      <span class="k">select case</span> <span class="p">(</span><span class="n">write_file_format</span><span class="p">)</span>
+<a name="ln-78"></a>
+<a name="ln-79"></a>        <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;vtk&#39;</span><span class="p">)</span>
+<a name="ln-80"></a>          <span class="k">call </span><span class="n">write_file_vtk</span><span class="p">()</span>
+<a name="ln-81"></a>
+<a name="ln-82"></a>        <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;tecplot&#39;</span><span class="p">)</span>
+<a name="ln-83"></a>          <span class="k">call </span><span class="n">write_file_tec</span><span class="p">()</span>
+<a name="ln-84"></a>
+<a name="ln-85"></a>        <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;tecplot_nodal&#39;</span><span class="p">)</span>
+<a name="ln-86"></a>          <span class="k">call </span><span class="n">write_file_tec_nodal</span><span class="p">()</span>
+<a name="ln-87"></a>
+<a name="ln-88"></a>        <span class="k">case </span><span class="n">DEFAULT</span>
+<a name="ln-89"></a>          <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;write_output&#39;</span><span class="p">,</span> <span class="s1">&#39;write_file&#39;</span><span class="p">,&amp;</span>
+<a name="ln-90"></a>            <span class="s1">&#39;ERROR: write file format nor recognised. READ format -&gt; &#39;</span><span class="o">//</span><span class="n">write_file_format</span><span class="p">)</span>
+<a name="ln-91"></a>
+<a name="ln-92"></a>      <span class="k">end select</span>
+<a name="ln-93"></a>
+<a name="ln-94"></a><span class="k">      call </span><span class="n">close_file</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+<a name="ln-95"></a>
+<a name="ln-96"></a>    <span class="k">end subroutine </span><span class="n">write_file</span>
+<a name="ln-97"></a>
+<a name="ln-98"></a><span class="k">end module </span><span class="n">write_output</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

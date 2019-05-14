@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>setup_grid &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>setup_grid
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.1% of total for procedures.">12 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/grid.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/grid.f90.html'>grid.f90</a></li>
+    
+     <li><a href='../module/grid.html'>grid</a></li>
+    
+  
+     <li class="active">setup_grid</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/setup_grid.html#src">setup_grid</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+public subroutine setup_grid(gridfile)
+    
+    
+   
+</h2>
+    
+  
+
+
+    
+    <p>Read the grid file and initialize the grid</p>
+    
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gridfile"></span>character(len=64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>gridfile</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    <br>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~setup_grid~~CallsGraph Pages: 1 -->
+<svg id="procsetup_gridCallsGraph" width="571pt" height="684pt"
+ viewBox="0.00 0.00 571.00 683.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~setup_grid~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 679.5169)">
+<title>proc~~setup_grid~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-679.5169 567,-679.5169 567,4 -4,4"/>
+<!-- proc~setup_grid -->
+<g id="proc~~setup_grid~~CallsGraph_node1" class="node">
+<title>proc~setup_grid</title>
+<polygon fill="none" stroke="#000000" points="63,-266.5169 0,-266.5169 0,-242.5169 63,-242.5169 63,-266.5169"/>
+<text text-anchor="middle" x="31.5" y="-252.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">setup_grid</text>
+</g>
+<!-- proc~dmsg -->
+<g id="proc~~setup_grid~~CallsGraph_node2" class="node">
+<title>proc~dmsg</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node2"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
+<polygon fill="#d9534f" stroke="#d9534f" points="537,-246.5169 483,-246.5169 483,-222.5169 537,-222.5169 537,-246.5169"/>
+<text text-anchor="middle" x="510" y="-232.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_grid&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_grid~~CallsGraph_edge1" class="edge">
+<title>proc~setup_grid&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#ff0000" d="M43.6289,-266.5629C93.8581,-314.9783 289.1033,-488.5403 421,-398.5169 457.2659,-373.7644 435.8043,-344.9701 457,-306.5169 467.3001,-287.8305 481.821,-268.4513 493.0596,-254.5116"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="495.9236,-256.539 499.5659,-246.5899 490.5142,-252.0961 495.9236,-256.539"/>
+</g>
+<!-- proc~allocate_memory -->
+<g id="proc~~setup_grid~~CallsGraph_node3" class="node">
+<title>proc~allocate_memory</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node3"><a xlink:href=".././proc/allocate_memory.html" xlink:title="allocate_memory">
+<polygon fill="#d9534f" stroke="#d9534f" points="202,-469.5169 108,-469.5169 108,-445.5169 202,-445.5169 202,-469.5169"/>
+<text text-anchor="middle" x="155" y="-455.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_grid&#45;&gt;proc~allocate_memory -->
+<g id="proc~~setup_grid~~CallsGraph_edge2" class="edge">
+<title>proc~setup_grid&#45;&gt;proc~allocate_memory</title>
+<path fill="none" stroke="#ff0000" d="M32.9964,-266.9201C37.4004,-298.3646 53.0326,-382.1969 99,-431.5169 102.0843,-434.8262 105.6736,-437.751 109.5176,-440.3281"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.843,-443.4033 118.2424,-445.4288 111.376,-437.3602 107.843,-443.4033"/>
+</g>
+<!-- proc~ghost_grid -->
+<g id="proc~~setup_grid~~CallsGraph_node4" class="node">
+<title>proc~ghost_grid</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node4"><a xlink:href=".././proc/ghost_grid.html" xlink:title="ghost_grid">
+<polygon fill="#d9534f" stroke="#d9534f" points="186.5,-305.5169 123.5,-305.5169 123.5,-281.5169 186.5,-281.5169 186.5,-305.5169"/>
+<text text-anchor="middle" x="155" y="-291.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ghost_grid</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_grid&#45;&gt;proc~ghost_grid -->
+<g id="proc~~setup_grid~~CallsGraph_edge3" class="edge">
+<title>proc~setup_grid&#45;&gt;proc~ghost_grid</title>
+<path fill="none" stroke="#ff0000" d="M63.3043,-264.5604C78.5741,-269.3825 97.0675,-275.2225 113.4349,-280.3911"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="112.7136,-283.8337 123.3035,-283.5075 114.8216,-277.1586 112.7136,-283.8337"/>
+</g>
+<!-- proc~extract_grid_size -->
+<g id="proc~~setup_grid~~CallsGraph_node5" class="node">
+<title>proc~extract_grid_size</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node5"><a xlink:href=".././proc/extract_grid_size.html" xlink:title="extract_grid_size">
+<polygon fill="#d9534f" stroke="#d9534f" points="202,-42.5169 108,-42.5169 108,-18.5169 202,-18.5169 202,-42.5169"/>
+<text text-anchor="middle" x="155" y="-28.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">extract_grid_size</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_grid&#45;&gt;proc~extract_grid_size -->
+<g id="proc~~setup_grid~~CallsGraph_edge4" class="edge">
+<title>proc~setup_grid&#45;&gt;proc~extract_grid_size</title>
+<path fill="none" stroke="#ff0000" d="M34.9699,-242.4611C43.3056,-214.6148 66.2259,-144.2515 99,-92.5169 108.9332,-76.8372 122.9288,-61.3409 134.4433,-49.7627"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="136.8966,-52.259 141.584,-42.7575 131.9945,-47.262 136.8966,-52.259"/>
+</g>
+<!-- proc~read_interface_map -->
+<g id="proc~~setup_grid~~CallsGraph_node6" class="node">
+<title>proc~read_interface_map</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node6"><a xlink:href=".././proc/read_interface_map.html" xlink:title="read_interface_map">
+<polygon fill="#d9534f" stroke="#d9534f" points="209.5,-125.5169 100.5,-125.5169 100.5,-101.5169 209.5,-101.5169 209.5,-125.5169"/>
+<text text-anchor="middle" x="155" y="-111.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_interface_map</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_grid&#45;&gt;proc~read_interface_map -->
+<g id="proc~~setup_grid~~CallsGraph_edge5" class="edge">
+<title>proc~setup_grid&#45;&gt;proc~read_interface_map</title>
+<path fill="none" stroke="#ff0000" d="M42.0295,-242.4954C63.2504,-218.2675 111.3499,-163.3523 137.4175,-133.5909"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="140.1891,-135.7386 144.1451,-125.91 134.9233,-131.1264 140.1891,-135.7386"/>
+</g>
+<!-- proc~populate_grid_points -->
+<g id="proc~~setup_grid~~CallsGraph_node7" class="node">
+<title>proc~populate_grid_points</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node7"><a xlink:href=".././proc/populate_grid_points.html" xlink:title="populate_grid_points">
+<polygon fill="#d9534f" stroke="#d9534f" points="211,-227.5169 99,-227.5169 99,-203.5169 211,-203.5169 211,-227.5169"/>
+<text text-anchor="middle" x="155" y="-213.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">populate_grid_points</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_grid&#45;&gt;proc~populate_grid_points -->
+<g id="proc~~setup_grid~~CallsGraph_edge6" class="edge">
+<title>proc~setup_grid&#45;&gt;proc~populate_grid_points</title>
+<path fill="none" stroke="#ff0000" d="M63.3043,-244.4735C76.544,-240.2925 92.207,-235.3463 106.8065,-230.7359"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="108.2192,-233.9603 116.701,-227.6113 106.1112,-227.2852 108.2192,-233.9603"/>
+</g>
+<!-- proc~allocate_memory&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_grid~~CallsGraph_edge8" class="edge">
+<title>proc~allocate_memory&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#ffff00" d="M202.0518,-467.4018C260.3724,-476.7329 359.5575,-482.6328 421,-431.5169 465.4443,-394.5423 431.4642,-358.3855 457,-306.5169 466.3109,-287.6046 480.6594,-268.4946 492.0799,-254.7195"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="494.9322,-256.7679 498.7411,-246.8814 489.5983,-252.2348 494.9322,-256.7679"/>
+</g>
+<!-- interface~alloc -->
+<g id="proc~~setup_grid~~CallsGraph_node9" class="node">
+<title>interface~alloc</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node9"><a xlink:href=".././interface/alloc.html" xlink:title="alloc">
+<polygon fill="#a7506f" stroke="#a7506f" points="361,-507.5169 307,-507.5169 307,-483.5169 361,-483.5169 361,-507.5169"/>
+<text text-anchor="middle" x="334" y="-493.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc</text>
+</a>
+</g>
+</g>
+<!-- proc~allocate_memory&#45;&gt;interface~alloc -->
+<g id="proc~~setup_grid~~CallsGraph_edge7" class="edge">
+<title>proc~allocate_memory&#45;&gt;interface~alloc</title>
+<path fill="none" stroke="#ffff00" d="M202.0301,-467.501C231.6056,-473.7796 269.2358,-481.7681 296.7395,-487.6069"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="296.238,-491.0783 306.7468,-489.7313 297.6917,-484.2309 296.238,-491.0783"/>
+</g>
+<!-- proc~ghost_grid&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_grid~~CallsGraph_edge11" class="edge">
+<title>proc~ghost_grid&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#00ff00" d="M186.8008,-285.5906C204.4603,-281.3575 226.8667,-276.2629 247,-272.5169 326.9847,-257.6351 421.5757,-245.224 472.6933,-238.9416"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="473.1172,-242.416 482.6203,-237.7317 472.2702,-235.4674 473.1172,-242.416"/>
+</g>
+<!-- mpi_recv -->
+<g id="proc~~setup_grid~~CallsGraph_node11" class="node">
+<title>mpi_recv</title>
+<polygon fill="#777777" stroke="#777777" points="362,-347.5169 306,-347.5169 306,-323.5169 362,-323.5169 362,-347.5169"/>
+<text text-anchor="middle" x="334" y="-333.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mpi_recv</text>
+</g>
+<!-- proc~ghost_grid&#45;&gt;mpi_recv -->
+<g id="proc~~setup_grid~~CallsGraph_edge10" class="edge">
+<title>proc~ghost_grid&#45;&gt;mpi_recv</title>
+<path fill="none" stroke="#00ff00" d="M186.5896,-300.929C217.1098,-308.0902 263.3752,-318.9458 295.9169,-326.5812"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="295.4277,-330.0614 305.9629,-328.9384 297.0268,-323.2465 295.4277,-330.0614"/>
+</g>
+<!-- mpi_barrier -->
+<g id="proc~~setup_grid~~CallsGraph_node12" class="node">
+<title>mpi_barrier</title>
+<polygon fill="#777777" stroke="#777777" points="367.5,-305.5169 300.5,-305.5169 300.5,-281.5169 367.5,-281.5169 367.5,-305.5169"/>
+<text text-anchor="middle" x="334" y="-291.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mpi_barrier</text>
+</g>
+<!-- proc~ghost_grid&#45;&gt;mpi_barrier -->
+<g id="proc~~setup_grid~~CallsGraph_edge12" class="edge">
+<title>proc~ghost_grid&#45;&gt;mpi_barrier</title>
+<path fill="none" stroke="#00ff00" d="M186.5896,-293.5169C215.3891,-293.5169 258.2084,-293.5169 290.2873,-293.5169"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="290.2937,-297.017 300.2937,-293.5169 290.2937,-290.017 290.2937,-297.017"/>
+</g>
+<!-- mpi_send -->
+<g id="proc~~setup_grid~~CallsGraph_node13" class="node">
+<title>mpi_send</title>
+<polygon fill="#777777" stroke="#777777" points="363.5,-389.5169 304.5,-389.5169 304.5,-365.5169 363.5,-365.5169 363.5,-389.5169"/>
+<text text-anchor="middle" x="334" y="-375.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mpi_send</text>
+</g>
+<!-- proc~ghost_grid&#45;&gt;mpi_send -->
+<g id="proc~~setup_grid~~CallsGraph_edge9" class="edge">
+<title>proc~ghost_grid&#45;&gt;mpi_send</title>
+<path fill="none" stroke="#00ff00" d="M168.9924,-305.5401C186.2287,-319.7468 216.933,-343.1387 247,-356.5169 261.764,-363.0861 278.8906,-367.7837 294.0236,-371.0461"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="293.6341,-374.5378 304.1283,-373.0808 295.016,-367.6756 293.6341,-374.5378"/>
+</g>
+<!-- proc~extract_grid_size&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_grid~~CallsGraph_edge13" class="edge">
+<title>proc~extract_grid_size&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#00ffff" d="M191.6749,-18.41C246.525,-2.7257 350.9561,17.5228 421,-28.5169 484.6264,-70.3385 502.9756,-168.3659 508.0965,-212.4064"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="504.6173,-212.7886 509.1329,-222.3729 511.5798,-212.0645 504.6173,-212.7886"/>
+</g>
+<!-- proc~close_file -->
+<g id="proc~~setup_grid~~CallsGraph_node8" class="node">
+<title>proc~close_file</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node8"><a xlink:href=".././proc/close_file.html" xlink:title="close_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="362.5,-103.5169 305.5,-103.5169 305.5,-79.5169 362.5,-79.5169 362.5,-103.5169"/>
+<text text-anchor="middle" x="334" y="-89.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">close_file</text>
+</a>
+</g>
+</g>
+<!-- proc~read_interface_map&#45;&gt;proc~close_file -->
+<g id="proc~~setup_grid~~CallsGraph_edge14" class="edge">
+<title>proc~read_interface_map&#45;&gt;proc~close_file</title>
+<path fill="none" stroke="#0000ff" d="M209.6785,-106.7967C237.2969,-103.4022 270.1563,-99.3636 295.1549,-96.2912"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="295.8508,-99.7321 305.3491,-95.0383 294.9968,-92.7844 295.8508,-99.7321"/>
+</g>
+<!-- proc~read_periodic_bc_file -->
+<g id="proc~~setup_grid~~CallsGraph_node10" class="node">
+<title>proc~read_periodic_bc_file</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node10"><a xlink:href=".././proc/read_periodic_bc_file.html" xlink:title="read_periodic_bc_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="391.5,-61.5169 276.5,-61.5169 276.5,-37.5169 391.5,-37.5169 391.5,-61.5169"/>
+<text text-anchor="middle" x="334" y="-47.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_periodic_bc_file</text>
+</a>
+</g>
+</g>
+<!-- proc~read_interface_map&#45;&gt;proc~read_periodic_bc_file -->
+<g id="proc~~setup_grid~~CallsGraph_edge16" class="edge">
+<title>proc~read_interface_map&#45;&gt;proc~read_periodic_bc_file</title>
+<path fill="none" stroke="#0000ff" d="M177.5305,-101.4301C195.8367,-91.9936 222.541,-79.0875 247,-70.5169 253.4039,-68.273 260.1548,-66.1835 266.9479,-64.261"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="268.1588,-67.5592 276.8953,-61.5655 266.3279,-60.8029 268.1588,-67.5592"/>
+</g>
+<!-- proc~change_map_to_particular_range -->
+<g id="proc~~setup_grid~~CallsGraph_node15" class="node">
+<title>proc~change_map_to_particular_range</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node15"><a xlink:href=".././proc/change_map_to_particular_range.html" xlink:title="change_map_to_particular_range">
+<polygon fill="#d9534f" stroke="#d9534f" points="421,-145.5169 247,-145.5169 247,-121.5169 421,-121.5169 421,-145.5169"/>
+<text text-anchor="middle" x="334" y="-131.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">change_map_to_particular_range</text>
+</a>
+</g>
+</g>
+<!-- proc~read_interface_map&#45;&gt;proc~change_map_to_particular_range -->
+<g id="proc~~setup_grid~~CallsGraph_edge15" class="edge">
+<title>proc~read_interface_map&#45;&gt;proc~change_map_to_particular_range</title>
+<path fill="none" stroke="#0000ff" d="M209.6785,-119.6263C218.286,-120.588 227.4025,-121.6066 236.6314,-122.6378"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="236.3444,-126.1274 246.6712,-123.7595 237.1217,-119.1707 236.3444,-126.1274"/>
+</g>
+<!-- proc~populate_grid_points&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_grid~~CallsGraph_edge18" class="edge">
+<title>proc~populate_grid_points&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#ff00ff" d="M211.2508,-218.5275C284.4382,-222.4446 410.3062,-229.1812 472.6976,-232.5205"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="472.6932,-236.0252 482.866,-233.0647 473.0674,-229.0352 472.6932,-236.0252"/>
+</g>
+<!-- proc~extract_grid_point -->
+<g id="proc~~setup_grid~~CallsGraph_node14" class="node">
+<title>proc~extract_grid_point</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node14"><a xlink:href=".././proc/extract_grid_point.html" xlink:title="extract_grid_point">
+<polygon fill="#d9534f" stroke="#d9534f" points="383,-187.5169 285,-187.5169 285,-163.5169 383,-163.5169 383,-187.5169"/>
+<text text-anchor="middle" x="334" y="-173.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">extract_grid_point</text>
+</a>
+</g>
+</g>
+<!-- proc~populate_grid_points&#45;&gt;proc~extract_grid_point -->
+<g id="proc~~setup_grid~~CallsGraph_edge17" class="edge">
+<title>proc~populate_grid_points&#45;&gt;proc~extract_grid_point</title>
+<path fill="none" stroke="#ff00ff" d="M208.7059,-203.5156C229.5975,-198.8471 253.6044,-193.4824 274.9779,-188.7062"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="275.9158,-192.0831 284.9118,-186.4864 274.3891,-185.2515 275.9158,-192.0831"/>
+</g>
+<!-- proc~alloc_rank2_real -->
+<g id="proc~~setup_grid~~CallsGraph_node16" class="node">
+<title>proc~alloc_rank2_real</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node16"><a xlink:href=".././proc/alloc_rank2_real.html" xlink:title="alloc_rank2_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="555.5,-633.5169 464.5,-633.5169 464.5,-609.5169 555.5,-609.5169 555.5,-633.5169"/>
+<text text-anchor="middle" x="510" y="-619.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank2_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank2_real -->
+<g id="proc~~setup_grid~~CallsGraph_edge19" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank2_real</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M345.5234,-507.7044C366.1614,-528.959 411.5385,-573.1464 457,-600.5169 459.6696,-602.1242 462.4842,-603.6538 465.3678,-605.1004"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="464.1745,-608.4049 474.7194,-609.4323 467.1167,-602.0532 464.1745,-608.4049"/>
+</g>
+<!-- proc~alloc_rank4_real -->
+<g id="proc~~setup_grid~~CallsGraph_node17" class="node">
+<title>proc~alloc_rank4_real</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node17"><a xlink:href=".././proc/alloc_rank4_real.html" xlink:title="alloc_rank4_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="555.5,-591.5169 464.5,-591.5169 464.5,-567.5169 555.5,-567.5169 555.5,-591.5169"/>
+<text text-anchor="middle" x="510" y="-577.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank4_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank4_real -->
+<g id="proc~~setup_grid~~CallsGraph_edge20" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank4_real</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M355.9071,-507.5475C380.2665,-520.7333 420.9394,-542.1834 457,-558.5169 460.8035,-560.2397 464.7927,-561.965 468.8032,-563.6451"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="467.5415,-566.9105 478.1221,-567.4612 470.1943,-560.4326 467.5415,-566.9105"/>
+</g>
+<!-- proc~alloc_rank3_real -->
+<g id="proc~~setup_grid~~CallsGraph_node18" class="node">
+<title>proc~alloc_rank3_real</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node18"><a xlink:href=".././proc/alloc_rank3_real.html" xlink:title="alloc_rank3_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="555.5,-549.5169 464.5,-549.5169 464.5,-525.5169 555.5,-525.5169 555.5,-549.5169"/>
+<text text-anchor="middle" x="510" y="-535.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank3_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank3_real -->
+<g id="proc~~setup_grid~~CallsGraph_edge21" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank3_real</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.1143,-501.9874C385.9116,-507.9049 423.3603,-516.8416 454.4953,-524.2715"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="453.8188,-527.7083 464.3581,-526.6251 455.4437,-520.8995 453.8188,-527.7083"/>
+</g>
+<!-- proc~alloc_rank2_integer -->
+<g id="proc~~setup_grid~~CallsGraph_node19" class="node">
+<title>proc~alloc_rank2_integer</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node19"><a xlink:href=".././proc/alloc_rank2_integer.html" xlink:title="alloc_rank2_integer">
+<polygon fill="#d9534f" stroke="#d9534f" points="563,-507.5169 457,-507.5169 457,-483.5169 563,-483.5169 563,-507.5169"/>
+<text text-anchor="middle" x="510" y="-493.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank2_integer</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank2_integer -->
+<g id="proc~~setup_grid~~CallsGraph_edge22" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank2_integer</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.1143,-495.5169C383.8856,-495.5169 417.3253,-495.5169 446.7476,-495.5169"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="446.963,-499.017 456.963,-495.5169 446.963,-492.017 446.963,-499.017"/>
+</g>
+<!-- proc~alloc_rank1_integer -->
+<g id="proc~~setup_grid~~CallsGraph_node20" class="node">
+<title>proc~alloc_rank1_integer</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node20"><a xlink:href=".././proc/alloc_rank1_integer.html" xlink:title="alloc_rank1_integer">
+<polygon fill="#d9534f" stroke="#d9534f" points="563,-465.5169 457,-465.5169 457,-441.5169 563,-441.5169 563,-465.5169"/>
+<text text-anchor="middle" x="510" y="-451.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank1_integer</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank1_integer -->
+<g id="proc~~setup_grid~~CallsGraph_edge23" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank1_integer</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.1143,-489.0465C384.5914,-483.444 419.4087,-475.1353 449.4717,-467.9612"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="450.547,-471.303 459.4614,-465.5773 448.9221,-464.4941 450.547,-471.303"/>
+</g>
+<!-- proc~alloc_rank6_real -->
+<g id="proc~~setup_grid~~CallsGraph_node21" class="node">
+<title>proc~alloc_rank6_real</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node21"><a xlink:href=".././proc/alloc_rank6_real.html" xlink:title="alloc_rank6_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="555.5,-423.5169 464.5,-423.5169 464.5,-399.5169 555.5,-399.5169 555.5,-423.5169"/>
+<text text-anchor="middle" x="510" y="-409.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank6_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank6_real -->
+<g id="proc~~setup_grid~~CallsGraph_edge24" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank6_real</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.3404,-491.0576C379.2561,-487.2704 402.6638,-480.6269 421,-469.5169 440.6229,-457.6274 437.9117,-445.2471 457,-432.5169 459.3931,-430.921 461.9258,-429.4167 464.5358,-428.004"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="466.1774,-431.0972 473.6157,-423.5525 463.096,-424.8119 466.1774,-431.0972"/>
+</g>
+<!-- proc~alloc_rank5_real -->
+<g id="proc~~setup_grid~~CallsGraph_node22" class="node">
+<title>proc~alloc_rank5_real</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node22"><a xlink:href=".././proc/alloc_rank5_real.html" xlink:title="alloc_rank5_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="555.5,-381.5169 464.5,-381.5169 464.5,-357.5169 555.5,-357.5169 555.5,-381.5169"/>
+<text text-anchor="middle" x="510" y="-367.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank5_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank5_real -->
+<g id="proc~~setup_grid~~CallsGraph_edge25" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank5_real</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.1519,-493.2709C379.9019,-490.433 404.3613,-484.0165 421,-469.5169 450.0894,-444.1674 429.0385,-417.1054 457,-390.5169 458.2574,-389.3213 459.5912,-388.1909 460.9849,-387.1225"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="462.9798,-390.001 469.5092,-381.6573 459.2017,-384.1081 462.9798,-390.001"/>
+</g>
+<!-- proc~alloc_rank3_integer -->
+<g id="proc~~setup_grid~~CallsGraph_node23" class="node">
+<title>proc~alloc_rank3_integer</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node23"><a xlink:href=".././proc/alloc_rank3_integer.html" xlink:title="alloc_rank3_integer">
+<polygon fill="#d9534f" stroke="#d9534f" points="563,-339.5169 457,-339.5169 457,-315.5169 563,-315.5169 563,-339.5169"/>
+<text text-anchor="middle" x="510" y="-325.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank3_integer</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank3_integer -->
+<g id="proc~~setup_grid~~CallsGraph_edge26" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank3_integer</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.3865,-494.0115C380.4953,-491.5339 405.2923,-485.2438 421,-469.5169 460.6497,-429.8187 419.1109,-389.8989 457,-348.5169 457.9023,-347.5315 458.8568,-346.5915 459.8555,-345.6951"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="462.1848,-348.3303 468.2447,-339.6396 458.0879,-342.6545 462.1848,-348.3303"/>
+</g>
+<!-- proc~alloc_rank1_real -->
+<g id="proc~~setup_grid~~CallsGraph_node24" class="node">
+<title>proc~alloc_rank1_real</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node24"><a xlink:href=".././proc/alloc_rank1_real.html" xlink:title="alloc_rank1_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="555.5,-675.5169 464.5,-675.5169 464.5,-651.5169 555.5,-651.5169 555.5,-675.5169"/>
+<text text-anchor="middle" x="510" y="-661.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank1_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank1_real -->
+<g id="proc~~setup_grid~~CallsGraph_edge27" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank1_real</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M341.0852,-507.533C357.8782,-535.065 402.7839,-603.3471 457,-642.5169 459.0708,-644.0131 461.2629,-645.421 463.5307,-646.7433"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="462.0682,-649.9275 472.5568,-651.4244 465.2909,-643.7134 462.0682,-649.9275"/>
+</g>
+<!-- proc~extract_grid_point&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_grid~~CallsGraph_edge28" class="edge">
+<title>proc~extract_grid_point&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#7f00ff" d="M376.2112,-187.5347C390.4954,-191.7597 406.4982,-196.6671 421,-201.5169 438.3428,-207.3169 457.3733,-214.2892 473.3696,-220.3278"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="472.3042,-223.667 482.8953,-223.9481 474.7911,-217.1237 472.3042,-223.667"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~setup_grid~~CalledByGraph Pages: 1 -->
+<svg id="procsetup_gridCalledByGraph" width="361pt" height="74pt"
+ viewBox="0.00 0.00 361.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~setup_grid~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>proc~~setup_grid~~CalledByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 357,-70 357,4 -4,4"/>
+<!-- proc~setup_grid -->
+<g id="proc~~setup_grid~~CalledByGraph_node1" class="node">
+<title>proc~setup_grid</title>
+<polygon fill="none" stroke="#000000" points="353,-45 290,-45 290,-21 353,-21 353,-45"/>
+<text text-anchor="middle" x="321.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">setup_grid</text>
+</g>
+<!-- proc~setup_solver -->
+<g id="proc~~setup_grid~~CalledByGraph_node2" class="node">
+<title>proc~setup_solver</title>
+<g id="a_proc~~setup_grid~~CalledByGraph_node2"><a xlink:href=".././proc/setup_solver.html" xlink:title="setup_solver">
+<polygon fill="#d9534f" stroke="#d9534f" points="254,-66 181,-66 181,-42 254,-42 254,-66"/>
+<text text-anchor="middle" x="217.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_solver</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_solver&#45;&gt;proc~setup_grid -->
+<g id="proc~~setup_grid~~CalledByGraph_edge1" class="edge">
+<title>proc~setup_solver&#45;&gt;proc~setup_grid</title>
+<path fill="none" stroke="#ff0000" d="M254.1665,-46.5962C262.5731,-44.8987 271.567,-43.0826 280.1556,-41.3484"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="280.8829,-44.7723 289.9923,-39.3621 279.4973,-37.9107 280.8829,-44.7723"/>
+</g>
+<!-- proc~setup_all -->
+<g id="proc~~setup_grid~~CalledByGraph_node3" class="node">
+<title>proc~setup_all</title>
+<g id="a_proc~~setup_grid~~CalledByGraph_node3"><a xlink:href=".././proc/setup_all.html" xlink:title="setup_all">
+<polygon fill="#d9534f" stroke="#d9534f" points="245,-24 190,-24 190,0 245,0 245,-24"/>
+<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_all</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_all&#45;&gt;proc~setup_grid -->
+<g id="proc~~setup_grid~~CalledByGraph_edge2" class="edge">
+<title>proc~setup_all&#45;&gt;proc~setup_grid</title>
+<path fill="none" stroke="#ff0000" d="M245.097,-17.5725C255.7088,-19.7152 268.0742,-22.2121 279.7263,-24.5649"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="279.2255,-28.0344 289.7204,-26.583 280.611,-21.1728 279.2255,-28.0344"/>
+</g>
+<!-- proc~start_run -->
+<g id="proc~~setup_grid~~CalledByGraph_node4" class="node">
+<title>proc~start_run</title>
+<g id="a_proc~~setup_grid~~CalledByGraph_node4"><a xlink:href=".././proc/start_run.html" xlink:title="start_run">
+<polygon fill="#d9534f" stroke="#d9534f" points="145,-66 90,-66 90,-42 145,-42 145,-66"/>
+<text text-anchor="middle" x="117.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_run</text>
+</a>
+</g>
+</g>
+<!-- proc~start_run&#45;&gt;proc~setup_solver -->
+<g id="proc~~setup_grid~~CalledByGraph_edge3" class="edge">
+<title>proc~start_run&#45;&gt;proc~setup_solver</title>
+<path fill="none" stroke="#ff0000" d="M145.0902,-54C152.985,-54 161.8197,-54 170.5313,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="170.6377,-57.5001 180.6376,-54 170.6376,-50.5001 170.6377,-57.5001"/>
+</g>
+<!-- program~main -->
+<g id="proc~~setup_grid~~CalledByGraph_node5" class="node">
+<title>program~main</title>
+<g id="a_proc~~setup_grid~~CalledByGraph_node5"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~start_run -->
+<g id="proc~~setup_grid~~CalledByGraph_edge4" class="edge">
+<title>program~main&#45;&gt;proc~start_run</title>
+<path fill="none" stroke="#ff0000" d="M54.153,-54C62.1482,-54 71.046,-54 79.5856,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.7397,-57.5001 89.7397,-54 79.7397,-50.5001 79.7397,-57.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/setup_grid.html#src">setup_grid</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>        <span class="k">subroutine </span><span class="n">setup_grid</span><span class="p">(</span><span class="n">gridfile</span><span class="p">)</span>
+            <span class="c">!&lt; Read the grid file and initialize the grid</span>
+            <span class="c">!-----------------------------------------------------------</span>
+
+            <span class="k">implicit none</span>
+<span class="k">            </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gridfile</span>
+   <span class="c">!        character(len=32) :: sphindfile</span>
+            
+            <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;grid&#39;</span><span class="p">,</span> <span class="s1">&#39;setup_grid&#39;</span><span class="p">)</span>
+<span class="c">!           sphindfile = &#39;sphere-indices.txt&#39;</span>
+
+            <span class="k">open</span><span class="p">(</span><span class="n">GRID_FILE_UNIT</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="n">gridfile</span><span class="p">)</span>
+
+<span class="c">!           open(SPHERE_INDICES_FILE_UNIT, file=sphindfile)</span>
+
+            <span class="k">call </span><span class="n">extract_grid_size</span><span class="p">()</span>
+<span class="c">!           call extract_sphere_indices_size()</span>
+
+            <span class="k">call </span><span class="n">allocate_memory</span><span class="p">()</span>
+
+            <span class="c">!read interface mapping</span>
+            <span class="k">call </span><span class="n">read_interface_map</span><span class="p">()</span>
+
+            <span class="c">! ghost grid exchange</span>
+            <span class="k">call </span><span class="n">populate_grid_points</span><span class="p">()</span>
+<span class="c">!           call populate_sphere_indices()</span>
+
+            <span class="k">close</span><span class="p">(</span><span class="n">GRID_FILE_UNIT</span><span class="p">)</span>
+<span class="c">!           close(SPHERE_INDICES_FILE_UNIT)</span>
+
+            <span class="c">! populate ghost grid points</span>
+            <span class="k">call </span><span class="n">ghost_grid</span><span class="p">()</span>
+        
+        <span class="k">end subroutine </span><span class="n">setup_grid</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

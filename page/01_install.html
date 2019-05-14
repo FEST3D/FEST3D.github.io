@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>Installation &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  <div class="row">
+    <h1>Installation</h1>
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="well well-sm" style="min-height: 40px;">
+      <ul class="list-inline" style="margin-bottom:0px; display:inline">
+         
+         
+<!--
+        
+-->
+      </ul>
+        <ol class="breadcrumb in-well">
+      
+         <li><a href='../page/index.html'>Documentation</a></li>
+      
+         <li class="active">Installation</li>
+      </ol>
+    </div>
+    </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-9 col-md-push-3" id='text'>
+      <h1 id="installing-fest-3d">Installing FEST-3D</h1>
+<p>The installation instruction are listed for Linux distribution. Specifically example are given for UBUNTU distribution.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>FEST-3D has the following dependencies:</p>
+<ul>
+<li>Fortran compiler</li>
+<li>MPI library</li>
+<li>CMAKE and MAKE</li>
+</ul>
+<h3 id="compiler">Compiler</h3>
+<p>In order to build the FEST3D code written in FORTRAN 90 code, a FORTRAN compiler is required. Either open-source Gfortran or commercial Ifort FORTRAN compilers can be user.
+In order to install Gfortran on Ubuntu use following command:<br>
+<code>$sudo apt-get install gfortran</code></p>
+<h3 id="distributive-mpi-library">Distributive MPI Library</h3>
+<p>In order to have a faster computation the FEST3D code uses MPICH library to distribute computation load to different processors within one machine or across multiple machine. You can install MPICH on Ubuntu machine using:<br>
+<code>$sudo apt-get install mpich</code></p>
+<h3 id="cmake-and-make">CMAKE and Make</h3>
+<p>CMake is required to generate a Makefile which in turn generate executable. The following command is useful to install cmake:<br>
+<code>$sudo apt-get install build-essential</code> <br>
+<code>$sudo apt-get install cmake</code></p>
+<p>So, in summary, all the dependencies can be intall using follwoing commands:</p>
+<div class="codehilite"><pre><span></span>$sudo apt-get update
+$sudo apt-get install build-essentaial
+$sudo apt-get instALL cmake
+$sudo apt-get install gfortran
+$sudo apt-get install mpich
+</pre></div>
+
+
+<h2 id="building">Building</h2>
+<p>In order to build the FEST3D code we first generate a new "build" directory/folder in the root directory of the FEST3D code. Inside the build directory we execute Cmake with specific FORTRAN compiler. <br>
+<code>$FC=mpif90 cmake ..</code><br>
+<code>$make -j 4</code><br>
+Here -j is a parallel building option which speed up the executable process. You can replace the number after "-j" with number of processor you wan to  use for building. 
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>if you have installed OPENMPI also along with MPICH, then the mpif90 might be pointing to the mpif90.openmpi instead fo mpif90.mpich. In that case use following command<br>
+<code>$FC=mpif90.mpich cmake ..</code><br></p></div>
+<p>so, in summary, following list of comnands will build the executalbe</p>
+<div class="codehilite"><pre><span></span>$mkdir build &amp;&amp; cd build
+$FC=mpif90 cmake ..
+$make -j 4
+</pre></div>
+
+
+<p>These commands will create a binary file named FEST3D in the <code>bin</code> folder; locate in the root directory of the FEST-3D code.</p>
+    </div>
+    
+    <div class="col-md-3 col-md-pull-9">
+      <hr class="visible-xs visible-sm">
+        <div class="well toc">
+          <ul class="nav nav-stacked nav-pills">
+            <li role="presentation" class="title"><a href='../page/index.html'>Documentation</a></li>
+          </ul>
+          <hr>
+          <ul class="nav nav-stacked nav-pills">
+            
+            <li role="presentation" class="disabled">
+            <a href='../page/./01_install.html'>Installation</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../page/./02_mesh.html'>Mesh</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../page/./03_run.html'>Run</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../page/./04_layout.html'>Layout file</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../page/05_tutorials/index.html'>Tutorials</a>
+            
+            <ul class="nav nav-stacked nav-pills">
+              
+            <li role="presentation">
+            <a href='../page/05_tutorials/01_ramp.html'>15 degree ramp</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            
+            </li>
+            
+            </ul>
+            
+            </li>
+            
+          </ul>
+        </div>
+    </div>
+    
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

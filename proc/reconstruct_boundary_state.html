@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>reconstruct_boundary_state &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>reconstruct_boundary_state
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.2% of total for procedures.">34 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/boundary_state_reconstruction.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/boundary_state_reconstruction.f90.html'>boundary_state_reconstruction.f90</a></li>
+    
+     <li><a href='../module/boundary_state_reconstruction.html'>boundary_state_reconstruction</a></li>
+    
+  
+     <li class="active">reconstruct_boundary_state</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/reconstruct_boundary_state.html#src">reconstruct_boundary_state</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+public subroutine reconstruct_boundary_state(interpolant)
+    
+    
+   
+</h2>
+    
+  
+
+
+    
+    <p>call reconstruction based on the flag and boundary condition.</p>
+    
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-interpolant"></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>interpolant</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    <br>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~reconstruct_boundary_state~~CallsGraph Pages: 1 -->
+<svg id="procreconstruct_boundary_stateCallsGraph" width="386pt" height="284pt"
+ viewBox="0.00 0.00 386.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~reconstruct_boundary_state~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
+<title>proc~~reconstruct_boundary_state~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 382,-280 382,4 -4,4"/>
+<!-- proc~reconstruct_boundary_state -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node1" class="node">
+<title>proc~reconstruct_boundary_state</title>
+<polygon fill="none" stroke="#000000" points="146,-150 0,-150 0,-126 146,-126 146,-150"/>
+<text text-anchor="middle" x="73" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">reconstruct_boundary_state</text>
+</g>
+<!-- proc~reconstruct_jmin -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node2" class="node">
+<title>proc~reconstruct_jmin</title>
+<g id="a_proc~~reconstruct_boundary_state~~CallsGraph_node2"><a xlink:href=".././proc/reconstruct_jmin.html" xlink:title="reconstruct_jmin">
+<polygon fill="#d9534f" stroke="#d9534f" points="276,-234 185,-234 185,-210 276,-210 276,-234"/>
+<text text-anchor="middle" x="230.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reconstruct_jmin</text>
+</a>
+</g>
+</g>
+<!-- proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_jmin -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge1" class="edge">
+<title>proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_jmin</title>
+<path fill="none" stroke="#ff0000" d="M92.3161,-150.0754C113.8176,-163.3004 149.7868,-184.7846 182,-201 185.2655,-202.6438 188.6894,-204.2846 192.1432,-205.8835"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="190.7121,-209.0775 201.2675,-209.9915 193.5859,-202.6946 190.7121,-209.0775"/>
+</g>
+<!-- proc~reconstruct_imax -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node3" class="node">
+<title>proc~reconstruct_imax</title>
+<g id="a_proc~~reconstruct_boundary_state~~CallsGraph_node3"><a xlink:href=".././proc/reconstruct_imax.html" xlink:title="reconstruct_imax">
+<polygon fill="#d9534f" stroke="#d9534f" points="277.5,-150 183.5,-150 183.5,-126 277.5,-126 277.5,-150"/>
+<text text-anchor="middle" x="230.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reconstruct_imax</text>
+</a>
+</g>
+</g>
+<!-- proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_imax -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge2" class="edge">
+<title>proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_imax</title>
+<path fill="none" stroke="#ff0000" d="M146.2169,-138C155.2242,-138 164.3285,-138 173.0553,-138"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="173.098,-141.5001 183.098,-138 173.098,-134.5001 173.098,-141.5001"/>
+</g>
+<!-- proc~dmsg -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node4" class="node">
+<title>proc~dmsg</title>
+<g id="a_proc~~reconstruct_boundary_state~~CallsGraph_node4"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
+<polygon fill="#d9534f" stroke="#d9534f" points="257.5,-108 203.5,-108 203.5,-84 257.5,-84 257.5,-108"/>
+<text text-anchor="middle" x="230.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
+</a>
+</g>
+</g>
+<!-- proc~reconstruct_boundary_state&#45;&gt;proc~dmsg -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge3" class="edge">
+<title>proc~reconstruct_boundary_state&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#ff0000" d="M118.1332,-125.9645C141.9391,-119.6162 170.7907,-111.9225 193.2977,-105.9206"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="194.3908,-109.2515 203.1513,-103.293 192.5871,-102.4879 194.3908,-109.2515"/>
+</g>
+<!-- proc~reconstruct_imin -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node5" class="node">
+<title>proc~reconstruct_imin</title>
+<g id="a_proc~~reconstruct_boundary_state~~CallsGraph_node5"><a xlink:href=".././proc/reconstruct_imin.html" xlink:title="reconstruct_imin">
+<polygon fill="#d9534f" stroke="#d9534f" points="276,-192 185,-192 185,-168 276,-168 276,-192"/>
+<text text-anchor="middle" x="230.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reconstruct_imin</text>
+</a>
+</g>
+</g>
+<!-- proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_imin -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge4" class="edge">
+<title>proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_imin</title>
+<path fill="none" stroke="#ff0000" d="M118.1332,-150.0355C136.0093,-154.8025 156.7305,-160.3281 175.4739,-165.3264"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="174.796,-168.7679 185.3602,-167.9627 176.5997,-162.0042 174.796,-168.7679"/>
+</g>
+<!-- proc~reconstruct_jmax -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node6" class="node">
+<title>proc~reconstruct_jmax</title>
+<g id="a_proc~~reconstruct_boundary_state~~CallsGraph_node6"><a xlink:href=".././proc/reconstruct_jmax.html" xlink:title="reconstruct_jmax">
+<polygon fill="#d9534f" stroke="#d9534f" points="277.5,-276 183.5,-276 183.5,-252 277.5,-252 277.5,-276"/>
+<text text-anchor="middle" x="230.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reconstruct_jmax</text>
+</a>
+</g>
+</g>
+<!-- proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_jmax -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge5" class="edge">
+<title>proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_jmax</title>
+<path fill="none" stroke="#ff0000" d="M82.9975,-150.1541C100.9551,-171.3571 140.6704,-215.4671 182,-243 184.2491,-244.4983 186.6227,-245.9298 189.0623,-247.2901"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="187.5836,-250.4649 198.0814,-251.8959 190.7673,-244.2307 187.5836,-250.4649"/>
+</g>
+<!-- proc~reconstruct_kmin -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node7" class="node">
+<title>proc~reconstruct_kmin</title>
+<g id="a_proc~~reconstruct_boundary_state~~CallsGraph_node7"><a xlink:href=".././proc/reconstruct_kmin.html" xlink:title="reconstruct_kmin">
+<polygon fill="#d9534f" stroke="#d9534f" points="277.5,-24 183.5,-24 183.5,0 277.5,0 277.5,-24"/>
+<text text-anchor="middle" x="230.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reconstruct_kmin</text>
+</a>
+</g>
+</g>
+<!-- proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_kmin -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge6" class="edge">
+<title>proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_kmin</title>
+<path fill="none" stroke="#ff0000" d="M82.9975,-125.8459C100.9551,-104.6429 140.6704,-60.5329 182,-33 184.2491,-31.5017 186.6227,-30.0702 189.0623,-28.7099"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="190.7673,-31.7693 198.0814,-24.1041 187.5836,-25.5351 190.7673,-31.7693"/>
+</g>
+<!-- proc~reconstruct_kmax -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node8" class="node">
+<title>proc~reconstruct_kmax</title>
+<g id="a_proc~~reconstruct_boundary_state~~CallsGraph_node8"><a xlink:href=".././proc/reconstruct_kmax.html" xlink:title="reconstruct_kmax">
+<polygon fill="#d9534f" stroke="#d9534f" points="279,-66 182,-66 182,-42 279,-42 279,-66"/>
+<text text-anchor="middle" x="230.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reconstruct_kmax</text>
+</a>
+</g>
+</g>
+<!-- proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_kmax -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge7" class="edge">
+<title>proc~reconstruct_boundary_state&#45;&gt;proc~reconstruct_kmax</title>
+<path fill="none" stroke="#ff0000" d="M92.3161,-125.9246C113.8176,-112.6996 149.7868,-91.2154 182,-75 185.2655,-73.3562 188.6894,-71.7154 192.1432,-70.1165"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="193.5859,-73.3054 201.2675,-66.0085 190.7121,-66.9225 193.5859,-73.3054"/>
+</g>
+<!-- y_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node11" class="node">
+<title>y_qp_left</title>
+<polygon fill="#777777" stroke="#777777" points="374.5,-276 318.5,-276 318.5,-252 374.5,-252 374.5,-276"/>
+<text text-anchor="middle" x="346.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">y_qp_left</text>
+</g>
+<!-- proc~reconstruct_jmin&#45;&gt;y_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge8" class="edge">
+<title>proc~reconstruct_jmin&#45;&gt;y_qp_left</title>
+<path fill="none" stroke="#ff0000" d="M263.7409,-234.0355C277.7751,-239.1168 294.1901,-245.0602 308.684,-250.308"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="307.7641,-253.6972 318.3583,-253.8108 310.1472,-247.1154 307.7641,-253.6972"/>
+</g>
+<!-- y_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node13" class="node">
+<title>y_qp_right</title>
+<polygon fill="#777777" stroke="#777777" points="378,-234 315,-234 315,-210 378,-210 378,-234"/>
+<text text-anchor="middle" x="346.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">y_qp_right</text>
+</g>
+<!-- proc~reconstruct_jmin&#45;&gt;y_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge9" class="edge">
+<title>proc~reconstruct_jmin&#45;&gt;y_qp_right</title>
+<path fill="none" stroke="#ff0000" d="M276.0133,-222C285.4212,-222 295.2892,-222 304.5625,-222"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="304.7234,-225.5001 314.7234,-222 304.7234,-218.5001 304.7234,-225.5001"/>
+</g>
+<!-- x_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node9" class="node">
+<title>x_qp_right</title>
+<polygon fill="#777777" stroke="#777777" points="378,-192 315,-192 315,-168 378,-168 378,-192"/>
+<text text-anchor="middle" x="346.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">x_qp_right</text>
+</g>
+<!-- proc~reconstruct_imax&#45;&gt;x_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge10" class="edge">
+<title>proc~reconstruct_imax&#45;&gt;x_qp_right</title>
+<path fill="none" stroke="#ffda00" d="M263.7409,-150.0355C276.6704,-154.7169 291.6208,-160.1299 305.2278,-165.0566"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="304.2562,-168.4271 314.8504,-168.5407 306.6393,-161.8453 304.2562,-168.4271"/>
+</g>
+<!-- x_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node10" class="node">
+<title>x_qp_left</title>
+<polygon fill="#777777" stroke="#777777" points="374.5,-150 318.5,-150 318.5,-126 374.5,-126 374.5,-150"/>
+<text text-anchor="middle" x="346.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">x_qp_left</text>
+</g>
+<!-- proc~reconstruct_imax&#45;&gt;x_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge11" class="edge">
+<title>proc~reconstruct_imax&#45;&gt;x_qp_left</title>
+<path fill="none" stroke="#ffda00" d="M277.6816,-138C287.8157,-138 298.4065,-138 308.1568,-138"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="308.3457,-141.5001 318.3456,-138 308.3456,-134.5001 308.3457,-141.5001"/>
+</g>
+<!-- proc~reconstruct_imin&#45;&gt;x_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge12" class="edge">
+<title>proc~reconstruct_imin&#45;&gt;x_qp_right</title>
+<path fill="none" stroke="#00ff91" d="M276.0133,-180C285.4212,-180 295.2892,-180 304.5625,-180"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="304.7234,-183.5001 314.7234,-180 304.7234,-176.5001 304.7234,-183.5001"/>
+</g>
+<!-- proc~reconstruct_imin&#45;&gt;x_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge13" class="edge">
+<title>proc~reconstruct_imin&#45;&gt;x_qp_left</title>
+<path fill="none" stroke="#00ff91" d="M263.7409,-167.9645C277.7751,-162.8832 294.1901,-156.9398 308.684,-151.692"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="310.1472,-154.8846 318.3583,-148.1892 307.7641,-148.3028 310.1472,-154.8846"/>
+</g>
+<!-- proc~reconstruct_jmax&#45;&gt;y_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge14" class="edge">
+<title>proc~reconstruct_jmax&#45;&gt;y_qp_left</title>
+<path fill="none" stroke="#0091ff" d="M277.6816,-264C287.8157,-264 298.4065,-264 308.1568,-264"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="308.3457,-267.5001 318.3456,-264 308.3456,-260.5001 308.3457,-267.5001"/>
+</g>
+<!-- proc~reconstruct_jmax&#45;&gt;y_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge15" class="edge">
+<title>proc~reconstruct_jmax&#45;&gt;y_qp_right</title>
+<path fill="none" stroke="#0091ff" d="M263.7409,-251.9645C276.6704,-247.2831 291.6208,-241.8701 305.2278,-236.9434"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="306.6393,-240.1547 314.8504,-233.4593 304.2562,-233.5729 306.6393,-240.1547"/>
+</g>
+<!-- z_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node12" class="node">
+<title>z_qp_left</title>
+<polygon fill="#777777" stroke="#777777" points="374.5,-66 318.5,-66 318.5,-42 374.5,-42 374.5,-66"/>
+<text text-anchor="middle" x="346.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">z_qp_left</text>
+</g>
+<!-- proc~reconstruct_kmin&#45;&gt;z_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge16" class="edge">
+<title>proc~reconstruct_kmin&#45;&gt;z_qp_left</title>
+<path fill="none" stroke="#4800ff" d="M263.7409,-24.0355C277.7751,-29.1168 294.1901,-35.0602 308.684,-40.308"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="307.7641,-43.6972 318.3583,-43.8108 310.1472,-37.1154 307.7641,-43.6972"/>
+</g>
+<!-- z_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_node14" class="node">
+<title>z_qp_right</title>
+<polygon fill="#777777" stroke="#777777" points="378,-24 315,-24 315,0 378,0 378,-24"/>
+<text text-anchor="middle" x="346.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">z_qp_right</text>
+</g>
+<!-- proc~reconstruct_kmin&#45;&gt;z_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge17" class="edge">
+<title>proc~reconstruct_kmin&#45;&gt;z_qp_right</title>
+<path fill="none" stroke="#4800ff" d="M277.6816,-12C286.6984,-12 296.0767,-12 304.9029,-12"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="304.9557,-15.5001 314.9557,-12 304.9557,-8.5001 304.9557,-15.5001"/>
+</g>
+<!-- proc~reconstruct_kmax&#45;&gt;z_qp_left -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge19" class="edge">
+<title>proc~reconstruct_kmax&#45;&gt;z_qp_left</title>
+<path fill="none" stroke="#ff00da" d="M279.0223,-54C288.7656,-54 298.8757,-54 308.2123,-54"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="308.3642,-57.5001 318.3641,-54 308.3641,-50.5001 308.3642,-57.5001"/>
+</g>
+<!-- proc~reconstruct_kmax&#45;&gt;z_qp_right -->
+<g id="proc~~reconstruct_boundary_state~~CallsGraph_edge18" class="edge">
+<title>proc~reconstruct_kmax&#45;&gt;z_qp_right</title>
+<path fill="none" stroke="#ff00da" d="M263.7409,-41.9645C276.6704,-37.2831 291.6208,-31.8701 305.2278,-26.9434"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="306.6393,-30.1547 314.8504,-23.4593 304.2562,-23.5729 306.6393,-30.1547"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~reconstruct_boundary_state~~CalledByGraph Pages: 1 -->
+<svg id="procreconstruct_boundary_stateCalledByGraph" width="641pt" height="27pt"
+ viewBox="0.00 0.00 641.00 26.85" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph" class="graph" transform="scale(.839 .839) rotate(0) translate(4 28)">
+<title>proc~~reconstruct_boundary_state~~CalledByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 760,-28 760,4 -4,4"/>
+<!-- proc~reconstruct_boundary_state -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_node1" class="node">
+<title>proc~reconstruct_boundary_state</title>
+<polygon fill="none" stroke="#000000" points="756,-24 610,-24 610,0 756,0 756,-24"/>
+<text text-anchor="middle" x="683" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">reconstruct_boundary_state</text>
+</g>
+<!-- proc~get_total_conservative_residue -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_node2" class="node">
+<title>proc~get_total_conservative_residue</title>
+<g id="a_proc~~reconstruct_boundary_state~~CalledByGraph_node2"><a xlink:href=".././proc/get_total_conservative_residue.html" xlink:title="get_total_conservative_Residue">
+<polygon fill="#d9534f" stroke="#d9534f" points="574,-24 409,-24 409,0 574,0 574,-24"/>
+<text text-anchor="middle" x="491.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_total_conservative_Residue</text>
+</a>
+</g>
+</g>
+<!-- proc~get_total_conservative_residue&#45;&gt;proc~reconstruct_boundary_state -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_edge1" class="edge">
+<title>proc~get_total_conservative_residue&#45;&gt;proc~reconstruct_boundary_state</title>
+<path fill="none" stroke="#ff0000" d="M574.1027,-12C582.5229,-12 591.0814,-12 599.511,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="599.7113,-15.5001 609.7113,-12 599.7113,-8.5001 599.7113,-15.5001"/>
+</g>
+<!-- proc~get_next_solution -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_node3" class="node">
+<title>proc~get_next_solution</title>
+<g id="a_proc~~reconstruct_boundary_state~~CalledByGraph_node3"><a xlink:href=".././proc/get_next_solution.html" xlink:title="get_next_solution">
+<polygon fill="#d9534f" stroke="#d9534f" points="373,-24 276,-24 276,0 373,0 373,-24"/>
+<text text-anchor="middle" x="324.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_next_solution</text>
+</a>
+</g>
+</g>
+<!-- proc~get_next_solution&#45;&gt;proc~get_total_conservative_residue -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_edge2" class="edge">
+<title>proc~get_next_solution&#45;&gt;proc~get_total_conservative_residue</title>
+<path fill="none" stroke="#ff0000" d="M373.2522,-12C381.2791,-12 389.8274,-12 398.5144,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="398.753,-15.5001 408.753,-12 398.753,-8.5001 398.753,-15.5001"/>
+</g>
+<!-- proc~iterate_one_more_time_step -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_node4" class="node">
+<title>proc~iterate_one_more_time_step</title>
+<g id="a_proc~~reconstruct_boundary_state~~CalledByGraph_node4"><a xlink:href=".././proc/iterate_one_more_time_step.html" xlink:title="iterate_one_more_time_step">
+<polygon fill="#d9534f" stroke="#d9534f" points="240,-24 90,-24 90,0 240,0 240,-24"/>
+<text text-anchor="middle" x="165" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iterate_one_more_time_step</text>
+</a>
+</g>
+</g>
+<!-- proc~iterate_one_more_time_step&#45;&gt;proc~get_next_solution -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_edge3" class="edge">
+<title>proc~iterate_one_more_time_step&#45;&gt;proc~get_next_solution</title>
+<path fill="none" stroke="#ff0000" d="M240.0795,-12C248.696,-12 257.3855,-12 265.7438,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="265.7476,-15.5001 275.7475,-12 265.7475,-8.5001 265.7476,-15.5001"/>
+</g>
+<!-- program~main -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_node5" class="node">
+<title>program~main</title>
+<g id="a_proc~~reconstruct_boundary_state~~CalledByGraph_node5"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~iterate_one_more_time_step -->
+<g id="proc~~reconstruct_boundary_state~~CalledByGraph_edge4" class="edge">
+<title>program~main&#45;&gt;proc~iterate_one_more_time_step</title>
+<path fill="none" stroke="#ff0000" d="M54.2644,-12C61.9365,-12 70.7112,-12 79.8888,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.9724,-15.5001 89.9724,-12 79.9724,-8.5001 79.9724,-15.5001"/>
+</g>
+</g>
+</svg>
+</div><script>var panprocreconstruct_boundary_stateCalledByGraph = svgPanZoom('#procreconstruct_boundary_stateCalledByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/reconstruct_boundary_state.html#src">reconstruct_boundary_state</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">reconstruct_boundary_state</span><span class="p">(</span><span class="n">interpolant</span><span class="p">)</span>
+      <span class="c">!&lt; call reconstruction based on the flag and boundary condition.</span>
+
+      <span class="k">implicit none</span>
+<span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">interpolant</span>
+      <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;boundary_state_recons&#39;</span><span class="p">,</span> <span class="s1">&#39;recons_boundary_state&#39;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">interpolant</span> <span class="o">==</span> <span class="s1">&#39;ppm&#39;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">interpolant</span><span class="o">==</span><span class="s1">&#39;weno&#39;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">interpolant</span><span class="o">==</span><span class="s1">&#39;weno_NM&#39;</span><span class="p">)</span> <span class="n">ppm_flag</span><span class="o">=</span><span class="mi">1</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">imin_id</span><span class="o">==-</span><span class="mi">7</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">jmin_id</span><span class="o">==-</span><span class="mi">7</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">kmin_id</span><span class="o">==-</span><span class="mi">7</span><span class="p">)</span> <span class="n">ppm_flag</span><span class="o">=</span><span class="mi">1</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">imax_id</span><span class="o">==-</span><span class="mi">7</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">jmax_id</span><span class="o">==-</span><span class="mi">7</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">kmax_id</span><span class="o">==-</span><span class="mi">7</span><span class="p">)</span> <span class="n">ppm_flag</span><span class="o">=</span><span class="mi">1</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">interpolant</span> <span class="o">/=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span><span class="k">then</span>
+<span class="k">        if</span><span class="p">(</span><span class="n">imin_id</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">imin_id</span><span class="o">/=-</span><span class="mi">10</span><span class="p">)</span><span class="k">then</span>
+<span class="k">          call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;bndry_state_recons&#39;</span><span class="p">,</span> <span class="s1">&#39;recons_bndry_state&#39;</span><span class="p">,</span> <span class="s1">&#39;imin&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">reconstruct_imin</span><span class="p">()</span>
+        <span class="k">end if</span>
+<span class="k">        if</span><span class="p">(</span><span class="n">imax_id</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">imax_id</span><span class="o">/=-</span><span class="mi">10</span><span class="p">)</span><span class="k">then</span>
+<span class="k">          call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;bndry_state_recons&#39;</span><span class="p">,</span> <span class="s1">&#39;recons_bndry_state&#39;</span><span class="p">,</span> <span class="s1">&#39;imax&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">reconstruct_imax</span><span class="p">()</span>
+        <span class="k">end if</span>
+<span class="k">        if</span><span class="p">(</span><span class="n">jmin_id</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">jmin_id</span><span class="o">/=-</span><span class="mi">10</span><span class="p">)</span><span class="k">then</span>
+<span class="k">          call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;bndry_state_recons&#39;</span><span class="p">,</span> <span class="s1">&#39;recons_bndry_state&#39;</span><span class="p">,</span> <span class="s1">&#39;jmin&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">reconstruct_jmin</span><span class="p">()</span>
+        <span class="k">end if</span>
+<span class="k">        if</span><span class="p">(</span><span class="n">jmax_id</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">jmax_id</span><span class="o">/=-</span><span class="mi">10</span><span class="p">)</span><span class="k">then</span>
+<span class="k">          call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;bndry_state_recons&#39;</span><span class="p">,</span> <span class="s1">&#39;recons_bndry_state&#39;</span><span class="p">,</span> <span class="s1">&#39;jmax&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">reconstruct_jmax</span><span class="p">()</span>
+        <span class="k">end if</span>
+<span class="k">        if</span><span class="p">(</span><span class="n">kmin_id</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">kmin_id</span><span class="o">/=-</span><span class="mi">10</span><span class="p">)</span><span class="k">then</span>
+<span class="k">          call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;bndry_state_recons&#39;</span><span class="p">,</span> <span class="s1">&#39;recons_bndry_state&#39;</span><span class="p">,</span> <span class="s1">&#39;kmin&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">reconstruct_kmin</span><span class="p">()</span>
+        <span class="k">end if</span>
+<span class="k">        if</span><span class="p">(</span><span class="n">kmax_id</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">kmax_id</span><span class="o">/=-</span><span class="mi">10</span><span class="p">)</span><span class="k">then</span>
+<span class="k">        call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;bndry_state_recons&#39;</span><span class="p">,</span> <span class="s1">&#39;recons_bndry_state&#39;</span><span class="p">,</span> <span class="s1">&#39;kmax&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">reconstruct_kmax</span><span class="p">()</span>
+        <span class="k">end if</span>
+<span class="k">      end if</span>
+
+<span class="k">    end subroutine </span><span class="n">reconstruct_boundary_state</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

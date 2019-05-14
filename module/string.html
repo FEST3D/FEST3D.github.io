@@ -1,0 +1,3259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>string &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>string 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.7% of total for modules and submodules.">147 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/string.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/string.f90.html'>string.f90</a></li>
+    
+  
+     <li class="active">string</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/string.html#variable-max_string_len">MAX_STRING_LEN</a>
+      
+      <a class="list-group-item" href="../module/string.html#variable-dec_">dec_</a>
+      
+      <a class="list-group-item" href="../module/string.html#variable-exp_">exp_</a>
+      
+      <a class="list-group-item" href="../module/string.html#variable-form_">form_</a>
+      
+      <a class="list-group-item" href="../module/string.html#variable-reset_flag">reset_flag</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/string.html#interface-tostr">tostr</a>
+      
+      <a class="list-group-item" href="../module/string.html#interface-operator%28%20%2B%20%29">operator( + )</a>
+      
+      <a class="list-group-item" href="../module/string.html#interface-len">len</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/string.html#proc-int_to_str">int_to_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-real_to_str">real_to_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-bool_to_str">bool_to_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-str_cat_str">str_cat_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-str_cat_int">str_cat_int</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-int_cat_str">int_cat_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-str_cat_real">str_cat_real</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-real_cat_str">real_cat_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-str_cat_bool">str_cat_bool</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-bool_cat_str">bool_cat_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-intlen">intlen</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-reallen">reallen</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/string.html#proc-chfmt">chfmt</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-disp">disp</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <p>Module to convert int, real, or bool to string
+ and concatenate int, real, bool, and string itself to string</p>
+      <br>
+    
+  
+
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+  
+  
+  <li class="list-group-item">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~string~~UsedByGraph Pages: 1 -->
+<svg id="modulestringUsedByGraph" width="641pt" height="471pt"
+ viewBox="0.00 0.00 641.00 470.89" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~string~~UsedByGraph" class="graph" transform="scale(.6211 .6211) rotate(0) translate(4 754.1297)">
+<title>module~~string~~UsedByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-754.1297 1028,-754.1297 1028,4 -4,4"/>
+<!-- module~string -->
+<g id="module~~string~~UsedByGraph_node1" class="node">
+<title>module~string</title>
+<polygon fill="none" stroke="#000000" points="54,-568 0,-568 0,-544 54,-544 54,-568"/>
+<text text-anchor="middle" x="27" y="-553.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">string</text>
+</g>
+<!-- module~mapping -->
+<g id="module~~string~~UsedByGraph_node2" class="node">
+<title>module~mapping</title>
+<g id="a_module~~string~~UsedByGraph_node2"><a xlink:href=".././module/mapping.html" xlink:title="mapping">
+<polygon fill="#337ab7" stroke="#337ab7" points="422,-186 368,-186 368,-162 422,-162 422,-186"/>
+<text text-anchor="middle" x="395" y="-171.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mapping</text>
+</a>
+</g>
+</g>
+<!-- module~mapping&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge1" class="edge">
+<title>module~mapping&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M367.8887,-179.7518C344.0072,-185.6889 308.9984,-196.5728 282.5,-214"/>
+</g>
+<!-- module~read -->
+<g id="module~~string~~UsedByGraph_node3" class="node">
+<title>module~read</title>
+<g id="a_module~~string~~UsedByGraph_node3"><a xlink:href=".././module/read.html" xlink:title="read">
+<polygon fill="#337ab7" stroke="#337ab7" points="422,-428 368,-428 368,-404 422,-404 422,-428"/>
+<text text-anchor="middle" x="395" y="-413.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read</text>
+</a>
+</g>
+</g>
+<!-- module~read&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge2" class="edge">
+<title>module~read&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M369.3297,-403.9321C346.967,-394.1419 313.3742,-381.1508 282.5,-376"/>
+</g>
+<!-- module~write_output_vtk -->
+<g id="module~~string~~UsedByGraph_node4" class="node">
+<title>module~write_output_vtk</title>
+<g id="a_module~~string~~UsedByGraph_node4"><a xlink:href=".././module/write_output_vtk.html" xlink:title="write_output_vtk">
+<polygon fill="#337ab7" stroke="#337ab7" points="196,-630 105,-630 105,-606 196,-606 196,-630"/>
+<text text-anchor="middle" x="150.5" y="-615.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output_vtk</text>
+</a>
+</g>
+</g>
+<!-- module~write_output_vtk&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge3" class="edge">
+<title>module~write_output_vtk&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M111.2018,-605.921C104.0217,-603.2773 96.6897,-600.2771 90,-597 76.7766,-590.5222 62.9708,-581.7895 51.6649,-574.0482"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="53.3914,-570.9844 43.1927,-568.1144 49.3757,-576.718 53.3914,-570.9844"/>
+</g>
+<!-- module~wall -->
+<g id="module~~string~~UsedByGraph_node5" class="node">
+<title>module~wall</title>
+<g id="a_module~~string~~UsedByGraph_node5"><a xlink:href=".././module/wall.html" xlink:title="wall">
+<polygon fill="#337ab7" stroke="#337ab7" points="567,-588 513,-588 513,-564 567,-564 567,-588"/>
+<text text-anchor="middle" x="540" y="-573.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">wall</text>
+</a>
+</g>
+</g>
+<!-- module~wall&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge4" class="edge">
+<title>module~wall&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M526.6273,-588.0038C469.3039,-637.9697 240.4342,-822.1363 90,-719 65.8814,-702.4645 42.3629,-618.4045 32.2169,-577.8911"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="35.6095,-577.0298 29.8264,-568.1525 28.8113,-578.6986 35.6095,-577.0298"/>
+</g>
+<!-- module~write_output -->
+<g id="module~~string~~UsedByGraph_node6" class="node">
+<title>module~write_output</title>
+<g id="a_module~~string~~UsedByGraph_node6"><a xlink:href=".././module/write_output.html" xlink:title="write_output">
+<polygon fill="#337ab7" stroke="#337ab7" points="318,-630 247,-630 247,-606 318,-606 318,-630"/>
+<text text-anchor="middle" x="282.5" y="-615.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output</text>
+</a>
+</g>
+</g>
+<!-- module~write_output&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge5" class="edge">
+<title>module~write_output&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M254.7058,-630.0708C215.7285,-645.0612 143.6,-665.6074 90,-639 64.3554,-626.2698 46.3407,-597.5583 36.3231,-577.4903"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="39.3628,-575.7301 31.9323,-568.1778 33.0313,-578.7155 39.3628,-575.7301"/>
+</g>
+<!-- module~write_output&#45;&gt;module~write_output_vtk -->
+<g id="module~~string~~UsedByGraph_edge31" class="edge">
+<title>module~write_output&#45;&gt;module~write_output_vtk</title>
+<path fill="none" stroke="#ff8b00" stroke-dasharray="5,2" d="M246.7789,-618C234.3669,-618 220.1308,-618 206.4802,-618"/>
+<polygon fill="#ff8b00" stroke="#ff8b00" points="206.1956,-614.5001 196.1956,-618 206.1955,-621.5001 206.1956,-614.5001"/>
+</g>
+<!-- module~write_output_tec_node -->
+<g id="module~~string~~UsedByGraph_node10" class="node">
+<title>module~write_output_tec_node</title>
+<g id="a_module~~string~~UsedByGraph_node10"><a xlink:href=".././module/write_output_tec_node.html" xlink:title="write_output_tec_node">
+<polygon fill="#337ab7" stroke="#337ab7" points="211,-588 90,-588 90,-564 211,-564 211,-588"/>
+<text text-anchor="middle" x="150.5" y="-573.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output_tec_node</text>
+</a>
+</g>
+</g>
+<!-- module~write_output&#45;&gt;module~write_output_tec_node -->
+<g id="module~~string~~UsedByGraph_edge40" class="edge">
+<title>module~write_output&#45;&gt;module~write_output_tec_node</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M246.7789,-606.6342C231.8568,-601.8863 214.2983,-596.2995 198.2903,-591.206"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="199.1514,-587.8071 188.5609,-588.1103 197.0289,-594.4776 199.1514,-587.8071"/>
+</g>
+<!-- module~write_output_tec -->
+<g id="module~~string~~UsedByGraph_node17" class="node">
+<title>module~write_output_tec</title>
+<g id="a_module~~string~~UsedByGraph_node17"><a xlink:href=".././module/write_output_tec.html" xlink:title="write_output_tec">
+<polygon fill="#337ab7" stroke="#337ab7" points="196,-710 105,-710 105,-686 196,-686 196,-710"/>
+<text text-anchor="middle" x="150.5" y="-695.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output_tec</text>
+</a>
+</g>
+</g>
+<!-- module~write_output&#45;&gt;module~write_output_tec -->
+<g id="module~~string~~UsedByGraph_edge52" class="edge">
+<title>module~write_output&#45;&gt;module~write_output_tec</title>
+<path fill="none" stroke="#1700ff" stroke-dasharray="5,2" d="M268.6943,-630.0312C254.7878,-641.7525 232.3855,-659.574 211,-672 205.0228,-675.4731 198.4938,-678.756 192.0071,-681.7449"/>
+<polygon fill="#1700ff" stroke="#1700ff" points="190.3345,-678.6576 182.603,-685.9015 193.1644,-685.06 190.3345,-678.6576"/>
+</g>
+<!-- module~read_output_vtk -->
+<g id="module~~string~~UsedByGraph_node7" class="node">
+<title>module~read_output_vtk</title>
+<g id="a_module~~string~~UsedByGraph_node7"><a xlink:href=".././module/read_output_vtk.html" xlink:title="read_output_vtk">
+<polygon fill="#337ab7" stroke="#337ab7" points="195.5,-428 105.5,-428 105.5,-404 195.5,-404 195.5,-428"/>
+<text text-anchor="middle" x="150.5" y="-413.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_output_vtk</text>
+</a>
+</g>
+</g>
+<!-- module~read_output_vtk&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge6" class="edge">
+<title>module~read_output_vtk&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M111.7512,-428.1277C103.9713,-431.7529 96.2707,-436.3212 90,-442 61.8415,-467.501 43.5092,-508.6276 34.233,-533.8889"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="30.8158,-533.0572 30.8098,-543.652 37.4215,-535.3734 30.8158,-533.0572"/>
+</g>
+<!-- module~source -->
+<g id="module~~string~~UsedByGraph_node8" class="node">
+<title>module~source</title>
+<g id="a_module~~string~~UsedByGraph_node8"><a xlink:href=".././module/source.html" xlink:title="source">
+<polygon fill="#337ab7" stroke="#337ab7" points="567,-508 513,-508 513,-484 567,-484 567,-508"/>
+<text text-anchor="middle" x="540" y="-493.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">source</text>
+</a>
+</g>
+</g>
+<!-- module~source&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge7" class="edge">
+<title>module~source&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M512.7708,-502.5765C466.0135,-513.3399 367.2972,-533.7532 282.5,-536"/>
+</g>
+<!-- module~dump_solution -->
+<g id="module~~string~~UsedByGraph_node19" class="node">
+<title>module~dump_solution</title>
+<g id="a_module~~string~~UsedByGraph_node19"><a xlink:href=".././module/dump_solution.html" xlink:title="dump_solution">
+<polygon fill="#337ab7" stroke="#337ab7" points="436,-588 354,-588 354,-564 436,-564 436,-588"/>
+<text text-anchor="middle" x="395" y="-573.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dump_solution</text>
+</a>
+</g>
+</g>
+<!-- module~source&#45;&gt;module~dump_solution -->
+<g id="module~~string~~UsedByGraph_edge55" class="edge">
+<title>module~source&#45;&gt;module~dump_solution</title>
+<path fill="none" stroke="#a200ff" stroke-dasharray="5,2" d="M517.9776,-508.1503C493.3497,-521.7381 453.2944,-543.8376 425.6236,-559.1042"/>
+<polygon fill="#a200ff" stroke="#a200ff" points="423.8195,-556.1022 416.7545,-563.9975 427.2011,-562.2312 423.8195,-556.1022"/>
+</g>
+<!-- module~resnorm -->
+<g id="module~~string~~UsedByGraph_node9" class="node">
+<title>module~resnorm</title>
+<g id="a_module~~string~~UsedByGraph_node9"><a xlink:href=".././module/resnorm.html" xlink:title="resnorm">
+<polygon fill="#337ab7" stroke="#337ab7" points="309.5,-348 255.5,-348 255.5,-324 309.5,-324 309.5,-348"/>
+<text text-anchor="middle" x="282.5" y="-333.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">resnorm</text>
+</a>
+</g>
+</g>
+<!-- module~resnorm&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge8" class="edge">
+<title>module~resnorm&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M255.3189,-332.6394C226.1806,-330.5834 180.1245,-331.9969 150.5,-356"/>
+</g>
+<!-- module~write_output_tec_node&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge9" class="edge">
+<title>module~write_output_tec_node&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.8354,-566.1758C80.9998,-564.7449 72.1345,-563.3092 63.9635,-561.986"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.4703,-558.5225 54.0394,-560.3788 63.3512,-565.4325 64.4703,-558.5225"/>
+</g>
+<!-- module~update -->
+<g id="module~~string~~UsedByGraph_node11" class="node">
+<title>module~update</title>
+<g id="a_module~~string~~UsedByGraph_node11"><a xlink:href=".././module/update.html" xlink:title="update">
+<polygon fill="#337ab7" stroke="#337ab7" points="721,-226 667,-226 667,-202 721,-202 721,-226"/>
+<text text-anchor="middle" x="694" y="-211.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge10" class="edge">
+<title>module~update&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M666.8091,-205.5894C650.0406,-200.8479 627.9895,-195.4052 608,-193 547.9884,-185.7791 531.9096,-184.977 472,-193 436.8417,-197.7083 430.3929,-211.6308 395,-214"/>
+</g>
+<!-- module~update&#45;&gt;module~source -->
+<g id="module~~string~~UsedByGraph_edge36" class="edge">
+<title>module~update&#45;&gt;module~source</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M687.5328,-226.2302C677.1724,-246.2189 656.7293,-287.3386 644,-324 622.0787,-387.135 652.2525,-419.9173 608,-470 599.9737,-479.0837 588.4175,-485.0104 577.1026,-488.8706"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="575.9167,-485.5713 567.3161,-491.7584 577.8979,-492.2851 575.9167,-485.5713"/>
+</g>
+<!-- module~time -->
+<g id="module~~string~~UsedByGraph_node12" class="node">
+<title>module~time</title>
+<g id="a_module~~string~~UsedByGraph_node12"><a xlink:href=".././module/time.html" xlink:title="time">
+<polygon fill="#337ab7" stroke="#337ab7" points="567,-390 513,-390 513,-366 567,-366 567,-390"/>
+<text text-anchor="middle" x="540" y="-375.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">time</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~time -->
+<g id="module~~string~~UsedByGraph_edge42" class="edge">
+<title>module~update&#45;&gt;module~time</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M685.0782,-226.2093C670.1045,-246.3842 638.5475,-287.5723 608,-319 594.0167,-333.3862 576.9603,-348.1788 563.4281,-359.3534"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="561.0528,-356.7742 555.5168,-365.8077 565.4778,-362.1982 561.0528,-356.7742"/>
+</g>
+<!-- module~viscous -->
+<g id="module~~string~~UsedByGraph_node13" class="node">
+<title>module~viscous</title>
+<g id="a_module~~string~~UsedByGraph_node13"><a xlink:href=".././module/viscous.html" xlink:title="viscous">
+<polygon fill="#337ab7" stroke="#337ab7" points="567,-226 513,-226 513,-202 567,-202 567,-226"/>
+<text text-anchor="middle" x="540" y="-211.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">viscous</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~viscous -->
+<g id="module~~string~~UsedByGraph_edge46" class="edge">
+<title>module~update&#45;&gt;module~viscous</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M666.8224,-214C641.9382,-214 604.888,-214 577.2508,-214"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="577.1645,-210.5001 567.1645,-214 577.1645,-217.5001 577.1645,-210.5001"/>
+</g>
+<!-- module~summon_grad_evaluation -->
+<g id="module~~string~~UsedByGraph_node15" class="node">
+<title>module~summon_grad_evaluation</title>
+<g id="a_module~~string~~UsedByGraph_node15"><a xlink:href=".././module/summon_grad_evaluation.html" xlink:title="summon_grad_evaluation">
+<polygon fill="#337ab7" stroke="#337ab7" points="608,-268 472,-268 472,-244 608,-244 608,-268"/>
+<text text-anchor="middle" x="540" y="-253.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">summon_grad_evaluation</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~summon_grad_evaluation -->
+<g id="module~~string~~UsedByGraph_edge50" class="edge">
+<title>module~update&#45;&gt;module~summon_grad_evaluation</title>
+<path fill="none" stroke="#0073ff" stroke-dasharray="5,2" d="M666.8224,-221.4121C646.711,-226.897 618.6529,-234.5492 594.0398,-241.2619"/>
+<polygon fill="#0073ff" stroke="#0073ff" points="592.8191,-237.9669 584.0924,-243.9748 594.6609,-244.7202 592.8191,-237.9669"/>
+</g>
+<!-- module~plusgs -->
+<g id="module~~string~~UsedByGraph_node16" class="node">
+<title>module~plusgs</title>
+<g id="a_module~~string~~UsedByGraph_node16"><a xlink:href=".././module/plusgs.html" xlink:title="plusgs">
+<polygon fill="#337ab7" stroke="#337ab7" points="567,-146 513,-146 513,-122 567,-122 567,-146"/>
+<text text-anchor="middle" x="540" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">plusgs</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~plusgs -->
+<g id="module~~string~~UsedByGraph_edge51" class="edge">
+<title>module~update&#45;&gt;module~plusgs</title>
+<path fill="none" stroke="#002eff" stroke-dasharray="5,2" d="M676.7975,-201.7873C659.841,-190.0938 632.9232,-172.4397 608,-160 598.1446,-155.081 587.1189,-150.498 576.8617,-146.5922"/>
+<polygon fill="#002eff" stroke="#002eff" points="577.9195,-143.2518 567.3263,-143.0663 575.4917,-149.8173 577.9195,-143.2518"/>
+</g>
+<!-- module~lusgs -->
+<g id="module~~string~~UsedByGraph_node21" class="node">
+<title>module~lusgs</title>
+<g id="a_module~~string~~UsedByGraph_node21"><a xlink:href=".././module/lusgs.html" xlink:title="lusgs">
+<polygon fill="#337ab7" stroke="#337ab7" points="567,-24 513,-24 513,0 567,0 567,-24"/>
+<text text-anchor="middle" x="540" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lusgs</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~lusgs -->
+<g id="module~~string~~UsedByGraph_edge58" class="edge">
+<title>module~update&#45;&gt;module~lusgs</title>
+<path fill="none" stroke="#ff00d0" stroke-dasharray="5,2" d="M688.2519,-201.677C675.8501,-175.822 644.7138,-114.6947 608,-71 595.2605,-55.8381 578.4742,-41.2319 564.7675,-30.3453"/>
+<polygon fill="#ff00d0" stroke="#ff00d0" points="566.7396,-27.4454 556.6948,-24.0759 562.4459,-32.9739 566.7396,-27.4454"/>
+</g>
+<!-- module~interface1 -->
+<g id="module~~string~~UsedByGraph_node24" class="node">
+<title>module~interface1</title>
+<g id="a_module~~string~~UsedByGraph_node24"><a xlink:href=".././module/interface1.html" xlink:title="interface1">
+<polygon fill="#337ab7" stroke="#337ab7" points="570,-104 510,-104 510,-80 570,-80 570,-104"/>
+<text text-anchor="middle" x="540" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">interface1</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~interface1 -->
+<g id="module~~string~~UsedByGraph_edge61" class="edge">
+<title>module~update&#45;&gt;module~interface1</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M686.8807,-201.787C673.9017,-180.5843 644.3493,-136.9443 608,-113 599.5761,-107.451 589.6094,-103.3055 579.9405,-100.2326"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="580.6265,-96.7886 570.0496,-97.4048 578.7023,-103.5189 580.6265,-96.7886"/>
+</g>
+<!-- module~time&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge11" class="edge">
+<title>module~time&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M512.6948,-380.5791C465.4131,-384.4261 365.4019,-389.8306 282.5,-376"/>
+</g>
+<!-- module~time&#45;&gt;module~read -->
+<g id="module~~string~~UsedByGraph_edge28" class="edge">
+<title>module~time&#45;&gt;module~read</title>
+<path fill="none" stroke="#ff4500" stroke-dasharray="5,2" d="M512.7266,-385.1475C489.9421,-391.1186 457.2352,-399.6901 432.0751,-406.2838"/>
+<polygon fill="#ff4500" stroke="#ff4500" points="430.9371,-402.9637 422.1511,-408.8845 432.7117,-409.7351 430.9371,-402.9637"/>
+</g>
+<!-- module~viscous&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge21" class="edge">
+<title>module~viscous&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M512.9727,-212.9233C483.823,-212.0134 436.0669,-211.251 395,-214"/>
+</g>
+<!-- module~state -->
+<g id="module~~string~~UsedByGraph_node14" class="node">
+<title>module~state</title>
+<g id="a_module~~string~~UsedByGraph_node14"><a xlink:href=".././module/state.html" xlink:title="state">
+<polygon fill="#337ab7" stroke="#337ab7" points="422,-508 368,-508 368,-484 422,-484 422,-508"/>
+<text text-anchor="middle" x="395" y="-493.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">state</text>
+</a>
+</g>
+</g>
+<!-- module~state&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge13" class="edge">
+<title>module~state&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M374.6238,-508.0013C352.6581,-519.7836 316.2884,-536 282.5,-536"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M282.5,-536C204.6149,-536 113.7812,-545.3512 64.123,-551.2652"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="63.6776,-547.7935 54.1709,-552.4704 64.5192,-554.7427 63.6776,-547.7935"/>
+</g>
+<!-- module~read_output -->
+<g id="module~~string~~UsedByGraph_node20" class="node">
+<title>module~read_output</title>
+<g id="a_module~~string~~UsedByGraph_node20"><a xlink:href=".././module/read_output.html" xlink:title="read_output">
+<polygon fill="#337ab7" stroke="#337ab7" points="317.5,-488 247.5,-488 247.5,-464 317.5,-464 317.5,-488"/>
+<text text-anchor="middle" x="282.5" y="-473.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_output</text>
+</a>
+</g>
+</g>
+<!-- module~state&#45;&gt;module~read_output -->
+<g id="module~~string~~UsedByGraph_edge57" class="edge">
+<title>module~state&#45;&gt;module~read_output</title>
+<path fill="none" stroke="#e700ff" stroke-dasharray="5,2" d="M367.7669,-491.1586C355.7447,-489.0213 341.2873,-486.4511 327.7208,-484.0393"/>
+<polygon fill="#e700ff" stroke="#e700ff" points="328.0335,-480.54 317.5752,-482.2356 326.8082,-487.432 328.0335,-480.54"/>
+</g>
+<!-- module~summon_grad_evaluation&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge14" class="edge">
+<title>module~summon_grad_evaluation&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M500.8486,-243.9422C459.7835,-231.4044 400.4261,-213.6368 395,-214"/>
+</g>
+<!-- module~plusgs&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge15" class="edge">
+<title>module~plusgs&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M512.982,-141.5233C499.9998,-145.8227 484.5702,-151.9738 472,-160 453.1917,-172.0093 454.3844,-182.3513 436,-195 419.4541,-206.3838 415.0389,-212.6586 395,-214"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M395,-214C345.1116,-217.3395 324.2752,-186.5258 282.5,-214"/>
+</g>
+<!-- module~plusgs&#45;&gt;module~mapping -->
+<g id="module~~string~~UsedByGraph_edge26" class="edge">
+<title>module~plusgs&#45;&gt;module~mapping</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M512.7266,-141.5237C489.9421,-147.8091 457.2352,-156.8317 432.0751,-163.7724"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="430.8602,-160.4767 422.1511,-166.51 432.7218,-167.2247 430.8602,-160.4767"/>
+</g>
+<!-- module~write_output_tec&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge16" class="edge">
+<title>module~write_output_tec&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M111.7196,-685.9071C103.9416,-682.2797 96.2498,-677.7018 90,-672 61.2814,-645.7996 42.9609,-603.3902 33.8677,-577.7558"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="37.1549,-576.5504 30.6317,-568.2018 30.5248,-578.7961 37.1549,-576.5504"/>
+</g>
+<!-- module~solver -->
+<g id="module~~string~~UsedByGraph_node18" class="node">
+<title>module~solver</title>
+<g id="a_module~~string~~UsedByGraph_node18"><a xlink:href=".././module/solver.html" xlink:title="solver">
+<polygon fill="#337ab7" stroke="#337ab7" points="834,-288 780,-288 780,-264 834,-264 834,-288"/>
+<text text-anchor="middle" x="807" y="-273.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">solver</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge17" class="edge">
+<title>module~solver&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M395,-338C342.338,-341.4563 334.5559,-384.6845 282.5,-376"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M282.5,-376C223.9726,-366.2359 196.6026,-318.6457 150.5,-356"/>
+</g>
+<!-- module~solver&#45;&gt;module~mapping -->
+<g id="module~~string~~UsedByGraph_edge25" class="edge">
+<title>module~solver&#45;&gt;module~mapping</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M805.6007,-263.9773C800.2092,-224.0391 776.7506,-95.843 694,-52"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M694,-52C650.2478,-28.8192 512.6003,-42.6588 472,-71 441.0229,-92.6236 460.9524,-119.6357 436,-148 433.5157,-150.824 430.6516,-153.4536 427.6157,-155.8706"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="425.4485,-153.1168 419.3209,-161.7599 429.501,-158.8245 425.4485,-153.1168"/>
+</g>
+<!-- module~solver&#45;&gt;module~read -->
+<g id="module~~string~~UsedByGraph_edge30" class="edge">
+<title>module~solver&#45;&gt;module~read</title>
+<path fill="none" stroke="#ff4500" stroke-dasharray="5,2" d="M694,-338C647.9228,-346.5346 652.0473,-383.0067 608,-399 549.3718,-420.2876 475.8749,-420.9457 432.3306,-418.8898"/>
+<polygon fill="#ff4500" stroke="#ff4500" points="432.3717,-415.3869 422.1956,-418.336 431.9897,-422.3765 432.3717,-415.3869"/>
+</g>
+<!-- module~solver&#45;&gt;module~wall -->
+<g id="module~~string~~UsedByGraph_edge32" class="edge">
+<title>module~solver&#45;&gt;module~wall</title>
+<path fill="none" stroke="#ffd000" stroke-dasharray="5,2" d="M694,-556C659.5162,-579.2694 610.6547,-581.754 577.2752,-580.0557"/>
+<polygon fill="#ffd000" stroke="#ffd000" points="577.2285,-576.5451 567.0195,-579.3784 576.7671,-583.5299 577.2285,-576.5451"/>
+</g>
+<!-- module~solver&#45;&gt;module~source -->
+<g id="module~~string~~UsedByGraph_edge37" class="edge">
+<title>module~solver&#45;&gt;module~source</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M806.5481,-288.14C804.135,-333.2532 788.9444,-491.9322 694,-556"/>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M694,-556C659.9303,-578.99 646.3069,-536.8951 608,-522 597.8233,-518.0429 586.7712,-513.7957 576.5934,-509.9047"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="577.7511,-506.6003 567.1604,-506.3045 575.255,-513.1402 577.7511,-506.6003"/>
+</g>
+<!-- module~solver&#45;&gt;module~resnorm -->
+<g id="module~~string~~UsedByGraph_edge39" class="edge">
+<title>module~solver&#45;&gt;module~resnorm</title>
+<path fill="none" stroke="#17ff00" stroke-dasharray="5,2" d="M694,-338C563.2196,-361.5783 527.471,-327.4693 395,-338"/>
+<path fill="none" stroke="#17ff00" stroke-dasharray="5,2" d="M395,-338C370.0406,-339.6381 341.9041,-339.1372 320.0133,-338.2272"/>
+<polygon fill="#17ff00" stroke="#17ff00" points="319.9609,-334.7211 309.8098,-337.7551 319.6374,-341.7136 319.9609,-334.7211"/>
+</g>
+<!-- module~solver&#45;&gt;module~update -->
+<g id="module~~string~~UsedByGraph_edge41" class="edge">
+<title>module~solver&#45;&gt;module~update</title>
+<path fill="none" stroke="#00ff73" stroke-dasharray="5,2" d="M784.9442,-263.8986C767.8333,-254.5103 743.9068,-241.3825 724.8899,-230.9485"/>
+<polygon fill="#00ff73" stroke="#00ff73" points="726.4508,-227.8127 716.0002,-226.0709 723.0836,-233.9497 726.4508,-227.8127"/>
+</g>
+<!-- module~solver&#45;&gt;module~time -->
+<g id="module~~string~~UsedByGraph_edge43" class="edge">
+<title>module~solver&#45;&gt;module~time</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M694,-338C653.4915,-345.5031 607.9143,-357.8399 576.9229,-366.8318"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="575.6115,-363.5689 567.0003,-369.7412 577.5811,-370.2861 575.6115,-363.5689"/>
+</g>
+<!-- module~solver&#45;&gt;module~viscous -->
+<g id="module~~string~~UsedByGraph_edge45" class="edge">
+<title>module~solver&#45;&gt;module~viscous</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M792.4847,-288.0079C772.0551,-303.9093 732.9448,-330.7865 694,-338"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M694,-338C635.3606,-348.8614 657.6434,-268.0465 608,-235 598.7248,-228.8257 587.5461,-224.3955 576.9559,-221.2467"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="577.6286,-217.8038 567.0642,-218.6054 575.8227,-224.5669 577.6286,-217.8038"/>
+</g>
+<!-- module~solver&#45;&gt;module~state -->
+<g id="module~~string~~UsedByGraph_edge47" class="edge">
+<title>module~solver&#45;&gt;module~state</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M694,-556C672.4134,-570.5665 507.4019,-527.304 432.1711,-506.4964"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="432.7479,-503.0241 422.1758,-503.7178 430.873,-509.7684 432.7479,-503.0241"/>
+</g>
+<!-- module~solver&#45;&gt;module~summon_grad_evaluation -->
+<g id="module~~string~~UsedByGraph_edge49" class="edge">
+<title>module~solver&#45;&gt;module~summon_grad_evaluation</title>
+<path fill="none" stroke="#0073ff" stroke-dasharray="5,2" d="M694,-338C647.9228,-346.5346 650.0265,-297.7298 608,-277 604.0282,-275.0409 599.8355,-273.2187 595.5616,-271.5334"/>
+<polygon fill="#0073ff" stroke="#0073ff" points="596.7236,-268.2316 586.1301,-268.0631 594.3063,-274.801 596.7236,-268.2316"/>
+</g>
+<!-- module~solver&#45;&gt;module~dump_solution -->
+<g id="module~~string~~UsedByGraph_edge56" class="edge">
+<title>module~solver&#45;&gt;module~dump_solution</title>
+<path fill="none" stroke="#a200ff" stroke-dasharray="5,2" d="M694,-556C610.6929,-611.9203 571.4475,-610.3178 472,-597 461.9057,-595.6482 451.2605,-593.3416 441.2129,-590.7398"/>
+<polygon fill="#a200ff" stroke="#a200ff" points="441.9755,-587.32 431.4069,-588.0641 440.1328,-594.0731 441.9755,-587.32"/>
+</g>
+<!-- module~solver&#45;&gt;module~interface1 -->
+<g id="module~~string~~UsedByGraph_edge60" class="edge">
+<title>module~solver&#45;&gt;module~interface1</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M694,-52C683.8594,-46.6273 621.9927,-65.0847 579.8269,-78.6983"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="578.5277,-75.4404 570.1025,-81.8643 580.6948,-82.0965 578.5277,-75.4404"/>
+</g>
+<!-- module~grid -->
+<g id="module~~string~~UsedByGraph_node26" class="node">
+<title>module~grid</title>
+<g id="a_module~~string~~UsedByGraph_node26"><a xlink:href=".././module/grid.html" xlink:title="grid">
+<polygon fill="#337ab7" stroke="#337ab7" points="567,-310 513,-310 513,-286 567,-286 567,-310"/>
+<text text-anchor="middle" x="540" y="-295.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~grid -->
+<g id="module~~string~~UsedByGraph_edge63" class="edge">
+<title>module~solver&#45;&gt;module~grid</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M694,-338C671.7471,-342.1218 614.8891,-324.5796 576.842,-311.4177"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="577.7257,-308.0187 567.1309,-308.0127 575.4095,-314.6244 577.7257,-308.0187"/>
+</g>
+<!-- module~dump_solution&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge18" class="edge">
+<title>module~dump_solution&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M374.6238,-563.9987C352.6581,-552.2164 316.2884,-536 282.5,-536"/>
+</g>
+<!-- module~dump_solution&#45;&gt;module~write_output -->
+<g id="module~~string~~UsedByGraph_edge34" class="edge">
+<title>module~dump_solution&#45;&gt;module~write_output</title>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M362.762,-588.0355C350.7583,-592.5169 336.9586,-597.6688 324.225,-602.4227"/>
+<polygon fill="#e7ff00" stroke="#e7ff00" points="322.887,-599.1862 314.7427,-605.9627 325.3353,-605.7441 322.887,-599.1862"/>
+</g>
+<!-- module~read_output&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge19" class="edge">
+<title>module~read_output&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M247.4185,-466.9061C207.179,-458.4232 140.2872,-450.4053 90,-475 64.8092,-487.3204 46.7785,-515.1131 36.6265,-534.6933"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="33.4211,-533.2806 32.1592,-543.8 39.7057,-536.3636 33.4211,-533.2806"/>
+</g>
+<!-- module~read_output&#45;&gt;module~read_output_vtk -->
+<g id="module~~string~~UsedByGraph_edge35" class="edge">
+<title>module~read_output&#45;&gt;module~read_output_vtk</title>
+<path fill="none" stroke="#a2ff00" stroke-dasharray="5,2" d="M257.7905,-463.9662C244.0676,-457.3547 226.6538,-449.0824 211,-442 203.7496,-438.7196 195.969,-435.3008 188.4826,-432.0615"/>
+<polygon fill="#a2ff00" stroke="#a2ff00" points="189.7886,-428.8132 179.2193,-428.0782 187.0233,-435.2439 189.7886,-428.8132"/>
+</g>
+<!-- module~read_output_tec -->
+<g id="module~~string~~UsedByGraph_node23" class="node">
+<title>module~read_output_tec</title>
+<g id="a_module~~string~~UsedByGraph_node23"><a xlink:href=".././module/read_output_tec.html" xlink:title="read_output_tec">
+<polygon fill="#337ab7" stroke="#337ab7" points="196,-508 105,-508 105,-484 196,-484 196,-508"/>
+<text text-anchor="middle" x="150.5" y="-493.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_output_tec</text>
+</a>
+</g>
+</g>
+<!-- module~read_output&#45;&gt;module~read_output_tec -->
+<g id="module~~string~~UsedByGraph_edge59" class="edge">
+<title>module~read_output&#45;&gt;module~read_output_tec</title>
+<path fill="none" stroke="#ff0045" stroke-dasharray="5,2" d="M247.473,-481.3071C234.8121,-483.2254 220.1846,-485.4417 206.191,-487.562"/>
+<polygon fill="#ff0045" stroke="#ff0045" points="205.5136,-484.1246 196.1508,-489.0832 206.5623,-491.0456 205.5136,-484.1246"/>
+</g>
+<!-- module~lusgs&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge20" class="edge">
+<title>module~lusgs&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M512.712,-19.2841C499.8128,-23.4003 484.5322,-29.2853 472,-37 373.8583,-97.4155 378.7892,-150.6737 282.5,-214"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M282.5,-214C212.1249,-263.7206 217.4495,-301.7546 150.5,-356"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M150.5,-356C125.6435,-376.1398 110.255,-370.2373 90,-395 55.5113,-437.1642 38.2603,-500.4602 31.1396,-533.7357"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="27.6568,-533.3 29.1028,-543.7957 34.5176,-534.6891 27.6568,-533.3"/>
+</g>
+<!-- module~lusgs&#45;&gt;module~mapping -->
+<g id="module~~string~~UsedByGraph_edge23" class="edge">
+<title>module~lusgs&#45;&gt;module~mapping</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M512.6897,-16.6451C498.8372,-20.2998 482.7206,-26.7417 472,-38 436.5265,-75.2526 467.5783,-107.3929 436,-148 433.8123,-150.8132 431.2288,-153.4064 428.44,-155.7755"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="426.1661,-153.1035 420.1948,-161.8554 430.3205,-158.7375 426.1661,-153.1035"/>
+</g>
+<!-- module~create_and_erase -->
+<g id="module~~string~~UsedByGraph_node22" class="node">
+<title>module~create_and_erase</title>
+<g id="a_module~~string~~UsedByGraph_node22"><a xlink:href=".././module/create_and_erase.html" xlink:title="create_and_erase">
+<polygon fill="#337ab7" stroke="#337ab7" points="744,-468 644,-468 644,-444 744,-444 744,-468"/>
+<text text-anchor="middle" x="694" y="-453.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">create_and_erase</text>
+</a>
+</g>
+</g>
+<!-- module~create_and_erase&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge12" class="edge">
+<title>module~create_and_erase&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M540,-456C456.9032,-456 430.4053,-469.6697 354,-437 315.5924,-420.5775 323.6336,-383.2707 282.5,-376"/>
+</g>
+<!-- module~create_and_erase&#45;&gt;module~read -->
+<g id="module~~string~~UsedByGraph_edge29" class="edge">
+<title>module~create_and_erase&#45;&gt;module~read</title>
+<path fill="none" stroke="#ff4500" stroke-dasharray="5,2" d="M643.7159,-456C613.6252,-456 574.6233,-456 540,-456"/>
+<path fill="none" stroke="#ff4500" stroke-dasharray="5,2" d="M540,-456C501.9237,-456 460.1826,-443.0238 431.3036,-431.853"/>
+<polygon fill="#ff4500" stroke="#ff4500" points="432.2372,-428.4573 421.6522,-428.0013 429.6426,-434.9587 432.2372,-428.4573"/>
+</g>
+<!-- module~create_and_erase&#45;&gt;module~wall -->
+<g id="module~~string~~UsedByGraph_edge33" class="edge">
+<title>module~create_and_erase&#45;&gt;module~wall</title>
+<path fill="none" stroke="#ffd000" stroke-dasharray="5,2" d="M678.3862,-468.1666C651.2911,-489.2797 595.4189,-532.8165 563.5779,-557.6276"/>
+<polygon fill="#ffd000" stroke="#ffd000" points="561.3919,-554.8938 555.6552,-563.8012 565.6945,-560.4155 561.3919,-554.8938"/>
+</g>
+<!-- module~create_and_erase&#45;&gt;module~source -->
+<g id="module~~string~~UsedByGraph_edge38" class="edge">
+<title>module~create_and_erase&#45;&gt;module~source</title>
+<path fill="none" stroke="#5cff00" stroke-dasharray="5,2" d="M647.7949,-468.0013C625.2581,-473.855 598.5073,-480.8033 577.2927,-486.3136"/>
+<polygon fill="#5cff00" stroke="#5cff00" points="576.1647,-482.9904 567.3657,-488.892 577.9245,-489.7656 576.1647,-482.9904"/>
+</g>
+<!-- module~create_and_erase&#45;&gt;module~time -->
+<g id="module~~string~~UsedByGraph_edge44" class="edge">
+<title>module~create_and_erase&#45;&gt;module~time</title>
+<path fill="none" stroke="#00ffb9" stroke-dasharray="5,2" d="M670.275,-443.9834C644.1617,-430.7572 602.0143,-409.4098 572.7603,-394.5929"/>
+<polygon fill="#00ffb9" stroke="#00ffb9" points="574.2544,-391.4263 563.752,-390.0302 571.0915,-397.671 574.2544,-391.4263"/>
+</g>
+<!-- module~create_and_erase&#45;&gt;module~state -->
+<g id="module~~string~~UsedByGraph_edge48" class="edge">
+<title>module~create_and_erase&#45;&gt;module~state</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M540,-456C501.9237,-456 460.1826,-468.9762 431.3036,-480.147"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="429.6426,-477.0413 421.6522,-483.9987 432.2372,-483.5427 429.6426,-477.0413"/>
+</g>
+<!-- module~create_and_erase&#45;&gt;module~grid -->
+<g id="module~~string~~UsedByGraph_edge64" class="edge">
+<title>module~create_and_erase&#45;&gt;module~grid</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M684.4497,-443.939C669.0948,-424.8007 637.6303,-386.6127 608,-357 593.718,-342.7265 576.5336,-327.834 563.0132,-316.5821"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="565.0706,-313.7422 555.127,-310.0847 560.6194,-319.1448 565.0706,-313.7422"/>
+</g>
+<!-- module~read_output_tec&#45;&gt;module~string -->
+<g id="module~~string~~UsedByGraph_edge22" class="edge">
+<title>module~read_output_tec&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M121.0292,-508.0437C111.0874,-512.2707 99.9835,-517.1726 90,-522 79.2059,-527.2193 67.6008,-533.3331 57.3287,-538.9261"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="55.4062,-535.9889 48.3314,-543.8754 58.7801,-542.1222 55.4062,-535.9889"/>
+</g>
+<!-- module~interface1&#45;&gt;module~mapping -->
+<g id="module~~string~~UsedByGraph_edge24" class="edge">
+<title>module~interface1&#45;&gt;module~mapping</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M509.9429,-98.0238C497.63,-101.3017 483.5829,-106.1287 472,-113 452.8076,-124.3854 453.5157,-134.1734 436,-148 432.4047,-150.838 428.4883,-153.6428 424.5491,-156.3005"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="422.4919,-153.4629 416.0048,-161.8396 426.2998,-159.3366 422.4919,-153.4629"/>
+</g>
+<!-- module~start_finish -->
+<g id="module~~string~~UsedByGraph_node25" class="node">
+<title>module~start_finish</title>
+<g id="a_module~~string~~UsedByGraph_node25"><a xlink:href=".././module/start_finish.html" xlink:title="start_finish">
+<polygon fill="#337ab7" stroke="#337ab7" points="934,-268 870,-268 870,-244 934,-244 934,-268"/>
+<text text-anchor="middle" x="902" y="-253.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_finish</text>
+</a>
+</g>
+</g>
+<!-- module~start_finish&#45;&gt;module~solver -->
+<g id="module~~string~~UsedByGraph_edge54" class="edge">
+<title>module~start_finish&#45;&gt;module~solver</title>
+<path fill="none" stroke="#5c00ff" stroke-dasharray="5,2" d="M869.8373,-262.7711C861.5713,-264.5113 852.6111,-266.3977 844.1166,-268.186"/>
+<polygon fill="#5c00ff" stroke="#5c00ff" points="843.1287,-264.8171 834.0643,-270.3023 844.5709,-271.667 843.1287,-264.8171"/>
+</g>
+<!-- module~grid&#45;&gt;module~mapping -->
+<g id="module~~string~~UsedByGraph_edge27" class="edge">
+<title>module~grid&#45;&gt;module~mapping</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M512.9547,-294.8995C499.3439,-292.1332 483.3674,-286.8998 472,-277 443.5113,-252.1896 460.9524,-228.3643 436,-200 433.5157,-197.176 430.6516,-194.5464 427.6157,-192.1294"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="429.501,-189.1755 419.3209,-186.2401 425.4485,-194.8832 429.501,-189.1755"/>
+</g>
+<!-- program~main -->
+<g id="module~~string~~UsedByGraph_node27" class="node">
+<title>program~main</title>
+<g id="a_module~~string~~UsedByGraph_node27"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="1024,-288 970,-288 970,-264 1024,-264 1024,-288"/>
+<text text-anchor="middle" x="997" y="-273.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;module~solver -->
+<g id="module~~string~~UsedByGraph_edge53" class="edge">
+<title>program~main&#45;&gt;module~solver</title>
+<path fill="none" stroke="#5c00ff" stroke-dasharray="5,2" d="M969.7124,-276.5275C958.6304,-276.7172 945.7042,-276.9071 934,-277 905.5565,-277.2257 898.4435,-277.2257 870,-277 861.7705,-276.9347 852.9368,-276.8214 844.5649,-276.694"/>
+<polygon fill="#5c00ff" stroke="#5c00ff" points="844.343,-273.19 834.2876,-276.5275 844.2296,-280.1891 844.343,-273.19"/>
+</g>
+<!-- program~main&#45;&gt;module~start_finish -->
+<g id="module~~string~~UsedByGraph_edge62" class="edge">
+<title>program~main&#45;&gt;module~start_finish</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M969.7768,-270.2688C961.8164,-268.5929 952.9206,-266.7201 944.26,-264.8968"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="944.778,-261.4292 934.2714,-262.794 943.3358,-268.2791 944.778,-261.4292"/>
+</g>
+</g>
+</svg>
+</div><script>var panmodulestringUsedByGraph = svgPanZoom('#modulestringUsedByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+  </li>
+  
+      </ul>
+    </div>
+    
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/string.html#variable-max_string_len">MAX_STRING_LEN</a>
+      
+      <a class="list-group-item" href="../module/string.html#variable-dec_">dec_</a>
+      
+      <a class="list-group-item" href="../module/string.html#variable-exp_">exp_</a>
+      
+      <a class="list-group-item" href="../module/string.html#variable-form_">form_</a>
+      
+      <a class="list-group-item" href="../module/string.html#variable-reset_flag">reset_flag</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/string.html#interface-tostr">tostr</a>
+      
+      <a class="list-group-item" href="../module/string.html#interface-operator%28%20%2B%20%29">operator( + )</a>
+      
+      <a class="list-group-item" href="../module/string.html#interface-len">len</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/string.html#proc-int_to_str">int_to_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-real_to_str">real_to_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-bool_to_str">bool_to_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-str_cat_str">str_cat_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-str_cat_int">str_cat_int</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-int_cat_str">int_cat_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-str_cat_real">str_cat_real</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-real_cat_str">real_cat_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-str_cat_bool">str_cat_bool</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-bool_cat_str">bool_cat_str</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-intlen">intlen</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-reallen">reallen</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/string.html#proc-chfmt">chfmt</a>
+      
+      <a class="list-group-item" href="../module/string.html#proc-disp">disp</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-max_string_len"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>MAX_STRING_LEN</strong></td><td> =</td><td>256</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dec_"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>dec_</strong></td><td> =</td><td>6</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-exp_"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>exp_</strong></td><td> =</td><td>-1</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-form_"></span>character,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>form_</strong></td><td> =</td><td>'F'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-reset_flag"></span>logical,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>reset_flag</strong></td><td> =</td><td>.FALSE.</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    <section>
+   <h2>Interfaces</h2>
+   
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-tostr"></span><h3>public interface <a href='../interface/tostr.html'>tostr</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/int_to_str.html'>int_to_str</a>(i) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>convert integer to string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/real_to_str.html'>real_to_str</a>(r) result(a)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/bool_to_str.html'>bool_to_str</a>(b) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>convert boolean variable to string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-operator%28%20%2B%20%29"></span><h3>public interface <a href='../interface/operator%28%20%2B%20%29.html'>operator( + )</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/str_cat_str.html'>str_cat_str</a>(s1, s2) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Join two string into one string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/str_cat_int.html'>str_cat_int</a>(s, i) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Join a string to a integer and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/int_cat_str.html'>int_cat_str</a>(i, s) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Join a integer to a string and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/str_cat_real.html'>str_cat_real</a>(s, r) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Join a string to a real number and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/real_cat_str.html'>real_cat_str</a>(r, s) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Join a real number to a string and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/str_cat_bool.html'>str_cat_bool</a>(s, b) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Join a string to a boolean and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/bool_cat_str.html'>bool_cat_str</a>(b, s) result(a)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Join a boolean to a string and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-len"></span><h3>public interface <a href='../interface/len.html'>len</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/intlen.html'>intlen</a>(i) result(l)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Return the "string length of an integer"</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function <a href='../proc/reallen.html'>reallen</a>(r) result(l)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Return the "string length of a real"</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+    
+    </section>
+  <br>
+    
+
+    
+    
+    
+    
+     
+    <section>
+    <h2>Functions</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-int_to_str"></span><h3>
+public function <a href='../proc/int_to_str.html'>int_to_str</a>(i) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>convert integer to string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-real_to_str"></span><h3>
+public function <a href='../proc/real_to_str.html'>real_to_str</a>(r) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-bool_to_str"></span><h3>
+public function <a href='../proc/bool_to_str.html'>bool_to_str</a>(b) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>convert boolean variable to string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-str_cat_str"></span><h3>
+public function <a href='../proc/str_cat_str.html'>str_cat_str</a>(s1, s2) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Join two string into one string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-str_cat_int"></span><h3>
+public function <a href='../proc/str_cat_int.html'>str_cat_int</a>(s, i) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Join a string to a integer and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-int_cat_str"></span><h3>
+public function <a href='../proc/int_cat_str.html'>int_cat_str</a>(i, s) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Join a integer to a string and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-str_cat_real"></span><h3>
+public function <a href='../proc/str_cat_real.html'>str_cat_real</a>(s, r) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Join a string to a real number and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-real_cat_str"></span><h3>
+public function <a href='../proc/real_cat_str.html'>real_cat_str</a>(r, s) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Join a real number to a string and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-str_cat_bool"></span><h3>
+public function <a href='../proc/str_cat_bool.html'>str_cat_bool</a>(s, b) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Join a string to a boolean and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-bool_cat_str"></span><h3>
+public function <a href='../proc/bool_cat_str.html'>bool_cat_str</a>(b, s) result(a)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Join a boolean to a string and gives result as a string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>b</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=MAX_STRING_LEN)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-intlen"></span><h3>
+public function <a href='../proc/intlen.html'>intlen</a>(i) result(l)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Return the "string length of an integer"</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-reallen"></span><h3>
+public function <a href='../proc/reallen.html'>reallen</a>(r) result(l)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Return the "string length of a real"</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    </section>
+    <br>
+    
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-chfmt"></span><h3>
+public subroutine <a href='../proc/chfmt.html'>chfmt</a>(d, e, f)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>d</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>e</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>f</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-disp"></span><h3>
+public subroutine <a href='../proc/disp.html'>disp</a>(s)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Display the contents of the string</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=MAX_STRING_LEN),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>s</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    <br>
+    
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

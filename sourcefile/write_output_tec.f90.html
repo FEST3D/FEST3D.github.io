@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>write_output_tec.f90 &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>write_output_tec.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 1.3% of total for source files.">258 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/write_output_tec.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+  
+     <li class="active">write_output_tec.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/write_output_tec.html">write_output_tec</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/write_output_tec.f90.html#src">write_output_tec.f90</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      <p>Tecplot module to write the solution in the tecplot format</p>
+      <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">This file depends on</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~write_output_tec.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilewrite_output_tecf90EfferentGraph" width="448pt" height="147pt"
+ viewBox="0.00 0.00 448.00 147.31" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 143.3059)">
+<title>sourcefile~~write_output_tec.f90~~EfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-143.3059 444,-143.3059 444,4 -4,4"/>
+<!-- sourcefile~write_output_tec.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~write_output_tec.f90</title>
+<polygon fill="none" stroke="#000000" points="440,-76.3059 331,-76.3059 331,-52.3059 440,-52.3059 440,-76.3059"/>
+<text text-anchor="middle" x="385.5" y="-61.9059" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_output_tec.f90</text>
+</g>
+<!-- sourcefile~string.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~string.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/string.f90.html" xlink:title="string.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="284,-139.3059 227,-139.3059 227,-115.3059 284,-115.3059 284,-139.3059"/>
+<text text-anchor="middle" x="255.5" y="-124.9059" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">string.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~string.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~string.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M360.4347,-76.4529C340.2922,-86.2143 311.7962,-100.0239 289.5816,-110.7894"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="287.961,-107.6854 280.4884,-115.1961 291.0137,-113.9847 287.961,-107.6854"/>
+</g>
+<!-- sourcefile~global_sst.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~global_sst.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/global_sst.f90.html" xlink:title="global_sst.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="295,-97.3059 216,-97.3059 216,-73.3059 295,-73.3059 295,-97.3059"/>
+<text text-anchor="middle" x="255.5" y="-82.9059" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sst.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global_sst.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global_sst.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M330.7451,-73.1509C322.2599,-74.5216 313.5358,-75.9309 305.1708,-77.2821"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="304.4996,-73.8451 295.1858,-78.8951 305.616,-80.7555 304.4996,-73.8451"/>
+</g>
+<!-- sourcefile~utils.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_node4" class="node">
+<title>sourcefile~utils.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~EfferentGraph_node4"><a xlink:href=".././sourcefile/utils.f90.html" xlink:title="utils.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="282.5,-55.3059 228.5,-55.3059 228.5,-31.3059 282.5,-31.3059 282.5,-55.3059"/>
+<text text-anchor="middle" x="255.5" y="-40.9059" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~utils.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_edge3" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~utils.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M330.7451,-55.4608C317.8644,-53.3801 304.4331,-51.2105 292.5436,-49.2898"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="292.9748,-45.8142 282.5446,-47.6746 291.8585,-52.7246 292.9748,-45.8142"/>
+</g>
+<!-- sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_node5" class="node">
+<title>sourcefile~global_vars.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~EfferentGraph_node5"><a xlink:href=".././sourcefile/global_vars.f90.html" xlink:title="global_vars.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="180,-55.3059 95,-55.3059 95,-31.3059 180,-31.3059 180,-55.3059"/>
+<text text-anchor="middle" x="137.5" y="-40.9059" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_vars.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_edge4" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global_vars.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M255.5,-3.3059C223.3336,1.0768 188.3275,-13.4263 164.8662,-26.1782"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="163.1364,-23.1355 156.1672,-31.1156 166.5917,-29.2233 163.1364,-23.1355"/>
+</g>
+<!-- sourcefile~global.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_node6" class="node">
+<title>sourcefile~global.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~EfferentGraph_node6"><a xlink:href=".././sourcefile/global.f90.html" xlink:title="global.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="59,-35.3059 0,-35.3059 0,-11.3059 59,-11.3059 59,-35.3059"/>
+<text text-anchor="middle" x="29.5" y="-20.9059" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_edge5" class="edge">
+<title>sourcefile~write_output_tec.f90&#45;&gt;sourcefile~global.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M368.4923,-52.166C344.6309,-36.1433 299.2231,-9.2632 255.5,-3.3059"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M255.5,-3.3059C190.5059,5.5497 114.437,-5.5789 69.204,-14.4395"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="68.3233,-11.0466 59.2148,-16.4582 69.71,-17.9079 68.3233,-11.0466"/>
+</g>
+<!-- sourcefile~utils.f90&#45;&gt;sourcefile~global_vars.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_edge6" class="edge">
+<title>sourcefile~utils.f90&#45;&gt;sourcefile~global_vars.f90</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M228.4284,-43.3059C217.1536,-43.3059 203.6527,-43.3059 190.5475,-43.3059"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="190.1724,-39.806 180.1724,-43.3059 190.1723,-46.806 190.1724,-39.806"/>
+</g>
+<!-- sourcefile~global_vars.f90&#45;&gt;sourcefile~global.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~EfferentGraph_edge7" class="edge">
+<title>sourcefile~global_vars.f90&#45;&gt;sourcefile~global.f90</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M94.8155,-35.4013C86.3482,-33.8333 77.4923,-32.1933 69.1319,-30.6451"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="69.7094,-27.1926 59.2392,-28.8131 68.4347,-34.0756 69.7094,-27.1926"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    
+      
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Files dependent on this one</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~write_output_tec.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilewrite_output_tecf90AfferentGraph" width="641pt" height="70pt"
+ viewBox="0.00 0.00 641.00 70.03" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph" class="graph" transform="scale(.6863 .6863) rotate(0) translate(4 98.0388)">
+<title>sourcefile~~write_output_tec.f90~~AfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-98.0388 930,-98.0388 930,4 -4,4"/>
+<!-- sourcefile~write_output_tec.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node1" class="node">
+<title>sourcefile~write_output_tec.f90</title>
+<polygon fill="none" stroke="#000000" points="109,-86 0,-86 0,-62 109,-62 109,-86"/>
+<text text-anchor="middle" x="54.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_output_tec.f90</text>
+</g>
+<!-- sourcefile~write_output.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node2" class="node">
+<title>sourcefile~write_output.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~AfferentGraph_node2"><a xlink:href=".././sourcefile/write_output.f90.html" xlink:title="write_output.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="234,-86 145,-86 145,-62 234,-62 234,-86"/>
+<text text-anchor="middle" x="189.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~write_output.f90&#45;&gt;sourcefile~write_output_tec.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge1" class="edge">
+<title>sourcefile~write_output.f90&#45;&gt;sourcefile~write_output_tec.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M144.9218,-74C136.752,-74 128.0739,-74 119.4513,-74"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="119.3884,-70.5001 109.3884,-74 119.3883,-77.5001 119.3884,-70.5001"/>
+</g>
+<!-- sourcefile~dump_solution.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node3" class="node">
+<title>sourcefile~dump_solution.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~AfferentGraph_node3"><a xlink:href=".././sourcefile/dump_solution.f90.html" xlink:title="dump_solution.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="370,-86 270,-86 270,-62 370,-62 370,-86"/>
+<text text-anchor="middle" x="320" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dump_solution.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~dump_solution.f90&#45;&gt;sourcefile~write_output.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge2" class="edge">
+<title>sourcefile~dump_solution.f90&#45;&gt;sourcefile~write_output.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M269.9185,-74C261.538,-74 252.804,-74 244.3121,-74"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="244.1141,-70.5001 234.1141,-74 244.1141,-77.5001 244.1141,-70.5001"/>
+</g>
+<!-- sourcefile~source.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node4" class="node">
+<title>sourcefile~source.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~AfferentGraph_node4"><a xlink:href=".././sourcefile/source.f90.html" xlink:title="source.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="469,-66 406,-66 406,-42 469,-42 469,-66"/>
+<text text-anchor="middle" x="437.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">source.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~source.f90&#45;&gt;sourcefile~dump_solution.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge3" class="edge">
+<title>sourcefile~source.f90&#45;&gt;sourcefile~dump_solution.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M405.7028,-59.4123C397.8019,-60.7571 389.0706,-62.2433 380.2934,-63.7373"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="379.6768,-60.2918 370.4059,-65.4203 380.8514,-67.1926 379.6768,-60.2918"/>
+</g>
+<!-- sourcefile~solver.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node5" class="node">
+<title>sourcefile~solver.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~AfferentGraph_node5"><a xlink:href=".././sourcefile/solver.f90.html" xlink:title="solver.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="718,-86 659,-86 659,-62 718,-62 718,-86"/>
+<text text-anchor="middle" x="688.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">solver.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~solver.f90&#45;&gt;sourcefile~dump_solution.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge4" class="edge">
+<title>sourcefile~solver.f90&#45;&gt;sourcefile~dump_solution.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M564,-94C501.3045,-94.0776 429.8494,-87.4256 380.5447,-81.7735"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="380.7095,-78.269 370.371,-80.5853 379.8974,-85.2217 380.7095,-78.269"/>
+</g>
+<!-- sourcefile~solver.f90&#45;&gt;sourcefile~source.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge6" class="edge">
+<title>sourcefile~solver.f90&#45;&gt;sourcefile~source.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M658.7792,-81.4831C633.69,-87.1455 596.7281,-93.9595 564,-94"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M564,-94C530.8551,-94.041 495.0029,-81.3975 469.9595,-70.3166"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="471.1382,-67.0067 460.5895,-66.0197 468.2204,-73.3696 471.1382,-67.0067"/>
+</g>
+<!-- sourcefile~update.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node9" class="node">
+<title>sourcefile~update.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~AfferentGraph_node9"><a xlink:href=".././sourcefile/update.f90.html" xlink:title="update.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="596,-66 532,-66 532,-42 596,-42 596,-66"/>
+<text text-anchor="middle" x="564" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~solver.f90&#45;&gt;sourcefile~update.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge11" class="edge">
+<title>sourcefile~solver.f90&#45;&gt;sourcefile~update.f90</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M658.9952,-69.2603C643.2465,-66.7304 623.5888,-63.5725 606.2481,-60.7868"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="606.7815,-57.3277 596.3529,-59.1973 605.6712,-64.2391 606.7815,-57.3277"/>
+</g>
+<!-- sourcefile~create_and_erase.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node6" class="node">
+<title>sourcefile~create_and_erase.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~AfferentGraph_node6"><a xlink:href=".././sourcefile/create_and_erase.f90.html" xlink:title="create_and_erase.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="623,-24 505,-24 505,0 623,0 623,-24"/>
+<text text-anchor="middle" x="564" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">create_and_erase.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~create_and_erase.f90&#45;&gt;sourcefile~source.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge5" class="edge">
+<title>sourcefile~create_and_erase.f90&#45;&gt;sourcefile~source.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M527.7502,-24.0355C512.3932,-29.1343 494.422,-35.101 478.5765,-40.3619"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="477.4152,-37.0596 469.0275,-43.5324 479.621,-43.703 477.4152,-37.0596"/>
+</g>
+<!-- sourcefile~main.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node7" class="node">
+<title>sourcefile~main.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~AfferentGraph_node7"><a xlink:href=".././sourcefile/main.f90.html" xlink:title="main.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="926,-86 872,-86 872,-62 926,-62 926,-86"/>
+<text text-anchor="middle" x="899" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~main.f90&#45;&gt;sourcefile~solver.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge8" class="edge">
+<title>sourcefile~main.f90&#45;&gt;sourcefile~solver.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M871.7124,-74.5275C860.6304,-74.7172 847.7042,-74.9071 836,-75 799.5567,-75.2892 790.4434,-75.2782 754,-75 745.6723,-74.9364 736.7495,-74.8274 728.2535,-74.7041"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="728.2233,-71.2034 718.1706,-74.5488 728.1154,-78.2025 728.2233,-71.2034"/>
+</g>
+<!-- sourcefile~start_finish.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_node8" class="node">
+<title>sourcefile~start_finish.f90</title>
+<g id="a_sourcefile~~write_output_tec.f90~~AfferentGraph_node8"><a xlink:href=".././sourcefile/start_finish.f90.html" xlink:title="start_finish.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="836,-66 754,-66 754,-42 836,-42 836,-66"/>
+<text text-anchor="middle" x="795" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_finish.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~main.f90&#45;&gt;sourcefile~start_finish.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge10" class="edge">
+<title>sourcefile~main.f90&#45;&gt;sourcefile~start_finish.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M871.9467,-68.7974C863.9882,-67.267 855.0079,-65.54 846.0646,-63.8201"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="846.5205,-60.3437 836.0394,-61.8922 845.1985,-67.2178 846.5205,-60.3437"/>
+</g>
+<!-- sourcefile~start_finish.f90&#45;&gt;sourcefile~solver.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge9" class="edge">
+<title>sourcefile~start_finish.f90&#45;&gt;sourcefile~solver.f90</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M753.8243,-61.7325C745.3352,-63.3267 736.4138,-65.0021 727.9863,-66.5847"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="727.1959,-63.1719 718.0137,-68.4575 728.4879,-70.0516 727.1959,-63.1719"/>
+</g>
+<!-- sourcefile~update.f90&#45;&gt;sourcefile~source.f90 -->
+<g id="sourcefile~~write_output_tec.f90~~AfferentGraph_edge7" class="edge">
+<title>sourcefile~update.f90&#45;&gt;sourcefile~source.f90</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M531.7514,-54C515.8691,-54 496.5221,-54 479.4989,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="479.2517,-50.5001 469.2516,-54 479.2516,-57.5001 479.2517,-50.5001"/>
+</g>
+</g>
+</svg>
+</div><script>var pansourcefilewrite_output_tecf90AfferentGraph = svgPanZoom('#sourcefilewrite_output_tecf90AfferentGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/write_output_tec.html">write_output_tec</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/write_output_tec.f90.html#src">write_output_tec.f90</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a>  <span class="c">!&lt; Tecplot module to write the solution in the tecplot format</span>
+<a name="ln-2"></a><span class="k">module </span><span class="n">write_output_tec</span>
+<a name="ln-3"></a>  <span class="c">!&lt; Tecplot module to write the solution in the tecplot format</span>
+<a name="ln-4"></a>  <span class="c">!---------------------------------------------------------</span>
+<a name="ln-5"></a>  <span class="c">! This module write state + other variable in output file</span>
+<a name="ln-6"></a>  <span class="c">!---------------------------------------------------------</span>
+<a name="ln-7"></a><span class="cp">#include &quot;../../debug.h&quot;</span>
+<a name="ln-8"></a><span class="cp">#include &quot;../../error.h&quot;</span>
+<a name="ln-9"></a>  <span class="k">use </span><span class="n">global</span>     <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">OUT_FILE_UNIT</span>
+<a name="ln-10"></a>  <span class="k">use </span><span class="n">global</span>     <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">OUTIN_FILE_UNIT</span>
+<a name="ln-11"></a>  <span class="k">use </span><span class="n">global</span>     <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">outin_file</span>
+<a name="ln-12"></a>
+<a name="ln-13"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">write_data_format</span>
+<a name="ln-14"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">write_file_format</span>
+<a name="ln-15"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">imx</span>
+<a name="ln-16"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">jmx</span>
+<a name="ln-17"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">kmx</span>
+<a name="ln-18"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">grid_x</span>
+<a name="ln-19"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">grid_y</span>
+<a name="ln-20"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">grid_z</span>
+<a name="ln-21"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">density</span> 
+<a name="ln-22"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">x_speed</span> 
+<a name="ln-23"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">y_speed</span> 
+<a name="ln-24"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">z_speed</span> 
+<a name="ln-25"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">pressure</span> 
+<a name="ln-26"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">tk</span> 
+<a name="ln-27"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">tw</span> 
+<a name="ln-28"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">tkl</span>
+<a name="ln-29"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">tv</span>
+<a name="ln-30"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">tgm</span>
+<a name="ln-31"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">mu</span> 
+<a name="ln-32"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">mu_t</span> 
+<a name="ln-33"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">density_inf</span>
+<a name="ln-34"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">x_speed_inf</span>
+<a name="ln-35"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">y_speed_inf</span>
+<a name="ln-36"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">z_speed_inf</span>
+<a name="ln-37"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">pressure_inf</span> 
+<a name="ln-38"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gm</span>
+<a name="ln-39"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">dist</span>
+<a name="ln-40"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">vis_resnorm</span>
+<a name="ln-41"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">cont_resnorm</span>
+<a name="ln-42"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">x_mom_resnorm</span>
+<a name="ln-43"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">y_mom_resnorm</span>
+<a name="ln-44"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">z_mom_resnorm</span>
+<a name="ln-45"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">energy_resnorm</span>
+<a name="ln-46"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">resnorm</span>
+<a name="ln-47"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span>   <span class="n">mass_residue</span>
+<a name="ln-48"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span>  <span class="n">x_mom_residue</span>
+<a name="ln-49"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span>  <span class="n">y_mom_residue</span>
+<a name="ln-50"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span>  <span class="n">z_mom_residue</span>
+<a name="ln-51"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">energy_residue</span>
+<a name="ln-52"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">TKE_residue</span>
+<a name="ln-53"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">omega_residue</span>
+<a name="ln-54"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">tv_residue</span>
+<a name="ln-55"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">intermittency</span>
+<a name="ln-56"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">ExtraVar1</span>
+<a name="ln-57"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">ExtraVar2</span>
+<a name="ln-58"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">ExtraVar3</span>
+<a name="ln-59"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">ExtraVar4</span>
+<a name="ln-60"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">ExtraVar5</span>
+<a name="ln-61"></a>
+<a name="ln-62"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">turbulence</span>
+<a name="ln-63"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">mu_ref</span>
+<a name="ln-64"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">current_iter</span>
+<a name="ln-65"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">max_iters</span>
+<a name="ln-66"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">w_count</span>
+<a name="ln-67"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">w_list</span>
+<a name="ln-68"></a>
+<a name="ln-69"></a>  <span class="k">use </span><span class="n">global_sst</span> <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">sst_F1</span>
+<a name="ln-70"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradu_x</span>
+<a name="ln-71"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradu_y</span>
+<a name="ln-72"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradu_z</span>
+<a name="ln-73"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradv_x</span>
+<a name="ln-74"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradv_y</span>
+<a name="ln-75"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradv_z</span>
+<a name="ln-76"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradw_x</span>
+<a name="ln-77"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradw_y</span>
+<a name="ln-78"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradw_z</span>
+<a name="ln-79"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradT_x</span>
+<a name="ln-80"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradT_y</span>
+<a name="ln-81"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradT_z</span>
+<a name="ln-82"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradtk_x</span>
+<a name="ln-83"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradtk_y</span>
+<a name="ln-84"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradtk_z</span>
+<a name="ln-85"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradtw_x</span>
+<a name="ln-86"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradtw_y</span>
+<a name="ln-87"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">gradtw_z</span>
+<a name="ln-88"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">process_id</span>
+<a name="ln-89"></a>  <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">checkpoint_iter_count</span>
+<a name="ln-90"></a>
+<a name="ln-91"></a>  <span class="k">use </span><span class="n">utils</span>
+<a name="ln-92"></a>  <span class="k">use </span><span class="n">string</span>
+<a name="ln-93"></a>
+<a name="ln-94"></a>  <span class="k">implicit none</span>
+<a name="ln-95"></a><span class="k">  private</span>
+<a name="ln-96"></a><span class="k">  </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span>
+<a name="ln-97"></a>  <span class="kt">real</span>    <span class="kd">::</span> <span class="n">speed_inf</span>
+<a name="ln-98"></a>  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">file_format</span>
+<a name="ln-99"></a>  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="kd">::</span> <span class="n">data_format</span>
+<a name="ln-100"></a>  <span class="kt">character</span>                          <span class="kd">::</span> <span class="n">newline</span><span class="o">=</span><span class="nb">achar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a name="ln-101"></a>  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="k">format</span><span class="o">=</span><span class="s2">&quot;(1ES28.15E4)&quot;</span>
+<a name="ln-102"></a>  <span class="k">public</span> <span class="kd">::</span> <span class="n">write_file</span>
+<a name="ln-103"></a>
+<a name="ln-104"></a>  <span class="k">contains</span>
+<a name="ln-105"></a>
+<a name="ln-106"></a><span class="k">    subroutine </span><span class="n">write_file</span><span class="p">()</span>
+<a name="ln-107"></a>      <span class="c">!&lt; Write the header and variables in the file &quot;process_xx.dat&quot;.</span>
+<a name="ln-108"></a>      <span class="k">implicit none</span>
+<a name="ln-109"></a><span class="k">      </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">n</span>
+<a name="ln-110"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">err</span><span class="o">=</span><span class="s2">&quot;Write error: Asked to write non-existing variable- &quot;</span>
+<a name="ln-111"></a>
+<a name="ln-112"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_file&quot;</span><span class="p">)</span>
+<a name="ln-113"></a>      <span class="k">call </span><span class="n">write_header</span><span class="p">()</span>
+<a name="ln-114"></a>      <span class="k">call </span><span class="n">write_grid</span><span class="p">()</span>
+<a name="ln-115"></a>
+<a name="ln-116"></a>      <span class="k">do </span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">w_count</span>
+<a name="ln-117"></a>
+<a name="ln-118"></a>        <span class="k">select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">w_list</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+<a name="ln-119"></a>        
+<a name="ln-120"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Velocity&#39;</span><span class="p">)</span>
+<a name="ln-121"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">x_speed</span><span class="p">,</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-122"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">y_speed</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-123"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">z_speed</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-124"></a>
+<a name="ln-125"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+<a name="ln-126"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="s2">&quot;Density&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-127"></a>          
+<a name="ln-128"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span>
+<a name="ln-129"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="s2">&quot;Pressure&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-130"></a>            
+<a name="ln-131"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Mu&#39;</span><span class="p">)</span>
+<a name="ln-132"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="s2">&quot;Mu&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-133"></a>            
+<a name="ln-134"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Mu_t&#39;</span><span class="p">)</span>
+<a name="ln-135"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">mu_t</span><span class="p">,</span> <span class="s2">&quot;Mu_t&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-136"></a>            
+<a name="ln-137"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;TKE&#39;</span><span class="p">)</span>
+<a name="ln-138"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">tk</span><span class="p">,</span> <span class="s2">&quot;TKE&quot;</span><span class="p">,</span>  <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-139"></a>
+<a name="ln-140"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Omega&#39;</span><span class="p">)</span>
+<a name="ln-141"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">tw</span><span class="p">,</span> <span class="s2">&quot;Omega&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-142"></a>
+<a name="ln-143"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Kl&#39;</span><span class="p">)</span>
+<a name="ln-144"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">tkl</span><span class="p">,</span> <span class="s2">&quot;Kl&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-145"></a>
+<a name="ln-146"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;tv&#39;</span><span class="p">)</span>
+<a name="ln-147"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">tv</span><span class="p">,</span> <span class="s2">&quot;tv&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-148"></a>
+<a name="ln-149"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;tgm&#39;</span><span class="p">)</span>
+<a name="ln-150"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">tgm</span><span class="p">,</span> <span class="s2">&quot;tgm&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-151"></a>
+<a name="ln-152"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Wall_distance&#39;</span><span class="p">)</span>
+<a name="ln-153"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="s2">&quot;Wall_dist&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-154"></a>
+<a name="ln-155"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;F1&#39;</span><span class="p">)</span>
+<a name="ln-156"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">sst_F1</span><span class="p">,</span> <span class="s2">&quot;F1&quot;</span><span class="p">,</span>  <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-157"></a>
+<a name="ln-158"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dudx&#39;</span><span class="p">)</span>
+<a name="ln-159"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradu_x</span> <span class="p">,</span><span class="s2">&quot;dudx &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-160"></a>                                               
+<a name="ln-161"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dudy&#39;</span><span class="p">)</span>                         
+<a name="ln-162"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradu_y</span> <span class="p">,</span><span class="s2">&quot;dudy &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-163"></a>                                               
+<a name="ln-164"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dudz&#39;</span><span class="p">)</span>                         
+<a name="ln-165"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradu_z</span> <span class="p">,</span><span class="s2">&quot;dudz &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-166"></a>                                               
+<a name="ln-167"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dvdx&#39;</span><span class="p">)</span>                         
+<a name="ln-168"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradv_x</span> <span class="p">,</span><span class="s2">&quot;dvdx &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-169"></a>                                               
+<a name="ln-170"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dvdy&#39;</span><span class="p">)</span>                         
+<a name="ln-171"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradv_y</span> <span class="p">,</span><span class="s2">&quot;dvdy &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-172"></a>                                               
+<a name="ln-173"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dvdz&#39;</span><span class="p">)</span>                         
+<a name="ln-174"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradv_z</span> <span class="p">,</span><span class="s2">&quot;dvdz &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-175"></a>                                               
+<a name="ln-176"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dwdx&#39;</span><span class="p">)</span>                         
+<a name="ln-177"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradw_x</span> <span class="p">,</span><span class="s2">&quot;dwdx &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-178"></a>                                               
+<a name="ln-179"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dwdy&#39;</span><span class="p">)</span>                         
+<a name="ln-180"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradw_y</span> <span class="p">,</span><span class="s2">&quot;dwdy &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-181"></a>                                               
+<a name="ln-182"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dwdz&#39;</span><span class="p">)</span>                         
+<a name="ln-183"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradw_z</span> <span class="p">,</span><span class="s2">&quot;dwdz &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-184"></a>                                               
+<a name="ln-185"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;DTdx&#39;</span><span class="p">)</span>                         
+<a name="ln-186"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradT_x</span> <span class="p">,</span><span class="s2">&quot;dTdx &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-187"></a>                                               
+<a name="ln-188"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;DTdy&#39;</span><span class="p">)</span>                         
+<a name="ln-189"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradT_y</span> <span class="p">,</span><span class="s2">&quot;dTdy &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-190"></a>                                               
+<a name="ln-191"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;DTdz&#39;</span><span class="p">)</span>                         
+<a name="ln-192"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradT_z</span> <span class="p">,</span><span class="s2">&quot;dTdz &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-193"></a>                                               
+<a name="ln-194"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dtkdx&#39;</span><span class="p">)</span>                        
+<a name="ln-195"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradtk_x</span><span class="p">,</span><span class="s2">&quot;dtkdx&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-196"></a>                                               
+<a name="ln-197"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dtkdy&#39;</span><span class="p">)</span>                        
+<a name="ln-198"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradtk_y</span><span class="p">,</span><span class="s2">&quot;dtkdy&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-199"></a>                                               
+<a name="ln-200"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dtkdz&#39;</span><span class="p">)</span>                        
+<a name="ln-201"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradtk_z</span><span class="p">,</span><span class="s2">&quot;dtkdz&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-202"></a>                                               
+<a name="ln-203"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dtwdx&#39;</span><span class="p">)</span>                        
+<a name="ln-204"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradtw_x</span><span class="p">,</span><span class="s2">&quot;dtwdx&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-205"></a>                                               
+<a name="ln-206"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dtwdy&#39;</span><span class="p">)</span>                        
+<a name="ln-207"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradtw_y</span><span class="p">,</span><span class="s2">&quot;dtwdy&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-208"></a>                                               
+<a name="ln-209"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Dtwdz&#39;</span><span class="p">)</span>                        
+<a name="ln-210"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">gradtw_z</span><span class="p">,</span><span class="s2">&quot;dtwdz&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="ln-211"></a>
+<a name="ln-212"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Mass_residue&#39;</span><span class="p">)</span>
+<a name="ln-213"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">mass_residue</span><span class="p">,</span> <span class="s2">&quot;Mass_residue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="ln-214"></a>
+<a name="ln-215"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;X_mom_residue&#39;</span><span class="p">)</span>
+<a name="ln-216"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">x_mom_residue</span><span class="p">,</span> <span class="s2">&quot;X_mom_residue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="ln-217"></a>
+<a name="ln-218"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Y_mom_residue&#39;</span><span class="p">)</span>
+<a name="ln-219"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">y_mom_residue</span><span class="p">,</span> <span class="s2">&quot;Y_mom_residue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="ln-220"></a>
+<a name="ln-221"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Z_mom_residue&#39;</span><span class="p">)</span>
+<a name="ln-222"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">z_mom_residue</span><span class="p">,</span> <span class="s2">&quot;Z_mom_residue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="ln-223"></a>
+<a name="ln-224"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Energy_residue&#39;</span><span class="p">)</span>
+<a name="ln-225"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">energy_residue</span><span class="p">,</span> <span class="s2">&quot;Energy_residue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="ln-226"></a>
+<a name="ln-227"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;TKE_residue&#39;</span><span class="p">)</span>
+<a name="ln-228"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">tke_residue</span><span class="p">,</span> <span class="s2">&quot;TKE_residue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="ln-229"></a>
+<a name="ln-230"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Omega_residue&#39;</span><span class="p">)</span>
+<a name="ln-231"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">omega_residue</span><span class="p">,</span> <span class="s2">&quot;Omega_residue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="ln-232"></a>
+<a name="ln-233"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Tv_residue&#39;</span><span class="p">)</span>
+<a name="ln-234"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">tv_residue</span><span class="p">,</span> <span class="s2">&quot;Tv_residue&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="ln-235"></a>
+<a name="ln-236"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Intermittency&#39;</span><span class="p">)</span>
+<a name="ln-237"></a>            <span class="k">call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">intermittency</span><span class="p">,</span> <span class="s2">&quot;Intermittency&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-238"></a>
+<a name="ln-239"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;extravar1&#39;</span><span class="p">)</span>
+<a name="ln-240"></a>            <span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">ExtraVar1</span><span class="p">))</span><span class="k">then</span>
+<a name="ln-241"></a><span class="k">              call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">ExtraVar1</span><span class="p">,</span> <span class="s2">&quot;ExtraVar1&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-242"></a>            <span class="k">else</span>
+<a name="ln-243"></a><span class="k">              </span><span class="n">Issue_warning</span>
+<a name="ln-244"></a>            <span class="k">end if</span>
+<a name="ln-245"></a><span class="k">          </span>
+<a name="ln-246"></a><span class="k">          case</span><span class="p">(</span><span class="s1">&#39;extravar2&#39;</span><span class="p">)</span>
+<a name="ln-247"></a>            <span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">ExtraVar2</span><span class="p">))</span><span class="k">then</span>
+<a name="ln-248"></a><span class="k">              call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">ExtraVar2</span><span class="p">,</span> <span class="s2">&quot;ExtraVar2&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-249"></a>            <span class="k">else</span>
+<a name="ln-250"></a><span class="k">              </span><span class="n">Issue_warning</span>
+<a name="ln-251"></a>            <span class="k">end if</span>
+<a name="ln-252"></a><span class="k">          </span>
+<a name="ln-253"></a><span class="k">          case</span><span class="p">(</span><span class="s1">&#39;extravar3&#39;</span><span class="p">)</span>
+<a name="ln-254"></a>            <span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">ExtraVar3</span><span class="p">))</span><span class="k">then</span>
+<a name="ln-255"></a><span class="k">              call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">ExtraVar3</span><span class="p">,</span> <span class="s2">&quot;ExtraVar3&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-256"></a>            <span class="k">else</span>
+<a name="ln-257"></a><span class="k">              </span><span class="n">Issue_warning</span>
+<a name="ln-258"></a>            <span class="k">end if</span>
+<a name="ln-259"></a><span class="k">          </span>
+<a name="ln-260"></a><span class="k">          case</span><span class="p">(</span><span class="s1">&#39;extravar4&#39;</span><span class="p">)</span>
+<a name="ln-261"></a>            <span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">ExtraVar4</span><span class="p">))</span><span class="k">then</span>
+<a name="ln-262"></a><span class="k">              call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">ExtraVar4</span><span class="p">,</span> <span class="s2">&quot;ExtraVar4&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-263"></a>            <span class="k">else</span>
+<a name="ln-264"></a><span class="k">              </span><span class="n">Issue_warning</span>
+<a name="ln-265"></a>            <span class="k">end if</span>
+<a name="ln-266"></a><span class="k">          </span>
+<a name="ln-267"></a><span class="k">          case</span><span class="p">(</span><span class="s1">&#39;extravar5&#39;</span><span class="p">)</span>
+<a name="ln-268"></a>            <span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">ExtraVar5</span><span class="p">))</span><span class="k">then</span>
+<a name="ln-269"></a><span class="k">              call </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">ExtraVar5</span><span class="p">,</span> <span class="s2">&quot;ExtraVar5&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-270"></a>            <span class="k">else</span>
+<a name="ln-271"></a><span class="k">              </span><span class="n">Issue_warning</span>
+<a name="ln-272"></a>            <span class="k">end if</span>
+<a name="ln-273"></a><span class="k">          </span>
+<a name="ln-274"></a><span class="k">          case</span><span class="p">(</span><span class="s1">&#39;do not write&#39;</span><span class="p">)</span>
+<a name="ln-275"></a>            <span class="c">! do not write</span>
+<a name="ln-276"></a>            <span class="k">continue</span>
+<a name="ln-277"></a>
+<a name="ln-278"></a><span class="k">          case </span><span class="n">Default</span>
+<a name="ln-279"></a>            <span class="k">print</span><span class="o">*</span><span class="p">,</span> <span class="n">err</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">w_list</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">//</span><span class="s2">&quot; to file&quot;</span>
+<a name="ln-280"></a>
+<a name="ln-281"></a>        <span class="k">end select</span>
+<a name="ln-282"></a><span class="k">      end do</span>
+<a name="ln-283"></a>
+<a name="ln-284"></a>
+<a name="ln-285"></a><span class="k">    end subroutine </span><span class="n">write_file</span>
+<a name="ln-286"></a>
+<a name="ln-287"></a>
+<a name="ln-288"></a>    <span class="k">subroutine </span><span class="n">write_header</span><span class="p">()</span>
+<a name="ln-289"></a>      <span class="c">!&lt; Write the header in the output file in the tecplot format</span>
+<a name="ln-290"></a>      <span class="k">implicit none</span>
+<a name="ln-291"></a><span class="k">      </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">n</span>
+<a name="ln-292"></a>      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">total</span>
+<a name="ln-293"></a>
+<a name="ln-294"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_header&quot;</span><span class="p">)</span>
+<a name="ln-295"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s2">&quot;variables = x y z &quot;</span>
+<a name="ln-296"></a>
+<a name="ln-297"></a>      <span class="n">total</span><span class="o">=</span><span class="mi">3</span>
+<a name="ln-298"></a>      <span class="k">do </span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">w_count</span>
+<a name="ln-299"></a>
+<a name="ln-300"></a>        <span class="k">select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">w_list</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+<a name="ln-301"></a>        
+<a name="ln-302"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Velocity&#39;</span><span class="p">)</span>
+<a name="ln-303"></a>            <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s2">&quot; u v w &quot;</span>
+<a name="ln-304"></a>            <span class="n">total</span> <span class="o">=</span> <span class="n">total</span><span class="o">+</span><span class="mi">3</span>
+<a name="ln-305"></a>
+<a name="ln-306"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;do not write&#39;</span><span class="p">)</span>
+<a name="ln-307"></a>            <span class="c">!skip </span>
+<a name="ln-308"></a>            <span class="k">continue</span>
+<a name="ln-309"></a>
+<a name="ln-310"></a><span class="k">          case </span><span class="n">Default</span>
+<a name="ln-311"></a>            <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="nb">trim</span><span class="p">(</span><span class="n">w_list</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">//</span><span class="s2">&quot; &quot;</span>
+<a name="ln-312"></a>            <span class="n">total</span> <span class="o">=</span> <span class="n">total</span><span class="o">+</span><span class="mi">1</span>
+<a name="ln-313"></a>
+<a name="ln-314"></a>        <span class="k">end select</span>
+<a name="ln-315"></a><span class="k">      end do</span>
+<a name="ln-316"></a>
+<a name="ln-317"></a><span class="k">      write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a,i4.4,3(a,i5.5),a)&#39;</span><span class="p">)</span> <span class="s2">&quot;zone T=block&quot;</span><span class="p">,</span><span class="n">process_id</span><span class="p">,</span><span class="s2">&quot;  i=&quot;</span><span class="p">,</span><span class="n">imx</span><span class="p">,</span><span class="s2">&quot; j=&quot;</span><span class="p">,</span><span class="n">jmx</span><span class="p">,</span> <span class="s2">&quot; k=&quot;</span><span class="p">,</span><span class="n">kmx</span><span class="p">,</span> <span class="s2">&quot; Datapacking=Block&quot;</span>
+<a name="ln-318"></a>
+<a name="ln-319"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s2">&quot;Varlocation=([1-3]=Nodal)&quot;</span>
+<a name="ln-320"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span><span class="s1">&#39;(a,i2.2,a)&#39;</span><span class="p">)</span> <span class="s2">&quot;Varlocation=([4-&quot;</span><span class="p">,</span><span class="n">total</span><span class="p">,</span><span class="s2">&quot;]=CELLCENTERED)&quot;</span>
+<a name="ln-321"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span><span class="s2">&quot;(a,i4.4)&quot;</span><span class="p">)</span> <span class="s2">&quot;STRANDID=&quot;</span><span class="p">,</span><span class="mi">1</span>
+<a name="ln-322"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span><span class="s2">&quot;(a,i4.4)&quot;</span><span class="p">)</span> <span class="s2">&quot;SOLUTIONTIME=&quot;</span><span class="p">,</span><span class="n">checkpoint_iter_count</span>
+<a name="ln-323"></a>
+<a name="ln-324"></a>
+<a name="ln-325"></a>    <span class="k">end subroutine </span><span class="n">write_header</span>
+<a name="ln-326"></a>
+<a name="ln-327"></a>    <span class="k">subroutine </span><span class="n">write_grid</span><span class="p">()</span>
+<a name="ln-328"></a>      <span class="c">!&lt; write the grid information in the output file</span>
+<a name="ln-329"></a>      <span class="k">implicit none</span>
+<a name="ln-330"></a>
+<a name="ln-331"></a>      <span class="c">! write grid point coordinates</span>
+<a name="ln-332"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_grid&quot;</span><span class="p">)</span>
+<a name="ln-333"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="k">format</span><span class="p">)</span> <span class="p">(((</span><span class="n">grid_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">imx</span><span class="p">),</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">jmx</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">kmx</span><span class="p">)</span>
+<a name="ln-334"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="k">format</span><span class="p">)</span> <span class="p">(((</span><span class="n">grid_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">imx</span><span class="p">),</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">jmx</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">kmx</span><span class="p">)</span>
+<a name="ln-335"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="k">format</span><span class="p">)</span> <span class="p">(((</span><span class="n">grid_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">imx</span><span class="p">),</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">jmx</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">kmx</span><span class="p">)</span>
+<a name="ln-336"></a>
+<a name="ln-337"></a>    <span class="k">end subroutine </span><span class="n">write_grid</span>
+<a name="ln-338"></a>
+<a name="ln-339"></a>    <span class="k">subroutine </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">index</span><span class="p">)</span>
+<a name="ln-340"></a>      <span class="c">!&lt; write the scalar variable in the output file</span>
+<a name="ln-341"></a>      <span class="k">implicit none</span>
+<a name="ln-342"></a><span class="k">      </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">index</span>
+<a name="ln-343"></a><span class="nb">      </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="nb">index</span><span class="p">:</span><span class="n">imx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">jmx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">kmx</span><span class="o">-</span><span class="nb">index</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">var</span>
+<a name="ln-344"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span>       <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span> <span class="n">name</span>
+<a name="ln-345"></a>
+<a name="ln-346"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_scalar: &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+<a name="ln-347"></a>
+<a name="ln-348"></a>      <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="k">format</span><span class="p">)</span> <span class="p">(((</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-349"></a>
+<a name="ln-350"></a>    <span class="k">end subroutine </span><span class="n">write_scalar</span>
+<a name="ln-351"></a>
+<a name="ln-352"></a>
+<a name="ln-353"></a><span class="k">end module </span><span class="n">write_output_tec</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

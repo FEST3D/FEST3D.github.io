@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>resnorm &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>resnorm 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 1.3% of total for modules and submodules.">262 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/resnorm.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/resnorm.f90.html'>resnorm.f90</a></li>
+    
+  
+     <li class="active">resnorm</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/resnorm.html#variable-merror">merror</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#variable-buffer">buffer</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-setup_resnorm">setup_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-find_resnorm">find_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-destroy_resnorm">destroy_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-setup_file%7E2">setup_file</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-allocate_memory%7E6">allocate_memory</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-deallocate_memory%7E4">deallocate_memory</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-setup_scale">setup_scale</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-get_absolute_resnorm">get_absolute_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-collect_resnorm_from_all_blocks">collect_resnorm_from_all_blocks</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-assemble_resnom_at_each_process">assemble_resnom_at_each_process</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-get_relative_resnorm">get_relative_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-write_resnorm">write_resnorm</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <p>this module contains subroutine that 
+ 1. check if time for resnorm dump is arrived
+ 2. calculate resnorm
+ 3. send those resnorm to processor number 0
+ 4. Recalulate resnorm based on information 
+    availble from all processors
+ 5. Append the data to resnorm file</p>
+      <br>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li><a href='../module/global.html'>global</a></li>
+    
+    <li><a href='../module/global.html'>global</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    
+    <li><a href='../module/utils.html'>utils</a></li>
+    
+    <li><a href='../module/utils.html'>utils</a></li>
+    
+    <li><a href='../module/utils.html'>utils</a></li>
+    
+    <li><a href='../module/layout.html'>layout</a></li>
+    
+    <li><a href='../module/layout.html'>layout</a></li>
+    
+    <li><a href='../module/string.html'>string</a></li>
+    
+    <li><a href='../module/fclose.html'>fclose</a></li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~resnorm~~UsesGraph Pages: 1 -->
+<svg id="moduleresnormUsesGraph" width="435pt" height="146pt"
+ viewBox="0.00 0.00 435.00 145.77" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~resnorm~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 141.7676)">
+<title>module~~resnorm~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-141.7676 431,-141.7676 431,4 -4,4"/>
+<!-- module~resnorm -->
+<g id="module~~resnorm~~UsesGraph_node1" class="node">
+<title>module~resnorm</title>
+<polygon fill="none" stroke="#000000" points="427,-84 373,-84 373,-60 427,-60 427,-84"/>
+<text text-anchor="middle" x="400" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">resnorm</text>
+</g>
+<!-- module~global -->
+<g id="module~~resnorm~~UsesGraph_node2" class="node">
+<title>module~global</title>
+<g id="a_module~~resnorm~~UsesGraph_node2"><a xlink:href=".././module/global.html" xlink:title="global">
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-105 0,-105 0,-81 54,-81 54,-105"/>
+<text text-anchor="middle" x="27" y="-90.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global</text>
+</a>
+</g>
+</g>
+<!-- module~resnorm&#45;&gt;module~global -->
+<g id="module~~resnorm~~UsesGraph_edge1" class="edge">
+<title>module~resnorm&#45;&gt;module~global</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M220,-133C161.913,-127.0439 146.8078,-127.5074 90,-114 81.4545,-111.9681 72.4155,-109.2856 63.9336,-106.5198"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.8896,-103.1486 54.2954,-103.2687 62.6521,-109.7814 64.8896,-103.1486"/>
+</g>
+<!-- module~utils -->
+<g id="module~~resnorm~~UsesGraph_node3" class="node">
+<title>module~utils</title>
+<g id="a_module~~resnorm~~UsesGraph_node3"><a xlink:href=".././module/utils.html" xlink:title="utils">
+<polygon fill="#337ab7" stroke="#337ab7" points="247,-105 193,-105 193,-81 247,-81 247,-105"/>
+<text text-anchor="middle" x="220" y="-90.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils</text>
+</a>
+</g>
+</g>
+<!-- module~resnorm&#45;&gt;module~utils -->
+<g id="module~~resnorm~~UsesGraph_edge2" class="edge">
+<title>module~resnorm&#45;&gt;module~utils</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M388.9535,-84.0533C373.2789,-99.9756 342.8183,-126.7396 310,-133"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M310,-133C285.5424,-137.6655 259.7888,-124.0812 242.1269,-111.4992"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="243.7662,-108.3509 233.6782,-105.113 239.5452,-113.9351 243.7662,-108.3509"/>
+</g>
+<!-- module~global_vars -->
+<g id="module~~resnorm~~UsesGraph_node4" class="node">
+<title>module~global_vars</title>
+<g id="a_module~~resnorm~~UsesGraph_node4"><a xlink:href=".././module/global_vars.html" xlink:title="global_vars">
+<polygon fill="#337ab7" stroke="#337ab7" points="157,-105 90,-105 90,-81 157,-81 157,-105"/>
+<text text-anchor="middle" x="123.5" y="-90.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_vars</text>
+</a>
+</g>
+</g>
+<!-- module~resnorm&#45;&gt;module~global_vars -->
+<g id="module~~resnorm~~UsesGraph_edge3" class="edge">
+<title>module~resnorm&#45;&gt;module~global_vars</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M310,-133C270.7085,-140.4952 259.7914,-137.0801 220,-133"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M220,-133C195.7692,-130.5154 170.4018,-119.6279 151.7599,-109.8384"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="153.3797,-106.7351 142.9252,-105.0164 150.0261,-112.8795 153.3797,-106.7351"/>
+</g>
+<!-- module~string -->
+<g id="module~~resnorm~~UsesGraph_node5" class="node">
+<title>module~string</title>
+<g id="a_module~~resnorm~~UsesGraph_node5"><a xlink:href=".././module/string.html" xlink:title="string">
+<polygon fill="#337ab7" stroke="#337ab7" points="337,-105 283,-105 283,-81 337,-81 337,-105"/>
+<text text-anchor="middle" x="310" y="-90.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">string</text>
+</a>
+</g>
+</g>
+<!-- module~resnorm&#45;&gt;module~string -->
+<g id="module~~resnorm~~UsesGraph_edge4" class="edge">
+<title>module~resnorm&#45;&gt;module~string</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M372.997,-78.3007C364.8842,-80.1937 355.8369,-82.3047 347.1869,-84.323"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="346.2381,-80.9504 337.295,-86.6312 347.8287,-87.7672 346.2381,-80.9504"/>
+</g>
+<!-- module~layout -->
+<g id="module~~resnorm~~UsesGraph_node6" class="node">
+<title>module~layout</title>
+<g id="a_module~~resnorm~~UsesGraph_node6"><a xlink:href=".././module/layout.html" xlink:title="layout">
+<polygon fill="#337ab7" stroke="#337ab7" points="337,-63 283,-63 283,-39 337,-39 337,-63"/>
+<text text-anchor="middle" x="310" y="-48.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">layout</text>
+</a>
+</g>
+</g>
+<!-- module~resnorm&#45;&gt;module~layout -->
+<g id="module~~resnorm~~UsesGraph_edge5" class="edge">
+<title>module~resnorm&#45;&gt;module~layout</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M372.997,-65.6993C364.8842,-63.8063 355.8369,-61.6953 347.1869,-59.677"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="347.8287,-56.2328 337.295,-57.3688 346.2381,-63.0496 347.8287,-56.2328"/>
+</g>
+<!-- module~fclose -->
+<g id="module~~resnorm~~UsesGraph_node7" class="node">
+<title>module~fclose</title>
+<g id="a_module~~resnorm~~UsesGraph_node7"><a xlink:href=".././module/fclose.html" xlink:title="fclose">
+<polygon fill="#337ab7" stroke="#337ab7" points="247,-24 193,-24 193,0 247,0 247,-24"/>
+<text text-anchor="middle" x="220" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">fclose</text>
+</a>
+</g>
+</g>
+<!-- module~resnorm&#45;&gt;module~fclose -->
+<g id="module~~resnorm~~UsesGraph_edge6" class="edge">
+<title>module~resnorm&#45;&gt;module~fclose</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M385.5062,-59.6413C373.3587,-49.9785 355.1361,-37.0411 337,-30 311.5809,-20.1313 281.0823,-15.6571 257.5974,-13.6365"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="257.5771,-10.1253 247.3441,-12.8702 257.0554,-17.1058 257.5771,-10.1253"/>
+</g>
+<!-- module~utils&#45;&gt;module~global_vars -->
+<g id="module~~resnorm~~UsesGraph_edge7" class="edge">
+<title>module~utils&#45;&gt;module~global_vars</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M192.8626,-93C184.9291,-93 176.0471,-93 167.3567,-93"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="167.3114,-89.5001 157.3114,-93 167.3113,-96.5001 167.3114,-89.5001"/>
+</g>
+<!-- module~global_vars&#45;&gt;module~global -->
+<g id="module~~resnorm~~UsesGraph_edge8" class="edge">
+<title>module~global_vars&#45;&gt;module~global</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M89.749,-93C81.5708,-93 72.78,-93 64.443,-93"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="64.2058,-89.5001 54.2058,-93 64.2057,-96.5001 64.2058,-89.5001"/>
+</g>
+<!-- module~layout&#45;&gt;module~global -->
+<g id="module~~resnorm~~UsesGraph_edge10" class="edge">
+<title>module~layout&#45;&gt;module~global</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M282.7378,-50.3195C264.8455,-50.1891 240.9637,-50.6148 220,-53"/>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M220,-53C177.386,-57.8485 164.4589,-40.2789 123.5,-53"/>
+</g>
+<!-- module~layout&#45;&gt;module~utils -->
+<g id="module~~resnorm~~UsesGraph_edge9" class="edge">
+<title>module~layout&#45;&gt;module~utils</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M283.9683,-63.1481C275.013,-67.3273 264.8309,-72.0789 255.2652,-76.5429"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="253.5549,-73.4786 245.9732,-80.8792 256.5152,-79.8219 253.5549,-73.4786"/>
+</g>
+<!-- module~layout&#45;&gt;module~global_vars -->
+<g id="module~~resnorm~~UsesGraph_edge11" class="edge">
+<title>module~layout&#45;&gt;module~global_vars</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M220,-53C195.9525,-55.7361 170.7526,-66.4897 152.1369,-76.1582"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="150.4433,-73.0949 143.3026,-80.9219 153.7657,-79.2563 150.4433,-73.0949"/>
+</g>
+<!-- module~fclose&#45;&gt;module~global -->
+<g id="module~~resnorm~~UsesGraph_edge12" class="edge">
+<title>module~fclose&#45;&gt;module~global</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M195.5225,-24.0246C176.3175,-33.0576 148.7065,-45.1713 123.5,-53"/>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M123.5,-53C102.6028,-59.4903 79.9677,-68.7481 61.8749,-76.723"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="60.0276,-73.7152 52.3306,-80.9958 62.8879,-80.1042 60.0276,-73.7152"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+  
+  
+  <li class="list-group-item">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~resnorm~~UsedByGraph Pages: 1 -->
+<svg id="moduleresnormUsedByGraph" width="342pt" height="52pt"
+ viewBox="0.00 0.00 342.00 52.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~resnorm~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 48)">
+<title>module~~resnorm~~UsedByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-48 338,-48 338,4 -4,4"/>
+<!-- module~resnorm -->
+<g id="module~~resnorm~~UsedByGraph_node1" class="node">
+<title>module~resnorm</title>
+<polygon fill="none" stroke="#000000" points="54,-44 0,-44 0,-20 54,-20 54,-44"/>
+<text text-anchor="middle" x="27" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">resnorm</text>
+</g>
+<!-- module~solver -->
+<g id="module~~resnorm~~UsedByGraph_node2" class="node">
+<title>module~solver</title>
+<g id="a_module~~resnorm~~UsedByGraph_node2"><a xlink:href=".././module/solver.html" xlink:title="solver">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-44 90,-44 90,-20 144,-20 144,-44"/>
+<text text-anchor="middle" x="117" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">solver</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~resnorm -->
+<g id="module~~resnorm~~UsedByGraph_edge1" class="edge">
+<title>module~solver&#45;&gt;module~resnorm</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.997,-32C81.9723,-32 73.0335,-32 64.4691,-32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.295,-28.5001 54.295,-32 64.2949,-35.5001 64.295,-28.5001"/>
+</g>
+<!-- program~main -->
+<g id="module~~resnorm~~UsedByGraph_node3" class="node">
+<title>program~main</title>
+<g id="a_module~~resnorm~~UsedByGraph_node3"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="334,-44 280,-44 280,-20 334,-20 334,-44"/>
+<text text-anchor="middle" x="307" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;module~solver -->
+<g id="module~~resnorm~~UsedByGraph_edge2" class="edge">
+<title>program~main&#45;&gt;module~solver</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M279.7124,-32.5275C268.6304,-32.7172 255.7042,-32.9071 244,-33 215.5565,-33.2257 208.4435,-33.2257 180,-33 171.7705,-32.9347 162.9368,-32.8214 154.5649,-32.694"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="154.343,-29.19 144.2876,-32.5275 154.2296,-36.1891 154.343,-29.19"/>
+</g>
+<!-- module~start_finish -->
+<g id="module~~resnorm~~UsedByGraph_node4" class="node">
+<title>module~start_finish</title>
+<g id="a_module~~resnorm~~UsedByGraph_node4"><a xlink:href=".././module/start_finish.html" xlink:title="start_finish">
+<polygon fill="#337ab7" stroke="#337ab7" points="244,-24 180,-24 180,0 244,0 244,-24"/>
+<text text-anchor="middle" x="212" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_finish</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;module~start_finish -->
+<g id="module~~resnorm~~UsedByGraph_edge4" class="edge">
+<title>program~main&#45;&gt;module~start_finish</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M279.7768,-26.2688C271.8164,-24.5929 262.9206,-22.7201 254.26,-20.8968"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="254.778,-17.4292 244.2714,-18.794 253.3358,-24.2791 254.778,-17.4292"/>
+</g>
+<!-- module~start_finish&#45;&gt;module~solver -->
+<g id="module~~resnorm~~UsedByGraph_edge3" class="edge">
+<title>module~start_finish&#45;&gt;module~solver</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M179.8373,-18.7711C171.5713,-20.5113 162.6111,-22.3977 154.1166,-24.186"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="153.1287,-20.8171 144.0643,-26.3023 154.5709,-27.667 153.1287,-20.8171"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+  </li>
+  
+      </ul>
+    </div>
+    
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/resnorm.html#variable-merror">merror</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#variable-buffer">buffer</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-setup_resnorm">setup_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-find_resnorm">find_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-destroy_resnorm">destroy_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-setup_file%7E2">setup_file</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-allocate_memory%7E6">allocate_memory</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-deallocate_memory%7E4">deallocate_memory</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-setup_scale">setup_scale</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-get_absolute_resnorm">get_absolute_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-collect_resnorm_from_all_blocks">collect_resnorm_from_all_blocks</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-assemble_resnom_at_each_process">assemble_resnom_at_each_process</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-get_relative_resnorm">get_relative_resnorm</a>
+      
+      <a class="list-group-item" href="../module/resnorm.html#proc-write_resnorm">write_resnorm</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-merror"></span>real,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>merror</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-buffer"></span>real,</td>
+  
+  <td>private,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>buffer</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-setup_resnorm"></span><h3>
+public subroutine <a href='../proc/setup_resnorm.html'>setup_resnorm</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>allocate memory, setup scale and file to write</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-find_resnorm"></span><h3>
+public subroutine <a href='../proc/find_resnorm.html'>find_resnorm</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Find the normalized residual for each processor</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-destroy_resnorm"></span><h3>
+public subroutine <a href='../proc/destroy_resnorm.html'>destroy_resnorm</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>deallocate memory and close residual file</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-setup_file%7E2"></span><h3>
+private subroutine <a href='../proc/setup_file%7E2.html'>setup_file</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>open the residual file to write</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-allocate_memory%7E6"></span><h3>
+private subroutine <a href='../proc/allocate_memory%7E6.html'>allocate_memory</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>allocate memory to MPI Communication</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_memory%7E4"></span><h3>
+private subroutine <a href='../proc/deallocate_memory%7E4.html'>deallocate_memory</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Deallocate memory required for MPI Communication</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-setup_scale"></span><h3>
+private subroutine <a href='../proc/setup_scale.html'>setup_scale</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Setup scale required for relative and absolute
+ residual for writing in the file.</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_absolute_resnorm"></span><h3>
+private subroutine <a href='../proc/get_absolute_resnorm.html'>get_absolute_resnorm</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Get absolute residual for current process</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-collect_resnorm_from_all_blocks"></span><h3>
+private subroutine <a href='../proc/collect_resnorm_from_all_blocks.html'>collect_resnorm_from_all_blocks</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>MPI Communication to gather residual from all processes</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble_resnom_at_each_process"></span><h3>
+private subroutine <a href='../proc/assemble_resnom_at_each_process.html'>assemble_resnom_at_each_process</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Sum residual obtained from all the processes after MPI_Communication</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_relative_resnorm"></span><h3>
+private subroutine <a href='../proc/get_relative_resnorm.html'>get_relative_resnorm</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Get relative residual with respect to first iteration residual</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_resnorm"></span><h3>
+private subroutine <a href='../proc/write_resnorm.html'>write_resnorm</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>writing the residual in the file to save.</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    <br>
+    
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

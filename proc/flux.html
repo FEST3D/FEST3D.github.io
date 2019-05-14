@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>Flux &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>Flux
+      <small>Function</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.7% of total for procedures.">112 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/plusgs.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/plusgs.f90.html'>plusgs.f90</a></li>
+    
+     <li><a href='../module/plusgs.html'>plusgs</a></li>
+    
+  
+     <li class="active">Flux</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/flux.html#src">Flux</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+public function Flux(ql, qr, du, inputs)
+    
+    
+   
+</h2>
+    
+  
+
+
+    
+    <p>calculate the total flux through face for laminar flow.</p>
+    
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ql"></span>real,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:n_var)</td><td>::</td>
+  <td><strong>ql</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qr"></span>real,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:n_var)</td><td>::</td>
+  <td><strong>qr</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-du"></span>real,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:n_var)</td><td>::</td>
+  <td><strong>du</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-inputs"></span>real,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:7)</td><td>::</td>
+  <td><strong>inputs</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    
+    
+    
+    
+   <h3>Return Value <small><span class="anchor" id="variable-flux"></span>real,
+  dimension(1:n_var)</small></h3>
+    
+    
+    
+    
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/flux.html#src">Flux</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>    <span class="k">function </span><span class="n">Flux</span><span class="p">(</span><span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">du</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span>
+      <span class="c">!&lt; calculate the total flux through face for laminar flow.</span>
+      <span class="c">!--------------------------------------</span>
+      <span class="c">! calculate the total flux through face</span>
+      <span class="c">!---------------------------------------</span>
+      <span class="k">implicit none</span>
+<span class="k">      </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ql</span> <span class="c">!left state</span>
+      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qr</span> <span class="c">!right state</span>
+      <span class="c">!conservative form of updated neighbour</span>
+      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">du</span>
+      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">inputs</span>
+      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">Flux</span>
+      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">U</span> <span class="c">! conservative variables</span>
+      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">W</span> <span class="c">! new primitive variables</span>
+      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">P</span> <span class="c">! primitive variables of right cell</span>
+
+      <span class="c">!for extraction of the inputs</span>
+      <span class="kt">real</span> <span class="kd">::</span> <span class="n">area</span>
+      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nx</span>
+      <span class="kt">real</span> <span class="kd">::</span> <span class="n">ny</span>
+      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nz</span>
+      <span class="kt">real</span> <span class="kd">::</span> <span class="n">volume</span>
+      <span class="kt">real</span> <span class="kd">::</span> <span class="n">mmu</span>
+      <span class="kt">real</span> <span class="kd">::</span> <span class="n">tmu</span>
+
+
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dudx</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dudy</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dudz</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dvdx</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dvdy</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dvdz</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dwdx</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dwdy</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dwdz</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dTdx</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dTdy</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dTdz</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">T1</span><span class="p">,</span> <span class="n">T2</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">uface</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">vface</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">wface</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">trace</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauxx</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauyy</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauzz</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauxy</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauxz</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauyz</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Qx</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Qy</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Qz</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">HalfRhoUsquare</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">RhoHt</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">K_heat</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">FaceNormalVelocity</span>
+      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">mu</span>
+
+      <span class="n">area</span>   <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">nx</span>     <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+      <span class="n">ny</span>     <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+      <span class="n">nz</span>     <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+      <span class="n">volume</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+      <span class="n">mmu</span>    <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+      <span class="n">tmu</span>    <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+
+
+      <span class="c">!save the old stat in P</span>
+      <span class="n">P</span> <span class="o">=</span> <span class="n">qr</span>
+
+      <span class="c">! find conservative variable</span>
+      <span class="n">U</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="o">=</span>   <span class="n">ql</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">U</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="o">=</span>   <span class="n">ql</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ql</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+      <span class="n">U</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="o">=</span>   <span class="n">ql</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ql</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+      <span class="n">U</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>   <span class="o">=</span>   <span class="n">ql</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ql</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+      <span class="n">U</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>   <span class="o">=</span> <span class="p">(</span> <span class="n">ql</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">gm</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ql</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ql</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+
+      <span class="n">U</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span> <span class="o">=</span> <span class="n">U</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="n">du</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span>
+      
+
+      <span class="n">W</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="o">=</span>   <span class="n">U</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="o">=</span>   <span class="n">U</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">U</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="o">=</span>   <span class="n">U</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="n">U</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>   <span class="o">=</span>   <span class="n">U</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="n">U</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">W</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>   <span class="o">=</span> <span class="p">(</span><span class="n">gm</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="n">U</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="nb">SUM</span><span class="p">(</span><span class="n">U</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">U</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+
+      <span class="n">FaceNormalVelocity</span> <span class="o">=</span> <span class="p">(</span><span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">nx</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">ny</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">nz</span><span class="p">)</span>
+      <span class="n">uface</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">P</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+      <span class="n">vface</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">P</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
+      <span class="n">wface</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">P</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
+
+
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>   <span class="n">W</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">FaceNormalVelocity</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">nx</span> <span class="p">)</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">ny</span> <span class="p">)</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">nz</span> <span class="p">)</span>
+
+      <span class="n">HalfRhoUsquare</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">W</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
+      <span class="n">RhoHt</span>          <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="n">gm</span><span class="o">/</span><span class="p">(</span><span class="n">gm</span><span class="o">-</span><span class="mf">1.0</span><span class="p">))</span> <span class="o">*</span> <span class="n">W</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span> <span class="o">+</span> <span class="n">HalfRhoUsquare</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>        <span class="o">=</span> <span class="n">RhoHt</span> <span class="o">*</span> <span class="n">FaceNormalVelocity</span>
+
+
+      <span class="c">! viscous terms</span>
+      <span class="n">mu</span> <span class="o">=</span> <span class="n">mmu</span> <span class="o">+</span> <span class="n">tmu</span>
+      <span class="n">T1</span>     <span class="o">=</span>    <span class="n">W</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">W</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">R_gas</span> <span class="p">)</span>
+      <span class="n">T2</span>     <span class="o">=</span>    <span class="n">P</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">R_gas</span> <span class="p">)</span>
+      <span class="n">dTdx</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">T2</span>   <span class="o">-</span> <span class="n">T1</span>   <span class="p">)</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dTdy</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">T2</span>   <span class="o">-</span> <span class="n">T1</span>   <span class="p">)</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dTdz</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">T2</span>   <span class="o">-</span> <span class="n">T1</span>   <span class="p">)</span> <span class="o">*</span> <span class="n">nz</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dudx</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dudy</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dudz</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nz</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dvdx</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dvdy</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dvdz</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nz</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dwdx</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dwdy</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+      <span class="n">dwdz</span>   <span class="o">=</span>  <span class="p">(</span> <span class="n">P</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">W</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nz</span> <span class="o">*</span> <span class="n">Area</span> <span class="o">/</span> <span class="n">Volume</span>
+
+      <span class="n">trace</span> <span class="o">=</span> <span class="n">dudx</span> <span class="o">+</span> <span class="n">dvdy</span> <span class="o">+</span> <span class="n">dwdz</span>
+      <span class="n">Tauxx</span> <span class="o">=</span>  <span class="mf">2.</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">*</span> <span class="p">(</span><span class="n">dudx</span> <span class="o">-</span> <span class="n">trace</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>
+      <span class="n">Tauyy</span> <span class="o">=</span>  <span class="mf">2.</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">*</span> <span class="p">(</span><span class="n">dvdy</span> <span class="o">-</span> <span class="n">trace</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>
+      <span class="n">Tauzz</span> <span class="o">=</span>  <span class="mf">2.</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">*</span> <span class="p">(</span><span class="n">dwdz</span> <span class="o">-</span> <span class="n">trace</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>
+      <span class="n">Tauxy</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">*</span> <span class="p">(</span><span class="n">dvdx</span> <span class="o">+</span> <span class="n">dudy</span><span class="p">)</span>
+      <span class="n">Tauxz</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">*</span> <span class="p">(</span><span class="n">dwdx</span> <span class="o">+</span> <span class="n">dudz</span><span class="p">)</span>
+      <span class="n">Tauyz</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">*</span> <span class="p">(</span><span class="n">dwdy</span> <span class="o">+</span> <span class="n">dvdz</span><span class="p">)</span>
+
+      <span class="n">K_heat</span> <span class="o">=</span> <span class="p">(</span> <span class="n">mmu</span> <span class="o">/</span> <span class="n">Pr</span>  <span class="o">+</span> <span class="n">tmu</span><span class="o">/</span><span class="n">tpr</span><span class="p">)</span> <span class="o">*</span> <span class="n">gm</span> <span class="o">*</span> <span class="n">R_gas</span> <span class="o">/</span> <span class="p">(</span> <span class="n">gm</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="p">)</span>
+      <span class="n">Qx</span> <span class="o">=</span> <span class="n">K_heat</span><span class="o">*</span><span class="n">dTdx</span>
+      <span class="n">Qy</span> <span class="o">=</span> <span class="n">K_heat</span><span class="o">*</span><span class="n">dTdy</span>
+      <span class="n">Qz</span> <span class="o">=</span> <span class="n">K_heat</span><span class="o">*</span><span class="n">dTdz</span>
+
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">Tauxx</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">+</span> <span class="n">Tauxy</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">+</span> <span class="n">Tauxz</span> <span class="o">*</span> <span class="n">nz</span> <span class="p">)</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">Tauxy</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">+</span> <span class="n">Tauyy</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">+</span> <span class="n">Tauyz</span> <span class="o">*</span> <span class="n">nz</span> <span class="p">)</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">Tauxz</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">+</span> <span class="n">Tauyz</span> <span class="o">*</span> <span class="n">ny</span> <span class="o">+</span> <span class="n">Tauzz</span> <span class="o">*</span> <span class="n">nz</span> <span class="p">)</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">=</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">Tauxx</span> <span class="o">*</span> <span class="n">uface</span> <span class="o">+</span> <span class="n">Tauxy</span> <span class="o">*</span> <span class="n">vface</span> <span class="o">+</span> <span class="n">Tauxz</span> <span class="o">*</span> <span class="n">wface</span> <span class="o">+</span> <span class="n">Qx</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nx</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">=</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">Tauxy</span> <span class="o">*</span> <span class="n">uface</span> <span class="o">+</span> <span class="n">Tauyy</span> <span class="o">*</span> <span class="n">vface</span> <span class="o">+</span> <span class="n">Tauyz</span> <span class="o">*</span> <span class="n">wface</span> <span class="o">+</span> <span class="n">Qy</span> <span class="p">)</span> <span class="o">*</span> <span class="n">ny</span>
+      <span class="n">Flux</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">=</span> <span class="n">Flux</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">Tauxz</span> <span class="o">*</span> <span class="n">uface</span> <span class="o">+</span> <span class="n">Tauyz</span> <span class="o">*</span> <span class="n">vface</span> <span class="o">+</span> <span class="n">Tauzz</span> <span class="o">*</span> <span class="n">wface</span> <span class="o">+</span> <span class="n">Qz</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nz</span>
+
+      <span class="n">Flux</span>    <span class="o">=</span> <span class="n">Flux</span> <span class="o">*</span> <span class="n">Area</span>
+
+    <span class="k">end function </span><span class="n">Flux</span> 
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

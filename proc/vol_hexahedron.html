@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>vol_hexahedron &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>vol_hexahedron
+      <small>Function</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.1% of total for procedures.">19 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/geometry.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/geometry.f90.html'>geometry.f90</a></li>
+    
+     <li><a href='../module/geometry.html'>geometry</a></li>
+    
+  
+     <li class="active">vol_hexahedron</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/vol_hexahedron.html#src">vol_hexahedron</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+private function vol_hexahedron(p_list)
+    
+    
+   
+</h2>
+    
+  
+
+
+    
+    <p>Compute the volume of a hexahedron, given a list of points</p>
+    
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-p_list"></span>real,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:3, 1:8)</td><td>::</td>
+  <td><strong>p_list</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    
+    
+    
+    
+   <h3>Return Value <small><span class="anchor" id="variable-vol_hexahedron"></span>real
+  </small></h3>
+    
+    
+    
+    <br>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~vol_hexahedron~~CallsGraph Pages: 1 -->
+<svg id="procvol_hexahedronCallsGraph" width="221pt" height="32pt"
+ viewBox="0.00 0.00 221.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~vol_hexahedron~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~vol_hexahedron~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 217,-28 217,4 -4,4"/>
+<!-- proc~vol_hexahedron -->
+<g id="proc~~vol_hexahedron~~CallsGraph_node1" class="node">
+<title>proc~vol_hexahedron</title>
+<polygon fill="none" stroke="#000000" points="89,-24 0,-24 0,0 89,0 89,-24"/>
+<text text-anchor="middle" x="44.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">vol_hexahedron</text>
+</g>
+<!-- proc~vol_tetrahedron -->
+<g id="proc~~vol_hexahedron~~CallsGraph_node2" class="node">
+<title>proc~vol_tetrahedron</title>
+<g id="a_proc~~vol_hexahedron~~CallsGraph_node2"><a xlink:href=".././proc/vol_tetrahedron.html" xlink:title="vol_tetrahedron">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="213,-24 125,-24 125,0 213,0 213,-24"/>
+<text text-anchor="middle" x="169" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vol_tetrahedron</text>
+</a>
+</g>
+</g>
+<!-- proc~vol_hexahedron&#45;&gt;proc~vol_tetrahedron -->
+<g id="proc~~vol_hexahedron~~CallsGraph_edge1" class="edge">
+<title>proc~vol_hexahedron&#45;&gt;proc~vol_tetrahedron</title>
+<path fill="none" stroke="#ff0000" d="M89.0957,-12C97.33,-12 106.0137,-12 114.502,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="114.7157,-15.5001 124.7157,-12 114.7156,-8.5001 114.7157,-15.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~vol_hexahedron~~CalledByGraph Pages: 1 -->
+<svg id="procvol_hexahedronCalledByGraph" width="641pt" height="56pt"
+ viewBox="0.00 0.00 641.00 55.61" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~vol_hexahedron~~CalledByGraph" class="graph" transform="scale(.7515 .7515) rotate(0) translate(4 70)">
+<title>proc~~vol_hexahedron~~CalledByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 849,-70 849,4 -4,4"/>
+<!-- proc~vol_hexahedron -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_node1" class="node">
+<title>proc~vol_hexahedron</title>
+<polygon fill="none" stroke="#000000" points="845,-45 756,-45 756,-21 845,-21 845,-45"/>
+<text text-anchor="middle" x="800.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">vol_hexahedron</text>
+</g>
+<!-- proc~compute_volumes -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_node2" class="node">
+<title>proc~compute_volumes</title>
+<g id="a_proc~~vol_hexahedron~~CalledByGraph_node2"><a xlink:href=".././proc/compute_volumes.html" xlink:title="compute_volumes">
+<polygon fill="#d9534f" stroke="#d9534f" points="720,-45 620,-45 620,-21 720,-21 720,-45"/>
+<text text-anchor="middle" x="670" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_volumes</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_volumes&#45;&gt;proc~vol_hexahedron -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_edge1" class="edge">
+<title>proc~compute_volumes&#45;&gt;proc~vol_hexahedron</title>
+<path fill="none" stroke="#ff0000" d="M720.0815,-33C728.462,-33 737.196,-33 745.6879,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="745.8859,-36.5001 755.8859,-33 745.8859,-29.5001 745.8859,-36.5001"/>
+</g>
+<!-- proc~compute_geometric_parameters -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_node3" class="node">
+<title>proc~compute_geometric_parameters</title>
+<g id="a_proc~~vol_hexahedron~~CalledByGraph_node3"><a xlink:href=".././proc/compute_geometric_parameters.html" xlink:title="compute_geometric_parameters">
+<polygon fill="#d9534f" stroke="#d9534f" points="584,-45 416,-45 416,-21 584,-21 584,-45"/>
+<text text-anchor="middle" x="500" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_geometric_parameters</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_geometric_parameters&#45;&gt;proc~compute_volumes -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_edge2" class="edge">
+<title>proc~compute_geometric_parameters&#45;&gt;proc~compute_volumes</title>
+<path fill="none" stroke="#ff0000" d="M584.0039,-33C592.5912,-33 601.1921,-33 609.4559,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="609.7167,-36.5001 619.7167,-33 609.7167,-29.5001 609.7167,-36.5001"/>
+</g>
+<!-- proc~setup_geometry -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_node4" class="node">
+<title>proc~setup_geometry</title>
+<g id="a_proc~~vol_hexahedron~~CalledByGraph_node4"><a xlink:href=".././proc/setup_geometry.html" xlink:title="setup_geometry">
+<polygon fill="#d9534f" stroke="#d9534f" points="380,-45 290,-45 290,-21 380,-21 380,-45"/>
+<text text-anchor="middle" x="335" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_geometry</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_geometry&#45;&gt;proc~compute_geometric_parameters -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_edge3" class="edge">
+<title>proc~setup_geometry&#45;&gt;proc~compute_geometric_parameters</title>
+<path fill="none" stroke="#ff0000" d="M380.087,-33C388.1982,-33 396.9215,-33 405.8301,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="405.9442,-36.5001 415.9441,-33 405.9441,-29.5001 405.9442,-36.5001"/>
+</g>
+<!-- proc~setup_solver -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_node5" class="node">
+<title>proc~setup_solver</title>
+<g id="a_proc~~vol_hexahedron~~CalledByGraph_node5"><a xlink:href=".././proc/setup_solver.html" xlink:title="setup_solver">
+<polygon fill="#d9534f" stroke="#d9534f" points="254,-66 181,-66 181,-42 254,-42 254,-66"/>
+<text text-anchor="middle" x="217.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_solver</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_solver&#45;&gt;proc~setup_geometry -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_edge4" class="edge">
+<title>proc~setup_solver&#45;&gt;proc~setup_geometry</title>
+<path fill="none" stroke="#ff0000" d="M254.0336,-47.4706C262.1683,-46.0167 270.9694,-44.4438 279.6702,-42.8887"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="280.5638,-46.2846 289.792,-41.0797 279.3322,-39.3938 280.5638,-46.2846"/>
+</g>
+<!-- proc~setup_all -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_node6" class="node">
+<title>proc~setup_all</title>
+<g id="a_proc~~vol_hexahedron~~CalledByGraph_node6"><a xlink:href=".././proc/setup_all.html" xlink:title="setup_all">
+<polygon fill="#d9534f" stroke="#d9534f" points="245,-24 190,-24 190,0 245,0 245,-24"/>
+<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_all</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_all&#45;&gt;proc~setup_geometry -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_edge5" class="edge">
+<title>proc~setup_all&#45;&gt;proc~setup_geometry</title>
+<path fill="none" stroke="#ff0000" d="M245.0485,-16.9236C255.4351,-18.7799 267.6547,-20.9638 279.6818,-23.1133"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="279.235,-26.5889 289.6949,-24.9029 280.4667,-19.6981 279.235,-26.5889"/>
+</g>
+<!-- proc~start_run -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_node7" class="node">
+<title>proc~start_run</title>
+<g id="a_proc~~vol_hexahedron~~CalledByGraph_node7"><a xlink:href=".././proc/start_run.html" xlink:title="start_run">
+<polygon fill="#d9534f" stroke="#d9534f" points="145,-66 90,-66 90,-42 145,-42 145,-66"/>
+<text text-anchor="middle" x="117.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_run</text>
+</a>
+</g>
+</g>
+<!-- proc~start_run&#45;&gt;proc~setup_solver -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_edge6" class="edge">
+<title>proc~start_run&#45;&gt;proc~setup_solver</title>
+<path fill="none" stroke="#ff0000" d="M145.0902,-54C152.985,-54 161.8197,-54 170.5313,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="170.6377,-57.5001 180.6376,-54 170.6376,-50.5001 170.6377,-57.5001"/>
+</g>
+<!-- program~main -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_node8" class="node">
+<title>program~main</title>
+<g id="a_proc~~vol_hexahedron~~CalledByGraph_node8"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~start_run -->
+<g id="proc~~vol_hexahedron~~CalledByGraph_edge7" class="edge">
+<title>program~main&#45;&gt;proc~start_run</title>
+<path fill="none" stroke="#ff0000" d="M54.153,-54C62.1482,-54 71.046,-54 79.5856,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.7397,-57.5001 89.7397,-54 79.7397,-50.5001 79.7397,-57.5001"/>
+</g>
+</g>
+</svg>
+</div><script>var panprocvol_hexahedronCalledByGraph = svgPanZoom('#procvol_hexahedronCalledByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/vol_hexahedron.html#src">vol_hexahedron</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>        <span class="k">function </span><span class="n">vol_hexahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">)</span>
+            <span class="c">!&lt; Compute the volume of a hexahedron, given a list of points</span>
+            <span class="c">! The points are arranged in a specific order. For the </span>
+            <span class="c">! element i,j,k, the order of nodes required are:</span>
+            <span class="c">! i,j,k</span>
+            <span class="c">! i+1, j, k</span>
+            <span class="c">! i+1, j+1, k</span>
+            <span class="c">! i, j+1, k</span>
+            <span class="c">! i, j, k+1</span>
+            <span class="c">! i+1, j, k+1</span>
+            <span class="c">! i+1, j+1, k+1</span>
+            <span class="c">! i, j+1, k+1</span>
+            <span class="c">!</span>
+            <span class="c">! The hexahedron is to be split into 5 tetrahedrons. </span>
+            <span class="c">! Source: Split hex into 5 tetrahedron:</span>
+            <span class="c">! No assumptions about planarity seem to be made. All cuts </span>
+            <span class="c">! were made with a plane containing only 3 vertices at a time.</span>
+            <span class="c">! https://ieeexplore.ieee.org/ieee_pilot/articles/06/ttg2009061587/assets/img/article_1/fig_6/large.gif</span>
+            <span class="c">!</span>
+            <span class="c">! The indices of the 5 split tetrahedra can be visualised from</span>
+            <span class="c">! the above link. But since the volume of each tetrahedron </span>
+            <span class="c">! depends on the determinant calculated, it is IMPERATIVE to </span>
+            <span class="c">! ensure that a &quot;correct&quot; order is followed for the 4 points. </span>
+            <span class="c">!            </span>
+            <span class="c">! The logic to get the &quot;correct&quot; order is explained as </span>
+            <span class="c">! follows (Refer wiki article on parallelepiped):</span>
+            <span class="c">! The determinant is taken of a matrix of pi - p4, i = 1, 2, 3. </span>
+            <span class="c">! Graphically it denotes the sides with p4 as common vertex, </span>
+            <span class="c">! with direction outward from p4, i.e., directed from </span>
+            <span class="c">! p4 to pi, i = 1, 2, 3</span>
+            <span class="c">! Hence, if you ensure that  cross(p1-p4, p2-p4) is along </span>
+            <span class="c">! p3-p4, then the determinant will be positive.</span>
+            <span class="c">!</span>
+            <span class="c">! From the above link, a set of 5 tetrahedra was obtained. </span>
+            <span class="c">! Each tetrahedra has 4 points, and in the function calls </span>
+            <span class="c">! below, care was taken to ensure that the order is observed</span>
+            <span class="c">! while passing parameters into the vol_tetrahedron function</span>
+            <span class="c">!-----------------------------------------------------------</span>
+
+            <span class="k">implicit none</span>
+<span class="k">            </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">p_list</span>
+            <span class="kt">real</span> <span class="kd">::</span> <span class="n">vol_hexahedron</span>
+            <span class="kt">real</span> <span class="kd">::</span> <span class="n">vol_hexahedron1</span>
+            
+            <span class="n">vol_hexahedron1</span> <span class="o">=</span> <span class="mf">0.</span>
+            <span class="n">vol_hexahedron1</span> <span class="o">=</span> <span class="n">vol_hexahedron1</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">5</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">8</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">6</span><span class="p">))</span>
+            <span class="n">vol_hexahedron1</span> <span class="o">=</span> <span class="n">vol_hexahedron1</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">7</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">8</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">6</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">3</span><span class="p">))</span>
+            <span class="n">vol_hexahedron1</span> <span class="o">=</span> <span class="n">vol_hexahedron1</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">8</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">4</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">3</span><span class="p">))</span>
+            <span class="n">vol_hexahedron1</span> <span class="o">=</span> <span class="n">vol_hexahedron1</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">6</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">8</span><span class="p">))</span>
+            <span class="n">vol_hexahedron1</span> <span class="o">=</span> <span class="n">vol_hexahedron1</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">6</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">3</span><span class="p">))</span>
+            <span class="n">vol_hexahedron</span> <span class="o">=</span> <span class="mf">0.</span>
+            <span class="n">vol_hexahedron</span> <span class="o">=</span> <span class="n">vol_hexahedron</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">6</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">5</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">7</span><span class="p">))</span>
+            <span class="n">vol_hexahedron</span> <span class="o">=</span> <span class="n">vol_hexahedron</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">8</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">5</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">7</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span>
+            <span class="n">vol_hexahedron</span> <span class="o">=</span> <span class="n">vol_hexahedron</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">5</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span>
+            <span class="n">vol_hexahedron</span> <span class="o">=</span> <span class="n">vol_hexahedron</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">7</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">4</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">5</span><span class="p">))</span>
+            <span class="n">vol_hexahedron</span> <span class="o">=</span> <span class="n">vol_hexahedron</span> <span class="o">+</span> <span class="p">&amp;</span>
+                             <span class="n">vol_tetrahedron</span><span class="p">(</span><span class="n">p_list</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span> <span class="p">&amp;</span>
+                                             <span class="n">p_list</span><span class="p">(:,</span><span class="mi">7</span><span class="p">),</span> <span class="n">p_list</span><span class="p">(:,</span><span class="mi">4</span><span class="p">))</span>
+
+            <span class="n">vol_hexahedron</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">vol_hexahedron</span><span class="p">,</span><span class="n">vol_hexahedron1</span><span class="p">)</span>
+            
+        <span class="k">end function </span><span class="n">vol_hexahedron</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

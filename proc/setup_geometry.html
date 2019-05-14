@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>setup_geometry &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>setup_geometry
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.0% of total for procedures.">7 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/geometry.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/geometry.f90.html'>geometry.f90</a></li>
+    
+     <li><a href='../module/geometry.html'>geometry</a></li>
+    
+  
+     <li class="active">setup_geometry</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/setup_geometry.html#src">setup_geometry</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+public subroutine setup_geometry()
+    
+    
+   
+</h2>
+    
+  
+
+
+    
+    <p>Make the geometry module useful</p>
+<p>Allocates memory to the variables and initializes them.</p>
+    
+
+    <h3>Arguments</h3>
+    
+    <em>None</em>
+    <br>
+    
+    
+    
+    <br>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~setup_geometry~~CallsGraph Pages: 1 -->
+<svg id="procsetup_geometryCallsGraph" width="641pt" height="391pt"
+ viewBox="0.00 0.00 641.00 390.67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~setup_geometry~~CallsGraph" class="graph" transform="scale(.7586 .7586) rotate(0) translate(4 511)">
+<title>proc~~setup_geometry~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-511 841,-511 841,4 -4,4"/>
+<!-- proc~setup_geometry -->
+<g id="proc~~setup_geometry~~CallsGraph_node1" class="node">
+<title>proc~setup_geometry</title>
+<polygon fill="none" stroke="#000000" points="90,-213 0,-213 0,-189 90,-189 90,-213"/>
+<text text-anchor="middle" x="45" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">setup_geometry</text>
+</g>
+<!-- proc~compute_ghost_cell_centroid -->
+<g id="proc~~setup_geometry~~CallsGraph_node2" class="node">
+<title>proc~compute_ghost_cell_centroid</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node2"><a xlink:href=".././proc/compute_ghost_cell_centroid.html" xlink:title="compute_ghost_cell_centroid">
+<polygon fill="#d9534f" stroke="#d9534f" points="286,-276 134,-276 134,-252 286,-252 286,-276"/>
+<text text-anchor="middle" x="210" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_ghost_cell_centroid</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_geometry&#45;&gt;proc~compute_ghost_cell_centroid -->
+<g id="proc~~setup_geometry~~CallsGraph_edge1" class="edge">
+<title>proc~setup_geometry&#45;&gt;proc~compute_ghost_cell_centroid</title>
+<path fill="none" stroke="#ff0000" d="M65.032,-213.0669C81.0651,-222.3068 104.369,-234.8169 126,-243 131.8128,-245.199 137.939,-247.2355 144.1257,-249.1045"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="143.2833,-252.5041 153.8611,-251.9031 145.2173,-245.7765 143.2833,-252.5041"/>
+</g>
+<!-- proc~dmsg -->
+<g id="proc~~setup_geometry~~CallsGraph_node3" class="node">
+<title>proc~dmsg</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node3"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
+<polygon fill="#d9534f" stroke="#d9534f" points="447.5,-192 393.5,-192 393.5,-168 447.5,-168 447.5,-192"/>
+<text text-anchor="middle" x="420.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_geometry&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_geometry~~CallsGraph_edge2" class="edge">
+<title>proc~setup_geometry&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#ff0000" d="M90.2941,-198.4669C165.2511,-194.2749 313.698,-185.973 383.098,-182.0917"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="383.3514,-185.5831 393.1404,-181.5301 382.9605,-178.594 383.3514,-185.5831"/>
+</g>
+<!-- proc~allocate_memory~2 -->
+<g id="proc~~setup_geometry~~CallsGraph_node4" class="node">
+<title>proc~allocate_memory~2</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node4"><a xlink:href=".././proc/allocate_memory%7E2.html" xlink:title="allocate_memory">
+<polygon fill="#d9534f" stroke="#d9534f" points="257,-234 163,-234 163,-210 257,-210 257,-234"/>
+<text text-anchor="middle" x="210" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_geometry&#45;&gt;proc~allocate_memory~2 -->
+<g id="proc~~setup_geometry~~CallsGraph_edge3" class="edge">
+<title>proc~setup_geometry&#45;&gt;proc~allocate_memory~2</title>
+<path fill="none" stroke="#ff0000" d="M90.087,-206.7383C109.4324,-209.2005 132.2599,-212.1058 152.7782,-214.7172"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="152.5903,-218.2215 162.9522,-216.0121 153.4742,-211.2775 152.5903,-218.2215"/>
+</g>
+<!-- proc~compute_geometric_parameters -->
+<g id="proc~~setup_geometry~~CallsGraph_node5" class="node">
+<title>proc~compute_geometric_parameters</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node5"><a xlink:href=".././proc/compute_geometric_parameters.html" xlink:title="compute_geometric_parameters">
+<polygon fill="#d9534f" stroke="#d9534f" points="294,-151 126,-151 126,-127 294,-127 294,-151"/>
+<text text-anchor="middle" x="210" y="-136.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_geometric_parameters</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_geometry&#45;&gt;proc~compute_geometric_parameters -->
+<g id="proc~~setup_geometry~~CallsGraph_edge4" class="edge">
+<title>proc~setup_geometry&#45;&gt;proc~compute_geometric_parameters</title>
+<path fill="none" stroke="#ff0000" d="M72.1637,-188.9927C87.7934,-182.2366 107.8699,-173.8156 126,-167 137.5787,-162.6472 150.1778,-158.2644 162.0119,-154.3004"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="163.3418,-157.547 171.7333,-151.0791 161.14,-150.9023 163.3418,-157.547"/>
+</g>
+<!-- proc~allocate_memory~2&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_geometry~~CallsGraph_edge7" class="edge">
+<title>proc~allocate_memory~2&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#00ffff" d="M257.2403,-212.5744C295.4128,-204.958 348.3903,-194.3877 383.5198,-187.3785"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="384.2479,-190.8023 393.3698,-185.4132 382.8782,-183.9376 384.2479,-190.8023"/>
+</g>
+<!-- proc~allocate_memory_ghost_centroids -->
+<g id="proc~~setup_geometry~~CallsGraph_node7" class="node">
+<title>proc~allocate_memory_ghost_centroids</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node7"><a xlink:href=".././proc/allocate_memory_ghost_centroids.html" xlink:title="allocate_memory_ghost_centroids">
+<polygon fill="#d9534f" stroke="#d9534f" points="508.5,-318 332.5,-318 332.5,-294 508.5,-294 508.5,-318"/>
+<text text-anchor="middle" x="420.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory_ghost_centroids</text>
+</a>
+</g>
+</g>
+<!-- proc~allocate_memory~2&#45;&gt;proc~allocate_memory_ghost_centroids -->
+<g id="proc~~setup_geometry~~CallsGraph_edge5" class="edge">
+<title>proc~allocate_memory~2&#45;&gt;proc~allocate_memory_ghost_centroids</title>
+<path fill="none" stroke="#00ffff" d="M257.3818,-228.4912C269.915,-231.6035 283.0031,-236.2035 294,-243 314.9136,-255.9253 308.9775,-272.2526 330,-285 332.9868,-286.8111 336.1159,-288.4661 339.3418,-289.9783"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="338.0759,-293.2426 348.6519,-293.8736 340.7778,-286.785 338.0759,-293.2426"/>
+</g>
+<!-- proc~allocate_memory_volumes -->
+<g id="proc~~setup_geometry~~CallsGraph_node8" class="node">
+<title>proc~allocate_memory_volumes</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node8"><a xlink:href=".././proc/allocate_memory_volumes.html" xlink:title="allocate_memory_volumes">
+<polygon fill="#d9534f" stroke="#d9534f" points="490.5,-276 350.5,-276 350.5,-252 490.5,-252 490.5,-276"/>
+<text text-anchor="middle" x="420.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory_volumes</text>
+</a>
+</g>
+</g>
+<!-- proc~allocate_memory~2&#45;&gt;proc~allocate_memory_volumes -->
+<g id="proc~~setup_geometry~~CallsGraph_edge9" class="edge">
+<title>proc~allocate_memory~2&#45;&gt;proc~allocate_memory_volumes</title>
+<path fill="none" stroke="#00ffff" d="M257.2403,-231.4256C284.5754,-236.8796 319.5023,-243.8484 350.0307,-249.9396"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="349.7063,-253.4438 360.1979,-251.9682 351.076,-246.5791 349.7063,-253.4438"/>
+</g>
+<!-- proc~allocate_memory_areas -->
+<g id="proc~~setup_geometry~~CallsGraph_node10" class="node">
+<title>proc~allocate_memory_areas</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node10"><a xlink:href=".././proc/allocate_memory_areas.html" xlink:title="allocate_memory_areas">
+<polygon fill="#d9534f" stroke="#d9534f" points="484,-234 357,-234 357,-210 484,-210 484,-234"/>
+<text text-anchor="middle" x="420.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory_areas</text>
+</a>
+</g>
+</g>
+<!-- proc~allocate_memory~2&#45;&gt;proc~allocate_memory_areas -->
+<g id="proc~~setup_geometry~~CallsGraph_edge8" class="edge">
+<title>proc~allocate_memory~2&#45;&gt;proc~allocate_memory_areas</title>
+<path fill="none" stroke="#00ffff" d="M257.2403,-222C283.4807,-222 316.7169,-222 346.3425,-222"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="346.6534,-225.5001 356.6534,-222 346.6534,-218.5001 346.6534,-225.5001"/>
+</g>
+<!-- proc~allocate_memory_normals -->
+<g id="proc~~setup_geometry~~CallsGraph_node11" class="node">
+<title>proc~allocate_memory_normals</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node11"><a xlink:href=".././proc/allocate_memory_normals.html" xlink:title="allocate_memory_normals">
+<polygon fill="#d9534f" stroke="#d9534f" points="490,-360 351,-360 351,-336 490,-336 490,-360"/>
+<text text-anchor="middle" x="420.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory_normals</text>
+</a>
+</g>
+</g>
+<!-- proc~allocate_memory~2&#45;&gt;proc~allocate_memory_normals -->
+<g id="proc~~setup_geometry~~CallsGraph_edge6" class="edge">
+<title>proc~allocate_memory~2&#45;&gt;proc~allocate_memory_normals</title>
+<path fill="none" stroke="#00ffff" d="M257.1612,-225.9736C270.2602,-229.0286 283.7001,-234.2282 294,-243 324.9231,-269.3351 298.8546,-300.9282 330,-327 333.5036,-329.9329 337.34,-332.4738 341.3926,-334.6736"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="340.0236,-337.8972 350.5646,-338.9642 342.9897,-331.5566 340.0236,-337.8972"/>
+</g>
+<!-- proc~compute_geometric_parameters&#45;&gt;proc~dmsg -->
+<g id="proc~~setup_geometry~~CallsGraph_edge11" class="edge">
+<title>proc~compute_geometric_parameters&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#7f00ff" d="M271.7346,-151.0243C308.0292,-158.0936 352.7029,-166.7949 383.5707,-172.8071"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="382.9929,-176.2603 393.4776,-174.7367 384.3312,-169.3894 382.9929,-176.2603"/>
+</g>
+<!-- proc~compute_face_areas_and_normals -->
+<g id="proc~~setup_geometry~~CallsGraph_node6" class="node">
+<title>proc~compute_face_areas_and_normals</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node6"><a xlink:href=".././proc/compute_face_areas_and_normals.html" xlink:title="compute_face_areas_and_normals">
+<polygon fill="#d9534f" stroke="#d9534f" points="511,-87 330,-87 330,-63 511,-63 511,-87"/>
+<text text-anchor="middle" x="420.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_face_areas_and_normals</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_geometric_parameters&#45;&gt;proc~compute_face_areas_and_normals -->
+<g id="proc~~setup_geometry~~CallsGraph_edge10" class="edge">
+<title>proc~compute_geometric_parameters&#45;&gt;proc~compute_face_areas_and_normals</title>
+<path fill="none" stroke="#7f00ff" d="M249.5934,-126.9621C284.031,-116.4918 334.0827,-101.2741 371.1276,-90.0111"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="372.1774,-93.3502 380.7268,-87.0926 370.1411,-86.6529 372.1774,-93.3502"/>
+</g>
+<!-- proc~compute_volumes -->
+<g id="proc~~setup_geometry~~CallsGraph_node9" class="node">
+<title>proc~compute_volumes</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node9"><a xlink:href=".././proc/compute_volumes.html" xlink:title="compute_volumes">
+<polygon fill="#d9534f" stroke="#d9534f" points="470.5,-150 370.5,-150 370.5,-126 470.5,-126 470.5,-150"/>
+<text text-anchor="middle" x="420.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_volumes</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_geometric_parameters&#45;&gt;proc~compute_volumes -->
+<g id="proc~~setup_geometry~~CallsGraph_edge12" class="edge">
+<title>proc~compute_geometric_parameters&#45;&gt;proc~compute_volumes</title>
+<path fill="none" stroke="#7f00ff" d="M294.1027,-138.6005C316.2428,-138.4953 339.6852,-138.3839 360.2893,-138.286"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="360.4863,-141.7852 370.4695,-138.2377 360.453,-134.7853 360.4863,-141.7852"/>
+</g>
+<!-- proc~compute_face_area_vectors -->
+<g id="proc~~setup_geometry~~CallsGraph_node13" class="node">
+<title>proc~compute_face_area_vectors</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node13"><a xlink:href=".././proc/compute_face_area_vectors.html" xlink:title="compute_face_area_vectors">
+<polygon fill="#d9534f" stroke="#d9534f" points="695,-66 547,-66 547,-42 695,-42 695,-66"/>
+<text text-anchor="middle" x="621" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_face_area_vectors</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_face_areas_and_normals&#45;&gt;proc~compute_face_area_vectors -->
+<g id="proc~~setup_geometry~~CallsGraph_edge13" class="edge">
+<title>proc~compute_face_areas_and_normals&#45;&gt;proc~compute_face_area_vectors</title>
+<path fill="none" stroke="#ff0000" d="M511.0713,-65.5137C519.5559,-64.6251 528.1339,-63.7266 536.559,-62.8442"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="537.1625,-66.3002 546.7435,-61.7775 536.4333,-59.3383 537.1625,-66.3002"/>
+</g>
+<!-- proc~compute_face_areas -->
+<g id="proc~~setup_geometry~~CallsGraph_node14" class="node">
+<title>proc~compute_face_areas</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node14"><a xlink:href=".././proc/compute_face_areas.html" xlink:title="compute_face_areas">
+<polygon fill="#d9534f" stroke="#d9534f" points="677.5,-24 564.5,-24 564.5,0 677.5,0 677.5,-24"/>
+<text text-anchor="middle" x="621" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_face_areas</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_face_areas_and_normals&#45;&gt;proc~compute_face_areas -->
+<g id="proc~~setup_geometry~~CallsGraph_edge14" class="edge">
+<title>proc~compute_face_areas_and_normals&#45;&gt;proc~compute_face_areas</title>
+<path fill="none" stroke="#ff0000" d="M455.2682,-62.998C480.6071,-54.3632 515.8149,-42.5968 547,-33 553.6033,-30.9679 560.5598,-28.8995 567.4571,-26.8925"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="568.8318,-30.1389 577.472,-24.0073 566.8939,-23.4125 568.8318,-30.1389"/>
+</g>
+<!-- proc~normalize_face_normals -->
+<g id="proc~~setup_geometry~~CallsGraph_node16" class="node">
+<title>proc~normalize_face_normals</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node16"><a xlink:href=".././proc/normalize_face_normals.html" xlink:title="normalize_face_normals">
+<polygon fill="#d9534f" stroke="#d9534f" points="686,-108 556,-108 556,-84 686,-84 686,-108"/>
+<text text-anchor="middle" x="621" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">normalize_face_normals</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_face_areas_and_normals&#45;&gt;proc~normalize_face_normals -->
+<g id="proc~~setup_geometry~~CallsGraph_edge15" class="edge">
+<title>proc~compute_face_areas_and_normals&#45;&gt;proc~normalize_face_normals</title>
+<path fill="none" stroke="#ff0000" d="M511.0713,-84.4863C522.5922,-85.6929 534.2852,-86.9177 545.5341,-88.0958"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="545.4119,-91.6021 555.7221,-89.1629 546.1411,-84.6402 545.4119,-91.6021"/>
+</g>
+<!-- interface~alloc -->
+<g id="proc~~setup_geometry~~CallsGraph_node12" class="node">
+<title>interface~alloc</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node12"><a xlink:href=".././interface/alloc.html" xlink:title="alloc">
+<polygon fill="#a7506f" stroke="#a7506f" points="648,-318 594,-318 594,-294 648,-294 648,-318"/>
+<text text-anchor="middle" x="621" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc</text>
+</a>
+</g>
+</g>
+<!-- proc~allocate_memory_ghost_centroids&#45;&gt;interface~alloc -->
+<g id="proc~~setup_geometry~~CallsGraph_edge16" class="edge">
+<title>proc~allocate_memory_ghost_centroids&#45;&gt;interface~alloc</title>
+<path fill="none" stroke="#ffff00" d="M508.734,-306C534.9782,-306 562.3369,-306 583.4757,-306"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="583.622,-309.5001 593.6219,-306 583.6219,-302.5001 583.622,-309.5001"/>
+</g>
+<!-- proc~allocate_memory_volumes&#45;&gt;interface~alloc -->
+<g id="proc~~setup_geometry~~CallsGraph_edge17" class="edge">
+<title>proc~allocate_memory_volumes&#45;&gt;interface~alloc</title>
+<path fill="none" stroke="#00ff00" d="M477.9553,-276.0355C512.011,-283.1694 554.1781,-292.0024 583.8796,-298.2242"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="583.3266,-301.6842 593.8318,-300.3089 584.7618,-294.8329 583.3266,-301.6842"/>
+</g>
+<!-- proc~vol_hexahedron -->
+<g id="proc~~setup_geometry~~CallsGraph_node15" class="node">
+<title>proc~vol_hexahedron</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node15"><a xlink:href=".././proc/vol_hexahedron.html" xlink:title="vol_hexahedron">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="665.5,-150 576.5,-150 576.5,-126 665.5,-126 665.5,-150"/>
+<text text-anchor="middle" x="621" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vol_hexahedron</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_volumes&#45;&gt;proc~vol_hexahedron -->
+<g id="proc~~setup_geometry~~CallsGraph_edge18" class="edge">
+<title>proc~compute_volumes&#45;&gt;proc~vol_hexahedron</title>
+<path fill="none" stroke="#00ffff" d="M470.5774,-138C499.6292,-138 536.2551,-138 566.0921,-138"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="566.3392,-141.5001 576.3391,-138 566.3391,-134.5001 566.3392,-141.5001"/>
+</g>
+<!-- proc~allocate_memory_areas&#45;&gt;interface~alloc -->
+<g id="proc~~setup_geometry~~CallsGraph_edge19" class="edge">
+<title>proc~allocate_memory_areas&#45;&gt;interface~alloc</title>
+<path fill="none" stroke="#0000ff" d="M483.5411,-234.12C492.8843,-236.6343 502.2919,-239.5817 511,-243 541.2933,-254.8916 573.2926,-274.066 594.9192,-288.1418"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="593.2454,-291.2309 603.5175,-293.826 597.1057,-285.3915 593.2454,-291.2309"/>
+</g>
+<!-- proc~allocate_memory_normals&#45;&gt;interface~alloc -->
+<g id="proc~~setup_geometry~~CallsGraph_edge20" class="edge">
+<title>proc~allocate_memory_normals&#45;&gt;interface~alloc</title>
+<path fill="none" stroke="#ff00ff" d="M477.9553,-335.9645C512.011,-328.8306 554.1781,-319.9976 583.8796,-313.7758"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="584.7618,-317.1671 593.8318,-311.6911 583.3266,-310.3158 584.7618,-317.1671"/>
+</g>
+<!-- proc~alloc_rank2_real -->
+<g id="proc~~setup_geometry~~CallsGraph_node17" class="node">
+<title>proc~alloc_rank2_real</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node17"><a xlink:href=".././proc/alloc_rank2_real.html" xlink:title="alloc_rank2_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="829.5,-465 738.5,-465 738.5,-441 829.5,-441 829.5,-465"/>
+<text text-anchor="middle" x="784" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank2_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank2_real -->
+<g id="proc~~setup_geometry~~CallsGraph_edge21" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank2_real</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M628.6352,-318.107C644.732,-342.7448 684.519,-399.1545 731,-432 733.1218,-433.4993 735.3657,-434.912 737.6843,-436.24"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="736.4004,-439.5143 746.8979,-440.9466 739.5848,-433.2805 736.4004,-439.5143"/>
+</g>
+<!-- proc~alloc_rank4_real -->
+<g id="proc~~setup_geometry~~CallsGraph_node18" class="node">
+<title>proc~alloc_rank4_real</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node18"><a xlink:href=".././proc/alloc_rank4_real.html" xlink:title="alloc_rank4_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="829.5,-423 738.5,-423 738.5,-399 829.5,-399 829.5,-423"/>
+<text text-anchor="middle" x="784" y="-408.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank4_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank4_real -->
+<g id="proc~~setup_geometry~~CallsGraph_edge22" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank4_real</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M634.3739,-318.1845C654.2643,-335.8295 693.3523,-368.708 731,-390 733.886,-391.6322 736.9243,-393.1969 740.0256,-394.6837"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="738.8723,-398.0023 749.4291,-398.9003 741.7365,-391.615 738.8723,-398.0023"/>
+</g>
+<!-- proc~alloc_rank3_real -->
+<g id="proc~~setup_geometry~~CallsGraph_node19" class="node">
+<title>proc~alloc_rank3_real</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node19"><a xlink:href=".././proc/alloc_rank3_real.html" xlink:title="alloc_rank3_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="829.5,-381 738.5,-381 738.5,-357 829.5,-357 829.5,-381"/>
+<text text-anchor="middle" x="784" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank3_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank3_real -->
+<g id="proc~~setup_geometry~~CallsGraph_edge23" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank3_real</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M648.2825,-316.5448C674.1756,-326.5525 713.4309,-341.7248 743.0733,-353.1817"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="742.1348,-356.5713 752.7242,-356.9118 744.6584,-350.042 742.1348,-356.5713"/>
+</g>
+<!-- proc~alloc_rank2_integer -->
+<g id="proc~~setup_geometry~~CallsGraph_node20" class="node">
+<title>proc~alloc_rank2_integer</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node20"><a xlink:href=".././proc/alloc_rank2_integer.html" xlink:title="alloc_rank2_integer">
+<polygon fill="#d9534f" stroke="#d9534f" points="837,-339 731,-339 731,-315 837,-315 837,-339"/>
+<text text-anchor="middle" x="784" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank2_integer</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank2_integer -->
+<g id="proc~~setup_geometry~~CallsGraph_edge24" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank2_integer</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M648.2825,-309.5149C668.0369,-312.06 695.5687,-315.607 720.6757,-318.8417"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="720.5232,-322.3509 730.8885,-320.1574 721.4177,-315.4082 720.5232,-322.3509"/>
+</g>
+<!-- proc~alloc_rank1_integer -->
+<g id="proc~~setup_geometry~~CallsGraph_node21" class="node">
+<title>proc~alloc_rank1_integer</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node21"><a xlink:href=".././proc/alloc_rank1_integer.html" xlink:title="alloc_rank1_integer">
+<polygon fill="#d9534f" stroke="#d9534f" points="837,-297 731,-297 731,-273 837,-273 837,-297"/>
+<text text-anchor="middle" x="784" y="-282.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank1_integer</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank1_integer -->
+<g id="proc~~setup_geometry~~CallsGraph_edge25" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank1_integer</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M648.2825,-302.4851C668.0369,-299.94 695.5687,-296.393 720.6757,-293.1583"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="721.4177,-296.5918 730.8885,-291.8426 720.5232,-289.6491 721.4177,-296.5918"/>
+</g>
+<!-- proc~alloc_rank6_real -->
+<g id="proc~~setup_geometry~~CallsGraph_node22" class="node">
+<title>proc~alloc_rank6_real</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node22"><a xlink:href=".././proc/alloc_rank6_real.html" xlink:title="alloc_rank6_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="829.5,-255 738.5,-255 738.5,-231 829.5,-231 829.5,-255"/>
+<text text-anchor="middle" x="784" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank6_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank6_real -->
+<g id="proc~~setup_geometry~~CallsGraph_edge26" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank6_real</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M648.2825,-295.4552C674.1756,-285.4475 713.4309,-270.2752 743.0733,-258.8183"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="744.6584,-261.958 752.7242,-255.0882 742.1348,-255.4287 744.6584,-261.958"/>
+</g>
+<!-- proc~alloc_rank5_real -->
+<g id="proc~~setup_geometry~~CallsGraph_node23" class="node">
+<title>proc~alloc_rank5_real</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node23"><a xlink:href=".././proc/alloc_rank5_real.html" xlink:title="alloc_rank5_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="829.5,-213 738.5,-213 738.5,-189 829.5,-189 829.5,-213"/>
+<text text-anchor="middle" x="784" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank5_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank5_real -->
+<g id="proc~~setup_geometry~~CallsGraph_edge27" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank5_real</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M634.3739,-293.8155C654.2643,-276.1705 693.3523,-243.292 731,-222 733.886,-220.3678 736.9243,-218.8031 740.0256,-217.3163"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="741.7365,-220.385 749.4291,-213.0997 738.8723,-213.9977 741.7365,-220.385"/>
+</g>
+<!-- proc~alloc_rank3_integer -->
+<g id="proc~~setup_geometry~~CallsGraph_node25" class="node">
+<title>proc~alloc_rank3_integer</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node25"><a xlink:href=".././proc/alloc_rank3_integer.html" xlink:title="alloc_rank3_integer">
+<polygon fill="#d9534f" stroke="#d9534f" points="837,-171 731,-171 731,-147 837,-147 837,-171"/>
+<text text-anchor="middle" x="784" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank3_integer</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank3_integer -->
+<g id="proc~~setup_geometry~~CallsGraph_edge28" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank3_integer</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M628.6352,-293.893C644.732,-269.2552 684.519,-212.8455 731,-180 733.1218,-178.5007 735.3657,-177.088 737.6843,-175.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="739.5848,-178.7195 746.8979,-171.0534 736.4004,-172.4857 739.5848,-178.7195"/>
+</g>
+<!-- proc~alloc_rank1_real -->
+<g id="proc~~setup_geometry~~CallsGraph_node26" class="node">
+<title>proc~alloc_rank1_real</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node26"><a xlink:href=".././proc/alloc_rank1_real.html" xlink:title="alloc_rank1_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="829.5,-507 738.5,-507 738.5,-483 829.5,-483 829.5,-507"/>
+<text text-anchor="middle" x="784" y="-492.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc_rank1_real</text>
+</a>
+</g>
+</g>
+<!-- interface~alloc&#45;&gt;proc~alloc_rank1_real -->
+<g id="proc~~setup_geometry~~CallsGraph_edge29" class="edge">
+<title>interface~alloc&#45;&gt;proc~alloc_rank1_real</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M625.95,-318.4151C638.7589,-349.0576 675.886,-429.0505 731,-474 732.7449,-475.4231 734.5982,-476.7591 736.527,-478.0123"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="734.9328,-481.1314 745.3635,-482.9892 738.368,-475.0322 734.9328,-481.1314"/>
+</g>
+<!-- proc~vol_tetrahedron -->
+<g id="proc~~setup_geometry~~CallsGraph_node24" class="node">
+<title>proc~vol_tetrahedron</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node24"><a xlink:href=".././proc/vol_tetrahedron.html" xlink:title="vol_tetrahedron">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="828,-129 740,-129 740,-105 828,-105 828,-129"/>
+<text text-anchor="middle" x="784" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vol_tetrahedron</text>
+</a>
+</g>
+</g>
+<!-- proc~vol_hexahedron&#45;&gt;proc~vol_tetrahedron -->
+<g id="proc~~setup_geometry~~CallsGraph_edge30" class="edge">
+<title>proc~vol_hexahedron&#45;&gt;proc~vol_tetrahedron</title>
+<path fill="none" stroke="#0066ff" d="M665.5405,-132.2617C685.3867,-129.7048 708.9426,-126.67 729.801,-123.9827"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="730.325,-127.4442 739.7958,-122.695 729.4305,-120.5016 730.325,-127.4442"/>
+</g>
+</g>
+</svg>
+</div><script>var panprocsetup_geometryCallsGraph = svgPanZoom('#procsetup_geometryCallsGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~setup_geometry~~CalledByGraph Pages: 1 -->
+<svg id="procsetup_geometryCalledByGraph" width="388pt" height="74pt"
+ viewBox="0.00 0.00 388.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~setup_geometry~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>proc~~setup_geometry~~CalledByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 384,-70 384,4 -4,4"/>
+<!-- proc~setup_geometry -->
+<g id="proc~~setup_geometry~~CalledByGraph_node1" class="node">
+<title>proc~setup_geometry</title>
+<polygon fill="none" stroke="#000000" points="380,-45 290,-45 290,-21 380,-21 380,-45"/>
+<text text-anchor="middle" x="335" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">setup_geometry</text>
+</g>
+<!-- proc~setup_solver -->
+<g id="proc~~setup_geometry~~CalledByGraph_node2" class="node">
+<title>proc~setup_solver</title>
+<g id="a_proc~~setup_geometry~~CalledByGraph_node2"><a xlink:href=".././proc/setup_solver.html" xlink:title="setup_solver">
+<polygon fill="#d9534f" stroke="#d9534f" points="254,-66 181,-66 181,-42 254,-42 254,-66"/>
+<text text-anchor="middle" x="217.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_solver</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_solver&#45;&gt;proc~setup_geometry -->
+<g id="proc~~setup_geometry~~CalledByGraph_edge1" class="edge">
+<title>proc~setup_solver&#45;&gt;proc~setup_geometry</title>
+<path fill="none" stroke="#ff0000" d="M254.0336,-47.4706C262.1683,-46.0167 270.9694,-44.4438 279.6702,-42.8887"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="280.5638,-46.2846 289.792,-41.0797 279.3322,-39.3938 280.5638,-46.2846"/>
+</g>
+<!-- proc~setup_all -->
+<g id="proc~~setup_geometry~~CalledByGraph_node3" class="node">
+<title>proc~setup_all</title>
+<g id="a_proc~~setup_geometry~~CalledByGraph_node3"><a xlink:href=".././proc/setup_all.html" xlink:title="setup_all">
+<polygon fill="#d9534f" stroke="#d9534f" points="245,-24 190,-24 190,0 245,0 245,-24"/>
+<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_all</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_all&#45;&gt;proc~setup_geometry -->
+<g id="proc~~setup_geometry~~CalledByGraph_edge2" class="edge">
+<title>proc~setup_all&#45;&gt;proc~setup_geometry</title>
+<path fill="none" stroke="#ff0000" d="M245.0485,-16.9236C255.4351,-18.7799 267.6547,-20.9638 279.6818,-23.1133"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="279.235,-26.5889 289.6949,-24.9029 280.4667,-19.6981 279.235,-26.5889"/>
+</g>
+<!-- proc~start_run -->
+<g id="proc~~setup_geometry~~CalledByGraph_node4" class="node">
+<title>proc~start_run</title>
+<g id="a_proc~~setup_geometry~~CalledByGraph_node4"><a xlink:href=".././proc/start_run.html" xlink:title="start_run">
+<polygon fill="#d9534f" stroke="#d9534f" points="145,-66 90,-66 90,-42 145,-42 145,-66"/>
+<text text-anchor="middle" x="117.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_run</text>
+</a>
+</g>
+</g>
+<!-- proc~start_run&#45;&gt;proc~setup_solver -->
+<g id="proc~~setup_geometry~~CalledByGraph_edge3" class="edge">
+<title>proc~start_run&#45;&gt;proc~setup_solver</title>
+<path fill="none" stroke="#ff0000" d="M145.0902,-54C152.985,-54 161.8197,-54 170.5313,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="170.6377,-57.5001 180.6376,-54 170.6376,-50.5001 170.6377,-57.5001"/>
+</g>
+<!-- program~main -->
+<g id="proc~~setup_geometry~~CalledByGraph_node5" class="node">
+<title>program~main</title>
+<g id="a_proc~~setup_geometry~~CalledByGraph_node5"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~start_run -->
+<g id="proc~~setup_geometry~~CalledByGraph_edge4" class="edge">
+<title>program~main&#45;&gt;proc~start_run</title>
+<path fill="none" stroke="#ff0000" d="M54.153,-54C62.1482,-54 71.046,-54 79.5856,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.7397,-57.5001 89.7397,-54 79.7397,-50.5001 79.7397,-57.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/setup_geometry.html#src">setup_geometry</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>        <span class="k">subroutine </span><span class="n">setup_geometry</span><span class="p">()</span>
+            <span class="c">!&lt; Make the geometry module useful</span>
+            <span class="c">!&lt;</span>
+            <span class="c">!&lt; Allocates memory to the variables and initializes them.</span>
+            <span class="c">!-----------------------------------------------------------</span>
+
+            <span class="k">implicit none</span>
+
+<span class="k">            call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">,</span> <span class="s1">&#39;setup_geometry&#39;</span><span class="p">)</span>
+
+            <span class="k">call </span><span class="n">allocate_memory</span><span class="p">()</span>
+            <span class="k">call </span><span class="n">compute_geometric_parameters</span><span class="p">()</span>
+            <span class="k">call </span><span class="n">compute_ghost_cell_centroid</span><span class="p">()</span>
+
+        <span class="k">end subroutine </span><span class="n">setup_geometry</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

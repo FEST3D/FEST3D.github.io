@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>initstate &ndash; FEST-3D</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>initstate
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.1% of total for procedures.">12 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/state.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/state.f90.html'>state.f90</a></li>
+    
+     <li><a href='../module/state.html'>state</a></li>
+    
+  
+     <li class="active">initstate</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/initstate.html#src">initstate</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+private subroutine initstate()
+    
+    
+   
+</h2>
+    
+  
+
+
+    
+    <p>Initialize the state.
+ If load file(start_from) is 0, then the state should be 
+ set to the infinity values. Otherwise, read the state_file
+ to get the state values.</p>
+    
+
+    <h3>Arguments</h3>
+    
+    <em>None</em>
+    <br>
+    
+    
+    
+    <br>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~initstate~~CallsGraph Pages: 1 -->
+<svg id="procinitstateCallsGraph" width="481pt" height="404pt"
+ viewBox="0.00 0.00 481.00 404.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~initstate~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 400)">
+<title>proc~~initstate~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-400 477,-400 477,4 -4,4"/>
+<!-- proc~initstate -->
+<g id="proc~~initstate~~CallsGraph_node1" class="node">
+<title>proc~initstate</title>
+<polygon fill="none" stroke="#000000" points="54,-336 0,-336 0,-312 54,-312 54,-336"/>
+<text text-anchor="middle" x="27" y="-321.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">initstate</text>
+</g>
+<!-- proc~verify_write_control -->
+<g id="proc~~initstate~~CallsGraph_node2" class="node">
+<title>proc~verify_write_control</title>
+<g id="a_proc~~initstate~~CallsGraph_node2"><a xlink:href=".././proc/verify_write_control.html" xlink:title="verify_write_control">
+<polygon fill="#d9534f" stroke="#d9534f" points="219,-396 114,-396 114,-372 219,-372 219,-396"/>
+<text text-anchor="middle" x="166.5" y="-381.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">verify_write_control</text>
+</a>
+</g>
+</g>
+<!-- proc~initstate&#45;&gt;proc~verify_write_control -->
+<g id="proc~~initstate~~CallsGraph_edge1" class="edge">
+<title>proc~initstate&#45;&gt;proc~verify_write_control</title>
+<path fill="none" stroke="#ff0000" d="M47.2803,-336.0686C59.4216,-343.0074 75.3039,-351.5907 90,-358 98.5926,-361.7474 107.9122,-365.3101 116.9937,-368.5292"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="116.1142,-371.9281 126.7089,-371.8798 118.3965,-365.3106 116.1142,-371.9281"/>
+</g>
+<!-- debugcall -->
+<g id="proc~~initstate~~CallsGraph_node3" class="node">
+<title>debugcall</title>
+<polygon fill="#777777" stroke="#777777" points="360,-356 302,-356 302,-332 360,-332 360,-356"/>
+<text text-anchor="middle" x="331" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">debugcall</text>
+</g>
+<!-- proc~initstate&#45;&gt;debugcall -->
+<g id="proc~~initstate~~CallsGraph_edge2" class="edge">
+<title>proc~initstate&#45;&gt;debugcall</title>
+<path fill="none" stroke="#ff0000" d="M54.2455,-325.7925C108.25,-329.3454 229.0523,-337.2929 291.6733,-341.4127"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="291.7248,-344.9236 301.933,-342.0877 292.1844,-337.9387 291.7248,-344.9236"/>
+</g>
+<!-- proc~init_state_with_infinity_values -->
+<g id="proc~~initstate~~CallsGraph_node4" class="node">
+<title>proc~init_state_with_infinity_values</title>
+<g id="a_proc~~initstate~~CallsGraph_node4"><a xlink:href=".././proc/init_state_with_infinity_values.html" xlink:title="init_state_with_infinity_values">
+<polygon fill="#d9534f" stroke="#d9534f" points="243,-316 90,-316 90,-292 243,-292 243,-316"/>
+<text text-anchor="middle" x="166.5" y="-301.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">init_state_with_infinity_values</text>
+</a>
+</g>
+</g>
+<!-- proc~initstate&#45;&gt;proc~init_state_with_infinity_values -->
+<g id="proc~~initstate~~CallsGraph_edge3" class="edge">
+<title>proc~initstate&#45;&gt;proc~init_state_with_infinity_values</title>
+<path fill="none" stroke="#ff0000" d="M54.2282,-320.0963C61.8562,-319.0027 70.5815,-317.7518 79.7223,-316.4412"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="80.3699,-319.8843 89.7719,-315.0004 79.3764,-312.9551 80.3699,-319.8843"/>
+</g>
+<!-- proc~read_file -->
+<g id="proc~~initstate~~CallsGraph_node5" class="node">
+<title>proc~read_file</title>
+<g id="a_proc~~initstate~~CallsGraph_node5"><a xlink:href=".././proc/read_file.html" xlink:title="read_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="193.5,-192 139.5,-192 139.5,-168 193.5,-168 193.5,-192"/>
+<text text-anchor="middle" x="166.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_file</text>
+</a>
+</g>
+</g>
+<!-- proc~initstate&#45;&gt;proc~read_file -->
+<g id="proc~~initstate~~CallsGraph_edge4" class="edge">
+<title>proc~initstate&#45;&gt;proc~read_file</title>
+<path fill="none" stroke="#ff0000" d="M38.8937,-311.7226C63.0872,-286.7487 118.2102,-229.8476 147.4564,-199.6579"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="150.1923,-201.864 154.6364,-192.2463 145.1646,-196.9934 150.1923,-201.864"/>
+</g>
+<!-- proc~lcase -->
+<g id="proc~~initstate~~CallsGraph_node11" class="node">
+<title>proc~lcase</title>
+<g id="a_proc~~initstate~~CallsGraph_node11"><a xlink:href=".././proc/lcase.html" xlink:title="lcase">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="473,-334 419,-334 419,-310 473,-310 473,-334"/>
+<text text-anchor="middle" x="446" y="-319.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lcase</text>
+</a>
+</g>
+</g>
+<!-- proc~verify_write_control&#45;&gt;proc~lcase -->
+<g id="proc~~initstate~~CallsGraph_edge5" class="edge">
+<title>proc~verify_write_control&#45;&gt;proc~lcase</title>
+<path fill="none" stroke="#ff0000" d="M219.2566,-386.7155C264.1004,-387.3173 329.5265,-384.1097 383,-365 398.1042,-359.6022 413.0191,-349.6861 424.5424,-340.7356"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="427.0767,-343.1868 432.6402,-334.1702 422.6682,-337.7493 427.0767,-343.1868"/>
+</g>
+<!-- proc~init_state_with_infinity_values&#45;&gt;debugcall -->
+<g id="proc~~initstate~~CallsGraph_edge6" class="edge">
+<title>proc~init_state_with_infinity_values&#45;&gt;debugcall</title>
+<path fill="none" stroke="#00ffff" d="M215.8554,-316.0013C240.1477,-321.9083 269.0235,-328.9297 291.7811,-334.4635"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="291.2246,-337.9301 301.7684,-336.892 292.8785,-331.1283 291.2246,-337.9301"/>
+</g>
+<!-- proc~dmsg -->
+<g id="proc~~initstate~~CallsGraph_node6" class="node">
+<title>proc~dmsg</title>
+<g id="a_proc~~initstate~~CallsGraph_node6"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
+<polygon fill="#d9534f" stroke="#d9534f" points="473,-108 419,-108 419,-84 473,-84 473,-108"/>
+<text text-anchor="middle" x="446" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
+</a>
+</g>
+</g>
+<!-- proc~read_file&#45;&gt;proc~dmsg -->
+<g id="proc~~initstate~~CallsGraph_edge7" class="edge">
+<title>proc~read_file&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#7f00ff" d="M193.5431,-192.0328C236.6798,-209.2677 322.3705,-235.3279 383,-201 414.2407,-183.3118 431.6796,-143.2683 439.9312,-118.0609"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="443.3464,-118.8606 442.9185,-108.2744 436.6514,-116.8169 443.3464,-118.8606"/>
+</g>
+<!-- read_file_tec -->
+<g id="proc~~initstate~~CallsGraph_node7" class="node">
+<title>read_file_tec</title>
+<polygon fill="#777777" stroke="#777777" points="368,-192 294,-192 294,-168 368,-168 368,-192"/>
+<text text-anchor="middle" x="331" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_file_tec</text>
+</g>
+<!-- proc~read_file&#45;&gt;read_file_tec -->
+<g id="proc~~initstate~~CallsGraph_edge9" class="edge">
+<title>proc~read_file&#45;&gt;read_file_tec</title>
+<path fill="none" stroke="#7f00ff" d="M193.6638,-180C218.153,-180 254.7,-180 283.9371,-180"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="283.942,-183.5001 293.942,-180 283.942,-176.5001 283.942,-183.5001"/>
+</g>
+<!-- proc~setup_file -->
+<g id="proc~~initstate~~CallsGraph_node8" class="node">
+<title>proc~setup_file</title>
+<g id="a_proc~~initstate~~CallsGraph_node8"><a xlink:href=".././proc/setup_file.html" xlink:title="setup_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="360,-150 302,-150 302,-126 360,-126 360,-150"/>
+<text text-anchor="middle" x="331" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_file</text>
+</a>
+</g>
+</g>
+<!-- proc~read_file&#45;&gt;proc~setup_file -->
+<g id="proc~~initstate~~CallsGraph_edge14" class="edge">
+<title>proc~read_file&#45;&gt;proc~setup_file</title>
+<path fill="none" stroke="#7f00ff" d="M193.6638,-173.0646C220.4736,-166.2195 261.7346,-155.6848 292.0352,-147.9485"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="293.0309,-151.3066 301.8542,-145.4415 291.2991,-144.5242 293.0309,-151.3066"/>
+</g>
+<!-- proc~read_restart_file -->
+<g id="proc~~initstate~~CallsGraph_node9" class="node">
+<title>proc~read_restart_file</title>
+<g id="a_proc~~initstate~~CallsGraph_node9"><a xlink:href=".././proc/read_restart_file.html" xlink:title="read_restart_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="376.5,-108 285.5,-108 285.5,-84 376.5,-84 376.5,-108"/>
+<text text-anchor="middle" x="331" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_restart_file</text>
+</a>
+</g>
+</g>
+<!-- proc~read_file&#45;&gt;proc~read_restart_file -->
+<g id="proc~~initstate~~CallsGraph_edge10" class="edge">
+<title>proc~read_file&#45;&gt;proc~read_restart_file</title>
+<path fill="none" stroke="#7f00ff" d="M186.4149,-167.832C208.588,-154.5259 245.6958,-132.971 279,-117 282.5527,-115.2963 286.2817,-113.6065 290.0423,-111.9687"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="291.5239,-115.1424 299.3734,-108.0266 288.7997,-108.6942 291.5239,-115.1424"/>
+</g>
+<!-- proc~open_file -->
+<g id="proc~~initstate~~CallsGraph_node10" class="node">
+<title>proc~open_file</title>
+<g id="a_proc~~initstate~~CallsGraph_node10"><a xlink:href=".././proc/open_file.html" xlink:title="open_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="359,-66 303,-66 303,-42 359,-42 359,-66"/>
+<text text-anchor="middle" x="331" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">open_file</text>
+</a>
+</g>
+</g>
+<!-- proc~read_file&#45;&gt;proc~open_file -->
+<g id="proc~~initstate~~CallsGraph_edge11" class="edge">
+<title>proc~read_file&#45;&gt;proc~open_file</title>
+<path fill="none" stroke="#7f00ff" d="M176.8338,-167.7645C195.3915,-146.4355 236.4174,-102.1365 279,-75 283.453,-72.1622 288.3531,-69.5843 293.311,-67.2836"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="295.0049,-70.3653 302.8141,-63.2051 292.2442,-63.9327 295.0049,-70.3653"/>
+</g>
+<!-- proc~close_file~2 -->
+<g id="proc~~initstate~~CallsGraph_node12" class="node">
+<title>proc~close_file~2</title>
+<g id="a_proc~~initstate~~CallsGraph_node12"><a xlink:href=".././proc/close_file%7E2.html" xlink:title="close_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="359.5,-24 302.5,-24 302.5,0 359.5,0 359.5,-24"/>
+<text text-anchor="middle" x="331" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">close_file</text>
+</a>
+</g>
+</g>
+<!-- proc~read_file&#45;&gt;proc~close_file~2 -->
+<g id="proc~~initstate~~CallsGraph_edge8" class="edge">
+<title>proc~read_file&#45;&gt;proc~close_file~2</title>
+<path fill="none" stroke="#7f00ff" d="M172.73,-167.9781C187.5628,-140.4339 227.6039,-72.1279 279,-33 283.2014,-29.8015 287.9565,-27.0157 292.8421,-24.6113"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="294.5473,-27.6847 302.2869,-20.4494 291.7246,-21.279 294.5473,-27.6847"/>
+</g>
+<!-- read_file_vtk -->
+<g id="proc~~initstate~~CallsGraph_node13" class="node">
+<title>read_file_vtk</title>
+<polygon fill="#777777" stroke="#777777" points="367.5,-314 294.5,-314 294.5,-290 367.5,-290 367.5,-314"/>
+<text text-anchor="middle" x="331" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_file_vtk</text>
+</g>
+<!-- proc~read_file&#45;&gt;read_file_vtk -->
+<g id="proc~~initstate~~CallsGraph_edge13" class="edge">
+<title>proc~read_file&#45;&gt;read_file_vtk</title>
+<path fill="none" stroke="#7f00ff" d="M177.2337,-192.065C196.0854,-212.6562 237.1317,-254.8845 279,-281 281.6009,-282.6223 284.3486,-284.1632 287.1676,-285.6182"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="285.7873,-288.8373 296.3217,-289.9672 288.7912,-282.5146 285.7873,-288.8373"/>
+</g>
+<!-- proc~verify_read_control -->
+<g id="proc~~initstate~~CallsGraph_node14" class="node">
+<title>proc~verify_read_control</title>
+<g id="a_proc~~initstate~~CallsGraph_node14"><a xlink:href=".././proc/verify_read_control.html" xlink:title="verify_read_control">
+<polygon fill="#d9534f" stroke="#d9534f" points="383,-272 279,-272 279,-248 383,-248 383,-272"/>
+<text text-anchor="middle" x="331" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">verify_read_control</text>
+</a>
+</g>
+</g>
+<!-- proc~read_file&#45;&gt;proc~verify_read_control -->
+<g id="proc~~initstate~~CallsGraph_edge12" class="edge">
+<title>proc~read_file&#45;&gt;proc~verify_read_control</title>
+<path fill="none" stroke="#7f00ff" d="M191.484,-192.1503C219.6669,-205.8562 265.6576,-228.2226 297.0738,-243.5009"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="295.7962,-246.7715 306.3199,-247.9975 298.8577,-240.4765 295.7962,-246.7715"/>
+</g>
+<!-- proc~setup_file&#45;&gt;proc~dmsg -->
+<g id="proc~~initstate~~CallsGraph_edge15" class="edge">
+<title>proc~setup_file&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#aaff00" d="M360.0194,-127.4016C375.0072,-121.9278 393.4489,-115.1926 409.4046,-109.3653"/>
+<polygon fill="#aaff00" stroke="#aaff00" points="410.7725,-112.5919 418.9649,-105.8737 408.3711,-106.0167 410.7725,-112.5919"/>
+</g>
+<!-- proc~open_file&#45;&gt;proc~dmsg -->
+<g id="proc~~initstate~~CallsGraph_edge16" class="edge">
+<title>proc~open_file&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#00ffa9" d="M359.1322,-64.2744C374.2204,-69.7848 392.9964,-76.6422 409.2281,-82.5703"/>
+<polygon fill="#00ffa9" stroke="#00ffa9" points="408.3563,-85.9779 418.9502,-86.1209 410.7577,-79.4027 408.3563,-85.9779"/>
+</g>
+<!-- proc~close_file~2&#45;&gt;proc~dmsg -->
+<g id="proc~~initstate~~CallsGraph_edge17" class="edge">
+<title>proc~close_file~2&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#0000ff" d="M359.5595,-21.1527C367.4777,-24.3126 375.855,-28.2717 383,-33 400.946,-44.8762 417.993,-62.4507 429.8179,-76.0225"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="427.3317,-78.5025 436.467,-83.8688 432.6721,-73.9769 427.3317,-78.5025"/>
+</g>
+<!-- proc~verify_read_control&#45;&gt;proc~lcase -->
+<g id="proc~~initstate~~CallsGraph_edge18" class="edge">
+<title>proc~verify_read_control&#45;&gt;proc~lcase</title>
+<path fill="none" stroke="#ff00aa" d="M363.6149,-272.0454C370.14,-274.7677 376.8697,-277.8056 383,-281 395.9669,-287.7569 409.6518,-296.4533 420.942,-304.097"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="419.204,-307.1499 429.4237,-309.9442 423.1771,-301.3867 419.204,-307.1499"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~initstate~~CalledByGraph Pages: 1 -->
+<svg id="procinitstateCalledByGraph" width="456pt" height="74pt"
+ viewBox="0.00 0.00 456.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~initstate~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>proc~~initstate~~CalledByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 452,-70 452,4 -4,4"/>
+<!-- proc~initstate -->
+<g id="proc~~initstate~~CalledByGraph_node1" class="node">
+<title>proc~initstate</title>
+<polygon fill="none" stroke="#000000" points="448,-45 394,-45 394,-21 448,-21 448,-45"/>
+<text text-anchor="middle" x="421" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">initstate</text>
+</g>
+<!-- proc~setup_state -->
+<g id="proc~~initstate~~CalledByGraph_node2" class="node">
+<title>proc~setup_state</title>
+<g id="a_proc~~initstate~~CalledByGraph_node2"><a xlink:href=".././proc/setup_state.html" xlink:title="setup_state">
+<polygon fill="#d9534f" stroke="#d9534f" points="358,-45 290,-45 290,-21 358,-21 358,-45"/>
+<text text-anchor="middle" x="324" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_state</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_state&#45;&gt;proc~initstate -->
+<g id="proc~~initstate~~CalledByGraph_edge1" class="edge">
+<title>proc~setup_state&#45;&gt;proc~initstate</title>
+<path fill="none" stroke="#ff0000" d="M358.1986,-33C366.4058,-33 375.2132,-33 383.559,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="383.8037,-36.5001 393.8037,-33 383.8037,-29.5001 383.8037,-36.5001"/>
+</g>
+<!-- proc~setup_solver -->
+<g id="proc~~initstate~~CalledByGraph_node3" class="node">
+<title>proc~setup_solver</title>
+<g id="a_proc~~initstate~~CalledByGraph_node3"><a xlink:href=".././proc/setup_solver.html" xlink:title="setup_solver">
+<polygon fill="#d9534f" stroke="#d9534f" points="254,-66 181,-66 181,-42 254,-42 254,-66"/>
+<text text-anchor="middle" x="217.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_solver</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_solver&#45;&gt;proc~setup_state -->
+<g id="proc~~initstate~~CalledByGraph_edge2" class="edge">
+<title>proc~setup_solver&#45;&gt;proc~setup_state</title>
+<path fill="none" stroke="#ff0000" d="M254.1513,-46.773C262.4546,-45.1357 271.3562,-43.3805 279.9304,-41.6898"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="280.656,-45.1142 289.7899,-39.7457 279.3017,-38.2464 280.656,-45.1142"/>
+</g>
+<!-- proc~setup_all -->
+<g id="proc~~initstate~~CalledByGraph_node4" class="node">
+<title>proc~setup_all</title>
+<g id="a_proc~~initstate~~CalledByGraph_node4"><a xlink:href=".././proc/setup_all.html" xlink:title="setup_all">
+<polygon fill="#d9534f" stroke="#d9534f" points="245,-24 190,-24 190,0 245,0 245,-24"/>
+<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_all</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_all&#45;&gt;proc~setup_state -->
+<g id="proc~~initstate~~CalledByGraph_edge3" class="edge">
+<title>proc~setup_all&#45;&gt;proc~setup_state</title>
+<path fill="none" stroke="#ff0000" d="M245.2036,-17.4627C255.786,-19.5493 268.1324,-21.9839 279.8696,-24.2982"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="279.4793,-27.7886 289.9675,-26.2894 280.8336,-20.9208 279.4793,-27.7886"/>
+</g>
+<!-- proc~start_run -->
+<g id="proc~~initstate~~CalledByGraph_node5" class="node">
+<title>proc~start_run</title>
+<g id="a_proc~~initstate~~CalledByGraph_node5"><a xlink:href=".././proc/start_run.html" xlink:title="start_run">
+<polygon fill="#d9534f" stroke="#d9534f" points="145,-66 90,-66 90,-42 145,-42 145,-66"/>
+<text text-anchor="middle" x="117.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_run</text>
+</a>
+</g>
+</g>
+<!-- proc~start_run&#45;&gt;proc~setup_solver -->
+<g id="proc~~initstate~~CalledByGraph_edge4" class="edge">
+<title>proc~start_run&#45;&gt;proc~setup_solver</title>
+<path fill="none" stroke="#ff0000" d="M145.0902,-54C152.985,-54 161.8197,-54 170.5313,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="170.6377,-57.5001 180.6376,-54 170.6376,-50.5001 170.6377,-57.5001"/>
+</g>
+<!-- program~main -->
+<g id="proc~~initstate~~CalledByGraph_node6" class="node">
+<title>program~main</title>
+<g id="a_proc~~initstate~~CalledByGraph_node6"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~start_run -->
+<g id="proc~~initstate~~CalledByGraph_edge5" class="edge">
+<title>program~main&#45;&gt;proc~start_run</title>
+<path fill="none" stroke="#ff0000" d="M54.153,-54C62.1482,-54 71.046,-54 79.5856,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.7397,-57.5001 89.7397,-54 79.7397,-50.5001 79.7397,-57.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/initstate.html#src">initstate</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span>        <span class="k">subroutine </span><span class="n">initstate</span><span class="p">()</span>
+            <span class="c">!&lt; Initialize the state.</span>
+            <span class="c">!&lt; If load file(start_from) is 0, then the state should be </span>
+            <span class="c">!&lt; set to the infinity values. Otherwise, read the state_file</span>
+            <span class="c">!&lt; to get the state values.</span>
+            <span class="c">!-----------------------------------------------------------</span>
+
+            <span class="k">implicit none</span>
+<span class="k">            </span>
+<span class="k">            </span><span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;initstate&quot;</span><span class="p">)</span>
+
+            <span class="k">call  </span><span class="n">verify_write_control</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">start_from</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+                <span class="c">! Set the state to the infinity values</span>
+                <span class="k">call </span><span class="n">init_state_with_infinity_values</span><span class="p">()</span>
+                <span class="c">!!----------------------------------------</span>
+                <span class="c">!!following are added spefically for </span>
+                <span class="c">!! shock tube test case</span>
+                <span class="c">!!---------------------------------------</span>
+                <span class="c">!if(process_id&lt;2) then</span>
+                <span class="c">!  pressure = 1.0</span>
+                <span class="c">!  density = 1.0</span>
+                <span class="c">!  x_speed = 0.0</span>
+                <span class="c">!  y_speed = 0.0</span>
+                <span class="c">!  z_speed = 0.0</span>
+                <span class="c">!else</span>
+                <span class="c">!  pressure = 0.1</span>
+                <span class="c">!  density = 0.125</span>
+                <span class="c">!  x_speed = 0.0</span>
+                <span class="c">!  y_speed = 0.0</span>
+                <span class="c">!  z_speed = 0.0</span>
+                <span class="c">!end if</span>
+                <span class="c">!X_speed = 0.0</span>
+                <span class="c">!Y_speed = 0.0</span>
+                <span class="c">!Z_speed = 0.0</span>
+            <span class="k">else</span>
+<span class="k">                write</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="s1">&#39;(a,i4.4,a,i2.2)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
+                  <span class="s2">&quot;time_directories/&quot;</span><span class="p">,</span><span class="n">start_from</span><span class="p">,</span><span class="s2">&quot;/process_&quot;</span><span class="p">,</span><span class="n">process_id</span>
+                <span class="c">! Set the state to the infinity values so if some</span>
+                <span class="c">! variable are not restart variable they get free_stream value</span>
+                <span class="k">call </span><span class="n">init_state_with_infinity_values</span><span class="p">()</span>
+                <span class="k">call </span><span class="n">read_file</span><span class="p">()</span>
+
+            <span class="k">end if</span>
+
+<span class="k">        end subroutine </span><span class="n">initstate</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-05-14T20:25:48.372803 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>
