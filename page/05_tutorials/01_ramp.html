@@ -136,21 +136,25 @@
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
       <figure>
-  <div style="display: flex; justify-content: center;">
-    <img src="../../media/tutorials/15DegreeRampContour.png" alt="Contour of u speed" width="350" height="auto">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/15DegreeRampContour.png" alt="Contour of u speed" style="width:350px">
   </div>
-  <figcaption> Fig.1 Mach contours simlulated with FEST-3D for supersonic flow over a 15-degree ramp.</figcaption>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.1 Mach contours simlulated with FEST-3D for supersonic flow over a 15-degree ramp.</figcaption>
+  </div>
 </figure>
 
 <h2 id="problem-statement">Problem Statement</h2>
 <p>In this test case a supersonic inviscid flow of Mach 2.0 past a 15-degree ramp will be simulated. The domain used, and boundary
-condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained form <a href="https://www.grc.nasa.gov/WWW/wind/valid/wedge/wedge.html">NPARC
+condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained form <a href="https://www.grc.nasa.gov/WWW/wind/valid/wedgeM2/wedgeM2.html">NPARC
 Alliance Validation Archive</a>. 
 <figure>
-  <div style="display: flex; justify-content: center;">
-    <img src="../../media/tutorials/15DegreeRampDomain.png" alt="Domain" width="350">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/15DegreeRampDomain.png" alt="Contour of u speed" style="width:350px">
   </div>
-  <figcaption> Fig.2 Domain and boundary conditions for supersonic flow over a 15-degree ramp.</figcaption>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.2 Domain and boundary conditions for supersonic flow over a 15-degree ramp.</figcaption>
+  </div>
 </figure></p>
 <h2 id="mesh">Mesh</h2>
 <p>A structured grid of size 153 × 91 × 2 will be used as shown in Fig. 3. The grid is available in the 
@@ -165,15 +169,16 @@ in the makefile. Just use following command to generate gridfiles in the <strong
 </pre></div>
 
 
+<p>Run the previous command in the <strong>|rootFolder|/run/Tutorial/Ramp/CreateBlocks/</strong> directory.
 <figure>
-  <div style="display: flex; justify-content: center;">
-    <img src="../../media/tutorials/15DegreeRampMesh.png" alt="mesh" width="350">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/15DegreeRampMesh.png" alt="mesh" style="width:350px">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.3 The Mesh for supersonic flow over a 15-degree ramp.</figcaption>
   </div>
-  <figcaption> Fig.3 The Mesh for supersonic flow over a 15-degree ramp.</figcaption>
-</figure>
-
+</figure></p>
 <h2 id="setup">Setup</h2>
-<p>In order to setup the case directory, a python automation script is provided. First setup the most important
+<p>In order to setup the case directory, a python automation script is provided: <code>automaton.py</code>. First setup the most important
 parameters, the paths to the grid files and main executable binary to FEST-3D<br>
 <code>RunDir = 'GiveAnyName'</code>   Name of the run directory to create for current case. <br>
 <code>GridDir= 'CreateBlocks/grid/'</code>  Path to the folder which only contains grid file. <br>
@@ -194,7 +199,7 @@ Now provide the common control parameters.<br>
 <code>Control['Tolerance'] = "1e-13 Continuity_abs"</code> Stop the iteration if the absolute residual value of <em>continuity</em> equation is less than 1e-13. <br>
 Few scheme parameters for inviscid flow:<br>
 <code>Scheme['InviscidFlux'] = 'slau'</code> Inviscid flux-reconstruction shceme. You can use: <strong>ausm</strong>, <strong>ldfss0</strong>, <strong>ausmP</strong> , and <strong>ausmUP instead of __slau</strong>.<br>
-<code>Scheme['FaceState'] = 'muscl'</code> Higher-order  face-state reconstruction method. <br>
+<code>Scheme['FaceState'] = 'muscl'</code> Higher-order  face-state reconstruction method. you can use: <strong>none</strong>, <strong>ppm</strong>, and <strong>weno</strong>. <br>
 <code>Scheme['Limiter'] = '1 1 1  0 0 0'</code> Switch on the limiter for I,J,and K direction and switch of pressure based switching for all direction.<br>
 <code>Scheme['TimeStep']='l'</code> Local time-stepping method. You can use global time-stepping method also <strong>g</strong>.<br>
 <code>Scheme['TimeIntegration']='implicit'</code> LU-SGS matrix-free time integration method.<br>
@@ -213,7 +218,7 @@ Now, lets define the flow feature of test case:<br>
 </pre></div>
 
 
-<p>Now you will see a new folder create with <code>RunDir</code> name. Switch to that directory to run the test case. To make sure setup is correct, check
+<p>Now you will see a new folder created with <code>RunDir</code> name. Switch to that directory to run the test case. To make sure setup is correct, check
 the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md</strong>. The file should look like following:</p>
 <div class="codehilite"><pre><span></span>## BLOCK LAYOUT FILE
 ## ==========================
@@ -238,18 +243,15 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
 </pre></div>
 
 
-<p>nohup helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in background, allowing you to keep using the terminal.
-<figure>
-  <div style="display: flex; justify-content: center;">
-    <img src="../../media/tutorials/15DegreeRampContour.png" alt="Contour of u speed" width="350">
+<p>nohup helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in background, allowing you to keep using the terminal.</p>
+<h2 id="results">Results</h2>
+<p><figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/15DegreeRampPressure.png" alt="Contour of v speed" style="width:350px">
   </div>
-  <figcaption> Fig.4 Mach contours simlulated with FEST-3D for supersonic flow over a 15-degree ramp.</figcaption>
-</figure>
-<figure>
-  <div style="display: flex; justify-content: center;">
-    <img src="../../media/tutorials/15DegreeRampPressure.png" alt="Contour of v speed" width="350">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.5 Surface pressure comparasion with theory. </figcaption>
   </div>
-  <figcaption> Fig.5 Surface pressure comparasion with theory. </figcaption>
 </figure></p>
     </div>
     
@@ -293,7 +295,22 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
             </li>
             
             <li role="presentation">
+            <a href='../../page/05_tutorials/02_2dbump.html'>2D Smooth Bump</a>
+            
+            </li>
+            
+            <li role="presentation">
             <a href='../../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/05_tutorials/04_LamFp.html'>Flat plate (laminar)</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/05_tutorials/05_TurbFp.html'>Flat plate (Turbulent)</a>
             
             </li>
             
@@ -318,7 +335,7 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-14T23:06:25.947765 
+             on 2019-05-15T20:05:22.012552 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>

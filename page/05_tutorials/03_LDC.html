@@ -135,32 +135,166 @@
   
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
-      <div style="display: flex; justify-content: center;">
-  <img src="../../media/tutorials/LidDrivenCavityDomain.png" alt="Domain" width="400">
-</div>
+      <figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/LidDrivenCavityContouru.png" alt="Domain" style="width:350px">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.1 Contour of x-component of velocity vector.</figcaption>
+  </div>
+</figure>
 
-<h2 id="problem-setup">Problem Setup</h2>
-<p>A 2-Dimensional square cavity with initially quiescent flow. The upper-wall
-is moving with certain velocity $U_{inf}$ and other walls (sides and lower)
-are treated with no-slip boundaries. </p>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>In this test case we calculate the flow inside the cavity formed simulated due to tagential velocity of upper plate
+. The domain used, and boundary condition applied to the domain are illustrated in Fig. 2. 
+The case definition and grid used were obtained form 
+<a href="https://www.grc.nasa.gov/WWW/wind/valid/cavity/cavity.html">NPARC Alliance Validation Archive</a>. 
+<figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/LidDrivenCavityDomain.png" alt="Domain" style="width:350px">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.2 Domain and boundary conditions for lid-driven cavity.</figcaption>
+  </div>
+</figure></p>
 <h2 id="mesh">Mesh</h2>
-<p>In order to generate a mesh for this test case a code is provided in the 
-<a href="./tutorials/LDC/domain.pnf">here</a>.
-<div style="display: flex; justify-content: center;">
-  <img src="../../media/tutorials/LidDrivenCavityMesh.png" alt="mesh" width="400">
-</div>
-<div style="display: flex; justify-content: center;">
-  <img src="../../media/tutorials/LidDrivenCavityContouru.png" alt="Contour of u speed" width="400">
-</div>
-<div style="display: flex; justify-content: center;">
-  <img src="../../media/tutorials/LidDrivenCavityContourv.png" alt="Contour of v speed" width="400">
-</div>
-<div style="display: flex; justify-content: center;">
-  <img src="../../media/tutorials/LidDrivenCavityprofileu.png" alt="Profile of u speed" width="400">
-</div>
-<div style="display: flex; justify-content: center;">
-  <img src="../../media/tutorials/LidDrivenCavityprofilev.png" alt="Profile of v speed" width="400">
-</div></p>
+<p>A uniform structured grid of size 129 x 129 × 2 will be used as shown in Fig. 3. The grid is available in the 
+tutorial folder <strong>|rootFolder|/run/Tutorial/LidDrivenCavity/CreateBlocks/</strong>. In the <code>blocking_point.f90</code>
+edit the number of blocks in the I-direction and J-direction. In this test case four blocks will
+be used. <br>
+<code>integer, parameter :: xblocks = 2</code><br>
+<code>integer, parameter :: yblocks = 2</code><br>
+In order to compile the <code>blocking_point.f90</code> code with gfortran and execute it, commands are written 
+in the makefile. Just use following command to generate gridfiles in the <strong>grid/</strong> folder.<br></p>
+<div class="codehilite"><pre><span></span>$make
+</pre></div>
+
+
+<p>Run the previous command in the <strong>|rootFolder|/run/Tutorial/LidDrivenCavity/CreateBlocks/</strong> directory.
+<figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/LidDrivenCavityMesh.png" alt="mesh" style="width:350px">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.3 The Mesh for lid-driven cavity test case.</figcaption>
+  </div>
+</figure></p>
+<h2 id="setup">Setup</h2>
+<p>In order to setup the case directory, a python automation script is provided: <code>automaton.py</code>. First setup the most important
+parameters, the paths to the grid files and main executable binary to FEST-3D<br>
+<code>RunDir = 'GiveAnyName'</code>   Name of the run directory to create for current case. <br>
+<code>GridDir= 'CreateBlocks/grid/'</code>  Path to the folder which only contains grid file. <br>
+<code>NumberOfBlocks = 4</code> Total number of blocks. It should match with number of gridfiles avaiable in the <strong>GridDir</strong> folder <br></p>
+<div class="codehilite"><pre><span></span>AbsBinaryPath=&quot;/home/usr/FEST3D/bin/FEST3D&quot;
+</pre></div>
+
+
+<p>Absolute path to the FEST-3D binary. Should be in <strong>|rootfolder|/bin/FEST3D</strong><br>
+Now provide the common control parameters.<br>
+<code>Control['CFL'] = 10.0</code> High CFL since implicit time-integration method will be used.<br>
+<code>Control['LoadLevel'] = 0</code>Since simulation will be started from scratch, <strong>0</strong> is specified.<br>
+<code>Control['MaxIterations'] = 10000</code> Maximum number of iteration to perform. <br>
+<code>Control['SaveIterations'] = 1000</code> Solution folder will be written every 1000 iteration. <br>
+<code>Control['OutputFileFormat'] = 'vtk'</code> Type of solution file to write. If you have tecplot file viewer you can user <strong>tecplot</strong> instead of <strong>vtk</strong><br>
+<code>Control['Purge'] = 1</code> Only one latest solution folder will be kept in the <strong>time_directories</strong> and rest will be deleted. <br>
+<code>Control['ResidualWriteInterval'] = 20</code>Write residual in <strong>time_directories/aux/resnorm</strong> after every 5 iteration. <br>
+<code>Control['Tolerance'] = "1e-13 Continuity_abs"</code> Stop the iteration if the absolute residual value of <em>continuity</em> equation is less than 1e-13. <br>
+Few scheme parameters for inviscid flow:<br>
+<code>Scheme['InviscidFlux'] = 'slau'</code> Inviscid flux-reconstruction shceme. You can use: <strong>ausm</strong>, <strong>ldfss0</strong>, <strong>ausmP</strong> , and <strong>ausmUP instead of __slau</strong>.<br>
+<code>Scheme['FaceState'] = 'ppm'</code> Higher-order  face-state reconstruction method. you can use: <strong>none</strong>, <strong>muscl</strong>, and <strong>weno</strong>. <br>
+<code>Scheme['Limiter'] = '0 0 0  0 0 0'</code> Switch off the limiter for I,J,and K direction and switch of pressure based switching for all direction.<br>
+<code>Scheme['TimeStep']='g 1e-5'</code> Global time-stepping method and time-step. You can use local time-stepping method also <strong>l</strong>.<br>
+<code>Scheme['TimeIntegration']='implicit'</code> LU-SGS matrix-free time integration method.<br>
+Now, lets define the flow feature of test case:<br>
+<code>Flow["DensityInf"] = 1.2</code> Free-stream density.<br>
+<code>Flow["UInf"] = 0.0</code> Free-stream x-component of velcotiy vector. <br>
+<code>Flow["VInf"] = 0.0</code> Free-stream y-component of velcotiy vector. <br>
+<code>Flow["WInf"] = 0.0</code> Free-stream z-component of velcotiy vector. <br>
+<code>Flow["PressureInf"] = 103338.0</code> Free-stream pressure. <br>
+<code>Flow["ReferenceViscosity"] = 1.2e-1</code> Reference viscosity is set to 0.12 so that the Reynolds number based on the lid-velocity (100m/s) is 1000<br></p>
+<p><code>OutputControl['Out'] = ["Velocity", "Density", "Pressure", "Mu"]</code> Variables to write in the output file.<br>
+<code>ResidualControl['Out'] = ["Mass_abs", "Viscous_abs", "Continuity_abs"]</code> Residual to write in the resnorm file. <br>
+<code>BoundaryConditions = [-5, -5, -5, -3, -6, -6]</code> Broad boundary condition.[Noslip adiabatic side and lower wall, and upper wall with slip velocity of 100 m/s ]. The velocity at the upper wall is set manually, later, in the bc_02.md and bc_03.md boundary condition file. <br></p>
+<p>Rest of the variables should be left to thier default value. In order to execute this script use following command:</p>
+<div class="codehilite"><pre><span></span>$python automaton.py
+</pre></div>
+
+
+<p>Now you will see a new folder created with <code>RunDir</code> name. Switch to that directory to run the test case. To make sure setup is correct, check
+the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md</strong>. The file should look like following:</p>
+<div class="codehilite"><pre><span></span>## BLOCK LAYOUT FILE
+## ==========================
+## NUMBER OF PROCESSES
+4
+## NUMBER OF ENTRIES PER PROCESS
+9
+## PROCESS_NO GRID BC_FILE IMIN IMAX JMIN JMAX KMIN KMAX
+## ===================================
+## PROCESS 0
+00  grid_00.txt  bc_00.md  -005  0001  -005  0002  -006  -006
+## PROCESS 1
+01  grid_01.txt  bc_01.md  0000  -005  -005  0003  -006  -006
+## PROCESS 2
+02  grid_02.txt  bc_02.md  -005  0003  0000  -003  -006  -006
+## PROCESS 3
+03  grid_03.txt  bc_03.md  0002  -005  0001  -003  -006  -006
+</pre></div>
+
+
+<p>If all the boundary conditions are defined in layout.md file then fix the upper wall velocity in the 
+bc_02.md and bc_03.md file in <strong>system/mesh/bc/</strong> folder. Change the bc_02.md file from</p>
+<div class="codehilite"><pre><span></span># jmx
+- FIX_DENSITY
+- FIX_X_SPEED
+- FIX_Y_SPEED
+- FIX_Z_SPEED
+- COPY_PRESSURE
+</pre></div>
+
+
+<p>to</p>
+<div class="codehilite"><pre><span></span># jmx
+- FIX_DENSITY
+- FIX_X_SPEED 100.0
+- FIX_Y_SPEED 0.0
+- FIX_Z_SPEED 0.0
+- COPY_PRESSURE
+</pre></div>
+
+
+<p>and same for bc_03.md file.</p>
+<p>Finally to run the simulation use following command:</p>
+<div class="codehilite"><pre><span></span>$nohup bash run.sh &amp;
+</pre></div>
+
+
+<p>nohup helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in background, allowing you to keep using the terminal.</p>
+<h2 id="results">Results</h2>
+<p><figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/LidDrivenCavityContourv.png" alt="Domain" style="width:350px">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.4 Contour of y-component of velocity vector.</figcaption>
+  </div>
+</figure></p>
+<figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/LidDrivenCavityprofileu.png" alt="Contour of v speed" style="width:350px">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.5 Comparision of x-component of velocity with experiment. </figcaption>
+  </div>
+</figure>
+
+<figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../../media/tutorials/LidDrivenCavityprofilev.png" alt="Contour of v speed" style="width:350px">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.6 Comparision of y-comoponent of velocity with experiment. </figcaption>
+  </div>
+</figure>
     </div>
     
     <div class="col-md-3 col-md-pull-9">
@@ -202,8 +336,23 @@ are treated with no-slip boundaries. </p>
             
             </li>
             
+            <li role="presentation">
+            <a href='../../page/05_tutorials/02_2dbump.html'>2D Smooth Bump</a>
+            
+            </li>
+            
             <li role="presentation" class="disabled">
             <a href='../../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/05_tutorials/04_LamFp.html'>Flat plate (laminar)</a>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../../page/05_tutorials/05_TurbFp.html'>Flat plate (Turbulent)</a>
             
             </li>
             
@@ -228,7 +377,7 @@ are treated with no-slip boundaries. </p>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-14T23:06:25.947765 
+             on 2019-05-15T20:05:22.012552 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
