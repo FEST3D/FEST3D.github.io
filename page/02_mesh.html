@@ -142,15 +142,15 @@
   </div>
 </figure>
 
-<p>In order to solve a real-life problem, like flow over
-an airfoil, first a domain of computation has to be defined. This 
+<p>To solve a real-life problem, like flow over
+an airfoil, first, a domain of computation has to be defined. This 
 domain represents the system of interest which we
-like to study. Now in order to apply numerical method
+like to study. Now to apply a numerical method
 to solve the governing equation (Navier-Stokes) on this domain, it needed
-to be discretize. This process is not part of the FEST-3D
-code and it assume a predefine discretize domain(grid) will
+to be discretized. This process is not part of the FEST-3D
+code and it assume a predefine discretized domain(grid) will
 be provided as input. The FEST-3D expect structured grid in
-following format</p>
+ the following format</p>
 <div class="codehilite"><pre><span></span>Imax  Jmax  Kmax
 X(1,1,1)   Y(1,1,1)   Z(1,1,1)
 X(2,1,1)   Y(2,1,1)   Z(2,1,1)
@@ -172,10 +172,10 @@ X(Imax,Jmax,kmax)   Y(Imax,Jmax,kmax)   Z(Imax,Jmax,kmax)
 </pre></div>
 
 
-<p>In case of multi-block, as show in Fig. 1, each process requires a separate grid file
-and block should be created such that each and every face of that
-block employs only single boundary condition. For now, two different type of boundary
-conditions at single face  of a block is not supported by the FEST-3D.
+<p>In the case of multi-block, as shown in Fig. 1, each process requires a separate grid file
+and block should be created such that every face of that
+block employs only a single boundary condition. For now, two different types of boundary
+conditions at a single face  of a block is not supported by the FEST-3D.
 <figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
     <img src="../media/Mesh.png" alt="Mesh" style="width:350px">
@@ -184,6 +184,44 @@ conditions at single face  of a block is not supported by the FEST-3D.
     <figcaption> Fig.2 Example Mesh.</figcaption>
   </div>
 </figure></p>
+<p>A very simple example of grid file is given below for 2D-smooth bump test case, shown in Fig. 3:<br>
+<code>Blocks: 2</code> Number of blocks in I-direction are 2. So, two files will be written: <code>grid_00.txt</code> for first block and 
+<code>grid__01.txt</code> for second block<br>
+<code>Imax: 3</code> <br>
+<code>Jmin: 2</code> <br>
+<code>Kmin: 2</code> <br>
+<figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../media/CoarseGrid.png" alt="CoarseGrid" style="width:350px">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <figcaption> Fig.2 Simple coarse grid for 2D smooth bump test case.</figcaption>
+  </div>
+</figure></p>
+<h3 id="grid_00txt">grid_00.txt</h3>
+<div class="codehilite"><pre><span></span>2 2 2
+-1.5000e+00  2.3271e-26  0.0000e+00
+ 0.0000e+00  6.2500e-02  0.0000e+00
+-1.5000e+00  8.0000e-01  0.0000e+00
+ 0.0000e+00  8.0000e-01  0.0000e+00
+-1.5000e+00  2.3271e-26  1.0000e-01
+ 0.0000e+00  6.2500e-02  1.0000e-01
+-1.5000e+00  8.0000e-01  1.0000e-01
+ 0.0000e+00  8.0000e-01  1.0000e-01
+</pre></div>
+
+
+<h3 id="grid_01txt">grid_01.txt</h3>
+<div class="codehilite"><pre><span></span>2 2 2
+0.0000e+00  6.2500e-02  0.0000e+00
+1.5000e+00  2.3271e-26  0.0000e+00
+0.0000e+00  8.0000e-01  0.0000e+00
+1.5000e+00  8.0000e-01  0.0000e+00
+0.0000e+00  6.2500e-02  1.0000e-01
+1.5000e+00  2.3271e-26  1.0000e-01
+0.0000e+00  8.0000e-01  1.0000e-01
+1.5000e+00  8.0000e-01  1.0000e-01
+</pre></div>
     </div>
     
     <div class="col-md-3 col-md-pull-9">
@@ -194,6 +232,11 @@ conditions at single face  of a block is not supported by the FEST-3D.
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
+            
+            <li role="presentation">
+            <a href='../page/./00_download.html'>Download</a>
+            
+            </li>
             
             <li role="presentation">
             <a href='../page/./01_install.html'>Installation</a>
@@ -221,7 +264,7 @@ conditions at single face  of a block is not supported by the FEST-3D.
             <ul class="nav nav-stacked nav-pills">
               
             <li role="presentation">
-            <a href='../page/05_tutorials/01_ramp.html'>15 degree ramp</a>
+            <a href='../page/05_tutorials/01_ramp.html'>Supersonic flow over Wedge</a>
             
             </li>
             
@@ -231,7 +274,7 @@ conditions at single face  of a block is not supported by the FEST-3D.
             </li>
             
             <li role="presentation">
-            <a href='../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            <a href='../page/05_tutorials/03_LDC.html'>Lid-Driven Cavity</a>
             
             </li>
             
@@ -271,7 +314,7 @@ conditions at single face  of a block is not supported by the FEST-3D.
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T11:49:50.603378 
+             on 2019-05-17T17:24:01.163093 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>

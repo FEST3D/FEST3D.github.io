@@ -134,7 +134,7 @@
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
       <h1 id="installing-fest-3d">Installing FEST-3D</h1>
-<p>The installation instruction are listed for Linux distribution. Specifically example are given for UBUNTU distribution.</p>
+<p>The installation instructions are listed here for Linux distribution. Specifically, examples are given for UBUNTU distribution.</p>
 <h2 id="dependencies">Dependencies</h2>
 <p>FEST-3D has the following dependencies:</p>
 <ul>
@@ -143,31 +143,31 @@
 <li>CMAKE and MAKE</li>
 </ul>
 <h3 id="compiler">Compiler</h3>
-<p>In order to build the FEST3D code written in FORTRAN 90 code, a FORTRAN compiler is required. Either open-source Gfortran or commercial Ifort FORTRAN compilers can be user.
-In order to install Gfortran on Ubuntu use following command:<br>
+<p>To build the FEST-3D code written in FORTRAN 90 code, a FORTRAN compiler is required. Either open-source gfortran or commercial ifort FORTRAN compilers can be used.
+To install gfortran on Ubuntu, use following command:<br>
 <code>$sudo apt-get install gfortran</code></p>
 <h3 id="distributive-mpi-library">Distributive MPI Library</h3>
-<p>In order to have a faster computation the FEST3D code uses MPICH library to distribute computation load to different processors within one machine or across multiple machine. You can install MPICH on Ubuntu machine using:<br>
+<p>To have a faster computation, the FEST-3D code uses the MPICH library to distribute computation load to different processors within one machine or across multiple machines. You can install MPICH on Ubuntu machine using:<br>
 <code>$sudo apt-get install mpich</code></p>
 <h3 id="cmake-and-make">CMAKE and Make</h3>
-<p>CMake is required to generate a Makefile which in turn generate executable. The following command is useful to install cmake:<br>
+<p>CMake is required to generate a Makefile, which in turn generate executable. The following command is useful to install cmake:<br>
 <code>$sudo apt-get install build-essential</code> <br>
 <code>$sudo apt-get install cmake</code></p>
-<p>So, in summary, all the dependencies can be intall using follwoing commands:</p>
+<p>So, in summary, all the dependencies can be installed using following commands:</p>
 <div class="codehilite"><pre><span></span>$sudo apt-get update
-$sudo apt-get install build-essentaial
-$sudo apt-get instALL cmake
+$sudo apt-get install build-essential
+$sudo apt-get install cmake
 $sudo apt-get install gfortran
 $sudo apt-get install mpich
 </pre></div>
 
 
 <h2 id="building">Building</h2>
-<p>In order to build the FEST3D code we first generate a new "build" directory/folder in the root directory of the FEST3D code. Inside the build directory we execute Cmake with specific FORTRAN compiler. <br>
+<p>To build the FEST-3D code, we first generate a new "build" directory/folder in the root directory of the FEST-3D code. Inside the build directory, we execute Cmake with specific FORTRAN compiler. <br>
 <code>$FC=mpif90 cmake ..</code><br>
 <code>$make -j 4</code><br>
-Here -j is a parallel building option which speed up the executable process. You can replace the number after "-j" with number of processor you wan to  use for building. 
-</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>if you have installed OPENMPI also along with MPICH, then the mpif90 might be pointing to the mpif90.openmpi instead fo mpif90.mpich. In that case use following command<br>
+Here -j is a parallel building option which speeds up the building process. You can replace the number after "-j" with a number of processors you want to use for the building. 
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>if you have installed OPENMPI also along with MPICH, then the mpif90 might be pointing to the <code>mpif90.openmpi</code> instead fo <code>mpif90.mpich</code>. In that case use following command<br>
 <code>$FC=mpif90.mpich cmake ..</code><br></p></div>
 <p>so, in summary, following list of comnands will build the executalbe</p>
 <div class="codehilite"><pre><span></span>$mkdir build &amp;&amp; cd build
@@ -176,7 +176,7 @@ $make -j 4
 </pre></div>
 
 
-<p>These commands will create a binary file named FEST3D in the <code>bin</code> folder; locate in the root directory of the FEST-3D code.</p>
+<p>These commands will create a binary file named FEST3D in the <code>bin</code> folder; located in the root directory of the FEST-3D code.</p>
     </div>
     
     <div class="col-md-3 col-md-pull-9">
@@ -187,6 +187,11 @@ $make -j 4
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
+            
+            <li role="presentation">
+            <a href='../page/./00_download.html'>Download</a>
+            
+            </li>
             
             <li role="presentation" class="disabled">
             <a href='../page/./01_install.html'>Installation</a>
@@ -214,7 +219,7 @@ $make -j 4
             <ul class="nav nav-stacked nav-pills">
               
             <li role="presentation">
-            <a href='../page/05_tutorials/01_ramp.html'>15 degree ramp</a>
+            <a href='../page/05_tutorials/01_ramp.html'>Supersonic flow over Wedge</a>
             
             </li>
             
@@ -224,7 +229,7 @@ $make -j 4
             </li>
             
             <li role="presentation">
-            <a href='../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            <a href='../page/05_tutorials/03_LDC.html'>Lid-Driven Cavity</a>
             
             </li>
             
@@ -264,7 +269,7 @@ $make -j 4
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T11:49:50.603378 
+             on 2019-05-17T17:24:01.163093 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>

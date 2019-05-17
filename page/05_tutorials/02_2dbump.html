@@ -135,7 +135,8 @@
   
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
-      <figure>
+      <h1 id="subsonic-inviscid-flow-of-mach-05-past-a-smooth-2d-bump">Subsonic inviscid flow of Mach 0.5 past a smooth 2D-bump</h1>
+<figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
     <img src="../../media/tutorials/2DBumpPressureContour.png" alt="Contour of u speed" style="width:350px">
   </div>
@@ -145,8 +146,8 @@
 </figure>
 
 <h2 id="problem-statement">Problem Statement</h2>
-<p>In this test case a subsonic inviscid flow of Mach 0.5 past a smooth 2D-bump will be simulated. The domain used, and boundary
-condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained form 
+<p>In this test case, a subsonic inviscid flow of Mach 0.5 past a smooth 2D-bump will be simulated. The domain used, and boundary
+condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained from
 <a href="https://how4.cenaero.be/content/bi2-inviscid-flow-over-bump">4th International Workshop on High-Order CFD Methods </a>. 
 <figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
@@ -157,16 +158,16 @@ condition applied to the domain are illustrated in Fig. 2. The case definition a
   </div>
 </figure></p>
 <h2 id="mesh">Mesh</h2>
-<p>A structured grid of size 97 x 49 × 2 will be used as shown in Fig. 3. The grid is available in the 
+<p>A structured grid of size 97 x 49 × 2 will be used, as shown in Fig. 3. The grid is available in the 
 tutorial folder <strong>|rootFolder|/run/Tutorial/2DBump/CreateBlocks/</strong>. In the <code>bump.py</code>
-edit the number of blocks in the I-direction . In this test case only two block will
+edit the number of blocks in the I-direction . In this test case, only two blocks will
 be used. <br>
 <code>imax = 97</code> Maximum number of grid points in the I-direction<br>
 <code>jmax = 49</code> Maximum number of grid points in the J-direction<br>
 <code>kmax = 2</code>  Maximum number of grid points in the K-direction<br>
 <code>blocks = 2</code> Number of blocks in the I-direction<br>
 In order to execute the <code>bump.py</code> script with python, all commands are written 
-in the makefile. Just use following command to generate gridfiles in the <strong>grid/</strong> folder.<br></p>
+in the makefile. Just use the following command to generate grid files in the <strong>grid/</strong> folder.<br></p>
 <div class="codehilite"><pre><span></span>$make
 </pre></div>
 
@@ -182,7 +183,7 @@ in the makefile. Just use following command to generate gridfiles in the <strong
   </div>
 </figure></p>
 <h2 id="setup">Setup</h2>
-<p>In order to setup the case directory, a python automation script is provided: <code>automaton.py</code>. First setup the most important
+<p>To setup the case directory, a python automation script is provided: <code>automaton.py</code>. First setup the most important
 parameters, the paths to the grid files and main executable binary to FEST-3D<br>
 <code>RunDir = 'GiveAnyName'</code>   Name of the run directory to create for current case. <br>
 <code>GridDir= 'CreateBlocks/grid/'</code>  Path to the folder which only contains grid file. <br>
@@ -217,13 +218,13 @@ Now, lets define the flow feature of test case:<br>
 <p><code>OutputControl['Out'] = ["Velocity", "Density", "Pressure"]</code> Variables to write in the output file.<br>
 <code>ResidualControl['Out'] = ["Mass_abs", "Viscous_abs", "Continuity_abs"]</code> Residual to write in the resnorm file. <br>
 <code>BoundaryConditions = [-8, -4, -6, -6, -6, -6]</code> Broad boundary condition.[Riemann-inlet, subsonic outlet, rest are Slip-walls].<br></p>
-<p>Rest of the variables should be left to thier default value. In order to execute this script use following command:</p>
+<p>Rest of the variables should be left to their default value. In order to execute this script use following command:</p>
 <div class="codehilite"><pre><span></span>$python automaton.py
 </pre></div>
 
 
 <p>Now you will see a new folder created with <code>RunDir</code> name. Switch to that directory to run the test case. To make sure setup is correct, check
-the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md</strong>. The file should look like following:</p>
+the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md</strong>. The file should look like the following:</p>
 <div class="codehilite"><pre><span></span>## BLOCK LAYOUT FILE
 ## ==========================
 ## NUMBER OF PROCESSES
@@ -244,14 +245,14 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
 </pre></div>
 
 
-<p>Since there are two blocks, there are two rows of enteries, one for each block. All the lines with # as the first character are skip while reading by the FEST-3D solver.
-All the positive numbers define the inteface boundary condition and negative numbers define the physicsl boundary conditions.
-Finally to run the simulation use following command:</p>
+<p>Since there are two blocks, there are two rows of entries, one for each block. All the lines with <code>#</code> as the first character are skipped while reading by the FEST-3D solver.
+All the positive numbers define the interface boundary condition, and negative numbers define the physical boundary conditions.
+Finally, to run the simulation use following command:</p>
 <div class="codehilite"><pre><span></span>$nohup bash run.sh &amp;
 </pre></div>
 
 
-<p>nohup helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in background, allowing you to keep using the terminal.</p>
+<p><code>nohup</code> helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in the background, allowing you to keep using the terminal.</p>
 <h2 id="results">Results</h2>
 <p><figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
@@ -271,6 +272,11 @@ Finally to run the simulation use following command:</p>
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
+            
+            <li role="presentation">
+            <a href='../../page/./00_download.html'>Download</a>
+            
+            </li>
             
             <li role="presentation">
             <a href='../../page/./01_install.html'>Installation</a>
@@ -298,7 +304,7 @@ Finally to run the simulation use following command:</p>
             <ul class="nav nav-stacked nav-pills">
               
             <li role="presentation">
-            <a href='../../page/05_tutorials/01_ramp.html'>15 degree ramp</a>
+            <a href='../../page/05_tutorials/01_ramp.html'>Supersonic flow over Wedge</a>
             
             </li>
             
@@ -308,7 +314,7 @@ Finally to run the simulation use following command:</p>
             </li>
             
             <li role="presentation">
-            <a href='../../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            <a href='../../page/05_tutorials/03_LDC.html'>Lid-Driven Cavity</a>
             
             </li>
             
@@ -348,7 +354,7 @@ Finally to run the simulation use following command:</p>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T11:49:50.603378 
+             on 2019-05-17T17:24:01.163093 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>

@@ -10,7 +10,7 @@
     <meta name="author" content="FEST3D Team" >
     <link rel="icon" href="../../favicon.png">
 
-    <title>15 degree ramp &ndash; FEST-3D</title>
+    <title>Supersonic flow over Wedge &ndash; FEST-3D</title>
 
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/pygments.css" rel="stylesheet">
@@ -109,7 +109,7 @@
     <div class="container">
     
   <div class="row">
-    <h1>15 degree ramp</h1>
+    <h1>Supersonic flow over Wedge</h1>
     <div class="row">
     <div class="col-lg-12">
     <div class="well well-sm" style="min-height: 40px;">
@@ -126,7 +126,7 @@
       
          <li><a href='../../page/05_tutorials/index.html'>Tutorials</a></li>
       
-         <li class="active">15 degree ramp</li>
+         <li class="active">Supersonic flow over Wedge</li>
       </ol>
     </div>
     </div>
@@ -135,18 +135,18 @@
   
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
-      <figure>
+      <h1 id="supersonic-inviscid-flow-of-mach-20-past-a-15-degree-ramp">Supersonic inviscid flow of Mach 2.0 past a 15-degree ramp</h1>
+<p><figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
     <img src="../../media/tutorials/15DegreeRampContour.png" alt="Contour of u speed" style="width:350px">
   </div>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
     <figcaption> Fig.1 Mach contours simlulated with FEST-3D for supersonic flow over a 15-degree ramp.</figcaption>
   </div>
-</figure>
-
+</figure></p>
 <h2 id="problem-statement">Problem Statement</h2>
-<p>In this test case a supersonic inviscid flow of Mach 2.0 past a 15-degree ramp will be simulated. The domain used, and boundary
-condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained form <a href="https://www.grc.nasa.gov/WWW/wind/valid/wedgeM2/wedgeM2.html">NPARC
+<p>In this test case, a supersonic inviscid flow of Mach 2.0 past a 15-degree ramp will be simulated. The domain used, and boundary
+condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained from <a href="https://www.grc.nasa.gov/WWW/wind/valid/wedgeM2/wedgeM2.html">NPARC
 Alliance Validation Archive</a>. 
 <figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
@@ -157,14 +157,14 @@ Alliance Validation Archive</a>.
   </div>
 </figure></p>
 <h2 id="mesh">Mesh</h2>
-<p>A structured grid of size 153 × 91 × 2 will be used as shown in Fig. 3. The grid is available in the 
+<p>A structured grid of size 153 × 91 × 2 will be used, as shown in Fig. 3. The grid is available in the 
 tutorial folder <strong>|rootFolder|/run/Tutorial/Ramp/CreateBlocks/</strong>. In the <code>blocking_point.f90</code>
-edit the number of blocks in the I-direction and J-direction. In this test case only one block will
+edit the number of blocks in the I-direction and J-direction. In this test case, only one block will
 be used. <br>
 <code>integer, parameter :: xblocks = 1</code><br>
 <code>integer, parameter :: yblocks = 1</code><br>
 In order to compile the <code>blocking_point.f90</code> code with gfortran and execute it, commands are written 
-in the makefile. Just use following command to generate gridfiles in the <strong>grid/</strong> folder.<br></p>
+in the makefile. Just use the following command to generate grid files in the <strong>grid/</strong> folder.<br></p>
 <div class="codehilite"><pre><span></span>$make
 </pre></div>
 
@@ -233,17 +233,17 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
 </pre></div>
 
 
-<p>The last line, in sequence, indicates following:</p>
+<p>The last line, in sequence, indicates the following:</p>
 <div class="codehilite"><pre><span></span>Block_Number    GridFile   Boundary_condition_file   Imin_boundary_condition_number    Imax_boundary_condition_number Jmin_boundary_condition_number Jmax_boundary_condition_number Kmin_boundary_condition_number  Kmax_boundary_condition_number
 </pre></div>
 
 
-<p>Finally to run the simulation use following command:</p>
+<p>Finally, to run the simulation use following command:</p>
 <div class="codehilite"><pre><span></span>$nohup bash run.sh &amp;
 </pre></div>
 
 
-<p>nohup helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in background, allowing you to keep using the terminal.</p>
+<p><code>nohup</code> helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in the background, allowing you to keep using the terminal.</p>
 <h2 id="results">Results</h2>
 <p><figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
@@ -263,6 +263,11 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
+            
+            <li role="presentation">
+            <a href='../../page/./00_download.html'>Download</a>
+            
+            </li>
             
             <li role="presentation">
             <a href='../../page/./01_install.html'>Installation</a>
@@ -290,7 +295,7 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
             <ul class="nav nav-stacked nav-pills">
               
             <li role="presentation" class="disabled">
-            <a href='../../page/05_tutorials/01_ramp.html'>15 degree ramp</a>
+            <a href='../../page/05_tutorials/01_ramp.html'>Supersonic flow over Wedge</a>
             
             </li>
             
@@ -300,7 +305,7 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
             </li>
             
             <li role="presentation">
-            <a href='../../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            <a href='../../page/05_tutorials/03_LDC.html'>Lid-Driven Cavity</a>
             
             </li>
             
@@ -340,7 +345,7 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T11:49:50.603378 
+             on 2019-05-17T17:24:01.163093 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>

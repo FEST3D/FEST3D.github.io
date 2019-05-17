@@ -134,9 +134,9 @@
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
       <h1 id="how-to-run-the-code-to-solve-a-real-problem">How to run the code to solve a real problem</h1>
-<p>In order to setup the run folder for solving a problem in fluid mechanics, few 
-input files are need by the FEST-3D solver. To faclitate the process of setting up
-all theses input files a Python code is provided at <a href="https://github.com/FEST3D/run.git"><strong>Github</strong></a>.</p>
+<p>To set up the run folder, for solving a problem, few 
+input files are needed by the FEST-3D solver. To facilitate the process of setting up
+all these input files, a Python code is provided at <a href="https://github.com/FEST3D/run.git"><strong>Github</strong></a>.</p>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><strong>C++11 compiler</strong></li>
@@ -144,12 +144,12 @@ all theses input files a Python code is provided at <a href="https://github.com/
 <li><strong>bash</strong></li>
 </ul>
 <h2 id="inputs">Inputs</h2>
-<p>First we need to create a directory to perform simulation and save all the input/output data.<br>
+<p>First, we need to create a directory to perform simulation and save all the input/output data.<br>
 <code>RunDir = 'Test'</code> Give any name to the Run directory <br>
 One of the important input is the grid/mesh files. FEST-3D code requires a separate file for each process.
-If the domain is decomposed in to 4 blocks then 4 separate files are required. Although, you can give
-any unique name to the gridfiles, for simplicity the python code expect grdifile name in <strong>grid_nn.txt</strong>, where
-the nn is the <em>block-number-1</em>. So, for 4 block, we will use following: grid_00.txt, grid_01.txt, grid_02.txt, and
+If the domain is decomposed into 4 blocks, then 4 separate files are required. Although, you can give
+any unique name to the grid files, for simplicity the python code expect grid file name in <strong>grid_nn.txt</strong>, where
+the nn is the <em>block-number-1</em>. So, for 4 blocks, we will use the following: grid_00.txt, grid_01.txt, grid_02.txt, and
 grid_03.txt. You should keep all the grid files in a separate folder and mention name of that folder 
 at<br>
 <code>GridDir='Mesh'</code>, here Mesh is the folder in which all the grid files are kept.<br>
@@ -157,7 +157,7 @@ at<br>
 In order to use the executable build in the binary folder of the FEST-3D code, a soft link is created
 between the FEST3D executable <code>bin</code> folder and FEST3D in <code>bin</code> folder of Run folder.<br>
 <code>AbsBinaryPath="/home/jatinder/solver/FEST3D/bin/FEST3D"</code> provide the absolute path to the binary.<br>
-Now, you are require to fix different paramenter of the solver based on the problem you are simulating.
+Now, you are required to fix different parameter of the solver based on the problem you are simulating.
 Meaning of the most input is self-explanatory from the name.
 <code>Control['CFL'] = 1.0</code> Courant–Friedrichs–Lewy number<br>
 <code>Control['LoadLevel'] = 0</code> Restart folder number <br>
@@ -418,10 +418,10 @@ the number of files in the GridDir folder should be equal to the number of block
 <p>Executing automation.py will create a directory with usual directory structure:
  * <strong>system</strong>:all the input files including the mesh files and boundary condition file is located in this directory
  * <strong>time_directory</strong>: all the output files will be stored in this folder.
- * <strong>bin</strong>: a softlink between orginal FEST-3D binary is sotred here.
- * <strong>run.sh</strong>: bash script to run the solver. This helps to remove log clutter on screen and save it in a log file named <strong>out</strong> in the time_directory/axu/ directory along with resnorm file which sotre the residual values. </p>
+ * <strong>bin</strong>: a soft link between original FEST-3D binary is stored here.
+ * <strong>run.sh</strong>: bash script to run the solver. This helps to remove log clutter on screen and save it in a log file named <code>out</code> in the <strong>time_directory/aux/</strong> directory along with <code>resnorm</code> file which store the residual values. </p>
 <h2 id="check-layout-file">Check Layout file</h2>
-<p>Although, automaton.py python script try to handle the boundary condition by its own, it is still not full-proof. So, always the check the <strong>layout.md</strong> file in the <em>system/mesh/layout</em> directory. Make sure all the boundary condition number are as you expect. In case of pole boundary condition, some random number will be mentioned and required to changed manually to -007. The layout file in explained in later section.</p>
+<p>Although, automaton.py python script tries to handle the boundary condition by its own; it is still not full-proof. So, always the check the <strong>layout.md</strong> file in the <em>system/mesh/layout</em> directory. Make sure all the boundary condition number are as you expect. In the case of pole boundary condition, some random number will be mentioned and required to change manually to -007. The layout file in explained in the later section.</p>
 <h2 id="execute">Execute</h2>
 <div class="codehilite"><pre><span></span><span class="nv">$mpiexec</span>.hydra -np <span class="m">16</span> bin/FEST3D 
 </pre></div>
@@ -439,6 +439,11 @@ the number of files in the GridDir folder should be equal to the number of block
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
+            
+            <li role="presentation">
+            <a href='../page/./00_download.html'>Download</a>
+            
+            </li>
             
             <li role="presentation">
             <a href='../page/./01_install.html'>Installation</a>
@@ -466,7 +471,7 @@ the number of files in the GridDir folder should be equal to the number of block
             <ul class="nav nav-stacked nav-pills">
               
             <li role="presentation">
-            <a href='../page/05_tutorials/01_ramp.html'>15 degree ramp</a>
+            <a href='../page/05_tutorials/01_ramp.html'>Supersonic flow over Wedge</a>
             
             </li>
             
@@ -476,7 +481,7 @@ the number of files in the GridDir folder should be equal to the number of block
             </li>
             
             <li role="presentation">
-            <a href='../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            <a href='../page/05_tutorials/03_LDC.html'>Lid-Driven Cavity</a>
             
             </li>
             
@@ -516,7 +521,7 @@ the number of files in the GridDir folder should be equal to the number of block
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T11:49:50.603378 
+             on 2019-05-17T17:24:01.163093 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>

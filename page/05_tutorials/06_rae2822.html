@@ -135,7 +135,8 @@
   
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
-      <figure>
+      <h1 id="transonic-turbulent-flow-of-mach-072-reynolds-number-65-million-and-angle-of-attack-292-deg-over-the-rae2822">Transonic turbulent flow of Mach 0.72, Reynolds number 6.5 million, and angle of attack 2.92 deg over the RAE2822</h1>
+<figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
     <img src="../../media/tutorials/RAE2822Pressure.png" alt="Contours" style="width:350px">
   </div>
@@ -145,8 +146,8 @@
 </figure>
 
 <h2 id="problem-statement">Problem Statement</h2>
-<p>In this test case a transonic turbulent flow of Mach 0.72 over the RAE2822 will be simulated. The domain used, and boundary
-condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained form 
+<p>In this test case, a transonic turbulent flow of Mach 0.72 over the RAE2822 will be simulated. The domain used, and boundary
+condition applied to the domain are illustrated in Fig. 2. The case definition and grid used were obtained from
 <a href="https://www.grc.nasa.gov/WWW/wind/valid/raetaf/raetaf01/raetaf01.html">NPARC Alliance Validation Archive</a>. 
 <figure>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
@@ -158,14 +159,14 @@ condition applied to the domain are illustrated in Fig. 2. The case definition a
 </figure></p>
 <h2 id="mesh">Mesh</h2>
 <p>A structured C-grid of size 369 × 65 x 2 (with 305 grid points on the airfoil)
- will be used as shown in Fig. 3. The grid is available in the 
+ will be used, as shown in Fig. 3. The grid is available in the 
 tutorial folder <strong>|rootFolder|/run/Tutorial/RAE2822/CreateBlocks/</strong>. In the <code>blocking_point.f90</code>
-edit the number of blocks in the I-direction and J-direction. In this test case four blocks will
+edit the number of blocks in the I-direction and J-direction. In this test case, four blocks will
 be used. <br>
 <code>integer, parameter :: xblocks = 6</code><br>
 <code>integer, parameter :: yblocks = 1</code><br>
-In order to compile the <code>blocking_point.f90</code> code with gfortran and execute it, commands are written 
-in the makefile. Just use following command to generate gridfiles in the <strong>grid/</strong> folder.<br></p>
+To compile the <code>blocking_point.f90</code> code with gfortran and execute it, commands are written 
+in the makefile. Just use the following command to generate the grid files in the <strong>grid/</strong> folder.<br></p>
 <div class="codehilite"><pre><span></span>$make
 </pre></div>
 
@@ -180,7 +181,7 @@ in the makefile. Just use following command to generate gridfiles in the <strong
   </div>
 </figure></p>
 <h2 id="setup">Setup</h2>
-<p>In order to setup the case directory, a python automation script is provided: <code>automaton.py</code>. First setup the most important
+<p>To setup the case directory, a python automation script is provided: <code>automaton.py</code>. First, setup the most important
 parameters, the paths to the grid files and main executable binary to FEST-3D<br>
 <code>RunDir = 'RAE2822'</code>   Name of the run directory to create for current case. <br>
 <code>GridDir= 'CreateBlocks/grid/'</code>  Path to the folder which only contains grid file. <br>
@@ -221,14 +222,14 @@ Now, lets define the flow feature of test case:<br>
     Flow["ViscosityLaw"] = "sutherland_law"``` Viscosity variation law. <br></p>
 <p><code>OutputControl['Out'] = ["Velocity", "Density", "Pressure", "Mu"]</code> Variables to write in the output file.<br>
 <code>ResidualControl['Out'] = ["Mass_abs", "Viscous_abs", "Continuity_abs"]</code> Residual to write in the resnorm file. <br>
-<code>BoundaryConditions = [-4, -4, -5, -8, -6, -6]</code> Broad boundary condition.[subsonic outlet, noslip wall, far-field, and slip wall for rest ]. <br></p>
-<p>Rest of the variables should be left to thier default value. In order to execute this script use following command:</p>
+<code>BoundaryConditions = [-4, -4, -5, -8, -6, -6]</code> Broad boundary condition.[subsonic outlet, no-slip wall, far-field, and slip wall for rest ]. <br></p>
+<p>Rest of the variables should be left to their default value. To execute this script, use the following command:</p>
 <div class="codehilite"><pre><span></span>$python automaton.py
 </pre></div>
 
 
-<p>Now you will see a new folder created with <code>RunDir</code> name (<em>RAE2822</em>). Switch to that directory to run the test case. To make sure setup is correct, check
-the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md</strong>. The file should look like following:</p>
+<p>Now, you will see a new folder created with <code>RunDir</code> name (<em>RAE2822</em>). Switch to that directory to run the test case. To make sure setup is correct, check
+the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md</strong>. The file should look like the following:</p>
 <div class="codehilite"><pre><span></span>## BLOCK LAYOUT FILE
 ## ==========================
 ## NUMBER OF PROCESSES
@@ -252,12 +253,12 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
 </pre></div>
 
 
-<p>Finally to run the simulation use following command:</p>
+<p>Finally, to run the simulation use the following command:</p>
 <div class="codehilite"><pre><span></span>$nohup bash run.sh &amp;
 </pre></div>
 
 
-<p>nohup helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in background, allowing you to keep using the terminal.</p>
+<p><code>nohup</code> helps in avoiding any output on the screen, <strong>&amp;</strong> execute the last command in the background, allowing you to keep using the terminal.</p>
     </div>
     
     <div class="col-md-3 col-md-pull-9">
@@ -268,6 +269,11 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
           </ul>
           <hr>
           <ul class="nav nav-stacked nav-pills">
+            
+            <li role="presentation">
+            <a href='../../page/./00_download.html'>Download</a>
+            
+            </li>
             
             <li role="presentation">
             <a href='../../page/./01_install.html'>Installation</a>
@@ -295,7 +301,7 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
             <ul class="nav nav-stacked nav-pills">
               
             <li role="presentation">
-            <a href='../../page/05_tutorials/01_ramp.html'>15 degree ramp</a>
+            <a href='../../page/05_tutorials/01_ramp.html'>Supersonic flow over Wedge</a>
             
             </li>
             
@@ -305,7 +311,7 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
             </li>
             
             <li role="presentation">
-            <a href='../../page/05_tutorials/03_LDC.html'>Lid Driven Cavity</a>
+            <a href='../../page/05_tutorials/03_LDC.html'>Lid-Driven Cavity</a>
             
             </li>
             
@@ -345,7 +351,7 @@ the <code>layout.md</code> file located in <strong>system/mesh/layout/layout.md<
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T11:49:50.603378 
+             on 2019-05-17T17:24:01.163093 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
