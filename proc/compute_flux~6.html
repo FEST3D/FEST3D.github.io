@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>compute_flux &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -128,21 +139,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for procedures.">104 statements</a>
+    title=" 0.6% of total for procedures.">98 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/ldfss0.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/van_leer.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/ldfss0.f90.html'>ldfss0.f90</a></li>
+     <li><a href='../sourcefile/van_leer.f90.html'>van_leer.f90</a></li>
     
-     <li><a href='../module/ldfss0.html'>ldfss0</a></li>
+     <li><a href='../module/van_leer.html'>van_leer</a></li>
     
   
      <li class="active">compute_flux</li>
@@ -211,10 +222,6 @@ private subroutine compute_flux(f_dir)
 
 
     
-    <p>A generalized subroutine to calculate
- flux through the input direction, :x,y, or z
- which corresponds to the I,J, or K direction respectively</p>
-    
 
     <h3>Arguments</h3>
     
@@ -234,12 +241,12 @@ private subroutine compute_flux(f_dir)
   
 <tr>
   
-  <td><span class="anchor" id="variable-f_dir%7E6"></span>character,</td>
+  <td><span class="anchor" id="variable-f_dir"></span>character,</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>f_dir</strong></td><td><p>Input direction for which flux are calcuated and store</p></td>
+  <td><strong>f_dir</strong></td><td></td>
   
 </tr>
 
@@ -515,14 +522,9 @@ private subroutine compute_flux(f_dir)
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>        <span class="k">subroutine </span><span class="n">compute_flux</span><span class="p">(</span><span class="n">f_dir</span><span class="p">)</span>
-          <span class="c">!&lt; A generalized subroutine to calculate</span>
-          <span class="c">!&lt; flux through the input direction, :x,y, or z</span>
-          <span class="c">!&lt; which corresponds to the I,J, or K direction respectively</span>
-          <span class="c">!------------------------------------------------------------</span>
 
             <span class="k">implicit none</span>
 <span class="k">            </span><span class="kt">character</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">f_dir</span>
-            <span class="c">!&lt; Input direction for which flux are calcuated and store</span>
             <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> 
             <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i_f</span><span class="p">,</span> <span class="n">j_f</span><span class="p">,</span> <span class="n">k_f</span> <span class="c">! Flags to determine face direction</span>
             <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">fA</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span>
@@ -536,9 +538,8 @@ private subroutine compute_flux(f_dir)
             <span class="kt">real</span> <span class="kd">::</span> <span class="n">c_plus</span><span class="p">,</span> <span class="n">c_minus</span>
             <span class="kt">real</span> <span class="kd">::</span> <span class="n">scrD_plus</span><span class="p">,</span> <span class="n">scrD_minus</span>
             <span class="kt">real</span> <span class="kd">::</span> <span class="n">sound_speed_avg</span><span class="p">,</span> <span class="n">face_normal_speeds</span>
-            <span class="kt">real</span> <span class="kd">::</span> <span class="n">M_ldfss</span><span class="p">,</span> <span class="n">M_plus_ldfss</span><span class="p">,</span> <span class="n">M_minus_ldfss</span>
 
-            <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ldfss0&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_flux&#39;</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;van_leer&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_flux&#39;</span><span class="p">)</span>
             
             <span class="k">select case</span> <span class="p">(</span><span class="n">f_dir</span><span class="p">)</span>
                 <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -575,7 +576,7 @@ private subroutine compute_flux(f_dir)
                     <span class="n">f_qp_left</span> <span class="o">=&gt;</span> <span class="n">z_qp_left</span>
                     <span class="n">f_qp_right</span> <span class="o">=&gt;</span> <span class="n">z_qp_right</span>
                 <span class="k">case </span><span class="n">default</span>
-                    <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ldfss0&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_flux&#39;</span><span class="p">,</span> <span class="p">&amp;</span>
+                    <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;van_leer&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_flux&#39;</span><span class="p">,</span> <span class="p">&amp;</span>
                             <span class="s1">&#39;Direction not recognised&#39;</span><span class="p">)</span>
                     <span class="k">stop</span>
 <span class="k">            end select</span>
@@ -615,23 +616,10 @@ private subroutine compute_flux(f_dir)
                           <span class="n">beta_right</span> <span class="o">*</span> <span class="n">M_minus</span>
                 <span class="n">scrD_minus</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha_minus</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">beta_right</span><span class="p">))</span> <span class="o">-</span> <span class="p">&amp;</span>
                              <span class="p">(</span><span class="n">beta_right</span> <span class="o">*</span> <span class="n">D_minus</span><span class="p">)</span>
-                
-                <span class="c">! LDFSS0 modification             </span>
-                <span class="n">M_ldfss</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">beta_left</span> <span class="o">*</span> <span class="n">beta_right</span> <span class="o">*</span> <span class="p">&amp;</span>
-                    <span class="p">(</span><span class="nb">sqrt</span><span class="p">((</span><span class="n">M_perp_left</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">M_perp_right</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="p">&amp;</span>
-                     <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-                <span class="n">M_plus_ldfss</span> <span class="o">=</span> <span class="n">M_ldfss</span> <span class="o">*</span> <span class="p">&amp;</span>
-                        <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">f_qp_left</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="n">f_qp_right</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="p">&amp;</span>
-                            <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">f_qp_left</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">sound_speed_avg</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
-                <span class="n">M_minus_ldfss</span> <span class="o">=</span> <span class="n">M_ldfss</span> <span class="o">*</span> <span class="p">&amp;</span>
-                        <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">f_qp_left</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="n">f_qp_right</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="p">&amp;</span>
-                            <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">f_qp_right</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">sound_speed_avg</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
-                <span class="n">c_plus</span> <span class="o">=</span> <span class="n">c_plus</span> <span class="o">-</span> <span class="n">M_plus_ldfss</span>
-                <span class="n">c_minus</span> <span class="o">=</span> <span class="n">c_minus</span> <span class="o">+</span> <span class="n">M_minus_ldfss</span>
 
-                <span class="c">! F plus mass flux</span>
+                <span class="c">! First construct the F plus mass flux</span>
                 <span class="n">F_plus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">f_qp_left</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sound_speed_avg</span> <span class="o">*</span> <span class="n">c_plus</span>
-                <span class="c">! F minus mass flux</span>
+                <span class="c">! First construct the F minus mass flux</span>
                 <span class="n">F_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">f_qp_right</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sound_speed_avg</span> <span class="o">*</span> <span class="n">c_minus</span>
                 <span class="n">F_plus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="o">=</span> <span class="n">F_plus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span><span class="p">(</span><span class="n">i_f</span><span class="o">*</span><span class="n">make_F_flux_zero</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">&amp;</span>
                                        <span class="o">+</span> <span class="n">j_f</span><span class="o">*</span><span class="n">make_G_flux_zero</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="p">&amp;</span>
@@ -709,10 +697,10 @@ private subroutine compute_flux(f_dir)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

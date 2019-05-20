@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>setup_geometry &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -244,53 +255,53 @@ public subroutine setup_geometry()
 <!-- proc~setup_geometry -->
 <g id="proc~~setup_geometry~~CallsGraph_node1" class="node">
 <title>proc~setup_geometry</title>
-<polygon fill="none" stroke="#000000" points="90,-213 0,-213 0,-189 90,-189 90,-213"/>
-<text text-anchor="middle" x="45" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">setup_geometry</text>
-</g>
-<!-- proc~compute_ghost_cell_centroid -->
-<g id="proc~~setup_geometry~~CallsGraph_node2" class="node">
-<title>proc~compute_ghost_cell_centroid</title>
-<g id="a_proc~~setup_geometry~~CallsGraph_node2"><a xlink:href=".././proc/compute_ghost_cell_centroid.html" xlink:title="compute_ghost_cell_centroid">
-<polygon fill="#d9534f" stroke="#d9534f" points="286,-276 134,-276 134,-252 286,-252 286,-276"/>
-<text text-anchor="middle" x="210" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_ghost_cell_centroid</text>
-</a>
-</g>
-</g>
-<!-- proc~setup_geometry&#45;&gt;proc~compute_ghost_cell_centroid -->
-<g id="proc~~setup_geometry~~CallsGraph_edge1" class="edge">
-<title>proc~setup_geometry&#45;&gt;proc~compute_ghost_cell_centroid</title>
-<path fill="none" stroke="#ff0000" d="M65.032,-213.0669C81.0651,-222.3068 104.369,-234.8169 126,-243 131.8128,-245.199 137.939,-247.2355 144.1257,-249.1045"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="143.2833,-252.5041 153.8611,-251.9031 145.2173,-245.7765 143.2833,-252.5041"/>
+<polygon fill="none" stroke="#000000" points="90,-212 0,-212 0,-188 90,-188 90,-212"/>
+<text text-anchor="middle" x="45" y="-197.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">setup_geometry</text>
 </g>
 <!-- proc~dmsg -->
-<g id="proc~~setup_geometry~~CallsGraph_node3" class="node">
+<g id="proc~~setup_geometry~~CallsGraph_node2" class="node">
 <title>proc~dmsg</title>
-<g id="a_proc~~setup_geometry~~CallsGraph_node3"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
+<g id="a_proc~~setup_geometry~~CallsGraph_node2"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
 <polygon fill="#d9534f" stroke="#d9534f" points="447.5,-192 393.5,-192 393.5,-168 447.5,-168 447.5,-192"/>
 <text text-anchor="middle" x="420.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
 </a>
 </g>
 </g>
 <!-- proc~setup_geometry&#45;&gt;proc~dmsg -->
-<g id="proc~~setup_geometry~~CallsGraph_edge2" class="edge">
+<g id="proc~~setup_geometry~~CallsGraph_edge3" class="edge">
 <title>proc~setup_geometry&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#ff0000" d="M90.2941,-198.4669C165.2511,-194.2749 313.698,-185.973 383.098,-182.0917"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="383.3514,-185.5831 393.1404,-181.5301 382.9605,-178.594 383.3514,-185.5831"/>
+<path fill="none" stroke="#ff0000" d="M90.2941,-197.5875C165.2511,-193.5951 313.698,-185.6885 383.098,-181.9921"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="383.3407,-185.4842 393.1404,-181.4572 382.9683,-178.4942 383.3407,-185.4842"/>
 </g>
-<!-- proc~allocate_memory~2 -->
-<g id="proc~~setup_geometry~~CallsGraph_node4" class="node">
-<title>proc~allocate_memory~2</title>
-<g id="a_proc~~setup_geometry~~CallsGraph_node4"><a xlink:href=".././proc/allocate_memory%7E2.html" xlink:title="allocate_memory">
-<polygon fill="#d9534f" stroke="#d9534f" points="257,-234 163,-234 163,-210 257,-210 257,-234"/>
-<text text-anchor="middle" x="210" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory</text>
+<!-- proc~compute_ghost_cell_centroid -->
+<g id="proc~~setup_geometry~~CallsGraph_node3" class="node">
+<title>proc~compute_ghost_cell_centroid</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node3"><a xlink:href=".././proc/compute_ghost_cell_centroid.html" xlink:title="compute_ghost_cell_centroid">
+<polygon fill="#d9534f" stroke="#d9534f" points="286,-232 134,-232 134,-208 286,-208 286,-232"/>
+<text text-anchor="middle" x="210" y="-217.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_ghost_cell_centroid</text>
 </a>
 </g>
 </g>
-<!-- proc~setup_geometry&#45;&gt;proc~allocate_memory~2 -->
-<g id="proc~~setup_geometry~~CallsGraph_edge3" class="edge">
-<title>proc~setup_geometry&#45;&gt;proc~allocate_memory~2</title>
-<path fill="none" stroke="#ff0000" d="M90.087,-206.7383C109.4324,-209.2005 132.2599,-212.1058 152.7782,-214.7172"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="152.5903,-218.2215 162.9522,-216.0121 153.4742,-211.2775 152.5903,-218.2215"/>
+<!-- proc~setup_geometry&#45;&gt;proc~compute_ghost_cell_centroid -->
+<g id="proc~~setup_geometry~~CallsGraph_edge2" class="edge">
+<title>proc~setup_geometry&#45;&gt;proc~compute_ghost_cell_centroid</title>
+<path fill="none" stroke="#ff0000" d="M90.087,-205.4651C100.5664,-206.7353 112.0677,-208.1294 123.6701,-209.5358"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="123.5206,-213.0432 133.8692,-210.772 124.363,-206.0941 123.5206,-213.0432"/>
+</g>
+<!-- proc~allocate_memory~3 -->
+<g id="proc~~setup_geometry~~CallsGraph_node4" class="node">
+<title>proc~allocate_memory~3</title>
+<g id="a_proc~~setup_geometry~~CallsGraph_node4"><a xlink:href=".././proc/allocate_memory%7E3.html" xlink:title="allocate_memory">
+<polygon fill="#d9534f" stroke="#d9534f" points="257,-275 163,-275 163,-251 257,-251 257,-275"/>
+<text text-anchor="middle" x="210" y="-260.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_geometry&#45;&gt;proc~allocate_memory~3 -->
+<g id="proc~~setup_geometry~~CallsGraph_edge1" class="edge">
+<title>proc~setup_geometry&#45;&gt;proc~allocate_memory~3</title>
+<path fill="none" stroke="#ff0000" d="M65.7594,-212.0564C81.8014,-220.9875 104.7775,-232.9545 126,-241 134.5921,-244.2573 143.8547,-247.2107 152.9814,-249.8202"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="152.2235,-253.2416 162.7934,-252.515 154.0774,-246.4915 152.2235,-253.2416"/>
 </g>
 <!-- proc~compute_geometric_parameters -->
 <g id="proc~~setup_geometry~~CallsGraph_node5" class="node">
@@ -304,14 +315,14 @@ public subroutine setup_geometry()
 <!-- proc~setup_geometry&#45;&gt;proc~compute_geometric_parameters -->
 <g id="proc~~setup_geometry~~CallsGraph_edge4" class="edge">
 <title>proc~setup_geometry&#45;&gt;proc~compute_geometric_parameters</title>
-<path fill="none" stroke="#ff0000" d="M72.1637,-188.9927C87.7934,-182.2366 107.8699,-173.8156 126,-167 137.5787,-162.6472 150.1778,-158.2644 162.0119,-154.3004"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="163.3418,-157.547 171.7333,-151.0791 161.14,-150.9023 163.3418,-157.547"/>
+<path fill="none" stroke="#ff0000" d="M72.136,-187.9184C87.7567,-181.1383 107.8335,-172.7181 126,-166 137.001,-161.9318 148.936,-157.8817 160.2621,-154.2028"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="161.5659,-157.4604 170.0198,-151.0744 159.4287,-150.7946 161.5659,-157.4604"/>
 </g>
-<!-- proc~allocate_memory~2&#45;&gt;proc~dmsg -->
+<!-- proc~allocate_memory~3&#45;&gt;proc~dmsg -->
 <g id="proc~~setup_geometry~~CallsGraph_edge7" class="edge">
-<title>proc~allocate_memory~2&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#00ffff" d="M257.2403,-212.5744C295.4128,-204.958 348.3903,-194.3877 383.5198,-187.3785"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="384.2479,-190.8023 393.3698,-185.4132 382.8782,-183.9376 384.2479,-190.8023"/>
+<title>proc~allocate_memory~3&#45;&gt;proc~dmsg</title>
+<path fill="none" stroke="#00ffff" d="M257.2817,-255.7021C269.8146,-252.4397 282.9275,-247.744 294,-241 314.4269,-228.5585 309.4001,-213.1529 330,-201 345.9909,-191.5662 365.8988,-186.3703 382.968,-183.5086"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="383.7831,-186.9265 393.1688,-182.0114 382.7665,-180.0007 383.7831,-186.9265"/>
 </g>
 <!-- proc~allocate_memory_ghost_centroids -->
 <g id="proc~~setup_geometry~~CallsGraph_node7" class="node">
@@ -322,11 +333,11 @@ public subroutine setup_geometry()
 </a>
 </g>
 </g>
-<!-- proc~allocate_memory~2&#45;&gt;proc~allocate_memory_ghost_centroids -->
+<!-- proc~allocate_memory~3&#45;&gt;proc~allocate_memory_ghost_centroids -->
 <g id="proc~~setup_geometry~~CallsGraph_edge5" class="edge">
-<title>proc~allocate_memory~2&#45;&gt;proc~allocate_memory_ghost_centroids</title>
-<path fill="none" stroke="#00ffff" d="M257.3818,-228.4912C269.915,-231.6035 283.0031,-236.2035 294,-243 314.9136,-255.9253 308.9775,-272.2526 330,-285 332.9868,-286.8111 336.1159,-288.4661 339.3418,-289.9783"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="338.0759,-293.2426 348.6519,-293.8736 340.7778,-286.785 338.0759,-293.2426"/>
+<title>proc~allocate_memory~3&#45;&gt;proc~allocate_memory_ghost_centroids</title>
+<path fill="none" stroke="#00ffff" d="M257.2403,-272.65C285.1317,-278.3476 320.9272,-285.6597 351.8892,-291.9845"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="351.2576,-295.4277 361.7558,-294 352.6587,-288.5693 351.2576,-295.4277"/>
 </g>
 <!-- proc~allocate_memory_volumes -->
 <g id="proc~~setup_geometry~~CallsGraph_node8" class="node">
@@ -337,11 +348,11 @@ public subroutine setup_geometry()
 </a>
 </g>
 </g>
-<!-- proc~allocate_memory~2&#45;&gt;proc~allocate_memory_volumes -->
+<!-- proc~allocate_memory~3&#45;&gt;proc~allocate_memory_volumes -->
 <g id="proc~~setup_geometry~~CallsGraph_edge9" class="edge">
-<title>proc~allocate_memory~2&#45;&gt;proc~allocate_memory_volumes</title>
-<path fill="none" stroke="#00ffff" d="M257.2403,-231.4256C284.5754,-236.8796 319.5023,-243.8484 350.0307,-249.9396"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="349.7063,-253.4438 360.1979,-251.9682 351.076,-246.5791 349.7063,-253.4438"/>
+<title>proc~allocate_memory~3&#45;&gt;proc~allocate_memory_volumes</title>
+<path fill="none" stroke="#00ffff" d="M257.2403,-263.2244C281.6387,-263.3403 312.0854,-263.485 340.0542,-263.6178"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="340.214,-267.1185 350.2305,-263.6662 340.2473,-260.1186 340.214,-267.1185"/>
 </g>
 <!-- proc~allocate_memory_areas -->
 <g id="proc~~setup_geometry~~CallsGraph_node10" class="node">
@@ -352,11 +363,11 @@ public subroutine setup_geometry()
 </a>
 </g>
 </g>
-<!-- proc~allocate_memory~2&#45;&gt;proc~allocate_memory_areas -->
+<!-- proc~allocate_memory~3&#45;&gt;proc~allocate_memory_areas -->
 <g id="proc~~setup_geometry~~CallsGraph_edge8" class="edge">
-<title>proc~allocate_memory~2&#45;&gt;proc~allocate_memory_areas</title>
-<path fill="none" stroke="#00ffff" d="M257.2403,-222C283.4807,-222 316.7169,-222 346.3425,-222"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="346.6534,-225.5001 356.6534,-222 346.6534,-218.5001 346.6534,-225.5001"/>
+<title>proc~allocate_memory~3&#45;&gt;proc~allocate_memory_areas</title>
+<path fill="none" stroke="#00ffff" d="M257.2403,-253.7988C284.1398,-248.5595 318.391,-241.8882 348.5679,-236.0105"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="349.4827,-239.3982 358.6291,-234.0509 348.1443,-232.5273 349.4827,-239.3982"/>
 </g>
 <!-- proc~allocate_memory_normals -->
 <g id="proc~~setup_geometry~~CallsGraph_node11" class="node">
@@ -367,11 +378,11 @@ public subroutine setup_geometry()
 </a>
 </g>
 </g>
-<!-- proc~allocate_memory~2&#45;&gt;proc~allocate_memory_normals -->
+<!-- proc~allocate_memory~3&#45;&gt;proc~allocate_memory_normals -->
 <g id="proc~~setup_geometry~~CallsGraph_edge6" class="edge">
-<title>proc~allocate_memory~2&#45;&gt;proc~allocate_memory_normals</title>
-<path fill="none" stroke="#00ffff" d="M257.1612,-225.9736C270.2602,-229.0286 283.7001,-234.2282 294,-243 324.9231,-269.3351 298.8546,-300.9282 330,-327 333.5036,-329.9329 337.34,-332.4738 341.3926,-334.6736"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="340.0236,-337.8972 350.5646,-338.9642 342.9897,-331.5566 340.0236,-337.8972"/>
+<title>proc~allocate_memory~3&#45;&gt;proc~allocate_memory_normals</title>
+<path fill="none" stroke="#00ffff" d="M228.8054,-275.0409C251.8333,-289.3028 292.4198,-312.8983 330,-327 335.9461,-329.2312 342.204,-331.2729 348.5371,-333.1305"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="347.9455,-336.5985 358.5172,-335.8989 349.8167,-329.8532 347.9455,-336.5985"/>
 </g>
 <!-- proc~compute_geometric_parameters&#45;&gt;proc~dmsg -->
 <g id="proc~~setup_geometry~~CallsGraph_edge11" class="edge">
@@ -958,10 +969,10 @@ public subroutine setup_geometry()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

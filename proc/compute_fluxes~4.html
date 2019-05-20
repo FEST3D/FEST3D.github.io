@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>compute_fluxes &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -128,21 +139,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">23 statements</a>
+    title=" 0.1% of total for procedures.">19 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/ausmP.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/ausm.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/ausmp.f90.html'>ausmP.f90</a></li>
+     <li><a href='../sourcefile/ausm.f90.html'>ausm.f90</a></li>
     
-     <li><a href='../module/ausmp.html'>ausmP</a></li>
+     <li><a href='../module/ausm.html'>ausm</a></li>
     
   
      <li class="active">compute_fluxes</li>
@@ -411,27 +422,27 @@ public subroutine compute_fluxes()
             
             <span class="k">implicit none</span>
 <span class="k">            </span>
-<span class="k">            call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;AUSM+&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_fluxes&#39;</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_fluxes&#39;</span><span class="p">)</span>
 
             <span class="k">call </span><span class="n">compute_flux</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">F</span><span class="p">)))</span> <span class="k">then</span>
-<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;AUSM+&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: F flux Nan detected&#39;</span><span class="p">)</span>
+<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: F flux Nan detected&#39;</span><span class="p">)</span>
                 <span class="k">stop</span>
 <span class="k">            end if    </span>
 
 <span class="k">            call </span><span class="n">compute_flux</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">G</span><span class="p">)))</span> <span class="k">then </span>
-<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;AUSM+&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: G flux Nan detected&#39;</span><span class="p">)</span>
+<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: G flux Nan detected&#39;</span><span class="p">)</span>
                 <span class="k">stop</span>
-<span class="k">            end if    </span>
-<span class="k">            </span>
-<span class="k">            if</span><span class="p">(</span><span class="n">kmx</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">              </span><span class="n">H</span> <span class="o">=</span> <span class="mf">0.</span>
-            <span class="k">else</span>
-<span class="k">              call </span><span class="n">compute_flux</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
-            <span class="k">end if</span>
-<span class="k">            if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">H</span><span class="p">)))</span> <span class="k">then</span>
-<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;AUSM+&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: H flux Nan detected&#39;</span><span class="p">)</span>
+<span class="k">            end if</span>    
+            
+            <span class="c">!if(kmx==2) then</span>
+            <span class="c">!  H = 0.</span>
+            <span class="c">!else</span>
+              <span class="k">call </span><span class="n">compute_flux</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+            <span class="c">!end if</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">H</span><span class="p">)))</span> <span class="k">then</span>
+<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: H flux Nan detected&#39;</span><span class="p">)</span>
                 <span class="k">stop</span>
 <span class="k">            end if</span>
 
@@ -457,10 +468,10 @@ public subroutine compute_fluxes()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

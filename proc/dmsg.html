@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>dmsg &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -306,17 +317,17 @@ public subroutine dmsg(level, prog, method, msg)
       </div>
       <div class="panel-body">
   <table class="graph">
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/add_source_term_residue.html">add_source_term_residue</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td><td class="root" rowspan="221">dmsg</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/add_source_term_residue.html">add_source_term_residue</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td><td class="root" rowspan="231">dmsg</td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/add_turbulent_time.html">add_turbulent_time</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/add_viscous_time.html">add_viscous_time</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/allocate_memory%7E2.html">allocate_memory</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
-<tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/allocate_memory.html">allocate_memory</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/allocate_memory%7E5.html">allocate_memory</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/allocate_memory%7E4.html">allocate_memory</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/allocate_memory%7E3.html">allocate_memory</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/apply_gradient_bc.html">apply_gradient_bc</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
@@ -336,15 +347,13 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/close_file%7E2.html">close_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/close_file%7E3.html">close_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/close_file.html">close_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_face_estimates.html">compute_face_estimates</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_face_state.html">compute_face_state</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_flux.html">compute_flux</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
-<tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_flux%7E3.html">compute_flux</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_flux%7E4.html">compute_flux</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
@@ -354,6 +363,10 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_flux%7E2.html">compute_flux</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_flux%7E3.html">compute_flux</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_fluxes%7E6.html">compute_fluxes</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_fluxes%7E4.html">compute_fluxes</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_fluxes%7E2.html">compute_fluxes</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
@@ -361,8 +374,6 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_fluxes%7E3.html">compute_fluxes</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_fluxes.html">compute_fluxes</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
-<tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_fluxes%7E6.html">compute_fluxes</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_fluxes%7E5.html">compute_fluxes</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
@@ -374,9 +385,9 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/compute_time_step.html">compute_time_step</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/deallocate_memory.html">deallocate_memory</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
-<tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/deallocate_memory%7E3.html">deallocate_memory</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/deallocate_memory%7E2.html">deallocate_memory</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/destroy_all.html">destroy_all</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
@@ -422,6 +433,10 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/find_wall_dist.html">find_wall_dist</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/get_next_token.html">get_next_token</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/get_next_token_parallel.html">get_next_token_parallel</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/get_residue%7E5.html">get_residue</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/get_residue%7E6.html">get_residue</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
@@ -440,7 +455,7 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/iterate_one_more_time_step.html">iterate_one_more_time_step</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/link_aliases%7E2.html">link_aliases</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/link_aliases.html">link_aliases</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/open_file%7E2.html">open_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
@@ -452,7 +467,7 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/pressure_based_switching%7E2.html">pressure_based_switching</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/read_file.html">read_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/read_file%7E3.html">read_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/read_grid.html">read_grid</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
@@ -464,6 +479,10 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/read_layout_file.html">read_layout_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/read_scalar%7E2.html">read_scalar</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/read_scalar.html">read_scalar</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/read_velocity.html">read_velocity</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/reconstruct_boundary_state.html">reconstruct_boundary_state</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
@@ -474,7 +493,7 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/setup_file%7E3.html">setup_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/setup_file.html">setup_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/setup_file%7E2.html">setup_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/setup_geometry.html">setup_geometry</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
@@ -518,13 +537,15 @@ public subroutine dmsg(level, prog, method, msg)
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/unlink_aliases.html">unlink_aliases</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
-<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/write_file.html">write_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/write_file%7E4.html">write_file</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/write_grid.html">write_grid</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/write_header.html">write_header</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 <tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/write_restart_log.html">write_restart_log</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
+<tr><td class="solidTop">w</td></tr>
+<tr><td rowspan="2" class="node" bgcolor="#d9534f"><a href=".././proc/write_scalar.html">write_scalar</a></td><td class="solidBottom">w</td><td rowspan="2"class="triangle-right"></td></tr>
 <tr><td class="solidTop">w</td></tr>
 </table>
 <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
@@ -726,10 +747,10 @@ public subroutine dmsg(level, prog, method, msg)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

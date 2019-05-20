@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>deallocate_memory &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -128,21 +139,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.0% of total for procedures.">5 statements</a>
+    title=" 0.1% of total for procedures.">9 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/wall.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/resnorm.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/wall.f90.html'>wall.f90</a></li>
+     <li><a href='../sourcefile/resnorm.f90.html'>resnorm.f90</a></li>
     
-     <li><a href='../module/wall.html'>wall</a></li>
+     <li><a href='../module/resnorm.html'>resnorm</a></li>
     
   
      <li class="active">deallocate_memory</li>
@@ -211,7 +222,7 @@ private subroutine deallocate_memory()
 
 
     
-    <p>deallocate memory from the Wallc array</p>
+    <p>Deallocate memory required for MPI Communication</p>
     
 
     <h3>Arguments</h3>
@@ -243,8 +254,8 @@ private subroutine deallocate_memory()
 <!-- proc~deallocate_memory -->
 <g id="proc~~deallocate_memory~~CallsGraph_node1" class="node">
 <title>proc~deallocate_memory</title>
-<polygon fill="none" stroke="#000000" points="106,-171 0,-171 0,-147 106,-147 106,-171"/>
-<text text-anchor="middle" x="53" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">deallocate_memory</text>
+<polygon fill="none" stroke="#000000" points="106,-192 0,-192 0,-168 106,-168 106,-192"/>
+<text text-anchor="middle" x="53" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">deallocate_memory</text>
 </g>
 <!-- interface~dealloc -->
 <g id="proc~~deallocate_memory~~CallsGraph_node2" class="node">
@@ -258,158 +269,143 @@ private subroutine deallocate_memory()
 <!-- proc~deallocate_memory&#45;&gt;interface~dealloc -->
 <g id="proc~~deallocate_memory~~CallsGraph_edge1" class="edge">
 <title>proc~deallocate_memory&#45;&gt;interface~dealloc</title>
-<path fill="none" stroke="#ff0000" d="M106.2469,-168.6395C114.8738,-170.2013 123.6418,-171.7886 131.7807,-173.262"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="131.2319,-176.7195 141.6955,-175.0569 132.4789,-169.8315 131.2319,-176.7195"/>
-</g>
-<!-- proc~dmsg -->
-<g id="proc~~deallocate_memory~~CallsGraph_node3" class="node">
-<title>proc~dmsg</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node3"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
-<polygon fill="#d9534f" stroke="#d9534f" points="196,-150 142,-150 142,-126 196,-126 196,-150"/>
-<text text-anchor="middle" x="169" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
-</a>
-</g>
-</g>
-<!-- proc~deallocate_memory&#45;&gt;proc~dmsg -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge2" class="edge">
-<title>proc~deallocate_memory&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#ff0000" d="M106.2469,-149.3605C114.8738,-147.7987 123.6418,-146.2114 131.7807,-144.738"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="132.4789,-148.1685 141.6955,-142.9431 131.2319,-141.2805 132.4789,-148.1685"/>
+<path fill="none" stroke="#ff0000" d="M106.2469,-180C114.7779,-180 123.4469,-180 131.5091,-180"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="131.6955,-183.5001 141.6955,-180 131.6955,-176.5001 131.6955,-183.5001"/>
 </g>
 <!-- proc~dealloc_rank2_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_node4" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node3" class="node">
 <title>proc~dealloc_rank2_real</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node4"><a xlink:href=".././proc/dealloc_rank2_real.html" xlink:title="dealloc_rank2_real">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node3"><a xlink:href=".././proc/dealloc_rank2_real.html" xlink:title="dealloc_rank2_real">
 <polygon fill="#d9534f" stroke="#d9534f" points="342.5,-360 239.5,-360 239.5,-336 342.5,-336 342.5,-360"/>
 <text text-anchor="middle" x="291" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank2_real</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank2_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge3" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge2" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank2_real</title>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M170.8405,-192.1501C175.6804,-219.964 191.3146,-288.7981 232,-327 233.2806,-328.2024 234.6345,-329.3367 236.0474,-330.4066"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="234.3601,-333.4805 244.6848,-335.8579 238.0962,-327.5608 234.3601,-333.4805"/>
 </g>
 <!-- proc~dealloc_rank4_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_node5" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node4" class="node">
 <title>proc~dealloc_rank4_real</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node5"><a xlink:href=".././proc/dealloc_rank4_real.html" xlink:title="dealloc_rank4_real">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node4"><a xlink:href=".././proc/dealloc_rank4_real.html" xlink:title="dealloc_rank4_real">
 <polygon fill="#d9534f" stroke="#d9534f" points="342.5,-318 239.5,-318 239.5,-294 342.5,-294 342.5,-318"/>
 <text text-anchor="middle" x="291" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank4_real</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank4_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge4" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge3" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank4_real</title>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M173.1718,-192.2357C181.1836,-213.9662 200.7498,-259.409 232,-285 233.7428,-286.4272 235.59,-287.761 237.5133,-289.0071"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="235.9056,-292.1178 246.3448,-293.9267 239.3121,-286.0026 235.9056,-292.1178"/>
 </g>
 <!-- proc~dealloc_rank1_integer -->
-<g id="proc~~deallocate_memory~~CallsGraph_node6" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node5" class="node">
 <title>proc~dealloc_rank1_integer</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node6"><a xlink:href=".././proc/dealloc_rank1_integer.html" xlink:title="dealloc_rank1_integer">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node5"><a xlink:href=".././proc/dealloc_rank1_integer.html" xlink:title="dealloc_rank1_integer">
 <polygon fill="#d9534f" stroke="#d9534f" points="350,-276 232,-276 232,-252 350,-252 350,-276"/>
 <text text-anchor="middle" x="291" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank1_integer</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank1_integer -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge5" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge4" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank1_integer</title>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M178.4282,-192.2932C189.7665,-206.3227 210.0339,-229.1157 232,-243 234.6265,-244.6601 237.4018,-246.2113 240.26,-247.6572"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="239.0401,-250.9478 249.5901,-251.921 241.9497,-244.5811 239.0401,-250.9478"/>
 </g>
 <!-- proc~dealloc_rank2_integer -->
-<g id="proc~~deallocate_memory~~CallsGraph_node7" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node6" class="node">
 <title>proc~dealloc_rank2_integer</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node7"><a xlink:href=".././proc/dealloc_rank2_integer.html" xlink:title="dealloc_rank2_integer">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node6"><a xlink:href=".././proc/dealloc_rank2_integer.html" xlink:title="dealloc_rank2_integer">
 <polygon fill="#d9534f" stroke="#d9534f" points="350,-234 232,-234 232,-210 350,-210 350,-234"/>
 <text text-anchor="middle" x="291" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank2_integer</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank2_integer -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge6" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge5" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank2_integer</title>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M196.0758,-189.3212C210.8637,-194.4121 229.5519,-200.8457 246.4276,-206.6554"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="245.5165,-210.0433 256.1112,-209.9891 247.7951,-203.4245 245.5165,-210.0433"/>
 </g>
 <!-- proc~dealloc_rank1_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_node8" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node7" class="node">
 <title>proc~dealloc_rank1_real</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node8"><a xlink:href=".././proc/dealloc_rank1_real.html" xlink:title="dealloc_rank1_real">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node7"><a xlink:href=".././proc/dealloc_rank1_real.html" xlink:title="dealloc_rank1_real">
 <polygon fill="#d9534f" stroke="#d9534f" points="342.5,-192 239.5,-192 239.5,-168 342.5,-168 342.5,-192"/>
 <text text-anchor="middle" x="291" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank1_real</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank1_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge7" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge6" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank1_real</title>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M196.0758,-180C205.9574,-180 217.5807,-180 229.2409,-180"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="229.4545,-183.5001 239.4544,-180 229.4544,-176.5001 229.4545,-183.5001"/>
 </g>
 <!-- proc~dealloc_rank3_integer -->
-<g id="proc~~deallocate_memory~~CallsGraph_node9" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node8" class="node">
 <title>proc~dealloc_rank3_integer</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node9"><a xlink:href=".././proc/dealloc_rank3_integer.html" xlink:title="dealloc_rank3_integer">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node8"><a xlink:href=".././proc/dealloc_rank3_integer.html" xlink:title="dealloc_rank3_integer">
 <polygon fill="#d9534f" stroke="#d9534f" points="350,-150 232,-150 232,-126 350,-126 350,-150"/>
 <text text-anchor="middle" x="291" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank3_integer</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank3_integer -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge8" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge7" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank3_integer</title>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M196.0758,-170.6788C210.8637,-165.5879 229.5519,-159.1543 246.4276,-153.3446"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="247.7951,-156.5755 256.1112,-150.0109 245.5165,-149.9567 247.7951,-156.5755"/>
 </g>
 <!-- proc~dealloc_rank3_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_node10" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node9" class="node">
 <title>proc~dealloc_rank3_real</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node10"><a xlink:href=".././proc/dealloc_rank3_real.html" xlink:title="dealloc_rank3_real">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node9"><a xlink:href=".././proc/dealloc_rank3_real.html" xlink:title="dealloc_rank3_real">
 <polygon fill="#d9534f" stroke="#d9534f" points="342.5,-108 239.5,-108 239.5,-84 342.5,-84 342.5,-108"/>
 <text text-anchor="middle" x="291" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank3_real</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank3_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge9" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge8" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank3_real</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M185.7138,-167.8479C189.2219,-165.0666 192.8196,-162.0325 196,-159 213.7932,-142.0339 211.7374,-130.9238 232,-117 234.3522,-115.3836 236.8424,-113.878 239.4175,-112.4773"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="240.9517,-115.6232 248.4229,-108.1111 237.8978,-109.3244 240.9517,-115.6232"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M178.4282,-167.7068C189.7665,-153.6773 210.0339,-130.8843 232,-117 234.6265,-115.3399 237.4018,-113.7887 240.26,-112.3428"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="241.9497,-115.4189 249.5901,-108.079 239.0401,-109.0522 241.9497,-115.4189"/>
 </g>
 <!-- proc~dealloc_rank5_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_node11" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node10" class="node">
 <title>proc~dealloc_rank5_real</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node11"><a xlink:href=".././proc/dealloc_rank5_real.html" xlink:title="dealloc_rank5_real">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node10"><a xlink:href=".././proc/dealloc_rank5_real.html" xlink:title="dealloc_rank5_real">
 <polygon fill="#d9534f" stroke="#d9534f" points="342.5,-66 239.5,-66 239.5,-42 342.5,-42 342.5,-66"/>
 <text text-anchor="middle" x="291" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank5_real</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank5_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge10" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge9" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank5_real</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M187.3051,-167.8299C190.4711,-165.1768 193.5327,-162.1967 196,-159 220.8172,-126.846 202.3896,-102.8029 232,-75 233.2806,-73.7976 234.6345,-72.6633 236.0474,-71.5934"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="238.0962,-74.4392 244.6848,-66.1421 234.3601,-68.5195 238.0962,-74.4392"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M173.1718,-167.7643C181.1836,-146.0338 200.7498,-100.591 232,-75 233.7428,-73.5728 235.59,-72.239 237.5133,-70.9929"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="239.3121,-73.9974 246.3448,-66.0733 235.9056,-67.8822 239.3121,-73.9974"/>
 </g>
 <!-- proc~dealloc_rank6_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_node12" class="node">
+<g id="proc~~deallocate_memory~~CallsGraph_node11" class="node">
 <title>proc~dealloc_rank6_real</title>
-<g id="a_proc~~deallocate_memory~~CallsGraph_node12"><a xlink:href=".././proc/dealloc_rank6_real.html" xlink:title="dealloc_rank6_real">
+<g id="a_proc~~deallocate_memory~~CallsGraph_node11"><a xlink:href=".././proc/dealloc_rank6_real.html" xlink:title="dealloc_rank6_real">
 <polygon fill="#d9534f" stroke="#d9534f" points="342.5,-24 239.5,-24 239.5,0 342.5,0 342.5,-24"/>
 <text text-anchor="middle" x="291" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dealloc_rank6_real</text>
 </a>
 </g>
 </g>
 <!-- interface~dealloc&#45;&gt;proc~dealloc_rank6_real -->
-<g id="proc~~deallocate_memory~~CallsGraph_edge11" class="edge">
+<g id="proc~~deallocate_memory~~CallsGraph_edge10" class="edge">
 <title>interface~dealloc&#45;&gt;proc~dealloc_rank6_real</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M187.9164,-167.835C190.9492,-165.217 193.8063,-162.2479 196,-159 228.5975,-110.7361 192.1487,-75.4721 232,-33 233.0462,-31.885 234.1555,-30.8292 235.3177,-29.8293"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="237.4562,-32.605 243.651,-24.01 233.4483,-26.8658 237.4562,-32.605"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M170.8405,-167.8499C175.6804,-140.036 191.3146,-71.2019 232,-33 233.2806,-31.7976 234.6345,-30.6633 236.0474,-29.5934"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="238.0962,-32.4392 244.6848,-24.1421 234.3601,-26.5195 238.0962,-32.4392"/>
 </g>
 </g>
 </svg>
@@ -487,110 +483,95 @@ private subroutine deallocate_memory()
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: proc~~deallocate_memory~~CalledByGraph Pages: 1 -->
-<svg id="procdeallocate_memoryCalledByGraph" width="641pt" height="73pt"
- viewBox="0.00 0.00 641.00 73.20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~deallocate_memory~~CalledByGraph" class="graph" transform="scale(.9892 .9892) rotate(0) translate(4 70)">
+<svg id="procdeallocate_memoryCalledByGraph" width="547pt" height="74pt"
+ viewBox="0.00 0.00 547.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~deallocate_memory~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
 <title>proc~~deallocate_memory~~CalledByGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 644,-70 644,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 543,-70 543,4 -4,4"/>
 <!-- proc~deallocate_memory -->
 <g id="proc~~deallocate_memory~~CalledByGraph_node1" class="node">
 <title>proc~deallocate_memory</title>
-<polygon fill="none" stroke="#000000" points="640,-45 534,-45 534,-21 640,-21 640,-45"/>
-<text text-anchor="middle" x="587" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">deallocate_memory</text>
+<polygon fill="none" stroke="#000000" points="539,-45 433,-45 433,-21 539,-21 539,-45"/>
+<text text-anchor="middle" x="486" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">deallocate_memory</text>
 </g>
-<!-- proc~destroy_surface -->
+<!-- proc~destroy_resnorm -->
 <g id="proc~~deallocate_memory~~CalledByGraph_node2" class="node">
-<title>proc~destroy_surface</title>
-<g id="a_proc~~deallocate_memory~~CalledByGraph_node2"><a xlink:href=".././proc/destroy_surface.html" xlink:title="destroy_surface">
-<polygon fill="#d9534f" stroke="#d9534f" points="498,-45 409,-45 409,-21 498,-21 498,-45"/>
-<text text-anchor="middle" x="453.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">destroy_surface</text>
+<title>proc~destroy_resnorm</title>
+<g id="a_proc~~deallocate_memory~~CalledByGraph_node2"><a xlink:href=".././proc/destroy_resnorm.html" xlink:title="destroy_resnorm">
+<polygon fill="#d9534f" stroke="#d9534f" points="397,-45 303,-45 303,-21 397,-21 397,-45"/>
+<text text-anchor="middle" x="350" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">destroy_resnorm</text>
 </a>
 </g>
 </g>
-<!-- proc~destroy_surface&#45;&gt;proc~deallocate_memory -->
+<!-- proc~destroy_resnorm&#45;&gt;proc~deallocate_memory -->
 <g id="proc~~deallocate_memory~~CalledByGraph_edge1" class="edge">
-<title>proc~destroy_surface&#45;&gt;proc~deallocate_memory</title>
-<path fill="none" stroke="#ff0000" d="M498.3249,-33C506.4916,-33 515.1508,-33 523.7329,-33"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="523.7382,-36.5001 533.7382,-33 523.7382,-29.5001 523.7382,-36.5001"/>
+<title>proc~destroy_resnorm&#45;&gt;proc~deallocate_memory</title>
+<path fill="none" stroke="#ff0000" d="M397.1845,-33C405.4558,-33 414.1817,-33 422.8042,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="422.8452,-36.5001 432.8452,-33 422.8452,-29.5001 422.8452,-36.5001"/>
 </g>
-<!-- proc~write_surfnode -->
+<!-- proc~destroy_solver -->
 <g id="proc~~deallocate_memory~~CalledByGraph_node3" class="node">
-<title>proc~write_surfnode</title>
-<g id="a_proc~~deallocate_memory~~CalledByGraph_node3"><a xlink:href=".././proc/write_surfnode.html" xlink:title="write_surfnode">
-<polygon fill="#d9534f" stroke="#d9534f" points="373,-45 290,-45 290,-21 373,-21 373,-45"/>
-<text text-anchor="middle" x="331.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_surfnode</text>
+<title>proc~destroy_solver</title>
+<g id="a_proc~~deallocate_memory~~CalledByGraph_node3"><a xlink:href=".././proc/destroy_solver.html" xlink:title="destroy_solver">
+<polygon fill="#d9534f" stroke="#d9534f" points="267,-45 185,-45 185,-21 267,-21 267,-45"/>
+<text text-anchor="middle" x="226" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">destroy_solver</text>
 </a>
 </g>
 </g>
-<!-- proc~write_surfnode&#45;&gt;proc~destroy_surface -->
+<!-- proc~destroy_solver&#45;&gt;proc~destroy_resnorm -->
 <g id="proc~~deallocate_memory~~CalledByGraph_edge2" class="edge">
-<title>proc~write_surfnode&#45;&gt;proc~destroy_surface</title>
-<path fill="none" stroke="#ff0000" d="M373.1443,-33C381.2907,-33 389.9509,-33 398.4552,-33"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="398.7064,-36.5001 408.7064,-33 398.7063,-29.5001 398.7064,-36.5001"/>
+<title>proc~destroy_solver&#45;&gt;proc~destroy_resnorm</title>
+<path fill="none" stroke="#ff0000" d="M267.2902,-33C275.4935,-33 284.2433,-33 292.8668,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="292.8916,-36.5001 302.8916,-33 292.8916,-29.5001 292.8916,-36.5001"/>
 </g>
-<!-- proc~setup_solver -->
+<!-- proc~finish_run -->
 <g id="proc~~deallocate_memory~~CalledByGraph_node4" class="node">
-<title>proc~setup_solver</title>
-<g id="a_proc~~deallocate_memory~~CalledByGraph_node4"><a xlink:href=".././proc/setup_solver.html" xlink:title="setup_solver">
-<polygon fill="#d9534f" stroke="#d9534f" points="254,-66 181,-66 181,-42 254,-42 254,-66"/>
-<text text-anchor="middle" x="217.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_solver</text>
+<title>proc~finish_run</title>
+<g id="a_proc~~deallocate_memory~~CalledByGraph_node4"><a xlink:href=".././proc/finish_run.html" xlink:title="finish_run">
+<polygon fill="#d9534f" stroke="#d9534f" points="149,-66 90,-66 90,-42 149,-42 149,-66"/>
+<text text-anchor="middle" x="119.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">finish_run</text>
 </a>
 </g>
 </g>
-<!-- proc~setup_solver&#45;&gt;proc~write_surfnode -->
+<!-- proc~finish_run&#45;&gt;proc~destroy_solver -->
 <g id="proc~~deallocate_memory~~CalledByGraph_edge3" class="edge">
-<title>proc~setup_solver&#45;&gt;proc~write_surfnode</title>
-<path fill="none" stroke="#ff0000" d="M254.1978,-47.2399C262.3381,-45.7404 271.1138,-44.1238 279.7288,-42.5368"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="280.5202,-45.95 289.7207,-40.6962 279.252,-39.0658 280.5202,-45.95"/>
+<title>proc~finish_run&#45;&gt;proc~destroy_solver</title>
+<path fill="none" stroke="#ff0000" d="M149.1662,-48.1503C157.2155,-46.5631 166.1658,-44.7983 175.0315,-43.0501"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="175.8189,-46.4623 184.9529,-41.0938 174.4646,-39.5946 175.8189,-46.4623"/>
 </g>
-<!-- proc~setup_all -->
+<!-- proc~abort_run -->
 <g id="proc~~deallocate_memory~~CalledByGraph_node5" class="node">
-<title>proc~setup_all</title>
-<g id="a_proc~~deallocate_memory~~CalledByGraph_node5"><a xlink:href=".././proc/setup_all.html" xlink:title="setup_all">
-<polygon fill="#d9534f" stroke="#d9534f" points="245,-24 190,-24 190,0 245,0 245,-24"/>
-<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_all</text>
+<title>proc~abort_run</title>
+<g id="a_proc~~deallocate_memory~~CalledByGraph_node5"><a xlink:href=".././proc/abort_run.html" xlink:title="abort_run">
+<polygon fill="#d9534f" stroke="#d9534f" points="149,-24 90,-24 90,0 149,0 149,-24"/>
+<text text-anchor="middle" x="119.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">abort_run</text>
 </a>
 </g>
 </g>
-<!-- proc~setup_all&#45;&gt;proc~write_surfnode -->
+<!-- proc~abort_run&#45;&gt;proc~destroy_solver -->
 <g id="proc~~deallocate_memory~~CalledByGraph_edge4" class="edge">
-<title>proc~setup_all&#45;&gt;proc~write_surfnode</title>
-<path fill="none" stroke="#ff0000" d="M245.0962,-17.0835C255.5984,-19.0181 267.9344,-21.2905 279.945,-23.503"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="279.4413,-26.9691 289.9099,-25.3387 280.7095,-20.0849 279.4413,-26.9691"/>
-</g>
-<!-- proc~start_run -->
-<g id="proc~~deallocate_memory~~CalledByGraph_node6" class="node">
-<title>proc~start_run</title>
-<g id="a_proc~~deallocate_memory~~CalledByGraph_node6"><a xlink:href=".././proc/start_run.html" xlink:title="start_run">
-<polygon fill="#d9534f" stroke="#d9534f" points="145,-66 90,-66 90,-42 145,-42 145,-66"/>
-<text text-anchor="middle" x="117.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_run</text>
-</a>
-</g>
-</g>
-<!-- proc~start_run&#45;&gt;proc~setup_solver -->
-<g id="proc~~deallocate_memory~~CalledByGraph_edge5" class="edge">
-<title>proc~start_run&#45;&gt;proc~setup_solver</title>
-<path fill="none" stroke="#ff0000" d="M145.0902,-54C152.985,-54 161.8197,-54 170.5313,-54"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="170.6377,-57.5001 180.6376,-54 170.6376,-50.5001 170.6377,-57.5001"/>
+<title>proc~abort_run&#45;&gt;proc~destroy_solver</title>
+<path fill="none" stroke="#ff0000" d="M149.1662,-17.8497C157.2155,-19.4369 166.1658,-21.2017 175.0315,-22.9499"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="174.4646,-26.4054 184.9529,-24.9062 175.8189,-19.5377 174.4646,-26.4054"/>
 </g>
 <!-- program~main -->
-<g id="proc~~deallocate_memory~~CalledByGraph_node7" class="node">
+<g id="proc~~deallocate_memory~~CalledByGraph_node6" class="node">
 <title>program~main</title>
-<g id="a_proc~~deallocate_memory~~CalledByGraph_node7"><a xlink:href=".././program/main.html" xlink:title="main">
+<g id="a_proc~~deallocate_memory~~CalledByGraph_node6"><a xlink:href=".././program/main.html" xlink:title="main">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
 <text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
 </a>
 </g>
 </g>
-<!-- program~main&#45;&gt;proc~start_run -->
-<g id="proc~~deallocate_memory~~CalledByGraph_edge6" class="edge">
-<title>program~main&#45;&gt;proc~start_run</title>
-<path fill="none" stroke="#ff0000" d="M54.153,-54C62.1482,-54 71.046,-54 79.5856,-54"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="79.7397,-57.5001 89.7397,-54 79.7397,-50.5001 79.7397,-57.5001"/>
+<!-- program~main&#45;&gt;proc~finish_run -->
+<g id="proc~~deallocate_memory~~CalledByGraph_edge5" class="edge">
+<title>program~main&#45;&gt;proc~finish_run</title>
+<path fill="none" stroke="#ff0000" d="M54.2528,-54C62.209,-54 71.0731,-54 79.639,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.8587,-57.5001 89.8587,-54 79.8587,-50.5001 79.8587,-57.5001"/>
 </g>
 </g>
 </svg>
-</div><script>var panprocdeallocate_memoryCalledByGraph = svgPanZoom('#procdeallocate_memoryCalledByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
     <p>Nodes of different colours represent the following: </p>
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -712,13 +693,14 @@ private subroutine deallocate_memory()
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">deallocate_memory</span><span class="p">()</span>
-      <span class="c">!&lt; deallocate memory from the Wallc array</span>
-
+      <span class="c">!&lt; Deallocate memory required for MPI Communication</span>
       <span class="k">implicit none</span>
-
-<span class="k">      call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;wall_find&#39;</span><span class="p">,</span> <span class="s1">&#39;dealloate_memory&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">dealloc</span><span class="p">(</span><span class="n">wallc</span><span class="p">)</span>
-
+<span class="k">      call </span><span class="n">dealloc</span><span class="p">(</span><span class="n">Res_abs</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">dealloc</span><span class="p">(</span><span class="n">Res_rel</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">dealloc</span><span class="p">(</span><span class="n">Res_scale</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">dealloc</span><span class="p">(</span><span class="n">Res_save</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">dealloc</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span>
+      <span class="k">if</span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">Res_list</span><span class="p">))</span> <span class="k">deallocate</span><span class="p">(</span><span class="n">Res_list</span><span class="p">)</span>
     <span class="k">end subroutine </span><span class="n">deallocate_memory</span>
 </pre></div>
 
@@ -741,10 +723,10 @@ private subroutine deallocate_memory()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

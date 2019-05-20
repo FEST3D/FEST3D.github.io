@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>Documentation &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -124,11 +135,7 @@
         
         <li><a href='../page/./01_install.html'>Installation</a></li>
         
-        <li><a href='../page/./02_mesh.html'>Mesh</a></li>
-        
-        <li><a href='../page/./03_run.html'>Run</a></li>
-        
-        <li><a href='../page/./04_layout.html'>Layout file</a></li>
+        <li><a href='../page/02_run/index.html'>Run</a></li>
         
         <li><a href='../page/05_tutorials/index.html'>Tutorials</a></li>
         
@@ -146,7 +153,7 @@
   
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
-      <p style="text-align: center"><img alt="FEST3D" src="../media/FEST3D.png"></p>
+      <p style="text-align: center"><img alt="FEST-3D" src="../media/FEST3D.png"></p>
 <h1 id="introduction">Introduction</h1>
 <p>FEST-3D is a finite-volume solver build to compute compressible fluid flow problems on a structured grid.</p>
 <h2 id="governing-equations">Governing Equations:</h2>
@@ -169,7 +176,7 @@
 <p>The solver provides a tremendous amount of choices to the user in terms of inviscid flux calculation
 scheme, higher face-state reconstruction scheme, and time-integration scheme.</p>
 <h2 id="schemes">Schemes</h2>
-<h3 id="inviscid-face-flux-calculation">Inviscid Face-flux calculation</h3>
+<h3 id="inviscid-flux-calculation">Inviscid flux calculation</h3>
 <ul>
 <li><strong>AUSM</strong></li>
 <li><strong>LDFSS</strong></li>
@@ -177,7 +184,7 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
 <li><strong>AUSM+-UP</strong></li>
 <li><strong>SLAU</strong></li>
 </ul>
-<h3 id="face-state-reconstruction">Face-state reconstruction</h3>
+<h3 id="higher-order-reconstruction">Higher-order reconstruction</h3>
 <ul>
 <li><strong>None</strong> 1rst order accurate in space</li>
 <li><strong>MUSCL</strong> 3rd order accurate in space</li>
@@ -185,7 +192,7 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
 <li><strong>WENO</strong> 5th order accurate in space</li>
 <li><strong>WENO-NM</strong> 5th order accurate in space (specifically for non-uniform grid)</li>
 </ul>
-<h3 id="time-integration">Time-integration</h3>
+<h3 id="time-integration-method">Time-integration method</h3>
 <h4 id="explicit">Explicit</h4>
 <ul>
 <li><strong>Euler Explicit</strong> First order accurate in time</li>
@@ -199,14 +206,14 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
 <li><strong>implicit</strong> Matrix free LU-SGS method, first order accurate in time.</li>
 <li><strong>PLUSGS</strong> Preconditioned Matrix free LU-SGS method for very low speed flow; first order accuate in time</li>
 </ul>
-<h3 id="turbulence">Turbulence</h3>
+<h3 id="turbulence-model">Turbulence model</h3>
 <ul>
 <li><strong>SA</strong></li>
 <li><strong>SST</strong></li>
 <li><strong>SST2003</strong></li>
 <li><strong>k-kL</strong></li>
 </ul>
-<h3 id="transition">Transition</h3>
+<h3 id="transition-model">Transition model</h3>
 <ul>
 <li><strong>Gamma LCTM2015</strong></li>
 <li><strong>BC</strong></li>
@@ -220,6 +227,11 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
 <em>Added turbulence and transition models; implicit time-integration method and weno scheme</em>   </p>
 </li>
 <li>
+<p><code>R. D. Teja</code><br>
+   B.Tech Student (2016)<br>
+<em>Introudued the MPI capability to the solver</em>  </p>
+</li>
+<li>
 <p><code>Raskesh Ramakrishnan</code><br>
    Dual Degree Student (2016) <br>
 <em>Developed FEST-3D into a three-dimensional laminar flow solver</em>   </p>
@@ -228,11 +240,6 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
 <p><code>Anant Girdhar</code><br>
     B.Tech Student (2015) <br>
 <em>Initiated the FEST-3D code as two-dimensional inviscid flow solver</em>  </p>
-</li>
-<li>
-<p><code>R. D. Teja</code><br>
-   B.Tech Student (2016)<br>
-<em>Introudued the MPI capability to the solver</em>  </p>
 </li>
 </ul>
 <p>All the above individuals were guided by <code>Dr. Santanu Ghosh</code>.</p>
@@ -258,17 +265,21 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
             </li>
             
             <li role="presentation">
-            <a href='../page/./02_mesh.html'>Mesh</a>
+            <a href='../page/02_run/index.html'>Run</a>
+            
+            <ul class="nav nav-stacked nav-pills">
+              
+            <li role="presentation">
+            <a href='../page/02_run/02_mesh.html'>Mesh</a>
             
             </li>
             
             <li role="presentation">
-            <a href='../page/./03_run.html'>Run</a>
+            <a href='../page/02_run/04_layout.html'>Layout file</a>
             
             </li>
             
-            <li role="presentation">
-            <a href='../page/./04_layout.html'>Layout file</a>
+            </ul>
             
             </li>
             
@@ -328,10 +339,10 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

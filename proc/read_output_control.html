@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>read_output_control &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -243,44 +254,44 @@ private subroutine read_output_control()
 <!-- proc~read_output_control -->
 <g id="proc~~read_output_control~~CallsGraph_node1" class="node">
 <title>proc~read_output_control</title>
-<polygon fill="none" stroke="#000000" points="109,-44 0,-44 0,-20 109,-20 109,-44"/>
-<text text-anchor="middle" x="54.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">read_output_control</text>
-</g>
-<!-- proc~close_file -->
-<g id="proc~~read_output_control~~CallsGraph_node2" class="node">
-<title>proc~close_file</title>
-<g id="a_proc~~read_output_control~~CallsGraph_node2"><a xlink:href=".././proc/close_file.html" xlink:title="close_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="315,-44 258,-44 258,-20 315,-20 315,-44"/>
-<text text-anchor="middle" x="286.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">close_file</text>
-</a>
-</g>
-</g>
-<!-- proc~read_output_control&#45;&gt;proc~close_file -->
-<g id="proc~~read_output_control~~CallsGraph_edge1" class="edge">
-<title>proc~read_output_control&#45;&gt;proc~close_file</title>
-<path fill="none" stroke="#ff0000" d="M109.0556,-32.7002C120.9056,-32.8251 133.3727,-32.9358 145,-33 179.2217,-33.1891 187.7788,-33.2653 222,-33 230.3598,-32.9352 239.3286,-32.8232 247.8403,-32.6969"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="247.9808,-36.1953 257.9245,-32.5382 247.8706,-29.1961 247.9808,-36.1953"/>
+<polygon fill="none" stroke="#000000" points="109,-24 0,-24 0,0 109,0 109,-24"/>
+<text text-anchor="middle" x="54.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">read_output_control</text>
 </g>
 <!-- proc~get_rw_count -->
-<g id="proc~~read_output_control~~CallsGraph_node3" class="node">
+<g id="proc~~read_output_control~~CallsGraph_node2" class="node">
 <title>proc~get_rw_count</title>
-<g id="a_proc~~read_output_control~~CallsGraph_node3"><a xlink:href=".././proc/get_rw_count.html" xlink:title="get_rw_count">
-<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 145,-24 145,0 222,0 222,-24"/>
-<text text-anchor="middle" x="183.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_rw_count</text>
+<g id="a_proc~~read_output_control~~CallsGraph_node2"><a xlink:href=".././proc/get_rw_count.html" xlink:title="get_rw_count">
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-44 145,-44 145,-20 222,-20 222,-44"/>
+<text text-anchor="middle" x="183.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_rw_count</text>
 </a>
 </g>
 </g>
 <!-- proc~read_output_control&#45;&gt;proc~get_rw_count -->
-<g id="proc~~read_output_control~~CallsGraph_edge2" class="edge">
+<g id="proc~~read_output_control~~CallsGraph_edge1" class="edge">
 <title>proc~read_output_control&#45;&gt;proc~get_rw_count</title>
-<path fill="none" stroke="#ff0000" d="M109.2076,-23.5182C117.7023,-22.2012 126.429,-20.8482 134.7797,-19.5535"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="135.3927,-23.0004 144.7384,-18.0096 134.3202,-16.083 135.3927,-23.0004"/>
+<path fill="none" stroke="#ff0000" d="M109.2076,-20.4818C117.7023,-21.7988 126.429,-23.1518 134.7797,-24.4465"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="134.3202,-27.917 144.7384,-25.9904 135.3927,-20.9996 134.3202,-27.917"/>
 </g>
-<!-- proc~get_rw_count&#45;&gt;proc~close_file -->
+<!-- proc~close_file~3 -->
+<g id="proc~~read_output_control~~CallsGraph_node3" class="node">
+<title>proc~close_file~3</title>
+<g id="a_proc~~read_output_control~~CallsGraph_node3"><a xlink:href=".././proc/close_file%7E3.html" xlink:title="close_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="315,-24 258,-24 258,0 315,0 315,-24"/>
+<text text-anchor="middle" x="286.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">close_file</text>
+</a>
+</g>
+</g>
+<!-- proc~read_output_control&#45;&gt;proc~close_file~3 -->
+<g id="proc~~read_output_control~~CallsGraph_edge2" class="edge">
+<title>proc~read_output_control&#45;&gt;proc~close_file~3</title>
+<path fill="none" stroke="#ff0000" d="M109.0556,-11.2998C120.9056,-11.1749 133.3727,-11.0642 145,-11 179.2217,-10.8109 187.7788,-10.7347 222,-11 230.3598,-11.0648 239.3286,-11.1768 247.8403,-11.3031"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="247.8706,-14.8039 257.9245,-11.4618 247.9808,-7.8047 247.8706,-14.8039"/>
+</g>
+<!-- proc~get_rw_count&#45;&gt;proc~close_file~3 -->
 <g id="proc~~read_output_control~~CallsGraph_edge3" class="edge">
-<title>proc~get_rw_count&#45;&gt;proc~close_file</title>
-<path fill="none" stroke="#00ffff" d="M222.1464,-19.5042C230.5876,-21.1432 239.521,-22.8779 247.9581,-24.5161"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="247.4532,-27.9834 257.937,-26.4538 248.7875,-21.1117 247.4532,-27.9834"/>
+<title>proc~get_rw_count&#45;&gt;proc~close_file~3</title>
+<path fill="none" stroke="#ff0000" d="M222.1464,-24.4958C230.5876,-22.8568 239.521,-21.1221 247.9581,-19.4839"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="248.7875,-22.8883 257.937,-17.5462 247.4532,-16.0166 248.7875,-22.8883"/>
 </g>
 </g>
 </svg>
@@ -625,10 +636,10 @@ private subroutine read_output_control()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

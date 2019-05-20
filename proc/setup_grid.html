@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>setup_grid &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -369,9 +380,9 @@ public subroutine setup_grid(gridfile)
 <polygon fill="#ffff00" stroke="#ffff00" points="494.9322,-256.7679 498.7411,-246.8814 489.5983,-252.2348 494.9322,-256.7679"/>
 </g>
 <!-- interface~alloc -->
-<g id="proc~~setup_grid~~CallsGraph_node9" class="node">
+<g id="proc~~setup_grid~~CallsGraph_node8" class="node">
 <title>interface~alloc</title>
-<g id="a_proc~~setup_grid~~CallsGraph_node9"><a xlink:href=".././interface/alloc.html" xlink:title="alloc">
+<g id="a_proc~~setup_grid~~CallsGraph_node8"><a xlink:href=".././interface/alloc.html" xlink:title="alloc">
 <polygon fill="#a7506f" stroke="#a7506f" points="361,-507.5169 307,-507.5169 307,-483.5169 361,-483.5169 361,-507.5169"/>
 <text text-anchor="middle" x="334" y="-493.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alloc</text>
 </a>
@@ -390,7 +401,7 @@ public subroutine setup_grid(gridfile)
 <polygon fill="#00ff00" stroke="#00ff00" points="473.1172,-242.416 482.6203,-237.7317 472.2702,-235.4674 473.1172,-242.416"/>
 </g>
 <!-- mpi_recv -->
-<g id="proc~~setup_grid~~CallsGraph_node11" class="node">
+<g id="proc~~setup_grid~~CallsGraph_node10" class="node">
 <title>mpi_recv</title>
 <polygon fill="#777777" stroke="#777777" points="362,-347.5169 306,-347.5169 306,-323.5169 362,-323.5169 362,-347.5169"/>
 <text text-anchor="middle" x="334" y="-333.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mpi_recv</text>
@@ -402,7 +413,7 @@ public subroutine setup_grid(gridfile)
 <polygon fill="#00ff00" stroke="#00ff00" points="295.4277,-330.0614 305.9629,-328.9384 297.0268,-323.2465 295.4277,-330.0614"/>
 </g>
 <!-- mpi_barrier -->
-<g id="proc~~setup_grid~~CallsGraph_node12" class="node">
+<g id="proc~~setup_grid~~CallsGraph_node11" class="node">
 <title>mpi_barrier</title>
 <polygon fill="#777777" stroke="#777777" points="367.5,-305.5169 300.5,-305.5169 300.5,-281.5169 367.5,-281.5169 367.5,-305.5169"/>
 <text text-anchor="middle" x="334" y="-291.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mpi_barrier</text>
@@ -414,7 +425,7 @@ public subroutine setup_grid(gridfile)
 <polygon fill="#00ff00" stroke="#00ff00" points="290.2937,-297.017 300.2937,-293.5169 290.2937,-290.017 290.2937,-297.017"/>
 </g>
 <!-- mpi_send -->
-<g id="proc~~setup_grid~~CallsGraph_node13" class="node">
+<g id="proc~~setup_grid~~CallsGraph_node12" class="node">
 <title>mpi_send</title>
 <polygon fill="#777777" stroke="#777777" points="363.5,-389.5169 304.5,-389.5169 304.5,-365.5169 363.5,-365.5169 363.5,-389.5169"/>
 <text text-anchor="middle" x="334" y="-375.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mpi_send</text>
@@ -431,35 +442,35 @@ public subroutine setup_grid(gridfile)
 <path fill="none" stroke="#00ffff" d="M191.6749,-18.41C246.525,-2.7257 350.9561,17.5228 421,-28.5169 484.6264,-70.3385 502.9756,-168.3659 508.0965,-212.4064"/>
 <polygon fill="#00ffff" stroke="#00ffff" points="504.6173,-212.7886 509.1329,-222.3729 511.5798,-212.0645 504.6173,-212.7886"/>
 </g>
-<!-- proc~close_file -->
-<g id="proc~~setup_grid~~CallsGraph_node8" class="node">
-<title>proc~close_file</title>
-<g id="a_proc~~setup_grid~~CallsGraph_node8"><a xlink:href=".././proc/close_file.html" xlink:title="close_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="362.5,-103.5169 305.5,-103.5169 305.5,-79.5169 362.5,-79.5169 362.5,-103.5169"/>
-<text text-anchor="middle" x="334" y="-89.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">close_file</text>
-</a>
-</g>
-</g>
-<!-- proc~read_interface_map&#45;&gt;proc~close_file -->
-<g id="proc~~setup_grid~~CallsGraph_edge14" class="edge">
-<title>proc~read_interface_map&#45;&gt;proc~close_file</title>
-<path fill="none" stroke="#0000ff" d="M209.6785,-106.7967C237.2969,-103.4022 270.1563,-99.3636 295.1549,-96.2912"/>
-<polygon fill="#0000ff" stroke="#0000ff" points="295.8508,-99.7321 305.3491,-95.0383 294.9968,-92.7844 295.8508,-99.7321"/>
-</g>
 <!-- proc~read_periodic_bc_file -->
-<g id="proc~~setup_grid~~CallsGraph_node10" class="node">
+<g id="proc~~setup_grid~~CallsGraph_node9" class="node">
 <title>proc~read_periodic_bc_file</title>
-<g id="a_proc~~setup_grid~~CallsGraph_node10"><a xlink:href=".././proc/read_periodic_bc_file.html" xlink:title="read_periodic_bc_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="391.5,-61.5169 276.5,-61.5169 276.5,-37.5169 391.5,-37.5169 391.5,-61.5169"/>
-<text text-anchor="middle" x="334" y="-47.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_periodic_bc_file</text>
+<g id="a_proc~~setup_grid~~CallsGraph_node9"><a xlink:href=".././proc/read_periodic_bc_file.html" xlink:title="read_periodic_bc_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="391.5,-103.5169 276.5,-103.5169 276.5,-79.5169 391.5,-79.5169 391.5,-103.5169"/>
+<text text-anchor="middle" x="334" y="-89.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_periodic_bc_file</text>
 </a>
 </g>
 </g>
 <!-- proc~read_interface_map&#45;&gt;proc~read_periodic_bc_file -->
 <g id="proc~~setup_grid~~CallsGraph_edge16" class="edge">
 <title>proc~read_interface_map&#45;&gt;proc~read_periodic_bc_file</title>
-<path fill="none" stroke="#0000ff" d="M177.5305,-101.4301C195.8367,-91.9936 222.541,-79.0875 247,-70.5169 253.4039,-68.273 260.1548,-66.1835 266.9479,-64.261"/>
-<polygon fill="#0000ff" stroke="#0000ff" points="268.1588,-67.5592 276.8953,-61.5655 266.3279,-60.8029 268.1588,-67.5592"/>
+<path fill="none" stroke="#0000ff" d="M209.6785,-106.7967C227.5444,-104.6009 247.6035,-102.1355 266.3092,-99.8365"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="266.7446,-103.3094 276.243,-98.6156 265.8907,-96.3617 266.7446,-103.3094"/>
+</g>
+<!-- proc~close_file~3 -->
+<g id="proc~~setup_grid~~CallsGraph_node13" class="node">
+<title>proc~close_file~3</title>
+<g id="a_proc~~setup_grid~~CallsGraph_node13"><a xlink:href=".././proc/close_file%7E3.html" xlink:title="close_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="362.5,-61.5169 305.5,-61.5169 305.5,-37.5169 362.5,-37.5169 362.5,-61.5169"/>
+<text text-anchor="middle" x="334" y="-47.1169" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">close_file</text>
+</a>
+</g>
+</g>
+<!-- proc~read_interface_map&#45;&gt;proc~close_file~3 -->
+<g id="proc~~setup_grid~~CallsGraph_edge14" class="edge">
+<title>proc~read_interface_map&#45;&gt;proc~close_file~3</title>
+<path fill="none" stroke="#0000ff" d="M177.5305,-101.4301C195.8367,-91.9936 222.541,-79.0875 247,-70.5169 262.4886,-65.0897 280.0067,-60.566 295.2428,-57.1242"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="296.348,-60.4655 305.3733,-54.9164 294.8574,-53.6261 296.348,-60.4655"/>
 </g>
 <!-- proc~change_map_to_particular_range -->
 <g id="proc~~setup_grid~~CallsGraph_node15" class="node">
@@ -509,8 +520,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank2_real -->
 <g id="proc~~setup_grid~~CallsGraph_edge19" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank2_real</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M345.5234,-507.7044C366.1614,-528.959 411.5385,-573.1464 457,-600.5169 459.6696,-602.1242 462.4842,-603.6538 465.3678,-605.1004"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="464.1745,-608.4049 474.7194,-609.4323 467.1167,-602.0532 464.1745,-608.4049"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M345.5234,-507.7044C366.1614,-528.959 411.5385,-573.1464 457,-600.5169 459.6696,-602.1242 462.4842,-603.6538 465.3678,-605.1004"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="464.1745,-608.4049 474.7194,-609.4323 467.1167,-602.0532 464.1745,-608.4049"/>
 </g>
 <!-- proc~alloc_rank4_real -->
 <g id="proc~~setup_grid~~CallsGraph_node17" class="node">
@@ -524,8 +535,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank4_real -->
 <g id="proc~~setup_grid~~CallsGraph_edge20" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank4_real</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M355.9071,-507.5475C380.2665,-520.7333 420.9394,-542.1834 457,-558.5169 460.8035,-560.2397 464.7927,-561.965 468.8032,-563.6451"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="467.5415,-566.9105 478.1221,-567.4612 470.1943,-560.4326 467.5415,-566.9105"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M355.9071,-507.5475C380.2665,-520.7333 420.9394,-542.1834 457,-558.5169 460.8035,-560.2397 464.7927,-561.965 468.8032,-563.6451"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="467.5415,-566.9105 478.1221,-567.4612 470.1943,-560.4326 467.5415,-566.9105"/>
 </g>
 <!-- proc~alloc_rank3_real -->
 <g id="proc~~setup_grid~~CallsGraph_node18" class="node">
@@ -539,8 +550,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank3_real -->
 <g id="proc~~setup_grid~~CallsGraph_edge21" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank3_real</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.1143,-501.9874C385.9116,-507.9049 423.3603,-516.8416 454.4953,-524.2715"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="453.8188,-527.7083 464.3581,-526.6251 455.4437,-520.8995 453.8188,-527.7083"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M361.1143,-501.9874C385.9116,-507.9049 423.3603,-516.8416 454.4953,-524.2715"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="453.8188,-527.7083 464.3581,-526.6251 455.4437,-520.8995 453.8188,-527.7083"/>
 </g>
 <!-- proc~alloc_rank2_integer -->
 <g id="proc~~setup_grid~~CallsGraph_node19" class="node">
@@ -554,8 +565,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank2_integer -->
 <g id="proc~~setup_grid~~CallsGraph_edge22" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank2_integer</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.1143,-495.5169C383.8856,-495.5169 417.3253,-495.5169 446.7476,-495.5169"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="446.963,-499.017 456.963,-495.5169 446.963,-492.017 446.963,-499.017"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M361.1143,-495.5169C383.8856,-495.5169 417.3253,-495.5169 446.7476,-495.5169"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="446.963,-499.017 456.963,-495.5169 446.963,-492.017 446.963,-499.017"/>
 </g>
 <!-- proc~alloc_rank1_integer -->
 <g id="proc~~setup_grid~~CallsGraph_node20" class="node">
@@ -569,8 +580,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank1_integer -->
 <g id="proc~~setup_grid~~CallsGraph_edge23" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank1_integer</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.1143,-489.0465C384.5914,-483.444 419.4087,-475.1353 449.4717,-467.9612"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="450.547,-471.303 459.4614,-465.5773 448.9221,-464.4941 450.547,-471.303"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M361.1143,-489.0465C384.5914,-483.444 419.4087,-475.1353 449.4717,-467.9612"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="450.547,-471.303 459.4614,-465.5773 448.9221,-464.4941 450.547,-471.303"/>
 </g>
 <!-- proc~alloc_rank6_real -->
 <g id="proc~~setup_grid~~CallsGraph_node21" class="node">
@@ -584,8 +595,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank6_real -->
 <g id="proc~~setup_grid~~CallsGraph_edge24" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank6_real</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.3404,-491.0576C379.2561,-487.2704 402.6638,-480.6269 421,-469.5169 440.6229,-457.6274 437.9117,-445.2471 457,-432.5169 459.3931,-430.921 461.9258,-429.4167 464.5358,-428.004"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="466.1774,-431.0972 473.6157,-423.5525 463.096,-424.8119 466.1774,-431.0972"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M361.3404,-491.0576C379.2561,-487.2704 402.6638,-480.6269 421,-469.5169 440.6229,-457.6274 437.9117,-445.2471 457,-432.5169 459.3931,-430.921 461.9258,-429.4167 464.5358,-428.004"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="466.1774,-431.0972 473.6157,-423.5525 463.096,-424.8119 466.1774,-431.0972"/>
 </g>
 <!-- proc~alloc_rank5_real -->
 <g id="proc~~setup_grid~~CallsGraph_node22" class="node">
@@ -599,8 +610,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank5_real -->
 <g id="proc~~setup_grid~~CallsGraph_edge25" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank5_real</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.1519,-493.2709C379.9019,-490.433 404.3613,-484.0165 421,-469.5169 450.0894,-444.1674 429.0385,-417.1054 457,-390.5169 458.2574,-389.3213 459.5912,-388.1909 460.9849,-387.1225"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="462.9798,-390.001 469.5092,-381.6573 459.2017,-384.1081 462.9798,-390.001"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M361.1519,-493.2709C379.9019,-490.433 404.3613,-484.0165 421,-469.5169 450.0894,-444.1674 429.0385,-417.1054 457,-390.5169 458.2574,-389.3213 459.5912,-388.1909 460.9849,-387.1225"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="462.9798,-390.001 469.5092,-381.6573 459.2017,-384.1081 462.9798,-390.001"/>
 </g>
 <!-- proc~alloc_rank3_integer -->
 <g id="proc~~setup_grid~~CallsGraph_node23" class="node">
@@ -614,8 +625,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank3_integer -->
 <g id="proc~~setup_grid~~CallsGraph_edge26" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank3_integer</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M361.3865,-494.0115C380.4953,-491.5339 405.2923,-485.2438 421,-469.5169 460.6497,-429.8187 419.1109,-389.8989 457,-348.5169 457.9023,-347.5315 458.8568,-346.5915 459.8555,-345.6951"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="462.1848,-348.3303 468.2447,-339.6396 458.0879,-342.6545 462.1848,-348.3303"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M361.3865,-494.0115C380.4953,-491.5339 405.2923,-485.2438 421,-469.5169 460.6497,-429.8187 419.1109,-389.8989 457,-348.5169 457.9023,-347.5315 458.8568,-346.5915 459.8555,-345.6951"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="462.1848,-348.3303 468.2447,-339.6396 458.0879,-342.6545 462.1848,-348.3303"/>
 </g>
 <!-- proc~alloc_rank1_real -->
 <g id="proc~~setup_grid~~CallsGraph_node24" class="node">
@@ -629,8 +640,8 @@ public subroutine setup_grid(gridfile)
 <!-- interface~alloc&#45;&gt;proc~alloc_rank1_real -->
 <g id="proc~~setup_grid~~CallsGraph_edge27" class="edge">
 <title>interface~alloc&#45;&gt;proc~alloc_rank1_real</title>
-<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M341.0852,-507.533C357.8782,-535.065 402.7839,-603.3471 457,-642.5169 459.0708,-644.0131 461.2629,-645.421 463.5307,-646.7433"/>
-<polygon fill="#ffbf00" stroke="#ffbf00" points="462.0682,-649.9275 472.5568,-651.4244 465.2909,-643.7134 462.0682,-649.9275"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M341.0852,-507.533C357.8782,-535.065 402.7839,-603.3471 457,-642.5169 459.0708,-644.0131 461.2629,-645.421 463.5307,-646.7433"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="462.0682,-649.9275 472.5568,-651.4244 465.2909,-643.7134 462.0682,-649.9275"/>
 </g>
 <!-- proc~extract_grid_point&#45;&gt;proc~dmsg -->
 <g id="proc~~setup_grid~~CallsGraph_edge28" class="edge">
@@ -963,10 +974,10 @@ public subroutine setup_grid(gridfile)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

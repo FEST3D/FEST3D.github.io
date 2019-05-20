@@ -7,7 +7,7 @@
    
    <meta name="description" content="">
     
-    <meta name="author" content="FEST3D Team" >
+    <meta name="author" content="FEST-3D Team" >
     <link rel="icon" href="../favicon.png">
 
     <title>write_output &ndash; FEST-3D</title>
@@ -29,6 +29,17 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
 
   </head>
 
@@ -196,13 +207,13 @@
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
       
-      <a class="list-group-item" href="../module/write_output.html#proc-setup_file%7E3">setup_file</a>
+      <a class="list-group-item" href="../module/write_output.html#proc-setup_file%7E2">setup_file</a>
       
-      <a class="list-group-item" href="../module/write_output.html#proc-open_file%7E2">open_file</a>
+      <a class="list-group-item" href="../module/write_output.html#proc-open_file">open_file</a>
       
-      <a class="list-group-item" href="../module/write_output.html#proc-close_file%7E3">close_file</a>
+      <a class="list-group-item" href="../module/write_output.html#proc-close_file">close_file</a>
       
-      <a class="list-group-item" href="../module/write_output.html#proc-write_file">write_file</a>
+      <a class="list-group-item" href="../module/write_output.html#proc-write_file%7E4">write_file</a>
       
     </div>
   </div>
@@ -237,25 +248,19 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/global.html'>global</a></li>
+    <li><a href='../module/write_output_tec_node.html'>write_output_tec_node</a></li>
     
     <li><a href='../module/global_vars.html'>global_vars</a></li>
-    
-    <li><a href='../module/global_vars.html'>global_vars</a></li>
-    
-    <li><a href='../module/global_vars.html'>global_vars</a></li>
-    
-    <li><a href='../module/global_vars.html'>global_vars</a></li>
-    
-    <li><a href='../module/utils.html'>utils</a></li>
-    
-    <li><a href='../module/string.html'>string</a></li>
-    
-    <li><a href='../module/write_output_vtk.html'>write_output_vtk</a></li>
     
     <li><a href='../module/write_output_tec.html'>write_output_tec</a></li>
     
-    <li><a href='../module/write_output_tec_node.html'>write_output_tec_node</a></li>
+    <li><a href='../module/string.html'>string</a></li>
+    
+    <li><a href='../module/global.html'>global</a></li>
+    
+    <li><a href='../module/utils.html'>utils</a></li>
+    
+    <li><a href='../module/write_output_vtk.html'>write_output_vtk</a></li>
     
   </ul>
       </li>
@@ -391,20 +396,20 @@
 <polygon fill="#ffda00" stroke="#ffda00" points="167.507,-150.4904 157.0148,-151.9612 166.1341,-157.3544 167.507,-150.4904"/>
 </g>
 <!-- module~write_output_vtk&#45;&gt;module~global -->
-<g id="module~~write_output~~UsesGraph_edge10" class="edge">
+<g id="module~~write_output~~UsesGraph_edge12" class="edge">
 <title>module~write_output_vtk&#45;&gt;module~global</title>
 <path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M324.4441,-215.3073C299.251,-226.0236 259.6821,-240.4267 223.5,-243.2582"/>
 <path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M223.5,-243.2582C152.7263,-248.7968 80.9415,-194.4224 47.0654,-164.3678"/>
 <polygon fill="#48ff00" stroke="#48ff00" points="49.047,-161.4391 39.2933,-157.302 44.3382,-166.6187 49.047,-161.4391"/>
 </g>
 <!-- module~write_output_vtk&#45;&gt;module~utils -->
-<g id="module~~write_output~~UsesGraph_edge13" class="edge">
+<g id="module~~write_output~~UsesGraph_edge9" class="edge">
 <title>module~write_output_vtk&#45;&gt;module~utils</title>
 <path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M310.3164,-191.2348C294.3404,-186.4545 276.0777,-180.9901 260.4376,-176.3104"/>
 <polygon fill="#48ff00" stroke="#48ff00" points="261.1726,-172.8771 250.5889,-173.3636 259.1659,-179.5833 261.1726,-172.8771"/>
 </g>
 <!-- module~write_output_vtk&#45;&gt;module~global_vars -->
-<g id="module~~write_output~~UsesGraph_edge12" class="edge">
+<g id="module~~write_output~~UsesGraph_edge10" class="edge">
 <title>module~write_output_vtk&#45;&gt;module~global_vars</title>
 <path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M304.8796,-211.559C280.1217,-214.2072 249.3768,-214.4295 223.5,-205.2582"/>
 <path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M223.5,-205.2582C195.5326,-195.346 166.8135,-177.1189 147.3691,-163.3457"/>
@@ -426,13 +431,13 @@
 </g>
 </g>
 <!-- module~write_output_vtk&#45;&gt;module~global_sst -->
-<g id="module~~write_output~~UsesGraph_edge9" class="edge">
+<g id="module~~write_output~~UsesGraph_edge13" class="edge">
 <title>module~write_output_vtk&#45;&gt;module~global_sst</title>
 <path fill="none" stroke="#48ff00" stroke-dasharray="5,2" d="M338.2165,-191.1244C320.0811,-173.3075 284.9439,-139.1587 254,-111.2582 251.3355,-108.8557 248.5069,-106.3663 245.6886,-103.9223"/>
 <polygon fill="#48ff00" stroke="#48ff00" points="247.7888,-101.1128 237.9173,-97.2652 243.2348,-106.429 247.7888,-101.1128"/>
 </g>
 <!-- module~write_output_tec&#45;&gt;module~global -->
-<g id="module~~write_output~~UsesGraph_edge15" class="edge">
+<g id="module~~write_output~~UsesGraph_edge17" class="edge">
 <title>module~write_output_tec&#45;&gt;module~global</title>
 <path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M333.2972,-31.1092C308.9298,-15.438 262.9346,8.4892 223.5,-3.2582"/>
 <path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M223.5,-3.2582C162.6567,-21.3832 182.1937,-81.0616 123.5,-105.2582"/>
@@ -440,13 +445,13 @@
 <polygon fill="#00ff91" stroke="#00ff91" points="61.9195,-126.9563 54.0258,-134.0232 64.6035,-133.4213 61.9195,-126.9563"/>
 </g>
 <!-- module~write_output_tec&#45;&gt;module~utils -->
-<g id="module~~write_output~~UsesGraph_edge18" class="edge">
+<g id="module~~write_output~~UsesGraph_edge14" class="edge">
 <title>module~write_output_tec&#45;&gt;module~utils</title>
 <path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M337.892,-55.3668C325.5879,-67.2273 306.3817,-85.8578 290,-102.2582 273.7856,-118.4913 270.7485,-123.5768 254,-139.2582 251.5112,-141.5885 248.8577,-143.9792 246.1938,-146.3219"/>
 <polygon fill="#00ff91" stroke="#00ff91" points="243.6191,-143.9201 238.325,-153.0974 248.1866,-149.2247 243.6191,-143.9201"/>
 </g>
 <!-- module~write_output_tec&#45;&gt;module~global_vars -->
-<g id="module~~write_output~~UsesGraph_edge17" class="edge">
+<g id="module~~write_output~~UsesGraph_edge15" class="edge">
 <title>module~write_output_tec&#45;&gt;module~global_vars</title>
 <path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M223.5,-3.2582C208.1941,-7.8178 203.0983,-9.8854 193,-22.2582 163.9238,-57.8833 184.2059,-82.1852 157,-119.2582 155.2033,-121.7066 153.1158,-124.041 150.8779,-126.2345"/>
 <polygon fill="#00ff91" stroke="#00ff91" points="148.1868,-123.9331 142.8938,-133.1111 152.755,-129.2371 148.1868,-123.9331"/>
@@ -458,7 +463,7 @@
 <polygon fill="#00ff91" stroke="#00ff91" points="260.8032,-39.7583 250.8032,-43.2582 260.8031,-46.7583 260.8032,-39.7583"/>
 </g>
 <!-- module~write_output_tec&#45;&gt;module~global_sst -->
-<g id="module~~write_output~~UsesGraph_edge14" class="edge">
+<g id="module~~write_output~~UsesGraph_edge18" class="edge">
 <title>module~write_output_tec&#45;&gt;module~global_sst</title>
 <path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M314.1069,-55.2937C298.4465,-60.4728 280.0781,-66.5473 263.9889,-71.8682"/>
 <polygon fill="#00ff91" stroke="#00ff91" points="262.7056,-68.6061 254.3103,-75.069 264.9035,-75.2521 262.7056,-68.6061"/>
@@ -470,19 +475,19 @@
 <polygon fill="#0091ff" stroke="#0091ff" points="64.2058,-141.7583 54.2058,-145.2582 64.2057,-148.7583 64.2058,-141.7583"/>
 </g>
 <!-- module~write_output_tec_node&#45;&gt;module~global -->
-<g id="module~~write_output~~UsesGraph_edge21" class="edge">
+<g id="module~~write_output~~UsesGraph_edge23" class="edge">
 <title>module~write_output_tec_node&#45;&gt;module~global</title>
 <path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M289.7792,-124.4089C268.7857,-124.7551 245.1096,-125.0881 223.5,-125.2582"/>
 <path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M223.5,-125.2582C178.1768,-125.6151 165.4035,-87.9834 123.5,-105.2582"/>
 </g>
 <!-- module~write_output_tec_node&#45;&gt;module~utils -->
-<g id="module~~write_output~~UsesGraph_edge24" class="edge">
+<g id="module~~write_output~~UsesGraph_edge20" class="edge">
 <title>module~write_output_tec_node&#45;&gt;module~utils</title>
 <path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M314.1069,-135.2937C297.1958,-140.8864 277.1271,-147.5233 260.1805,-153.1277"/>
 <polygon fill="#4800ff" stroke="#4800ff" points="259.0061,-149.8295 250.6108,-156.2924 261.2041,-156.4755 259.0061,-149.8295"/>
 </g>
 <!-- module~write_output_tec_node&#45;&gt;module~global_vars -->
-<g id="module~~write_output~~UsesGraph_edge23" class="edge">
+<g id="module~~write_output~~UsesGraph_edge21" class="edge">
 <title>module~write_output_tec_node&#45;&gt;module~global_vars</title>
 <path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M223.5,-125.2582C204.8523,-125.405 184.6212,-128.8167 167.2664,-132.7817"/>
 <polygon fill="#4800ff" stroke="#4800ff" points="166.3138,-129.4111 157.4142,-135.1597 167.9563,-136.2156 166.3138,-129.4111"/>
@@ -494,7 +499,7 @@
 <polygon fill="#4800ff" stroke="#4800ff" points="252.0169,-58.3148 241.8628,-55.2906 247.9147,-63.9869 252.0169,-58.3148"/>
 </g>
 <!-- module~write_output_tec_node&#45;&gt;module~global_sst -->
-<g id="module~~write_output~~UsesGraph_edge20" class="edge">
+<g id="module~~write_output~~UsesGraph_edge24" class="edge">
 <title>module~write_output_tec_node&#45;&gt;module~global_sst</title>
 <path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M310.3164,-111.2348C295.5553,-106.8181 278.8422,-101.8173 264.0492,-97.391"/>
 <polygon fill="#4800ff" stroke="#4800ff" points="264.7458,-93.9462 254.1622,-94.4327 262.7392,-100.6525 264.7458,-93.9462"/>
@@ -821,13 +826,13 @@
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
       
-      <a class="list-group-item" href="../module/write_output.html#proc-setup_file%7E3">setup_file</a>
+      <a class="list-group-item" href="../module/write_output.html#proc-setup_file%7E2">setup_file</a>
       
-      <a class="list-group-item" href="../module/write_output.html#proc-open_file%7E2">open_file</a>
+      <a class="list-group-item" href="../module/write_output.html#proc-open_file">open_file</a>
       
-      <a class="list-group-item" href="../module/write_output.html#proc-close_file%7E3">close_file</a>
+      <a class="list-group-item" href="../module/write_output.html#proc-close_file">close_file</a>
       
-      <a class="list-group-item" href="../module/write_output.html#proc-write_file">write_file</a>
+      <a class="list-group-item" href="../module/write_output.html#proc-write_file%7E4">write_file</a>
       
     </div>
   </div>
@@ -911,8 +916,8 @@
     
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-setup_file%7E3"></span><h3>
-private subroutine <a href='../proc/setup_file%7E3.html'>setup_file</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-setup_file%7E2"></span><h3>
+private subroutine <a href='../proc/setup_file%7E2.html'>setup_file</a>()
     
     
    
@@ -941,8 +946,8 @@ private subroutine <a href='../proc/setup_file%7E3.html'>setup_file</a>()
     
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-open_file%7E2"></span><h3>
-private subroutine <a href='../proc/open_file%7E2.html'>open_file</a>(filename)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-open_file"></span><h3>
+private subroutine <a href='../proc/open_file.html'>open_file</a>(filename)
     
     
    
@@ -1000,8 +1005,8 @@ private subroutine <a href='../proc/open_file%7E2.html'>open_file</a>(filename)
     
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-close_file%7E3"></span><h3>
-private subroutine <a href='../proc/close_file%7E3.html'>close_file</a>(filename)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-close_file"></span><h3>
+private subroutine <a href='../proc/close_file.html'>close_file</a>(filename)
     
     
    
@@ -1059,8 +1064,8 @@ private subroutine <a href='../proc/close_file%7E3.html'>close_file</a>(filename
     
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_file"></span><h3>
-public subroutine <a href='../proc/write_file.html'>write_file</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_file%7E4"></span><h3>
+public subroutine <a href='../proc/write_file%7E4.html'>write_file</a>()
     
     
    
@@ -1107,10 +1112,10 @@ public subroutine <a href='../proc/write_file.html'>write_file</a>()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-05-17T23:09:18.567960 
+             on 2019-05-20T17:53:20.873044 
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST3D Team</p></div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
       </div>
       <br>
       </div> <!-- /container -->    
