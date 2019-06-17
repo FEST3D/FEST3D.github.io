@@ -127,14 +127,15 @@
 	<!--p> Find us on&hellip;</p-->
         <p>
         	 
-          <a class="btn btn-lg btn-primary" href="https://github.com/FEST3D/FEST-3D" role="button">GitHub</a>
+          <a class="btn btn-lg btn-primary" href="https://github.com/FEST3D/FEST-3D" target="_blank" role="button">GitHub</a>
 			 
 			 
 			 
 			 
 	         
 			 
-          <a class="btn btn-lg btn-danger" style="float:right" href="https://github.com/FEST3D/FEST-3D/archive/master.zip" role="button">Download the Source</a>
+          <a class="btn btn-lg btn-primary" style="float:right" href="https://github.com/FEST3D/FEST-3D/archive/master.zip" role="button">Download the Source</a>
+          <a class="btn btn-lg btn-danger" style="float:right" href="https://github.com/FEST3D/run/archive/master.zip" role="button">Download the Tutorials</a>
 			 
         </p>
       </div>
@@ -144,15 +145,22 @@
         <div class="col-md-8">
 		  
           <h1>FEST-3D</h1>
-          <p>FEST-3D (Finite-volume Explicit STructured 3-Dimensional) is computational fluid dynamic code written in Fortran 90 for solving Navier-Stokes equations on a structured grid using state of the art finite-volume numerical methods. It is a modular, multiblock finite-volume code developed to solve compressible flow problems encountered in the field of aerodynamics.</p>
+          <p>FEST-3D (Finite-volume Explicit STructured 3-Dimensional) is computational fluid dynamic solver written in Fortran 90 for solving the Navier-Stokes equations on structured grid using state of the art finite-volume numerical methods. It is a modular, multiblock finite-volume code developed to solve flow problems encountered in the field of aerodynamics.</p>
 <h2 id="installation">Installation</h2>
-<p>For installation instruction check out <a href="./page/01_install.html">Documentation</a> guide. </p>
+<p>For installation instruction check out the <a href="./page/01_install.html">Documentation</a> guide. </p>
 <h2 id="tutorials">Tutorials</h2>
-<p>For tutorials check out <a href="./page/05_tutorials/index.html">test_case</a> descriptions.</p>
+<p>For tutorials check out the <a href="./page/05_tutorials/index.html">test_case</a> descriptions.</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>There two separate GitHub repository:<br>
+1. <a href="https://github.com/FEST3D/FEST-3D" target="_blank">FEST-3D<a> directory which contains source code<br>
+2. <a href="https://github.com/FEST3D/run" target="_blank">Run</a> directory which contains tutorials<br>
+Run directory is submodule to the FEST-3D code.
+</p></div>
+<p>
 <h2 id="license">License</h2>
-<p>FEST-3D is open-source software available under GNU General Public License v3.0</p>
+<p>FEST-3D is an open-source software available under GNU General Public License v3.0</p>
 <h2 id="reference-and-citation">Reference and Citation</h2>
-<p>Details about the algorithms used in the FEST-3D code can be found in the publication by Jatinder Pal Singh Sandhu et al. (<em>Singh Sandhu, J. P., Girdhar, A., Ramakrishnan, R., Teja, R. D., &amp; Ghosh, S., <strong>A convergence study of solutions using two two-equation RANS turbulence models on a finite volume solver for structured grids</strong>, AIAA 2018-3859</em>). If you want to cite the FEST-3D code in you work, use the same reference.</p>
+<p>Details about the governing equations used in the FEST-3D code can be found in the publication by Jatinder Pal Singh Sandhu et al. (<em>Singh Sandhu, J. P., Girdhar, A., Ramakrishnan, R., Teja, R. D., &amp; Ghosh, S., <strong>A convergence study of solutions using two two-equation RANS turbulence models on a finite volume solver for structured grids</strong>, AIAA 2018-3859</em>). </p>
+<p>User are requested to cite this reference for any research publications made using the FEST-3D solver.</p>
 <p></p><div class="alert alert-danger" role="alert"><h4>Bug</h4><p>- Halt/Stop condition does not work on MPI
 </p></div>
 <p>
@@ -166,14 +174,14 @@
           <p>Group of students from the Department of Aerospace Engineering at Indian Institute of Technology Madras (IITM), Chennai (600036), India.</p>
           <h4>Developers</h4>
           <ul>
-            <li> <a href="https://www.jatinderpal.com">Jatinder Pal Singh Sandhu</a></li>
+            <li> <a href="https://www.jatinderpal.com" target="_blank">Jatinder Pal Singh Sandhu</a></li>
             <li> R. D. Teja</li>
             <li> Rakesh Ramakrishnan</li>
             <li> Anant Girdhar</li>
           </ul>
           <h4>Advisor</h4>
            <ul>
-             <li> <a href="https://sites.google.com/view/santanu-ghosh-ae-iitm/home?authuser=2">Dr. Santanu Ghosh</a></li>
+             <li> <a href="https://sites.google.com/view/santanu-ghosh-ae-iitm/home?authuser=2" target="_blank">Dr. Santanu Ghosh</a></li>
            </ul>
 			   
             <div class="text-center"><div class="btn-group" role="group">
@@ -1317,7 +1325,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-04T15:57:27.490320 
+             on 2019-06-17T18:49:25.362593 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

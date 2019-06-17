@@ -162,8 +162,28 @@ all these input files, a Python code is provided at <a href="https://github.com/
 <li><strong>bash</strong></li>
 </ul>
 <h2 id="inputs">Inputs</h2>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>A python scipt is provided to ease the user interface with FEST-3D solver.
+In order to run the script provide all the input variables described below
+and run the script  using:</p>
+<div class="codehilite"><pre><span></span>python automation.py
+</pre></div>
+
+
+<p>Above command will create a new directory.
+Before runing the solver, change directory to newly created directory with name provide in variable <em>$RunDir</em>
+eg:<br>
+<code>$python automaton.py</code> <br>
+<code>$cd &lt;New directory&gt;</code> <br>
+If required, tweak the input files, and after that, run the solver using<br>
+<code>$nohup bash run.sh &amp;</code> <br>
+To check the current run status<br>
+<code>$tail -f time_directories/aux/out</code> <br>
+To plot the residual using gnuplot script <code>gnplt</code><br>
+<code>$gnuplot gnplt</code><br>
+</p></div>
 <p>First, we need to create a directory to perform simulation and save all the input/output data.<br>
 <code>RunDir = 'Test'</code> Give any name to the Run directory <br>
+<hr>
 One of the important input is the grid/mesh files. FEST-3D code requires a separate file for each process.
 If the domain is decomposed into 4 blocks, then 4 separate files are required. Although, you can give
 any unique name to the grid files, for simplicity the python code expect grid file name in <strong>grid_nn.txt</strong>, where
@@ -171,10 +191,15 @@ the nn is the <em>block-number-1</em>. So, for 4 blocks, we will use the followi
 grid_03.txt. You should keep all the grid files in a separate folder and mention name of that folder 
 at<br>
 <code>GridDir='Mesh'</code>, here Mesh is the folder in which all the grid files are kept.<br>
+For more details about the grid/mesh read the subsection <a href="./02_mesh.html">Mesh</a>
+<hr>
 <code>NumberOfBlocks = 1</code> Total number of blocks<br>
+<hr>
 In order to use the executable build in the binary folder of the FEST-3D code, a soft link is created
 between the FEST3D executable <code>bin</code> folder and FEST3D in <code>bin</code> folder of Run folder.<br>
-<code>AbsBinaryPath="/home/jatinder/solver/FEST3D/bin/FEST3D"</code> provide the absolute path to the binary.<br>
+<hr>
+<code>AbsBinaryPath="/home/jatinder/solver/FEST3D/bin/FEST3D"</code> provide the <a href="https://www.geeksforgeeks.org/absolute-relative-pathnames-unix/">absolute path</a> to the binary.<br>
+<hr>
 Now, you are required to fix different input parameter of the solver based on the problem you are simulating.
 Meaning of the most input is self-explanatory from the name.</p>
 <table>
@@ -187,9 +212,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 </thead>
 <tbody>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Control['CFL']</td>
 <td align="left">Real Number greater than zero</td>
 <td align="left">Courant–Friedrichs–Lewy number. Low value (less than 1) for explicit scheme and high value for implicit scheme</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Control['LoadLevel']</td>
@@ -197,9 +232,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Restart folder number in the time_directories/ directory</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Control['MaxIterations']</td>
 <td align="left">Integer greater than SaveIterations</td>
 <td align="left">Maximum number of iteration</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Control['SaveIterations']</td>
@@ -207,9 +252,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Save solution state after every these many iteration</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Control['OutputFileFormat']</td>
 <td align="left">'vtk' or 'tecplot'</td>
 <td align="left">Format of the solution output file</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Control['OutputDataFormat']</td>
@@ -217,9 +272,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Type of the data in the output folder. Only ASCII for now. <em>BINARY</em> will be added in later release</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Control['InputFileFormat']</td>
 <td align="left">'vtk' or 'tecplot'</td>
 <td align="left">Format of the solution file from which solution will be restarted</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Control['InputDataFormat']</td>
@@ -227,9 +292,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Type of the data in the restart file <br>. Similar to output data type, only ASCII is supported for now.</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Control['Precision']</td>
 <td align="left">Integer, lesser than 14 and greater than 1</td>
 <td align="left">Data precision for residual output, not used for solution output.</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Control['Purge']</td>
@@ -237,14 +312,29 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Number of recent solution folder to keep and delete others. <strong>0</strong> input will keep all the folders</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Control['ResidualWriteInterval']</td>
 <td align="left">Integer greater than zero</td>
 <td align="left">Number of iteration after which to save the residual output in the file</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Control['Tolerance']</td>
 <td align="left">Real number and ["Mass_abs", "Viscous_abs", "Mass_abs", "Resnorm_abs", "Viscous_abs", "Turbulent_abs", "Continuity_abs", "X-mom_abs", "Y-mom_abs", "Z-mom_abs", "Energy_abs", "Mass_rel", "Resnorm_rel", "Viscous_rel", "Turublent_rel", "Continuity_abs", "X-mom_rel", "Y-mom_rel", "Z-mom_rel", "Energy_rel", "TKE_abs", "Tv_abs", "Dissipation_abs", "Omega_abs", "Kl_abs", "TKE_rel", "Tv_rel", "Dissipation_rel", "Omega_rel", "Kl_rel"]</td>
-<td align="left">Tolerance value and variable. The solver will stop once this value is achived. List of tolerace variable that can be used is given below</td>
+<td align="left">Tolerance value and variable. The solver will stop once this value is achived. List of tolerace variables is given in expected input column. You can use only one input at a time.</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Control['DebugLevel']</td>
@@ -252,9 +342,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">5-Only important information is logged, 1-All the information is logged which helps in debuging. Will be remove in later release</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Scheme['InviscidFlux']</td>
 <td align="left">'ausm', 'slau', 'ausmUP', or 'ldfss0'</td>
 <td align="left">Scheme to calcualte inviscid fluxes through cell faces</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Scheme['FaceState']</td>
@@ -262,9 +362,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Scheme for higher-order face-state reconstuction</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Scheme['Limiter']</td>
 <td align="left">'1 1 1  0 0 0' or '0 0 0 0 0 0'</td>
 <td align="left">Switch for limiters and pressure based switching when using higher order face-state reconstuction. Three value for I,j, and k direction 1-&gt;on  and 0-&gt; off</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Scheme['TurbulenceLimiter']</td>
@@ -272,9 +382,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Switch for limiters when used for higher-order face-state reconstuctio of turbulent variables.  1-&gt;on  and 0-&gt; off</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Scheme['TurbulenceModel']</td>
 <td align="left">'none', 'sa', 'sst', or 'sst2003'</td>
 <td align="left">Turbulence model</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Scheme['TransitionModel']</td>
@@ -282,9 +402,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Transition model</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Scheme['TimeStep']</td>
-<td align="left">'l' or 'g <optional time step>'</td>
+<td align="left">'l' or 'g [optional time step]'</td>
 <td align="left">Time-step for time-integration. 'l' for local and 'g' for global. In case for global method you can provide exact value to time-step here.</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Scheme['TimeIntegration']</td>
@@ -292,9 +422,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Method for time-integration</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Scheme['HigherOrderBC']</td>
 <td align="left">0 or 1</td>
 <td align="left">Higher order boundary conditions.  1-&gt;on  and 0-&gt; off.</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Flow["NumberOfVariables"]</td>
@@ -302,9 +442,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Total number of variables to solver. Reduntant and will be depricated in later release.</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Flow["DensityInf"]</td>
 <td align="left">Real Number</td>
 <td align="left">Free-stream density</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Flow["UInf"]</td>
@@ -312,9 +462,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Free-stream x-component of velocity</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Flow["VInf"]</td>
 <td align="left">Real Number</td>
 <td align="left">Free-stream y-component of velocity</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Flow["WInf"]</td>
@@ -322,9 +482,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Free-stream z-component of velocity</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Flow["PressureInf"]</td>
 <td align="left">Real Number</td>
 <td align="left">Free-stream pressure</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Flow["TurbulenceIntensity"]</td>
@@ -332,9 +502,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Free-stream trubulent intensity in (percentage</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Flow["ViscosityRatio"]</td>
 <td align="left">Real Number</td>
 <td align="left">Free-stream ratio of turbulence viscosity to molecular viscosity</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Flow["Intermitency"]</td>
@@ -342,9 +522,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Free-stream turbulent intermittency</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Flow["ReferenceViscosity"]</td>
 <td align="left">Real Number</td>
 <td align="left">Reference viscosity</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Flow["ViscosityLaw"]</td>
@@ -352,9 +542,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Law used for viscosity variation</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Flow["ReferenceTemp"]</td>
 <td align="left">Real Number</td>
 <td align="left">Reference temperature for viscosity variation</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Flow["SutherlandTemp"]</td>
@@ -362,9 +562,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Sutherland temperature</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Flow["PrandtlNumbers"]</td>
 <td align="left">Two real numbers</td>
 <td align="left">Prandtl number and turbulent prandtl number</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">Flow["SpecificHeatRatio"]</td>
@@ -372,9 +582,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Specific heat ratio</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">Flow["GasConstant"]</td>
 <td align="left">Real</td>
 <td align="left">Gas Constant</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">OutputControl['Out']</td>
@@ -382,9 +602,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Variables to write in the output file</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">OutputControl['In']</td>
 <td align="left">["Velocity" ,"Density" ,"Pressure" ,"viscosity" ,"TKE" ,"Omega" ,"kL" ,"tv"]</td>
 <td align="left">Variables to read in case of restrart</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 <tr>
 <td align="left">ResidualControl['Out']</td>
@@ -392,9 +622,19 @@ Meaning of the most input is self-explanatory from the name.</p>
 <td align="left">Residual to write in the resnorm file</td>
 </tr>
 <tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+</tr>
+<tr>
 <td align="left">BoundaryConditions</td>
 <td align="left">[-3, -4, -5, -8, -6, -6]  where &lt;-1:'SUPERSONIC INLET', -2:'SUPERSONIC OUTFLOW', -3:'SUBSONIC INFLOW', -4:'SUBSONIC OUTFLOW', -5:'WALL', -6:'SYMMETRY', -7:'Pole', -8:'Far-field', -11:'Total inlet'&gt;</td>
 <td align="left">Boundary conditions to used for the six face of the domain</td>
+</tr>
+<tr>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
+<td align="left"><hr></td>
 </tr>
 </tbody>
 </table>
@@ -405,11 +645,14 @@ Meaning of the most input is self-explanatory from the name.</p>
 <p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Make sure to provide the absolute path of the FEST3D binary in the automaton.py script before executing. And also
 the number of files in the GridDir folder should be equal to the number of blocks as input.</p></div>
 <h2 id="directory-structure">Directory structure</h2>
-<p>Executing automation.py will create a directory with usual directory structure:
- * <strong>system</strong>:all the input files including the mesh files and boundary condition file is located in this directory
- * <strong>time_directory</strong>: all the output files will be stored in this folder.
- * <strong>bin</strong>: a soft link between original FEST-3D binary is stored here.
- * <strong>run.sh</strong>: bash script to run the solver. This helps to remove log clutter on screen and save it in a log file named <code>out</code> in the <strong>time_directory/aux/</strong> directory along with <code>resnorm</code> file which store the residual values. </p>
+<p>Executing automation.py will create a directory with usual directory structure:</p>
+<h3 id="_1"></h3>
+<ul>
+<li><strong>system</strong>:all the input files including the mesh files and boundary condition file is located in this directory</li>
+<li><strong>time_directory</strong>: all the output files will be stored in this folder.</li>
+<li><strong>bin</strong>: a soft link between original FEST-3D binary is stored here.</li>
+<li><strong>run.sh</strong>: bash script to run the solver. This helps to remove log clutter on screen and save it in a log file named <code>out</code> in the <strong>time_directory/aux/</strong> directory along with <code>resnorm</code> file which store the residual values. </li>
+</ul>
 <h2 id="check-layout-file">Check Layout file</h2>
 <p>Although, automaton.py python script tries to handle the boundary condition by its own; it is still not full-proof. So, always the check the <strong>layout.md</strong> file in the <em>system/mesh/layout</em> directory. Make sure all the boundary condition number are as you expect. In the case of pole boundary condition, some random number will be mentioned and required to change manually to -007. The layout file in explained in the later section.</p>
 <h2 id="execute">Execute</h2>
@@ -419,6 +662,27 @@ the number of files in the GridDir folder should be equal to the number of block
 
 <p>On linux os you can use following command to run FEST-3D in the background:<br>
 <code>nohup bash run.sh &amp;</code><br></p>
+<h2 id="check-status">Check Status</h2>
+<p>The screen output is directed to the text file: <code>[RunDir]/time_directories/aux/out</code><br>
+The residual are stored in the text file: <code>[RunDir]/time_directories/aux/resnorm</code><br>
+You can output the current status or Current iteration number of the run on screen using</p>
+<div class="codehilite"><pre><span></span>tail -f time_directories/aux/out
+</pre></div>
+
+
+<p>or you can check the residual by using Gnuplot or other similar software:</p>
+<div class="codehilite"><pre><span></span>gnuplot gnplt
+</pre></div>
+
+
+<p><code>gnplt</code> is the script provided for the Gnuplot software. You can download Gnuplot using:</p>
+<div class="codehilite"><pre><span></span>sudo apt-get install gnuplot
+</pre></div>
+
+
+<p>Use ctl-c to stop the Gnuplot.</p>
+<h2 id="post-processing">Post Processing</h2>
+<p>Since FEST-3D output solution file in Tecplot and VTK format, you can use either commerical TECPLOT software or open-source softwares like: <a href="https://wci.llnl.gov/simulation/computer-codes/visit/downloads" target="_blank">Visit</a>, <a href="https://www.paraview.org/download/" target="_blank">Paraview</a>, <a href="https://docs.enthought.com/mayavi/mayavi/installation.html" target="_blank">Mayavi</a>.</p>
     </div>
     
     <div class="col-md-3 col-md-pull-9">
@@ -520,7 +784,7 @@ the number of files in the GridDir folder should be equal to the number of block
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-04T15:57:27.490320 
+             on 2019-06-17T18:49:25.362593 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

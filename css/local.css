@@ -165,7 +165,7 @@ body {
     }
     
     table tr.submod>td {
-      border-top: none;
+      border-top: 5px solid blue;
       font-size: 13.5px;
     }
 
