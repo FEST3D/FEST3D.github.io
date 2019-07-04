@@ -217,7 +217,7 @@
 
     </div>
     <div class="col-md-9" id='text'>
-      <p>this module contains subroutine that 
+      <p>This module contains subroutine that 
  1. check if time for resnorm dump is arrived
  2. calculate resnorm
  3. send those resnorm to processor number 0
@@ -582,7 +582,7 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a name="ln-1"></a>  <span class="c">!&lt; this module contains subroutine that </span>
+    <div class="hl"><pre><span></span><a name="ln-1"></a>  <span class="c">!&lt; This module contains subroutine that </span>
 <a name="ln-2"></a>  <span class="c">!&lt; 1. check if time for resnorm dump is arrived</span>
 <a name="ln-3"></a>  <span class="c">!&lt; 2. calculate resnorm</span>
 <a name="ln-4"></a>  <span class="c">!&lt; 3. send those resnorm to processor number 0</span>
@@ -590,7 +590,7 @@
 <a name="ln-6"></a>  <span class="c">!&lt;    availble from all processors</span>
 <a name="ln-7"></a>  <span class="c">!&lt; 5. Append the data to resnorm file</span>
 <a name="ln-8"></a><span class="k">module </span><span class="n">resnorm</span>
-<a name="ln-9"></a>  <span class="c">!&lt; this module contains subroutine that </span>
+<a name="ln-9"></a>  <span class="c">!&lt; This module contains subroutine that </span>
 <a name="ln-10"></a>  <span class="c">!&lt; 1. check if time for resnorm dump is arrived</span>
 <a name="ln-11"></a>  <span class="c">!&lt; 2. calculate resnorm</span>
 <a name="ln-12"></a>  <span class="c">!&lt; 3. send those resnorm to processor number 0</span>
@@ -655,7 +655,7 @@
 <a name="ln-71"></a>  <span class="k">contains</span>
 <a name="ln-72"></a>
 <a name="ln-73"></a><span class="k">    subroutine </span><span class="n">setup_resnorm</span><span class="p">()</span>
-<a name="ln-74"></a>      <span class="c">!&lt; allocate memory, setup scale and file to write</span>
+<a name="ln-74"></a>      <span class="c">!&lt; Allocate memory, setup scale and file to write</span>
 <a name="ln-75"></a>      <span class="k">implicit none</span>
 <a name="ln-76"></a><span class="k">      call </span><span class="n">allocate_memory</span><span class="p">()</span>
 <a name="ln-77"></a>      <span class="k">call </span><span class="n">setup_scale</span><span class="p">()</span>
@@ -678,14 +678,14 @@
 <a name="ln-94"></a><span class="k">    end subroutine </span><span class="n">find_resnorm</span>
 <a name="ln-95"></a>
 <a name="ln-96"></a>    <span class="k">subroutine </span><span class="n">destroy_resnorm</span><span class="p">()</span>
-<a name="ln-97"></a>      <span class="c">!&lt; deallocate memory and close residual file</span>
+<a name="ln-97"></a>      <span class="c">!&lt; Deallocate memory and close residual file</span>
 <a name="ln-98"></a>      <span class="k">implicit none</span>
 <a name="ln-99"></a><span class="k">      call </span><span class="n">deallocate_memory</span><span class="p">()</span>
 <a name="ln-100"></a>      <span class="k">call </span><span class="n">close_file</span><span class="p">(</span><span class="n">RESNORM_FILE_UNIT</span><span class="p">)</span>
 <a name="ln-101"></a>    <span class="k">end subroutine </span><span class="n">destroy_resnorm</span>
 <a name="ln-102"></a>
 <a name="ln-103"></a>    <span class="k">subroutine </span><span class="n">setup_file</span><span class="p">()</span>
-<a name="ln-104"></a>      <span class="c">!&lt; open the residual file to write</span>
+<a name="ln-104"></a>      <span class="c">!&lt; Open the residual file to write</span>
 <a name="ln-105"></a>      <span class="k">implicit none</span>
 <a name="ln-106"></a><span class="k">      </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>
 <a name="ln-107"></a>      <span class="k">if</span><span class="p">(</span><span class="n">process_id</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
@@ -703,7 +703,7 @@
 <a name="ln-119"></a><span class="k">    end subroutine </span><span class="n">setup_file</span>
 <a name="ln-120"></a>
 <a name="ln-121"></a>    <span class="k">subroutine </span><span class="n">allocate_memory</span><span class="p">()</span>
-<a name="ln-122"></a>      <span class="c">!&lt; allocate memory to MPI Communication</span>
+<a name="ln-122"></a>      <span class="c">!&lt; Allocate memory to MPI Communication</span>
 <a name="ln-123"></a>      <span class="k">implicit none</span>
 <a name="ln-124"></a><span class="k">      call </span><span class="n">alloc</span><span class="p">(</span><span class="n">Res_abs</span>  <span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="n">n_var</span><span class="p">)</span>
 <a name="ln-125"></a>      <span class="k">call </span><span class="n">alloc</span><span class="p">(</span><span class="n">Res_rel</span>  <span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="n">n_var</span><span class="p">)</span>
@@ -810,7 +810,7 @@
 <a name="ln-226"></a>    <span class="k">end subroutine </span><span class="n">get_relative_resnorm</span>
 <a name="ln-227"></a>
 <a name="ln-228"></a>    <span class="k">subroutine </span><span class="n">write_resnorm</span><span class="p">()</span>
-<a name="ln-229"></a>      <span class="c">!&lt; writing the residual in the file to save.</span>
+<a name="ln-229"></a>      <span class="c">!&lt; Writing the residual in the file to save.</span>
 <a name="ln-230"></a>      <span class="k">implicit none</span>
 <a name="ln-231"></a><span class="k">      </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>
 <a name="ln-232"></a>      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">n</span><span class="o">=</span><span class="mi">6</span>
@@ -960,7 +960,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

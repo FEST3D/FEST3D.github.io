@@ -695,14 +695,14 @@
 <a name="ln-56"></a>
 <a name="ln-57"></a>    <span class="k">private</span>
 <a name="ln-58"></a><span class="k">    </span><span class="kt">INTEGER</span> <span class="kd">::</span> <span class="p">&amp;</span>
-<a name="ln-59"></a>    <span class="n">nb_ticks_initial</span><span class="p">,</span> <span class="p">&amp;</span> <span class="c">!&lt; initial value of the clock tick counter</span>
-<a name="ln-60"></a>    <span class="n">nb_ticks_final</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">!&lt; final value of the clock tick counter</span>
-<a name="ln-61"></a>    <span class="n">nb_ticks_max</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">!&lt; maximum value of the clock counter</span>
-<a name="ln-62"></a>    <span class="n">nb_ticks_sec</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">!&lt; number of clock ticks per second</span>
-<a name="ln-63"></a>    <span class="n">nb_ticks</span>           <span class="c">!&lt; number of clock ticks of the code</span>
-<a name="ln-64"></a>    <span class="kt">REAL</span> <span class="kd">::</span> <span class="n">elapsed_time</span>  <span class="c">!&lt; real time in seconds</span>
-<a name="ln-65"></a>    <span class="kt">REAL</span> <span class="kd">::</span> <span class="n">t1</span>         <span class="c">!&lt; start clock time</span>
-<a name="ln-66"></a>    <span class="kt">REAL</span> <span class="kd">::</span> <span class="n">t2</span>         <span class="c">!&lt; finish clock time</span>
+<a name="ln-59"></a>    <span class="n">nb_ticks_initial</span><span class="p">,</span> <span class="p">&amp;</span> <span class="c">!&lt; Initial value of the clock tick counter</span>
+<a name="ln-60"></a>    <span class="n">nb_ticks_final</span><span class="p">,</span>   <span class="p">&amp;</span> <span class="c">!&lt; Final value of the clock tick counter</span>
+<a name="ln-61"></a>    <span class="n">nb_ticks_max</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">!&lt; Maximum value of the clock counter</span>
+<a name="ln-62"></a>    <span class="n">nb_ticks_sec</span><span class="p">,</span>     <span class="p">&amp;</span> <span class="c">!&lt; Number of clock ticks per second</span>
+<a name="ln-63"></a>    <span class="n">nb_ticks</span>           <span class="c">!&lt; Number of clock ticks of the code</span>
+<a name="ln-64"></a>    <span class="kt">REAL</span> <span class="kd">::</span> <span class="n">elapsed_time</span>  <span class="c">!&lt; Real time in seconds</span>
+<a name="ln-65"></a>    <span class="kt">REAL</span> <span class="kd">::</span> <span class="n">t1</span>         <span class="c">!&lt; Start clock time</span>
+<a name="ln-66"></a>    <span class="kt">REAL</span> <span class="kd">::</span> <span class="n">t2</span>         <span class="c">!&lt; Finish clock time</span>
 <a name="ln-67"></a>    <span class="kt">real</span> <span class="kd">::</span> <span class="n">cpu_time_elapsed</span>
 <a name="ln-68"></a>
 <a name="ln-69"></a>    <span class="c">! Public methods</span>
@@ -714,7 +714,7 @@
 <a name="ln-75"></a>    <span class="k">contains</span>
 <a name="ln-76"></a>
 <a name="ln-77"></a><span class="k">        subroutine </span><span class="n">setup_time</span><span class="p">()</span>
-<a name="ln-78"></a>          <span class="c">!&lt; allocate memeroy and setup initial clock</span>
+<a name="ln-78"></a>          <span class="c">!&lt; Allocate memeroy and setup initial clock</span>
 <a name="ln-79"></a>            <span class="k">implicit none</span>
 <a name="ln-80"></a><span class="k">            </span>
 <a name="ln-81"></a><span class="k">            call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;initmisc&#39;</span><span class="p">)</span>
@@ -727,7 +727,7 @@
 <a name="ln-88"></a>        <span class="k">end subroutine </span><span class="n">setup_time</span>
 <a name="ln-89"></a>
 <a name="ln-90"></a>        <span class="k">subroutine </span><span class="n">destroy_time</span><span class="p">()</span>
-<a name="ln-91"></a>          <span class="c">!&lt; deallocate memory and find simulation time.</span>
+<a name="ln-91"></a>          <span class="c">!&lt; Deallocate memory and find simulation time.</span>
 <a name="ln-92"></a>            <span class="k">implicit none</span>
 <a name="ln-93"></a><span class="k">            </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">total_time</span> 
 <a name="ln-94"></a>            <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ierr</span>
@@ -766,9 +766,9 @@
 <a name="ln-127"></a>          <span class="c">!&lt; Particular format to write time in output log file</span>
 <a name="ln-128"></a>          <span class="k">implicit none</span>
 <a name="ln-129"></a><span class="k">          </span><span class="kt">real</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">time_in_seconds</span>
-<a name="ln-130"></a>          <span class="c">!&lt; time to output</span>
+<a name="ln-130"></a>          <span class="c">!&lt; Time to output</span>
 <a name="ln-131"></a>          <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span><span class="kd">::</span> <span class="n">string</span>
-<a name="ln-132"></a>          <span class="c">!&lt; time as string in particlar format</span>
+<a name="ln-132"></a>          <span class="c">!&lt; Time as string in particlar format</span>
 <a name="ln-133"></a>          <span class="k">if</span><span class="p">(</span><span class="n">time_in_seconds</span><span class="o">&gt;</span><span class="mi">86400</span><span class="p">)</span> <span class="k">then</span>
 <a name="ln-134"></a><span class="k">            write</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39;(f0.16,2x,A)&#39;</span><span class="p">)</span> <span class="n">time_in_seconds</span><span class="o">/</span><span class="mi">8640</span><span class="mf">0.</span><span class="p">,</span><span class="s2">&quot;days&quot;</span>
 <a name="ln-135"></a>          <span class="n">elseif</span><span class="p">(</span><span class="n">time_in_seconds</span><span class="o">&gt;</span><span class="mi">3600</span><span class="p">)</span> <span class="k">then</span>
@@ -963,7 +963,7 @@
 <a name="ln-324"></a><span class="k">      end subroutine </span><span class="n">update_simulation_clock</span>
 <a name="ln-325"></a>
 <a name="ln-326"></a>      <span class="k">subroutine </span><span class="n">add_viscous_time</span><span class="p">()</span>
-<a name="ln-327"></a>        <span class="c">!&lt; addition to local time step due to viscous effects</span>
+<a name="ln-327"></a>        <span class="c">!&lt; Addition to local time step due to viscous effects</span>
 <a name="ln-328"></a>        <span class="k">implicit none</span>
 <a name="ln-329"></a>
 <a name="ln-330"></a><span class="k">        </span><span class="kt">real</span> <span class="kd">::</span> <span class="n">lmx1</span><span class="p">,</span> <span class="n">lmx2</span><span class="p">,</span> <span class="n">lmx3</span><span class="p">,</span> <span class="n">lmx4</span><span class="p">,</span> <span class="n">lmx5</span><span class="p">,</span> <span class="n">lmx6</span><span class="p">,</span> <span class="n">lmxsum</span>
@@ -1029,7 +1029,7 @@
 <a name="ln-390"></a><span class="k">      end subroutine </span><span class="n">add_viscous_time</span>
 <a name="ln-391"></a>
 <a name="ln-392"></a>      <span class="k">subroutine </span><span class="n">add_turbulent_time</span><span class="p">()</span>
-<a name="ln-393"></a>        <span class="c">!&lt; addition to local time step due to turbulence </span>
+<a name="ln-393"></a>        <span class="c">!&lt; Addition to local time step due to turbulence </span>
 <a name="ln-394"></a>        <span class="k">implicit none</span>
 <a name="ln-395"></a>
 <a name="ln-396"></a><span class="k">        </span><span class="kt">real</span> <span class="kd">::</span> <span class="n">lmx1</span><span class="p">,</span> <span class="n">lmx2</span><span class="p">,</span> <span class="n">lmx3</span><span class="p">,</span> <span class="n">lmx4</span><span class="p">,</span> <span class="n">lmx5</span><span class="p">,</span> <span class="n">lmx6</span><span class="p">,</span> <span class="n">lmxsum</span>
@@ -1112,7 +1112,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

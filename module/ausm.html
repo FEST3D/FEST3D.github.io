@@ -213,13 +213,13 @@
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
       
-      <a class="list-group-item" href="../module/ausm.html#proc-setup_scheme%7E4">setup_scheme</a>
+      <a class="list-group-item" href="../module/ausm.html#proc-setup_scheme%7E5">setup_scheme</a>
       
-      <a class="list-group-item" href="../module/ausm.html#proc-destroy_scheme%7E4">destroy_scheme</a>
+      <a class="list-group-item" href="../module/ausm.html#proc-destroy_scheme%7E5">destroy_scheme</a>
       
-      <a class="list-group-item" href="../module/ausm.html#proc-compute_flux%7E4">compute_flux</a>
+      <a class="list-group-item" href="../module/ausm.html#proc-compute_flux%7E5">compute_flux</a>
       
-      <a class="list-group-item" href="../module/ausm.html#proc-compute_fluxes%7E4">compute_fluxes</a>
+      <a class="list-group-item" href="../module/ausm.html#proc-compute_fluxes%7E5">compute_fluxes</a>
       
       <a class="list-group-item" href="../module/ausm.html#proc-get_residue%7E5">get_residue</a>
       
@@ -241,7 +241,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <p>The AUSM flux-splitting scheme</p>
+    <p>Reference: Liou, M.S. and Steffen Jr, C.J., A new flux splitting scheme, 
+ Journal of Computational physics, vol. 107, no. 1, pp.23-39, 1993</p>
       <br>
     
   
@@ -460,13 +461,13 @@
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
       
-      <a class="list-group-item" href="../module/ausm.html#proc-setup_scheme%7E4">setup_scheme</a>
+      <a class="list-group-item" href="../module/ausm.html#proc-setup_scheme%7E5">setup_scheme</a>
       
-      <a class="list-group-item" href="../module/ausm.html#proc-destroy_scheme%7E4">destroy_scheme</a>
+      <a class="list-group-item" href="../module/ausm.html#proc-destroy_scheme%7E5">destroy_scheme</a>
       
-      <a class="list-group-item" href="../module/ausm.html#proc-compute_flux%7E4">compute_flux</a>
+      <a class="list-group-item" href="../module/ausm.html#proc-compute_flux%7E5">compute_flux</a>
       
-      <a class="list-group-item" href="../module/ausm.html#proc-compute_fluxes%7E4">compute_fluxes</a>
+      <a class="list-group-item" href="../module/ausm.html#proc-compute_fluxes%7E5">compute_fluxes</a>
       
       <a class="list-group-item" href="../module/ausm.html#proc-get_residue%7E5">get_residue</a>
       
@@ -567,7 +568,7 @@
   
   <td>private,</td>
   <td>dimension(:, :, :, :), pointer</td><td>::</td>
-  <td><strong>flux_p</strong></td><td></td><td></td><td><p>pointer/alias for the either F, G, or H</p></td>
+  <td><strong>flux_p</strong></td><td></td><td></td><td><p>Pointer/alias for the either F, G, or H</p></td>
   
 </tr>
 
@@ -594,8 +595,8 @@
     
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-setup_scheme%7E4"></span><h3>
-public subroutine <a href='../proc/setup_scheme%7E4.html'>setup_scheme</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-setup_scheme%7E5"></span><h3>
+public subroutine <a href='../proc/setup_scheme%7E5.html'>setup_scheme</a>()
     
     
    
@@ -624,8 +625,8 @@ public subroutine <a href='../proc/setup_scheme%7E4.html'>setup_scheme</a>()
     
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-destroy_scheme%7E4"></span><h3>
-public subroutine <a href='../proc/destroy_scheme%7E4.html'>destroy_scheme</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-destroy_scheme%7E5"></span><h3>
+public subroutine <a href='../proc/destroy_scheme%7E5.html'>destroy_scheme</a>()
     
     
    
@@ -654,8 +655,8 @@ public subroutine <a href='../proc/destroy_scheme%7E4.html'>destroy_scheme</a>()
     
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-compute_flux%7E4"></span><h3>
-private subroutine <a href='../proc/compute_flux%7E4.html'>compute_flux</a>(f_dir)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-compute_flux%7E5"></span><h3>
+private subroutine <a href='../proc/compute_flux%7E5.html'>compute_flux</a>(f_dir)
     
     
    
@@ -671,7 +672,7 @@ private subroutine <a href='../proc/compute_flux%7E4.html'>compute_flux</a>(f_di
 
 
 <p>A generalized subroutine to calculate
- flux through the input direction, :x,y, or z
+ flux through the input-argument direction, :x,y, or z
  which corresponds to the I,J, or K direction respectively</p>
     
     <h4>Arguments</h4>
@@ -715,8 +716,8 @@ private subroutine <a href='../proc/compute_flux%7E4.html'>compute_flux</a>(f_di
     
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-compute_fluxes%7E4"></span><h3>
-public subroutine <a href='../proc/compute_fluxes%7E4.html'>compute_fluxes</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-compute_fluxes%7E5"></span><h3>
+public subroutine <a href='../proc/compute_fluxes%7E5.html'>compute_fluxes</a>()
     
     
    
@@ -793,7 +794,7 @@ public subroutine <a href='../proc/get_residue%7E5.html'>get_residue</a>()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

@@ -139,21 +139,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">19 statements</a>
+    title=" 0.1% of total for procedures.">23 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/ausm.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/ausmP.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/ausm.f90.html'>ausm.f90</a></li>
+     <li><a href='../sourcefile/ausmp.f90.html'>ausmP.f90</a></li>
     
-     <li><a href='../module/ausm.html'>ausm</a></li>
+     <li><a href='../module/ausmp.html'>ausmP</a></li>
     
   
      <li class="active">compute_fluxes</li>
@@ -422,27 +422,27 @@ public subroutine compute_fluxes()
             
             <span class="k">implicit none</span>
 <span class="k">            </span>
-<span class="k">            call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_fluxes&#39;</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;AUSM+&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_fluxes&#39;</span><span class="p">)</span>
 
             <span class="k">call </span><span class="n">compute_flux</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">F</span><span class="p">)))</span> <span class="k">then</span>
-<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: F flux Nan detected&#39;</span><span class="p">)</span>
+<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;AUSM+&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: F flux Nan detected&#39;</span><span class="p">)</span>
                 <span class="k">stop</span>
 <span class="k">            end if    </span>
 
 <span class="k">            call </span><span class="n">compute_flux</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">G</span><span class="p">)))</span> <span class="k">then </span>
-<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: G flux Nan detected&#39;</span><span class="p">)</span>
+<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;AUSM+&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: G flux Nan detected&#39;</span><span class="p">)</span>
                 <span class="k">stop</span>
-<span class="k">            end if</span>    
-            
-            <span class="c">!if(kmx==2) then</span>
-            <span class="c">!  H = 0.</span>
-            <span class="c">!else</span>
-              <span class="k">call </span><span class="n">compute_flux</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
-            <span class="c">!end if</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">H</span><span class="p">)))</span> <span class="k">then</span>
-<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: H flux Nan detected&#39;</span><span class="p">)</span>
+<span class="k">            end if    </span>
+<span class="k">            </span>
+<span class="k">            if</span><span class="p">(</span><span class="n">kmx</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">              </span><span class="n">H</span> <span class="o">=</span> <span class="mf">0.</span>
+            <span class="k">else</span>
+<span class="k">              call </span><span class="n">compute_flux</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+            <span class="k">end if</span>
+<span class="k">            if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">H</span><span class="p">)))</span> <span class="k">then</span>
+<span class="k">                call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;AUSM+&#39;</span><span class="p">,</span> <span class="s1">&#39;compute_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR: H flux Nan detected&#39;</span><span class="p">)</span>
                 <span class="k">stop</span>
 <span class="k">            end if</span>
 
@@ -468,7 +468,7 @@ public subroutine compute_fluxes()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

@@ -299,9 +299,9 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <p>Preconditioned LU-SGS scheme
-  maxtrix-free implicit time-integration method
-  for low speed flows</p>
+    <p>Reference: Kitamura, K., Shima, E., Fujimoto, K. and Wang, Z.J.,
+ Performance of low-dissipation Euler fluxes and preconditioned LU-SGS 
+ at low speeds, Communications in Computational Physics, vol. 10 no. 1, pp.90-119, 2011</p>
       <br>
     
   
@@ -314,21 +314,21 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/utils.html'>utils</a></li>
-    
-    <li><a href='../module/global_sa.html'>global_sa</a></li>
-    
-    <li><a href='../module/global_kkl.html'>global_kkl</a></li>
-    
     <li><a href='../module/global_vars.html'>global_vars</a></li>
     
-    <li><a href='../module/geometry.html'>geometry</a></li>
+    <li><a href='../module/utils.html'>utils</a></li>
     
     <li><a href='../module/global_sst.html'>global_sst</a></li>
     
-    <li><a href='../module/mapping.html'>mapping</a></li>
+    <li><a href='../module/global_sa.html'>global_sa</a></li>
     
     <li><a href='../module/string.html'>string</a></li>
+    
+    <li><a href='../module/global_kkl.html'>global_kkl</a></li>
+    
+    <li><a href='../module/mapping.html'>mapping</a></li>
+    
+    <li><a href='../module/geometry.html'>geometry</a></li>
     
   </ul>
       </li>
@@ -378,7 +378,7 @@
 </g>
 </g>
 <!-- module~plusgs&#45;&gt;module~global_kkl -->
-<g id="module~~plusgs~~UsesGraph_edge6" class="edge">
+<g id="module~~plusgs~~UsesGraph_edge2" class="edge">
 <title>module~plusgs&#45;&gt;module~global_kkl</title>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M395.474,-144.3133C383.242,-157.0975 363.0823,-177.3745 344,-193 342.8497,-193.9419 341.6584,-194.885 340.4428,-195.8213"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="338.2493,-193.0894 332.2467,-201.8198 342.3835,-198.7382 338.2493,-193.0894"/>
@@ -439,7 +439,7 @@
 </g>
 </g>
 <!-- module~plusgs&#45;&gt;module~utils -->
-<g id="module~~plusgs~~UsesGraph_edge2" class="edge">
+<g id="module~~plusgs~~UsesGraph_edge6" class="edge">
 <title>module~plusgs&#45;&gt;module~utils</title>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M379.9954,-131.9236C361.3207,-131.8896 335.9007,-131.8802 313.5,-132"/>
 <path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M313.5,-132C294.6672,-132.1007 274.163,-128.184 257.1678,-123.791"/>
@@ -932,7 +932,7 @@
   
   <td>public,</td>
   <td>dimension(:,:,:,:), allocatable</td><td>::</td>
-  <td><strong>delQ</strong></td><td></td><td></td><td><p>change of state variable (solution) over one time-step</p></td>
+  <td><strong>delQ</strong></td><td></td><td></td><td><p>Change of state variable (solution) over one time-step</p></td>
   
 </tr>
 
@@ -960,7 +960,7 @@
   
   <td>public,</td>
   <td>dimension(:,:,:), allocatable, target</td><td>::</td>
-  <td><strong>dummy</strong></td><td></td><td></td><td><p>dummy variable</p></td>
+  <td><strong>dummy</strong></td><td></td><td></td><td><p>Dummy variable</p></td>
   
 </tr>
 
@@ -974,7 +974,7 @@
   
   <td>public,</td>
   <td>dimension(:,:,:), pointer</td><td>::</td>
-  <td><strong>tmu</strong></td><td></td><td></td><td><p>Pionter to turbulent viscosity</p></td>
+  <td><strong>tmu</strong></td><td></td><td></td><td><p>Pointer to turbulent viscosity</p></td>
   
 </tr>
 
@@ -1002,7 +1002,7 @@
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>ibuf_size</strong></td><td></td><td></td><td><p>size of the buffer for I face interface</p></td>
+  <td><strong>ibuf_size</strong></td><td></td><td></td><td><p>Size of the buffer for I face interface</p></td>
   
 </tr>
 
@@ -1016,7 +1016,7 @@
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>jbuf_size</strong></td><td></td><td></td><td><p>size of the buffer for J face interface</p></td>
+  <td><strong>jbuf_size</strong></td><td></td><td></td><td><p>Size of the buffer for J face interface</p></td>
   
 </tr>
 
@@ -1030,7 +1030,7 @@
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>kbuf_size</strong></td><td></td><td></td><td><p>size of the buffer for K face interface</p></td>
+  <td><strong>kbuf_size</strong></td><td></td><td></td><td><p>Size of the buffer for K face interface</p></td>
   
 </tr>
 
@@ -1239,7 +1239,7 @@ public function <a href='../proc/flux.html'>Flux</a>(ql, qr, du, inputs)
 
 
 
-<p>calculate the total flux through face for laminar flow.</p>
+<p>Calculate the total flux through face for laminar flow.</p>
     
     <h4>Arguments</h4>
     
@@ -1495,7 +1495,7 @@ public function <a href='../proc/sstflux.html'>SSTFlux</a>(ql, qr, du, inputs)
 
 
 
-<p>calculate the total flux through face for turbulent flow (SST)</p>
+<p>Calculate the total flux through face for turbulent flow (SST)</p>
     
     <h4>Arguments</h4>
     
@@ -1608,7 +1608,7 @@ public function <a href='../proc/saflux.html'>SAFlux</a>(ql, qr, du, inputs)
 
 
 
-<p>calculate the total flux through face for turbulent flow (SA)</p>
+<p>Calculate the total flux through face for turbulent flow (SA)</p>
     
     <h4>Arguments</h4>
     
@@ -1721,7 +1721,7 @@ public function <a href='../proc/lctm2015flux.html'>lctm2015flux</a>(ql, qr, du,
 
 
 
-<p>calculate the total flux through face for turbulent/transition flow (LCTM2015)</p>
+<p>Calculate the total flux through face for turbulent/transition flow (LCTM2015)</p>
     
     <h4>Arguments</h4>
     
@@ -1842,7 +1842,7 @@ public subroutine <a href='../proc/setup_plusgs.html'>setup_plusgs</a>()
 
 
 
-<p>allocate array memory for data communication</p>
+<p>Allocate array memory for data communication</p>
     
     <h4>Arguments</h4>
     
@@ -1872,7 +1872,7 @@ public subroutine <a href='../proc/destroy_plusgs.html'>destroy_plusgs</a>()
 
 
 
-<p>unallocate the memory required by LU-SGS module</p>
+<p>Unallocate the memory required by LU-SGS module</p>
     
     <h4>Arguments</h4>
     
@@ -2045,6 +2045,14 @@ public subroutine <a href='../proc/apply_interface%7E2.html'>apply_interface</a>
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Apply inter-block interface boundary condition</p>
     
     <h4>Arguments</h4>
     
@@ -2111,6 +2119,14 @@ public subroutine <a href='../proc/apply_periodic_bc%7E2.html'>apply_periodic_bc
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Apply periodic boundary condition</p>
     
     <h4>Arguments</h4>
     
@@ -2186,7 +2202,7 @@ public subroutine <a href='../proc/apply_periodic_bc%7E2.html'>apply_periodic_bc
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

@@ -128,13 +128,13 @@ All Files &ndash; FEST-3D
 			 <thead><tr><th>File</th><th>Description</th></tr></thead>
 			 <tbody>
 			 
-			   <tr><td><a href='../sourcefile/ausm.f90.html'>ausm.f90</a></td><td><p>The AUSM flux-splitting scheme</p></td></tr>
+			   <tr><td><a href='../sourcefile/ausm.f90.html'>ausm.f90</a></td><td><p>Flux splitting scheme: AUSM</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/ausmp.f90.html'>ausmP.f90</a></td><td><p>Flux splitting scheme: AUSM+</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/ausmup.f90.html'>ausmUP.f90</a></td><td><p>Flux splitting scheme: AUSM+-UP</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/bc.f90.html'>bc.f90</a></td><td><p>setup boundary condition for the domain</p></td></tr>
+			   <tr><td><a href='../sourcefile/bc.f90.html'>bc.f90</a></td><td><p>Setup boundary condition for the domain</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/bc_primitive.f90.html'>bc_primitive.f90</a></td><td><p>Apply boundary condition at every iteration</p></td></tr>
 			 
@@ -160,8 +160,8 @@ All Files &ndash; FEST-3D
 			 
 			   <tr><td><a href='../sourcefile/ft_bc.f90.html'>FT_bc.f90</a></td><td><p>Apply flow tangency boundary condition</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/geometry.f90.html'>geometry.f90</a></td><td><p>The geometry module contains various geometrical quantities like 
- normals, areas and volumes to be used in computations. </p></td></tr>
+			   <tr><td><a href='../sourcefile/geometry.f90.html'>geometry.f90</a></td><td><p>The geometry module calculates various geometrical quantities like 
+ face-normals, face-areas and cell-volumes to be used in computations. </p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/ghost_gradient.f90.html'>ghost_gradient.f90</a></td><td><p>Set value gradients in the ghost cells</p></td></tr>
 			 
@@ -175,7 +175,7 @@ All Files &ndash; FEST-3D
 			 
 			   <tr><td><a href='../sourcefile/global_vars.f90.html'>global_vars.f90</a></td><td><p>Common variables (can be re-assigned) used by other modules</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/gradients.f90.html'>gradients.f90</a></td><td><p>allocate memory to laminar gradients if flow is viscous and
+			   <tr><td><a href='../sourcefile/gradients.f90.html'>gradients.f90</a></td><td><p>Allocate memory to laminar gradients if flow is viscous and
  allocate memory to tubulence gradients base upon the model being used</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/grid.f90.html'>grid.f90</a></td><td><p>The grid module read grid file and allocate memory to storing variables</p></td></tr>
@@ -186,13 +186,13 @@ All Files &ndash; FEST-3D
 			 
 			   <tr><td><a href='../sourcefile/laminar_gradients.f90.html'>laminar_gradients.f90</a></td><td><p>Link/Pointer to the gradient of u,v,w, and Temperature</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/layout.f90.html'>layout.f90</a></td><td><p>contains routine to load layout file and sets the layout variables
- gets process id and total process </p></td></tr>
+			   <tr><td><a href='../sourcefile/layout.f90.html'>layout.f90</a></td><td><p>Contains routine to load layout file and sets the layout variables
+ and gets process id and total process </p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/lctm2015_gradients.f90.html'>lctm2015_gradients.f90</a></td><td><p>Setup and nullify pointers for LCTM2015 transition 
 model to the main array which stores gradient of all variables</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/ldfss0.f90.html'>ldfss0.f90</a></td><td><p>flux-splitting scheme: LDFSS</p></td></tr>
+			   <tr><td><a href='../sourcefile/ldfss0.f90.html'>ldfss0.f90</a></td><td><p>Flux-splitting scheme: LDFSS</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/lusgs.f90.html'>lusgs.f90</a></td><td><p>Matix-free time integration: LU-SGS</p></td></tr>
 			 
@@ -219,11 +219,11 @@ model to the main array which stores gradient of all variables</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/read_output.f90.html'>read_output.f90</a></td><td><p>Read output files from the restart folder</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/read_output_tec.f90.html'>read_output_tec.f90</a></td><td><p>read the restart file in the tecplot format</p></td></tr>
+			   <tr><td><a href='../sourcefile/read_output_tec.f90.html'>read_output_tec.f90</a></td><td><p>Read the restart file in the tecplot format</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/read_output_vtk.f90.html'>read_output_vtk.f90</a></td><td><p>read the restart file in the vtk format</p></td></tr>
+			   <tr><td><a href='../sourcefile/read_output_vtk.f90.html'>read_output_vtk.f90</a></td><td><p>Read the restart file in the vtk format</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/resnorm.f90.html'>resnorm.f90</a></td><td><p>this module contains subroutine that 
+			   <tr><td><a href='../sourcefile/resnorm.f90.html'>resnorm.f90</a></td><td><p>This module contains subroutine that 
  1. check if time for resnorm dump is arrived
  2. calculate resnorm
  3. send those resnorm to processor number 0
@@ -257,7 +257,7 @@ model to the main array which stores gradient of all variables</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/utils.f90.html'>utils.f90</a></td><td><p>Utility module to allocate, deallocate and debug message</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/van_leer.f90.html'>van_leer.f90</a></td><td></td></tr>
+			   <tr><td><a href='../sourcefile/van_leer.f90.html'>van_leer.f90</a></td><td><p>Flux splitting scheme: AUSM+</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/viscosity.f90.html'>viscosity.f90</a></td><td><p>Setup, destroy, calculate molecular and turbulence viscosity</p></td></tr>
 			 
@@ -266,7 +266,7 @@ model to the main array which stores gradient of all variables</p></td></tr>
 			   <tr><td><a href='../sourcefile/wall.f90.html'>wall.f90</a></td><td><p>Detect all the grid points on the wall boundary condition</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/wall_dist.f90.html'>wall_dist.f90</a></td><td><p>Calculate the distance from the wall 
- for each cell-center in the domain.</p></td></tr>
+ for each cell-center in the domain</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/weno.f90.html'>weno.f90</a></td><td><p>Higher face state reconstuction method: WENO</p></td></tr>
 			 
@@ -279,7 +279,7 @@ model to the main array which stores gradient of all variables</p></td></tr>
 			   <tr><td><a href='../sourcefile/write_output_tec_node.f90.html'>write_output_tec_node.f90</a></td><td><p>Writing solution in the output file in tecplot format with
  node data instead of cell-center data.</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/write_output_vtk.f90.html'>write_output_vtk.f90</a></td><td><p>VTK module to write the solution in the vtk format</p></td></tr>
+			   <tr><td><a href='../sourcefile/write_output_vtk.f90.html'>write_output_vtk.f90</a></td><td><p>Vtk module to write the solution in the vtk format</p></td></tr>
 			 
 			 </tbody></table>
 			 
@@ -297,7 +297,7 @@ model to the main array which stores gradient of all variables</p></td></tr>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

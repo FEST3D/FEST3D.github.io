@@ -781,8 +781,8 @@
 <a name="ln-166"></a>    <span class="k">subroutine </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
 <a name="ln-167"></a>      <span class="c">!&lt; Compute viscous fluxes for first five Navier-Stokes equation</span>
 <a name="ln-168"></a>      <span class="k">implicit none</span>
-<a name="ln-169"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; face direction</span>
-<a name="ln-170"></a>      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; flux array</span>
+<a name="ln-169"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; Face direction</span>
+<a name="ln-170"></a>      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; Flux array</span>
 <a name="ln-171"></a>      <span class="c">! local variables</span>
 <a name="ln-172"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">dudx</span><span class="p">,</span> <span class="n">dudy</span><span class="p">,</span> <span class="n">dudz</span>
 <a name="ln-173"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">dvdx</span><span class="p">,</span> <span class="n">dvdy</span><span class="p">,</span> <span class="n">dvdz</span>
@@ -1137,8 +1137,8 @@
 <a name="ln-522"></a>    <span class="k">subroutine </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
 <a name="ln-523"></a>      <span class="c">!&lt; Compute viscous fluxes for additianal equations due to k-kL turbulence model</span>
 <a name="ln-524"></a>      <span class="k">implicit none</span>
-<a name="ln-525"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; face direction</span>
-<a name="ln-526"></a>      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; flux array</span>
+<a name="ln-525"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; Face direction</span>
+<a name="ln-526"></a>      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; Flux array</span>
 <a name="ln-527"></a>      <span class="c">! local variables</span>
 <a name="ln-528"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">tkface</span>
 <a name="ln-529"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">rhoface</span>
@@ -1284,8 +1284,8 @@
 <a name="ln-669"></a>    <span class="k">subroutine </span><span class="n">compute_viscous_fluxes_sa</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
 <a name="ln-670"></a>      <span class="c">!&lt; Compute viscous fluxes for additianal equations due to SA turbulence model</span>
 <a name="ln-671"></a>      <span class="k">implicit none</span>
-<a name="ln-672"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; face direction</span>
-<a name="ln-673"></a>      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; flux array</span>
+<a name="ln-672"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; Face direction</span>
+<a name="ln-673"></a>      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; Flux array</span>
 <a name="ln-674"></a>      <span class="c">! local variables</span>
 <a name="ln-675"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">rhoface</span>
 <a name="ln-676"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">normal_comp</span>
@@ -1400,8 +1400,8 @@
 <a name="ln-785"></a>    <span class="k">subroutine </span><span class="n">compute_viscous_fluxes_lctm2015</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
 <a name="ln-786"></a>      <span class="c">!&lt; Compute viscous fluxes for additianal equations due to LCTM2015 transition model</span>
 <a name="ln-787"></a>      <span class="k">implicit none</span>
-<a name="ln-788"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; face direction</span>
-<a name="ln-789"></a>      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; flux array</span>
+<a name="ln-788"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; Face direction</span>
+<a name="ln-789"></a>      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; Flux array</span>
 <a name="ln-790"></a>      <span class="c">! local variables</span>
 <a name="ln-791"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">rhoface</span>
 <a name="ln-792"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">normal_comp</span>
@@ -1532,7 +1532,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

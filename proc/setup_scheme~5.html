@@ -144,16 +144,16 @@
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/ldfss0.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/ausm.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/ldfss0.f90.html'>ldfss0.f90</a></li>
+     <li><a href='../sourcefile/ausm.f90.html'>ausm.f90</a></li>
     
-     <li><a href='../module/ldfss0.html'>ldfss0</a></li>
+     <li><a href='../module/ausm.html'>ausm</a></li>
     
   
      <li class="active">setup_scheme</li>
@@ -551,20 +551,20 @@ public subroutine setup_scheme()
 
             <span class="k">implicit none</span>
 
-<span class="k">            call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ldfss0&#39;</span><span class="p">,</span> <span class="s1">&#39;setup_scheme&#39;</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ausm&#39;</span><span class="p">,</span> <span class="s1">&#39;setup_scheme&#39;</span><span class="p">)</span>
 
             <span class="k">call </span><span class="n">alloc</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_var</span><span class="p">,</span> <span class="p">&amp;</span>
                     <span class="n">errmsg</span><span class="o">=</span><span class="s1">&#39;Error: Unable to allocate memory for &#39;</span> <span class="o">//</span> <span class="p">&amp;</span>
-                        <span class="s1">&#39;F - ldfss0.&#39;</span><span class="p">)</span>
+                        <span class="s1">&#39;F - ausm.&#39;</span><span class="p">)</span>
             <span class="k">call </span><span class="n">alloc</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_var</span><span class="p">,</span> <span class="p">&amp;</span>
                     <span class="n">errmsg</span><span class="o">=</span><span class="s1">&#39;Error: Unable to allocate memory for &#39;</span> <span class="o">//</span> <span class="p">&amp;</span>
-                        <span class="s1">&#39;G - ldfss0.&#39;</span><span class="p">)</span>
+                        <span class="s1">&#39;G - ausm.&#39;</span><span class="p">)</span>
             <span class="k">call </span><span class="n">alloc</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_var</span><span class="p">,</span> <span class="p">&amp;</span>
                     <span class="n">errmsg</span><span class="o">=</span><span class="s1">&#39;Error: Unable to allocate memory for &#39;</span> <span class="o">//</span> <span class="p">&amp;</span>
-                        <span class="s1">&#39;H - ldfss0.&#39;</span><span class="p">)</span>
+                        <span class="s1">&#39;H - ausm.&#39;</span><span class="p">)</span>
             <span class="k">call </span><span class="n">alloc</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_var</span><span class="p">,</span> <span class="p">&amp;</span>
                     <span class="n">errmsg</span><span class="o">=</span><span class="s1">&#39;Error: Unable to allocate memory for &#39;</span> <span class="o">//</span> <span class="p">&amp;</span>
-                        <span class="s1">&#39;residue - ldfss0.&#39;</span><span class="p">)</span>
+                        <span class="s1">&#39;residue - ausm.&#39;</span><span class="p">)</span>
 
         <span class="k">end subroutine </span><span class="n">setup_scheme</span>
 </pre></div>
@@ -588,7 +588,7 @@ public subroutine setup_scheme()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

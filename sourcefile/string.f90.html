@@ -1004,78 +1004,79 @@
 <a name="ln-50"></a>        <span class="k">include</span> <span class="s2">&quot;typelen_implementation.inc&quot;</span>
 <a name="ln-51"></a>
 <a name="ln-52"></a>        <span class="k">subroutine </span><span class="n">chfmt</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-<a name="ln-53"></a>            <span class="c">!-----------------------------------------------------------</span>
-<a name="ln-54"></a>            <span class="c">! Change format specifier for reals</span>
-<a name="ln-55"></a>            <span class="c">!</span>
-<a name="ln-56"></a>            <span class="c">! Inputs:</span>
-<a name="ln-57"></a>            <span class="c">!   d -&gt; integer, optional</span>
-<a name="ln-58"></a>            <span class="c">!       digits after decimal</span>
-<a name="ln-59"></a>            <span class="c">!   e -&gt; integer, optional</span>
-<a name="ln-60"></a>            <span class="c">!       digits in exponent</span>
-<a name="ln-61"></a>            <span class="c">!       When this is set to -1, the exponent part is dropped</span>
-<a name="ln-62"></a>            <span class="c">!   f -&gt; character, optional</span>
-<a name="ln-63"></a>            <span class="c">!       form</span>
-<a name="ln-64"></a>            <span class="c">!       Valid options: &#39;F&#39; (decimal), &#39;E&#39; (exponential),</span>
-<a name="ln-65"></a>            <span class="c">!           &#39;S&#39; (scientific), &#39;N&#39; (engineering)</span>
-<a name="ln-66"></a>            <span class="c">!       If &#39;F&#39; is specified, then the value for e is </span>
-<a name="ln-67"></a>            <span class="c">!           overridden and set to -1.</span>
-<a name="ln-68"></a>            <span class="c">!</span>
-<a name="ln-69"></a>            <span class="c">! If no arguments are passed, this function resets all the </span>
-<a name="ln-70"></a>            <span class="c">! parameters to their default values (as provided in the </span>
-<a name="ln-71"></a>            <span class="c">! following table. Else, only the passed arguments will be</span>
-<a name="ln-72"></a>            <span class="c">! updated (the others will be left unchanged). </span>
-<a name="ln-73"></a>            <span class="c">!</span>
-<a name="ln-74"></a>            <span class="c">! This function is sticky; a format once set will continue </span>
-<a name="ln-75"></a>            <span class="c">! to apply till either it is changed or the program ends.</span>
-<a name="ln-76"></a>            <span class="c">!</span>
-<a name="ln-77"></a>            <span class="c">! Default values: </span>
-<a name="ln-78"></a>            <span class="c">!   d (digits after decimal) --&gt; 6</span>
-<a name="ln-79"></a>            <span class="c">!   e (digits in exponent) --&gt; -1</span>
-<a name="ln-80"></a>            <span class="c">!   f (form) --&gt; &#39;F&#39; (decimal)</span>
-<a name="ln-81"></a>            <span class="c">!</span>
-<a name="ln-82"></a>            <span class="c">!TODO: Add support for width also?</span>
-<a name="ln-83"></a>            <span class="c">!http://www.cs.mtu.edu/~shene/COURSES/cs201/NOTES/chap05/format.html</span>
-<a name="ln-84"></a>            <span class="c">!-----------------------------------------------------------</span>
-<a name="ln-85"></a>
-<a name="ln-86"></a>            <span class="k">implicit none</span>
-<a name="ln-87"></a><span class="k">            </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">d</span>
-<a name="ln-88"></a>            <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">e</span>
-<a name="ln-89"></a>            <span class="kt">character</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">f</span>
-<a name="ln-90"></a>
-<a name="ln-91"></a>            <span class="k">if</span> <span class="p">(.</span><span class="nb">not</span><span class="p">.</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="nb">present</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="nb">present</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span> <span class="k">then</span>
-<a name="ln-92"></a><span class="k">                </span><span class="n">dec_</span> <span class="o">=</span> <span class="mi">6</span>
-<a name="ln-93"></a>                <span class="n">exp_</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="ln-94"></a>                <span class="n">form_</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
-<a name="ln-95"></a>            <span class="k">else</span>
-<a name="ln-96"></a><span class="k">                if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="n">dec_</span> <span class="o">=</span> <span class="n">d</span>
-<a name="ln-97"></a>                <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="n">exp_</span> <span class="o">=</span> <span class="n">e</span>
-<a name="ln-98"></a>                <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="k">then</span>
-<a name="ln-99"></a><span class="k">                    if</span> <span class="p">(.</span><span class="nb">not</span><span class="p">.</span> <span class="p">(</span><span class="n">f</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;F&#39;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">f</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;E&#39;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="p">&amp;</span>
-<a name="ln-100"></a>                            <span class="n">f</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;S&#39;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">f</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;N&#39;</span><span class="p">))</span> <span class="k">then</span>
-<a name="ln-101"></a><span class="k">                        print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Error: Unknown kind specified.&#39;</span>
-<a name="ln-102"></a>                        <span class="k">stop</span>
-<a name="ln-103"></a><span class="k">                    end if</span>
-<a name="ln-104"></a><span class="k">                    </span><span class="n">form_</span> <span class="o">=</span> <span class="n">f</span>
-<a name="ln-105"></a>                    <span class="k">if</span> <span class="p">(</span><span class="n">form_</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span> <span class="n">exp_</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<a name="ln-106"></a>                <span class="k">end if</span>
-<a name="ln-107"></a><span class="k">            end if</span>
-<a name="ln-108"></a>
-<a name="ln-109"></a><span class="k">        end subroutine </span><span class="n">chfmt</span>
-<a name="ln-110"></a>
-<a name="ln-111"></a>        <span class="k">subroutine </span><span class="n">disp</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<a name="ln-112"></a>            <span class="c">!&lt; Display the contents of the string</span>
-<a name="ln-113"></a>            <span class="c">!</span>
-<a name="ln-114"></a>            <span class="c">! This function trims the string before printing it.</span>
-<a name="ln-115"></a>            <span class="c">!-----------------------------------------------------------</span>
-<a name="ln-116"></a>        
-<a name="ln-117"></a>            <span class="k">implicit none</span>
-<a name="ln-118"></a><span class="k">            </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">MAX_STRING_LEN</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">s</span>
-<a name="ln-119"></a>
-<a name="ln-120"></a>            <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="nb">trim</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<a name="ln-121"></a>
-<a name="ln-122"></a>        <span class="k">end subroutine </span><span class="n">disp</span>
-<a name="ln-123"></a>
-<a name="ln-124"></a><span class="k">end module </span><span class="n">string</span>
+<a name="ln-53"></a>            <span class="c">!&lt; Change format specifier for reals</span>
+<a name="ln-54"></a>            <span class="c">!-----------------------------------------------------------</span>
+<a name="ln-55"></a>            <span class="c">! Change format specifier for reals</span>
+<a name="ln-56"></a>            <span class="c">!</span>
+<a name="ln-57"></a>            <span class="c">! Inputs:</span>
+<a name="ln-58"></a>            <span class="c">!   d -&gt; integer, optional</span>
+<a name="ln-59"></a>            <span class="c">!       digits after decimal</span>
+<a name="ln-60"></a>            <span class="c">!   e -&gt; integer, optional</span>
+<a name="ln-61"></a>            <span class="c">!       digits in exponent</span>
+<a name="ln-62"></a>            <span class="c">!       When this is set to -1, the exponent part is dropped</span>
+<a name="ln-63"></a>            <span class="c">!   f -&gt; character, optional</span>
+<a name="ln-64"></a>            <span class="c">!       form</span>
+<a name="ln-65"></a>            <span class="c">!       Valid options: &#39;F&#39; (decimal), &#39;E&#39; (exponential),</span>
+<a name="ln-66"></a>            <span class="c">!           &#39;S&#39; (scientific), &#39;N&#39; (engineering)</span>
+<a name="ln-67"></a>            <span class="c">!       If &#39;F&#39; is specified, then the value for e is </span>
+<a name="ln-68"></a>            <span class="c">!           overridden and set to -1.</span>
+<a name="ln-69"></a>            <span class="c">!</span>
+<a name="ln-70"></a>            <span class="c">! If no arguments are passed, this function resets all the </span>
+<a name="ln-71"></a>            <span class="c">! parameters to their default values (as provided in the </span>
+<a name="ln-72"></a>            <span class="c">! following table. Else, only the passed arguments will be</span>
+<a name="ln-73"></a>            <span class="c">! updated (the others will be left unchanged). </span>
+<a name="ln-74"></a>            <span class="c">!</span>
+<a name="ln-75"></a>            <span class="c">! This function is sticky; a format once set will continue </span>
+<a name="ln-76"></a>            <span class="c">! to apply till either it is changed or the program ends.</span>
+<a name="ln-77"></a>            <span class="c">!</span>
+<a name="ln-78"></a>            <span class="c">! Default values: </span>
+<a name="ln-79"></a>            <span class="c">!   d (digits after decimal) --&gt; 6</span>
+<a name="ln-80"></a>            <span class="c">!   e (digits in exponent) --&gt; -1</span>
+<a name="ln-81"></a>            <span class="c">!   f (form) --&gt; &#39;F&#39; (decimal)</span>
+<a name="ln-82"></a>            <span class="c">!</span>
+<a name="ln-83"></a>            <span class="c">!TODO: Add support for width also?</span>
+<a name="ln-84"></a>            <span class="c">!http://www.cs.mtu.edu/~shene/COURSES/cs201/NOTES/chap05/format.html</span>
+<a name="ln-85"></a>            <span class="c">!-----------------------------------------------------------</span>
+<a name="ln-86"></a>
+<a name="ln-87"></a>            <span class="k">implicit none</span>
+<a name="ln-88"></a><span class="k">            </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">d</span>
+<a name="ln-89"></a>            <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">e</span>
+<a name="ln-90"></a>            <span class="kt">character</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">f</span>
+<a name="ln-91"></a>
+<a name="ln-92"></a>            <span class="k">if</span> <span class="p">(.</span><span class="nb">not</span><span class="p">.</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="nb">present</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="nb">present</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span> <span class="k">then</span>
+<a name="ln-93"></a><span class="k">                </span><span class="n">dec_</span> <span class="o">=</span> <span class="mi">6</span>
+<a name="ln-94"></a>                <span class="n">exp_</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-95"></a>                <span class="n">form_</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
+<a name="ln-96"></a>            <span class="k">else</span>
+<a name="ln-97"></a><span class="k">                if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="n">dec_</span> <span class="o">=</span> <span class="n">d</span>
+<a name="ln-98"></a>                <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="n">exp_</span> <span class="o">=</span> <span class="n">e</span>
+<a name="ln-99"></a>                <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="k">then</span>
+<a name="ln-100"></a><span class="k">                    if</span> <span class="p">(.</span><span class="nb">not</span><span class="p">.</span> <span class="p">(</span><span class="n">f</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;F&#39;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">f</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;E&#39;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="p">&amp;</span>
+<a name="ln-101"></a>                            <span class="n">f</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;S&#39;</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">f</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;N&#39;</span><span class="p">))</span> <span class="k">then</span>
+<a name="ln-102"></a><span class="k">                        print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Error: Unknown kind specified.&#39;</span>
+<a name="ln-103"></a>                        <span class="k">stop</span>
+<a name="ln-104"></a><span class="k">                    end if</span>
+<a name="ln-105"></a><span class="k">                    </span><span class="n">form_</span> <span class="o">=</span> <span class="n">f</span>
+<a name="ln-106"></a>                    <span class="k">if</span> <span class="p">(</span><span class="n">form_</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span> <span class="n">exp_</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-107"></a>                <span class="k">end if</span>
+<a name="ln-108"></a><span class="k">            end if</span>
+<a name="ln-109"></a>
+<a name="ln-110"></a><span class="k">        end subroutine </span><span class="n">chfmt</span>
+<a name="ln-111"></a>
+<a name="ln-112"></a>        <span class="k">subroutine </span><span class="n">disp</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a name="ln-113"></a>            <span class="c">!&lt; Display the contents of the string</span>
+<a name="ln-114"></a>            <span class="c">!</span>
+<a name="ln-115"></a>            <span class="c">! This function trims the string before printing it.</span>
+<a name="ln-116"></a>            <span class="c">!-----------------------------------------------------------</span>
+<a name="ln-117"></a>        
+<a name="ln-118"></a>            <span class="k">implicit none</span>
+<a name="ln-119"></a><span class="k">            </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">MAX_STRING_LEN</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">s</span>
+<a name="ln-120"></a>
+<a name="ln-121"></a>            <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="nb">trim</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a name="ln-122"></a>
+<a name="ln-123"></a>        <span class="k">end subroutine </span><span class="n">disp</span>
+<a name="ln-124"></a>
+<a name="ln-125"></a><span class="k">end module </span><span class="n">string</span>
 </pre></div>
 
     </section>
@@ -1094,7 +1095,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

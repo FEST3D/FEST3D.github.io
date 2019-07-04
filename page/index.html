@@ -156,33 +156,33 @@
       <p style="text-align: center"><img alt="FEST-3D" src="../media/FEST3D.png"></p>
 <h1 id="introduction">Introduction</h1>
 <p>FEST-3D is a finite-volume solver build to compute incompressible/compressible, and inviscid/laminar/transitonal/turbulent fluid flow problems on structured grids.</p>
-<p>Highlights: The solver provides a tremendous amount of choices to the user in terms of inviscid flux calculation
-scheme, higher face-state reconstruction scheme, and time-integration scheme.</p>
+<p>Highlights: The solver provides multiple choices to the user in terms of inviscid flux calculation
+scheme, higher-order face-state reconstruction scheme, time-integration scheme, and turbulence and transition models.</p>
 <h2 id="schemes">Schemes</h2>
 <h3 id="inviscid-flux-calculation">Inviscid flux calculation</h3>
 <ul>
 <li><strong>AUSM</strong> <br>
-<em>Liou, M.-S. and Steffen, C., “A New Flux Splitting Scheme,” J. Comput. Phys., vol. 107, pp. 23-39, 1993.</em></li>
+<em>Liou, M.-S. and Steffen, C., “A New Flux Splitting Scheme,” J. Comput. Phys., vol. 107, no. 1, pp. 23-39, 1993.</em></li>
 <li><strong>LDFSS</strong><br>
 <em>Edwards, J.R., A low-diffusion flux-splitting scheme for Navier-Stokes calculations. Computers &amp; Fluids, vol. 26, no. 6, pp.635-659, 1997.</em></li>
 <li><strong>AUSM+</strong><br>
-<em>Liou, M. S., “A sequel to AUSM: AUSM+,” Journal of Computational Physics, vol. 129, pp. 364–382, 1996.</em></li>
+<em>Liou, M. S., “A sequel to AUSM: AUSM+,” Journal of Computational Physics, vol. 129, no. 2, pp. 364–382, 1996.</em></li>
 <li><strong>AUSM+-UP</strong><br>
-<em>Liou, M. S., “A sequel to AUSM, Part II: AUSM+-up for all speeds,” Journal of Computational Physics, vol. 214, pp. 137–170, 2006.</em></li>
+<em>Liou, M. S., “A sequel to AUSM, Part II: AUSM+-up for all speeds,” Journal of Computational Physics, vol. 214, no. 1, pp. 137–170, 2006.</em></li>
 <li><strong>SLAU</strong><br>
-<em>Shima, E., and Kitamura, K., “Parameter-Free Simple Low-Dissipation AUSM-Family Scheme for All Speeds,” AIAA Journal, vol. 49, pp. 1693–1709, 2011.</em></li>
+<em>Shima, E., and Kitamura, K., “Parameter-Free Simple Low-Dissipation AUSM-Family Scheme for All Speeds,” AIAA Journal, vol. 49, no. 8, pp. 1693–1709, 2011.</em></li>
 </ul>
 <h3 id="higher-order-spatial-reconstruction">Higher-order spatial reconstruction</h3>
 <ul>
 <li><strong>None</strong> 1rst order accurate in space</li>
 <li><strong>MUSCL</strong> 3rd order accurate in space<br>
-<em>van Leer, B., Towards the Ultimate Conservative Difference Scheme, V. A Second Order Sequel to Godunov's Method, J. Com. Phys., vol. 32, pp. 101–136, 1979</em></li>
+<em>van Leer, B., Towards the Ultimate Conservative Difference Scheme, V. A Second Order Sequel to Godunov's Method, J. Com. Phys., vol. 32, no. 1, pp. 101–136, 1979</em></li>
 <li><strong>PPM</strong> 4th order accurate in space<br>
-<em>Colella, P., and Woodward, P. R., “The Piecewise Parabolic Method (PPM) for gas-dynamical simulations,” Journal of Computational Physics, vol. 54, pp. 174–201, 1984.</em></li>
+<em>Colella, P., and Woodward, P. R., “The Piecewise Parabolic Method (PPM) for gas-dynamical simulations,” Journal of Computational Physics, vol. 54, no. 1, pp. 174–201, 1984.</em></li>
 <li><strong>WENO</strong> 5th order accurate in space<br>
-<em>Shu, C.-W., “High-order Finite Difference and Finite Volume WENO Schemes and Discontinuous Galerkin Methods for CFD,” International Journal of Computational Fluid Dynamics, vol. 17, pp. 107–118, 2003.</em></li>
+<em>Shu, C.-W., “High-order Finite Difference and Finite Volume WENO Schemes and Discontinuous Galerkin Methods for CFD,” International Journal of Computational Fluid Dynamics, vol. 17, no. 2, pp. 107–118, 2003.</em></li>
 <li><strong>WENO-NM</strong> 5th order accurate in space (specifically for non-uniform grid)<br>
-<em>Huang, W.-F., Ren, Y.-X., and Jiang, X., “A simple algorithm to improve the performance of the WENO scheme on non-uniform grids,” Acta Mechanica Sinica, vol. 34, pp. 37–47, 2018.</em></li>
+<em>Huang, W.-F., Ren, Y.-X., and Jiang, X., “A simple algorithm to improve the performance of the WENO scheme on non-uniform grids,” Acta Mechanica Sinica, vol. 34, no. 1, pp. 37–47, 2018.</em></li>
 </ul>
 <h3 id="temporal-integration">Temporal integration</h3>
 <h4 id="explicit">Explicit</h4>
@@ -197,31 +197,31 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
 <h4 id="implicit">Implicit</h4>
 <ul>
 <li><strong>implicit</strong> Matrix free LU-SGS method, first order accurate in time.<br>
-<em>Chen, R. F., and Wang, Z. J., “Fast , Block Lower-Upper Symmetric Gauss – Seidel Scheme Introduction,” AIAA Journal, vol. 38, pp. 2238–2245, 2000.</em>  </li>
+<em>Chen, R. F., and Wang, Z. J., “Fast , Block Lower-Upper Symmetric Gauss – Seidel Scheme Introduction,” AIAA Journal, vol. 38, no. 12, pp. 2238–2245, 2000.</em>  </li>
 <li><strong>PLUSGS</strong> Preconditioned Matrix free LU-SGS method for very low speed flow; first order accuate in time<br>
-<em>Kitamura, K., Shima, E., Fujimoto, K., and Wang, Z. J., “Performance of low-dissipation euler fluxes and preconditioned LU-SGS at low speeds,” Communications in Computational Physics, vol. 10, pp. 90–119, 2011.</em></li>
+<em>Kitamura, K., Shima, E., Fujimoto, K., and Wang, Z. J., “Performance of Low-Dissipation Euler Fluxes and Preconditioned LU-SGS at Low Speeds,” Communications in Computational Physics, vol. 10, no. 1, pp. 90–119, 2011.</em></li>
 </ul>
 <h3 id="turbulence-model">Turbulence model</h3>
 <ul>
 <li><strong>SA</strong> <br>
 <em>Allmaras, S. R., Johnson, F. T., and Spalart, P. R., “Modifications and Clarifications for the Implementation of the Spalart-Allmaras Turbulence Model,” Seventh International Conference on Computational Fluid Dynamics (ICCFD7), 2012.</em><br>
-<em>Spalart, P. R., and Allmaras, S., “A one-equation turbulence model for aerodynamic flows,” 30th Aerospace Sciences Meeting and Exhibit, Reston, Virigina: American Institute of Aeronautics and Astronautics, 1992.</em></li>
+<em>Spalart, P. R., and Allmaras, S., “A one-equation turbulence model for aerodynamic flows,” 30th Aerospace Sciences Meeting and Exhibit, 1992.</em></li>
 <li><strong>SST</strong> <br>
 <em>Menter, F. R., "Two-Equation Eddy-Viscosity Turbulence Models for Engineering Applications," AIAA Journal, vol. 32, no. 8, pp. 1598-1605, 1994.</em></li>
 <li><strong>SST2003</strong> <br>
 <em>Menter, F. R., Kuntz, M., and Langtry, R., "Ten Years of Industrial Experience with the SST Turbulence Model," Turbulence, Heat and Mass Transfer 4, ed: K. Hanjalic, Y. Nagano, and M. Tummers, Begell House, Inc., pp. 625 - 632, 2003.</em></li>
 <li><strong>k-kL</strong> <br>
-<em>Menter, F. R., and Egorov, Y., “The scale-adaptive simulation method for unsteady turbulent flow predictions. part 1: Theory and model description,” Flow, Turbulence and Combustion, vol. 85, pp. 113–138, 2010.</em></li>
+<em>Menter, F. R., and Egorov, Y., “The scale-adaptive simulation method for unsteady turbulent flow predictions. part 1: Theory and model description,” Flow, Turbulence and Combustion, vol. 85, no. 1, pp. 113–138, 2010.</em></li>
 </ul>
 <h3 id="transition-model">Transition model</h3>
 <ul>
 <li><strong>Gamma LCTM2015</strong> <br>
-<em>Menter, F. R., Smirnov, P. E., Liu, T., and Avancha, R., “A One-Equation Local Correlation-Based Transition Model,” Flow, Turbulence and Combustion, vol. 95, pp. 583–619, 2015.</em></li>
+<em>Menter, F. R., Smirnov, P. E., Liu, T., and Avancha, R., “A One-Equation Local Correlation-Based Transition Model,” Flow, Turbulence and Combustion, vol. 95, no. 4, pp. 583–619, 2015.</em></li>
 <li><strong>SA-BC</strong> <br>
-<em>Cakmakcioglu, S. C., Bas, O., and Kaynak, U., “A correlation-based algebraic transition model,” Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science, vol. 232, pp. 3915–3929, 2018.</em></li>
+<em>Cakmakcioglu, S. C., Bas, O., and Kaynak, U., “A correlation-based algebraic transition model,” Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science, vol. 232, no. 21, pp. 3915–3929, 2018.</em></li>
 </ul>
 <h2 id="fest-3d-team">FEST-3D Team</h2>
-<p>Over the last five years, many individuals have contributed to the development of FEST-3D. </p>
+<p>Over the last five years, many individuals have contributed to the development of FEST-3D. The team includes:</p>
 <ul>
 <li>
 <p><code>Jatinder Pal Singh Sandhu</code><br>
@@ -346,7 +346,7 @@ scheme, higher face-state reconstruction scheme, and time-integration scheme.</p
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

@@ -734,7 +734,7 @@
 <a name="ln-88"></a><span class="k">  private</span>
 <a name="ln-89"></a>
 <a name="ln-90"></a><span class="k">  </span><span class="kt">integer</span>                        <span class="kd">::</span> <span class="n">face_num</span>
-<a name="ln-91"></a>  <span class="c">!&lt; number of the face : 1:imin, 2:imax, 3:jmin, 4:jmax, 5:kmin, 6:kmax</span>
+<a name="ln-91"></a>  <span class="c">!&lt; Number of the face : 1:imin, 2:imax, 3:jmin, 4:jmax, 5:kmin, 6:kmax</span>
 <a name="ln-92"></a>
 <a name="ln-93"></a>  <span class="k">public</span> <span class="kd">::</span> <span class="n">populate_ghost_primitive</span>
 <a name="ln-94"></a>
@@ -744,7 +744,7 @@
 <a name="ln-98"></a><span class="k">    subroutine </span><span class="n">populate_ghost_primitive</span><span class="p">()</span>
 <a name="ln-99"></a>      <span class="c">!&lt; Populate the state variables in the ghost cell</span>
 <a name="ln-100"></a>      <span class="c">!&lt; with particular value based on the boundary conditio </span>
-<a name="ln-101"></a>      <span class="c">!&lt; being applied at that face.</span>
+<a name="ln-101"></a>      <span class="c">!&lt; being applied at that face</span>
 <a name="ln-102"></a>      <span class="k">implicit none</span>
 <a name="ln-103"></a><span class="k">      </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>
 <a name="ln-104"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
@@ -824,7 +824,7 @@
 <a name="ln-178"></a>
 <a name="ln-179"></a>
 <a name="ln-180"></a>      <span class="k">subroutine </span><span class="n">supersonic_inlet</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
-<a name="ln-181"></a>        <span class="c">!&lt; Supersonic inlet boundary condition. </span>
+<a name="ln-181"></a>        <span class="c">!&lt; Supersonic inlet boundary condition</span>
 <a name="ln-182"></a>        <span class="c">!&lt; All the values of state variables are fixed</span>
 <a name="ln-183"></a>        <span class="k">implicit none</span>
 <a name="ln-184"></a><span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
@@ -867,7 +867,7 @@
 <a name="ln-221"></a>      <span class="k">subroutine </span><span class="n">supersonic_outlet</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
 <a name="ln-222"></a>        <span class="c">!&lt; Supersonic outlet boundary condition. </span>
 <a name="ln-223"></a>        <span class="c">!&lt; All the values of state variables are copied </span>
-<a name="ln-224"></a>        <span class="c">!&lt; from inside the domain.</span>
+<a name="ln-224"></a>        <span class="c">!&lt; from inside the domain</span>
 <a name="ln-225"></a>        <span class="k">implicit none</span>
 <a name="ln-226"></a><span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
 <a name="ln-227"></a>        <span class="c">!&lt; Name of the face at which boundary condition is called</span>
@@ -905,7 +905,7 @@
 <a name="ln-259"></a>        <span class="c">!&lt; Subsonic inlet boundary condition. </span>
 <a name="ln-260"></a>        <span class="c">!&lt; All the state variables&#39;s value expect pressure</span>
 <a name="ln-261"></a>        <span class="c">!&lt; is fixed and pressure is copied from inside the </span>
-<a name="ln-262"></a>        <span class="c">!&lt; domain.</span>
+<a name="ln-262"></a>        <span class="c">!&lt; domain</span>
 <a name="ln-263"></a>        <span class="k">implicit none</span>
 <a name="ln-264"></a><span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
 <a name="ln-265"></a>        <span class="c">!&lt; Name of the face at which boundary condition is called</span>
@@ -948,7 +948,7 @@
 <a name="ln-302"></a>        <span class="c">!&lt; Subsonic outlet boundary condition. </span>
 <a name="ln-303"></a>        <span class="c">!&lt; All the state variables&#39;s value expect pressure</span>
 <a name="ln-304"></a>        <span class="c">!&lt; is copied from the inside of the domain and pressure </span>
-<a name="ln-305"></a>        <span class="c">!&lt; is fixed.</span>
+<a name="ln-305"></a>        <span class="c">!&lt; is fixed</span>
 <a name="ln-306"></a>        <span class="k">implicit none</span>
 <a name="ln-307"></a><span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
 <a name="ln-308"></a>        <span class="c">!&lt; Name of the face at which boundary condition is called</span>
@@ -996,7 +996,7 @@
 <a name="ln-350"></a>
 <a name="ln-351"></a>      <span class="k">subroutine </span><span class="n">slip_wall</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
 <a name="ln-352"></a>        <span class="c">!&lt; Slip wall boundary condition. </span>
-<a name="ln-353"></a>        <span class="c">!&lt; Maintain flow tangency.</span>
+<a name="ln-353"></a>        <span class="c">!&lt; Maintain flow tangency</span>
 <a name="ln-354"></a>        <span class="k">implicit none</span>
 <a name="ln-355"></a><span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
 <a name="ln-356"></a>        <span class="c">!&lt; Name of the face at which boundary condition is called</span>
@@ -1029,7 +1029,7 @@
 <a name="ln-383"></a>
 <a name="ln-384"></a>
 <a name="ln-385"></a>      <span class="k">subroutine </span><span class="n">pole</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
-<a name="ln-386"></a>        <span class="c">!&lt; boundary condition for the block face</span>
+<a name="ln-386"></a>        <span class="c">!&lt; Boundary condition for the block face</span>
 <a name="ln-387"></a>        <span class="c">!&lt; with zero area; turning into a pole</span>
 <a name="ln-388"></a>        <span class="k">implicit none</span>
 <a name="ln-389"></a><span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
@@ -1110,7 +1110,7 @@
 <a name="ln-464"></a>
 <a name="ln-465"></a>      <span class="k">subroutine </span><span class="n">no_slip</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
 <a name="ln-466"></a>        <span class="c">!&lt; No-slip wall boundary condition. All the </span>
-<a name="ln-467"></a>        <span class="c">!&lt; component of velocity throught face is zero.</span>
+<a name="ln-467"></a>        <span class="c">!&lt; component of velocity throught face is zero</span>
 <a name="ln-468"></a>        <span class="k">implicit none</span>
 <a name="ln-469"></a><span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
 <a name="ln-470"></a>        <span class="c">!&lt; Name of the face at which boundary condition is called</span>
@@ -1256,7 +1256,7 @@
 <a name="ln-610"></a><span class="k">    end subroutine </span><span class="n">check_if_value_fixed</span>
 <a name="ln-611"></a>
 <a name="ln-612"></a>    <span class="k">subroutine </span><span class="n">far_field</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
-<a name="ln-613"></a>      <span class="c">!&lt; Far-field Riemann boundary condition.</span>
+<a name="ln-613"></a>      <span class="c">!&lt; Far-field Riemann boundary condition</span>
 <a name="ln-614"></a>      <span class="k">implicit none</span>
 <a name="ln-615"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
 <a name="ln-616"></a>      <span class="kt">real</span> <span class="kd">::</span> <span class="n">cinf</span><span class="p">,</span> <span class="nb">cexp</span>   <span class="c">! speed of sound</span>
@@ -2398,7 +2398,7 @@
 <a name="ln-1752"></a>
 <a name="ln-1753"></a>    <span class="k">subroutine </span><span class="n">temp_based_density</span><span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
 <a name="ln-1754"></a>      <span class="c">!&lt; Specify the density in the ghost cell based on the</span>
-<a name="ln-1755"></a>      <span class="c">!&lt; temperature on the wall. Isothermal or adiabatic.</span>
+<a name="ln-1755"></a>      <span class="c">!&lt; temperature on the wall. Isothermal or adiabatic</span>
 <a name="ln-1756"></a>      <span class="k">implicit none</span>
 <a name="ln-1757"></a><span class="k">      </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">)</span>     <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">temperature</span>
 <a name="ln-1758"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span>         <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">face</span>
@@ -2566,7 +2566,7 @@
 <a name="ln-1920"></a>
 <a name="ln-1921"></a>    <span class="k">subroutine </span><span class="n">periodic_bc</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
 <a name="ln-1922"></a>      <span class="c">!&lt; Single block periodic boundary condition.</span>
-<a name="ln-1923"></a>      <span class="c">!&lt; Not to be used for multiblock boundary condition.</span>
+<a name="ln-1923"></a>      <span class="c">!&lt; Not to be used for multiblock boundary condition</span>
 <a name="ln-1924"></a>      <span class="k">implicit none</span>
 <a name="ln-1925"></a><span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
 <a name="ln-1926"></a>
@@ -2615,7 +2615,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

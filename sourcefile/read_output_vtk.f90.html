@@ -217,7 +217,7 @@
 
     </div>
     <div class="col-md-9" id='text'>
-      <p>read the restart file in the vtk format</p>
+      <p>Read the restart file in the vtk format</p>
       <br>
     
     <div class="panel panel-default">
@@ -565,9 +565,9 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a name="ln-1"></a>  <span class="c">!&lt; read the restart file in the vtk format</span>
+    <div class="hl"><pre><span></span><a name="ln-1"></a>  <span class="c">!&lt; Read the restart file in the vtk format</span>
 <a name="ln-2"></a><span class="k">module </span><span class="n">read_output_vtk</span>
-<a name="ln-3"></a>  <span class="c">!&lt; read the restart file in the vtk format</span>
+<a name="ln-3"></a>  <span class="c">!&lt; Read the restart file in the vtk format</span>
 <a name="ln-4"></a>  <span class="c">!---------------------------------------------------------</span>
 <a name="ln-5"></a>  <span class="c">! This module read state + other variable in output file</span>
 <a name="ln-6"></a>  <span class="c">!---------------------------------------------------------</span>
@@ -646,7 +646,7 @@
 <a name="ln-79"></a>  <span class="k">contains</span>
 <a name="ln-80"></a>
 <a name="ln-81"></a><span class="k">    subroutine </span><span class="n">read_file</span><span class="p">()</span>
-<a name="ln-82"></a>      <span class="c">!&lt; read all the variable for the vtk restart file</span>
+<a name="ln-82"></a>      <span class="c">!&lt; Read all the variable for the vtk restart file</span>
 <a name="ln-83"></a>      <span class="k">implicit none</span>
 <a name="ln-84"></a><span class="k">      </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">n</span>
 <a name="ln-85"></a>
@@ -695,7 +695,7 @@
 <a name="ln-128"></a><span class="k">    end subroutine </span><span class="n">read_file</span>
 <a name="ln-129"></a>
 <a name="ln-130"></a>    <span class="k">subroutine </span><span class="n">read_header</span><span class="p">()</span>
-<a name="ln-131"></a>      <span class="c">!&lt; skip read the header in the vtk file</span>
+<a name="ln-131"></a>      <span class="c">!&lt; Skip read the header in the vtk file</span>
 <a name="ln-132"></a>      <span class="k">implicit none</span>
 <a name="ln-133"></a>
 <a name="ln-134"></a><span class="k">      call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;read_output_vtk&#39;</span><span class="p">,</span> <span class="s1">&#39;read_header&#39;</span><span class="p">)</span>
@@ -709,7 +709,7 @@
 <a name="ln-142"></a>    <span class="k">end subroutine </span><span class="n">read_header</span>
 <a name="ln-143"></a>
 <a name="ln-144"></a>    <span class="k">subroutine </span><span class="n">read_grid</span><span class="p">()</span>
-<a name="ln-145"></a>      <span class="c">!&lt; skip the grid read in the restart file</span>
+<a name="ln-145"></a>      <span class="c">!&lt; Skip the grid read in the restart file</span>
 <a name="ln-146"></a>      <span class="k">implicit none</span>
 <a name="ln-147"></a>
 <a name="ln-148"></a>      <span class="c">! read grid point coordinates</span>
@@ -728,7 +728,7 @@
 <a name="ln-161"></a>    <span class="k">end subroutine </span><span class="n">read_grid</span>
 <a name="ln-162"></a>
 <a name="ln-163"></a>    <span class="k">subroutine </span><span class="n">read_velocity</span><span class="p">()</span>
-<a name="ln-164"></a>      <span class="c">!&lt; read velocity vector from the vtk file</span>
+<a name="ln-164"></a>      <span class="c">!&lt; Read velocity vector from the vtk file</span>
 <a name="ln-165"></a>      <span class="k">implicit none</span>
 <a name="ln-166"></a>
 <a name="ln-167"></a><span class="k">      call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;read_output_vtk&#39;</span><span class="p">,</span> <span class="s1">&#39;read_velocity&#39;</span><span class="p">)</span>
@@ -767,7 +767,7 @@
 <a name="ln-200"></a>    <span class="k">end subroutine </span><span class="n">read_scalar</span>
 <a name="ln-201"></a>
 <a name="ln-202"></a>    <span class="k">subroutine </span><span class="n">skip_scalar</span><span class="p">()</span>
-<a name="ln-203"></a>      <span class="c">!&lt; skip read scalar from the vtk file</span>
+<a name="ln-203"></a>      <span class="c">!&lt; Skip read scalar from the vtk file</span>
 <a name="ln-204"></a>      <span class="k">implicit none</span>
 <a name="ln-205"></a>
 <a name="ln-206"></a><span class="k">      call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;read_output_vtk&#39;</span><span class="p">,</span> <span class="s2">&quot;skip_scalar&quot;</span><span class="p">)</span>
@@ -803,7 +803,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

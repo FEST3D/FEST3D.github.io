@@ -130,20 +130,23 @@ All Modules &ndash; FEST-3D
 			 <tbody>
              
 			 
-			   <tr class="active"><td><a href='../module/ausm.html'>ausm</a></td><td><a href='../sourcefile/ausm.f90.html'>ausm.f90</a></td><td><p>The AUSM flux-splitting scheme</p></td></tr>
+			   <tr class="active"><td><a href='../module/ausm.html'>ausm</a></td><td><a href='../sourcefile/ausm.f90.html'>ausm.f90</a></td><td><p>Reference: Liou, M.S. and Steffen Jr, C.J., A new flux splitting scheme, 
+ Journal of Computational physics, vol. 107, no. 1, pp.23-39, 1993</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/ausmp.html'>ausmP</a></td><td><a href='../sourcefile/ausmp.f90.html'>ausmP.f90</a></td><td><p>Reference Liou, M. S., “A sequel to AUSM: AUSM+,” Journal of Computational Physics, vol. 129, 1996, pp. 364–382.</p></td></tr>
+			   <tr class=""><td><a href='../module/ausmp.html'>ausmP</a></td><td><a href='../sourcefile/ausmp.f90.html'>ausmP.f90</a></td><td><p>Reference: Liou, M. S., “A sequel to AUSM: AUSM+,” 
+ Journal of Computational Physics, vol. 129, pp. 364–382, 1996</p></td></tr>
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/ausmup.html'>ausmUP</a></td><td><a href='../sourcefile/ausmup.f90.html'>ausmUP.f90</a></td><td><p>AUSM+-up for all speeds,” Journal of Computational Physics, 
- vol. 214, 2006, pp. 137–170.</p></td></tr>
+			   <tr class="active"><td><a href='../module/ausmup.html'>ausmUP</a></td><td><a href='../sourcefile/ausmup.f90.html'>ausmUP.f90</a></td><td><p>Reference: Liou, M. S., “A sequel to AUSM, Part II: 
+ AUSM+-up for all speeds,” Journal of Computational Physics, 
+ vol. 214, 2006, pp. 137–170</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/bc.html'>bc</a></td><td><a href='../sourcefile/bc.f90.html'>bc.f90</a></td><td><p>setup boundary condition for the domain</p></td></tr>
+			   <tr class=""><td><a href='../module/bc.html'>bc</a></td><td><a href='../sourcefile/bc.f90.html'>bc.f90</a></td><td><p>Setup boundary condition for the domain</p></td></tr>
                
                <!---->
 			 
@@ -159,13 +162,13 @@ All Modules &ndash; FEST-3D
  face state reconstruction method. Since the limited information
  is available at the boundaries, the boundary face is limiter to 
  3rd order accurate and is reconstructed using MUSCL Scheme even when
- rest of the domain is using WENO or PPM.</p></td></tr>
+ rest of the domain is using WENO or PPM</p></td></tr>
                
                <!--active-->
 			 
 			   <tr class=""><td><a href='../module/cc.html'>CC</a></td><td><a href='../sourcefile/cc.f90.html'>CC.f90</a></td><td><p>In order to calculate pressure gradient in the transition model, two
- quantities are required, the distance of the cell-center from the wall 
- the normal made the distance vector (from wall to cell-center).
+ quantities are required: the distance of the cell-center from the wall 
+ andn the normal made by the distance vector field (from wall to cell-center).
  This module calucate both with gradient of V.n also.</p></td></tr>
                
                <!---->
@@ -198,7 +201,7 @@ All Modules &ndash; FEST-3D
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/fopen.html'>fopen</a></td><td><a href='../sourcefile/fopen.f90.html'>fopen.f90</a></td><td><p>Open all files required by the solver. Input and auxillary file. </p></td></tr>
+			   <tr class="active"><td><a href='../module/fopen.html'>fopen</a></td><td><a href='../sourcefile/fopen.f90.html'>fopen.f90</a></td><td><p>Open all files required by the solver. Input and auxillary file</p></td></tr>
                
                <!--active-->
 			 
@@ -206,8 +209,8 @@ All Modules &ndash; FEST-3D
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/geometry.html'>geometry</a></td><td><a href='../sourcefile/geometry.f90.html'>geometry.f90</a></td><td><p>The geometry module contains various geometrical quantities like 
- normals, areas and volumes to be used in computations. </p></td></tr>
+			   <tr class="active"><td><a href='../module/geometry.html'>geometry</a></td><td><a href='../sourcefile/geometry.f90.html'>geometry.f90</a></td><td><p>The geometry module calculates various geometrical quantities like 
+ face-normals, face-areas and cell-volumes to be used in computations. </p></td></tr>
                
                <!--active-->
 			 
@@ -235,7 +238,7 @@ All Modules &ndash; FEST-3D
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/gradients.html'>gradients</a></td><td><a href='../sourcefile/gradients.f90.html'>gradients.f90</a></td><td><p>allocate memory to laminar gradients if flow is viscous and
+			   <tr class=""><td><a href='../module/gradients.html'>gradients</a></td><td><a href='../sourcefile/gradients.f90.html'>gradients.f90</a></td><td><p>Allocate memory to laminar gradients if flow is viscous and
  allocate memory to tubulence gradients base upon the model being used</p></td></tr>
                
                <!---->
@@ -257,8 +260,8 @@ All Modules &ndash; FEST-3D
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/layout.html'>layout</a></td><td><a href='../sourcefile/layout.f90.html'>layout.f90</a></td><td><p>contains routine to load layout file and sets the layout variables
- gets process id and total process </p></td></tr>
+			   <tr class="active"><td><a href='../module/layout.html'>layout</a></td><td><a href='../sourcefile/layout.f90.html'>layout.f90</a></td><td><p>Contains routine to load layout file and sets the layout variables
+ and gets process id and total process </p></td></tr>
                
                <!--active-->
 			 
@@ -267,11 +270,16 @@ model to the main array which stores gradient of all variables</p></td></tr>
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/ldfss0.html'>ldfss0</a></td><td><a href='../sourcefile/ldfss0.f90.html'>ldfss0.f90</a></td><td><p>Flux-splitting scheme: LDFSS</p></td></tr>
+			   <tr class="active"><td><a href='../module/ldfss0.html'>ldfss0</a></td><td><a href='../sourcefile/ldfss0.f90.html'>ldfss0.f90</a></td><td><p>Reference: Edwards, J.R., A low-diffusion flux-splitting scheme 
+ for Navier-Stokes calculations, Computers &amp; Fluids, vol. 26,
+ no. 6, pp.635-659, 1997</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/lusgs.html'>lusgs</a></td><td><a href='../sourcefile/lusgs.f90.html'>lusgs.f90</a></td><td><p>Matix-free time integration: LU-SGS</p><a href="../module/lusgs.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr class=""><td><a href='../module/lusgs.html'>lusgs</a></td><td><a href='../sourcefile/lusgs.f90.html'>lusgs.f90</a></td><td><p>Reference: Sharov, D., Luo, H., Baum, J., and Loehner, R., 
+ “Implementation of unstructured grid GMRES+LU-SGS method on 
+ shared-memory, cache-based parallel computers,” 
+ 38th Aerospace Sciences Meeting and Exhibit, vol. 927, 2000, p. 2000.</p></td></tr>
                
                <!---->
 			 
@@ -279,23 +287,21 @@ model to the main array which stores gradient of all variables</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/muscl.html'>muscl</a></td><td><a href='../sourcefile/muscl.f90.html'>muscl.f90</a></td><td><p>MUSCL (Monotone Upwing Schemes for Scalar Conservation Laws is
- a scheme which replaces the piecewise constant approximation by
- reconstructing the states at the left and right side of each face.
- This is a one parameter upwind scheme which results in at most 3rd
- order accuracy.</p></td></tr>
+			   <tr class=""><td><a href='../module/muscl.html'>muscl</a></td><td><a href='../sourcefile/muscl.f90.html'>muscl.f90</a></td><td><p>Reference:Hirsch, C., Numerical computation of internal 
+and external flows: The fundamentals of computational fluid 
+dynamics, Elsevier, 2007</p><a href="../module/muscl.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/plusgs.html'>plusgs</a></td><td><a href='../sourcefile/plusgs.f90.html'>plusgs.f90</a></td><td><p>Preconditioned LU-SGS scheme
-  maxtrix-free implicit time-integration method
-  for low speed flows</p></td></tr>
+			   <tr class="active"><td><a href='../module/plusgs.html'>plusgs</a></td><td><a href='../sourcefile/plusgs.f90.html'>plusgs.f90</a></td><td><p>Reference: Kitamura, K., Shima, E., Fujimoto, K. and Wang, Z.J.,
+ Performance of low-dissipation Euler fluxes and preconditioned LU-SGS 
+ at low speeds, Communications in Computational Physics, vol. 10 no. 1, pp.90-119, 2011</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/ppm.html'>ppm</a></td><td><a href='../sourcefile/ppm.f90.html'>ppm.f90</a></td><td><p>PPM (Piecewise Parabolic Method) is an interpolation technique
- which can be used to create higher order extensions of schemes
- like the Van-Leer and LDFSS schemes.</p></td></tr>
+			   <tr class=""><td><a href='../module/ppm.html'>ppm</a></td><td><a href='../sourcefile/ppm.f90.html'>ppm.f90</a></td><td><p>Reference: Colella, P. and Woodward, P.R., The piecewise 
+parabolic method (PPM) for gas-dynamical simulations, Journal
+of computational physics, vol. 54, no. 1, pp.174-201, 1984</p></td></tr>
                
                <!---->
 			 
@@ -316,15 +322,15 @@ model to the main array which stores gradient of all variables</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/read_output_tec.html'>read_output_tec</a></td><td><a href='../sourcefile/read_output_tec.f90.html'>read_output_tec.f90</a></td><td><p>read the restart file in the tecplot format</p></td></tr>
+			   <tr class=""><td><a href='../module/read_output_tec.html'>read_output_tec</a></td><td><a href='../sourcefile/read_output_tec.f90.html'>read_output_tec.f90</a></td><td><p>Read the restart file in the tecplot format</p></td></tr>
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/read_output_vtk.html'>read_output_vtk</a></td><td><a href='../sourcefile/read_output_vtk.f90.html'>read_output_vtk.f90</a></td><td><p>read the restart file in the vtk format</p></td></tr>
+			   <tr class="active"><td><a href='../module/read_output_vtk.html'>read_output_vtk</a></td><td><a href='../sourcefile/read_output_vtk.f90.html'>read_output_vtk.f90</a></td><td><p>Read the restart file in the vtk format</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/resnorm.html'>resnorm</a></td><td><a href='../sourcefile/resnorm.f90.html'>resnorm.f90</a></td><td><p>this module contains subroutine that 
+			   <tr class=""><td><a href='../module/resnorm.html'>resnorm</a></td><td><a href='../sourcefile/resnorm.f90.html'>resnorm.f90</a></td><td><p>This module contains subroutine that 
  1. check if time for resnorm dump is arrived
  2. calculate resnorm
  3. send those resnorm to processor number 0
@@ -338,9 +344,9 @@ model to the main array which stores gradient of all variables</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/slau.html'>slau</a></td><td><a href='../sourcefile/slau.f90.html'>slau.f90</a></td><td><p>1 Shima, E., and Kitamura, K., “Parameter-Free Simple
-  Low-Dissipation AUSM-Family Scheme for All Speeds,” 
- AIAA Journal, vol. 49, Aug. 2011, pp. 1693–1709.</p></td></tr>
+			   <tr class=""><td><a href='../module/slau.html'>slau</a></td><td><a href='../sourcefile/slau.f90.html'>slau.f90</a></td><td><p>Shima, E., and Kitamura, K., “Parameter-Free Simple
+ Low-Dissipation AUSM-Family Scheme for All Speeds,” 
+ AIAA Journal, vol. 49, pp. 1693–1709, 2011</p></td></tr>
                
                <!---->
 			 
@@ -393,7 +399,8 @@ model to the main array which stores gradient of all variables</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/van_leer.html'>van_leer</a></td><td><a href='../sourcefile/van_leer.f90.html'>van_leer.f90</a></td><td><p>The Van-Leer scheme is a type of flux-splitting scheme</p></td></tr>
+			   <tr class=""><td><a href='../module/van_leer.html'>van_leer</a></td><td><a href='../sourcefile/van_leer.f90.html'>van_leer.f90</a></td><td><p>Reference: Van Leer, B., Flux-vector splitting for the Euler equation. 
+ In Upwind and High-Resolution Schemes, Springer, Berlin, Heidelberg, pp. 80-89, 1997</p></td></tr>
                
                <!---->
 			 
@@ -411,11 +418,12 @@ model to the main array which stores gradient of all variables</p></td></tr>
                <!--active-->
 			 
 			   <tr class=""><td><a href='../module/wall_dist.html'>wall_dist</a></td><td><a href='../sourcefile/wall_dist.f90.html'>wall_dist.f90</a></td><td><p>Calculate the distance from the wall 
- for each cell-center in the domain.</p></td></tr>
+ for each cell-center in the domain</p></td></tr>
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/weno.html'>weno</a></td><td><a href='../sourcefile/weno.f90.html'>weno.f90</a></td><td><p>WENO Schemes and Discontinuous Galerkin Methods for CFD,” 
+			   <tr class="active"><td><a href='../module/weno.html'>weno</a></td><td><a href='../sourcefile/weno.f90.html'>weno.f90</a></td><td><p>Reference: 1 Shu, C.-W., “High-order Finite Difference and Finite Volume 
+ WENO Schemes and Discontinuous Galerkin Methods for CFD,” 
  International Journal of Computational Fluid Dynamics, vol. 17, 2003, pp. 107–118.
  Reference: 2 Huang, W. F., Ren, Y. X., and Jiang, X., 
 “A simple algorithm to improve the performance of the WENO scheme on non-uniform grids,” 
@@ -423,14 +431,15 @@ Acta Mechanica Sinica/Lixue Xuebao, 2017, pp. 1–11.</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/weno_nm.html'>weno_NM</a></td><td><a href='../sourcefile/weno_nm.f90.html'>weno_NM.f90</a></td><td><p>“A simple algorithm to improve the performance of the WENO scheme on non-uniform grids,” 
+			   <tr class=""><td><a href='../module/weno_nm.html'>weno_NM</a></td><td><a href='../sourcefile/weno_nm.f90.html'>weno_NM.f90</a></td><td><p>Reference: 2 Huang, W. F., Ren, Y. X., and Jiang, X., 
+“A simple algorithm to improve the performance of the WENO scheme on non-uniform grids,” 
 Acta Mechanica Sinica/Lixue Xuebao, 2017, pp. 1–11.</p></td></tr>
                
                <!---->
 			 
 			   <tr class="active"><td><a href='../module/write_output.html'>write_output</a></td><td><a href='../sourcefile/write_output.f90.html'>write_output.f90</a></td><td><p>Open/close and call other modules for writing solution
  based on the input: type of file, either vtk or tecplot
- modules are called.</p></td></tr>
+ modules are called</p></td></tr>
                
                <!--active-->
 			 
@@ -443,7 +452,7 @@ Acta Mechanica Sinica/Lixue Xuebao, 2017, pp. 1–11.</p></td></tr>
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/write_output_vtk.html'>write_output_vtk</a></td><td><a href='../sourcefile/write_output_vtk.f90.html'>write_output_vtk.f90</a></td><td><p>VTK module to write the solution in the vtk format</p></td></tr>
+			   <tr class=""><td><a href='../module/write_output_vtk.html'>write_output_vtk</a></td><td><a href='../sourcefile/write_output_vtk.f90.html'>write_output_vtk.f90</a></td><td><p>Vtk module to write the solution in the vtk format</p></td></tr>
                
                <!---->
 			 
@@ -463,7 +472,7 @@ Acta Mechanica Sinica/Lixue Xuebao, 2017, pp. 1–11.</p></td></tr>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

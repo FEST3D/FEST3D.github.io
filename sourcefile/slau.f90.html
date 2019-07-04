@@ -388,9 +388,9 @@
       <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="hl"><pre><span></span><a name="ln-1"></a>    <span class="c">!&lt; Flux splitting scheme: SLAU</span>
 <a name="ln-2"></a><span class="k">module </span><span class="n">slau</span>
-<a name="ln-3"></a>    <span class="c">!&lt; 1 Shima, E., and Kitamura, K., “Parameter-Free Simple</span>
-<a name="ln-4"></a>    <span class="c">!&lt;  Low-Dissipation AUSM-Family Scheme for All Speeds,” </span>
-<a name="ln-5"></a>    <span class="c">!&lt; AIAA Journal, vol. 49, Aug. 2011, pp. 1693–1709.</span>
+<a name="ln-3"></a>    <span class="c">!&lt; Shima, E., and Kitamura, K., “Parameter-Free Simple</span>
+<a name="ln-4"></a>    <span class="c">!&lt; Low-Dissipation AUSM-Family Scheme for All Speeds,” </span>
+<a name="ln-5"></a>    <span class="c">!&lt; AIAA Journal, vol. 49, pp. 1693–1709, 2011</span>
 <a name="ln-6"></a>    <span class="c">!-------------------------------------------------------------------</span>
 <a name="ln-7"></a>    
 <a name="ln-8"></a>    <span class="k">use </span><span class="n">global_vars</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">imx</span>
@@ -429,7 +429,7 @@
 <a name="ln-41"></a>    <span class="kt">real</span><span class="p">,</span> <span class="k">public</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">target</span> <span class="kd">::</span> <span class="n">residue</span>
 <a name="ln-42"></a>    <span class="c">!&lt; Store residue at each cell-center</span>
 <a name="ln-43"></a>    <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">flux_p</span>
-<a name="ln-44"></a>    <span class="c">!&lt; pointer/alias for the either F, G, or H</span>
+<a name="ln-44"></a>    <span class="c">!&lt; Pointer/alias for the either F, G, or H</span>
 <a name="ln-45"></a>
 <a name="ln-46"></a>    <span class="c">! Public members</span>
 <a name="ln-47"></a>    <span class="k">public</span> <span class="kd">::</span> <span class="n">setup_scheme</span>
@@ -484,7 +484,7 @@
 <a name="ln-96"></a><span class="k">            </span><span class="kt">character</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">f_dir</span>
 <a name="ln-97"></a>            <span class="c">!&lt; Input direction for which flux are calcuated and store</span>
 <a name="ln-98"></a>            <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> 
-<a name="ln-99"></a>            <span class="c">!&lt; integer for DO loop</span>
+<a name="ln-99"></a>            <span class="c">!&lt; Integer for DO loop</span>
 <a name="ln-100"></a>            <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i_f</span><span class="p">,</span> <span class="n">j_f</span><span class="p">,</span> <span class="n">k_f</span> 
 <a name="ln-101"></a>            <span class="c">!&lt; Flags to determine face direction</span>
 <a name="ln-102"></a>            <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">fA</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span>
@@ -504,7 +504,7 @@
 <a name="ln-116"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">vtface</span>
 <a name="ln-117"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">mass</span>
 <a name="ln-118"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">HL</span><span class="p">,</span> <span class="n">HR</span> 
-<a name="ln-119"></a>            <span class="c">!&lt; enthalpy</span>
+<a name="ln-119"></a>            <span class="c">!&lt; Enthalpy</span>
 <a name="ln-120"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">uL</span><span class="p">,</span> <span class="n">uR</span>
 <a name="ln-121"></a>            <span class="c">!&lt; X-component of velocity</span>
 <a name="ln-122"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">vL</span><span class="p">,</span> <span class="n">vR</span>
@@ -512,13 +512,13 @@
 <a name="ln-124"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">wL</span><span class="p">,</span> <span class="n">wR</span>
 <a name="ln-125"></a>            <span class="c">!&lt; Z-component of velocity</span>
 <a name="ln-126"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">pL</span><span class="p">,</span> <span class="n">pR</span>
-<a name="ln-127"></a>            <span class="c">!&lt; pressure</span>
+<a name="ln-127"></a>            <span class="c">!&lt; Pressure</span>
 <a name="ln-128"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">rL</span><span class="p">,</span> <span class="n">rR</span>
 <a name="ln-129"></a>            <span class="c">!&lt; Density</span>
 <a name="ln-130"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">cL</span><span class="p">,</span> <span class="n">cR</span>
-<a name="ln-131"></a>            <span class="c">!&lt; speed sound left/right</span>
+<a name="ln-131"></a>            <span class="c">!&lt; Speed sound left/right</span>
 <a name="ln-132"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">C</span>
-<a name="ln-133"></a>            <span class="c">!&lt; speed of sound at face</span>
+<a name="ln-133"></a>            <span class="c">!&lt; Speed of sound at face</span>
 <a name="ln-134"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">ML</span><span class="p">,</span> <span class="n">MR</span>
 <a name="ln-135"></a>            <span class="c">!&lt; Mach number left/right</span>
 <a name="ln-136"></a>            <span class="kt">real</span> <span class="kd">::</span> <span class="n">VnL</span><span class="p">,</span> <span class="n">VnR</span>
@@ -767,7 +767,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-06-24T13:14:54.817885 
+             on 2019-07-04T11:29:45.476634 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
