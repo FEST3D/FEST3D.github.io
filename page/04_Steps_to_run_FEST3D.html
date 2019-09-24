@@ -215,6 +215,15 @@ StopIteration
 
 <p><a name="steps-to-LDC"></a></p>
 <h1 id="steps-to-run-lid-driven-cavity-tutorial">Steps to run Lid-Driven Cavity tutorial</h1>
+<figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../media/tutorials/LidDrivenCavityDomain.png" alt="Domain" style="width:350px">
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+   <figcaption> Fig.1 Domain and boundary condition for Lid-driven cavity test case.</figcaption>
+  </div>
+</figure>
+
 <ol>
 <li>Make sure the <a href="https://github.com/FEST3D/run/tree/master">run</a> directory has the Turtorial folder.</li>
 <li>Change directory to the <strong>FEST-3D/run/Tutorials/LidDrivenCavity/</strong>. This folder contains <em>automaton.py</em> file and <strong>CreateBlocks/</strong> subfolder</li>
@@ -294,15 +303,33 @@ AbsBinaryPath=&quot;/home/&lt;user&gt;/solver/FEST-3D/bin/FEST3D&quot; #Make sur
 <li><strong>output_control.md</strong> contains the name of the variable to read or write to the solution file in the time_directories.</li>
 <li><strong>res_control.md</strong>  contains the name of the residual which you want to track.</li>
 <li>
-<p><strong> mesh/</strong> Contains information about the grid and its layout.</p>
+<p><strong> mesh/</strong> Contains information about the grid and its layout.
+    <figure>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+        <img src="../media/Interface.png" alt="Domain" style="width:350px">
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+      <figcaption> Fig.2 Domain and mesh decomposition in to 4 blocks.</figcaption>
+      </div>
+    </figure></p>
 <ul>
 <li><strong>Gridfiles/</strong> Contains all the grid file used for the simulation</li>
 <li>
 <p><strong>layout/</strong> contains the information about the layout of the grid file and some script to most of the information about 
       the layout automatically from the grid file in the <strong>Gridfiles/</strong> folder.</p>
+<p><figure>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+      <img src="../media/MinMaxBC.png" alt="Domain" style="width:350px">
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+      <figcaption> Fig.3 Boundary faces of each block indicated with 'Imin', 'Imax', 'Jmin', and 'Jmax' labels.</figcaption>
+    </div>
+  </figure></p>
 <ul>
-<li><strong>layout.md</strong> file contains layout information. For more information about layout file check this <a href="./page/02_run/04_layout.html">page</a>.
-    The layout.md file should look like the following:<div class="codehilite"><pre><span></span>## BLOCK LAYOUT FILE
+<li>
+<p><strong>layout.md</strong> file contains layout information. For more information about layout file check this <a href="./page/02_run/04_layout.html">page</a>.
+    The layout.md file should look like the following:</p>
+<div class="codehilite"><pre><span></span>## BLOCK LAYOUT FILE
 ## ==========================
 ## NUMBER OF PROCESSES
 4
@@ -318,6 +345,19 @@ AbsBinaryPath=&quot;/home/&lt;user&gt;/solver/FEST-3D/bin/FEST3D&quot; #Make sur
 02  grid_02.txt  bc_02.md  -005  0003  0000  -003  -006  -006
 ## PROCESS 3
 03  grid_03.txt  bc_03.md  0002  -005  0001  -003  -006  -006
+</pre></div>
+
+
+<p>here the boundary condition numbers are as follow:</p>
+<div class="codehilite"><pre><span></span>  * -1: Supersonic Inlet
+  * -2: Supersonic Outflow
+  * -3: Subsonic Inflow
+  * -4: Subsonic Outflow
+  * -5: Wall
+  * -6: Symmetry or Slip-Wall
+  * -7: Pole
+  * -8: Far-field
+  * -9: Total inlet
 </pre></div>
 
 
@@ -342,6 +382,14 @@ AbsBinaryPath=&quot;/home/&lt;user&gt;/solver/FEST-3D/bin/FEST3D&quot; #Make sur
     - FIX_Y_SPEED 0.0
     - FIX_Z_SPEED 0.0
     - COPY_PRESSURE
+<span class="nt">&lt;figure&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: flex; flex-wrap: wrap; justify-content: center; align-items:center&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;../media/tutorials/LidDrivenCavityDomain.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;Domain&quot;</span> <span class="na">style=</span><span class="s">&quot;width:350px&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;display: flex; flex-wrap: wrap; justify-content: center; align-items:center&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;figcaption&gt;</span> Fig.4. For lid-driven cavity a velocity vectory of (100,0,0) will be fixed at top boundary.<span class="nt">&lt;/figcaption&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
 </pre></div>
 
 
@@ -401,7 +449,7 @@ AbsBinaryPath=&quot;/home/&lt;user&gt;/solver/FEST-3D/bin/FEST3D&quot; #Make sur
     <img src="../media/tutorials/LidDrivenCavityContourv.png" alt="Domain" style="width:350px">
   </div>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
-    <figcaption> Fig.4 Contour of y-component of velocity vector.</figcaption>
+    <figcaption> Fig.5 Contour of y-component of velocity vector.</figcaption>
   </div>
 </figure></p>
     </div>
@@ -440,7 +488,17 @@ AbsBinaryPath=&quot;/home/&lt;user&gt;/solver/FEST-3D/bin/FEST3D&quot; #Make sur
             
             </li>
             
+            <li role="presentation">
+            <a href='../page/02_run/05_bc.html'>Boundary condition file</a>
+            
+            </li>
+            
             </ul>
+            
+            </li>
+            
+            <li role="presentation">
+            <a href='../page/./03_test.html'>Test</a>
             
             </li>
             
@@ -510,7 +568,7 @@ AbsBinaryPath=&quot;/home/&lt;user&gt;/solver/FEST-3D/bin/FEST3D&quot; #Make sur
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-15T22:10:30.573392 
+             on 2019-09-24T22:49:06.131269 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
