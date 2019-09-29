@@ -144,14 +144,63 @@
   
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
-      <p>Since it is not possible to perform unit test with current status of FEST-3D,
-we have defined a few integrated test cases. Use following command to run all
-tests in the <code>test/</code> directory.</p>
+      <p>Since it is not possible to perform unit test with the current status of FEST-3D,
+we have defined a few integrated test cases. Using this integrated method, 
+you can test the implementation of various flux-schemes, higher-order methods, and turbulence models.
+Any new scheme added to the FEST-3D can also be tested using the same framework.
+A python script, <code>Test.py</code>, provided in the <code>test/</code> directory to run the integrated test
+with a particular flux scheme, higher-order method, and turbulence model.
+Use the following command to run all tests in the <code>test/</code> directory.</p>
+<h3 id="how-to-run-testpy-script">How to run Test.py script</h3>
 <div class="codehilite"><pre><span></span>$cd &lt;FEST-3D/root/directory&gt;/test/
-$python Test.py
+$python Test.py &lt;arg1&gt; &lt;arg2&gt; &lt;arg3&gt;
 </pre></div>
 
 
+<ul>
+<li>
+<p>&lt;arg1> : Flux scheme</p>
+<ul>
+<li>allowed options:<ul>
+<li>ausm</li>
+<li>ldfss0</li>
+<li>ausmUP</li>
+<li>ausmP</li>
+<li>slau</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>&lt;arg2> : Higher order method</p>
+<ul>
+<li>allowed options:<ul>
+<li>muscl</li>
+<li>ppm</li>
+<li>weno</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>&lt;arg3> : Turbulence model</p>
+<ul>
+<li>allowed options:<ul>
+<li>sst</li>
+<li>sst2003</li>
+<li>kkl</li>
+<li>sa</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Examples:</p>
+<ol>
+<li>$python Test.py ausm   muscl sst</li>
+<li>$python Test.py slau   weno  sa</li>
+<li>$python Test.py ausmUP ppm   kkl</li>
+</ol>
 <p>You will see following output on the screen:</p>
 <div class="codehilite"><pre><span></span>  ----- Integrated Tests Started -----  
 Total two processes will be used with MPICH library
@@ -167,36 +216,84 @@ Check test summary in &#39;Report.txt&#39; file.
 
 <p>The integrated tests use two processes with MPICH library. Three different test cases are defined:</p>
 <ol>
-<li>Inviscid test case: <a href="./05_tutorials/02_2dbump.html">Subsonic flow over a 2D smooth bump</a> (0.1% Tolerance).</li>
-<li>Laminar test csae: <a href="./05_tutorials/04_LamFp.html">Laminar flow over a flat plate</a> (1% Tolerance).</li>
-<li>Turbulent test case: <a href="./05_tutorials/05_TurbFp.html">Fully turbulent flow over a flat plate</a> (2% Tolerance. Higher tolerance due to coarser grid).</li>
+<li>Inviscid test case: <a href="./05_tutorials/02_2dbump.html">Subsonic flow over a 2D smooth bump</a>.</li>
+<li>Laminar test csae: <a href="./05_tutorials/04_LamFp.html">Laminar flow over a flat plate</a>.</li>
+<li>Turbulent test case: <a href="./05_tutorials/05_TurbFp.html">Fully turbulent flow over a flat plate</a>.</li>
 </ol>
-<p>For more details about domain, boundary conditions and flow conditions of these test cases, check the Tutorial section. The solver setup (domain, grid, flow and boundary conditions, schemes) is same as listed in the separate tutorials.</p>
+<table>
+<thead>
+<tr>
+<th align="center">S.No.&nbsp;&nbsp;&nbsp;</th>
+<th align="left">Test case &nbsp;&nbsp;&nbsp;</th>
+<th align="left">Expected value &nbsp;&nbsp;&nbsp;</th>
+<th align="center">Tolereance %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">Inviscid</td>
+<td align="left">Change in entropy = 0.0</td>
+<td align="center">0.1%</td>
+</tr>
+<tr>
+<td align="center">2.</td>
+<td align="left">Laminar</td>
+<td align="left">Cofficient of drag = 0.00133</td>
+<td align="center">1%</td>
+</tr>
+<tr>
+<td align="center">3.</td>
+<td align="left">Turbulent</td>
+<td align="left">Cofficient of drag = 0.00290</td>
+<td align="center">2%</td>
+</tr>
+</tbody>
+</table>
+<p>The change in entropy is calculated using following expression:
+<figure>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items:center">
+    <img src="../media/error.png" alt="Domain" style="width:250px">
+  </div>
+</figure></p>
+<p>For more details about domain, boundary conditions and flow conditions of these test cases, check the Tutorial section. The solver setup (domain, grid, flow and boundary conditions) is same as listed in the separate tutorials.</p>
 <p>Once the tests are complete, you can check the test summary in <code>Report.txt</code> file.</p>
 <div class="codehilite"><pre><span></span>Ran Test number 1  ---&gt;  Subsonic flow over a smooth bump
-  __________Report__________
- ---------- Inviscid Test case: Smooth Bump ----------
+ __________Report__________  
+ ---------- Inviscid Test case: Smooth Bump ---------- 
+ Flux Scheme        : ausm
+ Higher order method: muscl
+ Turbulence model   : none
  Expected Change in entropy           : 0.000E+00
  Calculated relative change in entropy: 1.046E-06
  Difference                           : 1.046E-04 %
+ Allowed Tolerance                    : 0.1 %
 ------------ &gt;&gt;&gt; Test Passed  &lt;&lt;&lt; --------------
 
 
 Ran Test number 2  ---&gt;  Laminar flow over a flat plate
-  __________Report__________
- ------ Laminar Test case: Flat plate ------
+  __________Report__________   
+ ------ Laminar Test case: Flat plate ------ 
+ Flux Scheme        : ausm
+ Higher order method: muscl
+ Turbulence model   : none
  Expected drag coeffcient    : 1.330E-03
  Calculated drag coefficient : 1.329E-03
  Difference                  : 4.638E-02 %
+ Allowed Tolerance           : 1 %
 ------------ &gt;&gt;&gt; Test Passed  &lt;&lt;&lt; --------------
 
 
 Ran Test number 3  ---&gt;  Turbulent flow over a flat plate
-  __________Report__________
- ------ Turbulent Test case: Flat plate ------
- Expected drag coeffcient    : 2.960E-03
- Calculated drag coefficient : 2.966E-03
- Difference                  : 1.883E-01 %
+  __________Report__________   
+ ------ Turbulent Test case: Flat plate ------ 
+ Flux Scheme        : ausm
+ Higher order method: muscl
+ Turbulence model   : sst
+ Expected drag coeffcient    : 2.900E-03
+ Calculated drag coefficient : 2.873E-03
+ Difference                  : 9.312E-01 %
+ Allowed Tolerance           : 2 %
 ------------ &gt;&gt;&gt; Test Passed  &lt;&lt;&lt; --------------
 </pre></div>
     </div>
@@ -315,7 +412,7 @@ Ran Test number 3  ---&gt;  Turbulent flow over a flat plate
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-25T21:24:49.588962 
+             on 2019-09-29T19:10:34.515068 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
