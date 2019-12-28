@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">16 statements</a>
+    title=" 0.1% of total for procedures.">9 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine write_header()
+private subroutine write_header(Write_data_format)
     
     
    
@@ -227,8 +231,34 @@ private subroutine write_header()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-write_data_format"></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>Write_data_format</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -494,28 +524,21 @@ private subroutine write_header()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">write_header</span><span class="p">()</span>
-      <span class="c">!&lt; Write the header in the output file in the tecplot format</span>
-      <span class="k">implicit none</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">write_header</span><span class="p">(</span><span class="n">Write_data_format</span><span class="p">)</span>
+        <span class="c">!&lt; Write the header in the output file in the tecplot format</span>
+        <span class="k">implicit none</span>
+<span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Write_data_format</span>
 
-<span class="k">      </span><span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_header&quot;</span><span class="p">)</span>
+        <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_header&quot;</span><span class="p">)</span>
 
-      <span class="k">if</span> <span class="p">(</span><span class="n">Write_data_format</span> <span class="o">==</span> <span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s1">&#39;# vtk DataFile Version 3.1&#39;</span>
+        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s1">&#39;# vtk DataFile Version 3.1&#39;</span>
         <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s1">&#39;cfd-iitm output&#39;</span>   <span class="c">! comment line</span>
         <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="nb">trim</span><span class="p">(</span><span class="n">Write_data_format</span><span class="p">)</span>
         <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s1">&#39;DATASET STRUCTURED_GRID&#39;</span>
         <span class="c">!write(OUT_FILE_UNIT, *)</span>
-      <span class="n">elseif</span> <span class="p">(</span><span class="n">write_data_format</span> <span class="o">==</span> <span class="s1">&#39;BINARY&#39;</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="s1">&#39;# vtk DataFile Version 3.1&#39;</span><span class="o">//</span><span class="n">newline</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="s1">&#39;cfd-iitm output&#39;</span><span class="o">//</span><span class="n">newline</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="nb">trim</span><span class="p">(</span><span class="n">Write_data_format</span><span class="p">)</span><span class="o">//</span><span class="n">newline</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="s1">&#39;DATASET STRUCTURED_GRID&#39;</span><span class="o">//</span><span class="n">newline</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="n">newline</span>
-      <span class="k">end if</span>
 
 
-<span class="k">    end subroutine </span><span class="n">write_header</span>
+    <span class="k">end subroutine </span><span class="n">write_header</span>
 </pre></div>
 
     </section>
@@ -537,7 +560,7 @@ private subroutine write_header()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

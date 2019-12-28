@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.0% of total for procedures.">161 statements</a>
+    title=" 1.1% of total for procedures.">163 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine temp_based_density(temperature, face)
+private subroutine temp_based_density(temperature, face, bc, dims)
     
     
    
@@ -244,7 +248,7 @@ private subroutine temp_based_density(temperature, face)
   
 <tr>
   
-  <td><span class="anchor" id="variable-temperature"></span>real,</td>
+  <td><span class="anchor" id="variable-temperature"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -265,6 +269,36 @@ private subroutine temp_based_density(temperature, face)
   
   <td></td><td>::</td>
   <td><strong>face</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bc%7E42"></span>type(<a href='../type/boundarytype.html'>boundarytype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>bc</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E105"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td></td>
   
 </tr>
 
@@ -614,13 +648,15 @@ private subroutine temp_based_density(temperature, face)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">temp_based_density</span><span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">temp_based_density</span><span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; Specify the density in the ghost cell based on the</span>
       <span class="c">!&lt; temperature on the wall. Isothermal or adiabatic</span>
       <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">)</span>     <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">temperature</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">boundarytype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">bc</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">)</span>     <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">temperature</span>
       <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span>         <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">face</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">stag_temp</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">stag_temp</span>
       <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span>
 
       <span class="k">select case</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
@@ -647,7 +683,7 @@ private subroutine temp_based_density(temperature, face)
 <span class="k">              end do</span>
 <span class="k">            end do</span>
 <span class="k">          else</span>
-<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">end if</span>
 <span class="k">         case</span><span class="p">(</span><span class="s2">&quot;imax&quot;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">temperature</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.0</span><span class="p">)</span><span class="k">then</span>
@@ -672,7 +708,7 @@ private subroutine temp_based_density(temperature, face)
 <span class="k">              end do</span>
 <span class="k">            end do</span>
 <span class="k">          else</span>
-<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">end if</span>
 <span class="k">        case</span><span class="p">(</span><span class="s2">&quot;jmin&quot;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">temperature</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.0</span><span class="p">)</span><span class="k">then</span>
@@ -697,7 +733,7 @@ private subroutine temp_based_density(temperature, face)
 <span class="k">              end do</span>
 <span class="k">            end do</span>
 <span class="k">          else</span>
-<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">end if</span>
 <span class="k">        case</span><span class="p">(</span><span class="s2">&quot;jmax&quot;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">temperature</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.0</span><span class="p">)</span><span class="k">then</span>
@@ -722,7 +758,7 @@ private subroutine temp_based_density(temperature, face)
 <span class="k">              end do</span>
 <span class="k">            end do</span>
 <span class="k">          else</span>
-<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">end if</span>
 <span class="k">        case</span><span class="p">(</span><span class="s2">&quot;kmin&quot;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">temperature</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.0</span><span class="p">)</span><span class="k">then</span>
@@ -747,7 +783,7 @@ private subroutine temp_based_density(temperature, face)
 <span class="k">              end do</span>
 <span class="k">            end do</span>
 <span class="k">          else</span>
-<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">end if</span>
 <span class="k">        case</span><span class="p">(</span><span class="s2">&quot;kmax&quot;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">temperature</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.0</span><span class="p">)</span><span class="k">then</span>
@@ -772,7 +808,7 @@ private subroutine temp_based_density(temperature, face)
 <span class="k">              end do</span>
 <span class="k">            end do</span>
 <span class="k">          else</span>
-<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span>  <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">end if</span>
 <span class="k">        case </span><span class="n">DEFAULT</span>
           <span class="c">!print*, &quot;ERROR: wrong face for boundary condition&quot;</span>
@@ -801,7 +837,7 @@ private subroutine temp_based_density(temperature, face)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

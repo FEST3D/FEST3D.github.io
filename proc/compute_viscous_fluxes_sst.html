@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,19 +143,19 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for procedures.">109 statements</a>
+    title=" 0.6% of total for procedures.">84 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/viscous2.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/viscous.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/viscous2.f90.html'>viscous2.f90</a></li>
+     <li><a href='../sourcefile/viscous.f90.html'>viscous.f90</a></li>
     
      <li><a href='../module/viscous.html'>viscous</a></li>
     
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine compute_viscous_fluxes_sst(F, direction)
+private subroutine compute_viscous_fluxes_sst(F, qp, cells, faces, flags, dims)
     
     
    
@@ -243,11 +247,11 @@ private subroutine compute_viscous_fluxes_sst(F, direction)
   
 <tr>
   
-  <td><span class="anchor" id="variable-f%7E3"></span>real,</td>
+  <td><span class="anchor" id="variable-f%7E3"></span>real(kind=wp),</td>
   <td>intent(inout),</td>
   <td></td>
   
-  <td>dimension(:, :, :, :), pointer</td><td>::</td>
+  <td>dimension(:, :, :, :)</td><td>::</td>
   <td><strong>F</strong></td><td><p>flux array</p></td>
   
 </tr>
@@ -258,12 +262,72 @@ private subroutine compute_viscous_fluxes_sst(F, direction)
   
 <tr>
   
-  <td><span class="anchor" id="variable-direction%7E2"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-qp%7E23"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cells%7E21"></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-faces%7E3"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2+flags(1),-2:dims%jmx+2+flags(2),-2:dims%kmx+2+flags(3))</td><td>::</td>
+  <td><strong>faces</strong></td><td><p>quantities on the face</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-flags%7E2"></span>integer,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>flags</strong></td><td><p>flags for direction swithc</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E32"></span>type(<a href='../type/extent.html'>extent</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>direction</strong></td><td><p>face direction</p></td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain: imx,jmx,kmx</p></td>
   
 </tr>
 
@@ -497,86 +561,59 @@ private subroutine compute_viscous_fluxes_sst(F, direction)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">compute_viscous_fluxes_sst</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">compute_viscous_fluxes_sst</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">faces</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; Compute viscous fluxes for additianal equations due to SST turbulence model</span>
       <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">direction</span> <span class="c">!&lt; face direction</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> <span class="c">!&lt; flux array</span>
+<span class="k">      </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span> 
+      <span class="c">!&lt; flux array</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="c">!&lt; Extent of the domain: imx,jmx,kmx</span>
+      <span class="kt">integer</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flags</span>
+      <span class="c">!&lt; flags for direction swithc</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qp</span>
+     <span class="c">!&lt; Store primitive variable at cell center</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">celltype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cells</span>
+      <span class="c">!&lt; Input cell quantities: volume</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="n">flags</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="n">flags</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="n">flags</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">faces</span>
+      <span class="c">!&lt; quantities on the face</span>
       <span class="c">! local variables</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">tkface</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">rhoface</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">normal_comp</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">d_LR</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">mu_f</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">mut_f</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">total_mu</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">delx</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">dely</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">delz</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">deltk</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">deltw</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">Tau_xx</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">Tau_yy</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">Tau_zz</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nx</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">ny</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nz</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">area</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">fA</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">fnx</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">fny</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">fnz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tkface</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rhoface</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">normal_comp</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">d_LR</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">mu_f</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">mut_f</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">total_mu</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">delx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dely</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">delz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">deltk</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">deltw</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Tau_xx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Tau_yy</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Tau_zz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ny</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">area</span>
       <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span>
       <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">,</span> <span class="n">kk</span>
       <span class="c">!--- sst variable requirement ---!</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">dtkdx</span><span class="p">,</span> <span class="n">dtkdy</span><span class="p">,</span> <span class="n">dtkdz</span><span class="p">,</span> <span class="n">dtwdx</span><span class="p">,</span> <span class="n">dtwdy</span><span class="p">,</span> <span class="n">dtwdz</span>
-      <span class="kt">real</span> <span class="kd">::</span>  <span class="n">F1</span>
-      <span class="kt">real</span> <span class="kd">::</span>  <span class="n">sigma_kf</span>
-      <span class="kt">real</span> <span class="kd">::</span>  <span class="n">sigma_wf</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dtkdx</span><span class="p">,</span> <span class="n">dtkdy</span><span class="p">,</span> <span class="n">dtkdz</span><span class="p">,</span> <span class="n">dtwdx</span><span class="p">,</span> <span class="n">dtwdy</span><span class="p">,</span> <span class="n">dtwdz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span>  <span class="n">F1</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span>  <span class="n">sigma_kf</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span>  <span class="n">sigma_wf</span>
 
-      <span class="c">!--------------------------------------------------------------------</span>
-      <span class="c">! select Direction</span>
-      <span class="c">!--------------------------------------------------------------------</span>
-      <span class="k">select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">direction</span><span class="p">))</span>
-        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-          <span class="n">ii</span>  <span class="o">=</span>  <span class="mi">1</span>
-          <span class="n">jj</span>  <span class="o">=</span>  <span class="mi">0</span>
-          <span class="n">kk</span>  <span class="o">=</span>  <span class="mi">0</span>
-          <span class="n">fnx</span> <span class="o">=&gt;</span> <span class="n">xnx</span>
-          <span class="n">fny</span> <span class="o">=&gt;</span> <span class="n">xny</span>
-          <span class="n">fnz</span> <span class="o">=&gt;</span> <span class="n">xnz</span>
-          <span class="n">fA</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>   <span class="o">=&gt;</span> <span class="n">xA</span>
-
-        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-          <span class="n">ii</span>  <span class="o">=</span>  <span class="mi">0</span>
-          <span class="n">jj</span>  <span class="o">=</span>  <span class="mi">1</span>
-          <span class="n">kk</span>  <span class="o">=</span>  <span class="mi">0</span>
-          <span class="n">fnx</span> <span class="o">=&gt;</span> <span class="n">ynx</span>
-          <span class="n">fny</span> <span class="o">=&gt;</span> <span class="n">yny</span>
-          <span class="n">fnz</span> <span class="o">=&gt;</span> <span class="n">ynz</span>
-          <span class="n">fA</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>   <span class="o">=&gt;</span> <span class="n">yA</span>
-
-        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
-          <span class="n">ii</span>  <span class="o">=</span>  <span class="mi">0</span>
-          <span class="n">jj</span>  <span class="o">=</span>  <span class="mi">0</span>
-          <span class="n">kk</span>  <span class="o">=</span>  <span class="mi">1</span>
-          <span class="n">fnx</span> <span class="o">=&gt;</span> <span class="n">znx</span>
-          <span class="n">fny</span> <span class="o">=&gt;</span> <span class="n">zny</span>
-          <span class="n">fnz</span> <span class="o">=&gt;</span> <span class="n">znz</span>
-          <span class="n">fA</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>   <span class="o">=&gt;</span> <span class="n">zA</span>
-
-        <span class="k">case </span><span class="n">Default</span>
-          <span class="n">Fatal_error</span>
-
-      <span class="k">end select</span>
-
+      <span class="n">ii</span> <span class="o">=</span> <span class="n">flags</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">jj</span> <span class="o">=</span> <span class="n">flags</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+      <span class="n">kk</span> <span class="o">=</span> <span class="n">flags</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
       <span class="c">!---------------------------------------------------------------------</span>
       <span class="c">! Calculating the turbulent viscous fluxes at the faces</span>
       <span class="c">!--------------------------------------------------------------------</span>
-      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">kk</span>
-       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">jj</span>
-        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">ii</span>
+      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">kk</span>
+       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">jj</span>
+        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">ii</span>
 
           <span class="c">!--- FACE Gradients ---!</span>
           <span class="c">! Gradients at face as average of gradients at cell centres</span>
@@ -588,15 +625,15 @@ private subroutine compute_viscous_fluxes_sst(F, direction)
           <span class="n">dtwdz</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">gradtw_z</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span> <span class="o">+</span> <span class="n">gradtw_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
           <span class="c">!--- For ODD-EVEN coupling error ---!</span>
           <span class="c">! distance between cell center of adjacent cell for the i,j,k face</span>
-          <span class="n">delx</span> <span class="o">=</span> <span class="n">CellCenter</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">CellCenter</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-          <span class="n">dely</span> <span class="o">=</span> <span class="n">CellCenter</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">CellCenter</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-          <span class="n">delz</span> <span class="o">=</span> <span class="n">CellCenter</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">CellCenter</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+          <span class="n">delx</span> <span class="o">=</span> <span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)%</span><span class="n">centerx</span> <span class="o">-</span> <span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)%</span><span class="n">centerx</span>
+          <span class="n">dely</span> <span class="o">=</span> <span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)%</span><span class="n">centery</span> <span class="o">-</span> <span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)%</span><span class="n">centery</span>
+          <span class="n">delz</span> <span class="o">=</span> <span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)%</span><span class="n">centerz</span> <span class="o">-</span> <span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)%</span><span class="n">centerz</span>
 
           <span class="n">d_LR</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">delx</span><span class="o">*</span><span class="n">delx</span> <span class="o">+</span> <span class="n">dely</span><span class="o">*</span><span class="n">dely</span> <span class="o">+</span> <span class="n">delz</span><span class="o">*</span><span class="n">delz</span><span class="p">)</span>
 
           <span class="c">! difference in state across face</span>
-          <span class="n">deltk</span> <span class="o">=</span> <span class="n">tk</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">tk</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span>
-          <span class="n">deltw</span> <span class="o">=</span> <span class="n">tw</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">tw</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span>
+          <span class="n">deltk</span> <span class="o">=</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">-</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c">!TKE</span>
+          <span class="n">deltw</span> <span class="o">=</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c">!Omega</span>
 
           <span class="c">!normal_comp   = ( delta(phi) - (grad(phi).dot.delR) )/magnitudeR</span>
           <span class="c">!new grad(phi) =  grad(phi) + correction(normal_comp.dot.delR/magnitudeR)</span>
@@ -612,25 +649,25 @@ private subroutine compute_viscous_fluxes_sst(F, direction)
           <span class="n">dtwdz</span>       <span class="o">=</span>  <span class="n">dtwdz</span> <span class="o">+</span> <span class="p">(</span><span class="n">normal_comp</span> <span class="o">*</span> <span class="n">delz</span> <span class="o">/</span> <span class="n">d_LR</span><span class="p">)</span>
           <span class="c">!--- end of ODD-EVEN coupling correction ---!</span>
 
-          <span class="n">mu_f</span>     <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span>    <span class="n">mu</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span> <span class="o">+</span>     <span class="n">mu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
-          <span class="n">mut_f</span>    <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">sst_mu</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span> <span class="o">+</span> <span class="n">sst_mu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+          <span class="n">mu_f</span>     <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span>  <span class="n">mu</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span> <span class="o">+</span>   <span class="n">mu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+          <span class="n">mut_f</span>    <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">mu_t</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span> <span class="o">+</span> <span class="n">mu_t</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
           <span class="n">F1</span>       <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">sst_F1</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span> <span class="o">+</span> <span class="n">sst_F1</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
           <span class="n">sigma_kf</span> <span class="o">=</span> <span class="n">sigma_k1</span><span class="o">*</span><span class="n">F1</span> <span class="o">+</span> <span class="n">sigma_k2</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">F1</span><span class="p">)</span>
           <span class="n">sigma_wf</span> <span class="o">=</span> <span class="n">sigma_w1</span><span class="o">*</span><span class="n">F1</span> <span class="o">+</span> <span class="n">sigma_w2</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">F1</span><span class="p">)</span>
 
           <span class="n">total_mu</span> <span class="o">=</span> <span class="n">mu_f</span> <span class="o">+</span> <span class="n">mut_f</span>
-          <span class="n">rhoface</span>  <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">density</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span> <span class="o">+</span> <span class="n">density</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
-          <span class="n">tkface</span>   <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span>     <span class="n">tk</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">)</span> <span class="o">+</span>      <span class="n">tk</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+          <span class="n">rhoface</span>  <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c">!Density</span>
+          <span class="n">tkface</span>   <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">ii</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="n">jj</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="n">kk</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c">!TKE</span>
           <span class="c">! k in reynolds stress</span>
           <span class="n">Tau_xx</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">rhoface</span><span class="o">*</span><span class="n">tkface</span><span class="o">/</span><span class="mf">3.0</span>
           <span class="n">Tau_yy</span> <span class="o">=</span> <span class="n">Tau_xx</span>
           <span class="n">Tau_zz</span> <span class="o">=</span> <span class="n">Tau_xx</span>
 
           <span class="c">! calling some element from memory and keep them handy for calculation</span>
-          <span class="n">nx</span>    <span class="o">=</span> <span class="n">fnx</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
-          <span class="n">ny</span>    <span class="o">=</span> <span class="n">fny</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
-          <span class="n">nz</span>    <span class="o">=</span> <span class="n">fnz</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
-          <span class="n">area</span>  <span class="o">=</span>  <span class="n">fA</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+          <span class="n">nx</span>    <span class="o">=</span> <span class="n">faces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">nx</span>
+          <span class="n">ny</span>    <span class="o">=</span> <span class="n">faces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">ny</span>
+          <span class="n">nz</span>    <span class="o">=</span> <span class="n">faces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">nz</span>
+          <span class="n">area</span>  <span class="o">=</span> <span class="n">faces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span>
 
           <span class="c">! adding viscous fluxes to stored convective flux</span>
           <span class="n">F</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Tau_xx</span> <span class="o">*</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">area</span><span class="p">)</span>
@@ -665,7 +702,7 @@ private subroutine compute_viscous_fluxes_sst(F, direction)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

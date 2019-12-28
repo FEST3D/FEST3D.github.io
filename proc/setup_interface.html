@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">19 statements</a>
+    title=" 0.2% of total for procedures.">26 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine setup_interface()
+public subroutine setup_interface(control, dims)
     
     
    
@@ -227,8 +231,49 @@ public subroutine setup_interface()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-control"></span>type(<a href='../type/controltype.html'>controltype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>control</strong></td><td><p>Control parameters: n_var</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -662,11 +707,23 @@ public subroutine setup_interface()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">setup_interface</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">setup_interface</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; Allocate memory for the data communication between processors</span>
       <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="p">&amp;</span>
-        <span class="n">errmsg</span><span class="o">=</span><span class="s2">&quot;module: interface, subrouinte setup&quot;</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
+      <span class="c">!&lt; Control parameters: n_var</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">imx</span><span class="p">,</span> <span class="n">jmx</span><span class="p">,</span> <span class="n">kmx</span><span class="p">,</span> <span class="n">n_var</span>
+      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span><span class="n">errmsg</span><span class="o">=</span><span class="s2">&quot;module: interface, subrouinte setup&quot;</span>
+      <span class="c">!&lt; Error message</span>
+
+      <span class="n">imx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+      <span class="n">jmx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+      <span class="n">kmx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
+
+      <span class="n">n_var</span> <span class="o">=</span> <span class="n">control</span><span class="p">%</span><span class="n">n_var</span>
+
       <span class="n">ibuf_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n_var</span><span class="o">*</span><span class="n">layers</span>
       <span class="n">jbuf_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n_var</span><span class="o">*</span><span class="n">layers</span>
       <span class="n">kbuf_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n_var</span><span class="o">*</span><span class="n">layers</span>
@@ -704,7 +761,7 @@ public subroutine setup_interface()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

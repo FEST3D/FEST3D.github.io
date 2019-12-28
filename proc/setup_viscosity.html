@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">23 statements</a>
+    title=" 0.2% of total for procedures.">26 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine setup_viscosity()
+public subroutine setup_viscosity(scheme, flow, dims)
     
     
    
@@ -227,8 +231,64 @@ public subroutine setup_viscosity()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-scheme%7E28"></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td><p>finite-volume Schemes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-flow%7E22"></span>type(<a href='../type/flowtype.html'>flowtype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>flow</strong></td><td><p>Information about fluid flow: freestream-speed, ref-viscosity,etc.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E58"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -662,40 +722,44 @@ public subroutine setup_viscosity()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">setup_viscosity</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">setup_viscosity</span><span class="p">(</span><span class="n">scheme</span><span class="p">,</span><span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; Allocate and pointer for molecular and turbulent viscosity</span>
+      <span class="k">implicit none</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">schemetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">scheme</span>
+      <span class="c">!&lt; finite-volume Schemes</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">flowtype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flow</span>
+      <span class="c">!&lt; Information about fluid flow: freestream-speed, ref-viscosity,etc.</span>
+      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">imx</span><span class="p">,</span> <span class="n">jmx</span><span class="p">,</span> <span class="n">kmx</span>
 
+      <span class="n">imx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+      <span class="n">jmx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+      <span class="n">kmx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
       <span class="c">!setup_molecular_viscosity()</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">mu_ref</span><span class="o">/=</span><span class="mf">0.</span><span class="p">)</span> <span class="k">then</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">flow</span><span class="p">%</span><span class="n">mu_ref</span><span class="o">/=</span><span class="mf">0.</span><span class="p">)</span> <span class="k">then</span>
 <span class="k">        call </span><span class="n">alloc</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">mu</span> <span class="o">=</span> <span class="n">mu_ref</span> <span class="c">!intialize</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="n">flow</span><span class="p">%</span><span class="n">mu_ref</span> <span class="c">!intialize</span>
       <span class="k">end if</span>
 
       <span class="c">!--- setup_turbulent_viscosity ---!</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">turbulence</span><span class="o">/=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span> <span class="k">then</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">turbulence</span><span class="o">/=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span> <span class="k">then</span>
 <span class="k">        call </span><span class="n">alloc</span><span class="p">(</span><span class="n">mu_t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
 
-        <span class="k">select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">turbulence</span><span class="p">))</span>
 
-          <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+        <span class="k">select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">turbulence</span><span class="p">))</span>
+
+          <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;sa&#39;</span><span class="p">,</span> <span class="s1">&#39;saBC&#39;</span><span class="p">,</span> <span class="s1">&#39;kkl&#39;</span><span class="p">)</span>
             <span class="c">!do nothing</span>
             <span class="k">continue</span>
 
-<span class="k">          case</span> <span class="p">(</span><span class="s1">&#39;sa&#39;</span><span class="p">,</span> <span class="s1">&#39;saBC&#39;</span><span class="p">)</span>
-            <span class="n">sa_mu</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">mu_t</span><span class="p">(:,:,:)</span>
-
-          <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;sst&#39;</span><span class="p">,</span> <span class="s1">&#39;sst2003&#39;</span><span class="p">)</span>
-            <span class="n">sst_mu</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">mu_t</span><span class="p">(:,:,:)</span>
+<span class="k">          case</span> <span class="p">(</span><span class="s1">&#39;sst&#39;</span><span class="p">,</span> <span class="s1">&#39;sst2003&#39;</span><span class="p">)</span>
             <span class="c">!-- sst blending funciton F1 --!</span>
             <span class="k">call </span><span class="n">alloc</span><span class="p">(</span><span class="n">sst_F1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">sst_F1</span><span class="o">=</span><span class="mf">0.</span>
             <span class="c">!-- sst blnding function setup compete--!</span>
 
-          <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;kkl&#39;</span><span class="p">)</span>
-            <span class="n">kkl_mu</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">mu_t</span><span class="p">(:,:,:)</span>
-
           <span class="k">case </span><span class="n">DEFAULT</span> 
-            <span class="c">!call turbulence_read_error()</span>
             <span class="n">Fatal_error</span>
 
         <span class="k">end select</span>
@@ -724,7 +788,7 @@ public subroutine setup_viscosity()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

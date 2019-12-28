@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">27 statements</a>
+    title=" 0.2% of total for procedures.">32 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine slip_wall(face)
+private subroutine slip_wall(face, Ifaces, Jfaces, Kfaces, bc, dims)
     
     
    
@@ -249,7 +253,83 @@ private subroutine slip_wall(face)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>face</strong></td><td><p>Name of the face at which boundary condition is called</p></td>
+  <td><strong>face</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ifaces%7E46"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-jfaces%7E46"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kfaces%7E46"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal
+ Name of the face at which boundary condition is called</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bc%7E37"></span>type(<a href='../type/boundarytype.html'>boundarytype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>bc</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E100"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td></td>
   
 </tr>
 
@@ -599,37 +679,44 @@ private subroutine slip_wall(face)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>      <span class="k">subroutine </span><span class="n">slip_wall</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>      <span class="k">subroutine </span><span class="n">slip_wall</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         <span class="c">!&lt; Slip wall boundary condition. </span>
         <span class="c">!&lt; Maintain flow tangency</span>
         <span class="k">implicit none</span>
-<span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
+<span class="k">        type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">boundarytype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">bc</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Ifaces</span>
+        <span class="c">!&lt; Input varaible which stores I faces&#39; area and unit normal</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Jfaces</span>
+        <span class="c">!&lt; Input varaible which stores J faces&#39; area and unit normal</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Kfaces</span>
+        <span class="c">!&lt; Input varaible which stores K faces&#39; area and unit normal</span>
         <span class="c">!&lt; Name of the face at which boundary condition is called</span>
-        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
-        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">density</span> <span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         <span class="k">select case</span> <span class="p">(</span><span class="n">turbulence</span><span class="p">)</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
             <span class="c">!do nothing</span>
             <span class="k">continue</span>
 <span class="k">          case</span><span class="p">(</span><span class="s1">&#39;sa&#39;</span><span class="p">,</span> <span class="s1">&#39;saBC&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tv</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tv</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;sst&#39;</span><span class="p">,</span> <span class="s1">&#39;sst2003&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tk</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tw</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tk</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tw</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;kkl&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tk</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tkl</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tk</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tkl</span><span class="p">,</span> <span class="s2">&quot;symm&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">case </span><span class="n">DEFAULT</span>
-            <span class="c">!call turbulence_read_error()</span>
             <span class="n">Fatal_error</span>
         <span class="k">end select</span>
 <span class="k">        select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">transition</span><span class="p">))</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;lctm2015&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tgm</span><span class="p">,</span> <span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tgm</span><span class="p">,</span> <span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">case </span><span class="n">DEFAULT</span>
             <span class="k">continue</span>
 <span class="k">        end select</span>
-<span class="k">        call </span><span class="n">flow_tangency</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
+<span class="k">        call </span><span class="n">flow_tangency</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="k">end subroutine </span><span class="n">slip_wall</span>
 </pre></div>
 
@@ -652,7 +739,7 @@ private subroutine slip_wall(face)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

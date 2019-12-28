@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for procedures.">112 statements</a>
+    title=" 0.8% of total for procedures.">112 statements</a>
      </li> 
      
      
@@ -243,12 +247,12 @@ public function Flux(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-ql"></span>real,</td>
+  <td><span class="anchor" id="variable-ql"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
   <td>dimension(1:n_var)</td><td>::</td>
-  <td><strong>ql</strong></td><td></td>
+  <td><strong>ql</strong></td><td><p>left state</p></td>
   
 </tr>
 
@@ -258,12 +262,12 @@ public function Flux(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-qr"></span>real,</td>
+  <td><span class="anchor" id="variable-qr"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
   <td>dimension(1:n_var)</td><td>::</td>
-  <td><strong>qr</strong></td><td></td>
+  <td><strong>qr</strong></td><td><p>right state</p></td>
   
 </tr>
 
@@ -273,7 +277,7 @@ public function Flux(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-du"></span>real,</td>
+  <td><span class="anchor" id="variable-du"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -288,7 +292,7 @@ public function Flux(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-inputs"></span>real,</td>
+  <td><span class="anchor" id="variable-inputs"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -307,7 +311,7 @@ public function Flux(ql, qr, du, inputs)
     
     
     
-   <h3>Return Value <small><span class="anchor" id="variable-flux"></span>real,
+   <h3>Return Value <small><span class="anchor" id="variable-flux"></span>real(kind=wp),
   dimension(1:n_var)</small></h3>
     
     
@@ -379,57 +383,57 @@ public function Flux(ql, qr, du, inputs)
       <span class="c">! calculate the total flux through face</span>
       <span class="c">!---------------------------------------</span>
       <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ql</span> <span class="c">!left state</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qr</span> <span class="c">!right state</span>
+<span class="k">      </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ql</span> <span class="c">!&lt;left state</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qr</span> <span class="c">!&lt;right state</span>
       <span class="c">!conservative form of updated neighbour</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">du</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">inputs</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">Flux</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">U</span> <span class="c">! conservative variables</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">W</span> <span class="c">! new primitive variables</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">P</span> <span class="c">! primitive variables of right cell</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">du</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">inputs</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">Flux</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">U</span> <span class="c">!&lt; conservative variables</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">W</span> <span class="c">!&lt; new primitive variables</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">P</span> <span class="c">!&lt; primitive variables of right cell</span>
 
       <span class="c">!for extraction of the inputs</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">area</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nx</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">ny</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nz</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">volume</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">mmu</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">tmu</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">area</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ny</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">volume</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">mmu</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tmu</span>
 
 
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dudx</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dudy</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dudz</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dvdx</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dvdy</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dvdz</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dwdx</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dwdy</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dwdz</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dTdx</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dTdy</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">dTdz</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">T1</span><span class="p">,</span> <span class="n">T2</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">uface</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">vface</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">wface</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">trace</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauxx</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauyy</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauzz</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauxy</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauxz</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Tauyz</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Qx</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Qy</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">Qz</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">HalfRhoUsquare</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">RhoHt</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">K_heat</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">FaceNormalVelocity</span>
-      <span class="kt">real</span>    <span class="kd">::</span> <span class="n">mu</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dudx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dudy</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dudz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dvdx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dvdy</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dvdz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dwdx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dwdy</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dwdz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dTdx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dTdy</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">dTdz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">T1</span><span class="p">,</span> <span class="n">T2</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">uface</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">vface</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">wface</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">trace</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Tauxx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Tauyy</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Tauzz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Tauxy</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Tauxz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Tauyz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Qx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Qy</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">Qz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">HalfRhoUsquare</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">RhoHt</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">K_heat</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">FaceNormalVelocity</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">mu</span>
 
       <span class="n">area</span>   <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
       <span class="n">nx</span>     <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -536,7 +540,7 @@ public function Flux(ql, qr, du, inputs)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

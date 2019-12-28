@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.0% of total for procedures.">6 statements</a>
+    title=" 0.1% of total for procedures.">10 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine setup_resnorm()
+public subroutine setup_resnorm(files, control, scheme, flow)
     
     
    
@@ -227,8 +231,79 @@ public subroutine setup_resnorm()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-files%7E4"></span>type(<a href='../type/filetype.html'>filetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>files</strong></td><td><p>Files' name and handler</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-control%7E14"></span>type(<a href='../type/controltype.html'>controltype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>control</strong></td><td><p>Control parameters</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-scheme%7E23"></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td><p>finite-volume Schemes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-flow%7E19"></span>type(<a href='../type/flowtype.html'>flowtype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>flow</strong></td><td><p>Information about fluid flow: freestream-{u,v,rho,p}, etc.</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -257,50 +332,50 @@ public subroutine setup_resnorm()
 <polygon fill="none" stroke="#000000" points="85,-150 0,-150 0,-126 85,-126 85,-150"/>
 <text text-anchor="middle" x="42.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">setup_resnorm</text>
 </g>
-<!-- proc~allocate_memory~2 -->
+<!-- proc~allocate_memory -->
 <g id="proc~~setup_resnorm~~CallsGraph_node2" class="node">
-<title>proc~allocate_memory~2</title>
-<g id="a_proc~~setup_resnorm~~CallsGraph_node2"><a xlink:href=".././proc/allocate_memory%7E2.html" xlink:title="allocate_memory">
+<title>proc~allocate_memory</title>
+<g id="a_proc~~setup_resnorm~~CallsGraph_node2"><a xlink:href=".././proc/allocate_memory.html" xlink:title="allocate_memory">
 <polygon fill="#d9534f" stroke="#d9534f" points="215,-192 121,-192 121,-168 215,-168 215,-192"/>
 <text text-anchor="middle" x="168" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_memory</text>
 </a>
 </g>
 </g>
-<!-- proc~setup_resnorm&#45;&gt;proc~allocate_memory~2 -->
+<!-- proc~setup_resnorm&#45;&gt;proc~allocate_memory -->
 <g id="proc~~setup_resnorm~~CallsGraph_edge1" class="edge">
-<title>proc~setup_resnorm&#45;&gt;proc~allocate_memory~2</title>
+<title>proc~setup_resnorm&#45;&gt;proc~allocate_memory</title>
 <path fill="none" stroke="#ff0000" d="M78.4633,-150.0355C92.1166,-154.6048 107.8529,-159.8711 122.2877,-164.7019"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="121.4376,-168.1081 132.0315,-167.9627 123.6592,-161.47 121.4376,-168.1081"/>
 </g>
-<!-- proc~setup_scale -->
-<g id="proc~~setup_resnorm~~CallsGraph_node3" class="node">
-<title>proc~setup_scale</title>
-<g id="a_proc~~setup_resnorm~~CallsGraph_node3"><a xlink:href=".././proc/setup_scale.html" xlink:title="setup_scale">
-<polygon fill="#d9534f" stroke="#d9534f" points="203,-150 133,-150 133,-126 203,-126 203,-150"/>
-<text text-anchor="middle" x="168" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_scale</text>
-</a>
-</g>
-</g>
-<!-- proc~setup_resnorm&#45;&gt;proc~setup_scale -->
-<g id="proc~~setup_resnorm~~CallsGraph_edge2" class="edge">
-<title>proc~setup_resnorm&#45;&gt;proc~setup_scale</title>
-<path fill="none" stroke="#ff0000" d="M85.339,-138C97.3117,-138 110.3633,-138 122.4847,-138"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="122.847,-141.5001 132.847,-138 122.8469,-134.5001 122.847,-141.5001"/>
-</g>
 <!-- proc~setup_file -->
-<g id="proc~~setup_resnorm~~CallsGraph_node4" class="node">
+<g id="proc~~setup_resnorm~~CallsGraph_node3" class="node">
 <title>proc~setup_file</title>
-<g id="a_proc~~setup_resnorm~~CallsGraph_node4"><a xlink:href=".././proc/setup_file.html" xlink:title="setup_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="197,-108 139,-108 139,-84 197,-84 197,-108"/>
-<text text-anchor="middle" x="168" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_file</text>
+<g id="a_proc~~setup_resnorm~~CallsGraph_node3"><a xlink:href=".././proc/setup_file.html" xlink:title="setup_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="197,-150 139,-150 139,-126 197,-126 197,-150"/>
+<text text-anchor="middle" x="168" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_file</text>
 </a>
 </g>
 </g>
 <!-- proc~setup_resnorm&#45;&gt;proc~setup_file -->
-<g id="proc~~setup_resnorm~~CallsGraph_edge3" class="edge">
+<g id="proc~~setup_resnorm~~CallsGraph_edge2" class="edge">
 <title>proc~setup_resnorm&#45;&gt;proc~setup_file</title>
-<path fill="none" stroke="#ff0000" d="M78.4633,-125.9645C94.2986,-120.665 112.9358,-114.4278 129.0948,-109.0201"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="130.4163,-112.2687 138.7886,-105.7759 128.1948,-105.6305 130.4163,-112.2687"/>
+<path fill="none" stroke="#ff0000" d="M85.339,-138C99.372,-138 114.8872,-138 128.6497,-138"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="128.7787,-141.5001 138.7787,-138 128.7787,-134.5001 128.7787,-141.5001"/>
+</g>
+<!-- proc~setup_scale -->
+<g id="proc~~setup_resnorm~~CallsGraph_node4" class="node">
+<title>proc~setup_scale</title>
+<g id="a_proc~~setup_resnorm~~CallsGraph_node4"><a xlink:href=".././proc/setup_scale.html" xlink:title="setup_scale">
+<polygon fill="#d9534f" stroke="#d9534f" points="203,-108 133,-108 133,-84 203,-84 203,-108"/>
+<text text-anchor="middle" x="168" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_scale</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_resnorm&#45;&gt;proc~setup_scale -->
+<g id="proc~~setup_resnorm~~CallsGraph_edge3" class="edge">
+<title>proc~setup_resnorm&#45;&gt;proc~setup_scale</title>
+<path fill="none" stroke="#ff0000" d="M78.4633,-125.9645C92.352,-121.3165 108.3961,-115.9471 123.0331,-111.0487"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="124.5256,-114.2401 132.8979,-107.7473 122.304,-107.6019 124.5256,-114.2401"/>
 </g>
 <!-- interface~alloc -->
 <g id="proc~~setup_resnorm~~CallsGraph_node5" class="node">
@@ -311,9 +386,9 @@ public subroutine setup_resnorm()
 </a>
 </g>
 </g>
-<!-- proc~allocate_memory~2&#45;&gt;interface~alloc -->
+<!-- proc~allocate_memory&#45;&gt;interface~alloc -->
 <g id="proc~~setup_resnorm~~CallsGraph_edge4" class="edge">
-<title>proc~allocate_memory~2&#45;&gt;interface~alloc</title>
+<title>proc~allocate_memory&#45;&gt;interface~alloc</title>
 <path fill="none" stroke="#ff0000" d="M215.2883,-180C223.7098,-180 232.3774,-180 240.4801,-180"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="240.7384,-183.5001 250.7383,-180 240.7383,-176.5001 240.7384,-183.5001"/>
 </g>
@@ -707,12 +782,20 @@ public subroutine setup_resnorm()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">setup_resnorm</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">setup_resnorm</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">)</span>
       <span class="c">!&lt; Allocate memory, setup scale and file to write</span>
       <span class="k">implicit none</span>
-<span class="k">      call </span><span class="n">allocate_memory</span><span class="p">()</span>
-      <span class="k">call </span><span class="n">setup_scale</span><span class="p">()</span>
-      <span class="k">call </span><span class="n">setup_file</span><span class="p">()</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">filetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">files</span>
+      <span class="c">!&lt; Files&#39; name and handler</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
+      <span class="c">!&lt; Control parameters</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">schemetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">scheme</span>
+      <span class="c">!&lt; finite-volume Schemes</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">flowtype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flow</span>
+      <span class="c">!&lt; Information about fluid flow: freestream-{u,v,rho,p}, etc.</span>
+      <span class="k">call </span><span class="n">allocate_memory</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">setup_scale</span><span class="p">(</span><span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">setup_file</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
     <span class="k">end subroutine </span><span class="n">setup_resnorm</span>
 </pre></div>
 
@@ -735,7 +818,7 @@ public subroutine setup_resnorm()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

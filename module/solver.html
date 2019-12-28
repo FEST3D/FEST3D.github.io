@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for modules and submodules.">144 statements</a>
+    title=" 0.8% of total for modules and submodules.">127 statements</a>
      </li> 
      
      
@@ -177,6 +181,52 @@
 
 
 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/solver.html#variable-dims%7E120">dims</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-nodes%7E21">nodes</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-cells%7E48">cells</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-ifaces%7E50">Ifaces</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-jfaces%7E50">Jfaces</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-kfaces%7E50">Kfaces</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-control%7E64">control</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-schemes">schemes</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-flow%7E53">flow</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-files%7E32">files</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-boundary">boundary</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-qp%7E69">qp</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-temp%7E6">Temp</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-f%7E20">F</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-g%7E15">G</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-h%7E15">H</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-residue%7E26">residue</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-delta_t%7E21">delta_t</a>
+      
+    </div>
+  </div>
+</div>
+
+
 
 
 
@@ -192,6 +242,12 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/solver.html#proc-abort_run">abort_run</a>
+      
+      <a class="list-group-item" href="../module/solver.html#proc-finish_run">finish_run</a>
+      
+      <a class="list-group-item" href="../module/solver.html#proc-start_run">start_run</a>
       
       <a class="list-group-item" href="../module/solver.html#proc-setup_solver">setup_solver</a>
       
@@ -233,59 +289,43 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/utils.html'>utils</a></li>
-    
-    <li><a href='../module/boundary_state_reconstruction.html'>boundary_state_reconstruction</a></li>
+    <li><a href='../module/bc.html'>bc</a></li>
     
     <li><a href='../module/viscous.html'>viscous</a></li>
     
-    <li><a href='../module/summon_grad_evaluation.html'>summon_grad_evaluation</a></li>
+    <li><a href='../module/update.html'>update</a></li>
     
-    <li>Scheme</li>
-    
-    <li><a href='../module/read.html'>read</a></li>
-    
-    <li><a href='../module/mapping.html'>mapping</a></li>
-    
-    <li><a href='../module/state.html'>state</a></li>
-    
-    <li><a href='../module/cc.html'>CC</a></li>
-    
-    <li><a href='../module/source.html'>source</a></li>
-    
-    <li><a href='../module/global.html'>global</a></li>
-    
-    <li><a href='../module/bc_primitive.html'>bc_primitive</a></li>
-    
-    <li><a href='../module/time.html'>time</a></li>
-    
-    <li><a href='../module/layout.html'>layout</a></li>
-    
-    <li><a href='../module/global_vars.html'>global_vars</a></li>
-    
-    <li><a href='../module/geometry.html'>geometry</a></li>
-    
-    <li><a href='../module/resnorm.html'>resnorm</a></li>
-    
-    <li><a href='../module/string.html'>string</a></li>
-    
-    <li><a href='../module/viscosity.html'>viscosity</a></li>
-    
-    <li><a href='../module/bc.html'>bc</a></li>
-    
-    <li><a href='../module/interface1.html'>interface1</a></li>
-    
-    <li><a href='../module/dump_solution.html'>dump_solution</a></li>
-    
-    <li><a href='../module/gradients.html'>gradients</a></li>
+    <li><a href='../module/scheme.html'>scheme</a></li>
     
     <li><a href='../module/grid.html'>grid</a></li>
     
-    <li><a href='../module/update.html'>update</a></li>
+    <li><a href='../module/resnorm.html'>resnorm</a></li>
+    
+    <li><a href='../module/wall_dist.html'>wall_dist</a></li>
+    
+    <li><a href='../module/time.html'>time</a></li>
+    
+    <li><a href='../module/geometry.html'>geometry</a></li>
+    
+    <li><a href='../module/gradients.html'>gradients</a></li>
+    
+    <li><a href='../module/dump_solution.html'>dump_solution</a></li>
+    
+    <li><a href='../module/layout.html'>layout</a></li>
+    
+    <li><a href='../module/read.html'>read</a></li>
+    
+    <li><a href='../module/interface1.html'>interface1</a></li>
+    
+    <li><a href='../module/state.html'>state</a></li>
     
     <li><a href='../module/wall.html'>wall</a></li>
     
-    <li><a href='../module/wall_dist.html'>wall_dist</a></li>
+    <li><a href='../module/viscosity.html'>viscosity</a></li>
+    
+    <li><a href='../module/vartypes.html'>vartypes</a></li>
+    
+    <li><a href='../module/cc.html'>CC</a></li>
     
   </ul>
       </li>
@@ -299,1348 +339,993 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: module~~solver~~UsesGraph Pages: 1 -->
-<svg id="modulesolverUsesGraph" width="641pt" height="1308pt"
- viewBox="0.00 0.00 641.00 1307.74" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~solver~~UsesGraph" class="graph" transform="scale(.6372 .6372) rotate(0) translate(4 2048.3925)">
+<svg id="modulesolverUsesGraph" width="641pt" height="1031pt"
+ viewBox="0.00 0.00 641.00 1031.30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~solver~~UsesGraph" class="graph" transform="scale(.7506 .7506) rotate(0) translate(4 1370)">
 <title>module~~solver~~UsesGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-2048.3925 1002,-2048.3925 1002,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1370 850,-1370 850,4 -4,4"/>
 <!-- module~solver -->
 <g id="module~~solver~~UsesGraph_node1" class="node">
 <title>module~solver</title>
-<polygon fill="none" stroke="#000000" points="998,-1188.8263 944,-1188.8263 944,-1164.8263 998,-1164.8263 998,-1188.8263"/>
-<text text-anchor="middle" x="971" y="-1174.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">solver</text>
+<polygon fill="none" stroke="#000000" points="846,-754 792,-754 792,-730 846,-730 846,-754"/>
+<text text-anchor="middle" x="819" y="-739.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">solver</text>
 </g>
-<!-- module~mapping -->
+<!-- module~state -->
 <g id="module~~solver~~UsesGraph_node2" class="node">
-<title>module~mapping</title>
-<g id="a_module~~solver~~UsesGraph_node2"><a xlink:href=".././module/mapping.html" xlink:title="mapping">
-<polygon fill="#337ab7" stroke="#337ab7" points="581,-1736.8263 527,-1736.8263 527,-1712.8263 581,-1712.8263 581,-1736.8263"/>
-<text text-anchor="middle" x="554" y="-1722.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mapping</text>
+<title>module~state</title>
+<g id="a_module~~solver~~UsesGraph_node2"><a xlink:href=".././module/state.html" xlink:title="state">
+<polygon fill="#337ab7" stroke="#337ab7" points="336.5,-1345 282.5,-1345 282.5,-1321 336.5,-1321 336.5,-1345"/>
+<text text-anchor="middle" x="309.5" y="-1330.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">state</text>
 </a>
 </g>
 </g>
-<!-- module~solver&#45;&gt;module~mapping -->
+<!-- module~solver&#45;&gt;module~state -->
 <g id="module~~solver~~UsesGraph_edge1" class="edge">
-<title>module~solver&#45;&gt;module~mapping</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-1724.8263C687.4307,-1720.7309 628.7869,-1721.7171 591.5514,-1723.0559"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="591.0356,-1719.5732 581.1788,-1723.4582 591.3069,-1726.5679 591.0356,-1719.5732"/>
+<title>module~solver&#45;&gt;module~state</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-1294C510.3437,-1338.7472 403.1548,-1339.6728 347.0515,-1336.4043"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="347.0719,-1332.8981 336.8628,-1335.7307 346.6101,-1339.8828 347.0719,-1332.8981"/>
 </g>
 <!-- module~read -->
 <g id="module~~solver~~UsesGraph_node3" class="node">
 <title>module~read</title>
 <g id="a_module~~solver~~UsesGraph_node3"><a xlink:href=".././module/read.html" xlink:title="read">
-<polygon fill="#337ab7" stroke="#337ab7" points="581,-1778.8263 527,-1778.8263 527,-1754.8263 581,-1754.8263 581,-1778.8263"/>
-<text text-anchor="middle" x="554" y="-1764.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-340 398.5,-340 398.5,-316 452.5,-316 452.5,-340"/>
+<text text-anchor="middle" x="425.5" y="-325.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read</text>
 </a>
 </g>
 </g>
 <!-- module~solver&#45;&gt;module~read -->
-<g id="module~~solver~~UsesGraph_edge2" class="edge">
-<title>module~solver&#45;&gt;module~read</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-1724.8263C709.8385,-1722.5456 636.117,-1742.3981 590.9997,-1755.5983"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="589.8852,-1752.2779 581.2859,-1758.4667 591.8677,-1758.9913 589.8852,-1752.2779"/>
-</g>
-<!-- module~global_vars -->
-<g id="module~~solver~~UsesGraph_node4" class="node">
-<title>module~global_vars</title>
-<g id="a_module~~solver~~UsesGraph_node4"><a xlink:href=".././module/global_vars.html" xlink:title="global_vars">
-<polygon fill="#337ab7" stroke="#337ab7" points="157,-988.8263 90,-988.8263 90,-964.8263 157,-964.8263 157,-988.8263"/>
-<text text-anchor="middle" x="123.5" y="-974.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_vars</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge3" class="edge">
-<title>module~solver&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-504.8263C690.3315,-471.3494 678.5512,-457.789 622,-443.8263 498.1632,-413.2507 445.5199,-380.1413 335,-443.8263 225.9525,-506.6629 239.8036,-571.9965 193,-688.8263 154.9358,-783.8411 134.0534,-905.1644 126.6411,-954.4816"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="123.1382,-954.2474 125.1524,-964.649 130.0643,-955.2616 123.1382,-954.2474"/>
-</g>
-<!-- module~viscosity -->
-<g id="module~~solver~~UsesGraph_node5" class="node">
-<title>module~viscosity</title>
-<g id="a_module~~solver~~UsesGraph_node5"><a xlink:href=".././module/viscosity.html" xlink:title="viscosity">
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-834.8263 711,-834.8263 711,-810.8263 765,-810.8263 765,-834.8263"/>
-<text text-anchor="middle" x="738" y="-820.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">viscosity</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~viscosity -->
-<g id="module~~solver~~UsesGraph_edge4" class="edge">
-<title>module~solver&#45;&gt;module~viscosity</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-700.8263C840.0864,-667.284 860.5961,-770.4482 818,-801.8263 805.6268,-810.941 789.6171,-816.105 775.174,-819.0285"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="774.2661,-815.6334 765.0085,-820.7857 775.4585,-822.5311 774.2661,-815.6334"/>
-</g>
-<!-- module~wall -->
-<g id="module~~solver~~UsesGraph_node6" class="node">
-<title>module~wall</title>
-<g id="a_module~~solver~~UsesGraph_node6"><a xlink:href=".././module/wall.html" xlink:title="wall">
-<polygon fill="#337ab7" stroke="#337ab7" points="581,-1897.8263 527,-1897.8263 527,-1873.8263 581,-1873.8263 581,-1897.8263"/>
-<text text-anchor="middle" x="554" y="-1883.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">wall</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~wall -->
-<g id="module~~solver~~UsesGraph_edge5" class="edge">
-<title>module~solver&#45;&gt;module~wall</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-1846.8263C689.7093,-1867.5061 629.4488,-1877.5962 591.333,-1882.2396"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="590.7308,-1878.7857 581.198,-1883.409 591.5333,-1885.7396 590.7308,-1878.7857"/>
-</g>
-<!-- module~bc_primitive -->
-<g id="module~~solver~~UsesGraph_node7" class="node">
-<title>module~bc_primitive</title>
-<g id="a_module~~solver~~UsesGraph_node7"><a xlink:href=".././module/bc_primitive.html" xlink:title="bc_primitive">
-<polygon fill="#337ab7" stroke="#337ab7" points="773,-1188.8263 703,-1188.8263 703,-1164.8263 773,-1164.8263 773,-1188.8263"/>
-<text text-anchor="middle" x="738" y="-1174.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bc_primitive</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~bc_primitive -->
 <g id="module~~solver~~UsesGraph_edge6" class="edge">
-<title>module~solver&#45;&gt;module~bc_primitive</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1176.8263C849.1028,-1185.5017 811.702,-1185.1528 783.1513,-1182.82"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="783.3402,-1179.3226 773.0597,-1181.8838 782.6936,-1186.2927 783.3402,-1179.3226"/>
+<title>module~solver&#45;&gt;module~read</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-368C684.9449,-322.1911 649.5063,-365.4979 586,-368"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-368C542.4424,-369.7161 494.109,-355.3332 461.9781,-343.3399"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="463.1398,-340.0368 452.5499,-339.715 460.6278,-346.5705 463.1398,-340.0368"/>
 </g>
-<!-- module~cc -->
-<g id="module~~solver~~UsesGraph_node8" class="node">
-<title>module~cc</title>
-<g id="a_module~~solver~~UsesGraph_node8"><a xlink:href=".././module/cc.html" xlink:title="CC">
-<polygon fill="#337ab7" stroke="#337ab7" points="419.5,-754.8263 365.5,-754.8263 365.5,-730.8263 419.5,-730.8263 419.5,-754.8263"/>
-<text text-anchor="middle" x="392.5" y="-740.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">CC</text>
+<!-- module~scheme -->
+<g id="module~~solver~~UsesGraph_node4" class="node">
+<title>module~scheme</title>
+<g id="a_module~~solver~~UsesGraph_node4"><a xlink:href=".././module/scheme.html" xlink:title="scheme">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-1094 559,-1094 559,-1070 613,-1070 613,-1094"/>
+<text text-anchor="middle" x="586" y="-1079.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">scheme</text>
 </a>
 </g>
 </g>
-<!-- module~solver&#45;&gt;module~cc -->
-<g id="module~~solver~~UsesGraph_edge25" class="edge">
-<title>module~solver&#45;&gt;module~cc</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-504.8263C682.8678,-465.4003 677.0916,-564.3435 622,-603.8263 564.8162,-644.8086 546.1169,-648.282 486,-684.8263 463.8366,-698.2992 438.8805,-713.7967 420.3293,-725.3809"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="418.4012,-722.4586 411.7771,-730.7274 422.1119,-728.3942 418.4012,-722.4586"/>
-</g>
-<!-- module~bc -->
-<g id="module~~solver~~UsesGraph_node9" class="node">
-<title>module~bc</title>
-<g id="a_module~~solver~~UsesGraph_node9"><a xlink:href=".././module/bc.html" xlink:title="bc">
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-1305.8263 711,-1305.8263 711,-1281.8263 765,-1281.8263 765,-1305.8263"/>
-<text text-anchor="middle" x="738" y="-1291.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bc</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~bc -->
-<g id="module~~solver~~UsesGraph_edge8" class="edge">
-<title>module~solver&#45;&gt;module~bc</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1176.8263C824.938,-1192.0741 776.6238,-1244.3119 753.1567,-1273.5661"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="750.3551,-1271.467 746.95,-1281.4998 755.8684,-1275.7802 750.3551,-1271.467"/>
-</g>
-<!-- Scheme -->
-<g id="module~~solver~~UsesGraph_node10" class="node">
-<title>Scheme</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="908,-1228.8263 854,-1228.8263 854,-1204.8263 908,-1204.8263 908,-1228.8263"/>
-<text text-anchor="middle" x="881" y="-1214.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Scheme</text>
-</g>
-<!-- module~solver&#45;&gt;Scheme -->
-<g id="module~~solver~~UsesGraph_edge9" class="edge">
-<title>module~solver&#45;&gt;Scheme</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M943.997,-1188.8277C935.7078,-1192.5118 926.4431,-1196.6294 917.6234,-1200.5493"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="916.0116,-1197.4354 908.295,-1204.6952 918.8546,-1203.8321 916.0116,-1197.4354"/>
-</g>
-<!-- module~geometry -->
-<g id="module~~solver~~UsesGraph_node11" class="node">
-<title>module~geometry</title>
-<g id="a_module~~solver~~UsesGraph_node11"><a xlink:href=".././module/geometry.html" xlink:title="geometry">
-<polygon fill="#337ab7" stroke="#337ab7" points="583,-1462.8263 525,-1462.8263 525,-1438.8263 583,-1438.8263 583,-1462.8263"/>
-<text text-anchor="middle" x="554" y="-1448.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">geometry</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~geometry -->
-<g id="module~~solver~~UsesGraph_edge10" class="edge">
-<title>module~solver&#45;&gt;module~geometry</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M969.9391,-1188.9093C963.0425,-1266.1172 923.5261,-1688.3291 881,-1724.8263"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1724.8263C816.9994,-1779.7536 877.4275,-1605.6716 818,-1545.8263 756.1233,-1483.5146 650.4728,-1461.8523 593.3868,-1454.4891"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="593.6615,-1450.9969 583.3143,-1453.2741 592.8231,-1457.9466 593.6615,-1450.9969"/>
-</g>
-<!-- module~wall_dist -->
-<g id="module~~solver~~UsesGraph_node12" class="node">
-<title>module~wall_dist</title>
-<g id="a_module~~solver~~UsesGraph_node12"><a xlink:href=".././module/wall_dist.html" xlink:title="wall_dist">
-<polygon fill="#337ab7" stroke="#337ab7" points="419.5,-1858.8263 365.5,-1858.8263 365.5,-1834.8263 419.5,-1834.8263 419.5,-1858.8263"/>
-<text text-anchor="middle" x="392.5" y="-1844.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">wall_dist</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~wall_dist -->
-<g id="module~~solver~~UsesGraph_edge14" class="edge">
-<title>module~solver&#45;&gt;module~wall_dist</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1724.8263C839.6442,-1759.0214 861.4387,-1796.3194 818,-1827.8263 788.4176,-1849.283 771.5939,-1832.4403 738,-1846.8263"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-1846.8263C683.5601,-1870.1394 507.5441,-1857.488 429.894,-1850.4832"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="429.8918,-1846.9683 419.613,-1849.5366 429.2499,-1853.9388 429.8918,-1846.9683"/>
-</g>
-<!-- module~source -->
-<g id="module~~solver~~UsesGraph_node13" class="node">
-<title>module~source</title>
-<g id="a_module~~solver~~UsesGraph_node13"><a xlink:href=".././module/source.html" xlink:title="source">
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-712.8263 711,-712.8263 711,-688.8263 765,-688.8263 765,-712.8263"/>
-<text text-anchor="middle" x="738" y="-698.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">source</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~source -->
-<g id="module~~solver~~UsesGraph_edge12" class="edge">
-<title>module~solver&#45;&gt;module~source</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-700.8263C851.7223,-676.8234 806.5826,-681.417 774.8676,-689.0552"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="773.8714,-685.6979 765.0793,-691.6097 775.6391,-692.471 773.8714,-685.6979"/>
-</g>
-<!-- module~utils -->
-<g id="module~~solver~~UsesGraph_node14" class="node">
-<title>module~utils</title>
-<g id="a_module~~solver~~UsesGraph_node14"><a xlink:href=".././module/utils.html" xlink:title="utils">
-<polygon fill="#337ab7" stroke="#337ab7" points="273,-988.8263 219,-988.8263 219,-964.8263 273,-964.8263 273,-988.8263"/>
-<text text-anchor="middle" x="246" y="-974.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge13" class="edge">
-<title>module~solver&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1724.8263C832.0194,-1765.3259 801.3481,-1729.9567 738,-1724.8263"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-1724.8263C668.3893,-1719.1888 676.669,-1662.2859 622,-1618.8263 525.063,-1541.7655 470.8755,-1556.7036 392.5,-1460.8263"/>
-</g>
-<!-- module~resnorm -->
-<g id="module~~solver~~UsesGraph_node15" class="node">
-<title>module~resnorm</title>
-<g id="a_module~~solver~~UsesGraph_node15"><a xlink:href=".././module/resnorm.html" xlink:title="resnorm">
-<polygon fill="#337ab7" stroke="#337ab7" points="581,-1694.8263 527,-1694.8263 527,-1670.8263 581,-1670.8263 581,-1694.8263"/>
-<text text-anchor="middle" x="554" y="-1680.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">resnorm</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~resnorm -->
-<g id="module~~solver~~UsesGraph_edge15" class="edge">
-<title>module~solver&#45;&gt;module~resnorm</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-1724.8263C686.0566,-1720.6196 627.6345,-1705.4286 590.8331,-1694.5256"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="591.6345,-1691.1117 581.0499,-1691.5768 589.6144,-1697.8139 591.6345,-1691.1117"/>
-</g>
-<!-- module~update -->
-<g id="module~~solver~~UsesGraph_node16" class="node">
-<title>module~update</title>
-<g id="a_module~~solver~~UsesGraph_node16"><a xlink:href=".././module/update.html" xlink:title="update">
-<polygon fill="#337ab7" stroke="#337ab7" points="908,-1010.8263 854,-1010.8263 854,-986.8263 908,-986.8263 908,-1010.8263"/>
-<text text-anchor="middle" x="881" y="-996.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~update -->
-<g id="module~~solver~~UsesGraph_edge16" class="edge">
-<title>module~solver&#45;&gt;module~update</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M964.8139,-1164.5917C949.7211,-1134.7413 910.8562,-1057.8753 891.8251,-1020.2359"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="894.8651,-1018.4915 887.2294,-1011.1466 888.6182,-1021.65 894.8651,-1018.4915"/>
-</g>
-<!-- module~interface1 -->
-<g id="module~~solver~~UsesGraph_node17" class="node">
-<title>module~interface1</title>
-<g id="a_module~~solver~~UsesGraph_node17"><a xlink:href=".././module/interface1.html" xlink:title="interface1">
-<polygon fill="#337ab7" stroke="#337ab7" points="768,-1578.8263 708,-1578.8263 708,-1554.8263 768,-1554.8263 768,-1578.8263"/>
-<text text-anchor="middle" x="738" y="-1564.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">interface1</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~interface1 -->
-<g id="module~~solver~~UsesGraph_edge17" class="edge">
-<title>module~solver&#45;&gt;module~interface1</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1176.8263C866.841,-1180.6773 861.897,-1183.4592 854,-1195.8263 805.6282,-1271.5798 845.1756,-1309.1531 818,-1394.8263 799.9521,-1451.7237 767.3583,-1514.2728 749.8628,-1545.9495"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="746.7691,-1544.311 744.9507,-1554.7486 752.8812,-1547.7231 746.7691,-1544.311"/>
-</g>
-<!-- module~time -->
-<g id="module~~solver~~UsesGraph_node18" class="node">
-<title>module~time</title>
-<g id="a_module~~solver~~UsesGraph_node18"><a xlink:href=".././module/time.html" xlink:title="time">
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-1385.8263 711,-1385.8263 711,-1361.8263 765,-1361.8263 765,-1385.8263"/>
-<text text-anchor="middle" x="738" y="-1371.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">time</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~time -->
-<g id="module~~solver~~UsesGraph_edge18" class="edge">
-<title>module~solver&#45;&gt;module~time</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1176.8263C802.8453,-1198.0828 872.8854,-1288.2646 818,-1347.8263 807.0645,-1359.6935 790.6643,-1366.1602 775.5545,-1369.6774"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="774.5228,-1366.3129 765.3829,-1371.6713 775.8695,-1373.1822 774.5228,-1366.3129"/>
-</g>
-<!-- module~viscous -->
-<g id="module~~solver~~UsesGraph_node19" class="node">
-<title>module~viscous</title>
-<g id="a_module~~solver~~UsesGraph_node19"><a xlink:href=".././module/viscous.html" xlink:title="viscous">
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-792.8263 711,-792.8263 711,-768.8263 765,-768.8263 765,-792.8263"/>
-<text text-anchor="middle" x="738" y="-778.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">viscous</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~viscous -->
-<g id="module~~solver~~UsesGraph_edge19" class="edge">
-<title>module~solver&#45;&gt;module~viscous</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-700.8263C852.481,-677.4455 850.1595,-736.7773 818,-754.8263 804.6776,-762.3033 788.8848,-768.0111 774.8651,-772.1471"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="773.7262,-768.831 765.0306,-774.8838 775.6029,-775.5747 773.7262,-768.831"/>
-</g>
-<!-- module~state -->
-<g id="module~~solver~~UsesGraph_node20" class="node">
-<title>module~state</title>
-<g id="a_module~~solver~~UsesGraph_node20"><a xlink:href=".././module/state.html" xlink:title="state">
-<polygon fill="#337ab7" stroke="#337ab7" points="581,-396.8263 527,-396.8263 527,-372.8263 581,-372.8263 581,-396.8263"/>
-<text text-anchor="middle" x="554" y="-382.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">state</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~state -->
-<g id="module~~solver~~UsesGraph_edge20" class="edge">
-<title>module~solver&#45;&gt;module~state</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-504.8263C684.0237,-466.2269 679.4838,-443.9771 622,-410.8263 612.2923,-405.2279 601.1521,-400.3887 590.7362,-396.4542"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="591.6366,-393.0585 581.0421,-392.9641 589.2653,-399.6447 591.6366,-393.0585"/>
+<!-- module~solver&#45;&gt;module~scheme -->
+<g id="module~~solver~~UsesGraph_edge4" class="edge">
+<title>module~solver&#45;&gt;module~scheme</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-1062C701.2167,-1088.5856 655.3846,-1090.4915 623.1096,-1087.7487"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="623.4538,-1084.2657 613.1472,-1086.7202 622.7349,-1091.2287 623.4538,-1084.2657"/>
 </g>
 <!-- module~layout -->
-<g id="module~~solver~~UsesGraph_node21" class="node">
+<g id="module~~solver~~UsesGraph_node5" class="node">
 <title>module~layout</title>
-<g id="a_module~~solver~~UsesGraph_node21"><a xlink:href=".././module/layout.html" xlink:title="layout">
-<polygon fill="#337ab7" stroke="#337ab7" points="419.5,-556.8263 365.5,-556.8263 365.5,-532.8263 419.5,-532.8263 419.5,-556.8263"/>
-<text text-anchor="middle" x="392.5" y="-542.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">layout</text>
+<g id="a_module~~solver~~UsesGraph_node5"><a xlink:href=".././module/layout.html" xlink:title="layout">
+<polygon fill="#337ab7" stroke="#337ab7" points="336.5,-24 282.5,-24 282.5,0 336.5,0 336.5,-24"/>
+<text text-anchor="middle" x="309.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">layout</text>
 </a>
 </g>
 </g>
 <!-- module~solver&#45;&gt;module~layout -->
-<g id="module~~solver~~UsesGraph_edge21" class="edge">
+<g id="module~~solver~~UsesGraph_edge5" class="edge">
 <title>module~solver&#45;&gt;module~layout</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-504.8263C689.0311,-470.3577 508.5425,-513.3122 429.7285,-534.4086"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="428.4874,-531.1184 419.7488,-537.1089 430.3158,-537.8755 428.4874,-531.1184"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M817.6712,-729.6721C811.1386,-671.2483 780.6467,-422.7957 729,-368"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-368C660.1185,-294.9187 712.9176,-239.7934 666,-151 639.8931,-101.5916 631.0315,-87.0897 586,-54"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-54C514.3577,-1.3563 403.7476,-2.5329 346.5638,-7.4715"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="346.1534,-3.9946 336.5295,-8.4253 346.8158,-10.9632 346.1534,-3.9946"/>
 </g>
-<!-- module~summon_grad_evaluation -->
-<g id="module~~solver~~UsesGraph_node22" class="node">
-<title>module~summon_grad_evaluation</title>
-<g id="a_module~~solver~~UsesGraph_node22"><a xlink:href=".././module/summon_grad_evaluation.html" xlink:title="summon_grad_evaluation">
-<polygon fill="#337ab7" stroke="#337ab7" points="622,-594.8263 486,-594.8263 486,-570.8263 622,-570.8263 622,-594.8263"/>
-<text text-anchor="middle" x="554" y="-580.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">summon_grad_evaluation</text>
+<!-- module~time -->
+<g id="module~~solver~~UsesGraph_node6" class="node">
+<title>module~time</title>
+<g id="a_module~~solver~~UsesGraph_node6"><a xlink:href=".././module/time.html" xlink:title="time">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-496 559,-496 559,-472 613,-472 613,-496"/>
+<text text-anchor="middle" x="586" y="-481.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">time</text>
 </a>
 </g>
 </g>
-<!-- module~solver&#45;&gt;module~summon_grad_evaluation -->
-<g id="module~~solver~~UsesGraph_edge22" class="edge">
-<title>module~solver&#45;&gt;module~summon_grad_evaluation</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-504.8263C692.0432,-471.9618 674.1847,-535.1733 622,-556.8263 613.6877,-560.2753 604.7389,-563.8171 596.1506,-567.1333"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="594.7493,-563.9219 586.6604,-570.7644 597.2509,-570.4596 594.7493,-563.9219"/>
+<!-- module~solver&#45;&gt;module~time -->
+<g id="module~~solver~~UsesGraph_edge17" class="edge">
+<title>module~solver&#45;&gt;module~time</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-368C694.8413,-333.1118 705.2462,-428.9529 666,-458 653.5314,-467.2283 637.6372,-473.2747 623.3066,-477.191"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="622.089,-473.8864 613.2194,-479.6812 623.7668,-480.6824 622.089,-473.8864"/>
 </g>
-<!-- module~string -->
-<g id="module~~solver~~UsesGraph_node23" class="node">
-<title>module~string</title>
-<g id="a_module~~solver~~UsesGraph_node23"><a xlink:href=".././module/string.html" xlink:title="string">
-<polygon fill="#337ab7" stroke="#337ab7" points="419.5,-948.8263 365.5,-948.8263 365.5,-924.8263 419.5,-924.8263 419.5,-948.8263"/>
-<text text-anchor="middle" x="392.5" y="-934.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">string</text>
+<!-- module~wall_dist -->
+<g id="module~~solver~~UsesGraph_node7" class="node">
+<title>module~wall_dist</title>
+<g id="a_module~~solver~~UsesGraph_node7"><a xlink:href=".././module/wall_dist.html" xlink:title="wall_dist">
+<polygon fill="#337ab7" stroke="#337ab7" points="336.5,-496 282.5,-496 282.5,-472 336.5,-472 336.5,-496"/>
+<text text-anchor="middle" x="309.5" y="-481.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">wall_dist</text>
 </a>
 </g>
 </g>
-<!-- module~solver&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge23" class="edge">
-<title>module~solver&#45;&gt;module~string</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M943.7298,-1173.1501C925.6239,-1171.5979 901.5051,-1171.2494 881,-1176.8263"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1176.8263C829.9488,-1190.7112 863.3104,-1103.1389 818,-1075.8263 717.2514,-1015.0963 667.4354,-1087.9844 554,-1056.8263"/>
+<!-- module~solver&#45;&gt;module~wall_dist -->
+<g id="module~~solver~~UsesGraph_edge19" class="edge">
+<title>module~solver&#45;&gt;module~wall_dist</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-368C718.3222,-356.8971 484.9797,-463.4085 470,-467 428.4475,-476.9624 379.4472,-481.0882 346.6168,-482.7959"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="346.38,-479.3031 336.5558,-483.2697 346.7094,-486.2953 346.38,-479.3031"/>
+</g>
+<!-- module~resnorm -->
+<g id="module~~solver~~UsesGraph_node8" class="node">
+<title>module~resnorm</title>
+<g id="a_module~~solver~~UsesGraph_node8"><a xlink:href=".././module/resnorm.html" xlink:title="resnorm">
+<polygon fill="#337ab7" stroke="#337ab7" points="336.5,-260 282.5,-260 282.5,-236 336.5,-236 336.5,-260"/>
+<text text-anchor="middle" x="309.5" y="-245.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">resnorm</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~resnorm -->
+<g id="module~~solver~~UsesGraph_edge8" class="edge">
+<title>module~solver&#45;&gt;module~resnorm</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-250C508.2561,-211.3664 402.3692,-226.3182 346.8981,-238.4268"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="345.7975,-235.0877 336.8222,-240.7175 347.3493,-241.9135 345.7975,-235.0877"/>
+</g>
+<!-- module~viscosity -->
+<g id="module~~solver~~UsesGraph_node9" class="node">
+<title>module~viscosity</title>
+<g id="a_module~~solver~~UsesGraph_node9"><a xlink:href=".././module/viscosity.html" xlink:title="viscosity">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-614 398.5,-614 398.5,-590 452.5,-590 452.5,-614"/>
+<text text-anchor="middle" x="425.5" y="-599.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">viscosity</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~viscosity -->
+<g id="module~~solver~~UsesGraph_edge9" class="edge">
+<title>module~solver&#45;&gt;module~viscosity</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-368C682.1142,-320.1129 714.5046,-458.7532 666,-505 635.6596,-533.9282 522.1935,-572.0993 462.5964,-590.7577"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="461.3321,-587.4854 452.8205,-593.7945 463.4087,-594.1703 461.3321,-587.4854"/>
+</g>
+<!-- module~update -->
+<g id="module~~solver~~UsesGraph_node10" class="node">
+<title>module~update</title>
+<g id="a_module~~solver~~UsesGraph_node10"><a xlink:href=".././module/update.html" xlink:title="update">
+<polygon fill="#337ab7" stroke="#337ab7" points="756,-754 702,-754 702,-730 756,-730 756,-754"/>
+<text text-anchor="middle" x="729" y="-739.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~update -->
+<g id="module~~solver~~UsesGraph_edge10" class="edge">
+<title>module~solver&#45;&gt;module~update</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M791.997,-742C783.9723,-742 775.0335,-742 766.4691,-742"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="766.295,-738.5001 756.295,-742 766.2949,-745.5001 766.295,-738.5001"/>
+</g>
+<!-- module~wall -->
+<g id="module~~solver~~UsesGraph_node11" class="node">
+<title>module~wall</title>
+<g id="a_module~~solver~~UsesGraph_node11"><a xlink:href=".././module/wall.html" xlink:title="wall">
+<polygon fill="#337ab7" stroke="#337ab7" points="336.5,-900 282.5,-900 282.5,-876 336.5,-876 336.5,-900"/>
+<text text-anchor="middle" x="309.5" y="-885.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">wall</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~wall -->
+<g id="module~~solver~~UsesGraph_edge2" class="edge">
+<title>module~solver&#45;&gt;module~wall</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-1062C710.0607,-1080.1229 528.0343,-999.1995 506,-985 486.4444,-972.3979 489.4299,-959.795 470,-947 431.4641,-921.6232 380.561,-905.3129 346.5113,-896.4139"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="347.0703,-892.9452 336.5176,-893.8883 345.3552,-899.7319 347.0703,-892.9452"/>
 </g>
 <!-- module~gradients -->
-<g id="module~~solver~~UsesGraph_node24" class="node">
+<g id="module~~solver~~UsesGraph_node12" class="node">
 <title>module~gradients</title>
-<g id="a_module~~solver~~UsesGraph_node24"><a xlink:href=".././module/gradients.html" xlink:title="gradients">
-<polygon fill="#337ab7" stroke="#337ab7" points="421,-160.8263 364,-160.8263 364,-136.8263 421,-136.8263 421,-160.8263"/>
-<text text-anchor="middle" x="392.5" y="-146.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gradients</text>
+<g id="a_module~~solver~~UsesGraph_node12"><a xlink:href=".././module/gradients.html" xlink:title="gradients">
+<polygon fill="#337ab7" stroke="#337ab7" points="338,-820 281,-820 281,-796 338,-796 338,-820"/>
+<text text-anchor="middle" x="309.5" y="-805.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gradients</text>
 </a>
 </g>
 </g>
 <!-- module~solver&#45;&gt;module~gradients -->
-<g id="module~~solver~~UsesGraph_edge24" class="edge">
+<g id="module~~solver~~UsesGraph_edge11" class="edge">
 <title>module~solver&#45;&gt;module~gradients</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M554,-148.8263C519.6282,-121.5286 466.9016,-127.6166 431.1217,-136.4667"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="429.8226,-133.1903 421.0553,-139.1389 431.6186,-139.956 429.8226,-133.1903"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-1062C641.4863,-1145.7411 691.7577,-1234.9532 586,-1294"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-1294C503.4303,-1340.1005 441.5121,-1309.6725 381,-1237 323.4668,-1167.905 389.1969,-912.2996 345,-834 343.5566,-831.4429 341.7463,-829.0675 339.7119,-826.8769"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="341.9383,-824.1731 332.1388,-820.1456 337.2879,-829.4051 341.9383,-824.1731"/>
 </g>
-<!-- module~boundary_state_reconstruction -->
-<g id="module~~solver~~UsesGraph_node25" class="node">
-<title>module~boundary_state_reconstruction</title>
-<g id="a_module~~solver~~UsesGraph_node25"><a xlink:href=".././module/boundary_state_reconstruction.html" xlink:title="boundary_state_reconstruction">
-<polygon fill="#337ab7" stroke="#337ab7" points="818,-1108.8263 658,-1108.8263 658,-1084.8263 818,-1084.8263 818,-1108.8263"/>
-<text text-anchor="middle" x="738" y="-1094.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">boundary_state_reconstruction</text>
+<!-- module~interface1 -->
+<g id="module~~solver~~UsesGraph_node13" class="node">
+<title>module~interface1</title>
+<g id="a_module~~solver~~UsesGraph_node13"><a xlink:href=".././module/interface1.html" xlink:title="interface1">
+<polygon fill="#337ab7" stroke="#337ab7" points="616,-321 556,-321 556,-297 616,-297 616,-321"/>
+<text text-anchor="middle" x="586" y="-306.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">interface1</text>
 </a>
 </g>
 </g>
-<!-- module~solver&#45;&gt;module~boundary_state_reconstruction -->
+<!-- module~solver&#45;&gt;module~interface1 -->
+<g id="module~~solver~~UsesGraph_edge13" class="edge">
+<title>module~solver&#45;&gt;module~interface1</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-368C701.1956,-339.6019 657.7521,-324.3203 626.0413,-316.4803"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="626.7255,-313.0461 616.1926,-314.1892 625.1394,-319.864 626.7255,-313.0461"/>
+</g>
+<!-- module~cc -->
+<g id="module~~solver~~UsesGraph_node14" class="node">
+<title>module~cc</title>
+<g id="a_module~~solver~~UsesGraph_node14"><a xlink:href=".././module/cc.html" xlink:title="CC">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-458 398.5,-458 398.5,-434 452.5,-434 452.5,-458"/>
+<text text-anchor="middle" x="425.5" y="-443.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">CC</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~cc -->
+<g id="module~~solver~~UsesGraph_edge12" class="edge">
+<title>module~solver&#45;&gt;module~cc</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-368C572.1565,-368.5454 499.2988,-406.4101 456.6556,-429.1756"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="454.9552,-426.1159 447.792,-433.9223 458.2599,-432.2867 454.9552,-426.1159"/>
+</g>
+<!-- module~bc -->
+<g id="module~~solver~~UsesGraph_node15" class="node">
+<title>module~bc</title>
+<g id="a_module~~solver~~UsesGraph_node15"><a xlink:href=".././module/bc.html" xlink:title="bc">
+<polygon fill="#337ab7" stroke="#337ab7" points="336.5,-146 282.5,-146 282.5,-122 336.5,-122 336.5,-146"/>
+<text text-anchor="middle" x="309.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bc</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~bc -->
+<g id="module~~solver~~UsesGraph_edge14" class="edge">
+<title>module~solver&#45;&gt;module~bc</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-368C697.9588,-335.0661 701.3724,-316.231 666,-288 635.2344,-263.4457 620.6999,-268.5835 586,-250"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-250C516.4231,-212.7382 500.7484,-197.813 425.5,-174"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M425.5,-174C398.7854,-165.5459 368.8992,-155.2194 346.1533,-147.1765"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="347.1526,-143.8173 336.5578,-143.7694 344.8102,-150.4138 347.1526,-143.8173"/>
+</g>
+<!-- module~vartypes -->
+<g id="module~~solver~~UsesGraph_node16" class="node">
+<title>module~vartypes</title>
+<g id="a_module~~solver~~UsesGraph_node16"><a xlink:href=".././module/vartypes.html" xlink:title="vartypes">
+<polygon fill="#337ab7" stroke="#337ab7" points="207.5,-418 153.5,-418 153.5,-394 207.5,-394 207.5,-418"/>
+<text text-anchor="middle" x="180.5" y="-403.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vartypes</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge15" class="edge">
+<title>module~solver&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M425.5,-174C376.347,-158.4451 356.5449,-152.9109 309.5,-174"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M309.5,-174C224.874,-211.9358 193.582,-333.5859 184.0664,-383.8986"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="180.6178,-383.3016 182.3111,-393.7602 187.5094,-384.5283 180.6178,-383.3016"/>
+</g>
+<!-- module~viscous -->
+<g id="module~~solver~~UsesGraph_node17" class="node">
+<title>module~viscous</title>
+<g id="a_module~~solver~~UsesGraph_node17"><a xlink:href=".././module/viscous.html" xlink:title="viscous">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-976 559,-976 559,-952 613,-952 613,-976"/>
+<text text-anchor="middle" x="586" y="-961.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">viscous</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~viscous -->
+<g id="module~~solver~~UsesGraph_edge16" class="edge">
+<title>module~solver&#45;&gt;module~viscous</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M817.2697,-754.007C809.43,-806.7715 775.5961,-1017.4126 729,-1062"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-1062C723.908,-1066.8725 649.6945,-1012.1368 610.2477,-982.4222"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="612.0281,-979.3808 601.9391,-976.1462 607.8089,-984.9664 612.0281,-979.3808"/>
+</g>
+<!-- module~geometry -->
+<g id="module~~solver~~UsesGraph_node18" class="node">
+<title>module~geometry</title>
+<g id="a_module~~solver~~UsesGraph_node18"><a xlink:href=".././module/geometry.html" xlink:title="geometry">
+<polygon fill="#337ab7" stroke="#337ab7" points="338.5,-378 280.5,-378 280.5,-354 338.5,-354 338.5,-378"/>
+<text text-anchor="middle" x="309.5" y="-363.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">geometry</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~geometry -->
 <g id="module~~solver~~UsesGraph_edge7" class="edge">
-<title>module~solver&#45;&gt;module~boundary_state_reconstruction</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1176.8263C856.2005,-1183.5713 795.1704,-1140.9414 761.4079,-1115.2752"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="763.5111,-1112.4773 753.4504,-1109.1557 759.2438,-1118.0263 763.5111,-1112.4773"/>
+<title>module~solver&#45;&gt;module~geometry</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-368C501.4573,-371.3309 402.2649,-369.1273 348.668,-367.4311"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="348.6837,-363.9298 338.5745,-367.1004 348.4545,-370.9261 348.6837,-363.9298"/>
 </g>
 <!-- module~dump_solution -->
-<g id="module~~solver~~UsesGraph_node26" class="node">
+<g id="module~~solver~~UsesGraph_node19" class="node">
 <title>module~dump_solution</title>
-<g id="a_module~~solver~~UsesGraph_node26"><a xlink:href=".././module/dump_solution.html" xlink:title="dump_solution">
-<polygon fill="#337ab7" stroke="#337ab7" points="595,-476.8263 513,-476.8263 513,-452.8263 595,-452.8263 595,-476.8263"/>
-<text text-anchor="middle" x="554" y="-462.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dump_solution</text>
+<g id="a_module~~solver~~UsesGraph_node19"><a xlink:href=".././module/dump_solution.html" xlink:title="dump_solution">
+<polygon fill="#337ab7" stroke="#337ab7" points="466.5,-66 384.5,-66 384.5,-42 466.5,-42 466.5,-66"/>
+<text text-anchor="middle" x="425.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dump_solution</text>
 </a>
 </g>
 </g>
 <!-- module~solver&#45;&gt;module~dump_solution -->
-<g id="module~~solver~~UsesGraph_edge26" class="edge">
+<g id="module~~solver~~UsesGraph_edge18" class="edge">
 <title>module~solver&#45;&gt;module~dump_solution</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-504.8263C699.1887,-477.0717 644.8215,-467.9627 605.2529,-465.2601"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="605.2034,-461.7518 595.0213,-464.6803 604.8073,-468.7406 605.2034,-461.7518"/>
-</g>
-<!-- module~global -->
-<g id="module~~solver~~UsesGraph_node27" class="node">
-<title>module~global</title>
-<g id="a_module~~solver~~UsesGraph_node27"><a xlink:href=".././module/global.html" xlink:title="global">
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-988.8263 0,-988.8263 0,-964.8263 54,-964.8263 54,-988.8263"/>
-<text text-anchor="middle" x="27" y="-974.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge27" class="edge">
-<title>module~solver&#45;&gt;module~global</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M970.7057,-1164.5475C968.7829,-1096.0476 955.6328,-762.0129 881,-700.8263"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-700.8263C797.6105,-632.4608 826.2885,-566.7359 738,-504.8263"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M738,-504.8263C626.0286,-426.3099 696.3938,-334.5782 622,-219.8263 598.2313,-183.1632 588.2158,-176.0001 554,-148.8263"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M554,-148.8263C423.1519,-44.9083 322.3538,61.946 193,-43.8263 72.5883,-142.2867 198.698,-250.6695 123.5,-386.8263"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M123.5,-386.8263C67.8025,-487.9477 36.0358,-858.8427 28.6674,-954.3013"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="25.1571,-954.3042 27.8898,-964.5406 32.137,-954.8344 25.1571,-954.3042"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M586,-54C554.425,-30.7983 509.1113,-33.0857 474.6789,-39.8607"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="473.8657,-36.4554 464.824,-41.978 475.3361,-43.2993 473.8657,-36.4554"/>
 </g>
 <!-- module~grid -->
-<g id="module~~solver~~UsesGraph_node28" class="node">
+<g id="module~~solver~~UsesGraph_node20" class="node">
 <title>module~grid</title>
-<g id="a_module~~solver~~UsesGraph_node28"><a xlink:href=".././module/grid.html" xlink:title="grid">
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-1818.8263 711,-1818.8263 711,-1794.8263 765,-1794.8263 765,-1818.8263"/>
-<text text-anchor="middle" x="738" y="-1804.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid</text>
+<g id="a_module~~solver~~UsesGraph_node20"><a xlink:href=".././module/grid.html" xlink:title="grid">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-184 559,-184 559,-160 613,-160 613,-184"/>
+<text text-anchor="middle" x="586" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid</text>
 </a>
 </g>
 </g>
 <!-- module~solver&#45;&gt;module~grid -->
-<g id="module~~solver~~UsesGraph_edge11" class="edge">
+<g id="module~~solver~~UsesGraph_edge3" class="edge">
 <title>module~solver&#45;&gt;module~grid</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M881,-1724.8263C848.4702,-1752.7444 805.0505,-1776.0653 774.6213,-1790.6109"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="772.7937,-1787.6023 765.2285,-1795.0198 775.7681,-1793.9389 772.7937,-1787.6023"/>
-</g>
-<!-- module~mapping&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge29" class="edge">
-<title>module~mapping&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M526.8039,-1723.6879C483.3899,-1720.7827 397.0101,-1710.4654 335,-1673.8263 284.0611,-1643.7287 287.07,-1617.4162 246,-1574.8263"/>
-</g>
-<!-- module~mapping&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge28" class="edge">
-<title>module~mapping&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M526.7265,-1721.5328C513.2175,-1718.7161 497.4025,-1713.4958 486,-1703.8263 458.7133,-1680.6868 473.3316,-1658.9489 450,-1631.8263 409.2304,-1584.4324 367.969,-1603.9431 335,-1550.8263 275.8475,-1455.5249 252.2937,-1092.4169 247.1369,-998.899"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="250.6294,-998.6648 246.598,-988.8669 243.6395,-999.0403 250.6294,-998.6648"/>
-</g>
-<!-- module~mapping&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge30" class="edge">
-<title>module~mapping&#45;&gt;module~string</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M526.9295,-1723.6471C512.4303,-1721.4887 495.6197,-1716.2236 486,-1703.8263 384.9334,-1573.5779 542.7253,-1099.139 450,-962.8263 444.9953,-955.4691 437.3786,-950.1631 429.3109,-946.3474"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="430.3469,-942.992 419.7626,-942.5191 427.7418,-949.4892 430.3469,-942.992"/>
-</g>
-<!-- module~mapping&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge31" class="edge">
-<title>module~mapping&#45;&gt;module~global</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M526.9932,-1727.1231C513.0557,-1729.657 496.7652,-1734.9247 486,-1745.8263 446.2772,-1786.0525 489.3265,-1827.2126 450,-1867.8263 431.2774,-1887.1618 415.0721,-1872.167 392.5,-1886.8263"/>
-</g>
-<!-- module~fclose -->
-<g id="module~~solver~~UsesGraph_node47" class="node">
-<title>module~fclose</title>
-<g id="a_module~~solver~~UsesGraph_node47"><a xlink:href=".././module/fclose.html" xlink:title="fclose">
-<polygon fill="#337ab7" stroke="#337ab7" points="419.5,-1664.8263 365.5,-1664.8263 365.5,-1640.8263 419.5,-1640.8263 419.5,-1664.8263"/>
-<text text-anchor="middle" x="392.5" y="-1650.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">fclose</text>
-</a>
-</g>
-</g>
-<!-- module~mapping&#45;&gt;module~fclose -->
-<g id="module~~solver~~UsesGraph_edge32" class="edge">
-<title>module~mapping&#45;&gt;module~fclose</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M526.7937,-1718.4852C514.0553,-1715.0027 498.8854,-1710.1026 486,-1703.8263 468.4873,-1695.2962 466.9451,-1688.4347 450,-1678.8263 443.3824,-1675.074 436.1244,-1671.4443 429.0602,-1668.1469"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="430.1793,-1664.8116 419.6258,-1663.876 427.2924,-1671.1886 430.1793,-1664.8116"/>
-</g>
-<!-- module~read&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge34" class="edge">
-<title>module~read&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff3800" stroke-dasharray="5,2" d="M526.9479,-1777.8673C487.4691,-1793.2486 416.1924,-1818.0432 392.5,-1806.8263"/>
-<path fill="none" stroke="#ff3800" stroke-dasharray="5,2" d="M392.5,-1806.8263C365.4598,-1794.0244 354.8208,-1794.2361 335,-1771.8263 271.3483,-1699.8605 314.3831,-1642.3124 246,-1574.8263"/>
-</g>
-<!-- module~read&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge33" class="edge">
-<title>module~read&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff3800" stroke-dasharray="5,2" d="M526.6341,-1764.0974C478.8419,-1757.7309 380.8905,-1737.2403 335,-1673.8263 294.3786,-1617.6935 255.7596,-1112.2121 247.5837,-999.1785"/>
-<polygon fill="#ff3800" stroke="#ff3800" points="251.057,-998.6792 246.8502,-988.9554 244.0749,-999.1802 251.057,-998.6792"/>
-</g>
-<!-- module~read&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge35" class="edge">
-<title>module~read&#45;&gt;module~string</title>
-<path fill="none" stroke="#ff3800" stroke-dasharray="5,2" d="M526.9172,-1765.6566C512.414,-1763.5013 495.6036,-1758.2361 486,-1745.8263 432.6986,-1676.95 498.8908,-1034.9005 450,-962.8263 445.0049,-955.4626 437.3916,-950.1543 429.3243,-946.3384"/>
-<polygon fill="#ff3800" stroke="#ff3800" points="430.3594,-942.9826 419.775,-942.5107 427.7549,-949.4801 430.3594,-942.9826"/>
-</g>
-<!-- module~read&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge36" class="edge">
-<title>module~read&#45;&gt;module~global</title>
-<path fill="none" stroke="#ff3800" stroke-dasharray="5,2" d="M545.4439,-1779.2404C524.9623,-1808.7158 473.1055,-1881.8643 450,-1900.8263 410.8204,-1932.9798 293.086,-2021.5826 246,-2002.8263"/>
-<path fill="none" stroke="#ff3800" stroke-dasharray="5,2" d="M246,-2002.8263C175.3088,-1977.8277 170.3855,-1945.3406 123.5,-1886.8263"/>
-</g>
-<!-- module~read&#45;&gt;module~fclose -->
-<g id="module~~solver~~UsesGraph_edge37" class="edge">
-<title>module~read&#45;&gt;module~fclose</title>
-<path fill="none" stroke="#ff3800" stroke-dasharray="5,2" d="M526.8441,-1763.3921C513.3661,-1760.5382 497.5434,-1755.3271 486,-1745.8263 459.8995,-1724.3443 474.7063,-1701.8982 450,-1678.8263 443.9089,-1673.1382 436.3606,-1668.5347 428.759,-1664.8736"/>
-<polygon fill="#ff3800" stroke="#ff3800" points="430.1204,-1661.6491 419.5545,-1660.8657 427.3257,-1668.067 430.1204,-1661.6491"/>
-</g>
-<!-- module~global_vars&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge38" class="edge">
-<title>module~global_vars&#45;&gt;module~global</title>
-<path fill="none" stroke="#ff7100" stroke-dasharray="5,2" d="M89.749,-976.8263C81.5708,-976.8263 72.78,-976.8263 64.443,-976.8263"/>
-<polygon fill="#ff7100" stroke="#ff7100" points="64.2058,-973.3264 54.2058,-976.8263 64.2057,-980.3264 64.2058,-973.3264"/>
-</g>
-<!-- module~viscosity&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge42" class="edge">
-<title>module~viscosity&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ffaa00" stroke-dasharray="5,2" d="M710.8551,-821.4756C674.9404,-819.9303 609.6726,-817.9596 554,-820.8263"/>
-</g>
-<!-- module~viscosity&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge43" class="edge">
-<title>module~viscosity&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ffaa00" stroke-dasharray="5,2" d="M715.6188,-834.9044C692.7737,-846.6421 655.9483,-863.9557 622,-872.8263 522.7752,-898.7536 492.8736,-875.7809 392.5,-896.8263"/>
-</g>
-<!-- module~copy_bc -->
-<g id="module~~solver~~UsesGraph_node36" class="node">
-<title>module~copy_bc</title>
-<g id="a_module~~solver~~UsesGraph_node36"><a xlink:href=".././module/copy_bc.html" xlink:title="copy_bc">
-<polygon fill="#337ab7" stroke="#337ab7" points="581,-1028.8263 527,-1028.8263 527,-1004.8263 581,-1004.8263 581,-1028.8263"/>
-<text text-anchor="middle" x="554" y="-1014.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">copy_bc</text>
-</a>
-</g>
-</g>
-<!-- module~viscosity&#45;&gt;module~copy_bc -->
-<g id="module~~solver~~UsesGraph_edge40" class="edge">
-<title>module~viscosity&#45;&gt;module~copy_bc</title>
-<path fill="none" stroke="#ffaa00" stroke-dasharray="5,2" d="M710.925,-834.8775C693.8542,-843.622 672.394,-856.8778 658,-873.8263 631.7071,-904.7854 645.9466,-925.0187 622,-957.8263 610.4772,-973.6129 593.9867,-988.0544 580.131,-998.6982"/>
-<polygon fill="#ffaa00" stroke="#ffaa00" points="577.8462,-996.0356 571.9122,-1004.8128 582.0245,-1001.6518 577.8462,-996.0356"/>
-</g>
-<!-- module~global_sst -->
-<g id="module~~solver~~UsesGraph_node38" class="node">
-<title>module~global_sst</title>
-<g id="a_module~~solver~~UsesGraph_node38"><a xlink:href=".././module/global_sst.html" xlink:title="global_sst">
-<polygon fill="#337ab7" stroke="#337ab7" points="584.5,-948.8263 523.5,-948.8263 523.5,-924.8263 584.5,-924.8263 584.5,-948.8263"/>
-<text text-anchor="middle" x="554" y="-934.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sst</text>
-</a>
-</g>
-</g>
-<!-- module~viscosity&#45;&gt;module~global_sst -->
-<g id="module~~solver~~UsesGraph_edge41" class="edge">
-<title>module~viscosity&#45;&gt;module~global_sst</title>
-<path fill="none" stroke="#ffaa00" stroke-dasharray="5,2" d="M716.0227,-834.971C699.4066,-844.5864 676.3932,-858.8513 658,-873.8263 640.2074,-888.3124 641.1646,-898.2114 622,-910.8263 613.6161,-916.345 603.89,-920.9418 594.4613,-924.6575"/>
-<polygon fill="#ffaa00" stroke="#ffaa00" points="592.9854,-921.4712 584.812,-928.2125 595.4054,-928.0396 592.9854,-921.4712"/>
-</g>
-<!-- module~global_kkl -->
-<g id="module~~solver~~UsesGraph_node43" class="node">
-<title>module~global_kkl</title>
-<g id="a_module~~solver~~UsesGraph_node43"><a xlink:href=".././module/global_kkl.html" xlink:title="global_kkl">
-<polygon fill="#337ab7" stroke="#337ab7" points="584,-792.8263 524,-792.8263 524,-768.8263 584,-768.8263 584,-792.8263"/>
-<text text-anchor="middle" x="554" y="-778.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_kkl</text>
-</a>
-</g>
-</g>
-<!-- module~viscosity&#45;&gt;module~global_kkl -->
-<g id="module~~solver~~UsesGraph_edge39" class="edge">
-<title>module~viscosity&#45;&gt;module~global_kkl</title>
-<path fill="none" stroke="#ffaa00" stroke-dasharray="5,2" d="M710.8502,-816.6291C680.0063,-809.5886 629.376,-798.0317 594.0079,-789.9586"/>
-<polygon fill="#ffaa00" stroke="#ffaa00" points="594.5421,-786.4906 584.014,-787.6774 592.9843,-793.315 594.5421,-786.4906"/>
-</g>
-<!-- module~global_sa -->
-<g id="module~~solver~~UsesGraph_node48" class="node">
-<title>module~global_sa</title>
-<g id="a_module~~solver~~UsesGraph_node48"><a xlink:href=".././module/global_sa.html" xlink:title="global_sa">
-<polygon fill="#337ab7" stroke="#337ab7" points="583,-750.8263 525,-750.8263 525,-726.8263 583,-726.8263 583,-750.8263"/>
-<text text-anchor="middle" x="554" y="-736.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sa</text>
-</a>
-</g>
-</g>
-<!-- module~viscosity&#45;&gt;module~global_sa -->
-<g id="module~~solver~~UsesGraph_edge44" class="edge">
-<title>module~viscosity&#45;&gt;module~global_sa</title>
-<path fill="none" stroke="#ffaa00" stroke-dasharray="5,2" d="M710.8095,-819.8359C694.518,-817.0745 673.9432,-811.8095 658,-801.8263 637.1625,-788.7786 642.5533,-773.3172 622,-759.8263 613.2459,-754.0803 602.8354,-749.8372 592.8246,-746.7317"/>
-<polygon fill="#ffaa00" stroke="#ffaa00" points="593.5962,-743.3133 583.0232,-743.9919 591.7117,-750.0549 593.5962,-743.3133"/>
-</g>
-<!-- module~wall&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge46" class="edge">
-<title>module~wall&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ffe200" stroke-dasharray="5,2" d="M526.6617,-1894.4956C459.3094,-1913.963 284.2513,-1952.7499 193,-1862.8263 161.2314,-1831.52 130.1437,-1133.7493 124.4317,-999.1744"/>
-<polygon fill="#ffe200" stroke="#ffe200" points="127.9156,-998.717 123.9976,-988.8733 120.9219,-999.0118 127.9156,-998.717"/>
-</g>
-<!-- module~wall&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge45" class="edge">
-<title>module~wall&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ffe200" stroke-dasharray="5,2" d="M541.8294,-1873.5898C523.0343,-1855.0148 485.4064,-1819.0892 450,-1792.8263 401.9424,-1757.1793 367.3582,-1773.1572 335,-1722.8263 294.7674,-1660.2474 255.5566,-1116.6827 247.5021,-999.1664"/>
-<polygon fill="#ffe200" stroke="#ffe200" points="250.9729,-998.6168 246.8022,-988.8774 243.989,-999.0919 250.9729,-998.6168"/>
-</g>
-<!-- module~wall&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge47" class="edge">
-<title>module~wall&#45;&gt;module~string</title>
-<path fill="none" stroke="#ffe200" stroke-dasharray="5,2" d="M542.1877,-1873.8052C526.0499,-1856.491 497.7738,-1822.7566 486,-1787.8263 456.6929,-1700.8788 501.4192,-1038.8187 450,-962.8263 445.0135,-955.4567 437.4034,-950.1463 429.3363,-946.3302"/>
-<polygon fill="#ffe200" stroke="#ffe200" points="430.3706,-942.9742 419.7863,-942.5031 427.7667,-949.4718 430.3706,-942.9742"/>
-</g>
-<!-- module~wall&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge48" class="edge">
-<title>module~wall&#45;&gt;module~global</title>
-<path fill="none" stroke="#ffe200" stroke-dasharray="5,2" d="M548.0442,-1898.1302C534.4487,-1924.9465 498.5171,-1989.0384 450,-2023.8263 428.1271,-2039.5097 419.2984,-2040.3282 392.5,-2042.8263"/>
-<path fill="none" stroke="#ffe200" stroke-dasharray="5,2" d="M392.5,-2042.8263C325.2969,-2049.0909 309.6328,-2025.3289 246,-2002.8263"/>
-</g>
-<!-- module~bitwise -->
-<g id="module~~solver~~UsesGraph_node34" class="node">
-<title>module~bitwise</title>
-<g id="a_module~~solver~~UsesGraph_node34"><a xlink:href=".././module/bitwise.html" xlink:title="bitwise">
-<polygon fill="#337ab7" stroke="#337ab7" points="419.5,-2014.8263 365.5,-2014.8263 365.5,-1990.8263 419.5,-1990.8263 419.5,-2014.8263"/>
-<text text-anchor="middle" x="392.5" y="-2000.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bitwise</text>
-</a>
-</g>
-</g>
-<!-- module~wall&#45;&gt;module~bitwise -->
-<g id="module~~solver~~UsesGraph_edge49" class="edge">
-<title>module~wall&#45;&gt;module~bitwise</title>
-<path fill="none" stroke="#ffe200" stroke-dasharray="5,2" d="M542.4598,-1898.0097C524.2013,-1916.7764 486.922,-1953.0695 450,-1976.8263 443.5392,-1980.9835 436.3034,-1984.814 429.202,-1988.185"/>
-<polygon fill="#ffe200" stroke="#ffe200" points="427.3586,-1985.1771 419.687,-1992.4844 430.2411,-1991.5561 427.3586,-1985.1771"/>
-</g>
-<!-- module~bc_primitive&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge54" class="edge">
-<title>module~bc_primitive&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M717.201,-1188.9976C694.4226,-1201.9448 656.5268,-1222.3754 622,-1235.8263 563.5214,-1258.6084 534.0872,-1233.4978 486,-1273.8263 457.6697,-1297.5856 470.8053,-1318.2608 450,-1348.8263 428.853,-1379.894 422.5132,-1388.2077 392.5,-1410.8263"/>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M392.5,-1410.8263C314.4475,-1469.6485 315.5643,-1643.478 246,-1574.8263"/>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M246,-1574.8263C161.6534,-1491.5862 131.1874,-1097.3917 124.8337,-999.0795"/>
-<polygon fill="#e2ff00" stroke="#e2ff00" points="128.3101,-998.5921 124.1906,-988.831 121.3239,-999.0306 128.3101,-998.5921"/>
-</g>
-<!-- module~bc_primitive&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge50" class="edge">
-<title>module~bc_primitive&#45;&gt;module~utils</title>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M702.6022,-1169.9481C651.1069,-1161.88 554.2474,-1154.177 486,-1193.8263 420.983,-1231.5989 451.1087,-1381.9326 392.5,-1334.8263"/>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M392.5,-1334.8263C283.077,-1246.4721 254.6419,-1063.0906 247.9173,-999.2896"/>
-<polygon fill="#e2ff00" stroke="#e2ff00" points="251.3814,-998.7506 246.9279,-989.1372 244.4144,-999.4296 251.3814,-998.7506"/>
-</g>
-<!-- module~ft_bc -->
-<g id="module~~solver~~UsesGraph_node35" class="node">
-<title>module~ft_bc</title>
-<g id="a_module~~solver~~UsesGraph_node35"><a xlink:href=".././module/ft_bc.html" xlink:title="FT_bc">
-<polygon fill="#337ab7" stroke="#337ab7" points="581,-1226.8263 527,-1226.8263 527,-1202.8263 581,-1202.8263 581,-1226.8263"/>
-<text text-anchor="middle" x="554" y="-1212.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">FT_bc</text>
-</a>
-</g>
-</g>
-<!-- module~bc_primitive&#45;&gt;module~ft_bc -->
-<g id="module~~solver~~UsesGraph_edge51" class="edge">
-<title>module~bc_primitive&#45;&gt;module~ft_bc</title>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M702.9579,-1184.0633C670.9684,-1190.6698 623.8317,-1200.4046 591.1866,-1207.1465"/>
-<polygon fill="#e2ff00" stroke="#e2ff00" points="590.2198,-1203.7722 581.1344,-1209.2225 591.6356,-1210.6275 590.2198,-1203.7722"/>
-</g>
-<!-- module~bc_primitive&#45;&gt;module~copy_bc -->
-<g id="module~~solver~~UsesGraph_edge52" class="edge">
-<title>module~bc_primitive&#45;&gt;module~copy_bc</title>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M715.9944,-1164.6894C698.4796,-1154.1467 674.286,-1137.5015 658,-1117.8263 634.4236,-1089.3436 649.1986,-1067.8733 622,-1042.8263 613.2271,-1034.7474 601.6829,-1029.0918 590.6024,-1025.1706"/>
-<polygon fill="#e2ff00" stroke="#e2ff00" points="591.6555,-1021.8329 581.0656,-1022.154 589.5444,-1028.507 591.6555,-1021.8329"/>
-</g>
-<!-- module~bc_primitive&#45;&gt;module~global_sst -->
-<g id="module~~solver~~UsesGraph_edge53" class="edge">
-<title>module~bc_primitive&#45;&gt;module~global_sst</title>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M714.0202,-1164.7276C696.1168,-1154.5266 672.3585,-1138.3203 658,-1117.8263 625.5609,-1071.5257 652.5807,-1043.3749 622,-995.8263 611.5678,-979.6057 595.3944,-965.3148 581.4379,-954.8617"/>
-<polygon fill="#e2ff00" stroke="#e2ff00" points="583.267,-951.8659 573.1057,-948.8662 579.1785,-957.5479 583.267,-951.8659"/>
-</g>
-<!-- module~read_bc -->
-<g id="module~~solver~~UsesGraph_node44" class="node">
-<title>module~read_bc</title>
-<g id="a_module~~solver~~UsesGraph_node44"><a xlink:href=".././module/read_bc.html" xlink:title="read_bc">
-<polygon fill="#337ab7" stroke="#337ab7" points="581,-1306.8263 527,-1306.8263 527,-1282.8263 581,-1282.8263 581,-1306.8263"/>
-<text text-anchor="middle" x="554" y="-1292.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bc</text>
-</a>
-</g>
-</g>
-<!-- module~bc_primitive&#45;&gt;module~read_bc -->
-<g id="module~~solver~~UsesGraph_edge55" class="edge">
-<title>module~bc_primitive&#45;&gt;module~read_bc</title>
-<path fill="none" stroke="#e2ff00" stroke-dasharray="5,2" d="M725.3858,-1189.009C705.041,-1208.1297 663.0937,-1245.4142 622,-1268.8263 612.2631,-1274.3737 601.1139,-1279.1973 590.6987,-1283.133"/>
-<polygon fill="#e2ff00" stroke="#e2ff00" points="589.2269,-1279.9432 581.008,-1286.6291 591.6024,-1286.5278 589.2269,-1279.9432"/>
-</g>
-<!-- module~cc&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge57" class="edge">
-<title>module~cc&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#aaff00" stroke-dasharray="5,2" d="M366.6246,-730.8234C330.0898,-714.6972 265.6421,-689.5135 246,-702.8263"/>
-</g>
-<!-- module~cc&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge56" class="edge">
-<title>module~cc&#45;&gt;module~utils</title>
-<path fill="none" stroke="#aaff00" stroke-dasharray="5,2" d="M365.3699,-750.3744C354.8088,-754.4271 343.2811,-760.375 335,-768.8263 282.0072,-822.9086 258.3571,-913.4852 249.9075,-954.9273"/>
-<polygon fill="#aaff00" stroke="#aaff00" points="246.4609,-954.3161 247.9964,-964.7991 253.3333,-955.6466 246.4609,-954.3161"/>
-</g>
-<!-- module~bc&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge59" class="edge">
-<title>module~bc&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#71ff00" stroke-dasharray="5,2" d="M710.9273,-1295.3745C694.6789,-1297.2911 674.1079,-1301.5246 658,-1310.8263 637.2878,-1322.7869 642.4296,-1338.3893 622,-1350.8263 531.9466,-1405.6487 476.6959,-1347.3743 392.5,-1410.8263"/>
-</g>
-<!-- module~bc&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge58" class="edge">
-<title>module~bc&#45;&gt;module~utils</title>
-<path fill="none" stroke="#71ff00" stroke-dasharray="5,2" d="M710.9433,-1299.7907C687.5173,-1304.7546 652.6701,-1311.6601 622,-1315.8263 520.5825,-1329.603 472.1307,-1399.1246 392.5,-1334.8263"/>
-</g>
-<!-- module~bc&#45;&gt;module~read_bc -->
-<g id="module~~solver~~UsesGraph_edge60" class="edge">
-<title>module~bc&#45;&gt;module~read_bc</title>
-<path fill="none" stroke="#71ff00" stroke-dasharray="5,2" d="M710.8502,-1293.9739C679.3233,-1294.1452 627.1241,-1294.4289 591.6813,-1294.6215"/>
-<polygon fill="#71ff00" stroke="#71ff00" points="591.242,-1291.1238 581.2612,-1294.6782 591.2801,-1298.1237 591.242,-1291.1238"/>
-</g>
-<!-- module~geometry&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge62" class="edge">
-<title>module~geometry&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M530.7908,-1462.9642C462.8047,-1498.1373 267.5297,-1596.2982 246,-1574.8263"/>
-</g>
-<!-- module~geometry&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge61" class="edge">
-<title>module~geometry&#45;&gt;module~utils</title>
-<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M535.6043,-1438.5729C505.1246,-1418.0602 442.5477,-1375.0518 392.5,-1334.8263"/>
-</g>
-<!-- module~wall_dist&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge64" class="edge">
-<title>module~wall_dist&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#00ff38" stroke-dasharray="5,2" d="M365.2255,-1856.2058C333.356,-1865.3029 280.5899,-1874.3501 246,-1848.8263"/>
-<path fill="none" stroke="#00ff38" stroke-dasharray="5,2" d="M246,-1848.8263C175.0305,-1796.4582 132.4661,-1129.8912 124.7667,-999.0335"/>
-<polygon fill="#00ff38" stroke="#00ff38" points="128.2571,-998.7653 124.1825,-988.9854 121.2689,-999.1717 128.2571,-998.7653"/>
-</g>
-<!-- module~wall_dist&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge63" class="edge">
-<title>module~wall_dist&#45;&gt;module~utils</title>
-<path fill="none" stroke="#00ff38" stroke-dasharray="5,2" d="M377.1297,-1834.6685C363.5443,-1822.9618 344.4609,-1803.9572 335,-1782.8263 318.4564,-1745.8763 259.7716,-1124.4216 248.0471,-998.8431"/>
-<polygon fill="#00ff38" stroke="#00ff38" points="251.5294,-998.4896 247.1163,-988.8576 244.5597,-999.1393 251.5294,-998.4896"/>
-</g>
-<!-- module~wall_dist&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge65" class="edge">
-<title>module~wall_dist&#45;&gt;module~global</title>
-<path fill="none" stroke="#00ff38" stroke-dasharray="5,2" d="M246,-1848.8263C200.1319,-1814.9804 161.669,-1929.165 123.5,-1886.8263"/>
-<path fill="none" stroke="#00ff38" stroke-dasharray="5,2" d="M123.5,-1886.8263C62.0619,-1818.6766 32.9244,-1132.4727 27.8224,-999.1878"/>
-<polygon fill="#00ff38" stroke="#00ff38" points="31.3116,-998.8329 27.4373,-988.9718 24.3166,-999.0966 31.3116,-998.8329"/>
-</g>
-<!-- module~source&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge68" class="edge">
-<title>module~source&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M554,-542.8263C536.2174,-537.5766 409.5287,-577.4913 392.5,-584.8263"/>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M392.5,-584.8263C367.7811,-595.4739 357.5301,-589.1026 335,-603.8263 285.4721,-636.1934 294.4382,-668.8501 246,-702.8263"/>
-</g>
-<!-- module~source&#45;&gt;module~cc -->
-<g id="module~~solver~~UsesGraph_edge72" class="edge">
-<title>module~source&#45;&gt;module~cc</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M710.9704,-695.2114C674.3473,-688.7827 607.4057,-681.244 554,-698.8263"/>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M554,-698.8263C542.1243,-702.7361 473.2313,-721.2734 429.3471,-733.0048"/>
-<polygon fill="#00ff71" stroke="#00ff71" points="428.3439,-729.65 419.586,-735.6122 430.1505,-736.4128 428.3439,-729.65"/>
-</g>
-<!-- module~source&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge73" class="edge">
-<title>module~source&#45;&gt;module~utils</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M554,-698.8263C524.194,-708.6391 512.0816,-700.3781 486,-717.8263 464.4222,-732.2616 467.0435,-744.2434 450,-763.8263 401.7142,-819.3066 385.8401,-829.6769 335,-882.8263 310.533,-908.4047 282.4842,-938.09 264.522,-957.1469"/>
-<polygon fill="#00ff71" stroke="#00ff71" points="261.7908,-954.9418 257.4813,-964.6205 266.886,-959.7418 261.7908,-954.9418"/>
-</g>
-<!-- module~source&#45;&gt;module~layout -->
-<g id="module~~solver~~UsesGraph_edge71" class="edge">
-<title>module~source&#45;&gt;module~layout</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M710.9758,-698.328C693.7062,-695.3688 672.0033,-688.9112 658,-674.8263 620.8374,-637.447 659.9351,-598.4214 622,-561.8263 599.4158,-540.0399 584.0957,-551.7112 554,-542.8263"/>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M554,-542.8263C512.868,-530.6834 463.2378,-533.7639 429.9457,-538.2118"/>
-<polygon fill="#00ff71" stroke="#00ff71" points="429.1388,-534.792 419.7422,-539.6864 430.1401,-541.72 429.1388,-534.792"/>
-</g>
-<!-- module~source&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge69" class="edge">
-<title>module~source&#45;&gt;module~string</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M554,-698.8263C524.194,-708.6391 507.1908,-694.6824 486,-717.8263 427.0752,-782.1823 503.8616,-842.1768 450,-910.8263 444.6046,-917.703 436.9876,-922.8187 429.0576,-926.6032"/>
-<polygon fill="#00ff71" stroke="#00ff71" points="427.6258,-923.4077 419.7192,-930.46 430.298,-929.8776 427.6258,-923.4077"/>
-</g>
-<!-- module~source&#45;&gt;module~dump_solution -->
-<g id="module~~solver~~UsesGraph_edge70" class="edge">
-<title>module~source&#45;&gt;module~dump_solution</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M710.6612,-698.6305C693.2588,-695.799 671.5261,-689.3701 658,-674.8263 612.4856,-625.8875 655.7123,-586.5329 622,-528.8263 611.4723,-510.8058 594.3371,-494.725 579.902,-483.1902"/>
-<polygon fill="#00ff71" stroke="#00ff71" points="581.8447,-480.2688 571.7852,-476.9436 577.5755,-485.8162 581.8447,-480.2688"/>
-</g>
-<!-- module~source&#45;&gt;module~global_sst -->
-<g id="module~~solver~~UsesGraph_edge67" class="edge">
-<title>module~source&#45;&gt;module~global_sst</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M710.6612,-703.0222C693.2588,-705.8537 671.5261,-712.2826 658,-726.8263 612.4856,-775.7652 655.7123,-815.1198 622,-872.8263 611.4723,-890.8469 594.3371,-906.9276 579.902,-918.4625"/>
-<polygon fill="#00ff71" stroke="#00ff71" points="577.5755,-915.8364 571.7852,-924.7091 581.8447,-921.3839 577.5755,-915.8364"/>
-</g>
-<!-- module~source&#45;&gt;module~global_kkl -->
-<g id="module~~solver~~UsesGraph_edge66" class="edge">
-<title>module~source&#45;&gt;module~global_kkl</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M710.8552,-706.5694C694.7725,-710.7048 674.3989,-717.26 658,-726.8263 639.2518,-737.7632 640.8281,-749.0276 622,-759.8263 613.4089,-764.7537 603.5311,-768.6543 594.0147,-771.688"/>
-<polygon fill="#00ff71" stroke="#00ff71" points="592.9056,-768.3658 584.2974,-774.5423 594.8785,-775.082 592.9056,-768.3658"/>
-</g>
-<!-- module~source&#45;&gt;module~global_sa -->
-<g id="module~~solver~~UsesGraph_edge74" class="edge">
-<title>module~source&#45;&gt;module~global_sa</title>
-<path fill="none" stroke="#00ff71" stroke-dasharray="5,2" d="M710.8502,-706.4334C679.7333,-712.8597 628.4784,-723.4449 593.0726,-730.757"/>
-<polygon fill="#00ff71" stroke="#00ff71" points="592.1709,-727.3693 583.0855,-732.8195 593.5868,-734.2246 592.1709,-727.3693"/>
-</g>
-<!-- module~utils&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge75" class="edge">
-<title>module~utils&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#00ffa9" stroke-dasharray="5,2" d="M218.8133,-976.8263C203.7532,-976.8263 184.6646,-976.8263 167.5322,-976.8263"/>
-<polygon fill="#00ffa9" stroke="#00ffa9" points="167.1712,-973.3264 157.1712,-976.8263 167.1711,-980.3264 167.1712,-973.3264"/>
-</g>
-<!-- module~resnorm&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge78" class="edge">
-<title>module~resnorm&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#00ffe2" stroke-dasharray="5,2" d="M526.7675,-1677.2175C513.2693,-1673.3255 497.4516,-1666.9627 486,-1656.8263 460.3939,-1634.1611 476.9861,-1609.8295 450,-1588.8263 429.2435,-1572.6717 418.5063,-1578.76 392.5,-1574.8263"/>
-</g>
-<!-- module~resnorm&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge77" class="edge">
-<title>module~resnorm&#45;&gt;module~utils</title>
-<path fill="none" stroke="#00ffe2" stroke-dasharray="5,2" d="M526.8814,-1677.9948C513.0832,-1674.2872 496.9573,-1667.8544 486,-1656.8263 453.8823,-1624.5014 481.6258,-1593.6326 450,-1560.8263 430.7806,-1540.8895 407.7238,-1559.9585 392.5,-1536.8263"/>
-</g>
-<!-- module~resnorm&#45;&gt;module~layout -->
-<g id="module~~solver~~UsesGraph_edge80" class="edge">
-<title>module~resnorm&#45;&gt;module~layout</title>
-<path fill="none" stroke="#00ffe2" stroke-dasharray="5,2" d="M548.8186,-1670.7568C535.4496,-1638.9461 499.8703,-1549.8874 486,-1471.8263 468.4721,-1373.1805 505.9948,-653.9095 450,-570.8263 444.9285,-563.3014 437.1194,-557.924 428.8752,-554.0923"/>
-<polygon fill="#00ffe2" stroke="#00ffe2" points="430.0916,-550.8097 419.5051,-550.3908 427.5198,-557.3201 430.0916,-550.8097"/>
-</g>
-<!-- module~resnorm&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge79" class="edge">
-<title>module~resnorm&#45;&gt;module~string</title>
-<path fill="none" stroke="#00ffe2" stroke-dasharray="5,2" d="M548.9554,-1670.7314C535.9166,-1638.8594 501.0659,-1549.6655 486,-1471.8263 464.4524,-1360.4988 514.8082,-1055.8748 450,-962.8263 444.9144,-955.5247 437.2681,-950.2391 429.1978,-946.4253"/>
-<polygon fill="#00ffe2" stroke="#00ffe2" points="430.2412,-943.0726 419.6573,-942.5916 427.6312,-949.5678 430.2412,-943.0726"/>
-</g>
-<!-- module~resnorm&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge76" class="edge">
-<title>module~resnorm&#45;&gt;module~global</title>
-<path fill="none" stroke="#00ffe2" stroke-dasharray="5,2" d="M526.6798,-1684.8245C512.6506,-1687.2709 496.3723,-1692.5502 486,-1703.8263 435.4796,-1758.7488 499.9796,-1812.4112 450,-1867.8263 431.974,-1887.8128 417.0328,-1875.7568 392.5,-1886.8263"/>
-<path fill="none" stroke="#00ffe2" stroke-dasharray="5,2" d="M392.5,-1886.8263C283.5243,-1935.9977 203.5528,-1975.6243 123.5,-1886.8263"/>
-</g>
-<!-- module~resnorm&#45;&gt;module~fclose -->
-<g id="module~~solver~~UsesGraph_edge81" class="edge">
-<title>module~resnorm&#45;&gt;module~fclose</title>
-<path fill="none" stroke="#00ffe2" stroke-dasharray="5,2" d="M526.9685,-1677.805C500.3008,-1672.8512 459.3275,-1665.2401 429.617,-1659.7211"/>
-<polygon fill="#00ffe2" stroke="#00ffe2" points="430.0907,-1656.2493 419.6197,-1657.864 428.8122,-1663.1316 430.0907,-1656.2493"/>
-</g>
-<!-- module~update&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge90" class="edge">
-<title>module~update&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M738,-660.8263C695.6751,-625.9147 290.9172,-671.3198 246,-702.8263"/>
-</g>
-<!-- module~update&#45;&gt;module~viscosity -->
-<g id="module~~solver~~UsesGraph_edge91" class="edge">
-<title>module~update&#45;&gt;module~viscosity</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M877.2676,-986.5361C869.4941,-962.5511 849.617,-908.7988 818,-873.8263 805.5595,-860.0656 788.5813,-848.5417 773.4659,-839.9499"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="774.8083,-836.6955 764.3524,-834.9854 771.4597,-842.8427 774.8083,-836.6955"/>
-</g>
-<!-- module~update&#45;&gt;module~bc_primitive -->
-<g id="module~~solver~~UsesGraph_edge93" class="edge">
-<title>module~update&#45;&gt;module~bc_primitive</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M879.4295,-1011.0347C875.1022,-1039.6652 860.3754,-1111.6608 818,-1150.8263 808.3527,-1159.7428 795.6078,-1165.6034 783.1332,-1169.4546"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="781.9876,-1166.1387 773.2511,-1172.1324 783.8184,-1172.8951 781.9876,-1166.1387"/>
-</g>
-<!-- module~update&#45;&gt;module~geometry -->
-<g id="module~~solver~~UsesGraph_edge99" class="edge">
-<title>module~update&#45;&gt;module~geometry</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M878.9327,-1011.1071C869.3109,-1067.9809 828.9209,-1303.5006 818,-1314.8263 767.2671,-1367.44 715.2814,-1307.4296 658,-1352.8263 629.9608,-1375.048 648.5123,-1400.8035 622,-1424.8263 613.7666,-1432.2866 603.1696,-1437.6891 592.8031,-1441.5674"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="591.3948,-1438.3477 583.0193,-1444.8362 593.613,-1444.9869 591.3948,-1438.3477"/>
-</g>
-<!-- module~update&#45;&gt;module~source -->
-<g id="module~~solver~~UsesGraph_edge83" class="edge">
-<title>module~update&#45;&gt;module~source</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M879.7506,-986.5339C874.6619,-938.7583 854.0347,-766.1261 818,-726.8263 807.0137,-714.8446 790.4564,-708.3669 775.2498,-704.872"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="775.5051,-701.3568 765.023,-702.8981 774.1784,-708.2299 775.5051,-701.3568"/>
-</g>
-<!-- module~update&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge85" class="edge">
-<title>module~update&#45;&gt;module~utils</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M738,-1018.8263C718.6116,-1018.6751 509.1036,-972.0178 486,-957.8263 465.051,-944.9583 470.4201,-929.5181 450,-915.8263 427.6454,-900.8375 418.7352,-890.8172 392.5,-896.8263"/>
-</g>
-<!-- module~update&#45;&gt;module~interface1 -->
-<g id="module~~solver~~UsesGraph_edge82" class="edge">
-<title>module~update&#45;&gt;module~interface1</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M878.9289,-1011.1639C874.3526,-1038.477 863.0667,-1106.1242 854,-1162.8263 837.5245,-1265.8625 848.3022,-1294.9781 818,-1394.8263 800.6654,-1451.9451 767.7749,-1514.4021 750.0452,-1546.0061"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="746.9556,-1544.3591 745.0637,-1554.7837 753.0435,-1547.8142 746.9556,-1544.3591"/>
-</g>
-<!-- module~update&#45;&gt;module~time -->
-<g id="module~~solver~~UsesGraph_edge96" class="edge">
-<title>module~update&#45;&gt;module~time</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M878.9789,-1010.9941C868.8364,-1071.927 823.7439,-1341.2452 818,-1347.8263 807.2078,-1360.1914 790.4737,-1366.7107 775.0945,-1370.1338"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="774.4494,-1366.6937 765.2599,-1371.9665 775.7318,-1373.5752 774.4494,-1366.6937"/>
-</g>
-<!-- module~update&#45;&gt;module~viscous -->
-<g id="module~~solver~~UsesGraph_edge98" class="edge">
-<title>module~update&#45;&gt;module~viscous</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M878.7201,-986.7937C871.1706,-948.1643 845.8757,-828.2675 818,-801.8263 806.5725,-790.987 790.251,-785.581 775.3271,-782.9422"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="775.6872,-779.4584 765.2958,-781.5247 774.7077,-786.3896 775.6872,-779.4584"/>
-</g>
-<!-- module~update&#45;&gt;module~summon_grad_evaluation -->
-<g id="module~~solver~~UsesGraph_edge86" class="edge">
-<title>module~update&#45;&gt;module~summon_grad_evaluation</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M880.3053,-986.5513C877.0581,-933.5766 861.6497,-725.176 818,-679.8263 792.6573,-653.4966 766.1916,-684.0802 738,-660.8263"/>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M738,-660.8263C700.9881,-630.2971 650.2745,-609.9909 611.4607,-597.7712"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="612.4511,-594.4141 601.8647,-594.8374 610.4044,-601.1083 612.4511,-594.4141"/>
-</g>
-<!-- module~update&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge92" class="edge">
-<title>module~update&#45;&gt;module~string</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M738,-1018.8263C654.499,-1018.1752 634.5212,-1078.9437 554,-1056.8263"/>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M554,-1056.8263C523.7409,-1048.5149 510.0436,-1057.9906 486,-1037.8263 457.6697,-1014.067 476.442,-988.6707 450,-962.8263 444.04,-957.001 436.5448,-952.3419 428.9532,-948.6703"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="430.3084,-945.4431 419.7419,-944.6696 427.5197,-951.8637 430.3084,-945.4431"/>
-</g>
-<!-- module~update&#45;&gt;module~boundary_state_reconstruction -->
-<g id="module~~solver~~UsesGraph_edge95" class="edge">
-<title>module~update&#45;&gt;module~boundary_state_reconstruction</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M863.4654,-1010.8431C838.5929,-1027.8886 792.8903,-1059.2092 764.0466,-1078.9762"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="761.9483,-1076.1711 755.678,-1084.7113 765.9055,-1081.9453 761.9483,-1076.1711"/>
-</g>
-<!-- module~lusgs -->
-<g id="module~~solver~~UsesGraph_node33" class="node">
-<title>module~lusgs</title>
-<g id="a_module~~solver~~UsesGraph_node33"><a xlink:href=".././module/lusgs.html" xlink:title="lusgs">
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-948.8263 711,-948.8263 711,-924.8263 765,-924.8263 765,-948.8263"/>
-<text text-anchor="middle" x="738" y="-934.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lusgs</text>
-</a>
-</g>
-</g>
-<!-- module~update&#45;&gt;module~lusgs -->
-<g id="module~~solver~~UsesGraph_edge84" class="edge">
-<title>module~update&#45;&gt;module~lusgs</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M865.497,-986.707C853.2155,-977.6231 835.302,-965.4871 818,-957.8263 804.5028,-951.8502 788.9458,-947.2875 775.1595,-943.9666"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="775.5524,-940.4668 765.0257,-941.6663 774.0028,-947.2931 775.5524,-940.4668"/>
-</g>
-<!-- module~plusgs -->
-<g id="module~~solver~~UsesGraph_node37" class="node">
-<title>module~plusgs</title>
-<g id="a_module~~solver~~UsesGraph_node37"><a xlink:href=".././module/plusgs.html" xlink:title="plusgs">
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-906.8263 711,-906.8263 711,-882.8263 765,-882.8263 765,-906.8263"/>
-<text text-anchor="middle" x="738" y="-892.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">plusgs</text>
-</a>
-</g>
-</g>
-<!-- module~update&#45;&gt;module~plusgs -->
-<g id="module~~solver~~UsesGraph_edge88" class="edge">
-<title>module~update&#45;&gt;module~plusgs</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M875.1131,-986.6159C865.6682,-968.3535 845.3747,-934.1204 818,-915.8263 805.3187,-907.3516 789.3883,-902.2942 775.0882,-899.2773"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="775.5025,-895.7948 765.0333,-897.4215 774.2319,-902.6785 775.5025,-895.7948"/>
-</g>
-<!-- module~update&#45;&gt;module~global_sst -->
-<g id="module~~solver~~UsesGraph_edge89" class="edge">
-<title>module~update&#45;&gt;module~global_sst</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M853.7438,-1005.0638C825.0868,-1011.0499 778.609,-1019.143 738,-1018.8263"/>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M738,-1018.8263C701.4565,-1018.5414 689.784,-1017.862 658,-999.8263 638.045,-988.503 641.1646,-975.4413 622,-962.8263 613.6161,-957.3077 603.89,-952.7109 594.4613,-948.9951"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="595.4054,-945.613 584.812,-945.4401 592.9854,-952.1814 595.4054,-945.613"/>
-</g>
-<!-- module~update&#45;&gt;module~global_kkl -->
-<g id="module~~solver~~UsesGraph_edge94" class="edge">
-<title>module~update&#45;&gt;module~global_kkl</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M738,-740.8263C725.3577,-734.2302 644.4758,-755.2064 594.2459,-769.2346"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="593.0113,-765.9459 584.3331,-772.0237 594.9073,-772.6843 593.0113,-765.9459"/>
-</g>
-<!-- scheme -->
-<g id="module~~solver~~UsesGraph_node45" class="node">
-<title>scheme</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="765,-990.8263 711,-990.8263 711,-966.8263 765,-966.8263 765,-990.8263"/>
-<text text-anchor="middle" x="738" y="-976.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">scheme</text>
-</g>
-<!-- module~update&#45;&gt;scheme -->
-<g id="module~~solver~~UsesGraph_edge97" class="edge">
-<title>module~update&#45;&gt;scheme</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M853.7662,-995.0174C831.5017,-991.9035 799.7961,-987.4691 775.1934,-984.0282"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="775.5208,-980.54 765.1324,-982.6211 774.5512,-987.4725 775.5208,-980.54"/>
-</g>
-<!-- face_interpolant -->
-<g id="module~~solver~~UsesGraph_node46" class="node">
-<title>face_interpolant</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="598.5,-1146.8263 509.5,-1146.8263 509.5,-1122.8263 598.5,-1122.8263 598.5,-1146.8263"/>
-<text text-anchor="middle" x="554" y="-1132.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">face_interpolant</text>
-</g>
-<!-- module~update&#45;&gt;face_interpolant -->
-<g id="module~~solver~~UsesGraph_edge87" class="edge">
-<title>module~update&#45;&gt;face_interpolant</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M878.6653,-1010.89C873.131,-1035.8292 856.6685,-1092.8167 818,-1117.8263 755.2432,-1158.4155 665.5972,-1154.2718 608.6047,-1145.8645"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="609.1264,-1142.4036 598.705,-1144.3128 608.0424,-1149.3192 609.1264,-1142.4036"/>
-</g>
-<!-- module~update&#45;&gt;module~global_sa -->
-<g id="module~~solver~~UsesGraph_edge100" class="edge">
-<title>module~update&#45;&gt;module~global_sa</title>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M879.4606,-986.7507C873.6234,-942.8365 851.4766,-792.4908 818,-759.8263 791.8438,-734.3046 770.3997,-757.7309 738,-740.8263"/>
-<path fill="none" stroke="#00e2ff" stroke-dasharray="5,2" d="M738,-740.8263C692.6306,-717.1549 631.9969,-722.324 592.965,-729.5093"/>
-<polygon fill="#00e2ff" stroke="#00e2ff" points="592.1792,-726.0968 583.0449,-731.4647 593.533,-732.9646 592.1792,-726.0968"/>
-</g>
-<!-- module~interface1&#45;&gt;module~mapping -->
-<g id="module~~solver~~UsesGraph_edge103" class="edge">
-<title>module~interface1&#45;&gt;module~mapping</title>
-<path fill="none" stroke="#00a9ff" stroke-dasharray="5,2" d="M731.0044,-1579.0927C715.1372,-1605.8176 673.7449,-1669.6376 622,-1703.8263 612.7036,-1709.9686 601.5186,-1714.3894 590.9292,-1717.5393"/>
-<polygon fill="#00a9ff" stroke="#00a9ff" points="589.796,-1714.2193 581.0401,-1720.1846 591.6049,-1720.9816 589.796,-1714.2193"/>
-</g>
-<!-- module~interface1&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge102" class="edge">
-<title>module~interface1&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#00a9ff" stroke-dasharray="5,2" d="M707.7388,-1571.0113C647.3766,-1578.5939 507.885,-1592.2791 392.5,-1574.8263"/>
-<path fill="none" stroke="#00a9ff" stroke-dasharray="5,2" d="M392.5,-1574.8263C328.3236,-1563.8334 292.3435,-1620.5618 246,-1574.8263"/>
-</g>
-<!-- module~interface1&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge101" class="edge">
-<title>module~interface1&#45;&gt;module~utils</title>
-<path fill="none" stroke="#00a9ff" stroke-dasharray="5,2" d="M707.821,-1562.8503C656.33,-1554.613 550.7994,-1531.2193 486,-1471.8263 458.7428,-1446.8433 470.8053,-1427.3919 450,-1396.8263 428.853,-1365.7587 421.7044,-1358.48 392.5,-1334.8263"/>
-</g>
-<!-- module~time&#45;&gt;module~read -->
-<g id="module~~solver~~UsesGraph_edge104" class="edge">
-<title>module~time&#45;&gt;module~read</title>
-<path fill="none" stroke="#0071ff" stroke-dasharray="5,2" d="M731.0454,-1385.9028C715.5289,-1413.3743 677.8874,-1483.0343 658,-1545.8263 630.7299,-1631.9285 681.8709,-1678.2046 622,-1745.8263 614.0814,-1754.77 602.4454,-1759.9536 591.0292,-1762.9414"/>
-<polygon fill="#0071ff" stroke="#0071ff" points="590.2059,-1759.5382 581.1523,-1765.0412 591.6616,-1766.3851 590.2059,-1759.5382"/>
-</g>
-<!-- module~time&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge106" class="edge">
-<title>module~time&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#0071ff" stroke-dasharray="5,2" d="M730.9079,-1385.8604C715.1101,-1413.2452 676.9302,-1482.7391 658,-1545.8263 626.7479,-1649.9777 693.9463,-1706.2915 622,-1787.8263 601.2378,-1811.3556 582.4814,-1793.6542 554,-1806.8263"/>
-<path fill="none" stroke="#0071ff" stroke-dasharray="5,2" d="M554,-1806.8263C521.426,-1821.8912 424.9372,-1822.1834 392.5,-1806.8263"/>
-</g>
-<!-- module~time&#45;&gt;module~geometry -->
-<g id="module~~solver~~UsesGraph_edge109" class="edge">
-<title>module~time&#45;&gt;module~geometry</title>
-<path fill="none" stroke="#0071ff" stroke-dasharray="5,2" d="M711.4362,-1385.9485C688.0266,-1396.5247 652.9317,-1412.1222 622,-1424.8263 612.53,-1428.7158 602.245,-1432.7469 592.6089,-1436.4406"/>
-<polygon fill="#0071ff" stroke="#0071ff" points="591.3449,-1433.1767 583.2433,-1440.0042 593.8343,-1439.7191 591.3449,-1433.1767"/>
-</g>
-<!-- module~time&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge105" class="edge">
-<title>module~time&#45;&gt;module~utils</title>
-<path fill="none" stroke="#0071ff" stroke-dasharray="5,2" d="M728.7881,-1385.8778C711.0183,-1408.0052 669.5367,-1454.4341 622,-1471.8263 526.1,-1506.9132 453.6431,-1542.6152 392.5,-1460.8263"/>
-<path fill="none" stroke="#0071ff" stroke-dasharray="5,2" d="M392.5,-1460.8263C273.0567,-1314.7105 250.9099,-1072.7118 246.8788,-998.8844"/>
-<polygon fill="#0071ff" stroke="#0071ff" points="250.374,-998.6973 246.3906,-988.8799 243.3823,-999.0386 250.374,-998.6973"/>
-</g>
-<!-- module~time&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge107" class="edge">
-<title>module~time&#45;&gt;module~string</title>
-<path fill="none" stroke="#0071ff" stroke-dasharray="5,2" d="M710.9576,-1376.7586C658.6337,-1380.7639 543.6315,-1381.1255 486,-1315.8263 433.8229,-1256.7072 496.0643,-1026.8233 450,-962.8263 444.8018,-955.6045 437.1143,-950.348 429.0403,-946.5368"/>
-<polygon fill="#0071ff" stroke="#0071ff" points="430.094,-943.1879 419.5106,-942.6955 427.4769,-949.6803 430.094,-943.1879"/>
-</g>
-<!-- module~time&#45;&gt;face_interpolant -->
-<g id="module~~solver~~UsesGraph_edge108" class="edge">
-<title>module~time&#45;&gt;face_interpolant</title>
-<path fill="none" stroke="#0071ff" stroke-dasharray="5,2" d="M714.0332,-1361.7185C696.1367,-1351.5126 672.3814,-1335.3042 658,-1314.8263 625.7539,-1268.9108 652.4031,-1240.9825 622,-1193.8263 611.5496,-1177.6174 595.3756,-1163.3269 581.4233,-1152.8711"/>
-<polygon fill="#0071ff" stroke="#0071ff" points="583.2545,-1149.8768 573.0942,-1146.8736 579.1641,-1155.5573 583.2545,-1149.8768"/>
-</g>
-<!-- module~viscous&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge113" class="edge">
-<title>module~viscous&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M710.7116,-787.9015C667.2887,-798.9652 584.2804,-819.2671 554,-820.8263"/>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M554,-820.8263C453.557,-825.9985 426.5148,-805.5469 335,-763.8263 291.3657,-743.934 285.6961,-675.9214 246,-702.8263"/>
-</g>
-<!-- module~viscous&#45;&gt;module~geometry -->
-<g id="module~~solver~~UsesGraph_edge116" class="edge">
-<title>module~viscous&#45;&gt;module~geometry</title>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M710.7373,-780.3733C692.9035,-781.6583 670.6443,-786.5686 658,-801.8263 584.9382,-889.9892 652.3498,-1205.4198 622,-1315.8263 610.1673,-1358.8712 584.0349,-1404.3191 567.8314,-1429.9701"/>
-<polygon fill="#0038ff" stroke="#0038ff" points="564.8215,-1428.1798 562.3558,-1438.4837 570.709,-1431.9664 564.8215,-1428.1798"/>
-</g>
-<!-- module~viscous&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge111" class="edge">
-<title>module~viscous&#45;&gt;module~utils</title>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M710.8474,-784.5842C694.7619,-787.6121 674.3881,-792.8878 658,-801.8263 638.945,-812.2195 640.6097,-823.6554 622,-834.8263 594.5212,-851.3211 583.8471,-847.1511 554,-858.8263"/>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M554,-858.8263C525.2641,-870.0669 516.0635,-865.8774 486,-872.8263 444.1994,-882.4882 434.3197,-887.2476 392.5,-896.8263"/>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M392.5,-896.8263C366.2648,-902.8355 359.1169,-903.8777 335,-915.8263 311.2726,-927.582 286.6122,-944.9544 269.2838,-958.1563"/>
-<polygon fill="#0038ff" stroke="#0038ff" points="266.6939,-955.7354 260.9344,-964.628 270.9823,-961.2681 266.6939,-955.7354"/>
-</g>
-<!-- module~viscous&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge114" class="edge">
-<title>module~viscous&#45;&gt;module~string</title>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M554,-858.8263C505.873,-877.652 496.6639,-888.6206 450,-910.8263 443.1987,-914.0628 435.9035,-917.4361 428.8701,-920.6393"/>
-<polygon fill="#0038ff" stroke="#0038ff" points="427.1806,-917.5621 419.5125,-924.8731 430.0661,-923.9397 427.1806,-917.5621"/>
-</g>
-<!-- module~viscous&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge110" class="edge">
-<title>module~viscous&#45;&gt;module~global</title>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M710.697,-779.3819C692.8453,-776.8958 670.5811,-770.5705 658,-754.8263 603.529,-686.6604 660.9699,-441.897 622,-363.8263 575.9082,-271.4878 546.2813,-244.9852 450,-207.8263 402.3169,-189.4235 380.9476,-185.4396 335,-207.8263 311.6617,-219.1973 320.0461,-238.6264 299,-253.8263 278.714,-268.4773 267.8634,-260.654 246,-272.8263"/>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M246,-272.8263C180.3351,-307.7466 159.456,-321.7228 123.5,-386.8263"/>
-</g>
-<!-- module~viscous&#45;&gt;module~global_sst -->
-<g id="module~~solver~~UsesGraph_edge112" class="edge">
-<title>module~viscous&#45;&gt;module~global_sst</title>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M710.6343,-782.4038C693.8732,-784.6311 672.8607,-789.8307 658,-801.8263 630.4698,-824.0489 643.1991,-844.5005 622,-872.8263 609.2512,-889.8609 591.7021,-906.2503 577.6251,-918.1788"/>
-<polygon fill="#0038ff" stroke="#0038ff" points="575.2706,-915.5843 569.8007,-924.6579 579.7351,-920.9758 575.2706,-915.5843"/>
-</g>
-<!-- module~viscous&#45;&gt;module~global_kkl -->
-<g id="module~~solver~~UsesGraph_edge115" class="edge">
-<title>module~viscous&#45;&gt;module~global_kkl</title>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M710.8502,-780.8263C680.1387,-780.8263 629.8103,-780.8263 594.4642,-780.8263"/>
-<polygon fill="#0038ff" stroke="#0038ff" points="594.014,-777.3264 584.014,-780.8263 594.014,-784.3264 594.014,-777.3264"/>
-</g>
-<!-- module~viscous&#45;&gt;module~global_sa -->
-<g id="module~~solver~~UsesGraph_edge117" class="edge">
-<title>module~viscous&#45;&gt;module~global_sa</title>
-<path fill="none" stroke="#0038ff" stroke-dasharray="5,2" d="M710.8502,-774.6291C679.7333,-767.5263 628.4784,-755.8268 593.0726,-747.7451"/>
-<polygon fill="#0038ff" stroke="#0038ff" points="593.6137,-744.2786 583.0855,-745.4654 592.0559,-751.1031 593.6137,-744.2786"/>
-</g>
-<!-- module~state&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge122" class="edge">
-<title>module~state&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M534.8789,-372.7845C503.6288,-354.7654 440.3081,-325.2906 392.5,-348.8263"/>
-<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M392.5,-348.8263C334.084,-377.5843 281.8047,-294.4436 246,-348.8263"/>
-</g>
-<!-- module~state&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge120" class="edge">
-<title>module~state&#45;&gt;module~utils</title>
-<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M392.5,-348.8263C348.221,-370.6247 351.3516,-397.26 335,-443.8263 294.4525,-559.2979 319.2348,-596.127 299,-716.8263 284.1178,-805.598 261.0786,-910.3208 251.0033,-954.933"/>
-<polygon fill="#0000ff" stroke="#0000ff" points="247.5869,-954.1729 248.7873,-964.6995 254.4133,-955.7218 247.5869,-954.1729"/>
-</g>
-<!-- module~state&#45;&gt;module~layout -->
-<g id="module~~solver~~UsesGraph_edge124" class="edge">
-<title>module~state&#45;&gt;module~layout</title>
-<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M536.2912,-396.9918C521.403,-407.9085 500.3174,-425.0641 486,-443.8263 463.5696,-473.22 476.442,-492.982 450,-518.8263 444.04,-524.6517 436.5448,-529.3108 428.9532,-532.9823"/>
-<polygon fill="#0000ff" stroke="#0000ff" points="427.5197,-529.789 419.7419,-536.9831 430.3084,-536.2095 427.5197,-529.789"/>
-</g>
-<!-- module~state&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge123" class="edge">
-<title>module~state&#45;&gt;module~string</title>
-<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M532.8099,-396.8559C516.9382,-407.1215 496.2642,-423.4455 486,-443.8263 439.1823,-536.7883 509.7583,-825.6044 450,-910.8263 444.8914,-918.1118 437.2366,-923.3915 429.1656,-927.2048"/>
-<polygon fill="#0000ff" stroke="#0000ff" points="427.5996,-924.0621 419.6272,-931.0401 430.211,-930.5568 427.5996,-924.0621"/>
-</g>
-<!-- module~state&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge118" class="edge">
-<title>module~state&#45;&gt;module~global</title>
-<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M545.398,-372.5545C529.4521,-350.944 492.9858,-306.6112 450,-287.8263 408.3478,-269.6243 285.4333,-250.2158 246,-272.8263"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M729,-368C683.522,-321.5508 706.4024,-286.9257 666,-236 651.5029,-217.727 630.8652,-201.3805 614.1823,-189.782"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="616.1171,-186.8652 605.8723,-184.1645 612.1968,-192.6645 616.1171,-186.8652"/>
+</g>
+<!-- module~state&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge23" class="edge">
+<title>module~state&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M307.8218,-1320.9403C294.1909,-1222.9884 201.6698,-558.127 183.5682,-428.048"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="187.0239,-427.4865 182.1789,-418.0644 180.0907,-428.4514 187.0239,-427.4865"/>
 </g>
 <!-- module~check_output_control -->
-<g id="module~~solver~~UsesGraph_node30" class="node">
+<g id="module~~solver~~UsesGraph_node24" class="node">
 <title>module~check_output_control</title>
-<g id="a_module~~solver~~UsesGraph_node30"><a xlink:href=".././module/check_output_control.html" xlink:title="check_output_control">
-<polygon fill="#337ab7" stroke="#337ab7" points="450,-320.8263 335,-320.8263 335,-296.8263 450,-296.8263 450,-320.8263"/>
-<text text-anchor="middle" x="392.5" y="-306.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">check_output_control</text>
+<g id="a_module~~solver~~UsesGraph_node24"><a xlink:href=".././module/check_output_control.html" xlink:title="check_output_control">
+<polygon fill="#337ab7" stroke="#337ab7" points="238,-1366 123,-1366 123,-1342 238,-1342 238,-1366"/>
+<text text-anchor="middle" x="180.5" y="-1351.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">check_output_control</text>
 </a>
 </g>
 </g>
 <!-- module~state&#45;&gt;module~check_output_control -->
-<g id="module~~solver~~UsesGraph_edge121" class="edge">
+<g id="module~~solver~~UsesGraph_edge21" class="edge">
 <title>module~state&#45;&gt;module~check_output_control</title>
-<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M529.282,-372.7413C508.259,-362.5112 477.2344,-347.5283 450,-334.8263 443.1738,-331.6427 435.8671,-328.2938 428.8302,-325.0981"/>
-<polygon fill="#0000ff" stroke="#0000ff" points="430.0259,-321.7976 419.4721,-320.8652 427.1409,-328.1755 430.0259,-321.7976"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M282.4574,-1337.4023C272.3565,-1339.0466 260.3801,-1340.9963 248.25,-1342.9709"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="247.37,-1339.568 238.0623,-1344.6294 248.4948,-1346.4771 247.37,-1339.568"/>
+</g>
+<!-- module~utils -->
+<g id="module~~solver~~UsesGraph_node29" class="node">
+<title>module~utils</title>
+<g id="a_module~~solver~~UsesGraph_node29"><a xlink:href=".././module/utils.html" xlink:title="utils">
+<polygon fill="#337ab7" stroke="#337ab7" points="207.5,-860 153.5,-860 153.5,-836 207.5,-836 207.5,-860"/>
+<text text-anchor="middle" x="180.5" y="-845.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils</text>
+</a>
+</g>
+</g>
+<!-- module~state&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge20" class="edge">
+<title>module~state&#45;&gt;module~utils</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M287.6463,-1320.8782C282.474,-1317.0599 277.4618,-1312.4032 274,-1307 226.1281,-1232.2814 191.9272,-951.3884 182.8785,-870.1407"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="186.3405,-869.6018 181.7698,-860.0436 179.3823,-870.3659 186.3405,-869.6018"/>
 </g>
 <!-- module~read_output -->
-<g id="module~~solver~~UsesGraph_node31" class="node">
+<g id="module~~solver~~UsesGraph_node40" class="node">
 <title>module~read_output</title>
-<g id="a_module~~solver~~UsesGraph_node31"><a xlink:href=".././module/read_output.html" xlink:title="read_output">
-<polygon fill="#337ab7" stroke="#337ab7" points="427.5,-240.8263 357.5,-240.8263 357.5,-216.8263 427.5,-216.8263 427.5,-240.8263"/>
-<text text-anchor="middle" x="392.5" y="-226.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_output</text>
+<g id="a_module~~solver~~UsesGraph_node40"><a xlink:href=".././module/read_output.html" xlink:title="read_output">
+<polygon fill="#337ab7" stroke="#337ab7" points="215.5,-1324 145.5,-1324 145.5,-1300 215.5,-1300 215.5,-1324"/>
+<text text-anchor="middle" x="180.5" y="-1309.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_output</text>
 </a>
 </g>
 </g>
 <!-- module~state&#45;&gt;module~read_output -->
-<g id="module~~solver~~UsesGraph_edge119" class="edge">
+<g id="module~~solver~~UsesGraph_edge22" class="edge">
 <title>module~state&#45;&gt;module~read_output</title>
-<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M546.9123,-372.4768C531.935,-347.3185 494.7405,-289.5753 450,-254.8263 445.5656,-251.3822 440.6021,-248.275 435.4993,-245.508"/>
-<polygon fill="#0000ff" stroke="#0000ff" points="436.7586,-242.225 426.2476,-240.8952 433.6352,-248.4895 436.7586,-242.225"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M282.4574,-1328.5977C266.0495,-1325.9267 244.6926,-1322.45 225.7673,-1319.3691"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="226.2742,-1315.9056 215.8418,-1317.7533 225.1494,-1322.8147 226.2742,-1315.9056"/>
 </g>
-<!-- module~layout&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge126" class="edge">
-<title>module~layout&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#3800ff" stroke-dasharray="5,2" d="M365.259,-553.5473C355.0427,-557.6984 343.7901,-563.4058 335,-570.8263 280.9336,-616.4689 304.5706,-663.1287 246,-702.8263"/>
+<!-- module~read&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge24" class="edge">
+<title>module~read&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff5000" stroke-dasharray="5,2" d="M404.8577,-315.9822C382.2132,-303.9841 344.4311,-287.3991 309.5,-288"/>
+<path fill="none" stroke="#ff5000" stroke-dasharray="5,2" d="M309.5,-288C252.8767,-288.974 210.2665,-351.2101 191.3214,-384.8908"/>
+<polygon fill="#ff5000" stroke="#ff5000" points="188.1024,-383.4847 186.4121,-393.9438 194.2559,-386.8216 188.1024,-383.4847"/>
 </g>
-<!-- module~layout&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge125" class="edge">
-<title>module~layout&#45;&gt;module~utils</title>
-<path fill="none" stroke="#3800ff" stroke-dasharray="5,2" d="M376.6736,-556.9129C363.5514,-567.7803 345.4182,-584.9079 335,-603.8263 317.6648,-635.3052 266.2603,-879.0216 250.5877,-954.5712"/>
-<polygon fill="#3800ff" stroke="#3800ff" points="247.0649,-954.3234 248.4659,-964.8251 253.9196,-955.7418 247.0649,-954.3234"/>
+<!-- module~scheme&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge32" class="edge">
+<title>module~scheme&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M558.9403,-1078.583C542.0897,-1075.2517 520.8676,-1068.7245 506,-1056 479.1203,-1032.9949 496.229,-1008.7443 470,-985 400.7353,-922.2968 333.6404,-980.9187 274,-909 242.5355,-871.0579 195.338,-520.7314 183.3483,-428.282"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="186.8145,-427.7945 182.0641,-418.3244 179.872,-428.6899 186.8145,-427.7945"/>
 </g>
-<!-- module~layout&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge127" class="edge">
-<title>module~layout&#45;&gt;module~global</title>
-<path fill="none" stroke="#3800ff" stroke-dasharray="5,2" d="M365.2281,-533.3868C355.5467,-529.093 344.6598,-523.9951 335,-518.8263 286.1507,-492.6884 151.2278,-338.8616 123.5,-386.8263"/>
-</g>
-<!-- module~summon_grad_evaluation&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge129" class="edge">
-<title>module~summon_grad_evaluation&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#7100ff" stroke-dasharray="5,2" d="M485.9643,-572.2434C456.169,-570.4494 421.4719,-572.3468 392.5,-584.8263"/>
-</g>
-<!-- module~summon_grad_evaluation&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge128" class="edge">
-<title>module~summon_grad_evaluation&#45;&gt;module~utils</title>
-<path fill="none" stroke="#7100ff" stroke-dasharray="5,2" d="M513.7473,-594.913C504.2536,-598.6431 494.4458,-603.267 486,-608.8263 466.8354,-621.4413 467.6729,-631.1945 450,-645.8263 402.8103,-684.8958 372.6254,-673.4774 335,-721.8263 278.0807,-794.9681 256.0002,-907.1764 248.8919,-954.5246"/>
-<polygon fill="#7100ff" stroke="#7100ff" points="245.4008,-954.2154 247.4608,-964.608 252.3314,-955.1991 245.4008,-954.2154"/>
-</g>
-<!-- module~summon_grad_evaluation&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge131" class="edge">
-<title>module~summon_grad_evaluation&#45;&gt;module~string</title>
-<path fill="none" stroke="#7100ff" stroke-dasharray="5,2" d="M543.2699,-595.0253C527.9067,-613.217 499.9596,-649.1513 486,-684.8263 448.937,-779.5439 511.7199,-829.9824 450,-910.8263 444.6483,-917.8363 436.9766,-923.0086 428.9732,-926.8057"/>
-<polygon fill="#7100ff" stroke="#7100ff" points="427.4773,-923.6361 419.5447,-930.6593 430.1256,-930.1157 427.4773,-923.6361"/>
-</g>
-<!-- module~ghost_gradients -->
-<g id="module~~solver~~UsesGraph_node40" class="node">
-<title>module~ghost_gradients</title>
-<g id="a_module~~solver~~UsesGraph_node40"><a xlink:href=".././module/ghost_gradients.html" xlink:title="ghost_gradients">
-<polygon fill="#337ab7" stroke="#337ab7" points="437,-636.8263 348,-636.8263 348,-612.8263 437,-612.8263 437,-636.8263"/>
-<text text-anchor="middle" x="392.5" y="-622.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ghost_gradients</text>
+<!-- module~ausmup -->
+<g id="module~~solver~~UsesGraph_node26" class="node">
+<title>module~ausmup</title>
+<g id="a_module~~solver~~UsesGraph_node26"><a xlink:href=".././module/ausmup.html" xlink:title="ausmUP">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-1228 398.5,-1228 398.5,-1204 452.5,-1204 452.5,-1228"/>
+<text text-anchor="middle" x="425.5" y="-1213.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ausmUP</text>
 </a>
 </g>
 </g>
-<!-- module~summon_grad_evaluation&#45;&gt;module~ghost_gradients -->
-<g id="module~~solver~~UsesGraph_edge130" class="edge">
-<title>module~summon_grad_evaluation&#45;&gt;module~ghost_gradients</title>
-<path fill="none" stroke="#7100ff" stroke-dasharray="5,2" d="M507.7206,-594.8618C488.7431,-599.7972 466.6386,-605.5457 446.895,-610.6803"/>
-<polygon fill="#7100ff" stroke="#7100ff" points="445.9138,-607.3189 437.1166,-613.2232 447.6757,-614.0936 445.9138,-607.3189"/>
+<!-- module~scheme&#45;&gt;module~ausmup -->
+<g id="module~~solver~~UsesGraph_edge33" class="edge">
+<title>module~scheme&#45;&gt;module~ausmup</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M575.8953,-1094.2346C556.976,-1116.5521 514.1185,-1164.3867 470,-1195 467.3329,-1196.8506 464.4772,-1198.6146 461.5475,-1200.2768"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="459.8812,-1197.1985 452.6514,-1204.9431 463.1329,-1203.3974 459.8812,-1197.1985"/>
 </g>
-<!-- module~gradients&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge134" class="edge">
-<title>module~gradients&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#e200ff" stroke-dasharray="5,2" d="M377.8195,-161.243C365.2457,-172.4482 347.2765,-189.8838 335,-207.8263 313.2117,-239.6706 319.7383,-254.2885 299,-286.8263 279.5158,-317.3965 265.9348,-318.548 246,-348.8263"/>
-<path fill="none" stroke="#e200ff" stroke-dasharray="5,2" d="M246,-348.8263C226.0652,-379.1047 207.6076,-377.6481 193,-410.8263 148.7686,-511.2892 129.0172,-862.3929 124.524,-954.5397"/>
-<polygon fill="#e200ff" stroke="#e200ff" points="121.0207,-954.5261 124.0407,-964.6813 128.0128,-954.8593 121.0207,-954.5261"/>
+<!-- module~scheme&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge30" class="edge">
+<title>module~scheme&#45;&gt;module~utils</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M581.3587,-1094.3312C568.9339,-1125.3159 531.6126,-1206.1539 470,-1237 434.6296,-1254.7081 414.7748,-1257.5889 381,-1237 243.0379,-1152.8993 195.9281,-940.0856 183.9314,-870.4404"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="187.3215,-869.4862 182.2447,-860.1869 180.4144,-870.6225 187.3215,-869.4862"/>
+</g>
+<!-- module~slau -->
+<g id="module~~solver~~UsesGraph_node31" class="node">
+<title>module~slau</title>
+<g id="a_module~~solver~~UsesGraph_node31"><a xlink:href=".././module/slau.html" xlink:title="slau">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-1186 398.5,-1186 398.5,-1162 452.5,-1162 452.5,-1186"/>
+<text text-anchor="middle" x="425.5" y="-1171.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">slau</text>
+</a>
+</g>
+</g>
+<!-- module~scheme&#45;&gt;module~slau -->
+<g id="module~~solver~~UsesGraph_edge31" class="edge">
+<title>module~scheme&#45;&gt;module~slau</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M567.4805,-1094.1978C544.8844,-1108.8773 505.3203,-1133.9292 470,-1153 467.3056,-1154.4548 464.4934,-1155.9139 461.6491,-1157.3476"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="459.9983,-1154.2588 452.5602,-1161.8038 463.0799,-1160.544 459.9983,-1154.2588"/>
+</g>
+<!-- module~ausmp -->
+<g id="module~~solver~~UsesGraph_node33" class="node">
+<title>module~ausmp</title>
+<g id="a_module~~solver~~UsesGraph_node33"><a xlink:href=".././module/ausmp.html" xlink:title="ausmP">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-1144 398.5,-1144 398.5,-1120 452.5,-1120 452.5,-1144"/>
+<text text-anchor="middle" x="425.5" y="-1129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ausmP</text>
+</a>
+</g>
+</g>
+<!-- module~scheme&#45;&gt;module~ausmp -->
+<g id="module~~solver~~UsesGraph_edge26" class="edge">
+<title>module~scheme&#45;&gt;module~ausmp</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M558.7734,-1090.4818C532.2922,-1098.7314 491.8684,-1111.3245 462.4841,-1120.4785"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="461.0983,-1117.2442 452.5919,-1123.5602 463.1804,-1123.9274 461.0983,-1117.2442"/>
+</g>
+<!-- module~van_leer -->
+<g id="module~~solver~~UsesGraph_node36" class="node">
+<title>module~van_leer</title>
+<g id="a_module~~solver~~UsesGraph_node36"><a xlink:href=".././module/van_leer.html" xlink:title="van_leer">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-1102 398.5,-1102 398.5,-1078 452.5,-1078 452.5,-1102"/>
+<text text-anchor="middle" x="425.5" y="-1087.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">van_leer</text>
+</a>
+</g>
+</g>
+<!-- module~scheme&#45;&gt;module~van_leer -->
+<g id="module~~solver~~UsesGraph_edge29" class="edge">
+<title>module~scheme&#45;&gt;module~van_leer</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M558.7734,-1083.3571C532.4078,-1084.6713 492.2212,-1086.6743 462.8697,-1088.1373"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="462.4052,-1084.656 452.5919,-1088.6496 462.7538,-1091.6474 462.4052,-1084.656"/>
+</g>
+<!-- module~ausm -->
+<g id="module~~solver~~UsesGraph_node39" class="node">
+<title>module~ausm</title>
+<g id="a_module~~solver~~UsesGraph_node39"><a xlink:href=".././module/ausm.html" xlink:title="ausm">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-1060 398.5,-1060 398.5,-1036 452.5,-1036 452.5,-1060"/>
+<text text-anchor="middle" x="425.5" y="-1045.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ausm</text>
+</a>
+</g>
+</g>
+<!-- module~scheme&#45;&gt;module~ausm -->
+<g id="module~~solver~~UsesGraph_edge25" class="edge">
+<title>module~scheme&#45;&gt;module~ausm</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M558.7734,-1076.2324C532.2922,-1070.6226 491.8684,-1062.0593 462.4841,-1055.8346"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="463.1002,-1052.3875 452.5919,-1053.7391 461.6494,-1059.2356 463.1002,-1052.3875"/>
+</g>
+<!-- module~face_interpolant -->
+<g id="module~~solver~~UsesGraph_node42" class="node">
+<title>module~face_interpolant</title>
+<g id="a_module~~solver~~UsesGraph_node42"><a xlink:href=".././module/face_interpolant.html" xlink:title="face_interpolant">
+<polygon fill="#337ab7" stroke="#337ab7" points="470,-822 381,-822 381,-798 470,-798 470,-822"/>
+<text text-anchor="middle" x="425.5" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">face_interpolant</text>
+</a>
+</g>
+</g>
+<!-- module~scheme&#45;&gt;module~face_interpolant -->
+<g id="module~~solver~~UsesGraph_edge27" class="edge">
+<title>module~scheme&#45;&gt;module~face_interpolant</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M572.7803,-1069.8635C554.9016,-1052.702 523.2689,-1019.563 506,-985 475.5501,-924.0559 510.6607,-890.6634 470,-836 467.8522,-833.1126 465.2809,-830.4906 462.4722,-828.1221"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="464.2492,-825.0895 454.0826,-822.1078 460.1708,-830.7787 464.2492,-825.0895"/>
+</g>
+<!-- module~ldfss0 -->
+<g id="module~~solver~~UsesGraph_node43" class="node">
+<title>module~ldfss0</title>
+<g id="a_module~~solver~~UsesGraph_node43"><a xlink:href=".././module/ldfss0.html" xlink:title="ldfss0">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-1018 398.5,-1018 398.5,-994 452.5,-994 452.5,-1018"/>
+<text text-anchor="middle" x="425.5" y="-1003.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ldfss0</text>
+</a>
+</g>
+</g>
+<!-- module~scheme&#45;&gt;module~ldfss0 -->
+<g id="module~~solver~~UsesGraph_edge28" class="edge">
+<title>module~scheme&#45;&gt;module~ldfss0</title>
+<path fill="none" stroke="#ffa100" stroke-dasharray="5,2" d="M558.7008,-1075.7742C542.7516,-1071.5006 522.5673,-1064.9687 506,-1056 487.932,-1046.2189 487.4126,-1037.9052 470,-1027 467.4049,-1025.3747 464.6641,-1023.7929 461.8693,-1022.2742"/>
+<polygon fill="#ffa100" stroke="#ffa100" points="463.3667,-1019.1087 452.871,-1017.6626 460.174,-1025.3383 463.3667,-1019.1087"/>
+</g>
+<!-- module~layout&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge34" class="edge">
+<title>module~layout&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#fff100" stroke-dasharray="5,2" d="M283.455,-24.0248C279.8849,-26.5738 276.5697,-29.5567 274,-33 263.1776,-47.502 203.6085,-305.0404 185.6355,-383.4999"/>
+<polygon fill="#fff100" stroke="#fff100" points="182.1143,-383.1975 183.2963,-393.7262 188.9381,-384.7585 182.1143,-383.1975"/>
+</g>
+<!-- module~time&#45;&gt;module~read -->
+<g id="module~~solver~~UsesGraph_edge38" class="edge">
+<title>module~time&#45;&gt;module~read</title>
+<path fill="none" stroke="#bbff00" stroke-dasharray="5,2" d="M573.4058,-471.7589C545.6296,-444.7614 478.925,-379.9271 445.4173,-347.3588"/>
+<polygon fill="#bbff00" stroke="#bbff00" points="447.646,-344.6442 438.0357,-340.1842 442.7671,-349.6639 447.646,-344.6442"/>
+</g>
+<!-- module~time&#45;&gt;module~viscosity -->
+<g id="module~~solver~~UsesGraph_edge35" class="edge">
+<title>module~time&#45;&gt;module~viscosity</title>
+<path fill="none" stroke="#bbff00" stroke-dasharray="5,2" d="M569.4282,-496.1836C541.1955,-516.9404 483.6159,-559.273 450.4811,-583.6339"/>
+<polygon fill="#bbff00" stroke="#bbff00" points="448.2058,-580.9625 442.2221,-589.7059 452.3522,-586.6023 448.2058,-580.9625"/>
+</g>
+<!-- module~time&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge37" class="edge">
+<title>module~time&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#bbff00" stroke-dasharray="5,2" d="M570.2841,-471.8793C542.7813,-451.745 483.3308,-412.9254 425.5,-406"/>
+<path fill="none" stroke="#bbff00" stroke-dasharray="5,2" d="M425.5,-406C352.47,-397.2544 266.3144,-400.3237 218.0865,-403.2369"/>
+<polygon fill="#bbff00" stroke="#bbff00" points="217.5746,-399.7623 207.8169,-403.89 218.0189,-406.7481 217.5746,-399.7623"/>
+</g>
+<!-- module~time&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge36" class="edge">
+<title>module~time&#45;&gt;module~utils</title>
+<path fill="none" stroke="#bbff00" stroke-dasharray="5,2" d="M558.6924,-489.132C490.4902,-502.457 315.2109,-539.9857 274,-581 204.0933,-650.5732 186.3271,-775.2873 181.9159,-825.8248"/>
+<polygon fill="#bbff00" stroke="#bbff00" points="178.4135,-825.7212 181.1274,-835.9625 185.3924,-826.264 178.4135,-825.7212"/>
+</g>
+<!-- module~time&#45;&gt;module~face_interpolant -->
+<g id="module~~solver~~UsesGraph_edge39" class="edge">
+<title>module~time&#45;&gt;module~face_interpolant</title>
+<path fill="none" stroke="#bbff00" stroke-dasharray="5,2" d="M572.1638,-496.2789C553.8786,-513.3525 522.1057,-546.1202 506,-581 467.5873,-664.1896 522.3994,-708.8311 470,-784 468.0556,-786.7893 465.708,-789.3234 463.1196,-791.6166"/>
+<polygon fill="#bbff00" stroke="#bbff00" points="460.744,-789.0208 454.795,-797.7879 464.9127,-794.6442 460.744,-789.0208"/>
+</g>
+<!-- module~wall_dist&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge41" class="edge">
+<title>module~wall_dist&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#6bff00" stroke-dasharray="5,2" d="M289.6265,-471.9834C268.1937,-459.0241 233.8665,-438.2681 209.4387,-423.4978"/>
+<polygon fill="#6bff00" stroke="#6bff00" points="210.977,-420.3379 200.6087,-418.1587 207.355,-426.328 210.977,-420.3379"/>
+</g>
+<!-- module~wall_dist&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge40" class="edge">
+<title>module~wall_dist&#45;&gt;module~utils</title>
+<path fill="none" stroke="#6bff00" stroke-dasharray="5,2" d="M301.6412,-496.3649C293.8648,-508.982 281.9968,-529.3093 274,-548 230.9164,-648.6984 197.9023,-775.9664 185.6623,-826.1947"/>
+<polygon fill="#6bff00" stroke="#6bff00" points="182.2478,-825.4243 183.3077,-835.966 189.053,-827.0642 182.2478,-825.4243"/>
+</g>
+<!-- module~resnorm&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge43" class="edge">
+<title>module~resnorm&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#1aff00" stroke-dasharray="5,2" d="M290.5292,-260.1728C284.9016,-264.2244 278.9302,-268.9911 274,-274 239.6366,-308.9121 208.6921,-357.5323 192.4617,-384.9707"/>
+<polygon fill="#1aff00" stroke="#1aff00" points="189.3649,-383.3334 187.3529,-393.7355 195.4125,-386.8585 189.3649,-383.3334"/>
+</g>
+<!-- module~resnorm&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge42" class="edge">
+<title>module~resnorm&#45;&gt;module~utils</title>
+<path fill="none" stroke="#1aff00" stroke-dasharray="5,2" d="M301.1243,-260.1632C292.9457,-272.6235 280.7714,-292.8313 274,-312 206.3655,-503.4625 186.3898,-751.3177 181.7236,-825.8575"/>
+<polygon fill="#1aff00" stroke="#1aff00" points="178.2242,-825.7447 181.1216,-835.9356 185.2117,-826.1621 178.2242,-825.7447"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~wall_dist -->
+<g id="module~~solver~~UsesGraph_edge44" class="edge">
+<title>module~viscosity&#45;&gt;module~wall_dist</title>
+<path fill="none" stroke="#00ff35" stroke-dasharray="5,2" d="M399.3199,-589.8634C392.8269,-586.0452 386.2359,-581.3923 381,-576 357.7234,-552.0282 367.0071,-535.1422 345,-510 342.665,-507.3324 340.0101,-504.7776 337.2278,-502.3823"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="339.2383,-499.511 329.2099,-496.093 334.918,-505.0188 339.2383,-499.511"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~gradients -->
+<g id="module~~solver~~UsesGraph_edge48" class="edge">
+<title>module~viscosity&#45;&gt;module~gradients</title>
+<path fill="none" stroke="#00ff35" stroke-dasharray="5,2" d="M422.9538,-614.226C415.7852,-646.0837 392.7689,-732.9208 345,-787 344.2652,-787.8319 343.4892,-788.64 342.6798,-789.4242"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="340.3054,-786.842 334.6981,-795.8313 344.6874,-792.3008 340.3054,-786.842"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge50" class="edge">
+<title>module~viscosity&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#00ff35" stroke-dasharray="5,2" d="M404.0753,-589.8133C396.7074,-585.535 388.4419,-580.6378 381,-576 332.5635,-545.8141 317.6551,-541.7629 274,-505 244.597,-480.2391 214.8254,-446.994 197.015,-426.0311"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="199.4799,-423.524 190.3668,-418.1201 194.121,-428.0275 199.4799,-423.524"/>
+</g>
+<!-- module~global_kkl -->
+<g id="module~~solver~~UsesGraph_node23" class="node">
+<title>module~global_kkl</title>
+<g id="a_module~~solver~~UsesGraph_node23"><a xlink:href=".././module/global_kkl.html" xlink:title="global_kkl">
+<polygon fill="#337ab7" stroke="#337ab7" points="339.5,-778 279.5,-778 279.5,-754 339.5,-754 339.5,-778"/>
+<text text-anchor="middle" x="309.5" y="-763.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_kkl</text>
+</a>
+</g>
+</g>
+<!-- module~viscosity&#45;&gt;module~global_kkl -->
+<g id="module~~solver~~UsesGraph_edge45" class="edge">
+<title>module~viscosity&#45;&gt;module~global_kkl</title>
+<path fill="none" stroke="#00ff35" stroke-dasharray="5,2" d="M421.2027,-614.085C411.3028,-640.5476 384.6568,-704.4829 345,-745 344.0984,-745.9211 343.1481,-746.8166 342.1604,-747.6854"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="339.9192,-744.9918 334.0436,-753.8081 344.1347,-750.5802 339.9192,-744.9918"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge49" class="edge">
+<title>module~viscosity&#45;&gt;module~utils</title>
+<path fill="none" stroke="#00ff35" stroke-dasharray="5,2" d="M398.3343,-609.987C360.0454,-621.669 292.7725,-643.8846 274,-661 223.2488,-707.2714 196.4417,-787.2977 185.9085,-825.905"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="182.5084,-825.0731 183.3627,-835.6334 189.2804,-826.8453 182.5084,-825.0731"/>
+</g>
+<!-- module~copy_bc -->
+<g id="module~~solver~~UsesGraph_node30" class="node">
+<title>module~copy_bc</title>
+<g id="a_module~~solver~~UsesGraph_node30"><a xlink:href=".././module/copy_bc.html" xlink:title="copy_bc">
+<polygon fill="#337ab7" stroke="#337ab7" points="336.5,-614 282.5,-614 282.5,-590 336.5,-590 336.5,-614"/>
+<text text-anchor="middle" x="309.5" y="-599.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">copy_bc</text>
+</a>
+</g>
+</g>
+<!-- module~viscosity&#45;&gt;module~copy_bc -->
+<g id="module~~solver~~UsesGraph_edge46" class="edge">
+<title>module~viscosity&#45;&gt;module~copy_bc</title>
+<path fill="none" stroke="#00ff35" stroke-dasharray="5,2" d="M398.3032,-602C382.8865,-602 363.3796,-602 346.5777,-602"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="346.5265,-598.5001 336.5265,-602 346.5264,-605.5001 346.5265,-598.5001"/>
+</g>
+<!-- module~global_sa -->
+<g id="module~~solver~~UsesGraph_node32" class="node">
+<title>module~global_sa</title>
+<g id="a_module~~solver~~UsesGraph_node32"><a xlink:href=".././module/global_sa.html" xlink:title="global_sa">
+<polygon fill="#337ab7" stroke="#337ab7" points="338.5,-736 280.5,-736 280.5,-712 338.5,-712 338.5,-736"/>
+<text text-anchor="middle" x="309.5" y="-721.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sa</text>
+</a>
+</g>
+</g>
+<!-- module~viscosity&#45;&gt;module~global_sa -->
+<g id="module~~solver~~UsesGraph_edge51" class="edge">
+<title>module~viscosity&#45;&gt;module~global_sa</title>
+<path fill="none" stroke="#00ff35" stroke-dasharray="5,2" d="M418.0025,-614.0584C405.006,-634.2713 376.6335,-675.477 345,-703 343.852,-703.9988 342.65,-704.9765 341.4109,-705.9297"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="339.1104,-703.265 332.8729,-711.8291 343.0896,-709.0239 339.1104,-703.265"/>
+</g>
+<!-- module~global_sst -->
+<g id="module~~solver~~UsesGraph_node35" class="node">
+<title>module~global_sst</title>
+<g id="a_module~~solver~~UsesGraph_node35"><a xlink:href=".././module/global_sst.html" xlink:title="global_sst">
+<polygon fill="#337ab7" stroke="#337ab7" points="340,-694 279,-694 279,-670 340,-670 340,-694"/>
+<text text-anchor="middle" x="309.5" y="-679.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sst</text>
+</a>
+</g>
+</g>
+<!-- module~viscosity&#45;&gt;module~global_sst -->
+<g id="module~~solver~~UsesGraph_edge47" class="edge">
+<title>module~viscosity&#45;&gt;module~global_sst</title>
+<path fill="none" stroke="#00ff35" stroke-dasharray="5,2" d="M403.4169,-614.132C396.1504,-618.3262 388.1141,-623.186 381,-628 364.2126,-639.3598 361.1782,-643.7881 345,-656 341.5703,-658.5889 337.9338,-661.2954 334.347,-663.9428"/>
+<polygon fill="#00ff35" stroke="#00ff35" points="332.1802,-661.1915 326.1888,-669.9296 336.3216,-666.835 332.1802,-661.1915"/>
+</g>
+<!-- module~update&#45;&gt;module~scheme -->
+<g id="module~~solver~~UsesGraph_edge53" class="edge">
+<title>module~update&#45;&gt;module~scheme</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M727.3172,-754.1219C720.6071,-801.286 694.7289,-972.2007 666,-1018 653.9272,-1037.2463 633.9851,-1053.2199 617.0323,-1064.3951"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="615.0776,-1061.49 608.4971,-1069.7935 618.8194,-1067.406 615.0776,-1061.49"/>
+</g>
+<!-- module~update&#45;&gt;module~time -->
+<g id="module~~solver~~UsesGraph_edge65" class="edge">
+<title>module~update&#45;&gt;module~time</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M727.2332,-729.7709C720.7808,-686.6896 697.2254,-542.7966 666,-510 654.8725,-498.3126 638.4461,-491.8706 623.3684,-488.3232"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="623.7186,-484.8242 613.2272,-486.3009 622.3496,-491.689 623.7186,-484.8242"/>
+</g>
+<!-- module~update&#45;&gt;module~wall_dist -->
+<g id="module~~solver~~UsesGraph_edge52" class="edge">
+<title>module~update&#45;&gt;module~wall_dist</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M727.8969,-729.8342C724.5131,-699.8571 711.5568,-621.9121 666,-581 653.8494,-570.0882 435.3509,-515.1342 346.5561,-493.1297"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="347.1877,-489.6805 336.6397,-490.6757 345.5061,-496.4755 347.1877,-489.6805"/>
+</g>
+<!-- module~update&#45;&gt;module~viscosity -->
+<g id="module~~solver~~UsesGraph_edge60" class="edge">
+<title>module~update&#45;&gt;module~viscosity</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M724.0677,-754.1778C715.5286,-773.4005 695.9773,-810.1191 666,-825 602.305,-856.6186 564.197,-865.8644 506,-825 488.7852,-812.9122 447.7351,-677.942 431.8911,-624.0409"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="435.1568,-622.7378 428.9915,-614.1216 428.438,-624.7019 435.1568,-622.7378"/>
+</g>
+<!-- module~update&#45;&gt;module~gradients -->
+<g id="module~~solver~~UsesGraph_edge61" class="edge">
+<title>module~update&#45;&gt;module~gradients</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M425.5,-770C410.1765,-765.0981 372.2237,-779.3785 343.8754,-791.8112"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="342.3754,-788.6479 334.6764,-795.9263 345.2339,-795.0377 342.3754,-788.6479"/>
+</g>
+<!-- module~update&#45;&gt;module~interface1 -->
+<g id="module~~solver~~UsesGraph_edge64" class="edge">
+<title>module~update&#45;&gt;module~interface1</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M728.4265,-729.8684C725.4488,-671.2083 710.1568,-417.2209 666,-354 656.1011,-339.8273 640.2255,-329.5854 625.2164,-322.488"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="626.6082,-319.2766 616.0442,-318.4681 623.7983,-325.6879 626.6082,-319.2766"/>
+</g>
+<!-- module~update&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge66" class="edge">
+<title>module~update&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M727.9533,-729.968C723.5038,-681.5915 704.5929,-502.0053 666,-463 588.7383,-384.9126 534.1968,-421.8751 425.5,-406"/>
+</g>
+<!-- module~update&#45;&gt;module~viscous -->
+<g id="module~~solver~~UsesGraph_edge67" class="edge">
+<title>module~update&#45;&gt;module~viscous</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M726.5946,-754.178C718.762,-792.7036 692.936,-910.9768 666,-938 654.6076,-949.4293 638.1449,-955.8361 623.1117,-959.4267"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="622.1094,-956.0591 613.0122,-961.4897 623.5104,-962.9174 622.1094,-956.0591"/>
+</g>
+<!-- module~update&#45;&gt;module~global_kkl -->
+<g id="module~~solver~~UsesGraph_edge55" class="edge">
+<title>module~update&#45;&gt;module~global_kkl</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M728.0296,-754.4064C724.9485,-784.9601 712.6287,-864.3027 666,-905 638.4673,-929.0304 622.3449,-920.1849 586,-924"/>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M586,-924C549.6551,-927.8151 532.7012,-929.951 506,-905 466.5588,-868.144 506.1627,-829.0778 470,-789 455.5935,-773.0338 445.9826,-776.5523 425.5,-770"/>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M425.5,-770C401.2002,-762.2266 372.5629,-761.1637 349.8221,-762.0752"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="349.6217,-758.5808 339.8254,-762.6158 349.9998,-765.5706 349.6217,-758.5808"/>
+</g>
+<!-- module~bc_primitive -->
+<g id="module~~solver~~UsesGraph_node25" class="node">
+<title>module~bc_primitive</title>
+<g id="a_module~~solver~~UsesGraph_node25"><a xlink:href=".././module/bc_primitive.html" xlink:title="bc_primitive">
+<polygon fill="#337ab7" stroke="#337ab7" points="621,-896 551,-896 551,-872 621,-872 621,-896"/>
+<text text-anchor="middle" x="586" y="-881.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bc_primitive</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~bc_primitive -->
+<g id="module~~solver~~UsesGraph_edge62" class="edge">
+<title>module~update&#45;&gt;module~bc_primitive</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M725.7191,-754.1138C718.737,-777.6135 700.183,-829.5715 666,-858 655.9883,-866.3263 643.2459,-872.0066 630.8894,-875.874"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="629.8114,-872.5411 621.122,-878.6029 631.695,-879.2829 629.8114,-872.5411"/>
+</g>
+<!-- module~source -->
+<g id="module~~solver~~UsesGraph_node28" class="node">
+<title>module~source</title>
+<g id="a_module~~solver~~UsesGraph_node28"><a xlink:href=".././module/source.html" xlink:title="source">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-816 559,-816 559,-792 613,-792 613,-816"/>
+<text text-anchor="middle" x="586" y="-801.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">source</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~source -->
+<g id="module~~solver~~UsesGraph_edge68" class="edge">
+<title>module~update&#45;&gt;module~source</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M713.497,-754.1193C701.2155,-763.2033 683.302,-775.3393 666,-783 652.5028,-788.9761 636.9458,-793.5389 623.1595,-796.8598"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="622.0028,-793.5332 613.0257,-799.1601 623.5524,-800.3596 622.0028,-793.5332"/>
+</g>
+<!-- module~update&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge63" class="edge">
+<title>module~update&#45;&gt;module~utils</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M727.7646,-754.2393C722.9269,-799.4405 703.6564,-955.8614 666,-985 595.8233,-1039.3029 354.0028,-947.3814 274,-909 249.0711,-897.0403 222.8911,-879.4675 204.5955,-866.2512"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="206.4208,-863.2495 196.2873,-860.1568 202.2804,-868.8938 206.4208,-863.2495"/>
+</g>
+<!-- module~update&#45;&gt;module~global_sa -->
+<g id="module~~solver~~UsesGraph_edge69" class="edge">
+<title>module~update&#45;&gt;module~global_sa</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M701.7987,-740.8328C629.6285,-737.7361 433.0639,-729.3019 348.7559,-725.6844"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="348.7138,-722.1795 338.573,-725.2475 348.4137,-729.173 348.7138,-722.1795"/>
+</g>
+<!-- module~plusgs -->
+<g id="module~~solver~~UsesGraph_node34" class="node">
+<title>module~plusgs</title>
+<g id="a_module~~solver~~UsesGraph_node34"><a xlink:href=".././module/plusgs.html" xlink:title="plusgs">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-774 559,-774 559,-750 613,-750 613,-774"/>
+<text text-anchor="middle" x="586" y="-759.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">plusgs</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~plusgs -->
+<g id="module~~solver~~UsesGraph_edge57" class="edge">
+<title>module~update&#45;&gt;module~plusgs</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M701.7662,-745.8089C679.5017,-748.9228 647.7961,-753.3572 623.1934,-756.7981"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="622.5512,-753.3538 613.1324,-758.2053 623.5208,-760.2863 622.5512,-753.3538"/>
+</g>
+<!-- module~update&#45;&gt;module~global_sst -->
+<g id="module~~solver~~UsesGraph_edge59" class="edge">
+<title>module~update&#45;&gt;module~global_sst</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M723.8408,-729.8C715.1097,-710.9458 695.4468,-675.402 666,-661 561.4235,-609.8533 418.4685,-645.0319 349.6914,-667.4186"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="348.4758,-664.1344 340.0956,-670.6169 350.6893,-670.7752 348.4758,-664.1344"/>
+</g>
+<!-- module~boundary_state_reconstruction -->
+<g id="module~~solver~~UsesGraph_node37" class="node">
+<title>module~boundary_state_reconstruction</title>
+<g id="a_module~~solver~~UsesGraph_node37"><a xlink:href=".././module/boundary_state_reconstruction.html" xlink:title="boundary_state_reconstruction">
+<polygon fill="#337ab7" stroke="#337ab7" points="666,-694 506,-694 506,-670 666,-670 666,-694"/>
+<text text-anchor="middle" x="586" y="-679.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">boundary_state_reconstruction</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~boundary_state_reconstruction -->
+<g id="module~~solver~~UsesGraph_edge58" class="edge">
+<title>module~update&#45;&gt;module~boundary_state_reconstruction</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M708.7511,-729.8587C696.6206,-722.8948 680.7387,-714.3108 666,-708 657.0325,-704.1603 647.2981,-700.5542 637.8075,-697.3212"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="638.6413,-693.9106 628.0481,-694.0931 636.443,-700.5565 638.6413,-693.9106"/>
+</g>
+<!-- module~lusgs -->
+<g id="module~~solver~~UsesGraph_node41" class="node">
+<title>module~lusgs</title>
+<g id="a_module~~solver~~UsesGraph_node41"><a xlink:href=".././module/lusgs.html" xlink:title="lusgs">
+<polygon fill="#337ab7" stroke="#337ab7" points="613,-614 559,-614 559,-590 613,-590 613,-614"/>
+<text text-anchor="middle" x="586" y="-599.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lusgs</text>
+</a>
+</g>
+</g>
+<!-- module~update&#45;&gt;module~lusgs -->
+<g id="module~~solver~~UsesGraph_edge54" class="edge">
+<title>module~update&#45;&gt;module~lusgs</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M725.5467,-729.7337C718.3731,-706.4692 699.657,-655.783 666,-628 653.8295,-617.9535 637.679,-611.7559 623.0772,-607.9478"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="623.816,-604.5263 613.2836,-605.6753 622.2337,-611.3452 623.816,-604.5263"/>
+</g>
+<!-- module~update&#45;&gt;module~face_interpolant -->
+<g id="module~~solver~~UsesGraph_edge56" class="edge">
+<title>module~update&#45;&gt;module~face_interpolant</title>
+<path fill="none" stroke="#00ff86" stroke-dasharray="5,2" d="M586,-924C549.6551,-927.8151 534.8353,-927.4507 506,-905 478.7072,-883.7503 493.866,-861.0371 470,-836 467.0829,-832.9398 463.7267,-830.1235 460.1928,-827.5653"/>
+<polygon fill="#00ff86" stroke="#00ff86" points="462.0387,-824.5908 451.7478,-822.0715 458.2216,-830.4584 462.0387,-824.5908"/>
+</g>
+<!-- module~wall&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge71" class="edge">
+<title>module~wall&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#00ffd6" stroke-dasharray="5,2" d="M287.651,-875.8752C282.4786,-872.0569 277.4653,-867.401 274,-862 226.485,-787.9432 192.1523,-509.9362 182.9551,-428.5295"/>
+<polygon fill="#00ffd6" stroke="#00ffd6" points="186.4112,-427.9401 181.8255,-418.3891 179.4543,-428.7152 186.4112,-427.9401"/>
+</g>
+<!-- module~wall&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge70" class="edge">
+<title>module~wall&#45;&gt;module~utils</title>
+<path fill="none" stroke="#00ffd6" stroke-dasharray="5,2" d="M282.4574,-879.6147C263.537,-873.7479 238.0359,-865.8406 217.2708,-859.4018"/>
+<polygon fill="#00ffd6" stroke="#00ffd6" points="218.095,-855.993 207.507,-856.3743 216.0218,-862.679 218.095,-855.993"/>
+</g>
+<!-- module~gradients&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge73" class="edge">
+<title>module~gradients&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#00d6ff" stroke-dasharray="5,2" d="M283.44,-795.9864C279.8718,-793.4359 276.5611,-790.4497 274,-787 230.5488,-728.4736 194.3923,-501.4573 183.7091,-428.6258"/>
+<polygon fill="#00d6ff" stroke="#00d6ff" points="187.1125,-427.7055 182.216,-418.3101 180.1847,-428.7083 187.1125,-427.7055"/>
 </g>
 <!-- module~gradients&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge133" class="edge">
+<g id="module~~solver~~UsesGraph_edge72" class="edge">
 <title>module~gradients&#45;&gt;module~utils</title>
-<path fill="none" stroke="#e200ff" stroke-dasharray="5,2" d="M375.332,-160.9404C361.7684,-171.5842 343.7204,-188.3808 335,-207.8263 288.6004,-311.2923 314.3572,-604.4774 299,-716.8263 286.8096,-806.0075 262.3532,-910.5148 251.456,-955.0018"/>
-<polygon fill="#e200ff" stroke="#e200ff" points="248.0508,-954.1922 249.0515,-964.7397 254.8467,-955.8703 248.0508,-954.1922"/>
+<path fill="none" stroke="#00d6ff" stroke-dasharray="5,2" d="M280.8707,-816.8773C262.2019,-822.6661 237.6546,-830.2777 217.5089,-836.5244"/>
+<polygon fill="#00d6ff" stroke="#00d6ff" points="216.2393,-833.2536 207.7246,-839.5583 218.3125,-839.9395 216.2393,-833.2536"/>
 </g>
-<!-- module~lctm2015_gradients -->
-<g id="module~~solver~~UsesGraph_node29" class="node">
-<title>module~lctm2015_gradients</title>
-<g id="a_module~~solver~~UsesGraph_node29"><a xlink:href=".././module/lctm2015_gradients.html" xlink:title="lctm2015_gradients">
-<polygon fill="#337ab7" stroke="#337ab7" points="299,-160.8263 193,-160.8263 193,-136.8263 299,-136.8263 299,-160.8263"/>
-<text text-anchor="middle" x="246" y="-146.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lctm2015_gradients</text>
+<!-- module~interface1&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge76" class="edge">
+<title>module~interface1&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#0086ff" stroke-dasharray="5,2" d="M563.6485,-296.8986C500.097,-262.649 322.1236,-167.8944 309.5,-174"/>
+</g>
+<!-- module~mapping -->
+<g id="module~~solver~~UsesGraph_node21" class="node">
+<title>module~mapping</title>
+<g id="a_module~~solver~~UsesGraph_node21"><a xlink:href=".././module/mapping.html" xlink:title="mapping">
+<polygon fill="#337ab7" stroke="#337ab7" points="452.5,-146 398.5,-146 398.5,-122 452.5,-122 452.5,-146"/>
+<text text-anchor="middle" x="425.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mapping</text>
 </a>
 </g>
 </g>
-<!-- module~gradients&#45;&gt;module~lctm2015_gradients -->
-<g id="module~~solver~~UsesGraph_edge136" class="edge">
-<title>module~gradients&#45;&gt;module~lctm2015_gradients</title>
-<path fill="none" stroke="#e200ff" stroke-dasharray="5,2" d="M363.9055,-148.8263C348.3064,-148.8263 328.3382,-148.8263 309.2862,-148.8263"/>
-<polygon fill="#e200ff" stroke="#e200ff" points="309.1335,-145.3264 299.1334,-148.8263 309.1334,-152.3264 309.1335,-145.3264"/>
+<!-- module~interface1&#45;&gt;module~mapping -->
+<g id="module~~solver~~UsesGraph_edge75" class="edge">
+<title>module~interface1&#45;&gt;module~mapping</title>
+<path fill="none" stroke="#0086ff" stroke-dasharray="5,2" d="M555.8063,-298.2416C539.0751,-290.9054 519.0751,-279.6554 506,-264 474.6457,-226.458 501.0457,-197.7976 470,-160 467.4532,-156.8993 464.4332,-154.0872 461.1839,-151.5576"/>
+<polygon fill="#0086ff" stroke="#0086ff" points="463.0131,-148.5691 452.7736,-145.8483 459.0815,-154.3607 463.0131,-148.5691"/>
 </g>
-<!-- module~sst_gradients -->
-<g id="module~~solver~~UsesGraph_node32" class="node">
-<title>module~sst_gradients</title>
-<g id="a_module~~solver~~UsesGraph_node32"><a xlink:href=".././module/sst_gradients.html" xlink:title="sst_gradients">
-<polygon fill="#337ab7" stroke="#337ab7" points="284,-118.8263 208,-118.8263 208,-94.8263 284,-94.8263 284,-118.8263"/>
-<text text-anchor="middle" x="246" y="-104.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sst_gradients</text>
+<!-- module~interface1&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge74" class="edge">
+<title>module~interface1&#45;&gt;module~utils</title>
+<path fill="none" stroke="#0086ff" stroke-dasharray="5,2" d="M555.6804,-299.0767C512.969,-287.0862 434.3508,-272.5041 381,-307 348.2583,-328.1703 363.3474,-352.5969 345,-387 330.9559,-413.334 327.4887,-420.1856 309.5,-444"/>
+<path fill="none" stroke="#0086ff" stroke-dasharray="5,2" d="M309.5,-444C298.519,-458.1303 284.9552,-448.8497 274,-463 228.7418,-521.4578 193.5633,-753.207 183.4484,-826.0008"/>
+<polygon fill="#0086ff" stroke="#0086ff" points="179.9807,-825.5271 182.0908,-835.9097 186.9159,-826.4773 179.9807,-825.5271"/>
+</g>
+<!-- module~cc&#45;&gt;module~wall_dist -->
+<g id="module~~solver~~UsesGraph_edge79" class="edge">
+<title>module~cc&#45;&gt;module~wall_dist</title>
+<path fill="none" stroke="#0035ff" stroke-dasharray="5,2" d="M398.3032,-454.9093C382.7411,-460.0072 363.0112,-466.4705 346.1029,-472.0094"/>
+<polygon fill="#0035ff" stroke="#0035ff" points="344.9399,-468.7073 336.5265,-475.1465 347.1192,-475.3594 344.9399,-468.7073"/>
+</g>
+<!-- module~cc&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge78" class="edge">
+<title>module~cc&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#0035ff" stroke-dasharray="5,2" d="M419.7217,-433.8105C401.7132,-396.6554 345.651,-287.3781 309.5,-288"/>
+</g>
+<!-- module~cc&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge77" class="edge">
+<title>module~cc&#45;&gt;module~utils</title>
+<path fill="none" stroke="#0035ff" stroke-dasharray="5,2" d="M398.2763,-434.9428C370.6503,-425.7282 329.228,-417.883 309.5,-444"/>
+</g>
+<!-- module~bc&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge82" class="edge">
+<title>module~bc&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#1a00ff" stroke-dasharray="5,2" d="M288.5937,-146.2546C283.2935,-150.1244 277.9809,-154.7736 274,-160 219.6514,-231.353 193.6738,-337.9343 184.5147,-383.7546"/>
+<polygon fill="#1a00ff" stroke="#1a00ff" points="181.0353,-383.3147 182.5857,-393.7955 187.9096,-384.6354 181.0353,-383.3147"/>
+</g>
+<!-- module~bc&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge80" class="edge">
+<title>module~bc&#45;&gt;module~utils</title>
+<path fill="none" stroke="#1a00ff" stroke-dasharray="5,2" d="M303.9315,-146.0594C296.0871,-163.5337 281.8644,-197.0813 274,-227 258.3888,-286.3899 197.8412,-722.1979 183.5396,-825.8997"/>
+<polygon fill="#1a00ff" stroke="#1a00ff" points="180.0625,-825.4943 182.1649,-835.8785 186.997,-826.4497 180.0625,-825.4943"/>
+</g>
+<!-- module~read_bc -->
+<g id="module~~solver~~UsesGraph_node38" class="node">
+<title>module~read_bc</title>
+<g id="a_module~~solver~~UsesGraph_node38"><a xlink:href=".././module/read_bc.html" xlink:title="read_bc">
+<polygon fill="#337ab7" stroke="#337ab7" points="207.5,-146 153.5,-146 153.5,-122 207.5,-122 207.5,-146"/>
+<text text-anchor="middle" x="180.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bc</text>
 </a>
 </g>
 </g>
-<!-- module~gradients&#45;&gt;module~sst_gradients -->
-<g id="module~~solver~~UsesGraph_edge132" class="edge">
-<title>module~gradients&#45;&gt;module~sst_gradients</title>
-<path fill="none" stroke="#e200ff" stroke-dasharray="5,2" d="M363.9055,-140.6286C344.0145,-134.926 317.0192,-127.1868 293.8784,-120.5526"/>
-<polygon fill="#e200ff" stroke="#e200ff" points="294.8062,-117.1776 284.2289,-117.7861 292.877,-123.9066 294.8062,-117.1776"/>
+<!-- module~bc&#45;&gt;module~read_bc -->
+<g id="module~~solver~~UsesGraph_edge81" class="edge">
+<title>module~bc&#45;&gt;module~read_bc</title>
+<path fill="none" stroke="#1a00ff" stroke-dasharray="5,2" d="M282.4574,-134C263.623,-134 238.2676,-134 217.5542,-134"/>
+<polygon fill="#1a00ff" stroke="#1a00ff" points="217.5071,-130.5001 207.507,-134 217.507,-137.5001 217.5071,-130.5001"/>
 </g>
-<!-- module~laminar_gradients -->
-<g id="module~~solver~~UsesGraph_node39" class="node">
-<title>module~laminar_gradients</title>
-<g id="a_module~~solver~~UsesGraph_node39"><a xlink:href=".././module/laminar_gradients.html" xlink:title="laminar_gradients">
-<polygon fill="#337ab7" stroke="#337ab7" points="295,-76.8263 197,-76.8263 197,-52.8263 295,-52.8263 295,-76.8263"/>
-<text text-anchor="middle" x="246" y="-62.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">laminar_gradients</text>
+<!-- iso_fortran_env -->
+<g id="module~~solver~~UsesGraph_node27" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~solver~~UsesGraph_node27"><a xlink:href="http://fortranwiki.org/fortran/show/ISO_FORTRAN_ENV" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-418 0,-418 0,-394 87,-394 87,-418"/>
+<text text-anchor="middle" x="43.5" y="-403.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iso_fortran_env</text>
 </a>
 </g>
 </g>
-<!-- module~gradients&#45;&gt;module~laminar_gradients -->
-<g id="module~~solver~~UsesGraph_edge135" class="edge">
-<title>module~gradients&#45;&gt;module~laminar_gradients</title>
-<path fill="none" stroke="#e200ff" stroke-dasharray="5,2" d="M376.9402,-136.8039C358.8955,-123.234 327.9169,-101.0682 299,-85.8263 295.744,-84.1101 292.3156,-82.4494 288.8336,-80.8643"/>
-<polygon fill="#e200ff" stroke="#e200ff" points="290.1405,-77.6162 279.5728,-76.8586 287.3615,-84.041 290.1405,-77.6162"/>
+<!-- module~vartypes&#45;&gt;iso_fortran_env -->
+<g id="module~~solver~~UsesGraph_edge83" class="edge">
+<title>module~vartypes&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#6b00ff" stroke-dasharray="5,2" d="M153.4332,-406C137.4369,-406 116.6119,-406 97.3951,-406"/>
+<polygon fill="#6b00ff" stroke="#6b00ff" points="97.2273,-402.5001 87.2273,-406 97.2272,-409.5001 97.2273,-402.5001"/>
 </g>
-<!-- module~kkl_gradients -->
-<g id="module~~solver~~UsesGraph_node41" class="node">
-<title>module~kkl_gradients</title>
-<g id="a_module~~solver~~UsesGraph_node41"><a xlink:href=".././module/kkl_gradients.html" xlink:title="kkl_gradients">
-<polygon fill="#337ab7" stroke="#337ab7" points="284,-244.8263 208,-244.8263 208,-220.8263 284,-220.8263 284,-244.8263"/>
-<text text-anchor="middle" x="246" y="-230.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">kkl_gradients</text>
-</a>
+<!-- module~viscous&#45;&gt;module~viscosity -->
+<g id="module~~solver~~UsesGraph_edge86" class="edge">
+<title>module~viscous&#45;&gt;module~viscosity</title>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M558.8214,-962.0686C541.259,-959.3574 519.2815,-952.9633 506,-938 451.2635,-876.3321 489.4631,-836.1262 470,-756 458.4745,-708.5512 441.8446,-653.8044 432.5209,-624.0509"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="435.785,-622.764 429.4394,-614.2798 429.1091,-624.8694 435.785,-622.764"/>
 </g>
+<!-- module~viscous&#45;&gt;module~gradients -->
+<g id="module~~solver~~UsesGraph_edge87" class="edge">
+<title>module~viscous&#45;&gt;module~gradients</title>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M425.5,-850C418.8699,-845.2337 378.9769,-831.2424 347.8022,-820.7078"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="348.6341,-817.295 338.0401,-817.4251 346.4029,-823.93 348.6341,-817.295"/>
 </g>
-<!-- module~gradients&#45;&gt;module~kkl_gradients -->
-<g id="module~~solver~~UsesGraph_edge138" class="edge">
-<title>module~gradients&#45;&gt;module~kkl_gradients</title>
-<path fill="none" stroke="#e200ff" stroke-dasharray="5,2" d="M363.871,-159.2653C354.2749,-163.4035 343.7887,-168.6592 335,-174.8263 316.2188,-188.0054 318.0883,-199.0961 299,-211.8263 296.6069,-213.4223 294.0742,-214.9265 291.4642,-216.3393"/>
-<polygon fill="#e200ff" stroke="#e200ff" points="289.8226,-213.2461 282.3843,-220.7907 292.904,-219.5314 289.8226,-213.2461"/>
+<!-- module~viscous&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge89" class="edge">
+<title>module~viscous&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M425.5,-850C383.6328,-819.9018 353.9933,-874.0598 309.5,-848"/>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M309.5,-848C294.0582,-838.9557 284.8081,-843.2629 274,-829 224.7523,-764.0104 191.8515,-505.6401 182.9375,-428.1078"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="186.399,-427.5687 181.7973,-418.0253 179.4433,-428.3553 186.399,-427.5687"/>
 </g>
-<!-- module~sa_gradients -->
-<g id="module~~solver~~UsesGraph_node49" class="node">
-<title>module~sa_gradients</title>
-<g id="a_module~~solver~~UsesGraph_node49"><a xlink:href=".././module/sa_gradients.html" xlink:title="sa_gradients">
-<polygon fill="#337ab7" stroke="#337ab7" points="283,-202.8263 209,-202.8263 209,-178.8263 283,-178.8263 283,-202.8263"/>
-<text text-anchor="middle" x="246" y="-188.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sa_gradients</text>
-</a>
+<!-- module~viscous&#45;&gt;module~global_kkl -->
+<g id="module~~solver~~UsesGraph_edge88" class="edge">
+<title>module~viscous&#45;&gt;module~global_kkl</title>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M425.5,-850C408.0388,-837.4471 398.1938,-843.9168 381,-831 360.7986,-815.8237 364.1677,-803.4627 345,-787 343.8457,-786.0086 342.6383,-785.037 341.3948,-784.0889"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="343.0636,-780.9889 332.8399,-778.209 339.0986,-786.7577 343.0636,-780.9889"/>
 </g>
+<!-- module~viscous&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge84" class="edge">
+<title>module~viscous&#45;&gt;module~utils</title>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M309.5,-848C281.9112,-831.8412 244.9754,-833.7047 217.6974,-838.515"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="216.8914,-835.1064 207.7553,-840.4714 218.243,-841.9747 216.8914,-835.1064"/>
 </g>
-<!-- module~gradients&#45;&gt;module~sa_gradients -->
-<g id="module~~solver~~UsesGraph_edge137" class="edge">
-<title>module~gradients&#45;&gt;module~sa_gradients</title>
-<path fill="none" stroke="#e200ff" stroke-dasharray="5,2" d="M363.9055,-157.0241C343.723,-162.8102 316.2266,-170.6931 292.8637,-177.391"/>
-<polygon fill="#e200ff" stroke="#e200ff" points="291.7857,-174.059 283.1375,-180.1794 293.7149,-180.7879 291.7857,-174.059"/>
+<!-- module~viscous&#45;&gt;module~global_sa -->
+<g id="module~~solver~~UsesGraph_edge90" class="edge">
+<title>module~viscous&#45;&gt;module~global_sa</title>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M425.5,-850C408.0388,-837.4471 396.1524,-846.2602 381,-831 351.8045,-801.5966 372.2139,-776.2465 345,-745 344.271,-744.163 343.5002,-743.3504 342.6952,-742.5623"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="344.7164,-739.6956 334.7383,-736.1334 340.3171,-745.1405 344.7164,-739.6956"/>
 </g>
-<!-- module~boundary_state_reconstruction&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge140" class="edge">
-<title>module~boundary_state_reconstruction&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff00e2" stroke-dasharray="5,2" d="M657.9508,-1102.0383C606.4823,-1102.2184 539.483,-1096.3613 486,-1070.8263 432.8241,-1045.438 437.8918,-1014.4007 392.5,-976.8263"/>
-<path fill="none" stroke="#ff00e2" stroke-dasharray="5,2" d="M392.5,-976.8263C371.4506,-960.0538 354.1894,-976.6986 335,-957.8263 249.4163,-873.6568 345.3652,-635.4792 246,-702.8263"/>
+<!-- module~viscous&#45;&gt;module~global_sst -->
+<g id="module~~solver~~UsesGraph_edge85" class="edge">
+<title>module~viscous&#45;&gt;module~global_sst</title>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M558.8066,-960.2142C542.1122,-956.7464 521.1094,-950.2054 506,-938 481.2131,-917.9771 492.5007,-898.5617 470,-876 453.8248,-859.781 444.0988,-863.3707 425.5,-850"/>
+<path fill="none" stroke="#bb00ff" stroke-dasharray="5,2" d="M425.5,-850C408.0388,-837.4471 395.1917,-847.1575 381,-831 342.0012,-786.5991 381.0172,-749.852 345,-703 344.4272,-702.2549 343.8198,-701.531 343.1829,-700.828"/>
+<polygon fill="#bb00ff" stroke="#bb00ff" points="345.2954,-698.0263 335.459,-694.0899 340.6937,-703.3012 345.2954,-698.0263"/>
 </g>
-<!-- module~boundary_state_reconstruction&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge139" class="edge">
-<title>module~boundary_state_reconstruction&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff00e2" stroke-dasharray="5,2" d="M392.5,-976.8263C362.4456,-951.9479 315.8075,-956.8844 283.2512,-964.8376"/>
-<polygon fill="#ff00e2" stroke="#ff00e2" points="281.9874,-961.5515 273.2147,-967.4919 283.7772,-968.3188 281.9874,-961.5515"/>
+<!-- module~geometry&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge92" class="edge">
+<title>module~geometry&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff00f1" stroke-dasharray="5,2" d="M280.2279,-375.0766C261.6588,-380.8345 237.4705,-388.3347 217.5661,-394.5066"/>
+<polygon fill="#ff00f1" stroke="#ff00f1" points="216.4069,-391.2016 207.8921,-397.5063 218.4801,-397.8876 216.4069,-391.2016"/>
 </g>
-<!-- module~boundary_state_reconstruction&#45;&gt;face_interpolant -->
-<g id="module~~solver~~UsesGraph_edge141" class="edge">
-<title>module~boundary_state_reconstruction&#45;&gt;face_interpolant</title>
-<path fill="none" stroke="#ff00e2" stroke-dasharray="5,2" d="M679.7813,-1108.8498C657.047,-1113.5449 631.1167,-1118.9001 608.7298,-1123.5234"/>
-<polygon fill="#ff00e2" stroke="#ff00e2" points="607.8028,-1120.1409 598.7174,-1125.5912 609.2187,-1126.9963 607.8028,-1120.1409"/>
-</g>
-<!-- module~dump_solution&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge144" class="edge">
-<title>module~dump_solution&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M512.7569,-473.0664C468.0317,-482.3102 401.7461,-497.0279 392.5,-504.8263"/>
-<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M392.5,-504.8263C371.9262,-522.1789 355.336,-506.1956 335,-523.8263 267.8696,-582.0263 319.5457,-652.979 246,-702.8263"/>
-<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M246,-702.8263C158.2135,-762.3257 132.5842,-900.4002 125.7656,-954.5069"/>
-<polygon fill="#ff00aa" stroke="#ff00aa" points="122.2566,-954.3829 124.5805,-964.7197 129.21,-955.1898 122.2566,-954.3829"/>
-</g>
-<!-- module~dump_solution&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge143" class="edge">
-<title>module~dump_solution&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M392.5,-504.8263C371.9262,-522.1789 352.7072,-503.5569 335,-523.8263 277.5931,-589.5399 315.7149,-631.185 299,-716.8263 281.7577,-805.1699 259.961,-910.1182 250.6064,-954.861"/>
-<polygon fill="#ff00aa" stroke="#ff00aa" points="247.1789,-954.1525 248.5558,-964.6575 254.0304,-955.5867 247.1789,-954.1525"/>
+<!-- module~geometry&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge91" class="edge">
+<title>module~geometry&#45;&gt;module~utils</title>
+<path fill="none" stroke="#ff00f1" stroke-dasharray="5,2" d="M301.3149,-378.2331C293.2847,-390.7477 281.2233,-410.997 274,-430 218.7901,-575.2449 191.4156,-761.8668 183.2188,-825.5537"/>
+<polygon fill="#ff00f1" stroke="#ff00f1" points="179.7231,-825.3016 181.9479,-835.6602 186.6684,-826.175 179.7231,-825.3016"/>
 </g>
 <!-- module~dump_solution&#45;&gt;module~layout -->
-<g id="module~~solver~~UsesGraph_edge147" class="edge">
+<g id="module~~solver~~UsesGraph_edge93" class="edge">
 <title>module~dump_solution&#45;&gt;module~layout</title>
-<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M516.3941,-476.9361C506.2511,-480.8054 495.4698,-485.4904 486,-490.8263 468.3406,-500.7768 467.3558,-508.3554 450,-518.8263 443.4218,-522.7951 436.1329,-526.5404 429.0163,-529.887"/>
-<polygon fill="#ff00aa" stroke="#ff00aa" points="427.1729,-526.8792 419.5016,-534.1869 430.0556,-533.2581 427.1729,-526.8792"/>
+<path fill="none" stroke="#ff00a1" stroke-dasharray="5,2" d="M392.2591,-41.9645C377.8985,-36.765 361.0451,-30.6629 346.308,-25.327"/>
+<polygon fill="#ff00a1" stroke="#ff00a1" points="347.0944,-21.8895 336.5002,-21.7759 344.7113,-28.4713 347.0944,-21.8895"/>
 </g>
-<!-- module~dump_solution&#45;&gt;module~string -->
-<g id="module~~solver~~UsesGraph_edge145" class="edge">
-<title>module~dump_solution&#45;&gt;module~string</title>
-<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M534.8103,-476.9714C518.7684,-488.2775 496.8255,-506.6893 486,-528.8263 448.5424,-605.423 499.5454,-841.4334 450,-910.8263 444.8295,-918.0681 437.1522,-923.3318 429.0791,-927.1436"/>
-<polygon fill="#ff00aa" stroke="#ff00aa" points="427.5149,-924.0004 419.5467,-930.9831 430.1302,-930.4935 427.5149,-924.0004"/>
-</g>
-<!-- module~dump_solution&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge142" class="edge">
-<title>module~dump_solution&#45;&gt;module~global</title>
-<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M524.3743,-452.7498C433.6242,-416.6948 163.2149,-316.571 123.5,-386.8263"/>
+<!-- module~dump_solution&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge94" class="edge">
+<title>module~dump_solution&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff00a1" stroke-dasharray="5,2" d="M384.3025,-65.0248C355.952,-73.1985 321.3521,-84.5184 309.5,-94"/>
+<path fill="none" stroke="#ff00a1" stroke-dasharray="5,2" d="M309.5,-94C295.526,-105.1791 285.4481,-99.2455 274,-113 204.9437,-195.9688 186.6458,-330.6224 182.0038,-383.5857"/>
+<polygon fill="#ff00a1" stroke="#ff00a1" points="178.4897,-383.6267 181.1879,-393.8722 185.4678,-384.1803 178.4897,-383.6267"/>
 </g>
 <!-- module~write_output -->
-<g id="module~~solver~~UsesGraph_node42" class="node">
+<g id="module~~solver~~UsesGraph_node22" class="node">
 <title>module~write_output</title>
-<g id="a_module~~solver~~UsesGraph_node42"><a xlink:href=".././module/write_output.html" xlink:title="write_output">
-<polygon fill="#337ab7" stroke="#337ab7" points="428,-476.8263 357,-476.8263 357,-452.8263 428,-452.8263 428,-476.8263"/>
-<text text-anchor="middle" x="392.5" y="-462.4263" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output</text>
+<g id="a_module~~solver~~UsesGraph_node22"><a xlink:href=".././module/write_output.html" xlink:title="write_output">
+<polygon fill="#337ab7" stroke="#337ab7" points="345,-66 274,-66 274,-42 345,-42 345,-66"/>
+<text text-anchor="middle" x="309.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output</text>
 </a>
 </g>
 </g>
 <!-- module~dump_solution&#45;&gt;module~write_output -->
-<g id="module~~solver~~UsesGraph_edge146" class="edge">
+<g id="module~~solver~~UsesGraph_edge95" class="edge">
 <title>module~dump_solution&#45;&gt;module~write_output</title>
-<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M512.8289,-464.8263C490.0349,-464.8263 461.6509,-464.8263 438.1757,-464.8263"/>
-<polygon fill="#ff00aa" stroke="#ff00aa" points="438.1106,-461.3264 428.1105,-464.8263 438.1105,-468.3264 438.1106,-461.3264"/>
+<path fill="none" stroke="#ff00a1" stroke-dasharray="5,2" d="M384.2761,-54C374.9028,-54 364.8899,-54 355.3379,-54"/>
+<polygon fill="#ff00a1" stroke="#ff00a1" points="355.2059,-50.5001 345.2058,-54 355.2058,-57.5001 355.2059,-50.5001"/>
+</g>
+<!-- module~dump_solution&#45;&gt;module~utils -->
+<g id="module~~solver~~UsesGraph_edge96" class="edge">
+<title>module~dump_solution&#45;&gt;module~utils</title>
+<path fill="none" stroke="#ff00a1" stroke-dasharray="5,2" d="M413.7491,-66.0326C403.4835,-77.2551 389.0063,-94.9368 381,-113 346.3499,-191.1753 393.7919,-231.7764 345,-302 323.9498,-332.2965 294.983,-314.6569 274,-345 218.4628,-425.3112 189.3546,-738.6887 182.2434,-825.5617"/>
+<polygon fill="#ff00a1" stroke="#ff00a1" points="178.7457,-825.3932 181.4347,-835.6411 185.7233,-825.9531 178.7457,-825.3932"/>
+</g>
+<!-- module~grid&#45;&gt;module~vartypes -->
+<g id="module~~solver~~UsesGraph_edge98" class="edge">
+<title>module~grid&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff0050" stroke-dasharray="5,2" d="M567.1803,-159.7795C544.9322,-145.9758 506.3275,-124.006 470,-113 401.2544,-92.1724 365.5911,-49.1275 309.5,-94"/>
 </g>
 <!-- module~grid&#45;&gt;module~mapping -->
-<g id="module~~solver~~UsesGraph_edge151" class="edge">
+<g id="module~~solver~~UsesGraph_edge97" class="edge">
 <title>module~grid&#45;&gt;module~mapping</title>
-<path fill="none" stroke="#ff0038" stroke-dasharray="5,2" d="M717.6012,-1794.6174C694.857,-1781.3597 656.6982,-1760.1634 622,-1745.8263 612.1509,-1741.7567 601.2196,-1738.0456 591.0534,-1734.9134"/>
-<polygon fill="#ff0038" stroke="#ff0038" points="591.7936,-1731.482 581.2105,-1731.9822 589.7957,-1738.1908 591.7936,-1731.482"/>
-</g>
-<!-- module~grid&#45;&gt;module~global_vars -->
-<g id="module~~solver~~UsesGraph_edge149" class="edge">
-<title>module~grid&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff0038" stroke-dasharray="5,2" d="M710.9089,-1800.0457C673.6334,-1792.1779 605.3191,-1783.0922 554,-1806.8263"/>
-</g>
-<!-- module~grid&#45;&gt;module~utils -->
-<g id="module~~solver~~UsesGraph_edge148" class="edge">
-<title>module~grid&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff0038" stroke-dasharray="5,2" d="M719.4861,-1794.6265C701.8503,-1782.2587 675.4715,-1761.7224 658,-1738.8263 635.0827,-1708.7937 650.4054,-1686.732 622,-1661.8263 574.3337,-1620.0329 536.0507,-1657.7325 486,-1618.8263 462.0462,-1600.2062 473.1,-1580.4957 450,-1560.8263 428.9156,-1542.8733 407.7238,-1559.9585 392.5,-1536.8263"/>
-<path fill="none" stroke="#ff0038" stroke-dasharray="5,2" d="M392.5,-1536.8263C371.7485,-1505.4931 351.7619,-1508.4631 335,-1474.8263 291.9812,-1388.4989 257.2665,-1083.7245 248.2729,-998.888"/>
-<polygon fill="#ff0038" stroke="#ff0038" points="251.7422,-998.4113 247.2186,-988.8308 244.7803,-999.1412 251.7422,-998.4113"/>
-</g>
-<!-- module~grid&#45;&gt;module~global -->
-<g id="module~~solver~~UsesGraph_edge150" class="edge">
-<title>module~grid&#45;&gt;module~global</title>
-<path fill="none" stroke="#ff0038" stroke-dasharray="5,2" d="M710.8685,-1810.1601C693.9892,-1813.4582 672.7622,-1819.9797 658,-1832.8263 630.41,-1856.8361 645.9268,-1879.1643 622,-1906.8263 544.4356,-1996.4996 510.5527,-2031.8217 392.5,-2042.8263"/>
+<path fill="none" stroke="#ff0050" stroke-dasharray="5,2" d="M558.7734,-165.5538C532.2922,-159.2841 491.8684,-149.7134 462.4841,-142.7564"/>
+<polygon fill="#ff0050" stroke="#ff0050" points="463.1293,-139.3124 452.5919,-140.4143 461.5165,-146.1241 463.1293,-139.3124"/>
 </g>
 </g>
 </svg>
@@ -1724,52 +1409,31 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: module~~solver~~UsedByGraph Pages: 1 -->
-<svg id="modulesolverUsedByGraph" width="252pt" height="52pt"
- viewBox="0.00 0.00 252.00 52.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~solver~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 48)">
+<svg id="modulesolverUsedByGraph" width="152pt" height="32pt"
+ viewBox="0.00 0.00 152.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~solver~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>module~~solver~~UsedByGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-48 248,-48 248,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 148,-28 148,4 -4,4"/>
 <!-- module~solver -->
 <g id="module~~solver~~UsedByGraph_node1" class="node">
 <title>module~solver</title>
-<polygon fill="none" stroke="#000000" points="54,-44 0,-44 0,-20 54,-20 54,-44"/>
-<text text-anchor="middle" x="27" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">solver</text>
+<polygon fill="none" stroke="#000000" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">solver</text>
 </g>
 <!-- program~main -->
 <g id="module~~solver~~UsedByGraph_node2" class="node">
 <title>program~main</title>
 <g id="a_module~~solver~~UsedByGraph_node2"><a xlink:href=".././program/main.html" xlink:title="main">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="244,-44 190,-44 190,-20 244,-20 244,-44"/>
-<text text-anchor="middle" x="217" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
 </a>
 </g>
 </g>
 <!-- program~main&#45;&gt;module~solver -->
 <g id="module~~solver~~UsedByGraph_edge1" class="edge">
 <title>program~main&#45;&gt;module~solver</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M189.7124,-32.5275C178.6304,-32.7172 165.7042,-32.9071 154,-33 125.5565,-33.2257 118.4435,-33.2257 90,-33 81.7705,-32.9347 72.9368,-32.8214 64.5649,-32.694"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="64.343,-29.19 54.2876,-32.5275 64.2296,-36.1891 64.343,-29.19"/>
-</g>
-<!-- module~start_finish -->
-<g id="module~~solver~~UsedByGraph_node3" class="node">
-<title>module~start_finish</title>
-<g id="a_module~~solver~~UsedByGraph_node3"><a xlink:href=".././module/start_finish.html" xlink:title="start_finish">
-<polygon fill="#337ab7" stroke="#337ab7" points="154,-24 90,-24 90,0 154,0 154,-24"/>
-<text text-anchor="middle" x="122" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_finish</text>
-</a>
-</g>
-</g>
-<!-- program~main&#45;&gt;module~start_finish -->
-<g id="module~~solver~~UsedByGraph_edge3" class="edge">
-<title>program~main&#45;&gt;module~start_finish</title>
-<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M189.7768,-26.2688C181.8164,-24.5929 172.9206,-22.7201 164.26,-20.8968"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="164.778,-17.4292 154.2714,-18.794 163.3358,-24.2791 164.778,-17.4292"/>
-</g>
-<!-- module~start_finish&#45;&gt;module~solver -->
-<g id="module~~solver~~UsedByGraph_edge2" class="edge">
-<title>module~start_finish&#45;&gt;module~solver</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.8373,-18.7711C81.5713,-20.5113 72.6111,-22.3977 64.1166,-24.186"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="63.1287,-20.8171 54.0643,-26.3023 64.5709,-27.667 63.1287,-20.8171"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.997,-12C81.9723,-12 73.0335,-12 64.4691,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.295,-8.5001 54.295,-12 64.2949,-15.5001 64.295,-8.5001"/>
 </g>
 </g>
 </svg>
@@ -1846,6 +1510,52 @@
 
 
 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/solver.html#variable-dims%7E120">dims</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-nodes%7E21">nodes</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-cells%7E48">cells</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-ifaces%7E50">Ifaces</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-jfaces%7E50">Jfaces</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-kfaces%7E50">Kfaces</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-control%7E64">control</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-schemes">schemes</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-flow%7E53">flow</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-files%7E32">files</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-boundary">boundary</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-qp%7E69">qp</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-temp%7E6">Temp</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-f%7E20">F</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-g%7E15">G</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-h%7E15">H</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-residue%7E26">residue</a>
+      
+      <a class="list-group-item" href="../module/solver.html#variable-delta_t%7E21">delta_t</a>
+      
+    </div>
+  </div>
+</div>
+
+
 
 
 
@@ -1861,6 +1571,12 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/solver.html#proc-abort_run">abort_run</a>
+      
+      <a class="list-group-item" href="../module/solver.html#proc-finish_run">finish_run</a>
+      
+      <a class="list-group-item" href="../module/solver.html#proc-start_run">start_run</a>
       
       <a class="list-group-item" href="../module/solver.html#proc-setup_solver">setup_solver</a>
       
@@ -1889,6 +1605,276 @@
     
 
     
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E120"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td></td><td></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nodes%7E21"></span>type(<a href='../type/nodetype.html'>nodetype</a>),</td>
+  
+  <td>private,</td>
+  <td>dimension(:,:,:), allocatable</td><td>::</td>
+  <td><strong>nodes</strong></td><td></td><td></td><td><p>Grid points </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cells%7E48"></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  
+  <td>private,</td>
+  <td>dimension(:,:,:), allocatable</td><td>::</td>
+  <td><strong>cells</strong></td><td></td><td></td><td><p>Cell center quantities: volume, cellCenter</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ifaces%7E50"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  
+  <td>private,</td>
+  <td>dimension(:,:,:), allocatable</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td></td><td></td><td><p>Face quantities: area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-jfaces%7E50"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  
+  <td>private,</td>
+  <td>dimension(:,:,:), allocatable</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td></td><td></td><td><p>Face quantities: area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kfaces%7E50"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  
+  <td>private,</td>
+  <td>dimension(:,:,:), allocatable</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td></td><td></td><td><p>Face quantities: area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-control%7E64"></span>type(<a href='../type/controltype.html'>controltype</a>),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>control</strong></td><td></td><td></td><td><p>Control parameters</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-schemes"></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>schemes</strong></td><td></td><td></td><td><p>finite-volume Schemes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-flow%7E53"></span>type(<a href='../type/flowtype.html'>flowtype</a>),</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>flow</strong></td><td></td><td></td><td><p>Information about fluid flow: freestream-speed, ref-viscosity,etc.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-files%7E32"></span>type(<a href='../type/filetype.html'>filetype</a>),</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>files</strong></td><td></td><td></td><td><p>Files' name and handler</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-boundary"></span>type(<a href='../type/boundarytype.html'>boundarytype</a>),</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>boundary</strong></td><td></td><td></td><td><p>boundary conditions and fixed values</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qp%7E69"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :, :), allocatable</td><td>::</td>
+  <td><strong>qp</strong></td><td></td><td></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-temp%7E6"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :   ), allocatable</td><td>::</td>
+  <td><strong>Temp</strong></td><td></td><td></td><td><p>Store Temperature variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-f%7E20"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>dimension(:, :, :, :), allocatable, target</td><td>::</td>
+  <td><strong>F</strong></td><td></td><td></td><td><p>Store fluxes throught the I faces</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-g%7E15"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>dimension(:, :, :, :), allocatable, target</td><td>::</td>
+  <td><strong>G</strong></td><td></td><td></td><td><p>Store fluxes throught the J faces</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-h%7E15"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>dimension(:, :, :, :), allocatable, target</td><td>::</td>
+  <td><strong>H</strong></td><td></td><td></td><td><p>Store fluxes throught the K faces</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-residue%7E26"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>dimension(:, :, :, :), allocatable, target</td><td>::</td>
+  <td><strong>residue</strong></td><td></td><td></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-delta_t%7E21"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), allocatable</td><td>::</td>
+  <td><strong>delta_t</strong></td><td></td><td></td><td><p>Local time increment value at each cell center</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
     
     
     
@@ -1903,6 +1889,96 @@
     
     <section>
     <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-abort_run"></span><h3>
+public subroutine <a href='../proc/abort_run.html'>abort_run</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Aborting the solver</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-finish_run"></span><h3>
+public subroutine <a href='../proc/finish_run.html'>finish_run</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Finishing the solution computation</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-start_run"></span><h3>
+public subroutine <a href='../proc/start_run.html'>start_run</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Starting the solver setup</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
     
     
   <div class="panel panel-default">
@@ -2044,7 +2120,7 @@ public subroutine <a href='../proc/iterate_one_more_time_step.html'>iterate_one_
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

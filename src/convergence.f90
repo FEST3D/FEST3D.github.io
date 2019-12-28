@@ -1,34 +1,29 @@
   !< Check for solution's convergence
 module convergence
   !< Check for solution's convergence
-  !-------------------------------------
-  ! 170803  -Jatinder Pal Singh Sandhu
-  !           find if solution converged
-  !-------------------------------------
-  use global_vars, only: Res_abs
-  use global_vars, only: Res_rel
-  use global_vars, only: tolerance
-  use global_vars, only: tolerance_type
-  use global_vars, only: process_id
-  use global_vars, only: current_iter
-#include "../error.inc"
+  use vartypes
+  use resnorm    , only: Res_abs
+  use resnorm    , only: Res_rel
+#include "error.inc"
   implicit none
   private
   public :: converged
 
   contains
-    function converged() result(c)
+    function converged(control) result(c)
         !< Check if the solution seems to have converged
         !< The solution is said to have converged if the change in 
         !< the residue norm is "negligible".
         !-----------------------------------------------------------
 
         implicit none
+        type(controltype), intent(in) :: control
+        !< control parameters
         logical :: c
-        real    :: check=10.
+        !< convergence result:True or false
+        real(wp)    :: check=10.
 
-        select case(trim(tolerance_type))
-        !include "convergence_select.inc"
+        select case(trim(control%tolerance_type))
           case('Mass_abs')
             check =  Res_abs(0)
 
@@ -119,7 +114,7 @@ module convergence
             Issue_warning
         end select
 
-        if (check < tolerance .and. current_iter>10) then
+        if (check < control%tolerance .and. control%current_iter>10) then
           c = .TRUE.
         else
           c = .FALSE.

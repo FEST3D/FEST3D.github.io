@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="13.6% of total for modules and submodules.">2707 statements</a>
+    title="14.3% of total for modules and submodules.">2229 statements</a>
      </li> 
      
      
@@ -192,35 +196,31 @@
       
       <a class="list-group-item" href="../module/lusgs.html#variable-mmu%7E2">mmu</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-ibuf_size%7E3">ibuf_size</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-imx%7E7">imx</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-jbuf_size%7E3">jbuf_size</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-jmx%7E7">jmx</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-kbuf_size%7E3">kbuf_size</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-kmx%7E7">kmx</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-imin_send_buf%7E3">imin_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-n_var%7E7">n_var</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-jmin_send_buf%7E3">jmin_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-gm%7E3">gm</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-kmin_send_buf%7E3">kmin_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-mu_ref%7E3">mu_ref</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-imin_recv_buf%7E3">imin_recv_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-reynolds_number%7E3">Reynolds_number</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-jmin_recv_buf%7E3">jmin_recv_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-free_stream_tu%7E2">free_stream_tu</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-kmin_recv_buf%7E3">kmin_recv_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-tk_inf%7E3">tk_inf</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-imax_send_buf%7E3">imax_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-tkl_inf%7E3">tkl_inf</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-jmax_send_buf%7E3">jmax_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-tpr%7E3">tPr</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-kmax_send_buf%7E3">kmax_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-pr%7E3">Pr</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-imax_recv_buf%7E3">imax_recv_buf</a>
-      
-      <a class="list-group-item" href="../module/lusgs.html#variable-jmax_recv_buf%7E3">jmax_recv_buf</a>
-      
-      <a class="list-group-item" href="../module/lusgs.html#variable-kmax_recv_buf%7E3">kmax_recv_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-r_gas%7E4">R_gas</a>
       
     </div>
   </div>
@@ -267,8 +267,6 @@
       
       <a class="list-group-item" href="../module/lusgs.html#proc-setup_lusgs">setup_lusgs</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#proc-destroy_lusgs">destroy_lusgs</a>
-      
       <a class="list-group-item" href="../module/lusgs.html#proc-update_with_lusgs">update_with_lusgs</a>
       
       <a class="list-group-item" href="../module/lusgs.html#proc-update_laminar_variables%7E2">update_laminar_variables</a>
@@ -280,10 +278,6 @@
       <a class="list-group-item" href="../module/lusgs.html#proc-update_sa_variables%7E2">update_SA_variables</a>
       
       <a class="list-group-item" href="../module/lusgs.html#proc-update_lctm2015%7E2">update_lctm2015</a>
-      
-      <a class="list-group-item" href="../module/lusgs.html#proc-apply_interface%7E3">apply_interface</a>
-      
-      <a class="list-group-item" href="../module/lusgs.html#proc-apply_periodic_bc%7E3">apply_periodic_bc</a>
       
     </div>
   </div>
@@ -319,21 +313,21 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/geometry.html'>geometry</a></li>
+    <li><a href='../module/global_sa.html'>global_sa</a></li>
     
-    <li><a href='../module/utils.html'>utils</a></li>
+    <li><a href='../module/wall_dist.html'>wall_dist</a></li>
     
-    <li><a href='../module/mapping.html'>mapping</a></li>
+    <li><a href='../module/global_kkl.html'>global_kkl</a></li>
     
-    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    <li><a href='../module/gradients.html'>gradients</a></li>
     
     <li><a href='../module/global_sst.html'>global_sst</a></li>
     
-    <li><a href='../module/global_sa.html'>global_sa</a></li>
+    <li><a href='../module/viscosity.html'>viscosity</a></li>
     
-    <li><a href='../module/string.html'>string</a></li>
+    <li><a href='../module/utils.html'>utils</a></li>
     
-    <li><a href='../module/global_kkl.html'>global_kkl</a></li>
+    <li><a href='../module/vartypes.html'>vartypes</a></li>
     
   </ul>
       </li>
@@ -347,216 +341,258 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: module~~lusgs~~UsesGraph Pages: 1 -->
-<svg id="modulelusgsUsesGraph" width="442pt" height="276pt"
- viewBox="0.00 0.00 442.00 276.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~lusgs~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 272)">
+<svg id="modulelusgsUsesGraph" width="462pt" height="394pt"
+ viewBox="0.00 0.00 462.00 394.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~lusgs~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 390)">
 <title>module~~lusgs~~UsesGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-272 438,-272 438,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-390 458,-390 458,4 -4,4"/>
 <!-- module~lusgs -->
 <g id="module~~lusgs~~UsesGraph_node1" class="node">
 <title>module~lusgs</title>
-<polygon fill="none" stroke="#000000" points="434,-144 380,-144 380,-120 434,-120 434,-144"/>
-<text text-anchor="middle" x="407" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">lusgs</text>
+<polygon fill="none" stroke="#000000" points="454,-206 400,-206 400,-182 454,-182 454,-206"/>
+<text text-anchor="middle" x="427" y="-191.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">lusgs</text>
 </g>
-<!-- module~mapping -->
+<!-- module~wall_dist -->
 <g id="module~~lusgs~~UsesGraph_node2" class="node">
-<title>module~mapping</title>
-<g id="a_module~~lusgs~~UsesGraph_node2"><a xlink:href=".././module/mapping.html" xlink:title="mapping">
-<polygon fill="#337ab7" stroke="#337ab7" points="340.5,-268 286.5,-268 286.5,-244 340.5,-244 340.5,-268"/>
-<text text-anchor="middle" x="313.5" y="-253.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mapping</text>
+<title>module~wall_dist</title>
+<g id="a_module~~lusgs~~UsesGraph_node2"><a xlink:href=".././module/wall_dist.html" xlink:title="wall_dist">
+<polygon fill="#337ab7" stroke="#337ab7" points="270.5,-306 216.5,-306 216.5,-282 270.5,-282 270.5,-306"/>
+<text text-anchor="middle" x="243.5" y="-291.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">wall_dist</text>
 </a>
 </g>
 </g>
-<!-- module~lusgs&#45;&gt;module~mapping -->
+<!-- module~lusgs&#45;&gt;module~wall_dist -->
 <g id="module~~lusgs~~UsesGraph_edge1" class="edge">
-<title>module~lusgs&#45;&gt;module~mapping</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M401.6122,-144.2126C392.1481,-164.7011 370.9585,-206.5438 344,-235 343.2484,-235.7934 342.462,-236.574 341.649,-237.3401"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="339.3121,-234.7306 333.8229,-243.7926 343.7651,-240.1316 339.3121,-234.7306"/>
+<title>module~lusgs&#45;&gt;module~wall_dist</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M337,-334C311.4921,-343.1522 282.9594,-326.9496 264.1991,-312.5066"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="266.2793,-309.687 256.3131,-306.0918 261.8621,-315.1173 266.2793,-309.687"/>
 </g>
 <!-- module~global_kkl -->
 <g id="module~~lusgs~~UsesGraph_node3" class="node">
 <title>module~global_kkl</title>
 <g id="a_module~~lusgs~~UsesGraph_node3"><a xlink:href=".././module/global_kkl.html" xlink:title="global_kkl">
-<polygon fill="#337ab7" stroke="#337ab7" points="343.5,-226 283.5,-226 283.5,-202 343.5,-202 343.5,-226"/>
-<text text-anchor="middle" x="313.5" y="-211.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_kkl</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="273.5,-386 213.5,-386 213.5,-362 273.5,-362 273.5,-386"/>
+<text text-anchor="middle" x="243.5" y="-371.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_kkl</text>
 </a>
 </g>
 </g>
 <!-- module~lusgs&#45;&gt;module~global_kkl -->
-<g id="module~~lusgs~~UsesGraph_edge6" class="edge">
+<g id="module~~lusgs~~UsesGraph_edge2" class="edge">
 <title>module~lusgs&#45;&gt;module~global_kkl</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M395.474,-144.3133C383.242,-157.0975 363.0823,-177.3745 344,-193 342.8497,-193.9419 341.6584,-194.885 340.4428,-195.8213"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="338.2493,-193.0894 332.2467,-201.8198 342.3835,-198.7382 338.2493,-193.0894"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M337,-334C317.3695,-341.0434 295.9476,-350.1033 278.5671,-357.8192"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="277.0565,-354.6607 269.3641,-361.9462 279.9208,-361.0479 277.0565,-354.6607"/>
 </g>
 <!-- module~global_sst -->
 <g id="module~~lusgs~~UsesGraph_node4" class="node">
 <title>module~global_sst</title>
 <g id="a_module~~lusgs~~UsesGraph_node4"><a xlink:href=".././module/global_sst.html" xlink:title="global_sst">
-<polygon fill="#337ab7" stroke="#337ab7" points="344,-184 283,-184 283,-160 344,-160 344,-184"/>
-<text text-anchor="middle" x="313.5" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sst</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="274,-66 213,-66 213,-42 274,-42 274,-66"/>
+<text text-anchor="middle" x="243.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sst</text>
 </a>
 </g>
 </g>
 <!-- module~lusgs&#45;&gt;module~global_sst -->
 <g id="module~~lusgs~~UsesGraph_edge3" class="edge">
 <title>module~lusgs&#45;&gt;module~global_sst</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M379.9559,-143.5697C370.9759,-147.4114 360.8086,-151.761 351.1758,-155.882"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="349.6023,-152.7483 341.785,-159.8995 352.3557,-159.1841 349.6023,-152.7483"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M337,-94C321.071,-82.5288 301.3426,-73.4769 284.1192,-66.9065"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="284.9093,-63.469 274.3154,-63.3252 282.5074,-70.044 284.9093,-63.469"/>
 </g>
-<!-- module~global_vars -->
+<!-- module~viscosity -->
 <g id="module~~lusgs~~UsesGraph_node5" class="node">
-<title>module~global_vars</title>
-<g id="a_module~~lusgs~~UsesGraph_node5"><a xlink:href=".././module/global_vars.html" xlink:title="global_vars">
-<polygon fill="#337ab7" stroke="#337ab7" points="157,-124 90,-124 90,-100 157,-100 157,-124"/>
-<text text-anchor="middle" x="123.5" y="-109.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_vars</text>
+<title>module~viscosity</title>
+<g id="a_module~~lusgs~~UsesGraph_node5"><a xlink:href=".././module/viscosity.html" xlink:title="viscosity">
+<polygon fill="#337ab7" stroke="#337ab7" points="364,-206 310,-206 310,-182 364,-182 364,-206"/>
+<text text-anchor="middle" x="337" y="-191.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">viscosity</text>
 </a>
 </g>
 </g>
-<!-- module~lusgs&#45;&gt;module~global_vars -->
+<!-- module~lusgs&#45;&gt;module~viscosity -->
 <g id="module~~lusgs~~UsesGraph_edge4" class="edge">
-<title>module~lusgs&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M398.2966,-119.8682C387.3582,-105.6298 367.1836,-82.5053 344,-71 294.0575,-46.2152 274.9243,-42.4152 220,-52"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M220,-52C190.0825,-56.6752 161.3495,-77.3138 143.1359,-93.0924"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="140.6343,-90.6349 135.5412,-99.9253 145.3162,-95.8388 140.6343,-90.6349"/>
+<title>module~lusgs&#45;&gt;module~viscosity</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M399.997,-194C391.9723,-194 383.0335,-194 374.4691,-194"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="374.295,-190.5001 364.295,-194 374.2949,-197.5001 374.295,-190.5001"/>
 </g>
-<!-- module~string -->
+<!-- module~gradients -->
 <g id="module~~lusgs~~UsesGraph_node6" class="node">
-<title>module~string</title>
-<g id="a_module~~lusgs~~UsesGraph_node6"><a xlink:href=".././module/string.html" xlink:title="string">
-<polygon fill="#337ab7" stroke="#337ab7" points="247,-166 193,-166 193,-142 247,-142 247,-166"/>
-<text text-anchor="middle" x="220" y="-151.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">string</text>
+<title>module~gradients</title>
+<g id="a_module~~lusgs~~UsesGraph_node6"><a xlink:href=".././module/gradients.html" xlink:title="gradients">
+<polygon fill="#337ab7" stroke="#337ab7" points="272,-226 215,-226 215,-202 272,-202 272,-226"/>
+<text text-anchor="middle" x="243.5" y="-211.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gradients</text>
 </a>
 </g>
 </g>
-<!-- module~lusgs&#45;&gt;module~string -->
+<!-- module~lusgs&#45;&gt;module~gradients -->
 <g id="module~~lusgs~~UsesGraph_edge5" class="edge">
-<title>module~lusgs&#45;&gt;module~string</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M313.5,-132C294.4024,-132.1021 273.6797,-136.5157 256.6079,-141.3628"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="255.5919,-138.0134 247.018,-144.2374 257.6019,-144.7186 255.5919,-138.0134"/>
+<title>module~lusgs&#45;&gt;module~gradients</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M424.3457,-206.0734C416.927,-236.2544 392.7539,-313.9957 337,-334"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M337,-334C313.2674,-342.5152 272.9234,-271.5733 253.9495,-234.9634"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="257.0651,-233.3687 249.4019,-226.0526 250.8301,-236.5507 257.0651,-233.3687"/>
 </g>
 <!-- module~utils -->
 <g id="module~~lusgs~~UsesGraph_node7" class="node">
 <title>module~utils</title>
 <g id="a_module~~lusgs~~UsesGraph_node7"><a xlink:href=".././module/utils.html" xlink:title="utils">
-<polygon fill="#337ab7" stroke="#337ab7" points="247,-124 193,-124 193,-100 247,-100 247,-124"/>
-<text text-anchor="middle" x="220" y="-109.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="177,-286 123,-286 123,-262 177,-262 177,-286"/>
+<text text-anchor="middle" x="150" y="-271.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils</text>
 </a>
 </g>
 </g>
 <!-- module~lusgs&#45;&gt;module~utils -->
-<g id="module~~lusgs~~UsesGraph_edge2" class="edge">
+<g id="module~~lusgs~~UsesGraph_edge6" class="edge">
 <title>module~lusgs&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M379.9954,-131.9236C361.3207,-131.8896 335.9007,-131.8802 313.5,-132"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M313.5,-132C294.6672,-132.1007 274.163,-128.184 257.1678,-123.791"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="257.6552,-120.2955 247.0856,-121.0259 255.8037,-127.0463 257.6552,-120.2955"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M337,-334C284.5214,-352.8292 264.9808,-335.1628 213,-315 197.453,-308.9695 193.9336,-303.2137 177.6714,-291.7186"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="179.461,-288.7039 169.214,-286.0116 175.5455,-294.5064 179.461,-288.7039"/>
 </g>
-<!-- module~geometry -->
+<!-- module~vartypes -->
 <g id="module~~lusgs~~UsesGraph_node8" class="node">
-<title>module~geometry</title>
-<g id="a_module~~lusgs~~UsesGraph_node8"><a xlink:href=".././module/geometry.html" xlink:title="geometry">
-<polygon fill="#337ab7" stroke="#337ab7" points="342.5,-104 284.5,-104 284.5,-80 342.5,-80 342.5,-104"/>
-<text text-anchor="middle" x="313.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">geometry</text>
+<title>module~vartypes</title>
+<g id="a_module~~lusgs~~UsesGraph_node8"><a xlink:href=".././module/vartypes.html" xlink:title="vartypes">
+<polygon fill="#337ab7" stroke="#337ab7" points="177,-186 123,-186 123,-162 177,-162 177,-186"/>
+<text text-anchor="middle" x="150" y="-171.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vartypes</text>
 </a>
 </g>
 </g>
-<!-- module~lusgs&#45;&gt;module~geometry -->
+<!-- module~lusgs&#45;&gt;module~vartypes -->
 <g id="module~~lusgs~~UsesGraph_edge7" class="edge">
-<title>module~lusgs&#45;&gt;module~geometry</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M379.9559,-120.4303C370.9759,-116.5886 360.8086,-112.239 351.1758,-108.118"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="352.3557,-104.8159 341.785,-104.1005 349.6023,-111.2517 352.3557,-104.8159"/>
+<title>module~lusgs&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M337,-94C291.7566,-61.4181 262.9425,-88.2152 213,-113 193.801,-122.5278 176.6657,-140.024 165.1304,-153.8431"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="162.2226,-151.8749 158.7034,-161.8682 167.6864,-156.2507 162.2226,-151.8749"/>
 </g>
 <!-- module~global_sa -->
 <g id="module~~lusgs~~UsesGraph_node9" class="node">
 <title>module~global_sa</title>
 <g id="a_module~~lusgs~~UsesGraph_node9"><a xlink:href=".././module/global_sa.html" xlink:title="global_sa">
-<polygon fill="#337ab7" stroke="#337ab7" points="342.5,-24 284.5,-24 284.5,0 342.5,0 342.5,-24"/>
-<text text-anchor="middle" x="313.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sa</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="272.5,-24 214.5,-24 214.5,0 272.5,0 272.5,-24"/>
+<text text-anchor="middle" x="243.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sa</text>
 </a>
 </g>
 </g>
 <!-- module~lusgs&#45;&gt;module~global_sa -->
 <g id="module~~lusgs~~UsesGraph_edge8" class="edge">
 <title>module~lusgs&#45;&gt;module~global_sa</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M400.3865,-119.9775C389.8307,-101.3448 367.9124,-64.8461 344,-38 341.9608,-35.7106 339.72,-33.4391 337.4074,-31.2471"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="339.2594,-28.211 329.457,-24.1905 334.6126,-33.4463 339.2594,-28.211"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M418.6344,-181.6848C404.1288,-161.1177 372.4434,-119.5244 337,-94"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M337,-94C305.373,-71.224 304.1548,-57.6921 274,-33 272.8497,-32.0581 271.6584,-31.115 270.4428,-30.1787"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="272.3835,-27.2618 262.2467,-24.1802 268.2493,-32.9106 272.3835,-27.2618"/>
 </g>
-<!-- module~mapping&#45;&gt;module~global_vars -->
-<g id="module~~lusgs~~UsesGraph_edge10" class="edge">
-<title>module~mapping&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M295.7134,-243.9465C270.8113,-227.111 227.7244,-198.1418 220,-194"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M220,-194C207.0683,-187.0661 203.8587,-184.869 193,-175 174.8061,-158.4643 175.6278,-149.0453 157,-133 155.8623,-132.02 154.6745,-131.0542 153.4533,-130.1073"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="155.2731,-127.1072 145.0901,-124.1821 151.2264,-132.819 155.2731,-127.1072"/>
-</g>
-<!-- module~mapping&#45;&gt;module~string -->
-<g id="module~~lusgs~~UsesGraph_edge11" class="edge">
-<title>module~mapping&#45;&gt;module~string</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M293.5743,-243.9499C289.85,-241.248 286.1447,-238.2192 283,-235 262.585,-214.1012 265.6397,-202.4965 247,-180 245.1317,-177.7451 243.0859,-175.4795 240.9828,-173.2767"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="243.35,-170.695 233.7862,-166.1361 238.4196,-175.6641 243.35,-170.695"/>
-</g>
-<!-- module~mapping&#45;&gt;module~utils -->
+<!-- module~wall_dist&#45;&gt;module~utils -->
 <g id="module~~lusgs~~UsesGraph_edge9" class="edge">
-<title>module~mapping&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M291.9872,-243.7937C288.6587,-241.2124 285.5017,-238.2666 283,-235 253.7705,-196.8327 275.1094,-171.9997 247,-133 246.5573,-132.3858 246.0917,-131.7806 245.6066,-131.1852"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="248.0185,-128.6472 238.4768,-124.0419 243.064,-133.5923 248.0185,-128.6472"/>
+<title>module~wall_dist&#45;&gt;module~utils</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M216.4559,-288.2152C207.3293,-286.263 196.9763,-284.0484 187.2044,-281.9582"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="187.8181,-278.5103 177.3072,-279.8411 186.3539,-285.3555 187.8181,-278.5103"/>
 </g>
-<!-- module~global -->
-<g id="module~~lusgs~~UsesGraph_node10" class="node">
-<title>module~global</title>
-<g id="a_module~~lusgs~~UsesGraph_node10"><a xlink:href=".././module/global.html" xlink:title="global">
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-166 0,-166 0,-142 54,-142 54,-166"/>
-<text text-anchor="middle" x="27" y="-151.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global</text>
-</a>
+<!-- module~wall_dist&#45;&gt;module~vartypes -->
+<g id="module~~lusgs~~UsesGraph_edge10" class="edge">
+<title>module~wall_dist&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M233.846,-281.6099C217.7354,-260.9331 185.2209,-219.2033 165.7551,-194.2204"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="168.3694,-191.881 159.4622,-186.144 162.8476,-196.1834 168.3694,-191.881"/>
 </g>
-</g>
-<!-- module~mapping&#45;&gt;module~global -->
-<g id="module~~lusgs~~UsesGraph_edge12" class="edge">
-<title>module~mapping&#45;&gt;module~global</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M220,-194C168.5392,-166.4071 146.8078,-188.5074 90,-175 81.4545,-172.9681 72.4155,-170.2856 63.9336,-167.5198"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="64.8896,-164.1486 54.2954,-164.2687 62.6521,-170.7814 64.8896,-164.1486"/>
-</g>
-<!-- module~fclose -->
+<!-- iso_fortran_env -->
 <g id="module~~lusgs~~UsesGraph_node11" class="node">
-<title>module~fclose</title>
-<g id="a_module~~lusgs~~UsesGraph_node11"><a xlink:href=".././module/fclose.html" xlink:title="fclose">
-<polygon fill="#337ab7" stroke="#337ab7" points="150.5,-166 96.5,-166 96.5,-142 150.5,-142 150.5,-166"/>
-<text text-anchor="middle" x="123.5" y="-151.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">fclose</text>
+<title>iso_fortran_env</title>
+<g id="a_module~~lusgs~~UsesGraph_node11"><a xlink:href="http://fortranwiki.org/fortran/show/ISO_FORTRAN_ENV" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-186 0,-186 0,-162 87,-162 87,-186"/>
+<text text-anchor="middle" x="43.5" y="-171.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iso_fortran_env</text>
 </a>
 </g>
 </g>
-<!-- module~mapping&#45;&gt;module~fclose -->
+<!-- module~global_kkl&#45;&gt;iso_fortran_env -->
+<g id="module~~lusgs~~UsesGraph_edge11" class="edge">
+<title>module~global_kkl&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ffbf00" stroke-dasharray="5,2" d="M219.2429,-361.9587C193.3139,-348.2615 152.0234,-323.9946 123,-295 92.7021,-264.7322 67.5183,-221.1553 54.0621,-195.3929"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="57.0054,-193.4608 49.3389,-186.1481 50.7718,-196.6456 57.0054,-193.4608"/>
+</g>
+<!-- module~global_sst&#45;&gt;iso_fortran_env -->
+<g id="module~~lusgs~~UsesGraph_edge12" class="edge">
+<title>module~global_sst&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M212.7997,-46.4704C193.4748,-43.4668 168.7352,-42.9488 150,-54"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~wall_dist -->
 <g id="module~~lusgs~~UsesGraph_edge13" class="edge">
-<title>module~mapping&#45;&gt;module~fclose</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M220,-194C200.8971,-183.7572 178.5973,-174.3597 160.2496,-167.2509"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="161.3725,-163.9334 150.7815,-163.6482 158.883,-170.4758 161.3725,-163.9334"/>
+<title>module~viscosity&#45;&gt;module~wall_dist</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M327.7285,-206.0431C315.9016,-221.1242 294.5141,-247.4727 274,-268 271.6391,-270.3624 269.0913,-272.7529 266.5097,-275.078"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="264.0689,-272.5622 258.8163,-281.7634 268.6604,-277.846 264.0689,-272.5622"/>
 </g>
-<!-- module~global_vars&#45;&gt;module~global -->
+<!-- module~viscosity&#45;&gt;module~global_kkl -->
 <g id="module~~lusgs~~UsesGraph_edge14" class="edge">
-<title>module~global_vars&#45;&gt;module~global</title>
-<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M95.847,-124.0355C85.869,-128.3783 74.4442,-133.3507 63.8069,-137.9804"/>
-<polygon fill="#00ff3f" stroke="#00ff3f" points="62.0958,-134.9079 54.3234,-142.1079 64.8894,-141.3264 62.0958,-134.9079"/>
+<title>module~viscosity&#45;&gt;module~global_kkl</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M330.72,-206.0898C315.0841,-236.191 274.2525,-314.7973 254.5077,-352.8086"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="251.2564,-351.4752 249.7526,-361.9628 257.4683,-354.702 251.2564,-351.4752"/>
 </g>
-<!-- module~utils&#45;&gt;module~global_vars -->
-<g id="module~~lusgs~~UsesGraph_edge15" class="edge">
-<title>module~utils&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#003fff" stroke-dasharray="5,2" d="M192.8626,-112C184.9291,-112 176.0471,-112 167.3567,-112"/>
-<polygon fill="#003fff" stroke="#003fff" points="167.3114,-108.5001 157.3114,-112 167.3113,-115.5001 167.3114,-108.5001"/>
-</g>
-<!-- module~geometry&#45;&gt;module~global_vars -->
-<g id="module~~lusgs~~UsesGraph_edge17" class="edge">
-<title>module~geometry&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M299.2581,-79.9824C281.4684,-66.4007 249.7418,-46.8098 220,-52"/>
-</g>
-<!-- module~geometry&#45;&gt;module~utils -->
+<!-- module~viscosity&#45;&gt;module~global_sst -->
 <g id="module~~lusgs~~UsesGraph_edge16" class="edge">
-<title>module~geometry&#45;&gt;module~utils</title>
-<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M284.4285,-98.2185C275.7818,-100.0681 266.1888,-102.12 257.1039,-104.0633"/>
-<polygon fill="#7f00ff" stroke="#7f00ff" points="256.1869,-100.6802 247.1402,-106.1946 257.6511,-107.5254 256.1869,-100.6802"/>
+<title>module~viscosity&#45;&gt;module~global_sst</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M328.7025,-181.5759C312.5822,-157.4386 276.8905,-103.9965 257.2023,-74.5169"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="260.1099,-72.5684 251.6454,-66.1963 254.2887,-76.4561 260.1099,-72.5684"/>
 </g>
-<!-- module~fclose&#45;&gt;module~global -->
+<!-- module~viscosity&#45;&gt;module~gradients -->
+<g id="module~~lusgs~~UsesGraph_edge17" class="edge">
+<title>module~viscosity&#45;&gt;module~gradients</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M309.9559,-199.7848C301.2422,-201.6487 291.4106,-203.7517 282.0342,-205.7574"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="281.1595,-202.3652 272.1129,-207.8796 282.6238,-209.2104 281.1595,-202.3652"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~utils -->
 <g id="module~~lusgs~~UsesGraph_edge18" class="edge">
-<title>module~fclose&#45;&gt;module~global</title>
-<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M96.3626,-154C86.4954,-154 75.1609,-154 64.5528,-154"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="64.2681,-150.5001 54.2681,-154 64.2681,-157.5001 64.2681,-150.5001"/>
+<title>module~viscosity&#45;&gt;module~utils</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M321.1344,-206.0721C308.8043,-215.0115 290.9951,-226.9819 274,-235 246.016,-248.2026 212.4382,-258.4501 187.2857,-265.1208"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="186.2127,-261.783 177.4057,-267.6727 187.9633,-268.5606 186.2127,-261.783"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~vartypes -->
+<g id="module~~lusgs~~UsesGraph_edge19" class="edge">
+<title>module~viscosity&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M309.8086,-191.0918C277.54,-187.6406 223.5624,-181.8676 187.3807,-177.9979"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="187.5398,-174.4951 177.2242,-176.9117 186.7953,-181.4554 187.5398,-174.4951"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~global_sa -->
+<g id="module~~lusgs~~UsesGraph_edge20" class="edge">
+<title>module~viscosity&#45;&gt;module~global_sa</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M333.2315,-181.7218C322.8627,-148.4576 293.3943,-57.4598 274,-33 273.4233,-32.2727 272.8147,-31.5607 272.1795,-30.8645"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="274.3781,-28.1342 264.6071,-24.038 269.6911,-33.3334 274.3781,-28.1342"/>
+</g>
+<!-- module~copy_bc -->
+<g id="module~~lusgs~~UsesGraph_node10" class="node">
+<title>module~copy_bc</title>
+<g id="a_module~~lusgs~~UsesGraph_node10"><a xlink:href=".././module/copy_bc.html" xlink:title="copy_bc">
+<polygon fill="#337ab7" stroke="#337ab7" points="270.5,-146 216.5,-146 216.5,-122 270.5,-122 270.5,-146"/>
+<text text-anchor="middle" x="243.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">copy_bc</text>
+</a>
+</g>
+</g>
+<!-- module~viscosity&#45;&gt;module~copy_bc -->
+<g id="module~~lusgs~~UsesGraph_edge15" class="edge">
+<title>module~viscosity&#45;&gt;module~copy_bc</title>
+<path fill="none" stroke="#00ff3f" stroke-dasharray="5,2" d="M318.0789,-181.8581C304.5184,-173.1562 286.0465,-161.3026 270.8793,-151.5696"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="272.6994,-148.579 262.393,-146.1238 268.9189,-154.4703 272.6994,-148.579"/>
+</g>
+<!-- module~gradients&#45;&gt;module~utils -->
+<g id="module~~lusgs~~UsesGraph_edge21" class="edge">
+<title>module~gradients&#45;&gt;module~utils</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M224.5789,-226.1419C211.0184,-234.8438 192.5465,-246.6974 177.3793,-256.4304"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="175.4189,-253.5297 168.893,-261.8762 179.1994,-259.421 175.4189,-253.5297"/>
+</g>
+<!-- module~gradients&#45;&gt;module~vartypes -->
+<g id="module~~lusgs~~UsesGraph_edge22" class="edge">
+<title>module~gradients&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M215.4469,-201.9987C206.3293,-198.0981 196.0758,-193.7116 186.4377,-189.5883"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="187.6402,-186.296 177.0696,-185.5806 184.8869,-192.7318 187.6402,-186.296"/>
+</g>
+<!-- module~vartypes&#45;&gt;iso_fortran_env -->
+<g id="module~~lusgs~~UsesGraph_edge23" class="edge">
+<title>module~vartypes&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M122.85,-174C114.9694,-174 106.0755,-174 97.1661,-174"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="97.1538,-170.5001 87.1537,-174 97.1537,-177.5001 97.1538,-170.5001"/>
+</g>
+<!-- module~global_sa&#45;&gt;iso_fortran_env -->
+<g id="module~~lusgs~~UsesGraph_edge24" class="edge">
+<title>module~global_sa&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M214.4491,-23.0989C195.5619,-30.7823 170.6919,-41.7946 150,-54"/>
+<path fill="none" stroke="#ff00bf" stroke-dasharray="5,2" d="M150,-54C107.9353,-78.8123 73.5345,-125.9245 56.0306,-153.1529"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="52.9026,-151.5532 50.559,-161.8856 58.8345,-155.2699 52.9026,-151.5532"/>
+</g>
+<!-- module~copy_bc&#45;&gt;module~vartypes -->
+<g id="module~~lusgs~~UsesGraph_edge25" class="edge">
+<title>module~copy_bc&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M216.4559,-145.5697C207.1372,-149.5563 196.5398,-154.0899 186.588,-158.3474"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="185.1246,-155.1666 177.3072,-162.3178 187.8779,-161.6023 185.1246,-155.1666"/>
 </g>
 </g>
 </svg>
@@ -640,82 +676,61 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: module~~lusgs~~UsedByGraph Pages: 1 -->
-<svg id="modulelusgsUsedByGraph" width="432pt" height="52pt"
- viewBox="0.00 0.00 432.00 52.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~lusgs~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 48)">
+<svg id="modulelusgsUsedByGraph" width="332pt" height="32pt"
+ viewBox="0.00 0.00 332.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~lusgs~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>module~~lusgs~~UsedByGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-48 428,-48 428,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 328,-28 328,4 -4,4"/>
 <!-- module~lusgs -->
 <g id="module~~lusgs~~UsedByGraph_node1" class="node">
 <title>module~lusgs</title>
-<polygon fill="none" stroke="#000000" points="54,-44 0,-44 0,-20 54,-20 54,-44"/>
-<text text-anchor="middle" x="27" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">lusgs</text>
+<polygon fill="none" stroke="#000000" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">lusgs</text>
 </g>
 <!-- module~update -->
 <g id="module~~lusgs~~UsedByGraph_node2" class="node">
 <title>module~update</title>
 <g id="a_module~~lusgs~~UsedByGraph_node2"><a xlink:href=".././module/update.html" xlink:title="update">
-<polygon fill="#337ab7" stroke="#337ab7" points="144,-44 90,-44 90,-20 144,-20 144,-44"/>
-<text text-anchor="middle" x="117" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update</text>
 </a>
 </g>
 </g>
 <!-- module~update&#45;&gt;module~lusgs -->
 <g id="module~~lusgs~~UsedByGraph_edge1" class="edge">
 <title>module~update&#45;&gt;module~lusgs</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.997,-32C81.9723,-32 73.0335,-32 64.4691,-32"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="64.295,-28.5001 54.295,-32 64.2949,-35.5001 64.295,-28.5001"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.997,-12C81.9723,-12 73.0335,-12 64.4691,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.295,-8.5001 54.295,-12 64.2949,-15.5001 64.295,-8.5001"/>
 </g>
 <!-- module~solver -->
 <g id="module~~lusgs~~UsedByGraph_node3" class="node">
 <title>module~solver</title>
 <g id="a_module~~lusgs~~UsedByGraph_node3"><a xlink:href=".././module/solver.html" xlink:title="solver">
-<polygon fill="#337ab7" stroke="#337ab7" points="234,-44 180,-44 180,-20 234,-20 234,-44"/>
-<text text-anchor="middle" x="207" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">solver</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="234,-24 180,-24 180,0 234,0 234,-24"/>
+<text text-anchor="middle" x="207" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">solver</text>
 </a>
 </g>
 </g>
 <!-- module~solver&#45;&gt;module~update -->
 <g id="module~~lusgs~~UsedByGraph_edge2" class="edge">
 <title>module~solver&#45;&gt;module~update</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M179.997,-32C171.9723,-32 163.0335,-32 154.4691,-32"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="154.295,-28.5001 144.295,-32 154.2949,-35.5001 154.295,-28.5001"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M179.997,-12C171.9723,-12 163.0335,-12 154.4691,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="154.295,-8.5001 144.295,-12 154.2949,-15.5001 154.295,-8.5001"/>
 </g>
 <!-- program~main -->
 <g id="module~~lusgs~~UsedByGraph_node4" class="node">
 <title>program~main</title>
 <g id="a_module~~lusgs~~UsedByGraph_node4"><a xlink:href=".././program/main.html" xlink:title="main">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="424,-44 370,-44 370,-20 424,-20 424,-44"/>
-<text text-anchor="middle" x="397" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="324,-24 270,-24 270,0 324,0 324,-24"/>
+<text text-anchor="middle" x="297" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
 </a>
 </g>
 </g>
 <!-- program~main&#45;&gt;module~solver -->
 <g id="module~~lusgs~~UsedByGraph_edge3" class="edge">
 <title>program~main&#45;&gt;module~solver</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M369.7124,-32.5275C358.6304,-32.7172 345.7042,-32.9071 334,-33 305.5565,-33.2257 298.4435,-33.2257 270,-33 261.7705,-32.9347 252.9368,-32.8214 244.5649,-32.694"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="244.343,-29.19 234.2876,-32.5275 244.2296,-36.1891 244.343,-29.19"/>
-</g>
-<!-- module~start_finish -->
-<g id="module~~lusgs~~UsedByGraph_node5" class="node">
-<title>module~start_finish</title>
-<g id="a_module~~lusgs~~UsedByGraph_node5"><a xlink:href=".././module/start_finish.html" xlink:title="start_finish">
-<polygon fill="#337ab7" stroke="#337ab7" points="334,-24 270,-24 270,0 334,0 334,-24"/>
-<text text-anchor="middle" x="302" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_finish</text>
-</a>
-</g>
-</g>
-<!-- program~main&#45;&gt;module~start_finish -->
-<g id="module~~lusgs~~UsedByGraph_edge5" class="edge">
-<title>program~main&#45;&gt;module~start_finish</title>
-<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M369.7768,-26.2688C361.8164,-24.5929 352.9206,-22.7201 344.26,-20.8968"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="344.778,-17.4292 334.2714,-18.794 343.3358,-24.2791 344.778,-17.4292"/>
-</g>
-<!-- module~start_finish&#45;&gt;module~solver -->
-<g id="module~~lusgs~~UsedByGraph_edge4" class="edge">
-<title>module~start_finish&#45;&gt;module~solver</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M269.8373,-18.7711C261.5713,-20.5113 252.6111,-22.3977 244.1166,-24.186"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="243.1287,-20.8171 234.0643,-26.3023 244.5709,-27.667 243.1287,-20.8171"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M269.997,-12C261.9723,-12 253.0335,-12 244.4691,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="244.295,-8.5001 234.295,-12 244.2949,-15.5001 244.295,-8.5001"/>
 </g>
 </g>
 </svg>
@@ -807,35 +822,31 @@
       
       <a class="list-group-item" href="../module/lusgs.html#variable-mmu%7E2">mmu</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-ibuf_size%7E3">ibuf_size</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-imx%7E7">imx</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-jbuf_size%7E3">jbuf_size</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-jmx%7E7">jmx</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-kbuf_size%7E3">kbuf_size</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-kmx%7E7">kmx</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-imin_send_buf%7E3">imin_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-n_var%7E7">n_var</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-jmin_send_buf%7E3">jmin_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-gm%7E3">gm</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-kmin_send_buf%7E3">kmin_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-mu_ref%7E3">mu_ref</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-imin_recv_buf%7E3">imin_recv_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-reynolds_number%7E3">Reynolds_number</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-jmin_recv_buf%7E3">jmin_recv_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-free_stream_tu%7E2">free_stream_tu</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-kmin_recv_buf%7E3">kmin_recv_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-tk_inf%7E3">tk_inf</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-imax_send_buf%7E3">imax_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-tkl_inf%7E3">tkl_inf</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-jmax_send_buf%7E3">jmax_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-tpr%7E3">tPr</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-kmax_send_buf%7E3">kmax_send_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-pr%7E3">Pr</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#variable-imax_recv_buf%7E3">imax_recv_buf</a>
-      
-      <a class="list-group-item" href="../module/lusgs.html#variable-jmax_recv_buf%7E3">jmax_recv_buf</a>
-      
-      <a class="list-group-item" href="../module/lusgs.html#variable-kmax_recv_buf%7E3">kmax_recv_buf</a>
+      <a class="list-group-item" href="../module/lusgs.html#variable-r_gas%7E4">R_gas</a>
       
     </div>
   </div>
@@ -882,8 +893,6 @@
       
       <a class="list-group-item" href="../module/lusgs.html#proc-setup_lusgs">setup_lusgs</a>
       
-      <a class="list-group-item" href="../module/lusgs.html#proc-destroy_lusgs">destroy_lusgs</a>
-      
       <a class="list-group-item" href="../module/lusgs.html#proc-update_with_lusgs">update_with_lusgs</a>
       
       <a class="list-group-item" href="../module/lusgs.html#proc-update_laminar_variables%7E2">update_laminar_variables</a>
@@ -895,10 +904,6 @@
       <a class="list-group-item" href="../module/lusgs.html#proc-update_sa_variables%7E2">update_SA_variables</a>
       
       <a class="list-group-item" href="../module/lusgs.html#proc-update_lctm2015%7E2">update_lctm2015</a>
-      
-      <a class="list-group-item" href="../module/lusgs.html#proc-apply_interface%7E3">apply_interface</a>
-      
-      <a class="list-group-item" href="../module/lusgs.html#proc-apply_periodic_bc%7E3">apply_periodic_bc</a>
       
     </div>
   </div>
@@ -937,7 +942,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-delq%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-delq%7E2"></span>real(kind=wp),</td>
   
   <td>public,</td>
   <td>dimension(:,:,:,:), allocatable</td><td>::</td>
@@ -951,7 +956,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-delqstar%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-delqstar%7E2"></span>real(kind=wp),</td>
   
   <td>public,</td>
   <td>dimension(:,:,:,:), allocatable</td><td>::</td>
@@ -965,7 +970,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-dummy%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-dummy%7E2"></span>real(kind=wp),</td>
   
   <td>public,</td>
   <td>dimension(:,:,:), allocatable, target</td><td>::</td>
@@ -979,7 +984,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-tmu%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-tmu%7E2"></span>real(kind=wp),</td>
   
   <td>public,</td>
   <td>dimension(:,:,:), pointer</td><td>::</td>
@@ -993,7 +998,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-mmu%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-mmu%7E2"></span>real(kind=wp),</td>
   
   <td>public,</td>
   <td>dimension(:,:,:), pointer</td><td>::</td>
@@ -1007,11 +1012,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-ibuf_size%7E3"></span>integer,</td>
+  <td><span class="anchor" id="variable-imx%7E7"></span>integer,</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>ibuf_size</strong></td><td></td><td></td><td><p>size of the buffer for I face interface</p></td>
+  <td><strong>imx</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1021,11 +1026,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-jbuf_size%7E3"></span>integer,</td>
+  <td><span class="anchor" id="variable-jmx%7E7"></span>integer,</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>jbuf_size</strong></td><td></td><td></td><td><p>size of the buffer for J face interface</p></td>
+  <td><strong>jmx</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1035,11 +1040,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-kbuf_size%7E3"></span>integer,</td>
+  <td><span class="anchor" id="variable-kmx%7E7"></span>integer,</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>kbuf_size</strong></td><td></td><td></td><td><p>size of the buffer for K face interface</p></td>
+  <td><strong>kmx</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1049,25 +1054,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-imin_send_buf%7E3"></span>real,</td>
+  <td><span class="anchor" id="variable-n_var%7E7"></span>integer,</td>
   
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>imin_send_buf</strong></td><td></td><td></td><td><p>Array to store data to send data for Imin face</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-jmin_send_buf%7E3"></span>real,</td>
-  
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>jmin_send_buf</strong></td><td></td><td></td><td><p>Array to store data to send data for Jmin face</p></td>
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>n_var</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1077,25 +1068,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-kmin_send_buf%7E3"></span>real,</td>
+  <td><span class="anchor" id="variable-gm%7E3"></span>real(kind=wp),</td>
   
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>kmin_send_buf</strong></td><td></td><td></td><td><p>Array to store data to send data for Kmin face</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-imin_recv_buf%7E3"></span>real,</td>
-  
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>imin_recv_buf</strong></td><td></td><td></td><td><p>Array to store data to receive data for Imin face</p></td>
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>gm</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1105,25 +1082,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-jmin_recv_buf%7E3"></span>real,</td>
+  <td><span class="anchor" id="variable-mu_ref%7E3"></span>real(kind=wp),</td>
   
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>jmin_recv_buf</strong></td><td></td><td></td><td><p>Array to store data to receive data for Jmin face</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-kmin_recv_buf%7E3"></span>real,</td>
-  
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>kmin_recv_buf</strong></td><td></td><td></td><td><p>Array to store data to receive data for Kmin face</p></td>
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>mu_ref</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1133,25 +1096,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-imax_send_buf%7E3"></span>real,</td>
+  <td><span class="anchor" id="variable-reynolds_number%7E3"></span>real(kind=wp),</td>
   
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>imax_send_buf</strong></td><td></td><td></td><td><p>Array to store data to send data for Imax face</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-jmax_send_buf%7E3"></span>real,</td>
-  
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>jmax_send_buf</strong></td><td></td><td></td><td><p>Array to store data to send data for Jmax face</p></td>
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>Reynolds_number</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1161,25 +1110,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-kmax_send_buf%7E3"></span>real,</td>
+  <td><span class="anchor" id="variable-free_stream_tu%7E2"></span>real(kind=wp),</td>
   
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>kmax_send_buf</strong></td><td></td><td></td><td><p>Array to store data to send data for Kmax face</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-imax_recv_buf%7E3"></span>real,</td>
-  
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>imax_recv_buf</strong></td><td></td><td></td><td><p>Array to store data to receive data for Imax face</p></td>
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>free_stream_tu</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1189,11 +1124,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-jmax_recv_buf%7E3"></span>real,</td>
+  <td><span class="anchor" id="variable-tk_inf%7E3"></span>real(kind=wp),</td>
   
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>jmax_recv_buf</strong></td><td></td><td></td><td><p>Array to store data to receive data for Jmax face</p></td>
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>tk_inf</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1203,11 +1138,53 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-kmax_recv_buf%7E3"></span>real,</td>
+  <td><span class="anchor" id="variable-tkl_inf%7E3"></span>real(kind=wp),</td>
   
-  <td>public,</td>
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>kmax_recv_buf</strong></td><td></td><td></td><td><p>Array to store data to receive data for Kmax face</p></td>
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>tkl_inf</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tpr%7E3"></span>real(kind=wp),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>tPr</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pr%7E3"></span>real(kind=wp),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>Pr</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r_gas%7E4"></span>real(kind=wp),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>R_gas</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1269,7 +1246,7 @@ public function <a href='../proc/flux%7E2.html'>Flux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1284,7 +1261,7 @@ public function <a href='../proc/flux%7E2.html'>Flux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1299,7 +1276,7 @@ public function <a href='../proc/flux%7E2.html'>Flux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1314,7 +1291,7 @@ public function <a href='../proc/flux%7E2.html'>Flux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1334,7 +1311,7 @@ public function <a href='../proc/flux%7E2.html'>Flux</a>(ql, qr, du, inputs)
   
   
   
-     <h4>Return Value <small>real,
+     <h4>Return Value <small>real(kind=wp),
   dimension(1:n_var)</small></h4>
   
     
@@ -1382,7 +1359,7 @@ public function <a href='../proc/spectralradius%7E2.html'>SpectralRadius</a>(ql,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1397,7 +1374,7 @@ public function <a href='../proc/spectralradius%7E2.html'>SpectralRadius</a>(ql,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1412,7 +1389,7 @@ public function <a href='../proc/spectralradius%7E2.html'>SpectralRadius</a>(ql,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1427,7 +1404,7 @@ public function <a href='../proc/spectralradius%7E2.html'>SpectralRadius</a>(ql,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1442,7 +1419,7 @@ public function <a href='../proc/spectralradius%7E2.html'>SpectralRadius</a>(ql,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1462,7 +1439,7 @@ public function <a href='../proc/spectralradius%7E2.html'>SpectralRadius</a>(ql,
   
   
   
-     <h4>Return Value <small>real
+     <h4>Return Value <small>real(kind=wp)
   </small></h4>
   
     
@@ -1510,7 +1487,7 @@ public function <a href='../proc/sstflux%7E2.html'>SSTFlux</a>(ql, qr, du, input
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1525,7 +1502,7 @@ public function <a href='../proc/sstflux%7E2.html'>SSTFlux</a>(ql, qr, du, input
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1540,7 +1517,7 @@ public function <a href='../proc/sstflux%7E2.html'>SSTFlux</a>(ql, qr, du, input
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1555,7 +1532,7 @@ public function <a href='../proc/sstflux%7E2.html'>SSTFlux</a>(ql, qr, du, input
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1575,7 +1552,7 @@ public function <a href='../proc/sstflux%7E2.html'>SSTFlux</a>(ql, qr, du, input
   
   
   
-     <h4>Return Value <small>real,
+     <h4>Return Value <small>real(kind=wp),
   dimension(1:n_var)</small></h4>
   
     
@@ -1623,7 +1600,7 @@ public function <a href='../proc/kklflux.html'>KKLFlux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1638,7 +1615,7 @@ public function <a href='../proc/kklflux.html'>KKLFlux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1653,7 +1630,7 @@ public function <a href='../proc/kklflux.html'>KKLFlux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1668,7 +1645,7 @@ public function <a href='../proc/kklflux.html'>KKLFlux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1688,7 +1665,7 @@ public function <a href='../proc/kklflux.html'>KKLFlux</a>(ql, qr, du, inputs)
   
   
   
-     <h4>Return Value <small>real,
+     <h4>Return Value <small>real(kind=wp),
   dimension(1:n_var)</small></h4>
   
     
@@ -1736,7 +1713,7 @@ public function <a href='../proc/saflux%7E2.html'>SAFlux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1751,7 +1728,7 @@ public function <a href='../proc/saflux%7E2.html'>SAFlux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1766,7 +1743,7 @@ public function <a href='../proc/saflux%7E2.html'>SAFlux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1781,7 +1758,7 @@ public function <a href='../proc/saflux%7E2.html'>SAFlux</a>(ql, qr, du, inputs)
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1801,7 +1778,7 @@ public function <a href='../proc/saflux%7E2.html'>SAFlux</a>(ql, qr, du, inputs)
   
   
   
-     <h4>Return Value <small>real,
+     <h4>Return Value <small>real(kind=wp),
   dimension(1:n_var)</small></h4>
   
     
@@ -1849,7 +1826,7 @@ public function <a href='../proc/lctm2015flux%7E2.html'>lctm2015flux</a>(ql, qr,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1864,7 +1841,7 @@ public function <a href='../proc/lctm2015flux%7E2.html'>lctm2015flux</a>(ql, qr,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1879,7 +1856,7 @@ public function <a href='../proc/lctm2015flux%7E2.html'>lctm2015flux</a>(ql, qr,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1894,7 +1871,7 @@ public function <a href='../proc/lctm2015flux%7E2.html'>lctm2015flux</a>(ql, qr,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1914,7 +1891,7 @@ public function <a href='../proc/lctm2015flux%7E2.html'>lctm2015flux</a>(ql, qr,
   
   
   
-     <h4>Return Value <small>real,
+     <h4>Return Value <small>real(kind=wp),
   dimension(1:n_var)</small></h4>
   
     
@@ -1934,7 +1911,7 @@ public function <a href='../proc/lctm2015flux%7E2.html'>lctm2015flux</a>(ql, qr,
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-setup_lusgs"></span><h3>
-public subroutine <a href='../proc/setup_lusgs.html'>setup_lusgs</a>()
+public subroutine <a href='../proc/setup_lusgs.html'>setup_lusgs</a>(control, scheme, flow, dims)
     
     
    
@@ -1953,37 +1930,81 @@ public subroutine <a href='../proc/setup_lusgs.html'>setup_lusgs</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
-    
-    
-
-  </div>
-  </div>
-
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-destroy_lusgs"></span><h3>
-public subroutine <a href='../proc/destroy_lusgs.html'>destroy_lusgs</a>()
-    
-    
-   
-</h3></div>
-  <div class="panel-body">
-       
-    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
 
 
 
+<tbody>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/controltype.html'>controltype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>control</strong></td><td><p>Control parameters</p></td>
+  
+</tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td><p>finite-volume Schemes</p></td>
+  
+</tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/flowtype.html'>flowtype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>flow</strong></td><td><p>Information about fluid flow: freestream-speed, ref-viscosity,etc.</p></td>
+  
+</tr>
 
-<p>unallocate the memory required by LU-SGS module</p>
-    
-    <h4>Arguments</h4>
-    
-      <em>None</em>
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -1994,7 +2015,7 @@ public subroutine <a href='../proc/destroy_lusgs.html'>destroy_lusgs</a>()
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-update_with_lusgs"></span><h3>
-public subroutine <a href='../proc/update_with_lusgs.html'>update_with_lusgs</a>()
+public subroutine <a href='../proc/update_with_lusgs.html'>update_with_lusgs</a>(qp, residue, delta_t, cells, Ifaces, Jfaces, Kfaces, scheme, dims)
     
     
    
@@ -2013,7 +2034,156 @@ public subroutine <a href='../proc/update_with_lusgs.html'>update_with_lusgs</a>
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>residue</strong></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:dims%imx-1, 1:dims%jmx-1, 1:dims%kmx-1)</td><td>::</td>
+  <td><strong>delta_t</strong></td><td><p>Local time increment value at each cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td><p>finite-volume Schemes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -2024,7 +2194,7 @@ public subroutine <a href='../proc/update_with_lusgs.html'>update_with_lusgs</a>
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-update_laminar_variables%7E2"></span><h3>
-public subroutine <a href='../proc/update_laminar_variables%7E2.html'>update_laminar_variables</a>()
+public subroutine <a href='../proc/update_laminar_variables%7E2.html'>update_laminar_variables</a>(qp, residue, delta_t, cells, Ifaces, Jfaces, Kfaces, dims)
     
     
    
@@ -2043,7 +2213,141 @@ public subroutine <a href='../proc/update_laminar_variables%7E2.html'>update_lam
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>residue</strong></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:dims%imx-1, 1:dims%jmx-1, 1:dims%kmx-1)</td><td>::</td>
+  <td><strong>delta_t</strong></td><td><p>Local time increment value at each cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -2054,7 +2358,7 @@ public subroutine <a href='../proc/update_laminar_variables%7E2.html'>update_lam
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-update_sst_variables%7E2"></span><h3>
-public subroutine <a href='../proc/update_sst_variables%7E2.html'>update_SST_variables</a>()
+public subroutine <a href='../proc/update_sst_variables%7E2.html'>update_SST_variables</a>(qp, residue, delta_t, cells, Ifaces, Jfaces, Kfaces, dims)
     
     
    
@@ -2073,7 +2377,141 @@ public subroutine <a href='../proc/update_sst_variables%7E2.html'>update_SST_var
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>residue</strong></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:dims%imx-1, 1:dims%jmx-1, 1:dims%kmx-1)</td><td>::</td>
+  <td><strong>delta_t</strong></td><td><p>Local time increment value at each cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -2084,7 +2522,7 @@ public subroutine <a href='../proc/update_sst_variables%7E2.html'>update_SST_var
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-update_kkl_variables"></span><h3>
-public subroutine <a href='../proc/update_kkl_variables.html'>update_KKL_variables</a>()
+public subroutine <a href='../proc/update_kkl_variables.html'>update_KKL_variables</a>(qp, residue, delta_t, cells, Ifaces, Jfaces, Kfaces, dims)
     
     
    
@@ -2103,7 +2541,141 @@ public subroutine <a href='../proc/update_kkl_variables.html'>update_KKL_variabl
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>residue</strong></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:dims%imx-1, 1:dims%jmx-1, 1:dims%kmx-1)</td><td>::</td>
+  <td><strong>delta_t</strong></td><td><p>Local time increment value at each cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -2114,7 +2686,7 @@ public subroutine <a href='../proc/update_kkl_variables.html'>update_KKL_variabl
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-update_sa_variables%7E2"></span><h3>
-public subroutine <a href='../proc/update_sa_variables%7E2.html'>update_SA_variables</a>()
+public subroutine <a href='../proc/update_sa_variables%7E2.html'>update_SA_variables</a>(qp, residue, delta_t, cells, Ifaces, Jfaces, Kfaces, dims)
     
     
    
@@ -2133,7 +2705,141 @@ public subroutine <a href='../proc/update_sa_variables%7E2.html'>update_SA_varia
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>residue</strong></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:dims%imx-1, 1:dims%jmx-1, 1:dims%kmx-1)</td><td>::</td>
+  <td><strong>delta_t</strong></td><td><p>Local time increment value at each cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -2144,7 +2850,7 @@ public subroutine <a href='../proc/update_sa_variables%7E2.html'>update_SA_varia
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-update_lctm2015%7E2"></span><h3>
-public subroutine <a href='../proc/update_lctm2015%7E2.html'>update_lctm2015</a>()
+public subroutine <a href='../proc/update_lctm2015%7E2.html'>update_lctm2015</a>(qp, residue, delta_t, cells, Ifaces, Jfaces, Kfaces, dims)
     
     
    
@@ -2163,28 +2869,6 @@ public subroutine <a href='../proc/update_lctm2015%7E2.html'>update_lctm2015</a>
     
     <h4>Arguments</h4>
     
-      <em>None</em>
-    
-    
-
-  </div>
-  </div>
-
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_interface%7E3"></span><h3>
-public subroutine <a href='../proc/apply_interface%7E3.html'>apply_interface</a>(qp, layers)
-    
-    
-   
-</h3></div>
-  <div class="panel-body">
-       
-    
-    
-    <h4>Arguments</h4>
-    
       
       
 <table class="table table-striped varlist">
@@ -2202,12 +2886,12 @@ public subroutine <a href='../proc/apply_interface%7E3.html'>apply_interface</a>
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(inout),</td>
   <td></td>
   
-  <td>dimension(0:imx,0:jmx,0:kmx,1:n_var)</td><td>::</td>
-  <td><strong>qp</strong></td><td></td>
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
   
 </tr>
 
@@ -2217,78 +2901,102 @@ public subroutine <a href='../proc/apply_interface%7E3.html'>apply_interface</a>
   
 <tr>
   
-  <td><span class="anchor" ></span>integer,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>residue</strong></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:dims%imx-1, 1:dims%jmx-1, 1:dims%kmx-1)</td><td>::</td>
+  <td><strong>delta_t</strong></td><td><p>Local time increment value at each cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/extent.html'>extent</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>layers</strong></td><td></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  </div>
-  </div>
-
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_periodic_bc%7E3"></span><h3>
-public subroutine <a href='../proc/apply_periodic_bc%7E3.html'>apply_periodic_bc</a>(qp, layers)
-    
-    
-   
-</h3></div>
-  <div class="panel-body">
-       
-    
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real,</td>
-  <td>intent(inout),</td>
-  <td></td>
-  
-  <td>dimension(0:imx,0:jmx,0:kmx,1:n_var)</td><td>::</td>
-  <td><strong>qp</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>integer,</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>layers</strong></td><td></td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
   
 </tr>
 
@@ -2323,7 +3031,7 @@ public subroutine <a href='../proc/apply_periodic_bc%7E3.html'>apply_periodic_bc
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

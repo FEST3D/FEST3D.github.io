@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="">
+    
+    <meta name="author" content="FEST-3D Team" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>controltype &ndash; FEST-3D </title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140495700-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+   
+     gtag('config', 'UA-140495700-1');
+   </script>
+
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">FEST-3D </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Documentation</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../program/main.html">Program</a></li>
+      
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>controltype
+    <small>Derived Type</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="<p>18.3% of total for derived types.</p>Including implementation: 33 statements, 18.3% of total for derived types.">33 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/vartypes.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/vartypes.f90.html'>vartypes.f90</a></li>
+    
+     <li><a href='../module/vartypes.html'>vartypes</a></li>
+    
+  
+     <li class="active">controltype</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-cfl">CFL</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-start_from">start_from</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-min_iter">min_iter</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-max_iters">max_iters</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-checkpoint_iter">checkpoint_iter</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-checkpoint_iter_count">checkpoint_iter_count</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-current_iter">current_iter</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-res_write_interval">res_write_interval</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-purge_write">purge_write</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-last_iter">last_iter</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-write_percision">write_percision</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-write_data_format">write_data_format</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-write_file_format">write_file_format</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-read_data_format">read_data_format</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-read_file_format">read_file_format</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-tolerance">tolerance</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-tolerance_type">tolerance_type</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-debug_level">DEBUG_LEVEL</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-previous_flow_type">previous_flow_type</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-n_var%7E2">n_var</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-r_list">r_list</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-w_list">w_list</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-r_count">r_count</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-w_count">w_count</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-res_list">Res_list</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-res_count">Res_count</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-total_process">total_process</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-process_id">process_id</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-want_to_stop">want_to_stop</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-halt">Halt</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-previous_res">previous_res</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/controltype.html#src">controltype</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>type, public :: controltype</h2>
+    
+    
+    
+    
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-cfl">CFL</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-start_from">start_from</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-min_iter">min_iter</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-max_iters">max_iters</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-checkpoint_iter">checkpoint_iter</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-checkpoint_iter_count">checkpoint_iter_count</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-current_iter">current_iter</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-res_write_interval">res_write_interval</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-purge_write">purge_write</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-last_iter">last_iter</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-write_percision">write_percision</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-write_data_format">write_data_format</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-write_file_format">write_file_format</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-read_data_format">read_data_format</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-read_file_format">read_file_format</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-tolerance">tolerance</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-tolerance_type">tolerance_type</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-debug_level">DEBUG_LEVEL</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-previous_flow_type">previous_flow_type</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-n_var%7E2">n_var</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-r_list">r_list</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-w_list">w_list</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-r_count">r_count</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-w_count">w_count</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-res_list">Res_list</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-res_count">Res_count</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-total_process">total_process</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-process_id">process_id</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-want_to_stop">want_to_stop</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-halt">Halt</a>
+      
+      <a class="list-group-item" href="../type/controltype.html#variable-previous_res">previous_res</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/controltype.html#src">controltype</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+    <section>
+    <h2>Components</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cfl"></span>real(kind=wp),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>CFL</strong></td><td> =</td><td>1.0</td><td><p>Courant–Friedrichs–Lewy (CFL) (Read from input)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-start_from"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>start_from</strong></td><td> =</td><td>0</td><td><p>Number of the folder (in time_directories) to load stored state from to restart computation</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_iter"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>min_iter</strong></td><td> =</td><td>1</td><td><p>Minimum iteration value, starting iteration value</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-max_iters"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>max_iters</strong></td><td> =</td><td>1</td><td><p>Maximum iteration value, stop after these many iteration</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-checkpoint_iter"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>checkpoint_iter</strong></td><td> =</td><td>0</td><td><p>Write interval for output file. Number of iteration after which solver will dump/store a state in a folder in time_directories</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-checkpoint_iter_count"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>checkpoint_iter_count</strong></td><td> =</td><td>0</td><td><p>Counter of folder number to write in time_directories/</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-current_iter"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>current_iter</strong></td><td> =</td><td>0</td><td><p>Current iteration number</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-res_write_interval"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>res_write_interval</strong></td><td> =</td><td>10</td><td><p>Write resnorm after every "res_write_interval" iteration</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-purge_write"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>purge_write</strong></td><td> =</td><td>1</td><td><p>Remove unwanted folder. If Purge_write=2, latest two folder in time_direcotires are kept and 0=no purge</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-last_iter"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>last_iter</strong></td><td> =</td><td>0</td><td><p>Last iteration that is stored in the restart file</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-write_percision"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>write_percision</strong></td><td> =</td><td>6</td><td><p>Number of place after decimal. Only used for resnorm file</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-write_data_format"></span>character(len=FORMAT_LENGTH),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>write_data_format</strong></td><td> =</td><td>'ASCII'</td><td><p>write data type. Either ASCII or BINARY</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-write_file_format"></span>character(len=FORMAT_LENGTH),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>write_file_format</strong></td><td> =</td><td>'tecplot'</td><td><p>Write file type. Either vtk or tecplot</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-read_data_format"></span>character(len=FORMAT_LENGTH),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>read_data_format</strong></td><td> =</td><td>'ASCII'</td><td><p>Read data type in file. Either ASCII or BINARY</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-read_file_format"></span>character(len=FORMAT_LENGTH),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>read_file_format</strong></td><td> =</td><td>'tecplot'</td><td><p>Read file type. Either vtk or tecplot</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tolerance"></span>real(kind=wp),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>tolerance</strong></td><td> =</td><td>1e-14</td><td><p>Minimum value of resnorm after which simulation stop</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tolerance_type"></span>character(len=STRING_BUFFER_LENGTH),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>tolerance_type</strong></td><td> =</td><td>"abs"</td><td><p>Type of tolerance to check:absolute or relative</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-debug_level"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>DEBUG_LEVEL</strong></td><td> =</td><td>1</td><td><p>Debug level is an input from the control file.
+ 5-&gt; important calls only, and, 
+ 1-&gt; all the calls</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-previous_flow_type"></span>character(len=STRING_BUFFER_LENGTH),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>previous_flow_type</strong></td><td> =</td><td>"none"</td><td><p>Type of flow:inviscid, laminar, etc, stored in the load file </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n_var%7E2"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>n_var</strong></td><td> =</td><td>5</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r_list"></span>character(len=STRING_BUFFER_LENGTH),</td>
+  
+  <td>public,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>r_list</strong></td><td></td><td></td><td><p>Read variable list</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-w_list"></span>character(len=STRING_BUFFER_LENGTH),</td>
+  
+  <td>public,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>w_list</strong></td><td></td><td></td><td><p>Write variable list</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r_count"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>r_count</strong></td><td> =</td><td>0</td><td><p>Number of variable to read from the restart file</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-w_count"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>w_count</strong></td><td> =</td><td>0</td><td><p>Number of variable to write in the output file</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-res_list"></span>character(len=STRING_BUFFER_LENGTH),</td>
+  
+  <td>public,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>Res_list</strong></td><td></td><td></td><td><p>Write residual variable list</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-res_count"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>Res_count</strong></td><td></td><td></td><td><p>No of residual variable to save</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-total_process"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>total_process</strong></td><td> =</td><td>1</td><td><p>Total number of process to be used for computation</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-process_id"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>process_id</strong></td><td> =</td><td>0</td><td><p>Id no. of each processor assinged by MPICH library</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-want_to_stop"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>want_to_stop</strong></td><td> =</td><td>0</td><td><p>0: continue the solver; 1=Stop the solver</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-halt"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>Halt</strong></td><td> =</td><td>.FALSE.</td><td><p>Logical value used to stop the solver in main program file.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-previous_res"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>previous_res</strong></td><td></td><td></td><td><p>starting resnrom of previous run</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="highlight"><pre><span></span>    <span class="k">type</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">controltype</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">CFL</span><span class="o">=</span><span class="mf">1.0</span>
+        <span class="c">!&lt; Courant–Friedrichs–Lewy (CFL) (Read from input)</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">start_from</span><span class="o">=</span><span class="mi">0</span> 
+        <span class="c">!&lt; Number of the folder (in time_directories) to load stored state from to restart computation</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">min_iter</span><span class="o">=</span><span class="mi">1</span>     
+        <span class="c">!&lt; Minimum iteration value, starting iteration value</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">max_iters</span><span class="o">=</span><span class="mi">1</span> 
+        <span class="c">!&lt; Maximum iteration value, stop after these many iteration</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">checkpoint_iter</span><span class="o">=</span><span class="mi">0</span>  
+        <span class="c">!&lt; Write interval for output file. Number of iteration after which solver will dump/store a state in a folder in time_directories</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">checkpoint_iter_count</span><span class="o">=</span><span class="mi">0</span> 
+        <span class="c">!&lt; Counter of folder number to write in time_directories/</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">current_iter</span><span class="o">=</span><span class="mi">0</span>  
+        <span class="c">!&lt; Current iteration number</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">res_write_interval</span><span class="o">=</span><span class="mi">10</span>
+        <span class="c">!&lt; Write resnorm after every &quot;res_write_interval&quot; iteration</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">purge_write</span><span class="o">=</span><span class="mi">1</span>
+        <span class="c">!&lt; Remove unwanted folder. If Purge_write=2, latest two folder in time_direcotires are kept and 0=no purge</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">last_iter</span><span class="o">=</span><span class="mi">0</span>    
+        <span class="c">!&lt; Last iteration that is stored in the restart file</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">write_percision</span><span class="o">=</span><span class="mi">6</span> 
+        <span class="c">!&lt; Number of place after decimal. Only used for resnorm file</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">FORMAT_LENGTH</span><span class="p">)</span><span class="kd">::</span> <span class="n">write_data_format</span><span class="o">=</span><span class="s1">&#39;ASCII&#39;</span>
+        <span class="c">!&lt; write data type. Either ASCII or BINARY</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">FORMAT_LENGTH</span><span class="p">)</span><span class="kd">::</span> <span class="n">write_file_format</span><span class="o">=</span><span class="s1">&#39;tecplot&#39;</span>
+        <span class="c">!&lt; Write file type. Either vtk or tecplot</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">FORMAT_LENGTH</span><span class="p">)</span><span class="kd">::</span>  <span class="n">read_data_format</span><span class="o">=</span><span class="s1">&#39;ASCII&#39;</span> 
+        <span class="c">!&lt; Read data type in file. Either ASCII or BINARY</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">FORMAT_LENGTH</span><span class="p">)</span><span class="kd">::</span>  <span class="n">read_file_format</span><span class="o">=</span><span class="s1">&#39;tecplot&#39;</span>
+        <span class="c">!&lt; Read file type. Either vtk or tecplot</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tolerance</span><span class="o">=</span><span class="err">1</span><span class="n">e</span><span class="o">-</span><span class="mi">14</span>
+        <span class="c">!&lt; Minimum value of resnorm after which simulation stop</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">STRING_BUFFER_LENGTH</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tolerance_type</span><span class="o">=</span><span class="s2">&quot;abs&quot;</span>
+        <span class="c">!&lt; Type of tolerance to check:absolute or relative</span>
+        <span class="kt">integer</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">DEBUG_LEVEL</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="c">!&lt; Debug level is an input from the control file.</span>
+        <span class="c">!&lt; 5-&gt; important calls only, and, </span>
+        <span class="c">!&lt; 1-&gt; all the calls</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">STRING_BUFFER_LENGTH</span><span class="p">)</span><span class="kd">::</span> <span class="n">previous_flow_type</span><span class="o">=</span><span class="s2">&quot;none&quot;</span> 
+        <span class="c">!&lt; Type of flow:inviscid, laminar, etc, stored in the load file </span>
+        <span class="kt">integer</span>                                           <span class="kd">::</span> <span class="n">n_var</span><span class="o">=</span><span class="mi">5</span>
+        <span class="c">! Freestram variable used to read file before inf pointer are linked and allocated</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">STRING_BUFFER_LENGTH</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span>  <span class="n">r_list</span> 
+        <span class="c">!&lt; Read variable list</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">STRING_BUFFER_LENGTH</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span>  <span class="n">w_list</span> 
+        <span class="c">!&lt; Write variable list</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">r_count</span><span class="o">=</span><span class="mi">0</span>                               
+        <span class="c">!&lt; Number of variable to read from the restart file</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">w_count</span><span class="o">=</span><span class="mi">0</span>                               
+        <span class="c">!&lt; Number of variable to write in the output file</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">STRING_BUFFER_LENGTH</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">Res_list</span>
+        <span class="c">!&lt; Write residual variable list</span>
+        <span class="kt">integer</span>            <span class="kd">::</span> <span class="n">Res_count</span>       
+        <span class="c">!&lt; No of residual variable to save</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">total_process</span><span class="o">=</span><span class="mi">1</span>
+        <span class="c">!&lt; Total number of process to be used for computation</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">process_id</span><span class="o">=</span><span class="mi">0</span>
+        <span class="c">!&lt; Id no. of each processor assinged by MPICH library</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">want_to_stop</span><span class="o">=</span><span class="mi">0</span>  
+        <span class="c">!&lt; 0: continue the solver; 1=Stop the solver</span>
+        <span class="kt">logical</span> <span class="kd">::</span> <span class="n">Halt</span> <span class="o">=</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span>
+        <span class="c">!&lt; Logical value used to stop the solver in main program file.</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">previous_res</span>
+        <span class="c">!&lt; starting resnrom of previous run</span>
+    <span class="k">end type </span><span class="n">controltype</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2019 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2019-12-28T21:23:55.181614 
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

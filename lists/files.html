@@ -83,6 +83,8 @@ All Files &ndash; FEST-3D
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -101,6 +103,8 @@ All Files &ndash; FEST-3D
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -138,42 +142,30 @@ All Files &ndash; FEST-3D
 			 
 			   <tr><td><a href='../sourcefile/bc_primitive.f90.html'>bc_primitive.f90</a></td><td><p>Apply boundary condition at every iteration</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/bitwise.f90.html'>bitwise.f90</a></td><td><p>All the bitwise operation</p></td></tr>
-			 
 			   <tr><td><a href='../sourcefile/boundary_state_reconstruction.f90.html'>boundary_state_reconstruction.f90</a></td><td><p>Reconstruct the boundary face in case of 4th and 5th order methods</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/cc.f90.html'>CC.f90</a></td><td><p>Calculate Cell-center and normal through them for transition model</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/check_outout_control.f90.html'>check_outout_control.f90</a></td><td><p>Check for the input from the output_control.md file</p></td></tr>
+			   <tr><td><a href='../sourcefile/check_output_control.f90.html'>check_output_control.f90</a></td><td><p>Check for the input from the output_control.md file</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/convergence.f90.html'>convergence.f90</a></td><td><p>Check for solution's convergence</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/copy_bc.f90.html'>copy_bc.f90</a></td><td><p>A module contains generalized subroutine to copy variable in ghost cells</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/create_and_erase.f90.html'>create_and_erase.f90</a></td><td><p>Create and destroy the solver setup</p></td></tr>
-			 
 			   <tr><td><a href='../sourcefile/dump_solution.f90.html'>dump_solution.f90</a></td><td><p>Check, create, and purge folder in the time_directory folder</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/fclose.f90.html'>fclose.f90</a></td><td><p>Close all the opened files</p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/fopen.f90.html'>fopen.f90</a></td><td><p>Open all files required </p></td></tr>
+			   <tr><td><a href='../sourcefile/face_interpolant.f90.html'>face_interpolant.f90</a></td><td><p>Interpolation of primitive variable from cell centers to faces</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/ft_bc.f90.html'>FT_bc.f90</a></td><td><p>Apply flow tangency boundary condition</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/geometry.f90.html'>geometry.f90</a></td><td><p>The geometry module calculates various geometrical quantities like 
  face-normals, face-areas and cell-volumes to be used in computations. </p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/ghost_gradient.f90.html'>ghost_gradient.f90</a></td><td><p>Set value gradients in the ghost cells</p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/global.f90.html'>global.f90</a></td><td><p>Common constant/parameters variables used by most other modules</p></td></tr>
-			 
 			   <tr><td><a href='../sourcefile/global_kkl.f90.html'>global_kkl.f90</a></td><td><p>Declare all the constants used by k-kL turbulence model</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/global_sa.f90.html'>global_sa.f90</a></td><td><p>Declare all the constants used by SA turbulence model</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/global_sst.f90.html'>global_sst.f90</a></td><td><p>Declare all the constants used by SST turbulence model</p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/global_vars.f90.html'>global_vars.f90</a></td><td><p>Common variables (can be re-assigned) used by other modules</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/gradients.f90.html'>gradients.f90</a></td><td><p>Allocate memory to laminar gradients if flow is viscous and
  allocate memory to tubulence gradients base upon the model being used</p></td></tr>
@@ -182,15 +174,8 @@ All Files &ndash; FEST-3D
 			 
 			   <tr><td><a href='../sourcefile/interface1.f90.html'>interface1.f90</a></td><td><p>This module handles the MPI Communication calls for interface boundary conditions</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/kkl_gradients.f90.html'>kkl_gradients.f90</a></td><td><p>Setup and nullify pointers for k-kL model to the main array which stores gradient of all variables</p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/laminar_gradients.f90.html'>laminar_gradients.f90</a></td><td><p>Link/Pointer to the gradient of u,v,w, and Temperature</p></td></tr>
-			 
 			   <tr><td><a href='../sourcefile/layout.f90.html'>layout.f90</a></td><td><p>Contains routine to load layout file and sets the layout variables
  and gets process id and total process </p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/lctm2015_gradients.f90.html'>lctm2015_gradients.f90</a></td><td><p>Setup and nullify pointers for LCTM2015 transition 
-model to the main array which stores gradient of all variables</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/ldfss0.f90.html'>ldfss0.f90</a></td><td><p>Flux-splitting scheme: LDFSS</p></td></tr>
 			 
@@ -231,7 +216,7 @@ model to the main array which stores gradient of all variables</p></td></tr>
     availble from all processors
  5. Append the data to resnorm file</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/sa_gradients.f90.html'>sa_gradients.f90</a></td><td><p>Setup and nullify pointers for SA model to the main array which stores gradient of all variables</p></td></tr>
+			   <tr><td><a href='../sourcefile/scheme.f90.html'>scheme.f90</a></td><td><p>Inviscid flux calculation through faces</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/slau.f90.html'>slau.f90</a></td><td><p>Flux splitting scheme: SLAU</p></td></tr>
 			 
@@ -239,17 +224,7 @@ model to the main array which stores gradient of all variables</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/source.f90.html'>source.f90</a></td><td><p>Add source's contribution to the residual</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/sst_gradients.f90.html'>sst_gradients.f90</a></td><td><p>Setup and nullify pointers for SST model to the main array which stores gradient of all variables</p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/start_finish.f90.html'>start_finish.f90</a></td><td><p>Start and stop the solver</p></td></tr>
-			 
 			   <tr><td><a href='../sourcefile/state.f90.html'>state.f90</a></td><td><p>Allocate memory to the state variables and initialize them</p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/str_case.f90.html'>str_case.f90</a></td><td><p>Change the full string to particular case: upper or lower.</p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/string.f90.html'>string.f90</a></td><td><p>Different opration on and to string</p></td></tr>
-			 
-			   <tr><td><a href='../sourcefile/summon_grad_evaluation.f90.html'>summon_grad_evaluation.f90</a></td><td><p>Calculate gradients of any primitive variables and temperature</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/time.f90.html'>time.f90</a></td><td><p>Calculate the time step for the current iteration</p></td></tr>
 			 
@@ -259,9 +234,11 @@ model to the main array which stores gradient of all variables</p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/van_leer.f90.html'>van_leer.f90</a></td><td><p>Flux splitting scheme: AUSM+</p></td></tr>
 			 
+			   <tr><td><a href='../sourcefile/vartypes.f90.html'>vartypes.f90</a></td><td></td></tr>
+			 
 			   <tr><td><a href='../sourcefile/viscosity.f90.html'>viscosity.f90</a></td><td><p>Setup, destroy, calculate molecular and turbulence viscosity</p></td></tr>
 			 
-			   <tr><td><a href='../sourcefile/viscous2.f90.html'>viscous2.f90</a></td><td><p>The viscous module contains the viscous fluxes calculations </p></td></tr>
+			   <tr><td><a href='../sourcefile/viscous.f90.html'>viscous.f90</a></td><td><p>The viscous module contains the viscous fluxes calculations </p></td></tr>
 			 
 			   <tr><td><a href='../sourcefile/wall.f90.html'>wall.f90</a></td><td><p>Detect all the grid points on the wall boundary condition</p></td></tr>
 			 
@@ -297,7 +274,7 @@ model to the main array which stores gradient of all variables</p></td></tr>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

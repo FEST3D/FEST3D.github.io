@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">27 statements</a>
+    title=" 0.1% of total for procedures.">15 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine write_grid()
+private subroutine write_grid(nodes)
     
     
    
@@ -227,8 +231,34 @@ private subroutine write_grid()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nodes%7E15"></span>type(<a href='../type/nodetype.html'>nodetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:imx+3,-2:jmx+3,-2:kmx+3)</td><td>::</td>
+  <td><strong>nodes</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -494,14 +524,14 @@ private subroutine write_grid()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">write_grid</span><span class="p">()</span>
-      <span class="c">!&lt; Write the grid information in the output file</span>
-      <span class="k">implicit none</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">write_grid</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="c">!&lt; Write the grid information in the output file</span>
+        <span class="k">implicit none</span>
+<span class="k">        type</span><span class="p">(</span><span class="n">nodetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nodes</span> 
 
-      <span class="c">! write grid point coordinates</span>
-      <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_grid&quot;</span><span class="p">)</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">Write_data_format</span> <span class="o">==</span> <span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;(a, i0, a, i0, a, i0)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
+        <span class="c">! write grid point coordinates</span>
+        <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_grid&quot;</span><span class="p">)</span>
+        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;(a, i0, a, i0, a, i0)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
             <span class="s1">&#39;DIMENSIONS &#39;</span><span class="p">,</span> <span class="n">imx</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">jmx</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">kmx</span>
         <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;(a, i0, a)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
             <span class="s1">&#39;POINTS &#39;</span><span class="p">,</span> <span class="n">imx</span><span class="o">*</span><span class="n">jmx</span><span class="o">*</span><span class="n">kmx</span><span class="p">,</span> <span class="s1">&#39; DOUBLE&#39;</span>
@@ -509,28 +539,13 @@ private subroutine write_grid()
          <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span>
           <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span>
               <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;(f0.16, a, f0.16, a, f0.16)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
-                  <span class="n">grid_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">grid_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">grid_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+                  <span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)%</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)%</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">nodes</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)%</span><span class="n">z</span>
           <span class="k">end do</span>
 <span class="k">         end do</span>
 <span class="k">        end do</span>
 <span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-      <span class="n">elseif</span> <span class="p">(</span><span class="n">write_data_format</span> <span class="o">==</span> <span class="s1">&#39;BINARY&#39;</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="p">&amp;</span>
-            <span class="s1">&#39;DIMENSIONS &#39;</span><span class="p">,</span> <span class="n">imx</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">jmx</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">kmx</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="p">&amp;</span>
-            <span class="s1">&#39;POINTS &#39;</span><span class="p">,</span> <span class="n">imx</span><span class="o">*</span><span class="n">jmx</span><span class="o">*</span><span class="n">kmx</span><span class="p">,</span> <span class="s1">&#39; DOUBLE&#39;</span>
-        <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span>
-         <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span>
-          <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span>
-              <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="p">&amp;</span>
-                  <span class="n">grid_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">grid_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">grid_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">newline</span>
-          <span class="k">end do</span>
-<span class="k">         end do</span>
-<span class="k">        end do</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span>
-      <span class="k">end if</span>
 
-<span class="k">    end subroutine </span><span class="n">write_grid</span>
+    <span class="k">end subroutine </span><span class="n">write_grid</span>
 </pre></div>
 
     </section>
@@ -552,7 +567,7 @@ private subroutine write_grid()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

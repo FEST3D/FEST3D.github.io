@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.9% of total for procedures.">326 statements</a>
+    title=" 2.3% of total for procedures.">335 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine apply_interface()
+public subroutine apply_interface(qp, control, bc, dims)
     
     
    
@@ -228,8 +232,79 @@ public subroutine apply_interface()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qp"></span>real(kind=wp),</td>
+  <td></td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2,1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-control%7E2"></span>type(<a href='../type/controltype.html'>controltype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>control</strong></td><td><p>Control parameters</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bc"></span>type(<a href='../type/boundarytype.html'>boundarytype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>bc</strong></td><td><p>boundary conditions and fixed values</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E2"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -285,20 +360,17 @@ public subroutine apply_interface()
 <path fill="none" stroke="#ff0000" d="M85.1221,-33C93.381,-33 102.1764,-33 110.8641,-33"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="110.9747,-36.5001 120.9747,-33 110.9746,-29.5001 110.9747,-36.5001"/>
 </g>
-<!-- proc~dmsg -->
+<!-- debugcall -->
 <g id="proc~~apply_interface~~CallsGraph_node4" class="node">
-<title>proc~dmsg</title>
-<g id="a_proc~~apply_interface~~CallsGraph_node4"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
-<polygon fill="#d9534f" stroke="#d9534f" points="322.5,-24 268.5,-24 268.5,0 322.5,0 322.5,-24"/>
-<text text-anchor="middle" x="295.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
-</a>
+<title>debugcall</title>
+<polygon fill="#777777" stroke="#777777" points="324.5,-24 266.5,-24 266.5,0 324.5,0 324.5,-24"/>
+<text text-anchor="middle" x="295.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">debugcall</text>
 </g>
-</g>
-<!-- proc~apply_interface&#45;&gt;proc~dmsg -->
+<!-- proc~apply_interface&#45;&gt;debugcall -->
 <g id="proc~~apply_interface~~CallsGraph_edge3" class="edge">
-<title>proc~apply_interface&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#ff0000" d="M79.6316,-20.9352C92.5758,-17.3016 107.2924,-13.8018 121,-12 167.9559,-5.8278 222.6353,-7.1938 258.0954,-9.1931"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="258.2585,-12.7095 268.4534,-9.8263 258.6856,-5.7226 258.2585,-12.7095"/>
+<title>proc~apply_interface&#45;&gt;debugcall</title>
+<path fill="none" stroke="#ff0000" d="M79.6316,-20.9352C92.5758,-17.3016 107.2924,-13.8018 121,-12 167.0032,-5.953 220.4196,-7.1415 255.9134,-9.0722"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="256.1361,-12.5914 266.3253,-9.6881 256.5495,-5.6037 256.1361,-12.5914"/>
 </g>
 <!-- proc~apply_periodic_bc&#45;&gt;mpi_sendrecv -->
 <g id="proc~~apply_interface~~CallsGraph_edge4" class="edge">
@@ -306,11 +378,11 @@ public subroutine apply_interface()
 <path fill="none" stroke="#00ff00" d="M220.2625,-44.943C228.7771,-46.9865 237.6211,-49.1091 246.1256,-51.1501"/>
 <polygon fill="#00ff00" stroke="#00ff00" points="245.3723,-54.5687 255.913,-53.4991 247.006,-47.762 245.3723,-54.5687"/>
 </g>
-<!-- proc~apply_periodic_bc&#45;&gt;proc~dmsg -->
+<!-- proc~apply_periodic_bc&#45;&gt;debugcall -->
 <g id="proc~~apply_interface~~CallsGraph_edge5" class="edge">
-<title>proc~apply_periodic_bc&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#00ff00" d="M220.2625,-24.6399C232.9004,-22.5167 246.2639,-20.2717 258.1658,-18.2722"/>
-<polygon fill="#00ff00" stroke="#00ff00" points="258.9118,-21.6959 268.1937,-16.5875 257.752,-14.7927 258.9118,-21.6959"/>
+<title>proc~apply_periodic_bc&#45;&gt;debugcall</title>
+<path fill="none" stroke="#00ff00" d="M220.2625,-24.6399C232.2515,-22.6258 244.8935,-20.5019 256.3211,-18.582"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="257.1391,-21.9938 266.421,-16.8853 255.9793,-15.0905 257.1391,-21.9938"/>
 </g>
 </g>
 </svg>
@@ -582,24 +654,38 @@ public subroutine apply_interface()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">apply_interface</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">apply_interface</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; MPISEND_RECV call to exchange interface infromation between</span>
       <span class="c">!&lt; connected blocks.</span>
       <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">integer</span><span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
+      <span class="c">!&lt; Control parameters</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">n_var</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qp</span>
+      <span class="c">!&lt; Store primitive variable at cell center</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">boundarytype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">bc</span>
+      <span class="c">!&lt; boundary conditions and fixed values</span>
+      <span class="kt">integer</span><span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span>
       <span class="kt">integer</span><span class="kd">::</span> <span class="n">status</span><span class="p">(</span><span class="n">MPI_STATUS_SIZE</span><span class="p">)</span>
       <span class="kt">integer</span><span class="kd">::</span> <span class="n">ierr</span>
       <span class="kt">integer</span><span class="kd">::</span> <span class="n">tag</span><span class="o">=</span><span class="mi">1</span>
       <span class="kt">integer</span><span class="kd">::</span> <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
+      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">imx</span><span class="p">,</span> <span class="n">jmx</span><span class="p">,</span> <span class="n">kmx</span><span class="p">,</span> <span class="n">n_var</span>
 
+      <span class="n">imx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+      <span class="n">jmx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+      <span class="n">kmx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
+
+      <span class="n">n_var</span> <span class="o">=</span> <span class="n">control</span><span class="p">%</span><span class="n">n_var</span>
 
       <span class="c">!----------------------------------------------------------</span>
       <span class="c">! call pattern is change for first block = 0</span>
       <span class="c">! to avoid O-Grid infinite loop for mpi communication call</span>
       <span class="c">!-----------------------------------------------------------</span>
-      <span class="k">if</span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">process_id</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="k">if</span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">process_id</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
       <span class="c">!--- IMAX ---!</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">imax_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">imax_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
         <span class="c">!collect data</span>
         <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
@@ -612,20 +698,11 @@ public subroutine apply_interface()
 <span class="k">            end do</span>
 <span class="k">          end do</span>
 <span class="k">        end do</span>
-<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">imax_send_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">imax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
-                          <span class="n">imax_recv_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">imax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">imax_send_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+                          <span class="n">imax_recv_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
                           <span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<span class="c">!        if(mpi_class(2)==0)then</span>
-<span class="c">!          call MPI_SEND(imax_send_buf,ibuf_size,MPI_DOUBLE_PRECISION,imax_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!          call MPI_RECV(imax_recv_buf,ibuf_size,MPI_DOUBLE_PRECISION,imax_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!        elseif(mpi_class(2)==1)then</span>
-<span class="c">!          call MPI_RECV(imax_recv_buf,ibuf_size,MPI_DOUBLE_PRECISION,imax_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!          call MPI_SEND(imax_send_buf,ibuf_size,MPI_DOUBLE_PRECISION,imax_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!        else</span>
-<span class="c">!          Fatal_error</span>
-<span class="c">!        end if</span>
         <span class="c">! redistribute data</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">          </span><span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
           <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
             <span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span>
@@ -653,8 +730,8 @@ public subroutine apply_interface()
 <span class="k">      end if</span>
 
       <span class="c">!--- IMIN ---!</span>
-      <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;interface&#39;</span><span class="p">,</span> <span class="s1">&#39;apply_interface&#39;</span><span class="p">)</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">imin_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;apply_interface&#39;</span><span class="p">)</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">imin_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
         <span class="c">!collect data</span>
         <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
@@ -667,20 +744,11 @@ public subroutine apply_interface()
 <span class="k">            end do</span>
 <span class="k">          end do</span>
 <span class="k">        end do</span>
-<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">imin_send_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">imin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
-                          <span class="n">imin_recv_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">imin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">imin_send_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+                          <span class="n">imin_recv_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
                           <span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<span class="c">!        if(mpi_class(1)==0)then</span>
-<span class="c">!          call MPI_SEND(imin_send_buf,ibuf_size,MPI_DOUBLE_PRECISION,imin_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!          call MPI_RECV(imin_recv_buf,ibuf_size,MPI_DOUBLE_PRECISION,imin_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!        elseif(mpi_class(1)==1)then</span>
-<span class="c">!          call MPI_RECV(imin_recv_buf,ibuf_size,MPI_DOUBLE_PRECISION,imin_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!          call MPI_SEND(imin_send_buf,ibuf_size,MPI_DOUBLE_PRECISION,imin_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!        else</span>
-<span class="c">!          Fatal_error</span>
-<span class="c">!        end if</span>
         <span class="c">! redistribute data</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">          </span><span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
           <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
             <span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span>
@@ -709,8 +777,8 @@ public subroutine apply_interface()
 
 <span class="k">      else</span>
       <span class="c">!--- IMIN ---!</span>
-      <span class="k">call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;interface&#39;</span><span class="p">,</span> <span class="s1">&#39;apply_interface&#39;</span><span class="p">)</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">imin_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;apply_interface&#39;</span><span class="p">)</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">imin_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
         <span class="c">!collect data</span>
         <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
@@ -723,20 +791,11 @@ public subroutine apply_interface()
 <span class="k">            end do</span>
 <span class="k">          end do</span>
 <span class="k">        end do</span>
-<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">imin_send_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">imin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
-                          <span class="n">imin_recv_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">imin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">imin_send_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+                          <span class="n">imin_recv_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
                           <span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<span class="c">!        if(mpi_class(1)==0)then</span>
-<span class="c">!          call MPI_SEND(imin_send_buf,ibuf_size,MPI_DOUBLE_PRECISION,imin_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!          call MPI_RECV(imin_recv_buf,ibuf_size,MPI_DOUBLE_PRECISION,imin_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!        elseif(mpi_class(1)==1)then</span>
-<span class="c">!          call MPI_RECV(imin_recv_buf,ibuf_size,MPI_DOUBLE_PRECISION,imin_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!          call MPI_SEND(imin_send_buf,ibuf_size,MPI_DOUBLE_PRECISION,imin_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!        else</span>
-<span class="c">!          Fatal_error</span>
-<span class="c">!        end if</span>
         <span class="c">! redistribute data</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">          </span><span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
           <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
             <span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span>
@@ -764,7 +823,7 @@ public subroutine apply_interface()
 <span class="k">      end if</span>
 
       <span class="c">!--- IMAX ---!</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">imax_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">imax_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
         <span class="c">!collect data</span>
         <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
@@ -777,20 +836,11 @@ public subroutine apply_interface()
 <span class="k">            end do</span>
 <span class="k">          end do</span>
 <span class="k">        end do</span>
-<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">imax_send_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">imax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
-                          <span class="n">imax_recv_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">imax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">imax_send_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+                          <span class="n">imax_recv_buf</span><span class="p">,</span><span class="n">ibuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
                           <span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<span class="c">!        if(mpi_class(2)==0)then</span>
-<span class="c">!          call MPI_SEND(imax_send_buf,ibuf_size,MPI_DOUBLE_PRECISION,imax_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!          call MPI_RECV(imax_recv_buf,ibuf_size,MPI_DOUBLE_PRECISION,imax_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!        elseif(mpi_class(2)==1)then</span>
-<span class="c">!          call MPI_RECV(imax_recv_buf,ibuf_size,MPI_DOUBLE_PRECISION,imax_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!          call MPI_SEND(imax_send_buf,ibuf_size,MPI_DOUBLE_PRECISION,imax_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!        else</span>
-<span class="c">!          Fatal_error</span>
-<span class="c">!        end if</span>
         <span class="c">! redistribute data</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">          </span><span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
           <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
             <span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span>
@@ -822,7 +872,7 @@ public subroutine apply_interface()
 
 
       <span class="c">!--- JMIN ---!</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">jmin_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">jmin_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
         <span class="c">!collect data</span>
         <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
@@ -835,20 +885,11 @@ public subroutine apply_interface()
 <span class="k">            end do</span>
 <span class="k">          end do</span>
 <span class="k">        end do</span>
-<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">jmin_send_buf</span><span class="p">,</span><span class="n">jbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">jmin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
-                          <span class="n">jmin_recv_buf</span><span class="p">,</span><span class="n">jbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">jmin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">jmin_send_buf</span><span class="p">,</span><span class="n">jbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">jmin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+                          <span class="n">jmin_recv_buf</span><span class="p">,</span><span class="n">jbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">jmin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
                           <span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<span class="c">!        if(mpi_class(3)==0)then</span>
-<span class="c">!          call MPI_SEND(jmin_send_buf,jbuf_size,MPI_DOUBLE_PRECISION,jmin_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!          call MPI_RECV(jmin_recv_buf,jbuf_size,MPI_DOUBLE_PRECISION,jmin_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!        elseif(mpi_class(3)==1)then</span>
-<span class="c">!          call MPI_RECV(jmin_recv_buf,jbuf_size,MPI_DOUBLE_PRECISION,jmin_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!          call MPI_SEND(jmin_send_buf,jbuf_size,MPI_DOUBLE_PRECISION,jmin_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!        else</span>
-<span class="c">!          Fatal_error</span>
-<span class="c">!        end if</span>
         <span class="c">! redistribute data</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">          </span><span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
           <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
             <span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span>
@@ -876,7 +917,7 @@ public subroutine apply_interface()
 <span class="k">      end if</span>
 
       <span class="c">!--- JMAX ---!</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">jmax_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">jmax_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
         <span class="c">!collect data</span>
         <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
@@ -889,21 +930,11 @@ public subroutine apply_interface()
 <span class="k">            end do</span>
 <span class="k">          end do</span>
 <span class="k">        end do</span>
-<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">jmax_send_buf</span><span class="p">,</span><span class="n">jbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">jmax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
-                          <span class="n">jmax_recv_buf</span><span class="p">,</span><span class="n">jbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">jmax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">jmax_send_buf</span><span class="p">,</span><span class="n">jbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">jmax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+                          <span class="n">jmax_recv_buf</span><span class="p">,</span><span class="n">jbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">jmax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
                           <span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<span class="c">!        if(mpi_class(4)==0)then</span>
-<span class="c">!          call MPI_SEND(jmax_send_buf,jbuf_size,MPI_DOUBLE_PRECISION,jmax_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!          call MPI_RECV(jmax_recv_buf,jbuf_size,MPI_DOUBLE_PRECISION,jmax_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!        elseif(mpi_class(4)==1)then</span>
-<span class="c">!          call MPI_RECV(jmax_recv_buf,jbuf_size,MPI_DOUBLE_PRECISION,jmax_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!          call MPI_SEND(jmax_send_buf,jbuf_size,MPI_DOUBLE_PRECISION,jmax_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!        else</span>
-<span class="c">!          Fatal_error</span>
-<span class="c">!        end if</span>
-
         <span class="c">! redistribute data</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">          </span><span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
           <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
             <span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span>
@@ -931,7 +962,7 @@ public subroutine apply_interface()
 <span class="k">      end if</span>
 
       <span class="c">!--- KMIN ---!</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">kmin_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">kmin_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
         <span class="c">!collect data</span>
         <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
@@ -944,20 +975,11 @@ public subroutine apply_interface()
 <span class="k">            end do</span>
 <span class="k">          end do</span>
 <span class="k">        end do</span>
-<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">kmin_send_buf</span><span class="p">,</span><span class="n">kbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">kmin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
-                          <span class="n">kmin_recv_buf</span><span class="p">,</span><span class="n">kbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">kmin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">kmin_send_buf</span><span class="p">,</span><span class="n">kbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">kmin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+                          <span class="n">kmin_recv_buf</span><span class="p">,</span><span class="n">kbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">kmin_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
                           <span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<span class="c">!        if(mpi_class(5)==0)then</span>
-<span class="c">!          call MPI_SEND(kmin_send_buf,kbuf_size,MPI_DOUBLE_PRECISION,kmin_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!          call MPI_RECV(kmin_recv_buf,kbuf_size,MPI_DOUBLE_PRECISION,kmin_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!        elseif(mpi_class(5)==1)then</span>
-<span class="c">!          call MPI_RECV(kmin_recv_buf,kbuf_size,MPI_DOUBLE_PRECISION,kmin_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!          call MPI_SEND(kmin_send_buf,kbuf_size,MPI_DOUBLE_PRECISION,kmin_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!        else</span>
-<span class="c">!          Fatal_error</span>
-<span class="c">!        end if</span>
         <span class="c">! redistribute data</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">          </span><span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
           <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
             <span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span>
@@ -985,7 +1007,7 @@ public subroutine apply_interface()
 <span class="k">      end if</span>
 
       <span class="c">!--- KMAX ---!</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">kmax_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">kmax_id</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
         <span class="c">!collect data</span>
         <span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
@@ -998,20 +1020,11 @@ public subroutine apply_interface()
 <span class="k">            end do</span>
 <span class="k">          end do</span>
 <span class="k">        end do</span>
-<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">kmax_send_buf</span><span class="p">,</span><span class="n">kbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">kmax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
-                          <span class="n">kmax_recv_buf</span><span class="p">,</span><span class="n">kbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">kmax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+<span class="k">        call </span><span class="n">MPI_SENDRECV</span><span class="p">(</span><span class="n">kmax_send_buf</span><span class="p">,</span><span class="n">kbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">kmax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
+                          <span class="n">kmax_recv_buf</span><span class="p">,</span><span class="n">kbuf_size</span><span class="p">,</span> <span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">kmax_id</span><span class="p">,</span><span class="n">tag</span><span class="p">,&amp;</span>
                           <span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<span class="c">!        if(mpi_class(6)==0)then</span>
-<span class="c">!          call MPI_SEND(kmax_send_buf,kbuf_size,MPI_DOUBLE_PRECISION,kmax_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!          call MPI_RECV(kmax_recv_buf,kbuf_size,MPI_DOUBLE_PRECISION,kmax_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!        elseif(mpi_class(6)==1)then</span>
-<span class="c">!          call MPI_RECV(kmax_recv_buf,kbuf_size,MPI_DOUBLE_PRECISION,kmax_id,tag,MPI_COMM_WORLD,status, ierr)</span>
-<span class="c">!          call MPI_SEND(kmax_send_buf,kbuf_size,MPI_DOUBLE_PRECISION,kmax_id,tag,MPI_COMM_WORLD,ierr)</span>
-<span class="c">!        else</span>
-<span class="c">!          Fatal_error</span>
-<span class="c">!        end if</span>
         <span class="c">! redistribute data</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">bc</span><span class="p">%</span><span class="n">dir_switch</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">          </span><span class="nb">count</span><span class="o">=</span><span class="mi">0</span>
           <span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n_var</span>
             <span class="k">do </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span>
@@ -1037,7 +1050,7 @@ public subroutine apply_interface()
 <span class="k">          end do</span>
 <span class="k">        end if</span>
 <span class="k">      end if</span>
-<span class="k">      call </span><span class="n">apply_periodic_bc</span><span class="p">()</span>
+<span class="k">      call </span><span class="n">apply_periodic_bc</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
     <span class="k">end subroutine </span><span class="n">apply_interface</span>
 </pre></div>
 
@@ -1060,7 +1073,7 @@ public subroutine apply_interface()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

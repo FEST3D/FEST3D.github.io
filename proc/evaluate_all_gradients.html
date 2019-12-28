@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,21 +143,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">63 statements</a>
+    title=" 0.6% of total for procedures.">89 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/summon_grad_evaluation.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/gradients.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/summon_grad_evaluation.f90.html'>summon_grad_evaluation.f90</a></li>
+     <li><a href='../sourcefile/gradients.f90.html'>gradients.f90</a></li>
     
-     <li><a href='../module/summon_grad_evaluation.html'>summon_grad_evaluation</a></li>
+     <li><a href='../module/gradients.html'>gradients</a></li>
     
   
      <li class="active">evaluate_all_gradients</li>
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine evaluate_all_gradients()
+public subroutine evaluate_all_gradients(qp, Temp, cells, Ifaces, Jfaces, Kfaces, scheme, bc, dims)
     
     
    
@@ -229,8 +233,154 @@ public subroutine evaluate_all_gradients()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qp%7E8"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var), Target</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-temp"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Temp</strong></td><td><p>Store Temperature variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cells%7E6"></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ifaces%7E6"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-jfaces%7E6"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kfaces%7E6"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-scheme%7E5"></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td><p>finite-volume Schemes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bc%7E3"></span>type(<a href='../type/boundarytype.html'>boundarytype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>bc</strong></td><td><p>boundary conditions and fixed values</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E11"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -248,97 +398,85 @@ public subroutine evaluate_all_gradients()
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: proc~~evaluate_all_gradients~~CallsGraph Pages: 1 -->
-<svg id="procevaluate_all_gradientsCallsGraph" width="367pt" height="132pt"
- viewBox="0.00 0.00 367.00 132.12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~evaluate_all_gradients~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 128.1228)">
+<svg id="procevaluate_all_gradientsCallsGraph" width="440pt" height="87pt"
+ viewBox="0.00 0.00 440.00 87.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~evaluate_all_gradients~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 83.0022)">
 <title>proc~~evaluate_all_gradients~~CallsGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-128.1228 363,-128.1228 363,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-83.0022 436,-83.0022 436,4 -4,4"/>
 <!-- proc~evaluate_all_gradients -->
 <g id="proc~~evaluate_all_gradients~~CallsGraph_node1" class="node">
 <title>proc~evaluate_all_gradients</title>
-<polygon fill="none" stroke="#000000" points="120,-87 0,-87 0,-63 120,-63 120,-87"/>
-<text text-anchor="middle" x="60" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">evaluate_all_gradients</text>
+<polygon fill="none" stroke="#000000" points="120,-66 0,-66 0,-42 120,-42 120,-66"/>
+<text text-anchor="middle" x="60" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">evaluate_all_gradients</text>
 </g>
-<!-- proc~dmsg -->
+<!-- debugcall -->
 <g id="proc~~evaluate_all_gradients~~CallsGraph_node2" class="node">
-<title>proc~dmsg</title>
-<g id="a_proc~~evaluate_all_gradients~~CallsGraph_node2"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
-<polygon fill="#d9534f" stroke="#d9534f" points="359,-107 305,-107 305,-83 359,-83 359,-107"/>
-<text text-anchor="middle" x="332" y="-92.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
-</a>
+<title>debugcall</title>
+<polygon fill="#777777" stroke="#777777" points="397.5,-66 339.5,-66 339.5,-42 397.5,-42 397.5,-66"/>
+<text text-anchor="middle" x="368.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">debugcall</text>
 </g>
-</g>
-<!-- proc~evaluate_all_gradients&#45;&gt;proc~dmsg -->
+<!-- proc~evaluate_all_gradients&#45;&gt;debugcall -->
 <g id="proc~~evaluate_all_gradients~~CallsGraph_edge1" class="edge">
-<title>proc~evaluate_all_gradients&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#ff0000" d="M80.8855,-87.1583C99.7866,-97.4121 128.756,-111.3011 156,-117 205.1583,-127.2828 219.4847,-125.3969 269,-117 277.7022,-115.5243 286.8047,-112.9784 295.2984,-110.13"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="296.6872,-113.3506 304.9292,-106.6933 294.3345,-106.7578 296.6872,-113.3506"/>
+<title>proc~evaluate_all_gradients&#45;&gt;debugcall</title>
+<path fill="none" stroke="#ff0000" d="M105.5702,-66.0704C121.413,-69.7045 139.3773,-73.2031 156,-75 205.9313,-80.3974 219.0491,-80.2138 269,-75 289.0562,-72.9066 311.0225,-68.5008 329.202,-64.2628"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="330.2436,-67.6123 339.1498,-61.8738 328.6089,-60.8058 330.2436,-67.6123"/>
 </g>
 <!-- proc~compute_gradient_g -->
 <g id="proc~~evaluate_all_gradients~~CallsGraph_node3" class="node">
 <title>proc~compute_gradient_g</title>
 <g id="a_proc~~evaluate_all_gradients~~CallsGraph_node3"><a xlink:href=".././proc/compute_gradient_g.html" xlink:title="compute_gradient_G">
-<polygon fill="#d9534f" stroke="#d9534f" points="269,-108 156,-108 156,-84 269,-84 269,-108"/>
-<text text-anchor="middle" x="212.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_gradient_G</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="269,-66 156,-66 156,-42 269,-42 269,-66"/>
+<text text-anchor="middle" x="212.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_gradient_G</text>
 </a>
 </g>
 </g>
 <!-- proc~evaluate_all_gradients&#45;&gt;proc~compute_gradient_g -->
 <g id="proc~~evaluate_all_gradients~~CallsGraph_edge2" class="edge">
 <title>proc~evaluate_all_gradients&#45;&gt;proc~compute_gradient_g</title>
-<path fill="none" stroke="#ff0000" d="M120.272,-83.2998C128.5585,-84.4408 137.1085,-85.6182 145.5065,-86.7747"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="145.2629,-90.2741 155.6469,-88.171 146.2179,-83.3395 145.2629,-90.2741"/>
-</g>
-<!-- proc~compute_gradient_t -->
-<g id="proc~~evaluate_all_gradients~~CallsGraph_node4" class="node">
-<title>proc~compute_gradient_t</title>
-<g id="a_proc~~evaluate_all_gradients~~CallsGraph_node4"><a xlink:href=".././proc/compute_gradient_t.html" xlink:title="compute_gradient_T">
-<polygon fill="#d9534f" stroke="#d9534f" points="268.5,-66 156.5,-66 156.5,-42 268.5,-42 268.5,-66"/>
-<text text-anchor="middle" x="212.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_gradient_T</text>
-</a>
-</g>
-</g>
-<!-- proc~evaluate_all_gradients&#45;&gt;proc~compute_gradient_t -->
-<g id="proc~~evaluate_all_gradients~~CallsGraph_edge3" class="edge">
-<title>proc~evaluate_all_gradients&#45;&gt;proc~compute_gradient_t</title>
-<path fill="none" stroke="#ff0000" d="M120.272,-66.7002C128.7692,-65.5301 137.5436,-64.3219 146.1469,-63.1371"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="146.7121,-66.5924 156.1411,-61.7609 145.7571,-59.6579 146.7121,-66.5924"/>
+<path fill="none" stroke="#ff0000" d="M120.272,-54C128.5585,-54 137.1085,-54 145.5065,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="145.6469,-57.5001 155.6469,-54 145.6468,-50.5001 145.6469,-57.5001"/>
 </g>
 <!-- proc~apply_gradient_bc -->
-<g id="proc~~evaluate_all_gradients~~CallsGraph_node5" class="node">
+<g id="proc~~evaluate_all_gradients~~CallsGraph_node4" class="node">
 <title>proc~apply_gradient_bc</title>
-<g id="a_proc~~evaluate_all_gradients~~CallsGraph_node5"><a xlink:href=".././proc/apply_gradient_bc.html" xlink:title="apply_gradient_bc">
+<g id="a_proc~~evaluate_all_gradients~~CallsGraph_node4"><a xlink:href=".././proc/apply_gradient_bc.html" xlink:title="apply_gradient_bc">
 <polygon fill="#d9534f" stroke="#d9534f" points="262.5,-24 162.5,-24 162.5,0 262.5,0 262.5,-24"/>
 <text text-anchor="middle" x="212.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">apply_gradient_bc</text>
 </a>
 </g>
 </g>
 <!-- proc~evaluate_all_gradients&#45;&gt;proc~apply_gradient_bc -->
-<g id="proc~~evaluate_all_gradients~~CallsGraph_edge4" class="edge">
+<g id="proc~~evaluate_all_gradients~~CallsGraph_edge3" class="edge">
 <title>proc~evaluate_all_gradients&#45;&gt;proc~apply_gradient_bc</title>
-<path fill="none" stroke="#ff0000" d="M86.7252,-62.8236C105.8901,-54.2108 132.3874,-42.5446 156,-33 160.4356,-31.207 165.089,-29.3847 169.7408,-27.6007"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="171.1032,-30.8274 179.2169,-24.0142 168.6254,-24.2806 171.1032,-30.8274"/>
+<path fill="none" stroke="#ff0000" d="M103.7004,-41.9645C120.9292,-37.2195 140.8875,-31.7228 158.9698,-26.7427"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="160.0816,-30.0669 168.7932,-24.0373 158.2228,-23.3182 160.0816,-30.0669"/>
 </g>
-<!-- proc~apply_gradient_bc&#45;&gt;proc~dmsg -->
+<!-- proc~compute_gradient_g&#45;&gt;debugcall -->
+<g id="proc~~evaluate_all_gradients~~CallsGraph_edge4" class="edge">
+<title>proc~compute_gradient_g&#45;&gt;debugcall</title>
+<path fill="none" stroke="#00ff00" d="M269.2609,-54C289.0693,-54 310.8559,-54 328.9571,-54"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="329.1462,-57.5001 339.1461,-54 329.1461,-50.5001 329.1462,-57.5001"/>
+</g>
+<!-- proc~apply_gradient_bc&#45;&gt;debugcall -->
 <g id="proc~~evaluate_all_gradients~~CallsGraph_edge6" class="edge">
-<title>proc~apply_gradient_bc&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#7f00ff" d="M251.5301,-24.0268C257.5871,-26.5875 263.6142,-29.5734 269,-33 287.0131,-44.4603 304.0543,-61.7757 315.8598,-75.1974"/>
-<polygon fill="#7f00ff" stroke="#7f00ff" points="313.3388,-77.6348 322.4958,-82.964 318.6607,-73.0876 313.3388,-77.6348"/>
+<title>proc~apply_gradient_bc&#45;&gt;debugcall</title>
+<path fill="none" stroke="#0000ff" d="M257.2033,-24.0355C280.0018,-30.1736 307.4723,-37.5695 329.4172,-43.4777"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="328.5084,-46.8576 339.0745,-46.0778 330.3283,-40.0983 328.5084,-46.8576"/>
 </g>
-<!-- proc~apply -->
-<g id="proc~~evaluate_all_gradients~~CallsGraph_node6" class="node">
-<title>proc~apply</title>
-<g id="a_proc~~evaluate_all_gradients~~CallsGraph_node6"><a xlink:href=".././proc/apply.html" xlink:title="apply">
-<polygon fill="#d9534f" stroke="#d9534f" points="359,-24 305,-24 305,0 359,0 359,-24"/>
-<text text-anchor="middle" x="332" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">apply</text>
+<!-- proc~apply_gradient_bc_face -->
+<g id="proc~~evaluate_all_gradients~~CallsGraph_node5" class="node">
+<title>proc~apply_gradient_bc_face</title>
+<g id="a_proc~~evaluate_all_gradients~~CallsGraph_node5"><a xlink:href=".././proc/apply_gradient_bc_face.html" xlink:title="apply_gradient_bc_face">
+<polygon fill="#d9534f" stroke="#d9534f" points="432,-24 305,-24 305,0 432,0 432,-24"/>
+<text text-anchor="middle" x="368.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">apply_gradient_bc_face</text>
 </a>
 </g>
 </g>
-<!-- proc~apply_gradient_bc&#45;&gt;proc~apply -->
+<!-- proc~apply_gradient_bc&#45;&gt;proc~apply_gradient_bc_face -->
 <g id="proc~~evaluate_all_gradients~~CallsGraph_edge5" class="edge">
-<title>proc~apply_gradient_bc&#45;&gt;proc~apply</title>
-<path fill="none" stroke="#7f00ff" d="M262.8324,-12C273.5315,-12 284.6439,-12 294.7505,-12"/>
-<polygon fill="#7f00ff" stroke="#7f00ff" points="294.8591,-15.5001 304.8591,-12 294.8591,-8.5001 294.8591,-15.5001"/>
+<title>proc~apply_gradient_bc&#45;&gt;proc~apply_gradient_bc_face</title>
+<path fill="none" stroke="#0000ff" d="M262.7181,-12C272.9103,-12 283.8305,-12 294.6443,-12"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="294.9522,-15.5001 304.9522,-12 294.9521,-8.5001 294.9522,-15.5001"/>
 </g>
 </g>
 </svg>
@@ -610,94 +748,119 @@ public subroutine evaluate_all_gradients()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">evaluate_all_gradients</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">evaluate_all_gradients</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; Call to all the required gradients and </span>
       <span class="c">!&lt; apply boundary condition for ghost cell</span>
       <span class="c">!&lt; gradients</span>
 
       <span class="k">implicit none</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">Target</span> <span class="kd">::</span> <span class="n">qp</span>
+      <span class="c">!&lt; Store primitive variable at cell center</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Temp</span>
+      <span class="c">!&lt; Store Temperature variable at cell center</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">schemetype</span><span class="p">)</span> <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">scheme</span>
+      <span class="c">!&lt; finite-volume Schemes</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">celltype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cells</span>
+      <span class="c">!&lt; Input cell quantities: volume</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Ifaces</span>
+      <span class="c">!&lt; Input varaible which stores I faces&#39; area and unit normal</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Jfaces</span>
+      <span class="c">!&lt; Input varaible which stores J faces&#39; area and unit normal</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Kfaces</span>
+      <span class="c">!&lt; Input varaible which stores K faces&#39; area and unit normal</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">boundarytype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">bc</span>
+      <span class="c">!&lt; boundary conditions and fixed values</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">x_speed</span>      
+       <span class="c">!&lt; U pointer, point to slice of qp (:,:,:,2) </span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">y_speed</span>      
+       <span class="c">!&lt; V pointer, point to slice of qp (:,:,:,3) </span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">z_speed</span>      
+       <span class="c">!&lt; W pointer, point to slice of qp (:,:,:,4)</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">tk</span>   <span class="c">!&lt; TKE/mass</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">tw</span>   <span class="c">!&lt; Omega</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">tv</span>   <span class="c">!&lt; SA visocity</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">tkl</span>  <span class="c">!&lt; KL K-KL method</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">tgm</span>  <span class="c">!&lt; Intermittency of LCTM2015</span>
 
-<span class="k">      call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;summon_grad_evaluation&#39;</span><span class="p">,</span> <span class="s1">&#39;evaluate_all_gradients&#39;</span><span class="p">)</span>
+      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;evaluate_all_gradients&#39;</span><span class="p">)</span>
 
-      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradu_x</span><span class="p">,</span> <span class="n">x_speed</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradv_x</span><span class="p">,</span> <span class="n">y_speed</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradw_x</span><span class="p">,</span> <span class="n">z_speed</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_T</span><span class="p">(</span><span class="n">gradT_x</span>         <span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradu_y</span><span class="p">,</span> <span class="n">x_speed</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradv_y</span><span class="p">,</span> <span class="n">y_speed</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradw_y</span><span class="p">,</span> <span class="n">z_speed</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_T</span><span class="p">(</span><span class="n">gradT_y</span>         <span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">kmx</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">      call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradu_z</span><span class="p">,</span> <span class="n">x_speed</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradv_z</span><span class="p">,</span> <span class="n">y_speed</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradw_z</span><span class="p">,</span> <span class="n">z_speed</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
-      <span class="k">call </span><span class="n">compute_gradient_T</span><span class="p">(</span><span class="n">gradT_z</span>         <span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+      <span class="n">x_speed</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="n">y_speed</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">)</span>
+      <span class="n">z_speed</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">4</span><span class="p">)</span>
+
+      <span class="c">!call compute_gradient_G(gradu_x, qp(:,:,:,2), cells, Ifaces, Jfaces, Kfaces, dims, &#39;x&#39;)</span>
+      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradu_x</span><span class="p">,</span> <span class="n">x_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradv_x</span><span class="p">,</span> <span class="n">y_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradw_x</span><span class="p">,</span> <span class="n">z_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradT_x</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span>    <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+      <span class="c">!call compute_gradient_G(gradu_y, qp(:,:,:,2), cells, Ifaces, Jfaces, Kfaces, dims, &#39;y&#39;)</span>
+      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradu_y</span><span class="p">,</span> <span class="n">x_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradv_y</span><span class="p">,</span> <span class="n">y_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradw_y</span><span class="p">,</span> <span class="n">z_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradT_y</span><span class="p">,</span> <span class="n">Temp</span>   <span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">        call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradu_z</span><span class="p">,</span> <span class="n">x_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+        <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradv_z</span><span class="p">,</span> <span class="n">y_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+        <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradw_z</span><span class="p">,</span> <span class="n">z_speed</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+        <span class="c">!call compute_gradient_T(gradT_z         , cells, Ifaces, Jfaces, Kfaces, dims, &#39;z&#39;)</span>
+        <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradT_z</span><span class="p">,</span> <span class="n">Temp</span>   <span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
       <span class="k">else</span>
 <span class="k">       </span><span class="n">gradqp_z</span><span class="o">=</span><span class="mf">0.0</span>
       <span class="k">end if</span>
 
-<span class="c">!      include &quot;compute_gradu_x.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradu_y.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradv_x.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradv_y.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradw_x.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradw_y.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradT_x.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradT_y.inc&quot;</span>
-<span class="c">!      if(kmx&gt;2) then</span>
-<span class="c">!      include &quot;compute_gradu_z.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradv_z.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradw_z.inc&quot;</span>
-<span class="c">!      include &quot;compute_gradT_z.inc&quot;</span>
-<span class="c">!      else</span>
-<span class="c">!      gradqp_z=0.0</span>
-<span class="c">!      end if</span>
-      <span class="k">select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">turbulence</span><span class="p">))</span>
+<span class="k">      select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">turbulence</span><span class="p">))</span>
 
         <span class="k">case</span> <span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
           <span class="c">!do nothing</span>
           <span class="k">continue</span>
 
 <span class="k">        case</span> <span class="p">(</span><span class="s1">&#39;sa&#39;</span><span class="p">,</span> <span class="s1">&#39;saBC&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtv_x</span><span class="p">,</span> <span class="n">tv</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtv_y</span><span class="p">,</span> <span class="n">tv</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+          <span class="n">tv</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">6</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtv_x</span><span class="p">,</span> <span class="n">tv</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtv_y</span><span class="p">,</span> <span class="n">tv</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">kmx</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="k">then</span>
-<span class="k">          call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtv_z</span><span class="p">,</span> <span class="n">tv</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="k">          call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtv_z</span><span class="p">,</span> <span class="n">tv</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
           <span class="k">end if</span>
 
 <span class="k">        case</span> <span class="p">(</span><span class="s1">&#39;sst&#39;</span><span class="p">,</span> <span class="s1">&#39;sst2003&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_x</span><span class="p">,</span> <span class="n">tk</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtw_x</span><span class="p">,</span> <span class="n">tw</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_y</span><span class="p">,</span> <span class="n">tk</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtw_y</span><span class="p">,</span> <span class="n">tw</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+          <span class="n">tk</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">6</span><span class="p">)</span>
+          <span class="n">tw</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">7</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_x</span><span class="p">,</span> <span class="n">tk</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtw_x</span><span class="p">,</span> <span class="n">tw</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_y</span><span class="p">,</span> <span class="n">tk</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtw_y</span><span class="p">,</span> <span class="n">tw</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">kmx</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="k">then</span>
-<span class="k">          call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_z</span><span class="p">,</span> <span class="n">tk</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtw_z</span><span class="p">,</span> <span class="n">tw</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="k">          call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_z</span><span class="p">,</span> <span class="n">tk</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtw_z</span><span class="p">,</span> <span class="n">tw</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
           <span class="k">end if</span>
 
 <span class="k">        case</span> <span class="p">(</span><span class="s1">&#39;kkl&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_x</span> <span class="p">,</span> <span class="n">tk</span> <span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtkl_x</span><span class="p">,</span> <span class="n">tkl</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_y</span> <span class="p">,</span> <span class="n">tk</span> <span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtkl_y</span><span class="p">,</span> <span class="n">tkl</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+          <span class="n">tk</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">6</span><span class="p">)</span>
+          <span class="n">tkl</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">7</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_x</span> <span class="p">,</span> <span class="n">tk</span> <span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtkl_x</span><span class="p">,</span> <span class="n">tkl</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_y</span> <span class="p">,</span> <span class="n">tk</span> <span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtkl_y</span><span class="p">,</span> <span class="n">tkl</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">kmx</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="k">then</span>
-<span class="k">          call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_z</span> <span class="p">,</span> <span class="n">tk</span> <span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtkl_z</span><span class="p">,</span> <span class="n">tkl</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="k">          call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtk_z</span> <span class="p">,</span> <span class="n">tk</span> <span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtkl_z</span><span class="p">,</span> <span class="n">tkl</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
           <span class="k">end if</span>
 
 <span class="k">        case </span><span class="n">DEFAULT</span>
-          <span class="c">!call turbulence_read_error()</span>
           <span class="n">Fatal_error</span>
 
       <span class="k">end select</span>
 
 
-<span class="k">      select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">transition</span><span class="p">))</span>
+<span class="k">      select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">transition</span><span class="p">))</span>
         <span class="k">case</span><span class="p">(</span><span class="s1">&#39;lctm2015&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtgm_x</span><span class="p">,</span> <span class="n">tgm</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtgm_y</span><span class="p">,</span> <span class="n">tgm</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+          <span class="n">tgm</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">qp</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">8</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtgm_x</span><span class="p">,</span> <span class="n">tgm</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtgm_y</span><span class="p">,</span> <span class="n">tgm</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
           <span class="k">if</span><span class="p">(</span><span class="n">kmx</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="k">then</span>
-<span class="k">          call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtgm_z</span><span class="p">,</span> <span class="n">tgm</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="k">          call </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">gradtgm_z</span><span class="p">,</span> <span class="n">tgm</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
           <span class="k">end if</span>
 
 <span class="k">        case</span><span class="p">(</span><span class="s1">&#39;bc&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span>
@@ -709,10 +872,7 @@ public subroutine evaluate_all_gradients()
 
       <span class="k">end Select</span>
 
-
-      <span class="c">!gradqp_z=0.0</span>
-      <span class="c">!applying boundary condition to gradients</span>
-      <span class="k">call </span><span class="n">apply_gradient_bc</span><span class="p">()</span>
+<span class="k">      call </span><span class="n">apply_gradient_bc</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
 
     <span class="k">end subroutine </span><span class="n">evaluate_all_gradients</span>
 </pre></div>
@@ -736,7 +896,7 @@ public subroutine evaluate_all_gradients()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

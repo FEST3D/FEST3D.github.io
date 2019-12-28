@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">37 statements</a>
+    title=" 0.3% of total for procedures.">37 statements</a>
      </li> 
      
      
@@ -243,7 +247,7 @@ public function SpectralRadius(ql, qr, inputs, c1, c2)
   
 <tr>
   
-  <td><span class="anchor" id="variable-ql%7E7"></span>real,</td>
+  <td><span class="anchor" id="variable-ql%7E7"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -258,7 +262,7 @@ public function SpectralRadius(ql, qr, inputs, c1, c2)
   
 <tr>
   
-  <td><span class="anchor" id="variable-qr%7E7"></span>real,</td>
+  <td><span class="anchor" id="variable-qr%7E7"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -273,7 +277,7 @@ public function SpectralRadius(ql, qr, inputs, c1, c2)
   
 <tr>
   
-  <td><span class="anchor" id="variable-inputs%7E7"></span>real,</td>
+  <td><span class="anchor" id="variable-inputs%7E7"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -288,7 +292,7 @@ public function SpectralRadius(ql, qr, inputs, c1, c2)
   
 <tr>
   
-  <td><span class="anchor" id="variable-c1%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-c1%7E3"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -303,7 +307,7 @@ public function SpectralRadius(ql, qr, inputs, c1, c2)
   
 <tr>
   
-  <td><span class="anchor" id="variable-c2%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-c2%7E3"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -322,7 +326,7 @@ public function SpectralRadius(ql, qr, inputs, c1, c2)
     
     
     
-   <h3>Return Value <small><span class="anchor" id="variable-spectralradius%7E2"></span>real
+   <h3>Return Value <small><span class="anchor" id="variable-spectralradius%7E2"></span>real(kind=wp)
   </small></h3>
     
     
@@ -638,29 +642,29 @@ public function SpectralRadius(ql, qr, inputs, c1, c2)
     <div class="highlight"><pre><span></span>    <span class="k">function </span><span class="n">SpectralRadius</span><span class="p">(</span><span class="n">ql</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
       <span class="c">!&lt; Calculate the spectral radius </span>
       <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ql</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qr</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">inputs</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">c1</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">c2</span>
+<span class="k">      </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ql</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qr</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">inputs</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">c1</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>    <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">c2</span>
 
       <span class="c">! local variables</span>
-      <span class="kt">real</span>                                 <span class="kd">::</span> <span class="n">SpectralRadius</span>
-      <span class="kt">real</span>                                 <span class="kd">::</span> <span class="n">NormalSpeed</span>
-      <span class="kt">real</span>                                 <span class="kd">::</span> <span class="n">SpeedOfSound</span>
-      <span class="kt">real</span>                                 <span class="kd">::</span> <span class="n">vis</span>
-      <span class="kt">real</span>                                 <span class="kd">::</span> <span class="n">mu</span>
-      <span class="kt">real</span>                                 <span class="kd">::</span> <span class="n">rho</span>
-      <span class="kt">real</span>                                 <span class="kd">::</span> <span class="n">distance</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>                                 <span class="kd">::</span> <span class="n">SpectralRadius</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>                                 <span class="kd">::</span> <span class="n">NormalSpeed</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>                                 <span class="kd">::</span> <span class="n">SpeedOfSound</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>                                 <span class="kd">::</span> <span class="n">vis</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>                                 <span class="kd">::</span> <span class="n">mu</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>                                 <span class="kd">::</span> <span class="n">rho</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>                                 <span class="kd">::</span> <span class="n">distance</span>
 
       <span class="c">!extract inputs</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">Area</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nx</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">ny</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nz</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">volume</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">mm</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">tm</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Area</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ny</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nz</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">volume</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">mm</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tm</span>
 
       <span class="n">Area</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
       <span class="n">nx</span>   <span class="o">=</span> <span class="n">inputs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -707,7 +711,7 @@ public function SpectralRadius(ql, qr, inputs, c1, c2)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

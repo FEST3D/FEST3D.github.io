@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">32 statements</a>
+    title=" 0.1% of total for procedures.">17 statements</a>
      </li> 
      
      
@@ -243,7 +247,7 @@ private subroutine write_scalar(var, name, index)
   
 <tr>
   
-  <td><span class="anchor" id="variable-var%7E7"></span>real,</td>
+  <td><span class="anchor" id="variable-var%7E16"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -551,17 +555,15 @@ private subroutine write_scalar(var, name, index)
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">write_scalar</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">index</span><span class="p">)</span>
-      <span class="c">!&lt; Write the scalar variable in the output file</span>
-      <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">index</span>
-<span class="nb">      </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="nb">index</span><span class="p">:</span><span class="n">imx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">jmx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">kmx</span><span class="o">-</span><span class="nb">index</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">var</span>
-      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span>       <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span> <span class="n">name</span>
-      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>                  <span class="kd">::</span> <span class="n">line</span>
+        <span class="c">!&lt; Write the scalar variable in the output file</span>
+        <span class="k">implicit none</span>
+<span class="k">        </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">index</span>
+<span class="nb">        </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="nb">index</span><span class="p">:</span><span class="n">imx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">jmx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">kmx</span><span class="o">-</span><span class="nb">index</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">var</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span>       <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="kd">::</span> <span class="n">name</span>
 
-      <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_scalar: &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="n">DebugCall</span><span class="p">(</span><span class="s2">&quot;write_scalar: &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
-      <span class="k">if</span> <span class="p">(</span><span class="n">Write_data_format</span> <span class="o">==</span> <span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s1">&#39;SCALARS &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39; FLOAT&#39;</span>
+        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s1">&#39;SCALARS &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39; FLOAT&#39;</span>
         <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="s1">&#39;LOOKUP_TABLE default&#39;</span>
         <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span>
          <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span>
@@ -571,21 +573,8 @@ private subroutine write_scalar(var, name, index)
 <span class="k">         end do</span>
 <span class="k">        end do</span>
 <span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-      <span class="n">elseif</span> <span class="p">(</span><span class="n">write_data_format</span> <span class="o">==</span> <span class="s1">&#39;BINARY&#39;</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="s1">&#39;SCALARS &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39; FLOAT&#39;</span><span class="o">//</span><span class="n">newline</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="s1">&#39;LOOKUP_TABLE default&#39;</span><span class="o">//</span><span class="n">newline</span>
-        <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span>
-         <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span>
-          <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span>
-            <span class="k">write</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s2">&quot;(ES28.16E4)&quot;</span><span class="p">)</span> <span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
-            <span class="k">write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span> <span class="nb">trim</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="n">newline</span>
-          <span class="k">end do</span>
-<span class="k">         end do</span>
-<span class="k">        end do</span>
-<span class="k">        write</span><span class="p">(</span><span class="n">OUT_FILE_UNIT</span><span class="p">)</span>  <span class="n">newline</span>
-      <span class="k">end if</span>
 
-<span class="k">    end subroutine </span><span class="n">write_scalar</span>
+    <span class="k">end subroutine </span><span class="n">write_scalar</span>
 </pre></div>
 
     </section>
@@ -607,7 +596,7 @@ private subroutine write_scalar(var, name, index)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

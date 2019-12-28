@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">68 statements</a>
+    title=" 0.6% of total for procedures.">79 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine add_sst_bc_source()
+private subroutine add_sst_bc_source(qp, residue, cells, flow, dims)
     
     
    
@@ -227,8 +231,94 @@ private subroutine add_sst_bc_source()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qp%7E30"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-residue%7E9"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>residue</strong></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cells%7E28"></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-flow%7E16"></span>type(<a href='../type/flowtype.html'>flowtype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>flow</strong></td><td><p>Information about fluid flow: freestream-speed, ref-viscosity,etc.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E39"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -456,53 +546,85 @@ private subroutine add_sst_bc_source()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">add_sst_bc_source</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">add_sst_bc_source</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; Add residual due to source terms of the SST-BC transition model</span>
       <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">flowtype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flow</span>
+      <span class="c">!&lt; Information about fluid flow: freestream-speed, ref-viscosity,etc.</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qp</span>
+      <span class="c">!&lt; Store primitive variable at cell center</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">residue</span>
+      <span class="c">!&lt; Store residue at each cell-center</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">celltype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cells</span>
+      <span class="c">!&lt; Input cell quantities: volume</span>
+      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span>
 
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">CD</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">F1</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">vort</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">S_k</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">S_w</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">D_k</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">D_w</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">P_k</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">P_w</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">lamda</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">TuL</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">CD</span>
+      <span class="c">!&lt; cross-diffusion term</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F1</span>
+      <span class="c">!&lt; single cell blending function </span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vort</span>
+      <span class="c">!&lt; vorticity magnitude</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">S_k</span>
+      <span class="c">!&lt; Total source term in TKE equation</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">S_w</span>
+      <span class="c">!&lt; Total source term in Omega equation</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">D_k</span>
+      <span class="c">!&lt; Destruction term in TKE equation</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">D_w</span>
+      <span class="c">!&lt; Destruction term in Omega equation</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">P_k</span>
+      <span class="c">!&lt; Production term in TKE equation</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">P_w</span>
+      <span class="c">!&lt; production term in Omega equation</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lamda</span>
+      <span class="c">!&lt; addtion source term in Omega equation</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">TuL</span>
+      <span class="c">!&lt; local turbulence intensity</span>
       <span class="c">!--------BC model -----</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">chi_1</span><span class="o">=</span><span class="mf">0.002</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">chi_2</span><span class="o">=</span><span class="mf">5.0</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nu_BC</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nu_cr</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">nu_t</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">re_v</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">re_theta</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">re_theta_t</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">term1</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">term2</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">term_exponential</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">gamma_BC</span>
-      <span class="kt">real</span> <span class="kd">::</span> <span class="n">vmag</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">chi_1</span><span class="o">=</span><span class="mf">0.002</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">chi_2</span><span class="o">=</span><span class="mf">5.0</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nu_BC</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nu_cr</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nu_t</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">re_v</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">re_theta</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">re_theta_t</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">term1</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">term2</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">term_exponential</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gamma_BC</span>
+      <span class="c">!&lt; intermittency function</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vmag</span>
+      <span class="c">!&lt; velocity magnitude</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">density</span>
+      <span class="c">!&lt; single cell Density</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tk</span>
+      <span class="c">!&lt; single cell TKE</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tw</span>
+      <span class="c">!&lt; single cell omega</span>
 
 
-      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span>
-        <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span>
-          <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span>
+          <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span>
 
+            <span class="n">density</span> <span class="o">=</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">tk</span>      <span class="o">=</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+            <span class="n">tw</span>      <span class="o">=</span> <span class="n">qp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
             <span class="c">! __ vorticity __</span>
-            <span class="n">vort</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span>     <span class="p">((</span><span class="n">gradw_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">-</span> <span class="n">gradv_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">&amp;</span>
-                            <span class="o">+</span> <span class="p">(</span><span class="n">gradu_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">-</span> <span class="n">gradw_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">&amp;</span>
-                            <span class="o">+</span> <span class="p">(</span><span class="n">gradv_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">-</span> <span class="n">gradu_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">&amp;</span>
-                             <span class="p">)&amp;</span>
+            <span class="n">vort</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span> <span class="p">((</span><span class="n">gradw_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">-</span> <span class="n">gradv_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">&amp;</span>
+                        <span class="o">+</span> <span class="p">(</span><span class="n">gradu_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">-</span> <span class="n">gradw_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">&amp;</span>
+                        <span class="o">+</span> <span class="p">(</span><span class="n">gradv_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">-</span> <span class="n">gradu_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">&amp;</span>
+                         <span class="p">)&amp;</span>
                        <span class="p">)</span>
 
-            <span class="n">CD</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">density</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">sigma_w2</span><span class="o">*</span><span class="p">(</span><span class="n">gradtk_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">gradtw_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)&amp;</span>
-                                          <span class="o">+</span> <span class="n">gradtk_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">gradtw_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)&amp;</span>
-                                          <span class="o">+</span> <span class="n">gradtk_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">gradtw_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)&amp;</span>
-                                           <span class="p">)</span><span class="o">/</span><span class="n">tw</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+            <span class="n">CD</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">density</span><span class="o">*</span><span class="n">sigma_w2</span><span class="o">*</span><span class="p">(</span><span class="n">gradtk_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">gradtw_x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)&amp;</span>
+                                   <span class="o">+</span> <span class="n">gradtk_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">gradtw_y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)&amp;</span>
+                                   <span class="o">+</span> <span class="n">gradtk_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">gradtw_z</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)&amp;</span>
+                                    <span class="p">)</span><span class="o">/</span><span class="n">tw</span>
             <span class="c">!CD = max(CD, 1e-20)</span>
             <span class="n">F1</span> <span class="o">=</span> <span class="n">sst_F1</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
 
@@ -515,13 +637,13 @@ private subroutine add_sst_bc_source()
 
 
             <span class="c">! ____ Dissipation term ___</span>
-            <span class="n">D_k</span> <span class="o">=</span> <span class="n">bstar</span><span class="o">*</span><span class="n">density</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">tw</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">tk</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
-            <span class="n">D_w</span> <span class="o">=</span> <span class="n">beta</span><span class="o">*</span><span class="n">density</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">tw</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">D_k</span> <span class="o">=</span> <span class="n">bstar</span><span class="o">*</span><span class="n">density</span><span class="o">*</span><span class="n">tw</span><span class="o">*</span><span class="n">tk</span>
+            <span class="n">D_w</span> <span class="o">=</span> <span class="n">beta</span><span class="o">*</span><span class="n">density</span><span class="o">*</span><span class="n">tw</span><span class="o">**</span><span class="mi">2</span>
 
             <span class="c">! ____ PRODUCTION term____ </span>
-            <span class="n">P_k</span> <span class="o">=</span> <span class="n">sst_mu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">vort</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">P_k</span> <span class="o">=</span> <span class="n">mu_t</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">vort</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">P_k</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">P_k</span><span class="p">,</span><span class="mi">2</span><span class="mf">0.0</span><span class="o">*</span><span class="n">D_k</span><span class="p">)</span>
-            <span class="n">P_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">density</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">gama</span><span class="o">/</span><span class="n">sst_mu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">P_k</span>
+            <span class="n">P_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">density</span><span class="o">*</span><span class="n">gama</span><span class="o">/</span><span class="n">mu_t</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">P_k</span>
 
             <span class="c">! ____ cross diffusion term ___</span>
             <span class="n">lamda</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">F1</span><span class="p">)</span><span class="o">*</span><span class="n">CD</span>
@@ -532,17 +654,14 @@ private subroutine add_sst_bc_source()
             <span class="n">chi_1</span> <span class="o">=</span> <span class="mf">0.002</span>
             <span class="n">chi_2</span> <span class="o">=</span> <span class="mf">5.0</span>
 
-            <span class="n">nu_t</span> <span class="o">=</span> <span class="n">mu_t</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">density</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
-            <span class="n">nu_cr</span> <span class="o">=</span> <span class="n">chi_2</span><span class="o">/</span><span class="n">Reynolds_number</span>
+            <span class="n">nu_t</span> <span class="o">=</span> <span class="n">mu_t</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="n">density</span>
+            <span class="n">nu_cr</span> <span class="o">=</span> <span class="n">chi_2</span><span class="o">/</span><span class="n">flow</span><span class="p">%</span><span class="n">Reynolds_number</span>
             <span class="n">nu_bc</span> <span class="o">=</span> <span class="n">nu_t</span><span class="o">/</span><span class="p">(</span><span class="n">vmag</span><span class="o">*</span><span class="n">dist</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
 
-            <span class="c">!TuL = min(100.0*sqrt(2.0*tk(i,j,k)/3.0)/(tw(i,j,k)*dist(i,j,k)),100.0)</span>
-            <span class="n">TuL</span> <span class="o">=</span> <span class="n">free_stream_tu</span> <span class="c">!local turbulence intensity might not work for BC model</span>
-            <span class="n">re_v</span> <span class="o">=</span> <span class="n">density</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">dist</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">dist</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">vort</span><span class="o">/</span><span class="n">mu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+            <span class="n">TuL</span> <span class="o">=</span> <span class="n">flow</span><span class="p">%</span><span class="n">tu_inf</span> <span class="c">!local turbulence intensity might not work for BC model</span>
+            <span class="n">re_v</span> <span class="o">=</span> <span class="n">density</span><span class="o">*</span><span class="n">dist</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">dist</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">vort</span><span class="o">/</span><span class="n">mu</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
             <span class="n">re_theta</span> <span class="o">=</span> <span class="n">re_v</span><span class="o">/</span><span class="mf">2.193</span>
             <span class="n">re_theta_t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="mf">3.73</span><span class="o">*</span><span class="p">((</span><span class="n">TuL</span> <span class="o">+</span> <span class="mf">0.6067</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.027</span><span class="p">)))</span>
-            <span class="c">!re_theta_t = 100.0 + 1000.0*exp(-TuL)</span>
-            <span class="c">!re_theta_t = 163.0 + exp(6.91 - TuL)</span>
 
             <span class="n">term1</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">re_theta</span><span class="o">-</span><span class="n">re_theta_t</span><span class="p">,</span><span class="mf">0.</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">chi_1</span><span class="o">*</span><span class="n">re_theta_t</span><span class="p">))</span>
             <span class="n">term2</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">nu_BC</span><span class="o">-</span><span class="n">nu_cr</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span><span class="o">/</span><span class="n">nu_cr</span><span class="p">)</span>
@@ -554,11 +673,11 @@ private subroutine add_sst_bc_source()
             <span class="n">S_k</span> <span class="o">=</span> <span class="n">P_k</span> <span class="o">-</span> <span class="n">D_k</span>           <span class="c">!Source term TKE</span>
             <span class="n">S_w</span> <span class="o">=</span> <span class="n">P_w</span> <span class="o">-</span> <span class="n">D_w</span>  <span class="o">+</span><span class="n">lamda</span>   <span class="c">!source term omega</span>
 
-            <span class="n">S_k</span> <span class="o">=</span> <span class="n">S_k</span> <span class="o">*</span> <span class="n">volume</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-            <span class="n">S_w</span> <span class="o">=</span> <span class="n">S_w</span> <span class="o">*</span> <span class="n">volume</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="n">S_k</span> <span class="o">=</span> <span class="n">S_k</span> <span class="o">*</span> <span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)%</span><span class="n">volume</span>
+            <span class="n">S_w</span> <span class="o">=</span> <span class="n">S_w</span> <span class="o">*</span> <span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)%</span><span class="n">volume</span>
 
-            <span class="n">TKE_residue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>   <span class="o">=</span> <span class="n">TKE_residue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">S_k</span>
-            <span class="n">omega_residue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">omega_residue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">S_w</span>
+            <span class="n">residue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">=</span> <span class="n">residue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">-</span> <span class="n">S_k</span>
+            <span class="n">residue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="o">=</span> <span class="n">residue</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-</span> <span class="n">S_w</span>
 
           <span class="k">end do</span>
 <span class="k">        end do</span>
@@ -586,7 +705,7 @@ private subroutine add_sst_bc_source()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

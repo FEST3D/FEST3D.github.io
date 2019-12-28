@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">72 statements</a>
+    title=" 0.5% of total for procedures.">77 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine get_next_solution()
+public subroutine get_next_solution(qp, Temp, residue, delta_t, cells, F, G, H, Ifaces, Jfaces, Kfaces, control, scheme, flow, bc, dims)
     
     
    
@@ -228,8 +232,260 @@ public subroutine get_next_solution()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qp%7E41"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2,1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Store primitive variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-temp%7E4"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Temp</strong></td><td><p>Store Temperature variable at cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-residue%7E21"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>residue</strong></td><td><p>Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-delta_t%7E19"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(1:dims%imx-1, 1:dims%jmx-1, 1:dims%kmx-1)</td><td>::</td>
+  <td><strong>delta_t</strong></td><td><p>Local time increment value at each cell center
+ Store residue at each cell-center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cells%7E38"></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-f%7E9"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>F</strong></td><td><p>Store fluxes throught the I faces</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-g%7E4"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>G</strong></td><td><p>Store fluxes throught the J faces</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-h%7E4"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>dimension(:, :, :, :)</td><td>::</td>
+  <td><strong>H</strong></td><td><p>Store fluxes throught the K faces</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ifaces%7E30"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Store face quantites for I faces </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-jfaces%7E30"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Store face quantites for J faces </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kfaces%7E30"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Store face quantites for K faces </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-control%7E28"></span>type(<a href='../type/controltype.html'>controltype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>control</strong></td><td><p>Control parameters</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-scheme%7E30"></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td><p>finite-volume Schemes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-flow%7E24"></span>type(<a href='../type/flowtype.html'>flowtype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>flow</strong></td><td><p>Information about fluid flow: freestream-speed, ref-viscosity,etc.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bc%7E10"></span>type(<a href='../type/boundarytype.html'>boundarytype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>bc</strong></td><td><p>boundary conditions and fixed values</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E60"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -247,457 +503,439 @@ public subroutine get_next_solution()
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: proc~~get_next_solution~~CallsGraph Pages: 1 -->
-<svg id="procget_next_solutionCallsGraph" width="531pt" height="956pt"
- viewBox="0.00 0.00 531.00 956.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="procget_next_solutionCallsGraph" width="488pt" height="956pt"
+ viewBox="0.00 0.00 488.00 956.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~get_next_solution~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 952)">
 <title>proc~~get_next_solution~~CallsGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-952 527,-952 527,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-952 484,-952 484,4 -4,4"/>
 <!-- proc~get_next_solution -->
 <g id="proc~~get_next_solution~~CallsGraph_node1" class="node">
 <title>proc~get_next_solution</title>
-<polygon fill="none" stroke="#000000" points="97,-622 0,-622 0,-598 97,-598 97,-622"/>
-<text text-anchor="middle" x="48.5" y="-607.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">get_next_solution</text>
-</g>
-<!-- proc~update_with -->
-<g id="proc~~get_next_solution~~CallsGraph_node2" class="node">
-<title>proc~update_with</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node2"><a xlink:href=".././proc/update_with.html" xlink:title="update_with">
-<polygon fill="#d9534f" stroke="#d9534f" points="272,-885 202,-885 202,-861 272,-861 272,-885"/>
-<text text-anchor="middle" x="237" y="-870.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_with</text>
-</a>
-</g>
-</g>
-<!-- proc~get_next_solution&#45;&gt;proc~update_with -->
-<g id="proc~~get_next_solution~~CallsGraph_edge1" class="edge">
-<title>proc~get_next_solution&#45;&gt;proc~update_with</title>
-<path fill="none" stroke="#ff0000" d="M51.0493,-622.0002C60.7067,-666.3453 96.3544,-820.0501 133,-852 148.9612,-865.916 171.5598,-871.5684 191.6158,-873.5728"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="191.5965,-877.0805 201.8234,-874.3129 192.1027,-870.0988 191.5965,-877.0805"/>
-</g>
-<!-- proc~compute_time_step -->
-<g id="proc~~get_next_solution~~CallsGraph_node3" class="node">
-<title>proc~compute_time_step</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node3"><a xlink:href=".././proc/compute_time_step.html" xlink:title="compute_time_step">
-<polygon fill="#d9534f" stroke="#d9534f" points="290,-843 184,-843 184,-819 290,-819 290,-843"/>
-<text text-anchor="middle" x="237" y="-828.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_time_step</text>
-</a>
-</g>
-</g>
-<!-- proc~get_next_solution&#45;&gt;proc~compute_time_step -->
-<g id="proc~~get_next_solution~~CallsGraph_edge2" class="edge">
-<title>proc~get_next_solution&#45;&gt;proc~compute_time_step</title>
-<path fill="none" stroke="#ff0000" d="M58.9031,-622.1967C89.8642,-658.4959 181.6357,-766.0901 219.9233,-810.9791"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="217.4766,-813.5039 226.6291,-818.841 222.8025,-808.9613 217.4766,-813.5039"/>
-</g>
-<!-- proc~update_with_lusgs -->
-<g id="proc~~get_next_solution~~CallsGraph_node4" class="node">
-<title>proc~update_with_lusgs</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node4"><a xlink:href=".././proc/update_with_lusgs.html" xlink:title="update_with_lusgs">
-<polygon fill="#d9534f" stroke="#d9534f" points="287.5,-680 186.5,-680 186.5,-656 287.5,-656 287.5,-680"/>
-<text text-anchor="middle" x="237" y="-665.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_with_lusgs</text>
-</a>
-</g>
-</g>
-<!-- proc~get_next_solution&#45;&gt;proc~update_with_lusgs -->
-<g id="proc~~get_next_solution~~CallsGraph_edge6" class="edge">
-<title>proc~get_next_solution&#45;&gt;proc~update_with_lusgs</title>
-<path fill="none" stroke="#ff0000" d="M87.5573,-622.0176C116.7493,-630.9998 156.8481,-643.3379 188.1602,-652.9724"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="187.4056,-656.4021 197.9927,-655.9978 189.4642,-649.7116 187.4056,-656.4021"/>
-</g>
-<!-- proc~update_laminar_variables_conservative -->
-<g id="proc~~get_next_solution~~CallsGraph_node5" class="node">
-<title>proc~update_laminar_variables_conservative</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node5"><a xlink:href=".././proc/update_laminar_variables_conservative.html" xlink:title="update_laminar_variables_conservative">
-<polygon fill="#d9534f" stroke="#d9534f" points="338,-622 136,-622 136,-598 338,-598 338,-622"/>
-<text text-anchor="middle" x="237" y="-607.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_laminar_variables_conservative</text>
-</a>
-</g>
-</g>
-<!-- proc~get_next_solution&#45;&gt;proc~update_laminar_variables_conservative -->
-<g id="proc~~get_next_solution~~CallsGraph_edge7" class="edge">
-<title>proc~get_next_solution&#45;&gt;proc~update_laminar_variables_conservative</title>
-<path fill="none" stroke="#ff0000" d="M97.0434,-610C106.0429,-610 115.7759,-610 125.7725,-610"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="125.8395,-613.5001 135.8395,-610 125.8395,-606.5001 125.8395,-613.5001"/>
-</g>
-<!-- proc~update_with_plusgs -->
-<g id="proc~~get_next_solution~~CallsGraph_node6" class="node">
-<title>proc~update_with_plusgs</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node6"><a xlink:href=".././proc/update_with_plusgs.html" xlink:title="update_with_plusgs">
-<polygon fill="#d9534f" stroke="#d9534f" points="290.5,-549 183.5,-549 183.5,-525 290.5,-525 290.5,-549"/>
-<text text-anchor="middle" x="237" y="-534.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_with_plusgs</text>
-</a>
-</g>
-</g>
-<!-- proc~get_next_solution&#45;&gt;proc~update_with_plusgs -->
-<g id="proc~~get_next_solution~~CallsGraph_edge5" class="edge">
-<title>proc~get_next_solution&#45;&gt;proc~update_with_plusgs</title>
-<path fill="none" stroke="#ff0000" d="M79.6269,-597.9455C111.5515,-585.5822 161.3584,-566.2935 196.371,-552.7343"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="197.7657,-555.9476 205.8268,-549.0724 195.2377,-549.42 197.7657,-555.9476"/>
-</g>
-<!-- proc~update_turbulent_variables_conservative -->
-<g id="proc~~get_next_solution~~CallsGraph_node7" class="node">
-<title>proc~update_turbulent_variables_conservative</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node7"><a xlink:href=".././proc/update_turbulent_variables_conservative.html" xlink:title="update_turbulent_variables_conservative">
-<polygon fill="#d9534f" stroke="#d9534f" points="341,-507 133,-507 133,-483 341,-483 341,-507"/>
-<text text-anchor="middle" x="237" y="-492.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_turbulent_variables_conservative</text>
-</a>
-</g>
-</g>
-<!-- proc~get_next_solution&#45;&gt;proc~update_turbulent_variables_conservative -->
-<g id="proc~~get_next_solution~~CallsGraph_edge3" class="edge">
-<title>proc~get_next_solution&#45;&gt;proc~update_turbulent_variables_conservative</title>
-<path fill="none" stroke="#ff0000" d="M55.6359,-597.9571C68.3971,-577.5639 97.176,-536.4595 133,-516 136.4115,-514.0517 139.9764,-512.2822 143.6455,-510.6754"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="144.9325,-513.9302 152.9523,-507.0068 142.3655,-507.4179 144.9325,-513.9302"/>
+<polygon fill="none" stroke="#000000" points="97,-402 0,-402 0,-378 97,-378 97,-402"/>
+<text text-anchor="middle" x="48.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">get_next_solution</text>
 </g>
 <!-- proc~get_total_conservative_residue -->
-<g id="proc~~get_next_solution~~CallsGraph_node8" class="node">
+<g id="proc~~get_next_solution~~CallsGraph_node2" class="node">
 <title>proc~get_total_conservative_residue</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node8"><a xlink:href=".././proc/get_total_conservative_residue.html" xlink:title="get_total_conservative_Residue">
-<polygon fill="#d9534f" stroke="#d9534f" points="319.5,-234 154.5,-234 154.5,-210 319.5,-210 319.5,-234"/>
-<text text-anchor="middle" x="237" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_total_conservative_Residue</text>
+<g id="a_proc~~get_next_solution~~CallsGraph_node2"><a xlink:href=".././proc/get_total_conservative_residue.html" xlink:title="get_total_conservative_Residue">
+<polygon fill="#d9534f" stroke="#d9534f" points="298,-738 133,-738 133,-714 298,-714 298,-738"/>
+<text text-anchor="middle" x="215.5" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_total_conservative_Residue</text>
 </a>
 </g>
 </g>
 <!-- proc~get_next_solution&#45;&gt;proc~get_total_conservative_residue -->
 <g id="proc~~get_next_solution~~CallsGraph_edge4" class="edge">
 <title>proc~get_next_solution&#45;&gt;proc~get_total_conservative_residue</title>
-<path fill="none" stroke="#ff0000" d="M54.3481,-597.9625C81.0605,-542.9789 191.6661,-315.3133 226.4677,-243.6793"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="229.8115,-244.8058 231.0333,-234.2816 223.5152,-241.7469 229.8115,-244.8058"/>
+<path fill="none" stroke="#ff0000" d="M54.6417,-402.3569C79.5541,-452.4801 173.2465,-640.9869 204.9437,-704.761"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="201.8935,-706.488 209.4786,-713.8851 208.162,-703.3724 201.8935,-706.488"/>
 </g>
-<!-- proc~compute_local_time_step -->
-<g id="proc~~get_next_solution~~CallsGraph_node24" class="node">
-<title>proc~compute_local_time_step</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node24"><a xlink:href=".././proc/compute_local_time_step.html" xlink:title="compute_local_time_step">
-<polygon fill="#d9534f" stroke="#d9534f" points="517,-948 383,-948 383,-924 517,-924 517,-948"/>
-<text text-anchor="middle" x="450" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_local_time_step</text>
+<!-- proc~update_with -->
+<g id="proc~~get_next_solution~~CallsGraph_node3" class="node">
+<title>proc~update_with</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node3"><a xlink:href=".././proc/update_with.html" xlink:title="update_with">
+<polygon fill="#d9534f" stroke="#d9534f" points="250.5,-444 180.5,-444 180.5,-420 250.5,-420 250.5,-444"/>
+<text text-anchor="middle" x="215.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_with</text>
 </a>
 </g>
 </g>
-<!-- proc~compute_time_step&#45;&gt;proc~compute_local_time_step -->
-<g id="proc~~get_next_solution~~CallsGraph_edge8" class="edge">
-<title>proc~compute_time_step&#45;&gt;proc~compute_local_time_step</title>
-<path fill="none" stroke="#ffda00" d="M290.2228,-833.0466C307.6949,-835.8771 326.3656,-841.4315 341,-852 367.1443,-870.8805 351.6402,-895.0781 377,-915 378.8116,-916.4231 380.7158,-917.7498 382.6917,-918.9866"/>
-<polygon fill="#ffda00" stroke="#ffda00" points="381.2826,-922.2027 391.748,-923.8537 384.5963,-916.0367 381.2826,-922.2027"/>
+<!-- proc~get_next_solution&#45;&gt;proc~update_with -->
+<g id="proc~~get_next_solution~~CallsGraph_edge2" class="edge">
+<title>proc~get_next_solution&#45;&gt;proc~update_with</title>
+<path fill="none" stroke="#ff0000" d="M96.3555,-402.0355C119.696,-407.9056 147.611,-414.9261 170.5517,-420.6956"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="169.8267,-424.1222 180.3784,-423.167 171.5341,-417.3336 169.8267,-424.1222"/>
 </g>
-<!-- proc~compute_global_time_step -->
-<g id="proc~~get_next_solution~~CallsGraph_node25" class="node">
-<title>proc~compute_global_time_step</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node25"><a xlink:href=".././proc/compute_global_time_step.html" xlink:title="compute_global_time_step">
-<polygon fill="#d9534f" stroke="#d9534f" points="520.5,-906 379.5,-906 379.5,-882 520.5,-882 520.5,-906"/>
-<text text-anchor="middle" x="450" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_global_time_step</text>
+<!-- proc~compute_time_step -->
+<g id="proc~~get_next_solution~~CallsGraph_node4" class="node">
+<title>proc~compute_time_step</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node4"><a xlink:href=".././proc/compute_time_step.html" xlink:title="compute_time_step">
+<polygon fill="#d9534f" stroke="#d9534f" points="268.5,-276 162.5,-276 162.5,-252 268.5,-252 268.5,-276"/>
+<text text-anchor="middle" x="215.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_time_step</text>
 </a>
 </g>
 </g>
-<!-- proc~compute_time_step&#45;&gt;proc~compute_global_time_step -->
-<g id="proc~~get_next_solution~~CallsGraph_edge11" class="edge">
-<title>proc~compute_time_step&#45;&gt;proc~compute_global_time_step</title>
-<path fill="none" stroke="#ffda00" d="M290.0574,-838.2373C306.692,-841.4215 324.9037,-845.874 341,-852 358.3119,-858.5887 359.9686,-865.717 377,-873 381.7289,-875.0222 386.7112,-876.9156 391.76,-878.6726"/>
-<polygon fill="#ffda00" stroke="#ffda00" points="390.9087,-882.0772 401.5017,-881.8812 393.0986,-875.4285 390.9087,-882.0772"/>
+<!-- proc~get_next_solution&#45;&gt;proc~compute_time_step -->
+<g id="proc~~get_next_solution~~CallsGraph_edge3" class="edge">
+<title>proc~get_next_solution&#45;&gt;proc~compute_time_step</title>
+<path fill="none" stroke="#ff0000" d="M64.5127,-377.9186C93.8641,-355.7732 156.4454,-308.5561 191.1148,-282.3984"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="193.4157,-285.0469 199.2904,-276.23 189.1996,-279.459 193.4157,-285.0469"/>
 </g>
-<!-- proc~dmsg -->
-<g id="proc~~get_next_solution~~CallsGraph_node26" class="node">
-<title>proc~dmsg</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node26"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
-<polygon fill="#d9534f" stroke="#d9534f" points="477,-864 423,-864 423,-840 477,-840 477,-864"/>
-<text text-anchor="middle" x="450" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
+<!-- proc~update_with_plusgs -->
+<g id="proc~~get_next_solution~~CallsGraph_node5" class="node">
+<title>proc~update_with_plusgs</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node5"><a xlink:href=".././proc/update_with_plusgs.html" xlink:title="update_with_plusgs">
+<polygon fill="#d9534f" stroke="#d9534f" points="269,-108 162,-108 162,-84 269,-84 269,-108"/>
+<text text-anchor="middle" x="215.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_with_plusgs</text>
 </a>
 </g>
 </g>
-<!-- proc~compute_time_step&#45;&gt;proc~dmsg -->
-<g id="proc~~get_next_solution~~CallsGraph_edge10" class="edge">
-<title>proc~compute_time_step&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#ffda00" d="M290.1994,-836.245C328.3902,-840.0103 378.9017,-844.9903 412.8225,-848.3346"/>
-<polygon fill="#ffda00" stroke="#ffda00" points="412.4899,-851.8187 422.785,-849.3168 413.1767,-844.8525 412.4899,-851.8187"/>
+<!-- proc~get_next_solution&#45;&gt;proc~update_with_plusgs -->
+<g id="proc~~get_next_solution~~CallsGraph_edge1" class="edge">
+<title>proc~get_next_solution&#45;&gt;proc~update_with_plusgs</title>
+<path fill="none" stroke="#ff0000" d="M55.4632,-377.7415C81.1392,-332.5394 170.7155,-174.8421 203.4247,-117.2584"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="206.6113,-118.7347 208.5071,-108.3108 200.5247,-115.2773 206.6113,-118.7347"/>
 </g>
-<!-- proc~update_simulation_clock -->
-<g id="proc~~get_next_solution~~CallsGraph_node30" class="node">
-<title>proc~update_simulation_clock</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node30"><a xlink:href=".././proc/update_simulation_clock.html" xlink:title="update_simulation_clock">
-<polygon fill="#d9534f" stroke="#d9534f" points="515,-822 385,-822 385,-798 515,-798 515,-822"/>
-<text text-anchor="middle" x="450" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_simulation_clock</text>
+<!-- proc~update_with_lusgs -->
+<g id="proc~~get_next_solution~~CallsGraph_node6" class="node">
+<title>proc~update_with_lusgs</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node6"><a xlink:href=".././proc/update_with_lusgs.html" xlink:title="update_with_lusgs">
+<polygon fill="#d9534f" stroke="#d9534f" points="266,-402 165,-402 165,-378 266,-378 266,-402"/>
+<text text-anchor="middle" x="215.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_with_lusgs</text>
 </a>
 </g>
 </g>
-<!-- proc~compute_time_step&#45;&gt;proc~update_simulation_clock -->
-<g id="proc~~get_next_solution~~CallsGraph_edge9" class="edge">
-<title>proc~compute_time_step&#45;&gt;proc~update_simulation_clock</title>
-<path fill="none" stroke="#ffda00" d="M290.1994,-825.755C315.7697,-823.234 346.8632,-820.1684 374.8022,-817.4139"/>
-<polygon fill="#ffda00" stroke="#ffda00" points="375.3284,-820.879 384.9367,-816.4147 374.6415,-813.9128 375.3284,-820.879"/>
-</g>
-<!-- proc~update_kkl_variables -->
-<g id="proc~~get_next_solution~~CallsGraph_node9" class="node">
-<title>proc~update_kkl_variables</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node9"><a xlink:href=".././proc/update_kkl_variables.html" xlink:title="update_KKL_variables">
-<polygon fill="#d9534f" stroke="#d9534f" points="510,-780 390,-780 390,-756 510,-756 510,-780"/>
-<text text-anchor="middle" x="450" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_KKL_variables</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_lusgs&#45;&gt;proc~update_kkl_variables -->
-<g id="proc~~get_next_solution~~CallsGraph_edge13" class="edge">
-<title>proc~update_with_lusgs&#45;&gt;proc~update_kkl_variables</title>
-<path fill="none" stroke="#48ff00" d="M255.3111,-680.1842C281.3975,-697.1041 331.1855,-727.7957 377,-747 381.8174,-749.0193 386.8917,-750.9165 392.028,-752.681"/>
-<polygon fill="#48ff00" stroke="#48ff00" points="391.3383,-756.1374 401.9306,-755.9079 393.5071,-749.4818 391.3383,-756.1374"/>
-</g>
-<!-- proc~update_sa_variables~2 -->
-<g id="proc~~get_next_solution~~CallsGraph_node12" class="node">
-<title>proc~update_sa_variables~2</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node12"><a xlink:href=".././proc/update_sa_variables%7E2.html" xlink:title="update_SA_variables">
-<polygon fill="#d9534f" stroke="#d9534f" points="507,-738 393,-738 393,-714 507,-714 507,-738"/>
-<text text-anchor="middle" x="450" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_SA_variables</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_lusgs&#45;&gt;proc~update_sa_variables~2 -->
-<g id="proc~~get_next_solution~~CallsGraph_edge12" class="edge">
-<title>proc~update_with_lusgs&#45;&gt;proc~update_sa_variables~2</title>
-<path fill="none" stroke="#48ff00" d="M281.1337,-680.0176C314.5483,-689.1164 360.6095,-701.6589 396.1857,-711.3464"/>
-<polygon fill="#48ff00" stroke="#48ff00" points="395.3545,-714.7474 405.9228,-713.9978 397.1937,-707.9933 395.3545,-714.7474"/>
-</g>
-<!-- proc~update_lctm2015~2 -->
-<g id="proc~~get_next_solution~~CallsGraph_node22" class="node">
-<title>proc~update_lctm2015~2</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node22"><a xlink:href=".././proc/update_lctm2015%7E2.html" xlink:title="update_lctm2015">
-<polygon fill="#d9534f" stroke="#d9534f" points="497.5,-696 402.5,-696 402.5,-672 497.5,-672 497.5,-696"/>
-<text text-anchor="middle" x="450" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_lctm2015</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_lusgs&#45;&gt;proc~update_lctm2015~2 -->
-<g id="proc~~get_next_solution~~CallsGraph_edge15" class="edge">
-<title>proc~update_with_lusgs&#45;&gt;proc~update_lctm2015~2</title>
-<path fill="none" stroke="#48ff00" d="M287.7482,-671.8121C319.0593,-674.1641 359.3242,-677.1887 391.9091,-679.6364"/>
-<polygon fill="#48ff00" stroke="#48ff00" points="391.9635,-683.1502 402.1976,-680.4092 392.4879,-676.1699 391.9635,-683.1502"/>
-</g>
-<!-- proc~update_laminar_variables~2 -->
-<g id="proc~~get_next_solution~~CallsGraph_node27" class="node">
-<title>proc~update_laminar_variables~2</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node27"><a xlink:href=".././proc/update_laminar_variables%7E2.html" xlink:title="update_laminar_variables">
-<polygon fill="#d9534f" stroke="#d9534f" points="518,-654 382,-654 382,-630 518,-630 518,-654"/>
-<text text-anchor="middle" x="450" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_laminar_variables</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_lusgs&#45;&gt;proc~update_laminar_variables~2 -->
-<g id="proc~~get_next_solution~~CallsGraph_edge16" class="edge">
-<title>proc~update_with_lusgs&#45;&gt;proc~update_laminar_variables~2</title>
-<path fill="none" stroke="#48ff00" d="M287.7482,-661.8054C312.8444,-658.742 343.6927,-654.9765 371.7282,-651.5543"/>
-<polygon fill="#48ff00" stroke="#48ff00" points="372.4117,-654.9969 381.9139,-650.311 371.5635,-648.0485 372.4117,-654.9969"/>
-</g>
-<!-- proc~update_sst_variables~2 -->
-<g id="proc~~get_next_solution~~CallsGraph_node31" class="node">
-<title>proc~update_sst_variables~2</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node31"><a xlink:href=".././proc/update_sst_variables%7E2.html" xlink:title="update_SST_variables">
-<polygon fill="#d9534f" stroke="#d9534f" points="510.5,-612 389.5,-612 389.5,-588 510.5,-588 510.5,-612"/>
-<text text-anchor="middle" x="450" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_SST_variables</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_lusgs&#45;&gt;proc~update_sst_variables~2 -->
-<g id="proc~~get_next_solution~~CallsGraph_edge14" class="edge">
-<title>proc~update_with_lusgs&#45;&gt;proc~update_sst_variables~2</title>
-<path fill="none" stroke="#48ff00" d="M271.3839,-655.989C299.6407,-646.2313 340.772,-632.2861 377,-621 383.5138,-618.9708 390.3761,-616.9041 397.1801,-614.898"/>
-<polygon fill="#48ff00" stroke="#48ff00" points="398.4413,-618.1759 407.0596,-612.0135 396.4794,-611.4565 398.4413,-618.1759"/>
-</g>
-<!-- proc~update_lctm2015 -->
-<g id="proc~~get_next_solution~~CallsGraph_node10" class="node">
-<title>proc~update_lctm2015</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node10"><a xlink:href=".././proc/update_lctm2015.html" xlink:title="update_lctm2015">
-<polygon fill="#d9534f" stroke="#d9534f" points="497.5,-570 402.5,-570 402.5,-546 497.5,-546 497.5,-570"/>
-<text text-anchor="middle" x="450" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_lctm2015</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_plusgs&#45;&gt;proc~update_lctm2015 -->
-<g id="proc~~get_next_solution~~CallsGraph_edge20" class="edge">
-<title>proc~update_with_plusgs&#45;&gt;proc~update_lctm2015</title>
-<path fill="none" stroke="#0091ff" d="M290.7489,-542.2992C321.7753,-545.3581 360.793,-549.2049 392.4418,-552.3252"/>
-<polygon fill="#0091ff" stroke="#0091ff" points="392.1437,-555.8127 402.4389,-553.3109 392.8306,-548.8465 392.1437,-555.8127"/>
-</g>
-<!-- proc~update_laminar_variables -->
-<g id="proc~~get_next_solution~~CallsGraph_node13" class="node">
-<title>proc~update_laminar_variables</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node13"><a xlink:href=".././proc/update_laminar_variables.html" xlink:title="update_laminar_variables">
-<polygon fill="#d9534f" stroke="#d9534f" points="518,-528 382,-528 382,-504 518,-504 518,-528"/>
-<text text-anchor="middle" x="450" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_laminar_variables</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_plusgs&#45;&gt;proc~update_laminar_variables -->
-<g id="proc~~get_next_solution~~CallsGraph_edge19" class="edge">
-<title>proc~update_with_plusgs&#45;&gt;proc~update_laminar_variables</title>
-<path fill="none" stroke="#0091ff" d="M290.7489,-531.7008C315.2277,-529.2874 344.6807,-526.3836 371.5646,-523.7331"/>
-<polygon fill="#0091ff" stroke="#0091ff" points="372.1183,-527.1955 381.7266,-522.7312 371.4314,-520.2293 372.1183,-527.1955"/>
-</g>
-<!-- proc~update_sa_variables -->
-<g id="proc~~get_next_solution~~CallsGraph_node14" class="node">
-<title>proc~update_sa_variables</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node14"><a xlink:href=".././proc/update_sa_variables.html" xlink:title="update_SA_variables">
-<polygon fill="#d9534f" stroke="#d9534f" points="507,-486 393,-486 393,-462 507,-462 507,-486"/>
-<text text-anchor="middle" x="450" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_SA_variables</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_plusgs&#45;&gt;proc~update_sa_variables -->
-<g id="proc~~get_next_solution~~CallsGraph_edge18" class="edge">
-<title>proc~update_with_plusgs&#45;&gt;proc~update_sa_variables</title>
-<path fill="none" stroke="#0091ff" d="M290.5916,-529.6601C307.0813,-526.4831 325.0758,-522.0605 341,-516 358.3119,-509.4113 359.9686,-502.283 377,-495 381.7289,-492.9778 386.7112,-491.0844 391.76,-489.3274"/>
-<polygon fill="#0091ff" stroke="#0091ff" points="393.0986,-492.5715 401.5017,-486.1188 390.9087,-485.9228 393.0986,-492.5715"/>
-</g>
-<!-- proc~update_sst_variables -->
-<g id="proc~~get_next_solution~~CallsGraph_node18" class="node">
-<title>proc~update_sst_variables</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node18"><a xlink:href=".././proc/update_sst_variables.html" xlink:title="update_SST_variables">
-<polygon fill="#d9534f" stroke="#d9534f" points="510.5,-444 389.5,-444 389.5,-420 510.5,-420 510.5,-444"/>
-<text text-anchor="middle" x="450" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_SST_variables</text>
-</a>
-</g>
-</g>
-<!-- proc~update_with_plusgs&#45;&gt;proc~update_sst_variables -->
-<g id="proc~~get_next_solution~~CallsGraph_edge17" class="edge">
-<title>proc~update_with_plusgs&#45;&gt;proc~update_sst_variables</title>
-<path fill="none" stroke="#0091ff" d="M290.7581,-534.8659C308.0755,-532.009 326.5149,-526.4606 341,-516 367.1443,-497.1195 351.6402,-472.9219 377,-453 378.8116,-451.5769 380.7158,-450.2502 382.6917,-449.0134"/>
-<polygon fill="#0091ff" stroke="#0091ff" points="384.5963,-451.9633 391.748,-444.1463 381.2826,-445.7973 384.5963,-451.9633"/>
+<!-- proc~get_next_solution&#45;&gt;proc~update_with_lusgs -->
+<g id="proc~~get_next_solution~~CallsGraph_edge5" class="edge">
+<title>proc~get_next_solution&#45;&gt;proc~update_with_lusgs</title>
+<path fill="none" stroke="#ff0000" d="M97.2522,-390C115.2875,-390 135.955,-390 154.9142,-390"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="154.9458,-393.5001 164.9457,-390 154.9457,-386.5001 154.9458,-393.5001"/>
 </g>
 <!-- proc~apply_interface -->
-<g id="proc~~get_next_solution~~CallsGraph_node11" class="node">
+<g id="proc~~get_next_solution~~CallsGraph_node9" class="node">
 <title>proc~apply_interface</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node11"><a xlink:href=".././proc/apply_interface.html" xlink:title="apply_interface">
-<polygon fill="#d9534f" stroke="#d9534f" points="492.5,-402 407.5,-402 407.5,-378 492.5,-378 492.5,-402"/>
-<text text-anchor="middle" x="450" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">apply_interface</text>
+<g id="a_proc~~get_next_solution~~CallsGraph_node9"><a xlink:href=".././proc/apply_interface.html" xlink:title="apply_interface">
+<polygon fill="#d9534f" stroke="#d9534f" points="449.5,-948 364.5,-948 364.5,-924 449.5,-924 449.5,-948"/>
+<text text-anchor="middle" x="407" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">apply_interface</text>
 </a>
 </g>
 </g>
 <!-- proc~get_total_conservative_residue&#45;&gt;proc~apply_interface -->
-<g id="proc~~get_next_solution~~CallsGraph_edge29" class="edge">
+<g id="proc~~get_next_solution~~CallsGraph_edge14" class="edge">
 <title>proc~get_total_conservative_residue&#45;&gt;proc~apply_interface</title>
-<path fill="none" stroke="#ff00da" d="M245.2212,-234.3552C264.6646,-262.6004 316.422,-332.2793 377,-369 383.3577,-372.8538 390.4553,-376.0287 397.6587,-378.6368"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="396.895,-382.0694 407.4876,-381.8524 399.0717,-375.4164 396.895,-382.0694"/>
+<path fill="none" stroke="#ff0000" d="M219.6488,-738.3311C231.64,-772.0587 269.6494,-866.5419 334,-915 340.2221,-919.6854 347.4588,-923.3267 354.9108,-926.1561"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="353.8112,-929.4789 364.4049,-929.3235 356.0265,-922.8387 353.8112,-929.4789"/>
 </g>
 <!-- proc~add_source_term_residue -->
-<g id="proc~~get_next_solution~~CallsGraph_node15" class="node">
+<g id="proc~~get_next_solution~~CallsGraph_node13" class="node">
 <title>proc~add_source_term_residue</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node15"><a xlink:href=".././proc/add_source_term_residue.html" xlink:title="add_source_term_residue">
-<polygon fill="#d9534f" stroke="#d9534f" points="519,-360 381,-360 381,-336 519,-336 519,-360"/>
-<text text-anchor="middle" x="450" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">add_source_term_residue</text>
+<g id="a_proc~~get_next_solution~~CallsGraph_node13"><a xlink:href=".././proc/add_source_term_residue.html" xlink:title="add_source_term_residue">
+<polygon fill="#d9534f" stroke="#d9534f" points="476,-906 338,-906 338,-882 476,-882 476,-906"/>
+<text text-anchor="middle" x="407" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">add_source_term_residue</text>
 </a>
 </g>
 </g>
 <!-- proc~get_total_conservative_residue&#45;&gt;proc~add_source_term_residue -->
-<g id="proc~~get_next_solution~~CallsGraph_edge26" class="edge">
+<g id="proc~~get_next_solution~~CallsGraph_edge11" class="edge">
 <title>proc~get_total_conservative_residue&#45;&gt;proc~add_source_term_residue</title>
-<path fill="none" stroke="#ff00da" d="M249.8133,-234.2099C273.2351,-255.8994 325.3211,-301.2795 377,-327 381.027,-329.0042 385.2769,-330.8472 389.6187,-332.5363"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="388.6254,-335.8985 399.2198,-335.991 390.9955,-329.3119 388.6254,-335.8985"/>
+<path fill="none" stroke="#ff0000" d="M221.9583,-738.3926C237.3637,-766.7164 279.1122,-836.5493 334,-873 336.5542,-874.6962 339.2466,-876.2576 342.0309,-877.6945"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="340.6299,-880.9024 351.1802,-881.8734 343.5382,-874.5351 340.6299,-880.9024"/>
 </g>
-<!-- compute_residue -->
-<g id="proc~~get_next_solution~~CallsGraph_node16" class="node">
-<title>compute_residue</title>
-<polygon fill="#777777" stroke="#777777" points="497.5,-318 402.5,-318 402.5,-294 497.5,-294 497.5,-318"/>
-<text text-anchor="middle" x="450" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_residue</text>
+<!-- proc~compute_residue -->
+<g id="proc~~get_next_solution~~CallsGraph_node15" class="node">
+<title>proc~compute_residue</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node15"><a xlink:href=".././proc/compute_residue.html" xlink:title="compute_residue">
+<polygon fill="#d9534f" stroke="#d9534f" points="454.5,-864 359.5,-864 359.5,-840 454.5,-840 454.5,-864"/>
+<text text-anchor="middle" x="407" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_residue</text>
+</a>
 </g>
-<!-- proc~get_total_conservative_residue&#45;&gt;compute_residue -->
-<g id="proc~~get_next_solution~~CallsGraph_edge27" class="edge">
-<title>proc~get_total_conservative_residue&#45;&gt;compute_residue</title>
-<path fill="none" stroke="#ff00da" d="M261.3416,-234.2366C288.9267,-247.7998 335.4607,-269.7672 377,-285 382.5523,-287.0361 388.3993,-289.0032 394.2675,-290.863"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="393.5282,-294.2972 404.115,-293.885 395.5819,-287.6052 393.5282,-294.2972"/>
 </g>
-<!-- compute_face_interpolant -->
-<g id="proc~~get_next_solution~~CallsGraph_node17" class="node">
-<title>compute_face_interpolant</title>
-<polygon fill="#777777" stroke="#777777" points="518,-276 382,-276 382,-252 518,-252 518,-276"/>
-<text text-anchor="middle" x="450" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_face_interpolant</text>
-</g>
-<!-- proc~get_total_conservative_residue&#45;&gt;compute_face_interpolant -->
-<g id="proc~~get_next_solution~~CallsGraph_edge28" class="edge">
-<title>proc~get_total_conservative_residue&#45;&gt;compute_face_interpolant</title>
-<path fill="none" stroke="#ff00da" d="M298.0373,-234.0355C323.3266,-239.0222 352.8264,-244.839 379.0705,-250.0139"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="378.4656,-253.4619 388.9538,-251.9627 379.8199,-246.5942 378.4656,-253.4619"/>
+<!-- proc~get_total_conservative_residue&#45;&gt;proc~compute_residue -->
+<g id="proc~~get_next_solution~~CallsGraph_edge13" class="edge">
+<title>proc~get_total_conservative_residue&#45;&gt;proc~compute_residue</title>
+<path fill="none" stroke="#ff0000" d="M225.9418,-738.3223C245.1264,-760.19 288.2326,-805.8431 334,-831 338.9116,-833.6998 344.2044,-836.0819 349.6164,-838.1775"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="348.8355,-841.6136 359.4302,-841.6467 351.1686,-835.0139 348.8355,-841.6136"/>
 </g>
 <!-- proc~populate_ghost_primitive -->
-<g id="proc~~get_next_solution~~CallsGraph_node19" class="node">
+<g id="proc~~get_next_solution~~CallsGraph_node16" class="node">
 <title>proc~populate_ghost_primitive</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node19"><a xlink:href=".././proc/populate_ghost_primitive.html" xlink:title="populate_ghost_primitive">
-<polygon fill="#d9534f" stroke="#d9534f" points="516,-234 384,-234 384,-210 516,-210 516,-234"/>
-<text text-anchor="middle" x="450" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">populate_ghost_primitive</text>
+<g id="a_proc~~get_next_solution~~CallsGraph_node16"><a xlink:href=".././proc/populate_ghost_primitive.html" xlink:title="populate_ghost_primitive">
+<polygon fill="#d9534f" stroke="#d9534f" points="473,-822 341,-822 341,-798 473,-798 473,-822"/>
+<text text-anchor="middle" x="407" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">populate_ghost_primitive</text>
 </a>
 </g>
 </g>
 <!-- proc~get_total_conservative_residue&#45;&gt;proc~populate_ghost_primitive -->
-<g id="proc~~get_next_solution~~CallsGraph_edge30" class="edge">
+<g id="proc~~get_next_solution~~CallsGraph_edge15" class="edge">
 <title>proc~get_total_conservative_residue&#45;&gt;proc~populate_ghost_primitive</title>
-<path fill="none" stroke="#ff00da" d="M319.6562,-222C337.4474,-222 356.1744,-222 373.7101,-222"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="373.8812,-225.5001 383.8811,-222 373.8811,-218.5001 373.8812,-225.5001"/>
+<path fill="none" stroke="#ff0000" d="M235.0171,-738.0118C258.0188,-751.777 297.7128,-774.322 334,-789 339.1194,-791.0708 344.5172,-793.0259 349.9653,-794.848"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="349.1864,-798.2733 359.7771,-797.98 351.3151,-791.6048 349.1864,-798.2733"/>
 </g>
 <!-- proc~evaluate_all_gradients -->
-<g id="proc~~get_next_solution~~CallsGraph_node20" class="node">
+<g id="proc~~get_next_solution~~CallsGraph_node17" class="node">
 <title>proc~evaluate_all_gradients</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node20"><a xlink:href=".././proc/evaluate_all_gradients.html" xlink:title="evaluate_all_gradients">
-<polygon fill="#d9534f" stroke="#d9534f" points="510,-192 390,-192 390,-168 510,-168 510,-192"/>
-<text text-anchor="middle" x="450" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">evaluate_all_gradients</text>
+<g id="a_proc~~get_next_solution~~CallsGraph_node17"><a xlink:href=".././proc/evaluate_all_gradients.html" xlink:title="evaluate_all_gradients">
+<polygon fill="#d9534f" stroke="#d9534f" points="467,-780 347,-780 347,-756 467,-756 467,-780"/>
+<text text-anchor="middle" x="407" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">evaluate_all_gradients</text>
 </a>
 </g>
 </g>
 <!-- proc~get_total_conservative_residue&#45;&gt;proc~evaluate_all_gradients -->
-<g id="proc~~get_next_solution~~CallsGraph_edge21" class="edge">
+<g id="proc~~get_next_solution~~CallsGraph_edge6" class="edge">
 <title>proc~get_total_conservative_residue&#45;&gt;proc~evaluate_all_gradients</title>
-<path fill="none" stroke="#ff00da" d="M298.0373,-209.9645C323.5446,-204.9349 353.3354,-199.0606 379.7485,-193.8524"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="380.5563,-197.2606 389.6903,-191.8921 379.202,-190.3928 380.5563,-197.2606"/>
+<path fill="none" stroke="#ff0000" d="M270.3762,-738.0355C292.8124,-742.9563 318.9347,-748.6854 342.2931,-753.8084"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="341.5981,-757.2391 352.1158,-755.9627 343.0978,-750.4016 341.5981,-757.2391"/>
 </g>
 <!-- proc~calculate_viscosity -->
-<g id="proc~~get_next_solution~~CallsGraph_node21" class="node">
+<g id="proc~~get_next_solution~~CallsGraph_node18" class="node">
 <title>proc~calculate_viscosity</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node21"><a xlink:href=".././proc/calculate_viscosity.html" xlink:title="calculate_viscosity">
-<polygon fill="#d9534f" stroke="#d9534f" points="500,-150 400,-150 400,-126 500,-126 500,-150"/>
-<text text-anchor="middle" x="450" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">calculate_viscosity</text>
+<g id="a_proc~~get_next_solution~~CallsGraph_node18"><a xlink:href=".././proc/calculate_viscosity.html" xlink:title="calculate_viscosity">
+<polygon fill="#d9534f" stroke="#d9534f" points="457,-738 357,-738 357,-714 457,-714 457,-738"/>
+<text text-anchor="middle" x="407" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">calculate_viscosity</text>
 </a>
 </g>
 </g>
 <!-- proc~get_total_conservative_residue&#45;&gt;proc~calculate_viscosity -->
-<g id="proc~~get_next_solution~~CallsGraph_edge23" class="edge">
+<g id="proc~~get_next_solution~~CallsGraph_edge8" class="edge">
 <title>proc~get_total_conservative_residue&#45;&gt;proc~calculate_viscosity</title>
-<path fill="none" stroke="#ff00da" d="M261.3416,-209.7634C288.9267,-196.2002 335.4607,-174.2328 377,-159 382.5523,-156.9639 388.3993,-154.9968 394.2675,-153.137"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="395.5819,-156.3948 404.115,-150.115 393.5282,-149.7028 395.5819,-156.3948"/>
+<path fill="none" stroke="#ff0000" d="M298.1027,-726C314.3879,-726 331.1904,-726 346.5772,-726"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="346.9797,-729.5001 356.9797,-726 346.9797,-722.5001 346.9797,-729.5001"/>
 </g>
 <!-- proc~reconstruct_boundary_state -->
-<g id="proc~~get_next_solution~~CallsGraph_node23" class="node">
+<g id="proc~~get_next_solution~~CallsGraph_node20" class="node">
 <title>proc~reconstruct_boundary_state</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node23"><a xlink:href=".././proc/reconstruct_boundary_state.html" xlink:title="reconstruct_boundary_state">
-<polygon fill="#d9534f" stroke="#d9534f" points="523,-108 377,-108 377,-84 523,-84 523,-108"/>
-<text text-anchor="middle" x="450" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reconstruct_boundary_state</text>
+<g id="a_proc~~get_next_solution~~CallsGraph_node20"><a xlink:href=".././proc/reconstruct_boundary_state.html" xlink:title="reconstruct_boundary_state">
+<polygon fill="#d9534f" stroke="#d9534f" points="480,-696 334,-696 334,-672 480,-672 480,-696"/>
+<text text-anchor="middle" x="407" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reconstruct_boundary_state</text>
 </a>
 </g>
 </g>
 <!-- proc~get_total_conservative_residue&#45;&gt;proc~reconstruct_boundary_state -->
-<g id="proc~~get_next_solution~~CallsGraph_edge25" class="edge">
+<g id="proc~~get_next_solution~~CallsGraph_edge9" class="edge">
 <title>proc~get_total_conservative_residue&#45;&gt;proc~reconstruct_boundary_state</title>
-<path fill="none" stroke="#ff00da" d="M249.8133,-209.7901C273.2351,-188.1006 325.3211,-142.7205 377,-117 381.027,-114.9958 385.2769,-113.1528 389.6187,-111.4637"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="390.9955,-114.6881 399.2198,-108.009 388.6254,-108.1015 390.9955,-114.6881"/>
+<path fill="none" stroke="#ff0000" d="M270.3762,-713.9645C292.8124,-709.0437 318.9347,-703.3146 342.2931,-698.1916"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="343.0978,-701.5984 352.1158,-696.0373 341.5981,-694.7609 343.0978,-701.5984"/>
+</g>
+<!-- proc~compute_fluxes~7 -->
+<g id="proc~~get_next_solution~~CallsGraph_node21" class="node">
+<title>proc~compute_fluxes~7</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node21"><a xlink:href=".././proc/compute_fluxes%7E7.html" xlink:title="compute_fluxes">
+<polygon fill="#d9534f" stroke="#d9534f" points="451,-654 363,-654 363,-630 451,-630 451,-654"/>
+<text text-anchor="middle" x="407" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_fluxes</text>
+</a>
+</g>
+</g>
+<!-- proc~get_total_conservative_residue&#45;&gt;proc~compute_fluxes~7 -->
+<g id="proc~~get_next_solution~~CallsGraph_edge10" class="edge">
+<title>proc~get_total_conservative_residue&#45;&gt;proc~compute_fluxes~7</title>
+<path fill="none" stroke="#ff0000" d="M235.0171,-713.9882C258.0188,-700.223 297.7128,-677.678 334,-663 340.1604,-660.5081 346.724,-658.1836 353.2934,-656.0571"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="354.3608,-659.3906 362.8762,-653.0868 352.2883,-652.7044 354.3608,-659.3906"/>
+</g>
+<!-- proc~compute_face_interpolant -->
+<g id="proc~~get_next_solution~~CallsGraph_node26" class="node">
+<title>proc~compute_face_interpolant</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node26"><a xlink:href=".././proc/compute_face_interpolant.html" xlink:title="compute_face_interpolant">
+<polygon fill="#d9534f" stroke="#d9534f" points="475,-612 339,-612 339,-588 475,-588 475,-612"/>
+<text text-anchor="middle" x="407" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_face_interpolant</text>
+</a>
+</g>
+</g>
+<!-- proc~get_total_conservative_residue&#45;&gt;proc~compute_face_interpolant -->
+<g id="proc~~get_next_solution~~CallsGraph_edge7" class="edge">
+<title>proc~get_total_conservative_residue&#45;&gt;proc~compute_face_interpolant</title>
+<path fill="none" stroke="#ff0000" d="M225.9418,-713.6777C245.1264,-691.81 288.2326,-646.1569 334,-621 337.4761,-619.0893 341.143,-617.3377 344.9081,-615.7342"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="346.358,-618.926 354.416,-612.047 343.827,-612.3995 346.358,-618.926"/>
 </g>
 <!-- proc~compute_viscous_fluxes -->
-<g id="proc~~get_next_solution~~CallsGraph_node28" class="node">
+<g id="proc~~get_next_solution~~CallsGraph_node29" class="node">
 <title>proc~compute_viscous_fluxes</title>
-<g id="a_proc~~get_next_solution~~CallsGraph_node28"><a xlink:href=".././proc/compute_viscous_fluxes.html" xlink:title="compute_viscous_fluxes">
-<polygon fill="#d9534f" stroke="#d9534f" points="514.5,-66 385.5,-66 385.5,-42 514.5,-42 514.5,-66"/>
-<text text-anchor="middle" x="450" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_viscous_fluxes</text>
+<g id="a_proc~~get_next_solution~~CallsGraph_node29"><a xlink:href=".././proc/compute_viscous_fluxes.html" xlink:title="compute_viscous_fluxes">
+<polygon fill="#d9534f" stroke="#d9534f" points="471.5,-570 342.5,-570 342.5,-546 471.5,-546 471.5,-570"/>
+<text text-anchor="middle" x="407" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_viscous_fluxes</text>
 </a>
 </g>
 </g>
 <!-- proc~get_total_conservative_residue&#45;&gt;proc~compute_viscous_fluxes -->
-<g id="proc~~get_next_solution~~CallsGraph_edge22" class="edge">
+<g id="proc~~get_next_solution~~CallsGraph_edge12" class="edge">
 <title>proc~get_total_conservative_residue&#45;&gt;proc~compute_viscous_fluxes</title>
-<path fill="none" stroke="#ff00da" d="M245.2212,-209.6448C264.6646,-181.3996 316.422,-111.7207 377,-75 379.9656,-73.2023 383.0922,-71.5524 386.3155,-70.0388"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="387.7463,-73.234 395.6018,-66.1248 385.0274,-66.7836 387.7463,-73.234"/>
+<path fill="none" stroke="#ff0000" d="M221.9583,-713.6074C237.3637,-685.2836 279.1122,-615.4507 334,-579 336.5542,-577.3038 339.2466,-575.7424 342.0309,-574.3055"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="343.5382,-577.4649 351.1802,-570.1266 340.6299,-571.0976 343.5382,-577.4649"/>
 </g>
-<!-- compute_fluxes -->
-<g id="proc~~get_next_solution~~CallsGraph_node29" class="node">
-<title>compute_fluxes</title>
-<polygon fill="#777777" stroke="#777777" points="494,-24 406,-24 406,0 494,0 494,-24"/>
-<text text-anchor="middle" x="450" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_fluxes</text>
+<!-- debugcall -->
+<g id="proc~~get_next_solution~~CallsGraph_node22" class="node">
+<title>debugcall</title>
+<polygon fill="#777777" stroke="#777777" points="436,-318 378,-318 378,-294 436,-294 436,-318"/>
+<text text-anchor="middle" x="407" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">debugcall</text>
 </g>
-<!-- proc~get_total_conservative_residue&#45;&gt;compute_fluxes -->
+<!-- proc~compute_time_step&#45;&gt;debugcall -->
+<g id="proc~~get_next_solution~~CallsGraph_edge18" class="edge">
+<title>proc~compute_time_step&#45;&gt;debugcall</title>
+<path fill="none" stroke="#00ff66" d="M268.5891,-275.6436C300.0373,-282.5408 339.203,-291.1307 367.838,-297.4109"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="367.3598,-300.8892 377.8774,-299.6128 368.8594,-294.0517 367.3598,-300.8892"/>
+</g>
+<!-- proc~compute_local_time_step -->
+<g id="proc~~get_next_solution~~CallsGraph_node23" class="node">
+<title>proc~compute_local_time_step</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node23"><a xlink:href=".././proc/compute_local_time_step.html" xlink:title="compute_local_time_step">
+<polygon fill="#d9534f" stroke="#d9534f" points="474,-276 340,-276 340,-252 474,-252 474,-276"/>
+<text text-anchor="middle" x="407" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_local_time_step</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_time_step&#45;&gt;proc~compute_local_time_step -->
+<g id="proc~~get_next_solution~~CallsGraph_edge16" class="edge">
+<title>proc~compute_time_step&#45;&gt;proc~compute_local_time_step</title>
+<path fill="none" stroke="#00ff66" d="M268.5891,-264C287.4328,-264 309.0475,-264 329.5072,-264"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="329.7594,-267.5001 339.7593,-264 329.7593,-260.5001 329.7594,-267.5001"/>
+</g>
+<!-- proc~compute_global_time_step -->
+<g id="proc~~get_next_solution~~CallsGraph_node24" class="node">
+<title>proc~compute_global_time_step</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node24"><a xlink:href=".././proc/compute_global_time_step.html" xlink:title="compute_global_time_step">
+<polygon fill="#d9534f" stroke="#d9534f" points="477.5,-234 336.5,-234 336.5,-210 477.5,-210 477.5,-234"/>
+<text text-anchor="middle" x="407" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_global_time_step</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_time_step&#45;&gt;proc~compute_global_time_step -->
+<g id="proc~~get_next_solution~~CallsGraph_edge19" class="edge">
+<title>proc~compute_time_step&#45;&gt;proc~compute_global_time_step</title>
+<path fill="none" stroke="#00ff66" d="M268.5891,-252.3564C291.3498,-247.3645 318.1531,-241.486 342.0808,-236.2382"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="343.1213,-239.5932 352.1393,-234.0321 341.6216,-232.7557 343.1213,-239.5932"/>
+</g>
+<!-- proc~update_simulation_clock -->
+<g id="proc~~get_next_solution~~CallsGraph_node27" class="node">
+<title>proc~update_simulation_clock</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node27"><a xlink:href=".././proc/update_simulation_clock.html" xlink:title="update_simulation_clock">
+<polygon fill="#d9534f" stroke="#d9534f" points="472,-192 342,-192 342,-168 472,-168 472,-192"/>
+<text text-anchor="middle" x="407" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_simulation_clock</text>
+</a>
+</g>
+</g>
+<!-- proc~compute_time_step&#45;&gt;proc~update_simulation_clock -->
+<g id="proc~~get_next_solution~~CallsGraph_edge17" class="edge">
+<title>proc~compute_time_step&#45;&gt;proc~update_simulation_clock</title>
+<path fill="none" stroke="#00ff66" d="M235.0171,-251.9882C258.0188,-238.223 297.7128,-215.678 334,-201 339.1194,-198.9292 344.5172,-196.9741 349.9653,-195.152"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="351.3151,-198.3952 359.7771,-192.02 349.1864,-191.7267 351.3151,-198.3952"/>
+</g>
+<!-- proc~update_lctm2015 -->
+<g id="proc~~get_next_solution~~CallsGraph_node8" class="node">
+<title>proc~update_lctm2015</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node8"><a xlink:href=".././proc/update_lctm2015.html" xlink:title="update_lctm2015">
+<polygon fill="#d9534f" stroke="#d9534f" points="454.5,-150 359.5,-150 359.5,-126 454.5,-126 454.5,-150"/>
+<text text-anchor="middle" x="407" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_lctm2015</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_plusgs&#45;&gt;proc~update_lctm2015 -->
+<g id="proc~~get_next_solution~~CallsGraph_edge23" class="edge">
+<title>proc~update_with_plusgs&#45;&gt;proc~update_lctm2015</title>
+<path fill="none" stroke="#0066ff" d="M269.0981,-107.7552C294.1048,-113.2397 323.904,-119.7753 349.3926,-125.3655"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="348.776,-128.8134 359.2937,-127.537 350.2757,-121.9759 348.776,-128.8134"/>
+</g>
+<!-- proc~update_laminar_variables -->
+<g id="proc~~get_next_solution~~CallsGraph_node11" class="node">
+<title>proc~update_laminar_variables</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node11"><a xlink:href=".././proc/update_laminar_variables.html" xlink:title="update_laminar_variables">
+<polygon fill="#d9534f" stroke="#d9534f" points="475,-108 339,-108 339,-84 475,-84 475,-108"/>
+<text text-anchor="middle" x="407" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_laminar_variables</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_plusgs&#45;&gt;proc~update_laminar_variables -->
+<g id="proc~~get_next_solution~~CallsGraph_edge22" class="edge">
+<title>proc~update_with_plusgs&#45;&gt;proc~update_laminar_variables</title>
+<path fill="none" stroke="#0066ff" d="M269.0981,-96C287.5562,-96 308.6254,-96 328.6448,-96"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="328.6841,-99.5001 338.6841,-96 328.6841,-92.5001 328.6841,-99.5001"/>
+</g>
+<!-- proc~update_sa_variables -->
+<g id="proc~~get_next_solution~~CallsGraph_node12" class="node">
+<title>proc~update_sa_variables</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node12"><a xlink:href=".././proc/update_sa_variables.html" xlink:title="update_SA_variables">
+<polygon fill="#d9534f" stroke="#d9534f" points="464,-66 350,-66 350,-42 464,-42 464,-66"/>
+<text text-anchor="middle" x="407" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_SA_variables</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_plusgs&#45;&gt;proc~update_sa_variables -->
+<g id="proc~~get_next_solution~~CallsGraph_edge21" class="edge">
+<title>proc~update_with_plusgs&#45;&gt;proc~update_sa_variables</title>
+<path fill="none" stroke="#0066ff" d="M269.0981,-84.2448C291.7535,-79.276 318.3426,-73.4444 342.096,-68.2348"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="343.0647,-71.6056 352.0827,-66.0445 341.565,-64.7681 343.0647,-71.6056"/>
+</g>
+<!-- proc~update_sst_variables -->
+<g id="proc~~get_next_solution~~CallsGraph_node14" class="node">
+<title>proc~update_sst_variables</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node14"><a xlink:href=".././proc/update_sst_variables.html" xlink:title="update_SST_variables">
+<polygon fill="#d9534f" stroke="#d9534f" points="467.5,-24 346.5,-24 346.5,0 467.5,0 467.5,-24"/>
+<text text-anchor="middle" x="407" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_SST_variables</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_plusgs&#45;&gt;proc~update_sst_variables -->
+<g id="proc~~get_next_solution~~CallsGraph_edge20" class="edge">
+<title>proc~update_with_plusgs&#45;&gt;proc~update_sst_variables</title>
+<path fill="none" stroke="#0066ff" d="M235.0171,-83.9882C258.0188,-70.223 297.7128,-47.678 334,-33 339.1194,-30.9292 344.5172,-28.9741 349.9653,-27.152"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="351.3151,-30.3952 359.7771,-24.02 349.1864,-23.7267 351.3151,-30.3952"/>
+</g>
+<!-- proc~update_kkl_variables -->
+<g id="proc~~get_next_solution~~CallsGraph_node7" class="node">
+<title>proc~update_kkl_variables</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node7"><a xlink:href=".././proc/update_kkl_variables.html" xlink:title="update_KKL_variables">
+<polygon fill="#d9534f" stroke="#d9534f" points="467,-528 347,-528 347,-504 467,-504 467,-528"/>
+<text text-anchor="middle" x="407" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_KKL_variables</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_lusgs&#45;&gt;proc~update_kkl_variables -->
+<g id="proc~~get_next_solution~~CallsGraph_edge27" class="edge">
+<title>proc~update_with_lusgs&#45;&gt;proc~update_kkl_variables</title>
+<path fill="none" stroke="#cc00ff" d="M266.1246,-395.2318C277.5886,-398.3818 289.0147,-403.3146 298,-411 328.8668,-437.4012 303.5442,-468.1258 334,-495 335.3596,-496.1998 336.7838,-497.3312 338.2617,-498.3982"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="336.8702,-501.6472 347.2373,-503.832 340.4954,-495.659 336.8702,-501.6472"/>
+</g>
+<!-- proc~update_sa_variables~2 -->
+<g id="proc~~get_next_solution~~CallsGraph_node10" class="node">
+<title>proc~update_sa_variables~2</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node10"><a xlink:href=".././proc/update_sa_variables%7E2.html" xlink:title="update_SA_variables">
+<polygon fill="#d9534f" stroke="#d9534f" points="464,-486 350,-486 350,-462 464,-462 464,-486"/>
+<text text-anchor="middle" x="407" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_SA_variables</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_lusgs&#45;&gt;proc~update_sa_variables~2 -->
+<g id="proc~~get_next_solution~~CallsGraph_edge25" class="edge">
+<title>proc~update_with_lusgs&#45;&gt;proc~update_sa_variables~2</title>
+<path fill="none" stroke="#cc00ff" d="M266.3511,-397.7577C277.31,-400.8162 288.4577,-405.0743 298,-411 318.886,-423.97 313.3166,-439.7093 334,-453 336.6332,-454.692 339.4056,-456.2508 342.2688,-457.6866"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="341.1034,-460.9988 351.6627,-461.8655 343.9486,-454.6031 341.1034,-460.9988"/>
+</g>
+<!-- proc~update_lctm2015~2 -->
+<g id="proc~~get_next_solution~~CallsGraph_node19" class="node">
+<title>proc~update_lctm2015~2</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node19"><a xlink:href=".././proc/update_lctm2015%7E2.html" xlink:title="update_lctm2015">
+<polygon fill="#d9534f" stroke="#d9534f" points="454.5,-444 359.5,-444 359.5,-420 454.5,-420 454.5,-444"/>
+<text text-anchor="middle" x="407" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_lctm2015</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_lusgs&#45;&gt;proc~update_lctm2015~2 -->
+<g id="proc~~get_next_solution~~CallsGraph_edge26" class="edge">
+<title>proc~update_with_lusgs&#45;&gt;proc~update_lctm2015~2</title>
+<path fill="none" stroke="#cc00ff" d="M266.0649,-401.0899C291.7105,-406.7146 322.9676,-413.5699 349.5231,-419.3941"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="348.9314,-422.8475 359.4491,-421.5711 350.4311,-416.01 348.9314,-422.8475"/>
+</g>
+<!-- proc~update_with_lusgs&#45;&gt;debugcall -->
+<g id="proc~~get_next_solution~~CallsGraph_edge29" class="edge">
+<title>proc~update_with_lusgs&#45;&gt;debugcall</title>
+<path fill="none" stroke="#cc00ff" d="M235.0171,-377.9882C258.0188,-364.223 297.7128,-341.678 334,-327 344.764,-322.646 356.759,-318.8029 367.8649,-315.6343"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="369.0374,-318.9419 377.7535,-312.9186 367.1836,-312.1919 369.0374,-318.9419"/>
+</g>
+<!-- proc~update_laminar_variables~2 -->
+<g id="proc~~get_next_solution~~CallsGraph_node25" class="node">
+<title>proc~update_laminar_variables~2</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node25"><a xlink:href=".././proc/update_laminar_variables%7E2.html" xlink:title="update_laminar_variables">
+<polygon fill="#d9534f" stroke="#d9534f" points="475,-402 339,-402 339,-378 475,-378 475,-402"/>
+<text text-anchor="middle" x="407" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_laminar_variables</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_lusgs&#45;&gt;proc~update_laminar_variables~2 -->
 <g id="proc~~get_next_solution~~CallsGraph_edge24" class="edge">
-<title>proc~get_total_conservative_residue&#45;&gt;compute_fluxes</title>
-<path fill="none" stroke="#ff00da" d="M242.5605,-209.6654C258.4114,-175.9289 307.2221,-81.4249 377,-33 382.7506,-29.0092 389.2547,-25.7705 395.9527,-23.1436"/>
-<polygon fill="#ff00da" stroke="#ff00da" points="397.5375,-26.2986 405.8396,-19.7163 395.2448,-19.6847 397.5375,-26.2986"/>
+<title>proc~update_with_lusgs&#45;&gt;proc~update_laminar_variables~2</title>
+<path fill="none" stroke="#cc00ff" d="M266.0649,-390C285.2059,-390 307.4729,-390 328.5779,-390"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="328.8265,-393.5001 338.8265,-390 328.8264,-386.5001 328.8265,-393.5001"/>
+</g>
+<!-- proc~update_sst_variables~2 -->
+<g id="proc~~get_next_solution~~CallsGraph_node28" class="node">
+<title>proc~update_sst_variables~2</title>
+<g id="a_proc~~get_next_solution~~CallsGraph_node28"><a xlink:href=".././proc/update_sst_variables%7E2.html" xlink:title="update_SST_variables">
+<polygon fill="#d9534f" stroke="#d9534f" points="467.5,-360 346.5,-360 346.5,-336 467.5,-336 467.5,-360"/>
+<text text-anchor="middle" x="407" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update_SST_variables</text>
+</a>
+</g>
+</g>
+<!-- proc~update_with_lusgs&#45;&gt;proc~update_sst_variables~2 -->
+<g id="proc~~get_next_solution~~CallsGraph_edge28" class="edge">
+<title>proc~update_with_lusgs&#45;&gt;proc~update_sst_variables~2</title>
+<path fill="none" stroke="#cc00ff" d="M266.0649,-378.9101C289.3419,-373.8049 317.2417,-367.6859 342.053,-362.2443"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="343.0943,-365.5992 352.1123,-360.038 341.5946,-358.7617 343.0943,-365.5992"/>
 </g>
 </g>
 </svg>
@@ -939,98 +1177,100 @@ public subroutine get_next_solution()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>      <span class="k">subroutine </span><span class="n">get_next_solution</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">get_next_solution</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         <span class="c">!&lt; Get solution at next time-step using scheme</span>
         <span class="c">!&lt; given in the input file.</span>
         <span class="k">implicit none</span>
-<span class="k">        select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">time_step_accuracy</span><span class="p">))</span>
+<span class="k">        type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
+        <span class="c">!&lt; Control parameters</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">schemetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">scheme</span>
+        <span class="c">!&lt; finite-volume Schemes</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">flowtype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flow</span>
+        <span class="c">!&lt; Information about fluid flow: freestream-speed, ref-viscosity,etc.</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">boundarytype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">bc</span>
+        <span class="c">!&lt; boundary conditions and fixed values</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+        <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span> <span class="n">qp</span>
+        <span class="c">!&lt; Store primitive variable at cell center</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="kd">::</span> <span class="n">Temp</span>
+        <span class="c">!&lt; Store Temperature variable at cell center</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">residue</span>
+        <span class="c">!&lt; Store residue at each cell-center</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">delta_t</span>
+        <span class="c">!&lt; Local time increment value at each cell center</span>
+        <span class="c">!&lt; Store residue at each cell-center</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span>
+        <span class="c">!&lt; Store fluxes throught the I faces</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">G</span>
+        <span class="c">!&lt; Store fluxes throught the J faces</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">H</span>
+        <span class="c">!&lt; Store fluxes throught the K faces</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">celltype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cells</span>
+        <span class="c">!&lt; Input cell quantities: volume</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Ifaces</span>
+        <span class="c">!&lt; Store face quantites for I faces </span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Jfaces</span>
+        <span class="c">!&lt; Store face quantites for J faces </span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Kfaces</span>
+        <span class="c">!&lt; Store face quantites for K faces </span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">CFL</span> 
+        <span class="n">CFL</span> <span class="o">=</span> <span class="n">control</span><span class="p">%</span><span class="n">CFL</span>
+        <span class="c">!finding the updated Temperature using ideal gas law</span>
+        <span class="c">!T=P/(R_gas*Rho)</span>
+        <span class="n">Temp</span> <span class="o">=</span> <span class="n">qp</span><span class="p">(:,:,:,</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">flow</span><span class="p">%</span><span class="n">R_gas</span><span class="o">*</span><span class="n">qp</span><span class="p">(:,:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+        <span class="k">select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">time_step_accuracy</span><span class="p">))</span>
             <span class="k">case</span> <span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">()</span> <span class="c">! has to be after get_..._Residue()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.</span> <span class="p">,</span><span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.)</span> 
-              <span class="c">!call update_with(&quot;primitive&quot;, 1. ,1., .FALSE.) </span>
-              <span class="c">!call update_laminar_variables_primitive(1. ,1., .FALSE.) </span>
-              <span class="c">!if(turbulence/=&#39;none&#39;)then</span>
-              <span class="c">!  call update_turbulent_variables_primitive(1. ,1., .FALSE.) </span>
-              <span class="c">!end if</span>
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">CFL</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span> <span class="c">! has to be after get_..._Residue()</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.</span> <span class="p">,</span><span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.)</span> 
             <span class="k">case</span> <span class="p">(</span><span class="s2">&quot;RK4&quot;</span><span class="p">)</span>
               <span class="n">R_store</span><span class="o">=</span><span class="mf">0.</span>
               <span class="n">U_store</span> <span class="o">=</span> <span class="n">qp</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
-              <span class="c">!call update_laminar_variables_primitive(0.5, 1., .FALSE., .True., R_store, U_store) </span>
-              <span class="c">!call update_turbulent_variables_primitive(0.5, 1., .FALSE., .True., R_store, U_store) </span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
-              <span class="c">!call update_laminar_variables_primitive(0.5, 2., .FALSE., .True., R_store, U_store) </span>
-              <span class="c">!call update_turbulent_variables_primitive(0.5, 2., .FALSE., .True., R_store, U_store) </span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
-              <span class="c">!call update_laminar_variables_primitive(1.0, 2., .FALSE., .True., R_store, U_store) </span>
-              <span class="c">!call update_turbulent_variables_primitive(1.0, 2., .FALSE., .True., R_store, U_store) </span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span> <span class="p">,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
-              <span class="c">!call update_laminar_variables_primitive(1./6., 1., .TRUE., .FALSE., R_store, U_store) </span>
-              <span class="c">!call update_turbulent_variables_primitive(1./6., 1., .TRUE., .FALSE., R_store, U_store) </span>
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">CFL</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span> <span class="c">! has to be after get_..._Residue()</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span> <span class="p">,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
             <span class="k">case</span><span class="p">(</span><span class="s2">&quot;RK2&quot;</span><span class="p">)</span>
               <span class="n">R_store</span><span class="o">=</span><span class="mf">0.</span>
               <span class="n">U_store</span> <span class="o">=</span> <span class="n">qp</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">CFL</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span> <span class="c">! has to be after get_..._Residue()</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.,</span> <span class="n">R_store</span><span class="p">,</span> <span class="n">U_store</span><span class="p">)</span> 
             <span class="k">case</span> <span class="p">(</span><span class="s2">&quot;TVDRK3&quot;</span><span class="p">)</span>
               <span class="n">U_store</span> <span class="o">=</span> <span class="n">qp</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">CFL</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span> <span class="c">! has to be after get_..._Residue()</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
               <span class="n">qp</span> <span class="o">=</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">U_store</span> <span class="o">+</span> <span class="mf">0.25</span><span class="o">*</span><span class="n">qp</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
               <span class="n">qp</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span><span class="o">*</span><span class="n">U_store</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span><span class="o">*</span><span class="n">qp</span>
             <span class="k">case</span> <span class="p">(</span><span class="s2">&quot;TVDRK2&quot;</span><span class="p">)</span>
               <span class="n">U_store</span> <span class="o">=</span> <span class="n">qp</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">CFL</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span> <span class="c">! has to be after get_..._Residue()</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">update_with</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="s2">&quot;conservative&quot;</span><span class="p">,</span> <span class="mf">1.0</span>  <span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> 
               <span class="n">qp</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">U_store</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">qp</span>
-            <span class="k">case</span> <span class="p">(</span><span class="s2">&quot;TVDRK4&quot;</span><span class="p">)</span>
-              <span class="n">U_store</span> <span class="o">=</span> <span class="n">qp</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_laminar_variables_conservative</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">un</span><span class="o">=</span><span class="n">U_store</span><span class="p">)</span> 
-              <span class="k">if</span><span class="p">(</span><span class="n">turbulence</span><span class="o">/=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span><span class="k">then</span>
-<span class="k">                call </span><span class="n">update_turbulent_variables_conservative</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">un</span><span class="o">=</span><span class="n">U_store</span><span class="p">)</span>
-              <span class="k">end if</span>
-<span class="k">              call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_laminar_variables_conservative</span><span class="p">(</span><span class="mf">0.333333</span><span class="p">,</span> <span class="n">un</span><span class="o">=</span><span class="n">U_store</span><span class="p">)</span> 
-              <span class="c">!if(turbulence/=&#39;none&#39;)then</span>
-              <span class="c">!  call update_turbulent_variables_conservative(0.333333, un=U_store)</span>
-              <span class="c">!end if</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_laminar_variables_conservative</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">un</span><span class="o">=</span><span class="n">U_store</span><span class="p">)</span> 
-              <span class="c">!if(turbulence/=&#39;none&#39;)then</span>
-              <span class="c">!  call update_turbulent_variables_conservative(0.5, un=U_store)</span>
-              <span class="c">!end if</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">update_laminar_variables_conservative</span><span class="p">(</span><span class="mf">1.00</span><span class="p">,</span> <span class="n">un</span><span class="o">=</span><span class="n">U_store</span><span class="p">)</span> 
-              <span class="c">!if(turbulence/=&#39;none&#39;)then</span>
-              <span class="c">!  call update_turbulent_variables_conservative(1.00, un=U_store)</span>
-              <span class="c">!end if</span>
             <span class="k">case</span> <span class="p">(</span><span class="s2">&quot;implicit&quot;</span><span class="p">)</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">()</span> <span class="c">! has to be after get_..._Residue()</span>
-              <span class="k">call </span><span class="n">update_with_lusgs</span><span class="p">()</span>
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">CFL</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span> <span class="c">! has to be after get_..._Residue()</span>
+              <span class="k">call </span><span class="n">update_with_lusgs</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span><span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span><span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
             <span class="k">case</span> <span class="p">(</span><span class="s2">&quot;plusgs&quot;</span><span class="p">)</span>
-              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">()</span>
-              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">()</span> <span class="c">! has to be after get_..._Residue()</span>
-              <span class="k">call </span><span class="n">update_with_plusgs</span><span class="p">()</span>
+              <span class="k">call </span><span class="n">get_total_conservative_Residue</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">compute_time_step</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">CFL</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span> <span class="c">! has to be after get_..._Residue()</span>
+              <span class="k">call </span><span class="n">update_with_plusgs</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span><span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
             <span class="k">case </span><span class="n">default</span>
               <span class="n">Fatal_error</span>
         <span class="k">end select</span>
@@ -1056,7 +1296,7 @@ public subroutine get_next_solution()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

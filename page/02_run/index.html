@@ -81,6 +81,8 @@
             <li><a href="../../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../../program/main.html">Program</a></li>
 
@@ -160,21 +164,21 @@ all these input files, a Python code is provided at <a href="https://github.com/
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><strong>C++11 compiler</strong></li>
-<li><strong>Python 2.7</strong></li>
+<li><strong>Python 3</strong></li>
 <li><strong>bash</strong></li>
 </ul>
 <h2 id="inputs">Inputs</h2>
 <p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>A python scipt is provided to ease the user interface with FEST-3D solver.
 In order to run the script provide all the input variables described below
 and run the script  using:</p>
-<div class="codehilite"><pre><span></span>python automation.py
+<div class="codehilite"><pre><span></span>python edit-automaton.py
 </pre></div>
 
 
 <p>Above command will create a new directory. This new directory host all the input files.
 Before runing the solver, change directory to newly created directory with name provide in variable <em>$RunDir</em>
 eg:<br>
-<code>$python automaton.py</code> <br>
+<code>$python edit-automaton.py</code> <br>
 <code>$cd &lt;New directory&gt;</code> <br>
 If required, tweak the input files, and after that, run the solver using<br>
 <code>$nohup bash run.sh &amp;</code> <br>
@@ -196,11 +200,6 @@ at<br>
 For more details about the grid/mesh read the subsection <a href="./02_mesh.html">Mesh</a>
 <hr>
 <code>NumberOfBlocks = 1</code> Total number of blocks<br>
-<hr>
-In order to use the executable build in the binary folder of the FEST-3D code, a soft link is created
-between the FEST3D executable <code>bin</code> folder and FEST3D in <code>bin</code> folder of Run folder.<br>
-<hr>
-<code>AbsBinaryPath="/home/jatinder/solver/FEST3D/bin/FEST3D"</code> provide the <a href="https://www.geeksforgeeks.org/absolute-relative-pathnames-unix/">absolute path</a> to the binary.<br>
 <hr>
 Now, you are required to fix different input parameter of the solver based on the problem you are simulating.
 Meaning of the most input is self-explanatory from the name.</p>
@@ -600,7 +599,7 @@ Meaning of the most input is self-explanatory from the name.</p>
 </tr>
 <tr>
 <td align="left">OutputControl['Out']</td>
-<td align="left">[ "Velocity" , "Density" , "Pressure" , "Mu" , "Mu_t" , "TKE" , "Omega" , "kL" , "tv" , "Wall_distance" , "resnorm" , "TKE_residue" , "Mass_residue" , "X_mom_residue" , "Y_mom_residue" , "Z_mom_residue" , "energy_residue" , "DuDx",   "Dudy",   "DuDz" , "DvDx",   "DvDy",   "DvDz" , "DwDx",   "DWDy",   "DwDz" , "DTDx",   "DTDy",   "DTDz" , "DtkDx",  "DtkDy",  "DtkDz" , "DtwDx",  "DtwDy",  "DtwDz" , "DtvDx",  "DtvDy",  "DtvDz" , "DtkLDx", "DtkLDy", "DtkLDz"]</td>
+<td align="left">[ "Velocity" , "Density" , "Pressure" , "Mu" , "Mu_t" , "TKE" , "Omega" , "kL" , "tv" , "Wall_distance" , "DuDx",   "Dudy",   "DuDz" , "DvDx",   "DvDy",   "DvDz" , "DwDx",   "DWDy",   "DwDz" , "DTDx",   "DTDy",   "DTDz" , "DtkDx",  "DtkDy",  "DtkDz" , "DtwDx",  "DtwDy",  "DtwDz" , "DtvDx",  "DtvDy",  "DtvDz" , "DtkLDx", "DtkLDy", "DtkLDz"]</td>
 <td align="left">Variables to write in the output file</td>
 </tr>
 <tr>
@@ -640,14 +639,14 @@ Meaning of the most input is self-explanatory from the name.</p>
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="nv">$python</span> automaton.py
+<div class="codehilite"><pre><span></span><span class="nv">$python</span> edit-automaton.py
 </pre></div>
 
 
-<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Make sure to provide the absolute path of the FEST3D binary in the automaton.py script before executing. And also
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Make sure to provide the absolute path of the FEST3D binary in the edit-automaton.py script before executing. And also
 the number of files in the GridDir folder should be equal to the number of blocks as input.</p></div>
 <h2 id="directory-structure">Directory structure</h2>
-<p>Executing automation.py will create a directory with usual directory structure:</p>
+<p>Executing edit-automaton.py will create a directory with usual directory structure:</p>
 <h3 id="_1"></h3>
 <ul>
 <li><strong>system</strong>:all the input files including the mesh files and boundary condition file is located in this directory</li>
@@ -656,7 +655,7 @@ the number of files in the GridDir folder should be equal to the number of block
 <li><strong>run.sh</strong>: bash script to run the solver. This helps to remove log clutter on screen and save it in a log file named <code>out</code> in the <strong>time_directory/aux/</strong> directory along with <code>resnorm</code> file which store the residual values. </li>
 </ul>
 <h2 id="check-layout-file">Check Layout file</h2>
-<p>Although, automaton.py python script tries to handle the boundary condition by its own; it is still not full-proof. So, always the check the <strong>layout.md</strong> file in the <em>system/mesh/layout</em> directory. Make sure all the boundary condition number are as you expect. In the case of pole boundary condition, some random number will be mentioned and required to change manually to -007. The layout file in explained in the later section.</p>
+<p>Although, edit-automaton.py python script tries to handle the boundary condition by its own; it is still not full-proof. So, always the check the <strong>layout.md</strong> file in the <em>system/mesh/layout</em> directory. Make sure all the boundary condition number are as you expect. In the case of pole boundary condition, some random number will be mentioned and required to change manually to -007. The layout file in explained in the later section.</p>
 <h2 id="execute">Execute</h2>
 <div class="codehilite"><pre><span></span><span class="nv">$mpiexec</span>.hydra -np <span class="m">16</span> bin/FEST3D 
 </pre></div>
@@ -801,7 +800,7 @@ You can output the current status or Current iteration number of the run on scre
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

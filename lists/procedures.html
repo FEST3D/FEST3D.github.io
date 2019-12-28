@@ -83,6 +83,8 @@ All Procedures &ndash; FEST-3D
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -101,6 +103,8 @@ All Procedures &ndash; FEST-3D
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -128,7 +132,7 @@ All Procedures &ndash; FEST-3D
 			 <thead><tr><th>Procedure</th><th>Location</th><th>Procedure Type</th><th>Description</th></tr></thead>
 			 <tbody>
 			 
-			   <tr><td><a href='../proc/abort_run.html'>abort_run</a></td><td><a href='../module/start_finish.html'>start_finish</a></td><td>Subroutine</td><td><p>Aborting the solver</p></td></tr>
+			   <tr><td><a href='../proc/abort_run.html'>abort_run</a></td><td><a href='../module/solver.html'>solver</a></td><td>Subroutine</td><td><p>Aborting the solver</p></td></tr>
 			 
 			   <tr><td><a href='../proc/add_kkl_source.html'>add_kkl_source</a></td><td><a href='../module/source.html'>source</a></td><td>Subroutine</td><td><p>Add residual due to source terms of the k-kL turbulence model</p></td></tr>
 			 
@@ -168,78 +172,39 @@ All Procedures &ndash; FEST-3D
 			 
 			   <tr><td><a href='../proc/alloc_rank6_real.html'>alloc_rank6_real</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Allcoate 6-Dimensional array of type: real</p></td></tr>
 			 
-			   <tr><td><a href='../proc/allocate_memory.html'>allocate_memory</a></td><td><a href='../module/grid.html'>grid</a></td><td>Subroutine</td><td><p>Allocate memory to store the grid</p></td></tr>
+			   <tr><td><a href='../proc/allocate_memory.html'>allocate_memory</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Allocate memory to MPI Communication</p></td></tr>
 			 
-			   <tr><td><a href='../proc/allocate_memory%7E2.html'>allocate_memory</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Allocate memory to MPI Communication</p></td></tr>
+			   <tr><td><a href='../proc/allocate_memory%7E2.html'>allocate_memory</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Allocate memory for the required variables.</p><a href="../proc/allocate_memory%7E2.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
-			   <tr><td><a href='../proc/allocate_memory%7E3.html'>allocate_memory</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Allocate memory for the required variables.</p></td></tr>
+			   <tr><td><a href='../proc/allocate_memory%7E3.html'>allocate_memory</a></td><td><a href='../module/wall.html'>wall</a></td><td>Subroutine</td><td><p>Allocate memory to str and wallc variable array</p></td></tr>
 			 
-			   <tr><td><a href='../proc/allocate_memory%7E4.html'>allocate_memory</a></td><td><a href='../module/wall.html'>wall</a></td><td>Subroutine</td><td><p>Allocate memory to str and wallc variable array</p></td></tr>
-			 
-			   <tr><td><a href='../proc/allocate_memory%7E5.html'>allocate_memory</a></td><td><a href='../module/gradients.html'>gradients</a></td><td>Subroutine</td><td><p>Allocating memory to the gradient variable being used</p></td></tr>
-			 
-			   <tr><td><a href='../proc/allocate_memory%7E6.html'>allocate_memory</a></td><td><a href='../module/state.html'>state</a></td><td>Subroutine</td><td><p>Allocate memory to the state variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/allocate_memory_areas.html'>allocate_memory_areas</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Allocate memory for the area variables.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/allocate_memory_ghost_centroids.html'>allocate_memory_ghost_centroids</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Allocate memory for centroids of ghost cells</p></td></tr>
-			 
-			   <tr><td><a href='../proc/allocate_memory_normals.html'>allocate_memory_normals</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Allocate memory for the normal variables.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/allocate_memory_volumes.html'>allocate_memory_volumes</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Allocate memory for the volume variables.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/apply.html'>apply</a></td><td><a href='../module/ghost_gradients.html'>ghost_gradients</a></td><td>Subroutine</td><td><p>Apply/set value of all gradient in the ghost cells
+			   <tr><td><a href='../proc/apply_gradient_bc.html'>apply_gradient_bc</a></td><td><a href='../module/gradients.html'>gradients</a></td><td>Subroutine</td><td><p>Call same subroutine for all the face
+ Apply/set value of all gradient in the ghost cells
  gradqp_G = (qp_I - qp_G)<em>Area_W</em>unit_normal_G/(volume_G)
  volume_G = volume_I</p></td></tr>
 			 
-			   <tr><td><a href='../proc/apply_gradient_bc.html'>apply_gradient_bc</a></td><td><a href='../module/ghost_gradients.html'>ghost_gradients</a></td><td>Subroutine</td><td><p>Call same subroutine for all the face</p></td></tr>
+			   <tr><td><a href='../proc/apply_gradient_bc_face.html'>apply_gradient_bc_face</a></td><td><a href='../module/gradients.html'>gradients</a></td><td>Subroutine</td><td><p>Call same subroutine for all the face
+ Apply/set value of all gradient in the ghost cells
+ gradqp_G = (qp_I - qp_G)<em>Area_W</em>unit_normal_G/(volume_G)
+ volume_G = volume_I</p></td></tr>
 			 
 			   <tr><td><a href='../proc/apply_interface.html'>apply_interface</a></td><td><a href='../module/interface1.html'>interface1</a></td><td>Subroutine</td><td><p>MPISEND_RECV call to exchange interface infromation between
  connected blocks.</p></td></tr>
 			 
-			   <tr><td><a href='../proc/apply_interface%7E2.html'>apply_interface</a></td><td><a href='../module/plusgs.html'>plusgs</a></td><td>Subroutine</td><td><p>Apply inter-block interface boundary condition</p></td></tr>
-			 
-			   <tr><td><a href='../proc/apply_interface%7E3.html'>apply_interface</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Subroutine</td><td></td></tr>
-			 
 			   <tr><td><a href='../proc/apply_periodic_bc.html'>apply_periodic_bc</a></td><td><a href='../module/interface1.html'>interface1</a></td><td>Subroutine</td><td><p>If a block is connected to another block in perodic
 fashion, this subroutine will take care of that boundary condition.</p></td></tr>
 			 
-			   <tr><td><a href='../proc/apply_periodic_bc%7E2.html'>apply_periodic_bc</a></td><td><a href='../module/plusgs.html'>plusgs</a></td><td>Subroutine</td><td><p>Apply periodic boundary condition</p></td></tr>
-			 
-			   <tr><td><a href='../proc/apply_periodic_bc%7E3.html'>apply_periodic_bc</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Subroutine</td><td></td></tr>
-			 
 			   <tr><td><a href='../proc/assemble_resnom_at_each_process.html'>assemble_resnom_at_each_process</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Sum residual obtained from all the processes after MPI_Communication</p></td></tr>
-			 
-			   <tr><td><a href='../interface/assignment%28%3D%29.html'>assignment(=)</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Interface</td><td></td></tr>
-			 
-			   <tr><td><a href='../interface/bin2int.html'>bin2int</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Interface</td><td></td></tr>
-			 
-			   <tr><td><a href='../proc/bin_to_int4.html'>bin_to_int4</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Subroutine</td><td><p>String of binary number converted to integer of kind 4</p></td></tr>
-			 
-			   <tr><td><a href='../proc/bin_to_int8.html'>bin_to_int8</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Subroutine</td><td><p>String of binary number converted to integer of kind 8</p></td></tr>
-			 
-			   <tr><td><a href='../proc/bool_cat_str.html'>bool_cat_str</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Join a boolean to a string and gives result as a string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/bool_to_str.html'>bool_to_str</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Convert boolean variable to string</p></td></tr>
 			 
 			   <tr><td><a href='../proc/calculate_viscosity.html'>calculate_viscosity</a></td><td><a href='../module/viscosity.html'>viscosity</a></td><td>Subroutine</td><td><p>Calculate molecular and turbulent viscosity</p></td></tr>
 			 
 			   <tr><td><a href='../proc/change_map_to_particular_range.html'>change_map_to_particular_range</a></td><td><a href='../module/mapping.html'>mapping</a></td><td>Subroutine</td><td><p>Modified the indicies for MPI communication</p></td></tr>
 			 
-			   <tr><td><a href='../proc/check_if_value_fixed.html'>check_if_value_fixed</a></td><td><a href='../module/bc_primitive.html'>bc_primitive</a></td><td>Subroutine</td><td><p>A Fail-check subroutine which set the freestream
- as the fixed value in case not specified explicitly</p></td></tr>
-			 
 			   <tr><td><a href='../proc/checkpoint.html'>checkpoint</a></td><td><a href='../module/dump_solution.html'>dump_solution</a></td><td>Subroutine</td><td><p>Create a checkpoint dump file if the time has come</p></td></tr>
-			 
-			   <tr><td><a href='../proc/chfmt.html'>chfmt</a></td><td><a href='../module/string.html'>string</a></td><td>Subroutine</td><td><p>Change format specifier for reals</p></td></tr>
-			 
-			   <tr><td><a href='../proc/close_all_files.html'>close_all_files</a></td><td><a href='../module/fclose.html'>fclose</a></td><td>Subroutine</td><td><p>Call to close all files</p></td></tr>
 			 
 			   <tr><td><a href='../proc/close_file.html'>close_file</a></td><td><a href='../module/write_output.html'>write_output</a></td><td>Subroutine</td><td><p>Close the file after writing solution.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/close_file%7E2.html'>close_file</a></td><td><a href='../module/read_output.html'>read_output</a></td><td>Subroutine</td><td><p>Close the file after reading </p></td></tr>
-			 
-			   <tr><td><a href='../proc/close_file%7E3.html'>close_file</a></td><td><a href='../module/fclose.html'>fclose</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/collect_resnorm_from_all_blocks.html'>collect_resnorm_from_all_blocks</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>MPI Communication to gather residual from all processes</p></td></tr>
 			 
@@ -250,6 +215,8 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			   <tr><td><a href='../proc/compute_face_areas_and_normals.html'>compute_face_areas_and_normals</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Compute the face areas and normals</p><a href="../proc/compute_face_areas_and_normals.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_face_estimates.html'>compute_face_estimates</a></td><td><a href='../module/ppm.html'>ppm</a></td><td>Subroutine</td><td><p>Subroutine to calculate state at the face, generalized for</p></td></tr>
+			 
+			   <tr><td><a href='../proc/compute_face_interpolant.html'>compute_face_interpolant</a></td><td><a href='../module/face_interpolant.html'>face_interpolant</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_face_state.html'>compute_face_state</a></td><td><a href='../module/muscl.html'>muscl</a></td><td>Subroutine</td><td><p>Subroutine to calculate state at the face, generalized for
  all direction : I,J, and K.</p></td></tr>
@@ -281,12 +248,14 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
  which corresponds to the I,J, or K direction respectively</p></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_flux%7E6.html'>compute_flux</a></td><td><a href='../module/ldfss0.html'>ldfss0</a></td><td>Subroutine</td><td><p>A generalized subroutine to calculate
- flux through the input direction, :x,y, or z
+ flux through the input-argument direction, :x,y, or z
  which corresponds to the I,J, or K direction respectively</p></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_fluxes.html'>compute_fluxes</a></td><td><a href='../module/van_leer.html'>van_leer</a></td><td>Subroutine</td><td><p>Call to compute fluxes throught faces in each direction</p></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_fluxes%7E2.html'>compute_fluxes</a></td><td><a href='../module/slau.html'>slau</a></td><td>Subroutine</td><td><p>Call to compute fluxes throught faces in each direction</p></td></tr>
+			 
+			   <tr><td><a href='../proc/compute_fluxes%7E7.html'>compute_fluxes</a></td><td><a href='../module/scheme.html'>scheme</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_fluxes%7E3.html'>compute_fluxes</a></td><td><a href='../module/ausmup.html'>ausmUP</a></td><td>Subroutine</td><td><p>Call to compute fluxes throught faces in each direction</p></td></tr>
 			 
@@ -296,17 +265,13 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/compute_fluxes%7E6.html'>compute_fluxes</a></td><td><a href='../module/ldfss0.html'>ldfss0</a></td><td>Subroutine</td><td><p>Call to compute fluxes throught faces in each direction</p></td></tr>
 			 
-			   <tr><td><a href='../proc/compute_geometric_parameters.html'>compute_geometric_parameters</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Compute the geometric parameters based on the grid points</p><a href="../proc/compute_geometric_parameters.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
 			   <tr><td><a href='../proc/compute_ghost_cell_centroid.html'>compute_ghost_cell_centroid</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Compute cell center of all cell including ghost cells</p></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_global_time_step.html'>compute_global_time_step</a></td><td><a href='../module/time.html'>time</a></td><td>Subroutine</td><td><p>Compute a common time step to be used at all cell centers</p><a href="../proc/compute_global_time_step.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_gradient.html'>compute_gradient</a></td><td><a href='../module/cc.html'>CC</a></td><td>Subroutine</td><td><p>Generalized subroutine to calculate gradients</p></td></tr>
 			 
-			   <tr><td><a href='../proc/compute_gradient_g.html'>compute_gradient_G</a></td><td><a href='../module/summon_grad_evaluation.html'>summon_grad_evaluation</a></td><td>Subroutine</td><td><p>Compute gradient of any input scalar</p></td></tr>
-			 
-			   <tr><td><a href='../proc/compute_gradient_t.html'>compute_gradient_T</a></td><td><a href='../module/summon_grad_evaluation.html'>summon_grad_evaluation</a></td><td>Subroutine</td><td><p>Calculate gradient of temperature</p></td></tr>
+			   <tr><td><a href='../proc/compute_gradient_g.html'>compute_gradient_G</a></td><td><a href='../module/gradients.html'>gradients</a></td><td>Subroutine</td><td><p>Compute gradient of any input scalar</p></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_local_time_step.html'>compute_local_time_step</a></td><td><a href='../module/time.html'>time</a></td><td>Subroutine</td><td><p>Compute the time step to be used at each cell center</p><a href="../proc/compute_local_time_step.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
@@ -318,6 +283,8 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
  with optional call for remove extrema based on
  input limter switch and call pressure based switching
  based on input pressure based switch</p></td></tr>
+			 
+			   <tr><td><a href='../proc/compute_residue.html'>compute_residue</a></td><td><a href='../module/scheme.html'>scheme</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/compute_time_step.html'>compute_time_step</a></td><td><a href='../module/time.html'>time</a></td><td>Subroutine</td><td><p>Compute the time step to be used</p><a href="../proc/compute_time_step.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
@@ -353,124 +320,19 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/create_directory.html'>create_directory</a></td><td><a href='../module/dump_solution.html'>dump_solution</a></td><td>Subroutine</td><td><p>Create a directory to keep the solution files from all the processor</p></td></tr>
 			 
-			   <tr><td><a href='../interface/dealloc.html'>dealloc</a></td><td><a href='../module/utils.html'>utils</a></td><td>Interface</td><td></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank1_integer.html'>dealloc_rank1_integer</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 1-Dimensional array of type: integer</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank1_real.html'>dealloc_rank1_real</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 1-Dimensional array of type: real</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank2_integer.html'>dealloc_rank2_integer</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 2-Dimensional array of type: integer</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank2_real.html'>dealloc_rank2_real</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 2-Dimensional array of type: real</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank3_integer.html'>dealloc_rank3_integer</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 3-Dimensional array of type: integer</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank3_real.html'>dealloc_rank3_real</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 3-Dimensional array of type: real</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank4_real.html'>dealloc_rank4_real</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 4-Dimensional array of type: real</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank5_real.html'>dealloc_rank5_real</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 5-Dimensional array of type: real</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dealloc_rank6_real.html'>dealloc_rank6_real</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Deallcoate 6-Dimensional array of type: real</p></td></tr>
-			 
-			   <tr><td><a href='../proc/deallocate_memory.html'>deallocate_memory</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Deallocate memory required for MPI Communication</p></td></tr>
-			 
-			   <tr><td><a href='../proc/deallocate_memory%7E2.html'>deallocate_memory</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Deallocate the memoery used by the geometry variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/deallocate_memory%7E3.html'>deallocate_memory</a></td><td><a href='../module/wall.html'>wall</a></td><td>Subroutine</td><td><p>Deallocate memory from the Wallc array</p></td></tr>
-			 
-			   <tr><td><a href='../proc/deallocate_memory%7E4.html'>deallocate_memory</a></td><td><a href='../module/state.html'>state</a></td><td>Subroutine</td><td><p>Deallocate memory from the state variable</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_all.html'>destroy_all</a></td><td><a href='../module/create_and_erase.html'>create_and_erase</a></td><td>Subroutine</td><td><p>Free memory and free pointers</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_bc.html'>destroy_bc</a></td><td><a href='../module/bc.html'>bc</a></td><td>Subroutine</td><td><p>Deallocate memory from boundary condition variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_geometry.html'>destroy_geometry</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Nullify all the face normal pionter </p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_gradients.html'>destroy_gradients</a></td><td><a href='../module/gradients.html'>gradients</a></td><td>Subroutine</td><td><p>Deallocate memoery and nullify pointers
- to the gradient variables.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_grid.html'>destroy_grid</a></td><td><a href='../module/grid.html'>grid</a></td><td>Subroutine</td><td><p>Deallocate the memory allocated for the grid.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_interface.html'>destroy_interface</a></td><td><a href='../module/interface1.html'>interface1</a></td><td>Subroutine</td><td><p>Deallocate all the memory being used  for data communication between processors</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_kkl_grad.html'>destroy_kkl_grad</a></td><td><a href='../module/kkl_gradients.html'>kkl_gradients</a></td><td>Subroutine</td><td><p>Nullify all the gradient pointer setup for k-kL model</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_laminar_grad.html'>destroy_laminar_grad</a></td><td><a href='../module/laminar_gradients.html'>laminar_gradients</a></td><td>Subroutine</td><td><p>Unlink the laminar gradient pointers</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_lctm2015_grad.html'>destroy_lctm2015_grad</a></td><td><a href='../module/lctm2015_gradients.html'>lctm2015_gradients</a></td><td>Subroutine</td><td><p>Nullify all the gradient pointer setup for k-kL model</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_lusgs.html'>destroy_lusgs</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Subroutine</td><td><p>unallocate the memory required by LU-SGS module</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_memory.html'>destroy_memory</a></td><td><a href='../module/gradients.html'>gradients</a></td><td>Subroutine</td><td><p>Deallocate memeory from the gradient variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_plusgs.html'>destroy_plusgs</a></td><td><a href='../module/plusgs.html'>plusgs</a></td><td>Subroutine</td><td><p>Unallocate the memory required by LU-SGS module</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_resnorm.html'>destroy_resnorm</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Deallocate memory and close residual file</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_sa_grad.html'>destroy_sa_grad</a></td><td><a href='../module/sa_gradients.html'>sa_gradients</a></td><td>Subroutine</td><td><p>Nullify all the gradient pointer setup for k-kL model</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme.html'>destroy_scheme</a></td><td><a href='../module/van_leer.html'>van_leer</a></td><td>Subroutine</td><td><p>Deallocate memory</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E2.html'>destroy_scheme</a></td><td><a href='../module/slau.html'>slau</a></td><td>Subroutine</td><td><p>Deallocate memory</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E3.html'>destroy_scheme</a></td><td><a href='../module/ausmup.html'>ausmUP</a></td><td>Subroutine</td><td><p>Deallocate memory</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E4.html'>destroy_scheme</a></td><td><a href='../module/ausmp.html'>ausmP</a></td><td>Subroutine</td><td><p>Deallocate memory</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E5.html'>destroy_scheme</a></td><td><a href='../module/ausm.html'>ausm</a></td><td>Subroutine</td><td><p>Deallocate memory</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E6.html'>destroy_scheme</a></td><td><a href='../module/ldfss0.html'>ldfss0</a></td><td>Subroutine</td><td><p>Deallocate memory</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E7.html'>destroy_scheme</a></td><td><a href='../module/muscl.html'>muscl</a></td><td>Subroutine</td><td><p>Deallocate all the array used </p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E8.html'>destroy_scheme</a></td><td><a href='../module/weno.html'>weno</a></td><td>Subroutine</td><td><p>Deallocate all the array used </p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E9.html'>destroy_scheme</a></td><td><a href='../module/weno_nm.html'>weno_NM</a></td><td>Subroutine</td><td><p>Deallocate all the array used </p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_scheme%7E10.html'>destroy_scheme</a></td><td><a href='../module/ppm.html'>ppm</a></td><td>Subroutine</td><td><p>Deallocate all the array used </p></td></tr>
-			 
 			   <tr><td><a href='../proc/destroy_solver.html'>destroy_solver</a></td><td><a href='../module/solver.html'>solver</a></td><td>Subroutine</td><td><p>Call to different modules to deallocate memory</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_source.html'>destroy_source</a></td><td><a href='../module/source.html'>source</a></td><td>Subroutine</td><td><p>deallocate memory before stoping the solver</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_sst_grad.html'>destroy_sst_grad</a></td><td><a href='../module/sst_gradients.html'>sst_gradients</a></td><td>Subroutine</td><td><p>Nullify all the gradient pointer setup for k-kL model</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_state.html'>destroy_state</a></td><td><a href='../module/state.html'>state</a></td><td>Subroutine</td><td><p>Destroy the state module.
- This subroutine destroys the state module which includes
- unlinking the aliases for the state components and 
- deallocating the memory held by the state variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_surface.html'>destroy_surface</a></td><td><a href='../module/wall.html'>wall</a></td><td>Subroutine</td><td><p>Deallocate memory, unlink pointers, and close MPI_shared file</p></td></tr>
 			 
 			   <tr><td><a href='../proc/destroy_time.html'>destroy_time</a></td><td><a href='../module/time.html'>time</a></td><td>Subroutine</td><td><p>Deallocate memory and find simulation time.</p></td></tr>
 			 
-			   <tr><td><a href='../proc/destroy_update.html'>destroy_update</a></td><td><a href='../module/update.html'>update</a></td><td>Subroutine</td><td><p>Dellocate memory from all variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_viscosity.html'>destroy_viscosity</a></td><td><a href='../module/viscosity.html'>viscosity</a></td><td>Subroutine</td><td><p>Deallocate and nullify viscosity (turbulent/molecular)</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroy_wall_dist.html'>destroy_wall_dist</a></td><td><a href='../module/wall_dist.html'>wall_dist</a></td><td>Subroutine</td><td><p>Deallocate the memory of wall_distance variable,
- wall_x, wall_y, and wall_z</p></td></tr>
-			 
-			   <tr><td><a href='../proc/destroycc.html'>destroyCC</a></td><td><a href='../module/cc.html'>CC</a></td><td>Subroutine</td><td><p>Deallocate memory from the cell-center variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/disp.html'>disp</a></td><td><a href='../module/string.html'>string</a></td><td>Subroutine</td><td><p>Display the contents of the string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/dmsg.html'>dmsg</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td><p>Based on the debug level input this
- soubroutine will output/print or skip the debug
- message. This subroutine is called in the
- starting of every other subrotune for debuging.
- This will be depricated in the later version.</p></td></tr>
-			 
 			   <tr><td><a href='../proc/dump_data.html'>dump_data</a></td><td><a href='../module/dump_solution.html'>dump_solution</a></td><td>Subroutine</td><td><p>Call to write save files in the directory</p></td></tr>
 			 
-			   <tr><td><a href='../proc/evaluate_all_gradients.html'>evaluate_all_gradients</a></td><td><a href='../module/summon_grad_evaluation.html'>summon_grad_evaluation</a></td><td>Subroutine</td><td><p>Call to all the required gradients and 
+			   <tr><td><a href='../proc/evaluate_all_gradients.html'>evaluate_all_gradients</a></td><td><a href='../module/gradients.html'>gradients</a></td><td>Subroutine</td><td><p>Call to all the required gradients and 
  apply boundary condition for ghost cell
  gradients</p></td></tr>
 			 
-			   <tr><td><a href='../proc/extract_grid_point.html'>extract_grid_point</a></td><td><a href='../module/grid.html'>grid</a></td><td>Subroutine</td><td><p>Extract a grid point from a line of the grid file. </p></td></tr>
-			 
 			   <tr><td><a href='../proc/extract_grid_size.html'>extract_grid_size</a></td><td><a href='../module/grid.html'>grid</a></td><td>Subroutine</td><td><p>Extract the grid size from the grid file header</p></td></tr>
+			 
+			   <tr><td><a href='../proc/extrapolate_cell_averages_to_faces.html'>extrapolate_cell_averages_to_faces</a></td><td><a href='../module/face_interpolant.html'>face_interpolant</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/far_field.html'>far_field</a></td><td><a href='../module/bc_primitive.html'>bc_primitive</a></td><td>Subroutine</td><td><p>Far-field Riemann boundary condition</p></td></tr>
 			 
@@ -489,7 +351,7 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/find_wall_dist.html'>find_wall_dist</a></td><td><a href='../module/wall_dist.html'>wall_dist</a></td><td>Subroutine</td><td><p>Determine the minimum wall distance from the wall surface node points</p></td></tr>
 			 
-			   <tr><td><a href='../proc/finish_run.html'>finish_run</a></td><td><a href='../module/start_finish.html'>start_finish</a></td><td>Subroutine</td><td><p>Finishing the solution computation</p></td></tr>
+			   <tr><td><a href='../proc/finish_run.html'>finish_run</a></td><td><a href='../module/solver.html'>solver</a></td><td>Subroutine</td><td><p>Finishing the solution computation</p></td></tr>
 			 
 			   <tr><td><a href='../proc/fix.html'>fix</a></td><td><a href='../module/bc_primitive.html'>bc_primitive</a></td><td>Subroutine</td><td><p>Generalized subroutine to fix particular value
  at particular face</p></td></tr>
@@ -523,31 +385,18 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/get_relative_resnorm.html'>get_relative_resnorm</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Get relative residual with respect to first iteration residual</p></td></tr>
 			 
-			   <tr><td><a href='../proc/get_residue.html'>get_residue</a></td><td><a href='../module/van_leer.html'>van_leer</a></td><td>Subroutine</td><td><p>Compute the residue using the Van-Leer scheme</p></td></tr>
-			 
-			   <tr><td><a href='../proc/get_residue%7E2.html'>get_residue</a></td><td><a href='../module/slau.html'>slau</a></td><td>Subroutine</td><td><p>Compute the residue for the slau scheme</p></td></tr>
-			 
-			   <tr><td><a href='../proc/get_residue%7E3.html'>get_residue</a></td><td><a href='../module/ausmup.html'>ausmUP</a></td><td>Subroutine</td><td><p>Compute the residue for the ausm+-UP scheme</p></td></tr>
-			 
-			   <tr><td><a href='../proc/get_residue%7E4.html'>get_residue</a></td><td><a href='../module/ausmp.html'>ausmP</a></td><td>Subroutine</td><td><p>Compute the residue for the AUSM+ scheme</p></td></tr>
-			 
-			   <tr><td><a href='../proc/get_residue%7E5.html'>get_residue</a></td><td><a href='../module/ausm.html'>ausm</a></td><td>Subroutine</td><td><p>Compute the residue for the AUSM scheme</p></td></tr>
-			 
-			   <tr><td><a href='../proc/get_residue%7E6.html'>get_residue</a></td><td><a href='../module/ldfss0.html'>ldfss0</a></td><td>Subroutine</td><td><p>Compute the residue for the ldfss0 scheme</p></td></tr>
-			 
 			   <tr><td><a href='../proc/get_rw_count.html'>get_rw_count</a></td><td><a href='../module/read.html'>read</a></td><td>Subroutine</td><td><p>Get read/write count</p></td></tr>
 			 
-			   <tr><td><a href='../proc/get_total_conservative_residue.html'>get_total_conservative_Residue</a></td><td><a href='../module/update.html'>update</a></td><td>Subroutine</td><td><p>Main loop of whole code. Find residual</p><a href="../proc/get_total_conservative_residue.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_total_conservative_residue.html'>get_total_conservative_Residue</a></td><td><a href='../module/update.html'>update</a></td><td>Subroutine</td><td><p>For each iteration it apply boundary conditions,
+ use higher order method to reconstruct state at
+ face, evalute fluxes at each face, calculate 
+ inviscid residual, and introuduce additional 
+ residual due to  viscosity, turbulence and source
+ terms.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/ghost_grid.html'>ghost_grid</a></td><td><a href='../module/grid.html'>grid</a></td><td>Subroutine</td><td><p>generate ghost grid for the various operations later.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/init_infinity_values.html'>init_infinity_values</a></td><td><a href='../module/state.html'>state</a></td><td>Subroutine</td><td><p>Set the values of the infinity variables "qp_inf"</p></td></tr>
-			 
-			   <tr><td><a href='../proc/init_left_and_right_eta_estimates.html'>init_left_and_right_eta_estimates</a></td><td><a href='../module/ppm.html'>ppm</a></td><td>Subroutine</td><td><p>Initialize the left and right state at J direction face</p></td></tr>
-			 
-			   <tr><td><a href='../proc/init_left_and_right_xi_estimates.html'>init_left_and_right_xi_estimates</a></td><td><a href='../module/ppm.html'>ppm</a></td><td>Subroutine</td><td><p>Initialize the left and right state at I direction face</p></td></tr>
-			 
-			   <tr><td><a href='../proc/init_left_and_right_zeta_estimates.html'>init_left_and_right_zeta_estimates</a></td><td><a href='../module/ppm.html'>ppm</a></td><td>Subroutine</td><td><p>Initialize the left and right state at K direction face</p></td></tr>
 			 
 			   <tr><td><a href='../proc/init_state_with_infinity_values.html'>init_state_with_infinity_values</a></td><td><a href='../module/state.html'>state</a></td><td>Subroutine</td><td><p>Initialize the state based on the infinity values</p></td></tr>
 			 
@@ -558,47 +407,17 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
  set to the infinity values. Otherwise, read the state_file
  to get the state values</p></td></tr>
 			 
-			   <tr><td><a href='../proc/int4_1d_or_int4.html'>int4_1D_or_int4</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Function</td><td><p>Bitwise 'OR' over one 1D integer array and integer of kind 4</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int4_1d_or_int4_1d.html'>int4_1D_or_int4_1D</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Function</td><td><p>Bitwise 'OR' over two 1D integer array of kind 4</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int4_2d_or_int4.html'>int4_2D_or_int4</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Function</td><td><p>Bitwise 'OR' over one 2D integer array and integer of kind 4</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int4_2d_or_int4_2d.html'>int4_2D_or_int4_2D</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Function</td><td><p>Bitwise 'OR' over two 2D integer array of kind 4</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int4_and_int4.html'>int4_and_int4</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Function</td><td><p>Bitwise 'AND' over two integer of kind 4</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int4_from_string.html'>int4_from_string</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Subroutine</td><td><p>Get integer of kind 4 from the string which might contain either octal or binary number</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int4_or_int4.html'>int4_or_int4</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Function</td><td><p>Bitwise 'OR' over two integer of kind 4</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int8_and_int8.html'>int8_and_int8</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Function</td><td><p>Bitwise 'AND' over two integer of kind 8</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int8_from_string.html'>int8_from_string</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Subroutine</td><td><p>Get integer of kind 8 from the string which might contain either octal or binary number</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int8_or_int8.html'>int8_or_int8</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Function</td><td><p>Bitwise 'OR' over two integer of kind 8</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int_cat_str.html'>int_cat_str</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Join a integer to a string and gives result as a string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/int_to_str.html'>int_to_str</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Convert integer to string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/intlen.html'>intlen</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Return the "string length of an integer"</p></td></tr>
-			 
 			   <tr><td><a href='../proc/iterate_one_more_time_step.html'>iterate_one_more_time_step</a></td><td><a href='../module/solver.html'>solver</a></td><td>Subroutine</td><td><p>Perform one time step iteration</p></td></tr>
 			 
 			   <tr><td><a href='../proc/kklflux.html'>KKLFlux</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Function</td><td><p>calculate the total flux through face for turbulent flow (k-kL)</p></td></tr>
 			 
-			   <tr><td><a href='../proc/lcase.html'>lcase</a></td><td><a href='../module/str_case.html'>str_case</a></td><td>Function</td><td><p>Make the whole string to lower case</p></td></tr>
+			   <tr><td><a href='../proc/lcase.html'>lcase</a></td><td><a href='../module/check_output_control.html'>check_output_control</a></td><td>Function</td><td><p>Make the whole string to lower case</p></td></tr>
 			 
 			   <tr><td><a href='../proc/lctm2015flux.html'>lctm2015flux</a></td><td><a href='../module/plusgs.html'>plusgs</a></td><td>Function</td><td><p>Calculate the total flux through face for turbulent/transition flow (LCTM2015)</p></td></tr>
 			 
 			   <tr><td><a href='../proc/lctm2015flux%7E2.html'>lctm2015flux</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Function</td><td><p>calculate the total flux through face for turbulent/transition flow (LCTM2015)</p></td></tr>
 			 
-			   <tr><td><a href='../interface/len.html'>len</a></td><td><a href='../module/string.html'>string</a></td><td>Interface</td><td></td></tr>
-			 
 			   <tr><td><a href='../proc/link_aliases.html'>link_aliases</a></td><td><a href='../module/wall.html'>wall</a></td><td>Subroutine</td><td><p>Link pointers wall_x, wall_y, wall_z to wallc</p></td></tr>
-			 
-			   <tr><td><a href='../proc/link_aliases%7E2.html'>link_aliases</a></td><td><a href='../module/state.html'>state</a></td><td>Subroutine</td><td><p>Setup state variable pointers</p></td></tr>
 			 
 			   <tr><td><a href='../proc/make_dump_dir.html'>make_dump_dir</a></td><td><a href='../module/dump_solution.html'>dump_solution</a></td><td>Subroutine</td><td><p>Solution directory and sub-directory in created with particular number </p></td></tr>
 			 
@@ -608,23 +427,9 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			   <tr><td><a href='../proc/normalize_face_normals.html'>normalize_face_normals</a></td><td><a href='../module/geometry.html'>geometry</a></td><td>Subroutine</td><td><p>Normalize the face normal vectors computed to get unit
  vectors</p></td></tr>
 			 
-			   <tr><td><a href='../interface/oct2int.html'>oct2int</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Interface</td><td></td></tr>
-			 
-			   <tr><td><a href='../proc/oct_to_int4.html'>oct_to_int4</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Subroutine</td><td><p>String of octal number converted to integer of kind 4</p></td></tr>
-			 
-			   <tr><td><a href='../proc/oct_to_int8.html'>oct_to_int8</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Subroutine</td><td><p>String of octal number converted to integer of kind 8</p></td></tr>
-			 
 			   <tr><td><a href='../proc/open_file.html'>open_file</a></td><td><a href='../module/write_output.html'>write_output</a></td><td>Subroutine</td><td><p>Open the file to write the solution</p></td></tr>
 			 
 			   <tr><td><a href='../proc/open_file%7E2.html'>open_file</a></td><td><a href='../module/read_output.html'>read_output</a></td><td>Subroutine</td><td><p>Open file from the restart folder </p></td></tr>
-			 
-			   <tr><td><a href='../proc/open_file%7E3.html'>open_file</a></td><td><a href='../module/fopen.html'>fopen</a></td><td>Subroutine</td><td><p>Open single file</p></td></tr>
-			 
-			   <tr><td><a href='../interface/operator%28%20%2B%20%29.html'>operator( + )</a></td><td><a href='../module/string.html'>string</a></td><td>Interface</td><td></td></tr>
-			 
-			   <tr><td><a href='../interface/operator%28.and.%29.html'>operator(.and.)</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Interface</td><td></td></tr>
-			 
-			   <tr><td><a href='../interface/operator%28.or.%29.html'>operator(.or.)</a></td><td><a href='../module/bitwise.html'>bitwise</a></td><td>Interface</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/periodic_bc.html'>periodic_bc</a></td><td><a href='../module/bc_primitive.html'>bc_primitive</a></td><td>Subroutine</td><td><p>Single block periodic boundary condition.
  Not to be used for multiblock boundary condition</p></td></tr>
@@ -690,12 +495,6 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/read_velocity.html'>read_velocity</a></td><td><a href='../module/read_output_vtk.html'>read_output_vtk</a></td><td>Subroutine</td><td><p>Read velocity vector from the vtk file</p></td></tr>
 			 
-			   <tr><td><a href='../proc/real_cat_str.html'>real_cat_str</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Join a real number to a string and gives result as a string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/real_to_str.html'>real_to_str</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Convert real number to string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/reallen.html'>reallen</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Return the "string length of a real"</p></td></tr>
-			 
 			   <tr><td><a href='../proc/reconstruct_boundary_state.html'>reconstruct_boundary_state</a></td><td><a href='../module/boundary_state_reconstruction.html'>boundary_state_reconstruction</a></td><td>Subroutine</td><td><p>Call reconstruction based on the flag and boundary condition</p></td></tr>
 			 
 			   <tr><td><a href='../proc/reconstruct_imax.html'>reconstruct_imax</a></td><td><a href='../module/boundary_state_reconstruction.html'>boundary_state_reconstruction</a></td><td>Subroutine</td><td><p>Reconstruct state at the IMAX boundary face with MUSCL scheme</p></td></tr>
@@ -727,9 +526,6 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/set_value.html'>set_value</a></td><td><a href='../module/read_bc.html'>read_bc</a></td><td>Subroutine</td><td><p>Set particular value to the Fixed_var variable</p></td></tr>
 			 
-			   <tr><td><a href='../proc/setup_all.html'>setup_all</a></td><td><a href='../module/create_and_erase.html'>create_and_erase</a></td><td>Subroutine</td><td><p>To setup, create, allocate memory, link pointer
-    (everything that is required before first iteration</p></td></tr>
-			 
 			   <tr><td><a href='../proc/setup_bc.html'>setup_bc</a></td><td><a href='../module/bc.html'>bc</a></td><td>Subroutine</td><td><p>Initialization and allocate memory of boundary condition variables</p></td></tr>
 			 
 			   <tr><td><a href='../proc/setup_file.html'>setup_file</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Open the residual file to write</p></td></tr>
@@ -742,20 +538,13 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/setup_gradients.html'>setup_gradients</a></td><td><a href='../module/gradients.html'>gradients</a></td><td>Subroutine</td><td><p>Memoery allocation to the gradient variables and 
  setup pointer to the slice to the main gradient variable
- based on the various models being used.</p></td></tr>
+ based on the various models being used.</p><a href="../proc/setup_gradients.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/setup_grid.html'>setup_grid</a></td><td><a href='../module/grid.html'>grid</a></td><td>Subroutine</td><td><p>Read the grid file and initialize the grid</p></td></tr>
 			 
 			   <tr><td><a href='../proc/setup_interface.html'>setup_interface</a></td><td><a href='../module/interface1.html'>interface1</a></td><td>Subroutine</td><td><p>Allocate memory for the data communication between processors</p></td></tr>
 			 
-			   <tr><td><a href='../proc/setup_kkl_grad.html'>setup_kkl_grad</a></td><td><a href='../module/kkl_gradients.html'>kkl_gradients</a></td><td>Subroutine</td><td><p>Setup Pointer to the main array which stores gradient 
- all variables with x, y, z</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_laminar_grad.html'>setup_laminar_grad</a></td><td><a href='../module/laminar_gradients.html'>laminar_gradients</a></td><td>Subroutine</td><td><p>Setup pointer to the gradient of U, v, w, Temperature
- with respect to x, y, and z</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_lctm2015_grad.html'>setup_lctm2015_grad</a></td><td><a href='../module/lctm2015_gradients.html'>lctm2015_gradients</a></td><td>Subroutine</td><td><p>Setup Pointer to the main array which stores gradient 
- all variables with x, y, z</p></td></tr>
+			   <tr><td><a href='../proc/setup_interpolant_scheme.html'>setup_interpolant_scheme</a></td><td><a href='../module/face_interpolant.html'>face_interpolant</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/setup_lusgs.html'>setup_lusgs</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Subroutine</td><td><p>allocate array memory for data communication</p></td></tr>
 			 
@@ -765,42 +554,12 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/setup_resnorm.html'>setup_resnorm</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Allocate memory, setup scale and file to write</p></td></tr>
 			 
-			   <tr><td><a href='../proc/setup_sa_grad.html'>setup_sa_grad</a></td><td><a href='../module/sa_gradients.html'>sa_gradients</a></td><td>Subroutine</td><td><p>Setup Pointer to the main array which stores gradient 
- all variables with x, y, z</p></td></tr>
-			 
 			   <tr><td><a href='../proc/setup_scale.html'>setup_scale</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Setup scale required for relative and absolute
  residual for writing in the file.</p></td></tr>
 			 
-			   <tr><td><a href='../proc/setup_scheme.html'>setup_scheme</a></td><td><a href='../module/van_leer.html'>van_leer</a></td><td>Subroutine</td><td><p>Allocate memory to the flux variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E2.html'>setup_scheme</a></td><td><a href='../module/slau.html'>slau</a></td><td>Subroutine</td><td><p>Allocate memory to the flux variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E3.html'>setup_scheme</a></td><td><a href='../module/ausmup.html'>ausmUP</a></td><td>Subroutine</td><td><p>Allocate memory to the flux variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E4.html'>setup_scheme</a></td><td><a href='../module/ausmp.html'>ausmP</a></td><td>Subroutine</td><td><p>Allocate memory to the flux variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E5.html'>setup_scheme</a></td><td><a href='../module/ausm.html'>ausm</a></td><td>Subroutine</td><td><p>Allocate memory to the flux variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E6.html'>setup_scheme</a></td><td><a href='../module/ldfss0.html'>ldfss0</a></td><td>Subroutine</td><td><p>Allocate memory to the flux variables</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E7.html'>setup_scheme</a></td><td><a href='../module/muscl.html'>muscl</a></td><td>Subroutine</td><td><p>Allocate memoery to all array which store state
- the face.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E8.html'>setup_scheme</a></td><td><a href='../module/weno.html'>weno</a></td><td>Subroutine</td><td><p>Allocate memoery to all array which store state
- the face.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E9.html'>setup_scheme</a></td><td><a href='../module/weno_nm.html'>weno_NM</a></td><td>Subroutine</td><td><p>Allocate memoery to all array which store state
- the face.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_scheme%7E10.html'>setup_scheme</a></td><td><a href='../module/ppm.html'>ppm</a></td><td>Subroutine</td><td><p>Allocate memoery to all array which store state
- the face.</p></td></tr>
+			   <tr><td><a href='../proc/setup_scheme.html'>setup_scheme</a></td><td><a href='../module/scheme.html'>scheme</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/setup_solver.html'>setup_solver</a></td><td><a href='../module/solver.html'>solver</a></td><td>Subroutine</td><td><p>Call to allocate memoery and initialize domain</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_source.html'>Setup_source</a></td><td><a href='../module/source.html'>source</a></td><td>Subroutine</td><td><p>Allcoate memory to the required by the variable</p></td></tr>
-			 
-			   <tr><td><a href='../proc/setup_sst_grad.html'>setup_sst_grad</a></td><td><a href='../module/sst_gradients.html'>sst_gradients</a></td><td>Subroutine</td><td><p>Setup Pointer to the main array which stores gradient 
- all variables with x, y, z</p></td></tr>
 			 
 			   <tr><td><a href='../proc/setup_state.html'>setup_state</a></td><td><a href='../module/state.html'>state</a></td><td>Subroutine</td><td><p>Setup the state module.
  This subroutine should be run before the state variables
@@ -840,15 +599,7 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/sstflux%7E2.html'>SSTFlux</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Function</td><td><p>calculate the total flux through face for turbulent flow (SST)</p></td></tr>
 			 
-			   <tr><td><a href='../proc/start_run.html'>start_run</a></td><td><a href='../module/start_finish.html'>start_finish</a></td><td>Subroutine</td><td><p>Starting the solver setup</p></td></tr>
-			 
-			   <tr><td><a href='../proc/str_cat_bool.html'>str_cat_bool</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Join a string to a boolean and gives result as a string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/str_cat_int.html'>str_cat_int</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Join a string to a integer and gives result as a string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/str_cat_real.html'>str_cat_real</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Join a string to a real number and gives result as a string</p></td></tr>
-			 
-			   <tr><td><a href='../proc/str_cat_str.html'>str_cat_str</a></td><td><a href='../module/string.html'>string</a></td><td>Function</td><td><p>Join two string into one string</p></td></tr>
+			   <tr><td><a href='../proc/start_run.html'>start_run</a></td><td><a href='../module/solver.html'>solver</a></td><td>Subroutine</td><td><p>Starting the solver setup</p></td></tr>
 			 
 			   <tr><td><a href='../proc/subsonic_inlet.html'>subsonic_inlet</a></td><td><a href='../module/bc_primitive.html'>bc_primitive</a></td><td>Subroutine</td><td><p>Subsonic inlet boundary condition. 
  All the state variables's value expect pressure
@@ -873,27 +624,13 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			   <tr><td><a href='../proc/temp_based_density.html'>temp_based_density</a></td><td><a href='../module/bc_primitive.html'>bc_primitive</a></td><td>Subroutine</td><td><p>Specify the density in the ghost cell based on the
  temperature on the wall. Isothermal or adiabatic</p></td></tr>
 			 
-			   <tr><td><a href='../interface/tostr.html'>tostr</a></td><td><a href='../module/string.html'>string</a></td><td>Interface</td><td></td></tr>
-			 
 			   <tr><td><a href='../proc/total_pressure.html'>total_pressure</a></td><td><a href='../module/bc_primitive.html'>bc_primitive</a></td><td>Subroutine</td><td><p>Total Pressure Riemann boundary condition</p></td></tr>
-			 
-			   <tr><td><a href='../proc/turbulence_read_error.html'>turbulence_read_error</a></td><td><a href='../module/utils.html'>utils</a></td><td>Subroutine</td><td></td></tr>
-			 
-			   <tr><td><a href='../proc/ucase.html'>ucase</a></td><td><a href='../module/str_case.html'>str_case</a></td><td>Function</td><td><p>Mmake the whole string to upper case</p></td></tr>
-			 
-			   <tr><td><a href='../proc/unlink_aliases.html'>unlink_aliases</a></td><td><a href='../module/wall.html'>wall</a></td><td>Subroutine</td><td><p>Unlink all the pointer used in this module</p></td></tr>
-			 
-			   <tr><td><a href='../proc/unlink_aliases%7E2.html'>unlink_aliases</a></td><td><a href='../module/state.html'>state</a></td><td>Subroutine</td><td><p>Nullify the pointer link</p></td></tr>
 			 
 			   <tr><td><a href='../proc/update_kkl_variables.html'>update_KKL_variables</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Subroutine</td><td><p>Update the RANS (k-kL) equation with LU-SGS</p></td></tr>
 			 
 			   <tr><td><a href='../proc/update_laminar_variables.html'>update_laminar_variables</a></td><td><a href='../module/plusgs.html'>plusgs</a></td><td>Subroutine</td><td><p>Update laminar flow with LU-SGS scheme</p></td></tr>
 			 
 			   <tr><td><a href='../proc/update_laminar_variables%7E2.html'>update_laminar_variables</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Subroutine</td><td><p>Update laminar flow with LU-SGS scheme</p></td></tr>
-			 
-			   <tr><td><a href='../proc/update_laminar_variables_conservative.html'>update_laminar_variables_conservative</a></td><td><a href='../module/update.html'>update</a></td><td>Subroutine</td><td><p>Update first five conservative variables in time</p></td></tr>
-			 
-			   <tr><td><a href='../proc/update_laminar_variables_primitive.html'>update_laminar_variables_primitive</a></td><td><a href='../module/update.html'>update</a></td><td>Subroutine</td><td><p>Update first five primitive variables in time</p></td></tr>
 			 
 			   <tr><td><a href='../proc/update_lctm2015.html'>update_lctm2015</a></td><td><a href='../module/plusgs.html'>plusgs</a></td><td>Subroutine</td><td><p>Update the RANS/transition (LCTM2015) equation with LU-SGS</p></td></tr>
 			 
@@ -908,10 +645,6 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			   <tr><td><a href='../proc/update_sst_variables.html'>update_SST_variables</a></td><td><a href='../module/plusgs.html'>plusgs</a></td><td>Subroutine</td><td><p>Update the RANS (SST) equation with LU-SGS</p></td></tr>
 			 
 			   <tr><td><a href='../proc/update_sst_variables%7E2.html'>update_SST_variables</a></td><td><a href='../module/lusgs.html'>lusgs</a></td><td>Subroutine</td><td><p>Update the RANS (SST) equation with LU-SGS</p></td></tr>
-			 
-			   <tr><td><a href='../proc/update_turbulent_variables_conservative.html'>update_turbulent_variables_conservative</a></td><td><a href='../module/update.html'>update</a></td><td>Subroutine</td><td><p>Update conservative turbulence variables in time</p></td></tr>
-			 
-			   <tr><td><a href='../proc/update_turbulent_variables_primitive.html'>update_turbulent_variables_primitive</a></td><td><a href='../module/update.html'>update</a></td><td>Subroutine</td><td><p>Update primitive turbulence variables in time</p></td></tr>
 			 
 			   <tr><td><a href='../proc/update_with.html'>update_with</a></td><td><a href='../module/update.html'>update</a></td><td>Subroutine</td><td><p>A generalized scheme to updat the solution explicitly using
  any RK method and even first order euler explicit.</p></td></tr>
@@ -961,8 +694,6 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
 			 
 			   <tr><td><a href='../proc/write_resnorm.html'>write_resnorm</a></td><td><a href='../module/resnorm.html'>resnorm</a></td><td>Subroutine</td><td><p>Writing the residual in the file to save.</p></td></tr>
 			 
-			   <tr><td><a href='../proc/write_resnorm%7E2.html'>write_resnorm</a></td><td><a href='../module/write_output_vtk.html'>write_output_vtk</a></td><td>Subroutine</td><td><p>Write the residual information in the output file</p></td></tr>
-			 
 			   <tr><td><a href='../proc/write_restart_log.html'>write_restart_log</a></td><td><a href='../module/dump_solution.html'>dump_solution</a></td><td>Subroutine</td><td><p>Call to write log file in the subdirectory "restart". 
  It is useful information while restarting the solver</p></td></tr>
 			 
@@ -995,7 +726,7 @@ fashion, this subroutine will take care of that boundary condition.</p></td></tr
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

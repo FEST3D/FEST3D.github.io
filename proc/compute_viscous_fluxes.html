@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,19 +143,19 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">52 statements</a>
+    title=" 0.5% of total for procedures.">66 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/viscous2.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/viscous.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/viscous2.f90.html'>viscous2.f90</a></li>
+     <li><a href='../sourcefile/viscous.f90.html'>viscous.f90</a></li>
     
      <li><a href='../module/viscous.html'>viscous</a></li>
     
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine compute_viscous_fluxes(F, G, H)
+public subroutine compute_viscous_fluxes(F, G, H, qp, cells, Ifaces, Jfaces, Kfaces, scheme, flow, dims)
     
     
    
@@ -245,11 +249,11 @@ public subroutine compute_viscous_fluxes(F, G, H)
   
 <tr>
   
-  <td><span class="anchor" id="variable-f"></span>real,</td>
-  <td></td>
+  <td><span class="anchor" id="variable-f"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
   <td></td>
   
-  <td>dimension(:, :, :, :), pointer</td><td>::</td>
+  <td>dimension(:, :, :, :)</td><td>::</td>
   <td><strong>F</strong></td><td></td>
   
 </tr>
@@ -260,11 +264,11 @@ public subroutine compute_viscous_fluxes(F, G, H)
   
 <tr>
   
-  <td><span class="anchor" id="variable-g"></span>real,</td>
-  <td></td>
+  <td><span class="anchor" id="variable-g"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
   <td></td>
   
-  <td>dimension(:, :, :, :), pointer</td><td>::</td>
+  <td>dimension(:, :, :, :)</td><td>::</td>
   <td><strong>G</strong></td><td></td>
   
 </tr>
@@ -275,12 +279,132 @@ public subroutine compute_viscous_fluxes(F, G, H)
   
 <tr>
   
-  <td><span class="anchor" id="variable-h"></span>real,</td>
-  <td></td>
+  <td><span class="anchor" id="variable-h"></span>real(kind=wp),</td>
+  <td>intent(inout),</td>
   <td></td>
   
-  <td>dimension(:, :, :, :), pointer</td><td>::</td>
+  <td>dimension(:, :, :, :)</td><td>::</td>
   <td><strong>H</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qp%7E21"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cells%7E19"></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ifaces%7E18"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Store face quantites for I faces </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-jfaces%7E18"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Store face quantites for J faces </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kfaces%7E18"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Store face quantites for K faces </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-scheme%7E16"></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td><p>finite-volume Schemes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-flow%7E13"></span>type(<a href='../type/flowtype.html'>flowtype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>flow</strong></td><td><p>Information about fluid flow: freestream-speed, ref-viscosity,etc.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E30"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
   
 </tr>
 
@@ -660,60 +784,82 @@ public subroutine compute_viscous_fluxes(F, G, H)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">compute_viscous_fluxes</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">compute_viscous_fluxes</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; Call to all viscous flux subroutine based on </span>
       <span class="c">!&lt; the drection and turbulence/transition model being</span>
       <span class="c">!&lt; used</span>
 
         <span class="k">implicit none</span>
-<span class="k">        </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">H</span>
+<span class="k">        type</span><span class="p">(</span><span class="n">schemetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">scheme</span>
+        <span class="c">!&lt; finite-volume Schemes</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">flowtype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flow</span>
+        <span class="c">!&lt; Information about fluid flow: freestream-speed, ref-viscosity,etc.</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+        <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qp</span>
+        <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">H</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">celltype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cells</span>
+        <span class="c">!&lt; Input cell quantities: volume</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Ifaces</span>
+        <span class="c">!&lt; Store face quantites for I faces </span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Jfaces</span>
+        <span class="c">!&lt; Store face quantites for J faces </span>
+        <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Kfaces</span>
+        <span class="c">!&lt; Store face quantites for K faces </span>
+        <span class="kt">integer</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flagsi</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">)</span>
+        <span class="kt">integer</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flagsj</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">)</span>
+        <span class="kt">integer</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flagsk</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">)</span>
 
-        <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-        <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+        <span class="n">imx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+        <span class="n">jmx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+        <span class="n">kmx</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
+
+        <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">flagsi</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+        <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">flagsj</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         <span class="c">!if(kmx==2)then</span>
         <span class="c">!  continue</span>
         <span class="c">!else</span>
-          <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+          <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         <span class="c">!end if</span>
         
-        <span class="k">select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">turbulence</span><span class="p">))</span>
+        <span class="k">select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">turbulence</span><span class="p">))</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
             <span class="c">!do nothing</span>
             <span class="k">continue</span>
 
 <span class="k">          case</span><span class="p">(</span><span class="s1">&#39;sa&#39;</span><span class="p">,</span> <span class="s1">&#39;saBC&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_sa</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_sa</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_sa</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_sa</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">flagsi</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_sa</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">flagsj</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_sa</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;sst&#39;</span><span class="p">,</span> <span class="s1">&#39;sst2003&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_sst</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_sst</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_sst</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span>  <span class="n">Ifaces</span><span class="p">,</span> <span class="n">flagsi</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_sst</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span>  <span class="n">Jfaces</span><span class="p">,</span> <span class="n">flagsj</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
             <span class="k">if</span><span class="p">(</span><span class="n">kmx</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span><span class="k">then</span>
 <span class="k">              continue</span>
 <span class="k">            else</span>
-<span class="k">              call </span><span class="n">compute_viscous_fluxes_sst</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="k">              call </span><span class="n">compute_viscous_fluxes_sst</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
             <span class="k">end if</span>
 <span class="k">          case</span><span class="p">(</span><span class="s1">&#39;kkl&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">flagsi</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">flagsj</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
             <span class="c">!if(kmx==2)then</span>
             <span class="c">!  continue</span>
             <span class="c">!else</span>
-              <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+              <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
             <span class="c">!end if</span>
           <span class="k">case </span><span class="n">DEFAULT</span>
             <span class="n">Fatal_error</span>
         <span class="k">end select</span>
 
 
-<span class="k">        select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">transition</span><span class="p">))</span>
+<span class="k">        select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">transition</span><span class="p">))</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;lctm2015&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_lctm2015</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">compute_viscous_fluxes_lctm2015</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_lctm2015</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">flagsi</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_lctm2015</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">flagsj</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
             <span class="k">if</span><span class="p">(</span><span class="n">kmx</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span><span class="k">then</span>
 <span class="k">              continue</span>
 <span class="k">            else</span>
-<span class="k">              call </span><span class="n">compute_viscous_fluxes_lctm2015</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="k">              call </span><span class="n">compute_viscous_fluxes_lctm2015</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
             <span class="k">end if</span>
 <span class="k">          case</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;bc&#39;</span><span class="p">)</span>
             <span class="c">!do nothing</span>
@@ -755,7 +901,7 @@ public subroutine compute_viscous_fluxes(F, G, H)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

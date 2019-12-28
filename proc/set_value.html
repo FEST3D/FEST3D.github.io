@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -243,7 +247,7 @@ private subroutine set_value(fixed_var, fix_val, inf_val, count, ios)
   
 <tr>
   
-  <td><span class="anchor" id="variable-fixed_var"></span>real,</td>
+  <td><span class="anchor" id="variable-fixed_var"></span>real(kind=wp),</td>
   <td>intent(out),</td>
   <td></td>
   
@@ -258,7 +262,7 @@ private subroutine set_value(fixed_var, fix_val, inf_val, count, ios)
   
 <tr>
   
-  <td><span class="anchor" id="variable-fix_val%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-fix_val%7E2"></span>real(kind=wp),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -273,7 +277,7 @@ private subroutine set_value(fixed_var, fix_val, inf_val, count, ios)
   
 <tr>
   
-  <td><span class="anchor" id="variable-inf_val"></span>real,</td>
+  <td><span class="anchor" id="variable-inf_val"></span>real(kind=wp),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -414,61 +418,46 @@ private subroutine set_value(fixed_var, fix_val, inf_val, count, ios)
 <g id="proc~~set_value~~CalledByGraph_node6" class="node">
 <title>proc~setup_solver</title>
 <g id="a_proc~~set_value~~CalledByGraph_node6"><a xlink:href=".././proc/setup_solver.html" xlink:title="setup_solver">
-<polygon fill="#d9534f" stroke="#d9534f" points="254,-66 181,-66 181,-42 254,-42 254,-66"/>
-<text text-anchor="middle" x="217.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_solver</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="254,-45 181,-45 181,-21 254,-21 254,-45"/>
+<text text-anchor="middle" x="217.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_solver</text>
 </a>
 </g>
 </g>
 <!-- proc~setup_solver&#45;&gt;proc~setup_bc -->
 <g id="proc~~set_value~~CalledByGraph_edge6" class="edge">
 <title>proc~setup_solver&#45;&gt;proc~setup_bc</title>
-<path fill="none" stroke="#ff0000" d="M254.0671,-46.3591C262.4462,-44.6083 271.3748,-42.7426 279.8199,-40.9779"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="280.7393,-44.3615 289.8119,-38.89 279.3074,-37.5095 280.7393,-44.3615"/>
-</g>
-<!-- proc~setup_all -->
-<g id="proc~~set_value~~CalledByGraph_node7" class="node">
-<title>proc~setup_all</title>
-<g id="a_proc~~set_value~~CalledByGraph_node7"><a xlink:href=".././proc/setup_all.html" xlink:title="setup_all">
-<polygon fill="#d9534f" stroke="#d9534f" points="245,-24 190,-24 190,0 245,0 245,-24"/>
-<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_all</text>
-</a>
-</g>
-</g>
-<!-- proc~setup_all&#45;&gt;proc~setup_bc -->
-<g id="proc~~set_value~~CalledByGraph_edge7" class="edge">
-<title>proc~setup_all&#45;&gt;proc~setup_bc</title>
-<path fill="none" stroke="#ff0000" d="M245.2281,-17.7939C255.9231,-20.0287 268.3343,-22.6221 279.8453,-25.0274"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="279.1589,-28.4595 289.6634,-27.0789 280.5907,-21.6075 279.1589,-28.4595"/>
+<path fill="none" stroke="#ff0000" d="M254.0671,-33C262.3541,-33 271.1786,-33 279.5413,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="279.812,-36.5001 289.8119,-33 279.8119,-29.5001 279.812,-36.5001"/>
 </g>
 <!-- proc~start_run -->
-<g id="proc~~set_value~~CalledByGraph_node8" class="node">
+<g id="proc~~set_value~~CalledByGraph_node7" class="node">
 <title>proc~start_run</title>
-<g id="a_proc~~set_value~~CalledByGraph_node8"><a xlink:href=".././proc/start_run.html" xlink:title="start_run">
-<polygon fill="#d9534f" stroke="#d9534f" points="145,-66 90,-66 90,-42 145,-42 145,-66"/>
-<text text-anchor="middle" x="117.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_run</text>
+<g id="a_proc~~set_value~~CalledByGraph_node7"><a xlink:href=".././proc/start_run.html" xlink:title="start_run">
+<polygon fill="#d9534f" stroke="#d9534f" points="145,-45 90,-45 90,-21 145,-21 145,-45"/>
+<text text-anchor="middle" x="117.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_run</text>
 </a>
 </g>
 </g>
 <!-- proc~start_run&#45;&gt;proc~setup_solver -->
-<g id="proc~~set_value~~CalledByGraph_edge8" class="edge">
+<g id="proc~~set_value~~CalledByGraph_edge7" class="edge">
 <title>proc~start_run&#45;&gt;proc~setup_solver</title>
-<path fill="none" stroke="#ff0000" d="M145.0902,-54C152.985,-54 161.8197,-54 170.5313,-54"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="170.6377,-57.5001 180.6376,-54 170.6376,-50.5001 170.6377,-57.5001"/>
+<path fill="none" stroke="#ff0000" d="M145.0902,-33C152.985,-33 161.8197,-33 170.5313,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="170.6377,-36.5001 180.6376,-33 170.6376,-29.5001 170.6377,-36.5001"/>
 </g>
 <!-- program~main -->
-<g id="proc~~set_value~~CalledByGraph_node9" class="node">
+<g id="proc~~set_value~~CalledByGraph_node8" class="node">
 <title>program~main</title>
-<g id="a_proc~~set_value~~CalledByGraph_node9"><a xlink:href=".././program/main.html" xlink:title="main">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
-<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+<g id="a_proc~~set_value~~CalledByGraph_node8"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-45 0,-45 0,-21 54,-21 54,-45"/>
+<text text-anchor="middle" x="27" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
 </a>
 </g>
 </g>
 <!-- program~main&#45;&gt;proc~start_run -->
-<g id="proc~~set_value~~CalledByGraph_edge9" class="edge">
+<g id="proc~~set_value~~CalledByGraph_edge8" class="edge">
 <title>program~main&#45;&gt;proc~start_run</title>
-<path fill="none" stroke="#ff0000" d="M54.153,-54C62.1482,-54 71.046,-54 79.5856,-54"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="79.7397,-57.5001 89.7397,-54 79.7397,-50.5001 79.7397,-57.5001"/>
+<path fill="none" stroke="#ff0000" d="M54.153,-33C62.1482,-33 71.046,-33 79.5856,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.7397,-36.5001 89.7397,-33 79.7397,-29.5001 79.7397,-36.5001"/>
 </g>
 </g>
 </svg>
@@ -598,9 +587,9 @@ private subroutine set_value(fixed_var, fix_val, inf_val, count, ios)
       <span class="k">implicit none</span>
 <span class="k">      </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ios</span>
       <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">count</span>
-<span class="nb">      </span><span class="kt">real</span>   <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">fix_val</span>
-      <span class="kt">real</span>   <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">inf_val</span>
-      <span class="kt">real</span>   <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">fixed_var</span>
+<span class="nb">      </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>   <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">fix_val</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>   <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">inf_val</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span>   <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">fixed_var</span>
       <span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
 <span class="k">        </span><span class="n">fixed_var</span><span class="p">(</span><span class="nb">count</span><span class="p">)</span> <span class="o">=</span> <span class="n">fix_val</span>
       <span class="k">else </span>
@@ -628,7 +617,7 @@ private subroutine set_value(fixed_var, fix_val, inf_val, count, ios)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

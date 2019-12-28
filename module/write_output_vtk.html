@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.8% of total for modules and submodules.">351 statements</a>
+    title=" 1.4% of total for modules and submodules.">219 statements</a>
      </li> 
      
      
@@ -182,19 +186,41 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-i%7E8">i</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-out_file_unit%7E3">OUT_FILE_UNIT</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-j%7E4">j</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-i%7E2">i</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-k%7E4">k</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-j%7E2">j</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-speed_inf%7E2">speed_inf</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-k%7E2">k</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-file_format%7E2">file_format</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-imx%7E16">imx</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-data_format%7E2">data_format</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-jmx%7E16">jmx</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-newline%7E2">newline</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-kmx%7E16">kmx</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-density%7E3">density</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-x_speed%7E3">x_speed</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-y_speed%7E3">y_speed</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-z_speed%7E3">z_speed</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-pressure%7E3">pressure</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tk%7E3">tk</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tw%7E3">tw</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-te%7E3">te</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tv%7E3">tv</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tkl%7E3">tkl</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tgm%7E3">tgm</a>
       
     </div>
   </div>
@@ -224,8 +250,6 @@
       <a class="list-group-item" href="../module/write_output_vtk.html#proc-write_grid%7E2">write_grid</a>
       
       <a class="list-group-item" href="../module/write_output_vtk.html#proc-write_velocity">write_velocity</a>
-      
-      <a class="list-group-item" href="../module/write_output_vtk.html#proc-write_resnorm%7E2">write_resnorm</a>
       
       <a class="list-group-item" href="../module/write_output_vtk.html#proc-write_scalar%7E2">write_scalar</a>
       
@@ -260,15 +284,17 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/utils.html'>utils</a></li>
+    <li><a href='../module/wall_dist.html'>wall_dist</a></li>
     
-    <li><a href='../module/global_vars.html'>global_vars</a></li>
+    <li><a href='../module/gradients.html'>gradients</a></li>
     
-    <li><a href='../module/string.html'>string</a></li>
-    
-    <li><a href='../module/global.html'>global</a></li>
+    <li><a href='../module/vartypes.html'>vartypes</a></li>
     
     <li><a href='../module/global_sst.html'>global_sst</a></li>
+    
+    <li><a href='../module/viscosity.html'>viscosity</a></li>
+    
+    <li><a href='../module/utils.html'>utils</a></li>
     
   </ul>
       </li>
@@ -282,103 +308,246 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: module~~write_output_vtk~~UsesGraph Pages: 1 -->
-<svg id="modulewrite_output_vtkUsesGraph" width="389pt" height="192pt"
- viewBox="0.00 0.00 389.00 192.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~write_output_vtk~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 188)">
+<svg id="modulewrite_output_vtkUsesGraph" width="505pt" height="334pt"
+ viewBox="0.00 0.00 505.00 334.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~write_output_vtk~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 330)">
 <title>module~~write_output_vtk~~UsesGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-188 385,-188 385,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-330 501,-330 501,4 -4,4"/>
 <!-- module~write_output_vtk -->
 <g id="module~~write_output_vtk~~UsesGraph_node1" class="node">
 <title>module~write_output_vtk</title>
-<polygon fill="none" stroke="#000000" points="381,-104 290,-104 290,-80 381,-80 381,-104"/>
-<text text-anchor="middle" x="335.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_output_vtk</text>
+<polygon fill="none" stroke="#000000" points="497,-166 406,-166 406,-142 497,-142 497,-166"/>
+<text text-anchor="middle" x="451.5" y="-151.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_output_vtk</text>
+</g>
+<!-- module~wall_dist -->
+<g id="module~~write_output_vtk~~UsesGraph_node2" class="node">
+<title>module~wall_dist</title>
+<g id="a_module~~write_output_vtk~~UsesGraph_node2"><a xlink:href=".././module/wall_dist.html" xlink:title="wall_dist">
+<polygon fill="#337ab7" stroke="#337ab7" points="276.5,-166 222.5,-166 222.5,-142 276.5,-142 276.5,-166"/>
+<text text-anchor="middle" x="249.5" y="-151.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">wall_dist</text>
+</a>
+</g>
+</g>
+<!-- module~write_output_vtk&#45;&gt;module~wall_dist -->
+<g id="module~~write_output_vtk~~UsesGraph_edge1" class="edge">
+<title>module~write_output_vtk&#45;&gt;module~wall_dist</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M446.1769,-166.2075C433.313,-193.7264 397.5185,-259.3449 343,-274"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M343,-274C318.8706,-280.4862 279.3327,-211.8313 260.3446,-175.5663"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="263.2548,-173.5729 255.5638,-166.286 257.032,-176.7786 263.2548,-173.5729"/>
 </g>
 <!-- module~utils -->
-<g id="module~~write_output_vtk~~UsesGraph_node2" class="node">
+<g id="module~~write_output_vtk~~UsesGraph_node3" class="node">
 <title>module~utils</title>
-<g id="a_module~~write_output_vtk~~UsesGraph_node2"><a xlink:href=".././module/utils.html" xlink:title="utils">
-<polygon fill="#337ab7" stroke="#337ab7" points="250.5,-184 196.5,-184 196.5,-160 250.5,-160 250.5,-184"/>
-<text text-anchor="middle" x="223.5" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils</text>
+<g id="a_module~~write_output_vtk~~UsesGraph_node3"><a xlink:href=".././module/utils.html" xlink:title="utils">
+<polygon fill="#337ab7" stroke="#337ab7" points="180,-226 126,-226 126,-202 180,-202 180,-226"/>
+<text text-anchor="middle" x="153" y="-211.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utils</text>
 </a>
 </g>
 </g>
 <!-- module~write_output_vtk&#45;&gt;module~utils -->
-<g id="module~~write_output_vtk~~UsesGraph_edge1" class="edge">
-<title>module~write_output_vtk&#45;&gt;module~utils</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M318.4896,-104.1503C299.8802,-117.4427 269.8669,-138.8808 248.5613,-154.099"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="246.4065,-151.337 240.3035,-159.9975 250.4752,-157.0332 246.4065,-151.337"/>
-</g>
-<!-- module~global_vars -->
-<g id="module~~write_output_vtk~~UsesGraph_node3" class="node">
-<title>module~global_vars</title>
-<g id="a_module~~write_output_vtk~~UsesGraph_node3"><a xlink:href=".././module/global_vars.html" xlink:title="global_vars">
-<polygon fill="#337ab7" stroke="#337ab7" points="157,-144 90,-144 90,-120 157,-120 157,-144"/>
-<text text-anchor="middle" x="123.5" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_vars</text>
-</a>
-</g>
-</g>
-<!-- module~write_output_vtk&#45;&gt;module~global_vars -->
 <g id="module~~write_output_vtk~~UsesGraph_edge2" class="edge">
-<title>module~write_output_vtk&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M292.1344,-104.0969C279.8673,-107.2669 266.4627,-110.4947 254,-113 225.2958,-118.7703 192.7048,-123.5168 167.2728,-126.8225"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="166.6752,-123.3702 157.1976,-128.1057 167.5596,-130.3142 166.6752,-123.3702"/>
-</g>
-<!-- module~string -->
-<g id="module~~write_output_vtk~~UsesGraph_node4" class="node">
-<title>module~string</title>
-<g id="a_module~~write_output_vtk~~UsesGraph_node4"><a xlink:href=".././module/string.html" xlink:title="string">
-<polygon fill="#337ab7" stroke="#337ab7" points="250.5,-104 196.5,-104 196.5,-80 250.5,-80 250.5,-104"/>
-<text text-anchor="middle" x="223.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">string</text>
-</a>
-</g>
-</g>
-<!-- module~write_output_vtk&#45;&gt;module~string -->
-<g id="module~~write_output_vtk~~UsesGraph_edge3" class="edge">
-<title>module~write_output_vtk&#45;&gt;module~string</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M289.9453,-92C280.2648,-92 270.1526,-92 260.8217,-92"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="260.6836,-88.5001 250.6835,-92 260.6835,-95.5001 260.6836,-88.5001"/>
-</g>
-<!-- module~global -->
-<g id="module~~write_output_vtk~~UsesGraph_node5" class="node">
-<title>module~global</title>
-<g id="a_module~~write_output_vtk~~UsesGraph_node5"><a xlink:href=".././module/global.html" xlink:title="global">
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-104 0,-104 0,-80 54,-80 54,-104"/>
-<text text-anchor="middle" x="27" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global</text>
-</a>
-</g>
-</g>
-<!-- module~write_output_vtk&#45;&gt;module~global -->
-<g id="module~~write_output_vtk~~UsesGraph_edge4" class="edge">
-<title>module~write_output_vtk&#45;&gt;module~global</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M296.9197,-79.934C283.4784,-76.3003 268.2056,-72.8008 254,-71 187.3397,-62.5499 109.2578,-74.5438 64.2217,-83.582"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="63.4042,-80.1769 54.32,-85.6292 64.8215,-87.0319 63.4042,-80.1769"/>
+<title>module~write_output_vtk&#45;&gt;module~utils</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M343,-274C289.1571,-288.4735 270.9808,-275.1628 219,-255 203.453,-248.9695 200.1127,-242.9302 183.4332,-231.6451"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="185.047,-228.5222 174.7393,-226.0721 181.2693,-234.4153 185.047,-228.5222"/>
 </g>
 <!-- module~global_sst -->
-<g id="module~~write_output_vtk~~UsesGraph_node6" class="node">
+<g id="module~~write_output_vtk~~UsesGraph_node4" class="node">
 <title>module~global_sst</title>
-<g id="a_module~~write_output_vtk~~UsesGraph_node6"><a xlink:href=".././module/global_sst.html" xlink:title="global_sst">
-<polygon fill="#337ab7" stroke="#337ab7" points="254,-24 193,-24 193,0 254,0 254,-24"/>
-<text text-anchor="middle" x="223.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sst</text>
+<g id="a_module~~write_output_vtk~~UsesGraph_node4"><a xlink:href=".././module/global_sst.html" xlink:title="global_sst">
+<polygon fill="#337ab7" stroke="#337ab7" points="280,-326 219,-326 219,-302 280,-302 280,-326"/>
+<text text-anchor="middle" x="249.5" y="-311.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sst</text>
 </a>
 </g>
 </g>
 <!-- module~write_output_vtk&#45;&gt;module~global_sst -->
-<g id="module~~write_output_vtk~~UsesGraph_edge5" class="edge">
+<g id="module~~write_output_vtk~~UsesGraph_edge3" class="edge">
 <title>module~write_output_vtk&#45;&gt;module~global_sst</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M318.4896,-79.8497C299.8802,-66.5573 269.8669,-45.1192 248.5613,-29.901"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="250.4752,-26.9668 240.3035,-24.0025 246.4065,-32.663 250.4752,-26.9668"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M343,-274C321.996,-279.6461 299.556,-289.1205 281.9255,-297.4316"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="280.1522,-294.401 272.6652,-301.8974 283.1929,-300.7061 280.1522,-294.401"/>
 </g>
-<!-- module~utils&#45;&gt;module~global_vars -->
+<!-- module~viscosity -->
+<g id="module~~write_output_vtk~~UsesGraph_node5" class="node">
+<title>module~viscosity</title>
+<g id="a_module~~write_output_vtk~~UsesGraph_node5"><a xlink:href=".././module/viscosity.html" xlink:title="viscosity">
+<polygon fill="#337ab7" stroke="#337ab7" points="370,-166 316,-166 316,-142 370,-142 370,-166"/>
+<text text-anchor="middle" x="343" y="-151.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">viscosity</text>
+</a>
+</g>
+</g>
+<!-- module~write_output_vtk&#45;&gt;module~viscosity -->
+<g id="module~~write_output_vtk~~UsesGraph_edge4" class="edge">
+<title>module~write_output_vtk&#45;&gt;module~viscosity</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M405.8007,-154C397.2492,-154 388.407,-154 380.1529,-154"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="380.0785,-150.5001 370.0785,-154 380.0785,-157.5001 380.0785,-150.5001"/>
+</g>
+<!-- module~gradients -->
+<g id="module~~write_output_vtk~~UsesGraph_node6" class="node">
+<title>module~gradients</title>
+<g id="a_module~~write_output_vtk~~UsesGraph_node6"><a xlink:href=".././module/gradients.html" xlink:title="gradients">
+<polygon fill="#337ab7" stroke="#337ab7" points="278,-246 221,-246 221,-222 278,-222 278,-246"/>
+<text text-anchor="middle" x="249.5" y="-231.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gradients</text>
+</a>
+</g>
+</g>
+<!-- module~write_output_vtk&#45;&gt;module~gradients -->
+<g id="module~~write_output_vtk~~UsesGraph_edge5" class="edge">
+<title>module~write_output_vtk&#45;&gt;module~gradients</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M343,-274C317.3884,-280.8847 289.6416,-265.9185 271.0831,-252.3736"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="273.0571,-249.476 263.002,-246.1376 268.7806,-255.0178 273.0571,-249.476"/>
+</g>
+<!-- module~vartypes -->
+<g id="module~~write_output_vtk~~UsesGraph_node7" class="node">
+<title>module~vartypes</title>
+<g id="a_module~~write_output_vtk~~UsesGraph_node7"><a xlink:href=".././module/vartypes.html" xlink:title="vartypes">
+<polygon fill="#337ab7" stroke="#337ab7" points="180,-124 126,-124 126,-100 180,-100 180,-124"/>
+<text text-anchor="middle" x="153" y="-109.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vartypes</text>
+</a>
+</g>
+</g>
+<!-- module~write_output_vtk&#45;&gt;module~vartypes -->
 <g id="module~~write_output_vtk~~UsesGraph_edge6" class="edge">
-<title>module~utils&#45;&gt;module~global_vars</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M196.4386,-161.1754C186.2384,-157.0953 174.4121,-152.3648 163.2899,-147.9159"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="164.3402,-144.5665 153.7556,-144.1022 161.7405,-151.0659 164.3402,-144.5665"/>
+<title>module~write_output_vtk&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M436.1421,-141.7573C407.4903,-119.7921 343.0623,-74.4492 280,-58 253.7666,-51.1573 244.2669,-48.1716 219,-58 198.7714,-65.8686 199.9272,-77.4139 183,-91 181.8225,-91.9451 180.6052,-92.8956 179.3657,-93.8424"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="177.0447,-91.2041 171.049,-99.9392 181.1834,-96.8496 177.0447,-91.2041"/>
 </g>
-<!-- module~global_vars&#45;&gt;module~global -->
+<!-- module~wall_dist&#45;&gt;module~utils -->
 <g id="module~~write_output_vtk~~UsesGraph_edge7" class="edge">
-<title>module~global_vars&#45;&gt;module~global</title>
-<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M94.5468,-119.9987C84.8704,-115.9877 73.9542,-111.4629 63.7638,-107.2389"/>
-<polygon fill="#cbff00" stroke="#cbff00" points="64.8582,-103.9038 54.2802,-103.3078 62.1778,-110.3703 64.8582,-103.9038"/>
+<title>module~wall_dist&#45;&gt;module~utils</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M229.9718,-166.1419C215.9763,-174.8438 196.9116,-186.6974 181.2577,-196.4304"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="179.1434,-193.6236 172.4992,-201.8762 182.8396,-199.5682 179.1434,-193.6236"/>
+</g>
+<!-- module~wall_dist&#45;&gt;module~vartypes -->
+<g id="module~~write_output_vtk~~UsesGraph_edge8" class="edge">
+<title>module~wall_dist&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M222.3626,-142.1889C212.1871,-137.7602 200.4511,-132.6523 189.5605,-127.9123"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="190.8341,-124.6496 180.2681,-123.868 188.0405,-131.068 190.8341,-124.6496"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~write_output_vtk~~UsesGraph_node10" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~write_output_vtk~~UsesGraph_node10"><a xlink:href="http://fortranwiki.org/fortran/show/ISO_FORTRAN_ENV" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-103 0,-103 0,-79 87,-79 87,-103"/>
+<text text-anchor="middle" x="43.5" y="-88.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~global_sst&#45;&gt;iso_fortran_env -->
+<g id="module~~write_output_vtk~~UsesGraph_edge9" class="edge">
+<title>module~global_sst&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M222.0141,-301.9381C194.315,-288.7045 151.6737,-265.2595 123,-235 88.0343,-198.1006 63.2559,-142.8905 51.4039,-112.6764"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="54.5871,-111.2006 47.7552,-103.1027 48.046,-113.6935 54.5871,-111.2006"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~wall_dist -->
+<g id="module~~write_output_vtk~~UsesGraph_edge10" class="edge">
+<title>module~viscosity&#45;&gt;module~wall_dist</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M315.9559,-154C306.9254,-154 296.6941,-154 287.0132,-154"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="286.8073,-150.5001 276.8072,-154 286.8072,-157.5001 286.8073,-150.5001"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~utils -->
+<g id="module~~write_output_vtk~~UsesGraph_edge15" class="edge">
+<title>module~viscosity&#45;&gt;module~utils</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M315.7576,-163.2381C304.6822,-166.9528 291.7487,-171.2385 280,-175 249.7481,-184.6855 215.2906,-195.2369 189.9075,-202.9195"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="188.8706,-199.5764 180.3099,-205.8186 190.8948,-206.2774 188.8706,-199.5764"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~global_sst -->
+<g id="module~~write_output_vtk~~UsesGraph_edge13" class="edge">
+<title>module~viscosity&#45;&gt;module~global_sst</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M335.9723,-166.026C320.1338,-193.1294 281.4901,-259.2576 261.6668,-293.1798"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="258.6329,-291.4346 256.6092,-301.8344 264.6766,-294.9665 258.6329,-291.4346"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~gradients -->
+<g id="module~~write_output_vtk~~UsesGraph_edge14" class="edge">
+<title>module~viscosity&#45;&gt;module~gradients</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M328.9969,-166.0215C316.2362,-176.9719 296.8633,-193.5853 280,-208 277.2728,-210.3312 274.4069,-212.778 271.5688,-215.1994"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="269.1206,-212.6874 263.782,-221.8389 273.6624,-218.014 269.1206,-212.6874"/>
+</g>
+<!-- module~viscosity&#45;&gt;module~vartypes -->
+<g id="module~~write_output_vtk~~UsesGraph_edge16" class="edge">
+<title>module~viscosity&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M249.5,-72C236.4356,-68.4857 205.8228,-82.6536 182.5531,-95.0871"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="180.8335,-92.0382 173.7328,-99.9014 184.1873,-98.1825 180.8335,-92.0382"/>
+</g>
+<!-- module~global_kkl -->
+<g id="module~~write_output_vtk~~UsesGraph_node8" class="node">
+<title>module~global_kkl</title>
+<g id="a_module~~write_output_vtk~~UsesGraph_node8"><a xlink:href=".././module/global_kkl.html" xlink:title="global_kkl">
+<polygon fill="#337ab7" stroke="#337ab7" points="183,-24 123,-24 123,0 183,0 183,-24"/>
+<text text-anchor="middle" x="153" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_kkl</text>
+</a>
+</g>
+</g>
+<!-- module~viscosity&#45;&gt;module~global_kkl -->
+<g id="module~~write_output_vtk~~UsesGraph_edge11" class="edge">
+<title>module~viscosity&#45;&gt;module~global_kkl</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M338.1112,-141.8745C329.3824,-121.6838 309.2481,-81.1136 280,-58 254.6309,-37.9519 219.7469,-26.1553 192.9574,-19.5376"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="193.6562,-16.1068 183.123,-17.2484 192.0692,-22.9245 193.6562,-16.1068"/>
+</g>
+<!-- module~copy_bc -->
+<g id="module~~write_output_vtk~~UsesGraph_node9" class="node">
+<title>module~copy_bc</title>
+<g id="a_module~~write_output_vtk~~UsesGraph_node9"><a xlink:href=".././module/copy_bc.html" xlink:title="copy_bc">
+<polygon fill="#337ab7" stroke="#337ab7" points="276.5,-124 222.5,-124 222.5,-100 276.5,-100 276.5,-124"/>
+<text text-anchor="middle" x="249.5" y="-109.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">copy_bc</text>
+</a>
+</g>
+</g>
+<!-- module~viscosity&#45;&gt;module~copy_bc -->
+<g id="module~~write_output_vtk~~UsesGraph_edge12" class="edge">
+<title>module~viscosity&#45;&gt;module~copy_bc</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M316.2067,-141.9645C306.6215,-137.6588 295.6584,-132.7342 285.4271,-128.1384"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="286.8534,-124.9422 276.2973,-124.0373 283.9851,-131.3276 286.8534,-124.9422"/>
+</g>
+<!-- module~global_sa -->
+<g id="module~~write_output_vtk~~UsesGraph_node11" class="node">
+<title>module~global_sa</title>
+<g id="a_module~~write_output_vtk~~UsesGraph_node11"><a xlink:href=".././module/global_sa.html" xlink:title="global_sa">
+<polygon fill="#337ab7" stroke="#337ab7" points="182,-82 124,-82 124,-58 182,-58 182,-82"/>
+<text text-anchor="middle" x="153" y="-67.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">global_sa</text>
+</a>
+</g>
+</g>
+<!-- module~viscosity&#45;&gt;module~global_sa -->
+<g id="module~~write_output_vtk~~UsesGraph_edge17" class="edge">
+<title>module~viscosity&#45;&gt;module~global_sa</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M335.0105,-141.9486C320.7488,-121.8247 288.6974,-82.5441 249.5,-72"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M249.5,-72C231.1033,-67.0513 210.0147,-66.1035 192.2534,-66.5791"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="192.0685,-63.0836 182.2257,-67.004 192.365,-70.0774 192.0685,-63.0836"/>
+</g>
+<!-- module~gradients&#45;&gt;module~utils -->
+<g id="module~~write_output_vtk~~UsesGraph_edge18" class="edge">
+<title>module~gradients&#45;&gt;module~utils</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M220.8081,-228.0535C211.141,-226.05 200.2132,-223.7851 189.9979,-221.668"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="190.5955,-218.2175 180.0932,-219.6152 189.1748,-225.0718 190.5955,-218.2175"/>
+</g>
+<!-- module~gradients&#45;&gt;module~vartypes -->
+<g id="module~~write_output_vtk~~UsesGraph_edge19" class="edge">
+<title>module~gradients&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M239.8944,-221.8561C223.2759,-200.8462 189.0066,-157.5213 168.825,-132.0067"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="171.5156,-129.7665 162.5667,-124.0947 166.0254,-134.1091 171.5156,-129.7665"/>
+</g>
+<!-- module~vartypes&#45;&gt;iso_fortran_env -->
+<g id="module~~write_output_vtk~~UsesGraph_edge20" class="edge">
+<title>module~vartypes&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M125.9326,-106.809C117.1927,-105.1329 107.1757,-103.2118 97.2049,-101.2996"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="97.7789,-97.8459 87.2986,-99.3997 96.4604,-104.7207 97.7789,-97.8459"/>
+</g>
+<!-- module~global_kkl&#45;&gt;iso_fortran_env -->
+<g id="module~~write_output_vtk~~UsesGraph_edge21" class="edge">
+<title>module~global_kkl&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M135.8906,-24.3438C117.8907,-37.33 89.3703,-57.9064 68.7762,-72.7642"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="66.5512,-70.0536 60.4892,-78.7429 70.6468,-75.7304 66.5512,-70.0536"/>
+</g>
+<!-- module~copy_bc&#45;&gt;module~vartypes -->
+<g id="module~~write_output_vtk~~UsesGraph_edge22" class="edge">
+<title>module~copy_bc&#45;&gt;module~vartypes</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M222.3626,-112C212.4954,-112 201.1609,-112 190.5528,-112"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="190.2681,-108.5001 180.2681,-112 190.2681,-115.5001 190.2681,-108.5001"/>
+</g>
+<!-- module~global_sa&#45;&gt;iso_fortran_env -->
+<g id="module~~write_output_vtk~~UsesGraph_edge23" class="edge">
+<title>module~global_sa&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M123.9435,-75.5725C115.6613,-77.1609 106.3645,-78.9438 97.1112,-80.7184"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="96.2992,-77.3103 87.1374,-82.6312 97.6177,-84.185 96.2992,-77.3103"/>
 </g>
 </g>
 </svg>
@@ -462,159 +631,80 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: module~~write_output_vtk~~UsedByGraph Pages: 1 -->
-<svg id="modulewrite_output_vtkUsedByGraph" width="641pt" height="79pt"
- viewBox="0.00 0.00 641.00 78.77" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~write_output_vtk~~UsedByGraph" class="graph" transform="scale(.7723 .7723) rotate(0) translate(4 98)">
+<svg id="modulewrite_output_vtkUsedByGraph" width="504pt" height="32pt"
+ viewBox="0.00 0.00 504.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~write_output_vtk~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>module~~write_output_vtk~~UsedByGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-98 826,-98 826,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 500,-28 500,4 -4,4"/>
 <!-- module~write_output_vtk -->
 <g id="module~~write_output_vtk~~UsedByGraph_node1" class="node">
 <title>module~write_output_vtk</title>
-<polygon fill="none" stroke="#000000" points="91,-86 0,-86 0,-62 91,-62 91,-86"/>
-<text text-anchor="middle" x="45.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_output_vtk</text>
+<polygon fill="none" stroke="#000000" points="91,-24 0,-24 0,0 91,0 91,-24"/>
+<text text-anchor="middle" x="45.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_output_vtk</text>
 </g>
 <!-- module~write_output -->
 <g id="module~~write_output_vtk~~UsedByGraph_node2" class="node">
 <title>module~write_output</title>
 <g id="a_module~~write_output_vtk~~UsedByGraph_node2"><a xlink:href=".././module/write_output.html" xlink:title="write_output">
-<polygon fill="#337ab7" stroke="#337ab7" points="198,-86 127,-86 127,-62 198,-62 198,-86"/>
-<text text-anchor="middle" x="162.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="198,-24 127,-24 127,0 198,0 198,-24"/>
+<text text-anchor="middle" x="162.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_output</text>
 </a>
 </g>
 </g>
 <!-- module~write_output&#45;&gt;module~write_output_vtk -->
 <g id="module~~write_output_vtk~~UsedByGraph_edge1" class="edge">
 <title>module~write_output&#45;&gt;module~write_output_vtk</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M126.7604,-74C118.7423,-74 110.0484,-74 101.4291,-74"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="101.39,-70.5001 91.39,-74 101.3899,-77.5001 101.39,-70.5001"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M126.7604,-12C118.7423,-12 110.0484,-12 101.4291,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="101.39,-8.5001 91.39,-12 101.3899,-15.5001 101.39,-8.5001"/>
 </g>
 <!-- module~dump_solution -->
 <g id="module~~write_output_vtk~~UsedByGraph_node3" class="node">
 <title>module~dump_solution</title>
 <g id="a_module~~write_output_vtk~~UsedByGraph_node3"><a xlink:href=".././module/dump_solution.html" xlink:title="dump_solution">
-<polygon fill="#337ab7" stroke="#337ab7" points="316,-86 234,-86 234,-62 316,-62 316,-86"/>
-<text text-anchor="middle" x="275" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dump_solution</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="316,-24 234,-24 234,0 316,0 316,-24"/>
+<text text-anchor="middle" x="275" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dump_solution</text>
 </a>
 </g>
 </g>
 <!-- module~dump_solution&#45;&gt;module~write_output -->
 <g id="module~~write_output_vtk~~UsedByGraph_edge2" class="edge">
 <title>module~dump_solution&#45;&gt;module~write_output</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M233.748,-74C225.4556,-74 216.694,-74 208.2588,-74"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="208.1851,-70.5001 198.185,-74 208.185,-77.5001 208.1851,-70.5001"/>
-</g>
-<!-- module~source -->
-<g id="module~~write_output_vtk~~UsedByGraph_node4" class="node">
-<title>module~source</title>
-<g id="a_module~~write_output_vtk~~UsedByGraph_node4"><a xlink:href=".././module/source.html" xlink:title="source">
-<polygon fill="#337ab7" stroke="#337ab7" points="406,-66 352,-66 352,-42 406,-42 406,-66"/>
-<text text-anchor="middle" x="379" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">source</text>
-</a>
-</g>
-</g>
-<!-- module~source&#45;&gt;module~dump_solution -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge3" class="edge">
-<title>module~source&#45;&gt;module~dump_solution</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M351.9467,-59.2026C343.9882,-60.733 335.0079,-62.46 326.0646,-64.1799"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="325.1985,-60.7822 316.0394,-66.1078 326.5205,-67.6563 325.1985,-60.7822"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M233.748,-12C225.4556,-12 216.694,-12 208.2588,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="208.1851,-8.5001 198.185,-12 208.185,-15.5001 208.1851,-8.5001"/>
 </g>
 <!-- module~solver -->
-<g id="module~~write_output_vtk~~UsedByGraph_node5" class="node">
+<g id="module~~write_output_vtk~~UsedByGraph_node4" class="node">
 <title>module~solver</title>
-<g id="a_module~~write_output_vtk~~UsedByGraph_node5"><a xlink:href=".././module/solver.html" xlink:title="solver">
-<polygon fill="#337ab7" stroke="#337ab7" points="632,-86 578,-86 578,-62 632,-62 632,-86"/>
-<text text-anchor="middle" x="605" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">solver</text>
+<g id="a_module~~write_output_vtk~~UsedByGraph_node4"><a xlink:href=".././module/solver.html" xlink:title="solver">
+<polygon fill="#337ab7" stroke="#337ab7" points="406,-24 352,-24 352,0 406,0 406,-24"/>
+<text text-anchor="middle" x="379" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">solver</text>
 </a>
 </g>
 </g>
 <!-- module~solver&#45;&gt;module~dump_solution -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge4" class="edge">
+<g id="module~~write_output_vtk~~UsedByGraph_edge3" class="edge">
 <title>module~solver&#45;&gt;module~dump_solution</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M492,-94C435.0838,-94 370.1235,-87.0933 326.2286,-81.3973"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="326.4658,-77.8982 316.0928,-80.0549 325.5467,-84.8377 326.4658,-77.8982"/>
-</g>
-<!-- module~solver&#45;&gt;module~source -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge6" class="edge">
-<title>module~solver&#45;&gt;module~source</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M577.8374,-81.5611C555.0949,-87.2248 521.6852,-94 492,-94"/>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M492,-94C462.3185,-94 430.6354,-81.5843 408.394,-70.5872"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="409.9673,-67.4606 399.4734,-66.0013 406.7669,-73.6861 409.9673,-67.4606"/>
-</g>
-<!-- module~update -->
-<g id="module~~write_output_vtk~~UsedByGraph_node8" class="node">
-<title>module~update</title>
-<g id="a_module~~write_output_vtk~~UsedByGraph_node8"><a xlink:href=".././module/update.html" xlink:title="update">
-<polygon fill="#337ab7" stroke="#337ab7" points="519,-66 465,-66 465,-42 519,-42 519,-66"/>
-<text text-anchor="middle" x="492" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">update</text>
-</a>
-</g>
-</g>
-<!-- module~solver&#45;&gt;module~update -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge11" class="edge">
-<title>module~solver&#45;&gt;module~update</title>
-<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M577.9337,-69.2095C563.3652,-66.631 545.1743,-63.4114 529.2851,-60.5991"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="529.6941,-57.1172 519.2371,-58.8207 528.474,-64.0101 529.6941,-57.1172"/>
-</g>
-<!-- module~create_and_erase -->
-<g id="module~~write_output_vtk~~UsedByGraph_node6" class="node">
-<title>module~create_and_erase</title>
-<g id="a_module~~write_output_vtk~~UsedByGraph_node6"><a xlink:href=".././module/create_and_erase.html" xlink:title="create_and_erase">
-<polygon fill="#337ab7" stroke="#337ab7" points="542,-24 442,-24 442,0 542,0 542,-24"/>
-<text text-anchor="middle" x="492" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">create_and_erase</text>
-</a>
-</g>
-</g>
-<!-- module~create_and_erase&#45;&gt;module~source -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge7" class="edge">
-<title>module~create_and_erase&#45;&gt;module~source</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M459.6187,-24.0355C445.8416,-29.1562 429.709,-35.1524 415.51,-40.4299"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="414.1957,-37.1844 406.0416,-43.9491 416.6345,-43.7458 414.1957,-37.1844"/>
-</g>
-<!-- module~start_finish -->
-<g id="module~~write_output_vtk~~UsedByGraph_node7" class="node">
-<title>module~start_finish</title>
-<g id="a_module~~write_output_vtk~~UsedByGraph_node7"><a xlink:href=".././module/start_finish.html" xlink:title="start_finish">
-<polygon fill="#337ab7" stroke="#337ab7" points="732,-66 668,-66 668,-42 732,-42 732,-66"/>
-<text text-anchor="middle" x="700" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">start_finish</text>
-</a>
-</g>
-</g>
-<!-- module~start_finish&#45;&gt;module~solver -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge9" class="edge">
-<title>module~start_finish&#45;&gt;module~solver</title>
-<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M667.8373,-60.7711C659.5713,-62.5113 650.6111,-64.3977 642.1166,-66.186"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="641.1287,-62.8171 632.0643,-68.3023 642.5709,-69.667 641.1287,-62.8171"/>
-</g>
-<!-- module~update&#45;&gt;module~source -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge5" class="edge">
-<title>module~update&#45;&gt;module~source</title>
-<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M464.9337,-54C450.3652,-54 432.1743,-54 416.2851,-54"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="416.2371,-50.5001 406.2371,-54 416.2371,-57.5001 416.2371,-50.5001"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M351.9467,-12C343.9882,-12 335.0079,-12 326.0646,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="326.0394,-8.5001 316.0394,-12 326.0394,-15.5001 326.0394,-8.5001"/>
 </g>
 <!-- program~main -->
-<g id="module~~write_output_vtk~~UsedByGraph_node9" class="node">
+<g id="module~~write_output_vtk~~UsedByGraph_node5" class="node">
 <title>program~main</title>
-<g id="a_module~~write_output_vtk~~UsedByGraph_node9"><a xlink:href=".././program/main.html" xlink:title="main">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="822,-86 768,-86 768,-62 822,-62 822,-86"/>
-<text text-anchor="middle" x="795" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
+<g id="a_module~~write_output_vtk~~UsedByGraph_node5"><a xlink:href=".././program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="496,-24 442,-24 442,0 496,0 496,-24"/>
+<text text-anchor="middle" x="469" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">main</text>
 </a>
 </g>
 </g>
 <!-- program~main&#45;&gt;module~solver -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge8" class="edge">
+<g id="module~~write_output_vtk~~UsedByGraph_edge4" class="edge">
 <title>program~main&#45;&gt;module~solver</title>
-<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M767.7124,-74.5275C756.6304,-74.7172 743.7042,-74.9071 732,-75 703.5565,-75.2257 696.4435,-75.2257 668,-75 659.7705,-74.9347 650.9368,-74.8214 642.5649,-74.694"/>
-<polygon fill="#00ffff" stroke="#00ffff" points="642.343,-71.19 632.2876,-74.5275 642.2296,-78.1891 642.343,-71.19"/>
-</g>
-<!-- program~main&#45;&gt;module~start_finish -->
-<g id="module~~write_output_vtk~~UsedByGraph_edge10" class="edge">
-<title>program~main&#45;&gt;module~start_finish</title>
-<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M767.7768,-68.2688C759.8164,-66.5929 750.9206,-64.7201 742.26,-62.8968"/>
-<polygon fill="#7fff00" stroke="#7fff00" points="742.778,-59.4292 732.2714,-60.794 741.3358,-66.2791 742.778,-59.4292"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M441.997,-12C433.9723,-12 425.0335,-12 416.4691,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="416.295,-8.5001 406.295,-12 416.2949,-15.5001 416.295,-8.5001"/>
 </g>
 </g>
 </svg>
-</div><script>var panmodulewrite_output_vtkUsedByGraph = svgPanZoom('#modulewrite_output_vtkUsedByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
     <p>Nodes of different colours represent the following: </p>
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -692,19 +782,41 @@
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-i%7E8">i</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-out_file_unit%7E3">OUT_FILE_UNIT</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-j%7E4">j</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-i%7E2">i</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-k%7E4">k</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-j%7E2">j</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-speed_inf%7E2">speed_inf</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-k%7E2">k</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-file_format%7E2">file_format</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-imx%7E16">imx</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-data_format%7E2">data_format</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-jmx%7E16">jmx</a>
       
-      <a class="list-group-item" href="../module/write_output_vtk.html#variable-newline%7E2">newline</a>
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-kmx%7E16">kmx</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-density%7E3">density</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-x_speed%7E3">x_speed</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-y_speed%7E3">y_speed</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-z_speed%7E3">z_speed</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-pressure%7E3">pressure</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tk%7E3">tk</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tw%7E3">tw</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-te%7E3">te</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tv%7E3">tv</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tkl%7E3">tkl</a>
+      
+      <a class="list-group-item" href="../module/write_output_vtk.html#variable-tgm%7E3">tgm</a>
       
     </div>
   </div>
@@ -734,8 +846,6 @@
       <a class="list-group-item" href="../module/write_output_vtk.html#proc-write_grid%7E2">write_grid</a>
       
       <a class="list-group-item" href="../module/write_output_vtk.html#proc-write_velocity">write_velocity</a>
-      
-      <a class="list-group-item" href="../module/write_output_vtk.html#proc-write_resnorm%7E2">write_resnorm</a>
       
       <a class="list-group-item" href="../module/write_output_vtk.html#proc-write_scalar%7E2">write_scalar</a>
       
@@ -776,7 +886,21 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-i%7E8"></span>integer,</td>
+  <td><span class="anchor" id="variable-out_file_unit%7E3"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>OUT_FILE_UNIT</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i%7E2"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
@@ -790,7 +914,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-j%7E4"></span>integer,</td>
+  <td><span class="anchor" id="variable-j%7E2"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
@@ -804,7 +928,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-k%7E4"></span>integer,</td>
+  <td><span class="anchor" id="variable-k%7E2"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
@@ -818,11 +942,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-speed_inf%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-imx%7E16"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>speed_inf</strong></td><td></td><td></td><td></td>
+  <td><strong>imx</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -832,11 +956,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-file_format%7E2"></span>character(len=8),</td>
+  <td><span class="anchor" id="variable-jmx%7E16"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>file_format</strong></td><td></td><td></td><td></td>
+  <td><strong>jmx</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -846,11 +970,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-data_format%7E2"></span>character(len=16),</td>
+  <td><span class="anchor" id="variable-kmx%7E16"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>data_format</strong></td><td></td><td></td><td></td>
+  <td><strong>kmx</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -860,11 +984,151 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-newline%7E2"></span>character,</td>
+  <td><span class="anchor" id="variable-density%7E3"></span>real(kind=wp),</td>
   
-  <td>private</td>
-  <td></td><td>::</td>
-  <td><strong>newline</strong></td><td> =</td><td>achar(10)</td><td></td>
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>density</strong></td><td></td><td></td><td><p>Rho pointer, point to slice of qp (:,:,:,1)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x_speed%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>x_speed</strong></td><td></td><td></td><td><p>U pointer, point to slice of qp (:,:,:,2) </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-y_speed%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>y_speed</strong></td><td></td><td></td><td><p>V pointer, point to slice of qp (:,:,:,3) </p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-z_speed%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>z_speed</strong></td><td></td><td></td><td><p>W pointer, point to slice of qp (:,:,:,4)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pressure%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>pressure</strong></td><td></td><td></td><td><p>P pointer, point to slice of qp (:,:,:,5)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tk%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>tk</strong></td><td></td><td></td><td><p>TKE, point to slice of qp (:,:,:,6)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tw%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>tw</strong></td><td></td><td></td><td><p>Omega, point to slice of qp (:,:,:,7)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-te%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>te</strong></td><td></td><td></td><td><p>Dissipation, point to slice of qp (:,:,:,7)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tv%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>tv</strong></td><td></td><td></td><td><p>SA visocity, point to slice of qp (:,:,:,6)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tkl%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>tkl</strong></td><td></td><td></td><td><p>KL K-KL method, point to slice of qp (:,:,:,7)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tgm%7E3"></span>real(kind=wp),</td>
+  
+  <td>private,</td>
+  <td>dimension(:, :, :), pointer</td><td>::</td>
+  <td><strong>tgm</strong></td><td></td><td></td><td><p>Intermittency of LCTM2015, point to slice of qp (:,:,:,8)</p></td>
   
 </tr>
 
@@ -892,7 +1156,7 @@
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-write_file%7E2"></span><h3>
-public subroutine <a href='../proc/write_file%7E2.html'>write_file</a>()
+public subroutine <a href='../proc/write_file%7E2.html'>write_file</a>(file_handler, state, nodes, control, scheme, dims)
     
     
    
@@ -911,7 +1175,111 @@ public subroutine <a href='../proc/write_file%7E2.html'>write_file</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>file_handler</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2, 1:dims%n_var), target</td><td>::</td>
+  <td><strong>state</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/nodetype.html'>nodetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+3,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>nodes</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/controltype.html'>controltype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>control</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -922,7 +1290,7 @@ public subroutine <a href='../proc/write_file%7E2.html'>write_file</a>()
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-write_header%7E2"></span><h3>
-private subroutine <a href='../proc/write_header%7E2.html'>write_header</a>()
+private subroutine <a href='../proc/write_header%7E2.html'>write_header</a>(Write_data_format)
     
     
    
@@ -941,7 +1309,36 @@ private subroutine <a href='../proc/write_header%7E2.html'>write_header</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>Write_data_format</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -952,7 +1349,7 @@ private subroutine <a href='../proc/write_header%7E2.html'>write_header</a>()
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-write_grid%7E2"></span><h3>
-private subroutine <a href='../proc/write_grid%7E2.html'>write_grid</a>()
+private subroutine <a href='../proc/write_grid%7E2.html'>write_grid</a>(nodes)
     
     
    
@@ -971,7 +1368,36 @@ private subroutine <a href='../proc/write_grid%7E2.html'>write_grid</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(<a href='../type/nodetype.html'>nodetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:imx+3,-2:jmx+3,-2:kmx+3)</td><td>::</td>
+  <td><strong>nodes</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
     
 
@@ -998,36 +1424,6 @@ private subroutine <a href='../proc/write_velocity.html'>write_velocity</a>()
 
 
 <p>Write the velocity vector in the output file</p>
-    
-    <h4>Arguments</h4>
-    
-      <em>None</em>
-    
-    
-
-  </div>
-  </div>
-
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_resnorm%7E2"></span><h3>
-private subroutine <a href='../proc/write_resnorm%7E2.html'>write_resnorm</a>()
-    
-    
-   
-</h3></div>
-  <div class="panel-body">
-       
-    
-
-
-
-
-
-
-
-<p>Write the residual information in the output file</p>
     
     <h4>Arguments</h4>
     
@@ -1078,7 +1474,7 @@ private subroutine <a href='../proc/write_scalar%7E2.html'>write_scalar</a>(var,
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
@@ -1148,7 +1544,7 @@ private subroutine <a href='../proc/write_scalar%7E2.html'>write_scalar</a>(var,
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

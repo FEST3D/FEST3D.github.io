@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.0% of total for procedures.">8 statements</a>
+    title=" 0.1% of total for procedures.">11 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine update_simulation_clock()
+public subroutine update_simulation_clock(delta_t, scheme, dims)
     
     
    
@@ -235,8 +239,64 @@ public subroutine update_simulation_clock()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-delta_t%7E10"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(1:dims%imx-1, 1:dims%jmx-1, 1:dims%kmx-1)</td><td>::</td>
+  <td><strong>delta_t</strong></td><td><p>Local time increment value at each cell center</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-scheme%7E9"></span>type(<a href='../type/schemetype.html'>schemetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scheme</strong></td><td><p>finite-volume Schemes: time stepping methods</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E19"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -449,7 +509,7 @@ public subroutine update_simulation_clock()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>      <span class="k">subroutine </span><span class="n">update_simulation_clock</span>
+    <div class="highlight"><pre><span></span>      <span class="k">subroutine </span><span class="n">update_simulation_clock</span><span class="p">(</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="c">!&lt;  Update the simulation clock</span>
           <span class="c">!&lt; </span>
           <span class="c">!&lt;  It is sometimes useful to know what the simulation time is</span>
@@ -464,9 +524,15 @@ public subroutine update_simulation_clock()
           <span class="c">!-----------------------------------------------------------</span>
 
           <span class="k">implicit none</span>
-<span class="k">          if</span> <span class="p">(</span><span class="n">time_stepping_method</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;g&#39;</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">sim_clock</span> <span class="o">&gt;=</span> <span class="mf">0.</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">          type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+          <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+          <span class="k">type</span><span class="p">(</span><span class="n">schemetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">scheme</span>
+          <span class="c">!&lt; finite-volume Schemes: time stepping methods</span>
+          <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">delta_t</span>
+          <span class="c">!&lt; Local time increment value at each cell center</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">time_stepping_method</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;g&#39;</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">sim_clock</span> <span class="o">&gt;=</span> <span class="mf">0.</span><span class="p">)</span> <span class="k">then</span>
 <span class="k">              </span><span class="n">sim_clock</span> <span class="o">=</span> <span class="n">sim_clock</span> <span class="o">+</span> <span class="nb">minval</span><span class="p">(</span><span class="n">delta_t</span><span class="p">)</span>
-          <span class="k">else if</span> <span class="p">(</span><span class="n">time_stepping_method</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;l&#39;</span><span class="p">)</span> <span class="k">then</span>
+          <span class="k">else if</span> <span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">time_stepping_method</span> <span class="p">.</span><span class="n">eq</span><span class="p">.</span> <span class="s1">&#39;l&#39;</span><span class="p">)</span> <span class="k">then</span>
 <span class="k">              </span><span class="n">sim_clock</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
           <span class="k">end if</span>
 
@@ -492,7 +558,7 @@ public subroutine update_simulation_clock()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,21 +143,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">42 statements</a>
+    title=" 0.3% of total for procedures.">48 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/summon_grad_evaluation.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/gradients.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/summon_grad_evaluation.f90.html'>summon_grad_evaluation.f90</a></li>
+     <li><a href='../sourcefile/gradients.f90.html'>gradients.f90</a></li>
     
-     <li><a href='../module/summon_grad_evaluation.html'>summon_grad_evaluation</a></li>
+     <li><a href='../module/gradients.html'>gradients</a></li>
     
   
      <li class="active">compute_gradient_G</li>
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine compute_gradient_G(grad, var, dir)
+public subroutine compute_gradient_G(grad, var, cells, Ifaces, Jfaces, Kfaces, dims, dir)
     
     
    
@@ -243,11 +247,11 @@ private subroutine compute_gradient_G(grad, var, dir)
   
 <tr>
   
-  <td><span class="anchor" id="variable-grad%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-grad"></span>real(kind=wp),</td>
   <td>intent(out),</td>
   <td></td>
   
-  <td>dimension( 0:imx  , 0:jmx  , 0:kmx  )</td><td>::</td>
+  <td>dimension( 0:dims%imx  , 0:dims%jmx  , 0:dims%kmx  )</td><td>::</td>
   <td><strong>grad</strong></td><td><p>Output variable storing the graident of var</p></td>
   
 </tr>
@@ -258,11 +262,11 @@ private subroutine compute_gradient_G(grad, var, dir)
   
 <tr>
   
-  <td><span class="anchor" id="variable-var%7E2"></span>real,</td>
+  <td><span class="anchor" id="variable-var%7E10"></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
-  <td>dimension(-2:imx+2,-2:jmx+2,-2:kmx+2)</td><td>::</td>
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
   <td><strong>var</strong></td><td><p>Input variable of which graident is required</p></td>
   
 </tr>
@@ -273,7 +277,82 @@ private subroutine compute_gradient_G(grad, var, dir)
   
 <tr>
   
-  <td><span class="anchor" id="variable-dir%7E2"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-cells%7E7"></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ifaces%7E7"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-jfaces%7E7"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kfaces%7E7"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E12"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dir"></span>character(len=*),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -291,6 +370,104 @@ private subroutine compute_gradient_G(grad, var, dir)
     <br>
     
     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~compute_gradient_g~~CallsGraph Pages: 1 -->
+<svg id="proccompute_gradient_gCallsGraph" width="215pt" height="32pt"
+ viewBox="0.00 0.00 215.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~compute_gradient_g~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~compute_gradient_g~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 211,-28 211,4 -4,4"/>
+<!-- proc~compute_gradient_g -->
+<g id="proc~~compute_gradient_g~~CallsGraph_node1" class="node">
+<title>proc~compute_gradient_g</title>
+<polygon fill="none" stroke="#000000" points="113,-24 0,-24 0,0 113,0 113,-24"/>
+<text text-anchor="middle" x="56.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">compute_gradient_G</text>
+</g>
+<!-- debugcall -->
+<g id="proc~~compute_gradient_g~~CallsGraph_node2" class="node">
+<title>debugcall</title>
+<polygon fill="#777777" stroke="#777777" points="207,-24 149,-24 149,0 207,0 207,-24"/>
+<text text-anchor="middle" x="178" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">debugcall</text>
+</g>
+<!-- proc~compute_gradient_g&#45;&gt;debugcall -->
+<g id="proc~~compute_gradient_g~~CallsGraph_edge1" class="edge">
+<title>proc~compute_gradient_g&#45;&gt;debugcall</title>
+<path fill="none" stroke="#ff0000" d="M113.3369,-12C121.9255,-12 130.6189,-12 138.7266,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="138.9894,-15.5001 148.9894,-12 138.9894,-8.5001 138.9894,-15.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
      
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -512,58 +689,79 @@ private subroutine compute_gradient_G(grad, var, dir)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">grad</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">dir</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">compute_gradient_G</span><span class="p">(</span><span class="n">grad</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="n">dir</span><span class="p">)</span>
       <span class="c">!&lt;  Compute gradient of any input scalar</span>
       <span class="k">implicit none</span>
-<span class="k">      </span><span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span> <span class="mi">0</span><span class="p">:</span><span class="n">imx</span>  <span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">jmx</span>  <span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">kmx</span>  <span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">grad</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span> <span class="mi">0</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span>  <span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>  <span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>  <span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">grad</span>
       <span class="c">!&lt; Output variable storing the graident of var</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">var</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">var</span>
       <span class="c">!&lt; Input variable of which graident is required</span>
       <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span>                           <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dir</span>
       <span class="c">!&lt; Direction with respect to which gradients are calculated</span>
-      
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,:,:),</span> <span class="k">pointer</span>  <span class="kd">::</span> <span class="n">nx</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,:,:),</span> <span class="k">pointer</span>  <span class="kd">::</span> <span class="n">ny</span>
-      <span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,:,:),</span> <span class="k">pointer</span>  <span class="kd">::</span> <span class="n">nz</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">celltype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cells</span>
+      <span class="c">!&lt; Input cell quantities: volume</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Ifaces</span>
+      <span class="c">!&lt; Input varaible which stores I faces&#39; area and unit normal</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Jfaces</span>
+      <span class="c">!&lt; Input varaible which stores J faces&#39; area and unit normal</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Kfaces</span>
+      <span class="c">!&lt; Input varaible which stores K faces&#39; area and unit normal</span>
 
       <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>
       <span class="kt">integer</span> <span class="kd">::</span> <span class="n">j</span>
       <span class="kt">integer</span> <span class="kd">::</span> <span class="n">k</span>
 
+      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;compute_gradient_G&#39;</span><span class="p">)</span>
+      <span class="n">grad</span><span class="p">(:,:,:)</span> <span class="o">=</span> <span class="mf">0.0</span>
       <span class="k">select case</span><span class="p">(</span><span class="n">dir</span><span class="p">)</span>
         <span class="k">case</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-          <span class="n">nx</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">xn</span><span class="p">(:,:,:,</span><span class="mi">1</span><span class="p">)</span>
-          <span class="n">ny</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">yn</span><span class="p">(:,:,:,</span><span class="mi">1</span><span class="p">)</span>
-          <span class="n">nz</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">zn</span><span class="p">(:,:,:,</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-          <span class="n">nx</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">xn</span><span class="p">(:,:,:,</span><span class="mi">2</span><span class="p">)</span>
-          <span class="n">ny</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">yn</span><span class="p">(:,:,:,</span><span class="mi">2</span><span class="p">)</span>
-          <span class="n">nz</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">zn</span><span class="p">(:,:,:,</span><span class="mi">2</span><span class="p">)</span>
-        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
-          <span class="n">nx</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">xn</span><span class="p">(:,:,:,</span><span class="mi">3</span><span class="p">)</span>
-          <span class="n">ny</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">yn</span><span class="p">(:,:,:,</span><span class="mi">3</span><span class="p">)</span>
-          <span class="n">nz</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">zn</span><span class="p">(:,:,:,</span><span class="mi">3</span><span class="p">)</span>
-        <span class="k">case </span><span class="n">DEFAULT</span>
-          <span class="n">nx</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">xn</span><span class="p">(:,:,:,</span><span class="mi">1</span><span class="p">)</span>
-          <span class="n">ny</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">yn</span><span class="p">(:,:,:,</span><span class="mi">1</span><span class="p">)</span>
-          <span class="n">nz</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">zn</span><span class="p">(:,:,:,</span><span class="mi">1</span><span class="p">)</span>
+          <span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
+            <span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+              <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+                <span class="n">grad</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">nx</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">nx</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">nx</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">nx</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">nx</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">nx</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                             <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">volume</span><span class="p">)</span>
+              <span class="k">end do</span>
+<span class="k">            end do</span>
+<span class="k">          end do</span>
+<span class="k">        case</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+          <span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
+            <span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+              <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+                <span class="n">grad</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">ny</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">ny</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">ny</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">ny</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">ny</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">ny</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                             <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">volume</span><span class="p">)</span>
+              <span class="k">end do</span>
+<span class="k">            end do</span>
+<span class="k">          end do</span>
+<span class="k">        case</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+          <span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
+            <span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+              <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+                <span class="n">grad</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">nz</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">nz</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">nz</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">nz</span><span class="o">*</span><span class="n">Ifaces</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">nz</span><span class="o">*</span><span class="n">Jfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                              <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">nz</span><span class="o">*</span><span class="n">Kfaces</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">A</span> <span class="p">&amp;</span>
+                             <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">cells</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)%</span><span class="n">volume</span><span class="p">)</span>
+              <span class="k">end do</span>
+<span class="k">            end do</span>
+<span class="k">          end do</span>
+<span class="k">        case </span><span class="n">DEFAULT</span>
           <span class="k">print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;ERROR: gradient direction error&quot;</span>
+          <span class="n">Fatal_error</span>
       <span class="k">end select</span>
-<span class="k">      </span><span class="n">grad</span> <span class="o">=</span> <span class="mf">0.0</span>
 
-      <span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">kmx</span>
-        <span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">jmx</span>
-          <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">imx</span>
-            <span class="n">grad</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">nx</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">xA</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="p">&amp;</span>
-                          <span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">ny</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">yA</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="p">&amp;</span>
-                          <span class="o">-</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">nz</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">zA</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="p">&amp;</span>
-                          <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">nx</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">*</span><span class="n">xA</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span>  <span class="p">)</span> <span class="p">&amp;</span>
-                          <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">ny</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span><span class="o">*</span><span class="n">yA</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span>  <span class="p">)</span> <span class="p">&amp;</span>
-                          <span class="o">+</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">nz</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">zA</span><span class="p">(</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">&amp;</span>
-                         <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">volume</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
-          <span class="k">end do</span>
-<span class="k">        end do</span>
-<span class="k">      end do</span>
 <span class="k">      if</span><span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">isnan</span><span class="p">(</span><span class="n">grad</span><span class="p">)))</span><span class="k">then</span>
 <span class="k">        </span><span class="n">Fatal_error</span>
       <span class="k">end if</span>
@@ -590,7 +788,7 @@ private subroutine compute_gradient_G(grad, var, dir)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

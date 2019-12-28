@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,21 +143,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">22 statements</a>
+    title=" 0.7% of total for procedures.">97 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/ghost_gradient.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/gradients.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/ghost_gradient.f90.html'>ghost_gradient.f90</a></li>
+     <li><a href='../sourcefile/gradients.f90.html'>gradients.f90</a></li>
     
-     <li><a href='../module/ghost_gradients.html'>ghost_gradients</a></li>
+     <li><a href='../module/gradients.html'>gradients</a></li>
     
   
      <li class="active">apply_gradient_bc</li>
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine apply_gradient_bc()
+public subroutine apply_gradient_bc(qp, Temp, cells, Ifaces, Jfaces, Kfaces, bc, dims)
     
     
    
@@ -222,13 +226,147 @@ public subroutine apply_gradient_bc()
 
 
     
-    <p>Call same subroutine for all the face</p>
+    <p>Call same subroutine for all the face
+ Apply/set value of all gradient in the ghost cells
+ gradqp_G = (qp_I - qp_G)<em>Area_W</em>unit_normal_G/(volume_G)
+ volume_G = volume_I</p>
     
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-qp%7E9"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2, 1:dims%n_var)</td><td>::</td>
+  <td><strong>qp</strong></td><td><p>Input variable of which graident is required</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-temp%7E2"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2, -2:dims%jmx+2, -2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Temp</strong></td><td><p>Intput Temperature variable</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cells%7E8"></span>type(<a href='../type/celltype.html'>celltype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>cells</strong></td><td><p>Input cell quantities: volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ifaces%7E8"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+3,-2:dims%jmx+2,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Ifaces</strong></td><td><p>Input varaible which stores I faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-jfaces%7E8"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+3,-2:dims%kmx+2)</td><td>::</td>
+  <td><strong>Jfaces</strong></td><td><p>Input varaible which stores J faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kfaces%7E8"></span>type(<a href='../type/facetype.html'>facetype</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(-2:dims%imx+2,-2:dims%jmx+2,-2:dims%kmx+3)</td><td>::</td>
+  <td><strong>Kfaces</strong></td><td><p>Input varaible which stores K faces' area and unit normal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bc%7E4"></span>type(<a href='../type/boundarytype.html'>boundarytype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>bc</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E13"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>Extent of the domain:imx,jmx,kmx</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -246,46 +384,43 @@ public subroutine apply_gradient_bc()
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: proc~~apply_gradient_bc~~CallsGraph Pages: 1 -->
-<svg id="procapply_gradient_bcCallsGraph" width="198pt" height="74pt"
- viewBox="0.00 0.00 198.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="procapply_gradient_bcCallsGraph" width="271pt" height="74pt"
+ viewBox="0.00 0.00 271.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~apply_gradient_bc~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
 <title>proc~~apply_gradient_bc~~CallsGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 194,-70 194,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 267,-70 267,4 -4,4"/>
 <!-- proc~apply_gradient_bc -->
 <g id="proc~~apply_gradient_bc~~CallsGraph_node1" class="node">
 <title>proc~apply_gradient_bc</title>
 <polygon fill="none" stroke="#000000" points="100,-45 0,-45 0,-21 100,-21 100,-45"/>
 <text text-anchor="middle" x="50" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">apply_gradient_bc</text>
 </g>
-<!-- proc~dmsg -->
+<!-- debugcall -->
 <g id="proc~~apply_gradient_bc~~CallsGraph_node2" class="node">
-<title>proc~dmsg</title>
-<g id="a_proc~~apply_gradient_bc~~CallsGraph_node2"><a xlink:href=".././proc/dmsg.html" xlink:title="dmsg">
-<polygon fill="#d9534f" stroke="#d9534f" points="190,-66 136,-66 136,-42 190,-42 190,-66"/>
-<text text-anchor="middle" x="163" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dmsg</text>
-</a>
+<title>debugcall</title>
+<polygon fill="#777777" stroke="#777777" points="228.5,-66 170.5,-66 170.5,-42 228.5,-42 228.5,-66"/>
+<text text-anchor="middle" x="199.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">debugcall</text>
 </g>
-</g>
-<!-- proc~apply_gradient_bc&#45;&gt;proc~dmsg -->
+<!-- proc~apply_gradient_bc&#45;&gt;debugcall -->
 <g id="proc~~apply_gradient_bc~~CallsGraph_edge2" class="edge">
-<title>proc~apply_gradient_bc&#45;&gt;proc~dmsg</title>
-<path fill="none" stroke="#ff0000" d="M100.2215,-42.3332C108.8421,-43.9353 117.6601,-45.574 125.8594,-47.0978"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="125.3816,-50.5688 135.8528,-48.9549 126.6607,-43.6867 125.3816,-50.5688"/>
+<title>proc~apply_gradient_bc&#45;&gt;debugcall</title>
+<path fill="none" stroke="#ff0000" d="M100.1972,-40.0511C119.7173,-42.7931 141.7504,-45.888 160.0944,-48.4648"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="159.7537,-51.9512 170.1434,-49.8763 160.7275,-45.0192 159.7537,-51.9512"/>
 </g>
-<!-- proc~apply -->
+<!-- proc~apply_gradient_bc_face -->
 <g id="proc~~apply_gradient_bc~~CallsGraph_node3" class="node">
-<title>proc~apply</title>
-<g id="a_proc~~apply_gradient_bc~~CallsGraph_node3"><a xlink:href=".././proc/apply.html" xlink:title="apply">
-<polygon fill="#d9534f" stroke="#d9534f" points="190,-24 136,-24 136,0 190,0 190,-24"/>
-<text text-anchor="middle" x="163" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">apply</text>
+<title>proc~apply_gradient_bc_face</title>
+<g id="a_proc~~apply_gradient_bc~~CallsGraph_node3"><a xlink:href=".././proc/apply_gradient_bc_face.html" xlink:title="apply_gradient_bc_face">
+<polygon fill="#d9534f" stroke="#d9534f" points="263,-24 136,-24 136,0 263,0 263,-24"/>
+<text text-anchor="middle" x="199.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">apply_gradient_bc_face</text>
 </a>
 </g>
 </g>
-<!-- proc~apply_gradient_bc&#45;&gt;proc~apply -->
+<!-- proc~apply_gradient_bc&#45;&gt;proc~apply_gradient_bc_face -->
 <g id="proc~~apply_gradient_bc~~CallsGraph_edge1" class="edge">
-<title>proc~apply_gradient_bc&#45;&gt;proc~apply</title>
-<path fill="none" stroke="#ff0000" d="M100.2215,-23.6668C108.8421,-22.0647 117.6601,-20.426 125.8594,-18.9022"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="126.6607,-22.3133 135.8528,-17.0451 125.3816,-15.4312 126.6607,-22.3133"/>
+<title>proc~apply_gradient_bc&#45;&gt;proc~apply_gradient_bc_face</title>
+<path fill="none" stroke="#ff0000" d="M100.1972,-25.9489C108.4281,-24.7927 117.1057,-23.5738 125.7652,-22.3574"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="126.4786,-25.7916 135.8945,-20.9346 125.5048,-18.8597 126.4786,-25.7916"/>
 </g>
 </g>
 </svg>
@@ -572,31 +707,100 @@ public subroutine apply_gradient_bc()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">apply_gradient_bc</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">apply_gradient_bc</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
       <span class="c">!&lt; Call same subroutine for all the face</span>
+      <span class="c">!&lt; Apply/set value of all gradient in the ghost cells</span>
+      <span class="c">!&lt; gradqp_G = (qp_I - qp_G)*Area_W*unit_normal_G/(volume_G)</span>
+      <span class="c">!&lt; volume_G = volume_I</span>
+      <span class="c">!-----------------------------------------------------------</span>
       <span class="k">implicit none</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+      <span class="c">!&lt; Extent of the domain:imx,jmx,kmx</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">n_var</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">qp</span>
+      <span class="c">!&lt; Input variable of which graident is required</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Temp</span>
+      <span class="c">!&lt; Intput Temperature variable</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">celltype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">cells</span>
+      <span class="c">!&lt; Input cell quantities: volume</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Ifaces</span>
+      <span class="c">!&lt; Input varaible which stores I faces&#39; area and unit normal</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Jfaces</span>
+      <span class="c">!&lt; Input varaible which stores J faces&#39; area and unit normal</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">facetype</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Kfaces</span>
+      <span class="c">!&lt; Input varaible which stores K faces&#39; area and unit normal</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">boundarytype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">bc</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">singlesub</span><span class="p">)</span> <span class="kd">::</span> <span class="n">domain</span>
 
-<span class="k">      call </span><span class="n">dmsg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;ghost_gradients&#39;</span><span class="p">,</span> <span class="s1">&#39;apply_gradient_bc&#39;</span><span class="p">)</span>
-      <span class="k">if</span><span class="p">(</span><span class="n">imin_id</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
-<span class="k">        call </span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;imin&#39;</span><span class="p">)</span>
-      <span class="k">end if</span>
-<span class="k">      if</span><span class="p">(</span><span class="n">imax_id</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
-<span class="k">        call </span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;imax&#39;</span><span class="p">)</span>
-      <span class="k">end if</span>
-<span class="k">      if</span><span class="p">(</span><span class="n">jmin_id</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
-<span class="k">        call </span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;jmin&#39;</span><span class="p">)</span>
-      <span class="k">end if</span>
-<span class="k">      if</span><span class="p">(</span><span class="n">jmax_id</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
-<span class="k">        call </span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;jmax&#39;</span><span class="p">)</span>
-      <span class="k">end if</span>
-<span class="k">      if</span><span class="p">(</span><span class="n">kmin_id</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
-<span class="k">        call </span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;kmin&#39;</span><span class="p">)</span>
-      <span class="k">end if</span>
-<span class="k">      if</span><span class="p">(</span><span class="n">kmax_id</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
-<span class="k">        call </span><span class="n">apply</span><span class="p">(</span><span class="s1">&#39;kmax&#39;</span><span class="p">)</span>
-      <span class="k">end if</span>
-<span class="k">      </span>
-<span class="k">    end subroutine </span><span class="n">apply_gradient_bc</span>
+      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;apply_gradient_bc&#39;</span><span class="p">)</span>
+
+
+      <span class="n">domain</span><span class="p">%</span><span class="n">imin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">imax</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">il</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">jl</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">kl</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">iu</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ju</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ku</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">sig</span>  <span class="o">=</span> <span class="mi">1</span>
+      <span class="k">call </span><span class="n">apply_gradient_bc_face</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imin_id</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">fixed_wall_temperature</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+      <span class="n">domain</span><span class="p">%</span><span class="n">imin</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">imax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">il</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">jl</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">kl</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">iu</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ju</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ku</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">sig</span>  <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+      <span class="k">call </span><span class="n">apply_gradient_bc_face</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">imax_id</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">fixed_wall_temperature</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+      <span class="n">domain</span><span class="p">%</span><span class="n">imin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">imax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmax</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">il</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">jl</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">kl</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">iu</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ju</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ku</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">sig</span>  <span class="o">=</span> <span class="mi">1</span>
+      <span class="k">call </span><span class="n">apply_gradient_bc_face</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">jmin_id</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">fixed_wall_temperature</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+      <span class="n">domain</span><span class="p">%</span><span class="n">imin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">imax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmin</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">il</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">jl</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">kl</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">iu</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ju</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ku</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">sig</span>  <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+      <span class="k">call </span><span class="n">apply_gradient_bc_face</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">jmax_id</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">fixed_wall_temperature</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+      <span class="n">domain</span><span class="p">%</span><span class="n">imin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">imax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmax</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">il</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">jl</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">kl</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">iu</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ju</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ku</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">sig</span>  <span class="o">=</span> <span class="mi">1</span>
+      <span class="k">call </span><span class="n">apply_gradient_bc_face</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">kmin_id</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">fixed_wall_temperature</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+      <span class="n">domain</span><span class="p">%</span><span class="n">imin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">imax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">imx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmin</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">jmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">jmx</span><span class="o">-</span><span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmin</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">kmax</span> <span class="o">=</span> <span class="n">dims</span><span class="p">%</span><span class="n">kmx</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">il</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">jl</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">kl</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">iu</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ju</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">domain</span><span class="p">%</span><span class="n">ku</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">domain</span><span class="p">%</span><span class="n">sig</span>  <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+      <span class="k">call </span><span class="n">apply_gradient_bc_face</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">dims</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">kmax_id</span><span class="p">,</span> <span class="n">bc</span><span class="p">%</span><span class="n">fixed_wall_temperature</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+          
+    <span class="k">end subroutine </span><span class="n">apply_gradient_bc</span>
 </pre></div>
 
     </section>
@@ -618,7 +822,7 @@ public subroutine apply_gradient_bc()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

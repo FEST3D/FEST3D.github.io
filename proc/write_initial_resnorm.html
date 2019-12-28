@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">14 statements</a>
+    title=" 0.1% of total for procedures.">10 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine write_initial_resnorm()
+private subroutine write_initial_resnorm(files, control)
     
     
    
@@ -228,8 +232,49 @@ private subroutine write_initial_resnorm()
 
     <h3>Arguments</h3>
     
-    <em>None</em>
-    <br>
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-files%7E20"></span>type(<a href='../type/filetype.html'>filetype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>files</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-control%7E48"></span>type(<a href='../type/controltype.html'>controltype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>control</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
     
     
     
@@ -493,21 +538,27 @@ private subroutine write_initial_resnorm()
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">write_initial_resnorm</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">write_initial_resnorm</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
       <span class="c">!&lt; Writing Initial resnorom in the log file to </span>
       <span class="c">!&lt; maintian continuity of resnorm while restrarting</span>
       <span class="k">implicit none</span>
-<span class="k">      write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(I0)&#39;</span><span class="p">)</span>    <span class="n">current_iter</span><span class="o">+</span><span class="n">last_iter</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>        <span class="n">resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>    <span class="n">vis_resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>   <span class="n">turb_resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>   <span class="n">cont_resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>  <span class="n">x_mom_resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>  <span class="n">y_mom_resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>  <span class="n">z_mom_resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span> <span class="n">energy_resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>    <span class="n">TKE_resnorm_0</span>
-      <span class="k">write</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>  <span class="n">omega_resnorm_0</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">filetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">files</span>
+      <span class="k">type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
+      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>
+      <span class="c">!integer, intent(in) :: current_iter, last_iter</span>
+      <span class="k">write</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(I0)&#39;</span><span class="p">)</span>    <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span><span class="o">+</span><span class="n">control</span><span class="p">%</span><span class="n">last_iter</span>
+      <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">control</span><span class="p">%</span><span class="n">n_var</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">write</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="s1">&#39;(f0.16)&#39;</span><span class="p">)</span>  <span class="n">control</span><span class="p">%</span><span class="n">previous_res</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+      <span class="k">end do</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;)    vis_resnorm_0</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;)   turb_resnorm_0</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;)   cont_resnorm_0</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;)  x_mom_resnorm_0</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;)  y_mom_resnorm_0</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;)  z_mom_resnorm_0</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;) energy_resnorm_0</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;)    TKE_resnorm_0</span>
+      <span class="c">!write(files%RESTART_FILE_UNIT, &#39;(f0.16)&#39;)  omega_resnorm_0</span>
     <span class="k">end subroutine </span><span class="n">write_initial_resnorm</span>
 </pre></div>
 
@@ -530,7 +581,7 @@ private subroutine write_initial_resnorm()
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

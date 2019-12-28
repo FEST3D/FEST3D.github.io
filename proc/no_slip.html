@@ -81,6 +81,8 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
         
                
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
         
             <li><a href="../program/main.html">Program</a></li>
       
@@ -99,6 +101,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/main.html">Program</a></li>
 
@@ -139,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">27 statements</a>
+    title=" 0.2% of total for procedures.">29 statements</a>
      </li> 
      
      
@@ -212,7 +216,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine no_slip(face)
+private subroutine no_slip(face, bc, dims)
     
     
    
@@ -250,6 +254,36 @@ private subroutine no_slip(face)
   
   <td></td><td>::</td>
   <td><strong>face</strong></td><td><p>Name of the face at which boundary condition is called</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bc%7E39"></span>type(<a href='../type/boundarytype.html'>boundarytype</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>bc</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E102"></span>type(<a href='../type/extent.html'>extent</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td></td>
   
 </tr>
 
@@ -614,34 +648,35 @@ private subroutine no_slip(face)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>      <span class="k">subroutine </span><span class="n">no_slip</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>      <span class="k">subroutine </span><span class="n">no_slip</span><span class="p">(</span><span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         <span class="c">!&lt; No-slip wall boundary condition. All the </span>
         <span class="c">!&lt; component of velocity throught face is zero</span>
         <span class="k">implicit none</span>
-<span class="k">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
+<span class="k">        type</span><span class="p">(</span><span class="n">extent</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
+        <span class="k">type</span><span class="p">(</span><span class="n">boundarytype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">bc</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">face</span>
         <span class="c">!&lt; Name of the face at which boundary condition is called</span>
-        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">x_speed</span><span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
-        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">y_speed</span><span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
-        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">z_speed</span><span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">x_speed</span><span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">y_speed</span><span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+        <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">z_speed</span><span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         <span class="k">select case</span><span class="p">(</span><span class="n">turbulence</span><span class="p">)</span>
           <span class="k">case</span><span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
             <span class="c">!do nothing</span>
             <span class="k">continue</span>
 <span class="k">          case</span><span class="p">(</span><span class="s1">&#39;sa&#39;</span><span class="p">,</span> <span class="s1">&#39;saBC&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tv</span>  <span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tv</span>  <span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">case</span><span class="p">(</span><span class="s2">&quot;sst&quot;</span><span class="p">,</span> <span class="s1">&#39;sst2003&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tk</span>  <span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tk</span>  <span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
             <span class="k">call </span><span class="n">set_omega_at_wall</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
           <span class="k">case</span><span class="p">(</span><span class="s2">&quot;kkl&quot;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tk</span>  <span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tkl</span> <span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tk</span>  <span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tkl</span> <span class="p">,</span> <span class="s2">&quot;anti&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">case </span><span class="n">DEFAULT</span>
-            <span class="c">!call turbulence_read_error()</span>
             <span class="n">Fatal_error</span>
         <span class="k">end select</span>
 <span class="k">        select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">transition</span><span class="p">))</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;lctm2015&#39;</span><span class="p">)</span>
-            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tgm</span><span class="p">,</span> <span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">copy3</span><span class="p">(</span><span class="n">tgm</span><span class="p">,</span> <span class="s2">&quot;flat&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
           <span class="k">case </span><span class="n">DEFAULT</span>
             <span class="k">continue</span>
 <span class="k">        end select</span>
@@ -667,7 +702,7 @@ private subroutine no_slip(face)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-09-29T19:10:34.515068 
+             on 2019-12-28T21:23:55.181614 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
