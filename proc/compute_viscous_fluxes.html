@@ -816,11 +816,7 @@ public subroutine compute_viscous_fluxes(F, G, H, qp, cells, Ifaces, Jfaces, Kfa
 
         <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">flagsi</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">flagsj</span><span class="p">,</span> <span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
-        <span class="c">!if(kmx==2)then</span>
-        <span class="c">!  continue</span>
-        <span class="c">!else</span>
-          <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
-        <span class="c">!end if</span>
+        <span class="k">call </span><span class="n">compute_viscous_fluxes_laminar</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">scheme</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
         
         <span class="k">select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">turbulence</span><span class="p">))</span>
           <span class="k">case</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
@@ -842,11 +838,7 @@ public subroutine compute_viscous_fluxes(F, G, H, qp, cells, Ifaces, Jfaces, Kfa
 <span class="k">          case</span><span class="p">(</span><span class="s1">&#39;kkl&#39;</span><span class="p">)</span>
             <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span> <span class="n">flagsi</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
             <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Jfaces</span><span class="p">,</span> <span class="n">flagsj</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
-            <span class="c">!if(kmx==2)then</span>
-            <span class="c">!  continue</span>
-            <span class="c">!else</span>
-              <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
-            <span class="c">!end if</span>
+            <span class="k">call </span><span class="n">compute_viscous_fluxes_kkl</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span> <span class="n">Kfaces</span><span class="p">,</span> <span class="n">flagsk</span><span class="p">,</span><span class="n">dims</span><span class="p">)</span>
           <span class="k">case </span><span class="n">DEFAULT</span>
             <span class="n">Fatal_error</span>
         <span class="k">end select</span>
@@ -901,7 +893,7 @@ public subroutine compute_viscous_fluxes(F, G, H, qp, cells, Ifaces, Jfaces, Kfa
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-12-28T21:23:55.181614 
+             on 2020-02-10T20:32:54.471560 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

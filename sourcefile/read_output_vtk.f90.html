@@ -143,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.0% of total for source files.">160 statements</a>
+    title=" 1.0% of total for source files.">158 statements</a>
      </li> 
      
      
@@ -575,160 +575,155 @@
 <a name="ln-83"></a>              <span class="n">tk</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">state</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">6</span><span class="p">)</span>
 <a name="ln-84"></a>              <span class="n">te</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">state</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">7</span><span class="p">)</span>
 <a name="ln-85"></a>
-<a name="ln-86"></a>          <span class="k">case</span> <span class="p">(</span><span class="s2">&quot;les&quot;</span><span class="p">)</span>
-<a name="ln-87"></a>            <span class="k">continue</span>
-<a name="ln-88"></a>            <span class="c">! todo</span>
+<a name="ln-86"></a>          <span class="k">case </span><span class="n">DEFAULT</span>
+<a name="ln-87"></a>            <span class="n">Fatal_error</span>
+<a name="ln-88"></a>      <span class="k">end select</span>
 <a name="ln-89"></a>
-<a name="ln-90"></a>          <span class="k">case </span><span class="n">DEFAULT</span>
-<a name="ln-91"></a>            <span class="n">Fatal_error</span>
-<a name="ln-92"></a>      <span class="k">end select</span>
-<a name="ln-93"></a>
-<a name="ln-94"></a>      <span class="c">! Transition modeling</span>
-<a name="ln-95"></a>      <span class="k">select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">transition</span><span class="p">))</span>
-<a name="ln-96"></a>        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;lctm2015&#39;</span><span class="p">)</span>
-<a name="ln-97"></a>          <span class="n">tgm</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">state</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">8</span><span class="p">)</span>
-<a name="ln-98"></a><span class="c">!          tgm_inf =&gt; qp_inf(n_var)</span>
-<a name="ln-99"></a>
-<a name="ln-100"></a>        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;bc&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<a name="ln-101"></a>          <span class="c">!do nothing</span>
-<a name="ln-102"></a>          <span class="k">continue</span>
-<a name="ln-103"></a>
-<a name="ln-104"></a><span class="k">        case </span><span class="n">DEFAULT</span>
-<a name="ln-105"></a>          <span class="n">Fatal_error</span>
-<a name="ln-106"></a>      <span class="k">end Select</span>
-<a name="ln-107"></a>
-<a name="ln-108"></a><span class="k">      call </span><span class="n">read_header</span><span class="p">()</span>
-<a name="ln-109"></a>      <span class="k">call </span><span class="n">read_grid</span><span class="p">()</span>
-<a name="ln-110"></a>      <span class="k">do </span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">control</span><span class="p">%</span><span class="n">r_count</span>
+<a name="ln-90"></a>      <span class="c">! Transition modeling</span>
+<a name="ln-91"></a>      <span class="k">select case</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">scheme</span><span class="p">%</span><span class="n">transition</span><span class="p">))</span>
+<a name="ln-92"></a>        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;lctm2015&#39;</span><span class="p">)</span>
+<a name="ln-93"></a>          <span class="n">tgm</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">imx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">jmx</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">kmx</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">state</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">8</span><span class="p">)</span>
+<a name="ln-94"></a>
+<a name="ln-95"></a>        <span class="k">case</span><span class="p">(</span><span class="s1">&#39;bc&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<a name="ln-96"></a>          <span class="c">!do nothing</span>
+<a name="ln-97"></a>          <span class="k">continue</span>
+<a name="ln-98"></a>
+<a name="ln-99"></a><span class="k">        case </span><span class="n">DEFAULT</span>
+<a name="ln-100"></a>          <span class="n">Fatal_error</span>
+<a name="ln-101"></a>      <span class="k">end Select</span>
+<a name="ln-102"></a>
+<a name="ln-103"></a><span class="k">      call </span><span class="n">read_header</span><span class="p">()</span>
+<a name="ln-104"></a>      <span class="k">call </span><span class="n">read_grid</span><span class="p">()</span>
+<a name="ln-105"></a>      <span class="k">do </span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">control</span><span class="p">%</span><span class="n">r_count</span>
+<a name="ln-106"></a>
+<a name="ln-107"></a>        <span class="k">select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">r_list</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+<a name="ln-108"></a>        
+<a name="ln-109"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Velocity&#39;</span><span class="p">)</span>
+<a name="ln-110"></a>            <span class="k">call </span><span class="n">read_velocity</span><span class="p">()</span>
 <a name="ln-111"></a>
-<a name="ln-112"></a>        <span class="k">select case</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">r_list</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
-<a name="ln-113"></a>        
-<a name="ln-114"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Velocity&#39;</span><span class="p">)</span>
-<a name="ln-115"></a>            <span class="k">call </span><span class="n">read_velocity</span><span class="p">()</span>
-<a name="ln-116"></a>
-<a name="ln-117"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
-<a name="ln-118"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="s1">&#39;Density&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a name="ln-119"></a>          
-<a name="ln-120"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span>
-<a name="ln-121"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="s1">&#39;Pressure&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a name="ln-122"></a>            
-<a name="ln-123"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;TKE&#39;</span><span class="p">)</span>
-<a name="ln-124"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tk</span><span class="p">,</span> <span class="s1">&#39;TKE&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a name="ln-125"></a>
-<a name="ln-126"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Omega&#39;</span><span class="p">)</span>
-<a name="ln-127"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tw</span><span class="p">,</span> <span class="s1">&#39;Omega&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a name="ln-128"></a>
-<a name="ln-129"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Kl&#39;</span><span class="p">)</span>
-<a name="ln-130"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tkl</span><span class="p">,</span> <span class="s1">&#39;Kl&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a name="ln-131"></a>
-<a name="ln-132"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;tv&#39;</span><span class="p">)</span>
-<a name="ln-133"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tv</span><span class="p">,</span> <span class="s1">&#39;tv&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a name="ln-134"></a>
-<a name="ln-135"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;tgm&#39;</span><span class="p">)</span>
-<a name="ln-136"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tgm</span><span class="p">,</span> <span class="s1">&#39;tgm&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a name="ln-137"></a>
-<a name="ln-138"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;do not read&#39;</span><span class="p">)</span>
-<a name="ln-139"></a>            <span class="k">call </span><span class="n">skip_scalar</span><span class="p">()</span>
-<a name="ln-140"></a>
-<a name="ln-141"></a>          <span class="k">case </span><span class="n">Default</span>
-<a name="ln-142"></a>            <span class="k">Print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;read error: list var : &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">r_list</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<a name="ln-112"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+<a name="ln-113"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="s1">&#39;Density&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-114"></a>          
+<a name="ln-115"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span>
+<a name="ln-116"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">pressure</span><span class="p">,</span> <span class="s1">&#39;Pressure&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-117"></a>            
+<a name="ln-118"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;TKE&#39;</span><span class="p">)</span>
+<a name="ln-119"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tk</span><span class="p">,</span> <span class="s1">&#39;TKE&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-120"></a>
+<a name="ln-121"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Omega&#39;</span><span class="p">)</span>
+<a name="ln-122"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tw</span><span class="p">,</span> <span class="s1">&#39;Omega&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-123"></a>
+<a name="ln-124"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;Kl&#39;</span><span class="p">)</span>
+<a name="ln-125"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tkl</span><span class="p">,</span> <span class="s1">&#39;Kl&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-126"></a>
+<a name="ln-127"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;tv&#39;</span><span class="p">)</span>
+<a name="ln-128"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tv</span><span class="p">,</span> <span class="s1">&#39;tv&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-129"></a>
+<a name="ln-130"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;tgm&#39;</span><span class="p">)</span>
+<a name="ln-131"></a>            <span class="k">call </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">tgm</span><span class="p">,</span> <span class="s1">&#39;tgm&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-132"></a>
+<a name="ln-133"></a>          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;do not read&#39;</span><span class="p">)</span>
+<a name="ln-134"></a>            <span class="k">call </span><span class="n">skip_scalar</span><span class="p">()</span>
+<a name="ln-135"></a>
+<a name="ln-136"></a>          <span class="k">case </span><span class="n">Default</span>
+<a name="ln-137"></a>            <span class="k">Print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;read error: list var : &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">r_list</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<a name="ln-138"></a>
+<a name="ln-139"></a>        <span class="k">end select</span>
+<a name="ln-140"></a><span class="k">      end do</span>
+<a name="ln-141"></a>
+<a name="ln-142"></a><span class="k">    end subroutine </span><span class="n">read_file</span>
 <a name="ln-143"></a>
-<a name="ln-144"></a>        <span class="k">end select</span>
-<a name="ln-145"></a><span class="k">      end do</span>
-<a name="ln-146"></a>
-<a name="ln-147"></a><span class="k">    end subroutine </span><span class="n">read_file</span>
-<a name="ln-148"></a>
-<a name="ln-149"></a>    <span class="k">subroutine </span><span class="n">read_header</span><span class="p">()</span>
-<a name="ln-150"></a>      <span class="c">!&lt; Skip read the header in the vtk file</span>
-<a name="ln-151"></a>      <span class="k">implicit none</span>
-<a name="ln-152"></a>
-<a name="ln-153"></a><span class="k">      </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk: read_header&#39;</span><span class="p">)</span>
-<a name="ln-154"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;# vtk DataFile Version 3.1&#39;</span>
-<a name="ln-155"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;cfd-iitm output&#39;   ! comment line</span>
-<a name="ln-156"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!trim(read_data_format)</span>
-<a name="ln-157"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;DATASET STRUCTURED_GRID&#39;</span>
-<a name="ln-158"></a>      <span class="c">!read(IN_FILE_UNIT, *)</span>
-<a name="ln-159"></a>
-<a name="ln-160"></a>
-<a name="ln-161"></a>    <span class="k">end subroutine </span><span class="n">read_header</span>
-<a name="ln-162"></a>
-<a name="ln-163"></a>    <span class="k">subroutine </span><span class="n">read_grid</span><span class="p">()</span>
-<a name="ln-164"></a>      <span class="c">!&lt; Skip the grid read in the restart file</span>
-<a name="ln-165"></a>      <span class="k">implicit none</span>
-<a name="ln-166"></a>
-<a name="ln-167"></a>      <span class="c">! read grid point coordinates</span>
-<a name="ln-168"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk: read_grid&#39;</span><span class="p">)</span>
-<a name="ln-169"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span> <span class="p">)</span> <span class="c">!&#39;DIMENSIONS &#39;, imx, &#39; &#39;, jmx, &#39; &#39;, kmx</span>
-<a name="ln-170"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span> <span class="p">)</span> <span class="c">!&#39;POINTS &#39;, imx*jmx*kmx, &#39; DOUBLE&#39;</span>
-<a name="ln-171"></a>      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span>
-<a name="ln-172"></a>       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span>
-<a name="ln-173"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span>
-<a name="ln-174"></a>          <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!point(i, j, k)%x, &#39; &#39;, point(i, j, k)%y, &#39; &#39;, point(i, j, k)%z</span>
-<a name="ln-175"></a>        <span class="k">end do</span>
-<a name="ln-176"></a><span class="k">       end do</span>
-<a name="ln-177"></a><span class="k">      end do</span>
-<a name="ln-178"></a><span class="k">      read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> 
-<a name="ln-179"></a>
-<a name="ln-180"></a>    <span class="k">end subroutine </span><span class="n">read_grid</span>
-<a name="ln-181"></a>
-<a name="ln-182"></a>    <span class="k">subroutine </span><span class="n">read_velocity</span><span class="p">()</span>
-<a name="ln-183"></a>      <span class="c">!&lt; Read velocity vector from the vtk file</span>
-<a name="ln-184"></a>      <span class="k">implicit none</span>
-<a name="ln-185"></a>
-<a name="ln-186"></a><span class="k">      </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk: read_velocity&#39;</span><span class="p">)</span>
-<a name="ln-187"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;CELL_DATA &#39;, (imx-1)*(jmx-1)*(kmx-1)</span>
-<a name="ln-188"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;VECTORS Velocity FLOAT&#39;</span>
-<a name="ln-189"></a>      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-190"></a>       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-191"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-192"></a>          <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">x_speed</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">y_speed</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">z_speed</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-<a name="ln-193"></a>        <span class="k">end do</span>
-<a name="ln-194"></a><span class="k">       end do</span>
-<a name="ln-195"></a><span class="k">      end do</span>
-<a name="ln-196"></a><span class="k">      read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> 
-<a name="ln-197"></a>
-<a name="ln-198"></a>    <span class="k">end subroutine </span><span class="n">read_velocity</span>
-<a name="ln-199"></a>
-<a name="ln-200"></a>    <span class="k">subroutine </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span>  <span class="nb">index</span><span class="p">)</span>
-<a name="ln-201"></a>      <span class="c">!&lt; Read scalar from the vtk file</span>
-<a name="ln-202"></a>      <span class="k">implicit none</span>
-<a name="ln-203"></a><span class="k">      </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">index</span>
-<a name="ln-204"></a><span class="nb">      </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="nb">index</span><span class="p">:</span><span class="n">imx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">jmx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">kmx</span><span class="o">-</span><span class="nb">index</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">var</span>
-<a name="ln-205"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">name</span>
-<a name="ln-206"></a>
-<a name="ln-207"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk&#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-<a name="ln-208"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;SCALARS &#39;//trim(name)//&#39; FLOAT&#39;</span>
-<a name="ln-209"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;LOOKUP_TABLE default&#39;</span>
-<a name="ln-210"></a>      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-211"></a>       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-212"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-213"></a>          <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-<a name="ln-214"></a>        <span class="k">end do</span>
-<a name="ln-215"></a><span class="k">       end do</span>
-<a name="ln-216"></a><span class="k">      end do</span>
-<a name="ln-217"></a><span class="k">      read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-<a name="ln-218"></a>
-<a name="ln-219"></a>    <span class="k">end subroutine </span><span class="n">read_scalar</span>
-<a name="ln-220"></a>
-<a name="ln-221"></a>    <span class="k">subroutine </span><span class="n">skip_scalar</span><span class="p">()</span>
-<a name="ln-222"></a>      <span class="c">!&lt; Skip read scalar from the vtk file</span>
-<a name="ln-223"></a>      <span class="k">implicit none</span>
-<a name="ln-224"></a>
-<a name="ln-225"></a><span class="k">      </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk: skip_scalar&#39;</span><span class="p">)</span>
-<a name="ln-226"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;SCALARS &#39;//trim(name)//&#39; FLOAT&#39;</span>
-<a name="ln-227"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;LOOKUP_TABLE default&#39;</span>
-<a name="ln-228"></a>      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-229"></a>       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-230"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-231"></a>          <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-<a name="ln-232"></a>        <span class="k">end do</span>
-<a name="ln-233"></a><span class="k">       end do</span>
-<a name="ln-234"></a><span class="k">      end do</span>
-<a name="ln-235"></a><span class="k">      read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-<a name="ln-236"></a>
-<a name="ln-237"></a>    <span class="k">end subroutine </span><span class="n">skip_scalar</span>
-<a name="ln-238"></a>
-<a name="ln-239"></a><span class="k">end module </span><span class="n">read_output_vtk</span>
+<a name="ln-144"></a>    <span class="k">subroutine </span><span class="n">read_header</span><span class="p">()</span>
+<a name="ln-145"></a>      <span class="c">!&lt; Skip read the header in the vtk file</span>
+<a name="ln-146"></a>      <span class="k">implicit none</span>
+<a name="ln-147"></a>
+<a name="ln-148"></a><span class="k">      </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk: read_header&#39;</span><span class="p">)</span>
+<a name="ln-149"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;# vtk DataFile Version 3.1&#39;</span>
+<a name="ln-150"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;cfd-iitm output&#39;   ! comment line</span>
+<a name="ln-151"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!trim(read_data_format)</span>
+<a name="ln-152"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;DATASET STRUCTURED_GRID&#39;</span>
+<a name="ln-153"></a>      <span class="c">!read(IN_FILE_UNIT, *)</span>
+<a name="ln-154"></a>
+<a name="ln-155"></a>
+<a name="ln-156"></a>    <span class="k">end subroutine </span><span class="n">read_header</span>
+<a name="ln-157"></a>
+<a name="ln-158"></a>    <span class="k">subroutine </span><span class="n">read_grid</span><span class="p">()</span>
+<a name="ln-159"></a>      <span class="c">!&lt; Skip the grid read in the restart file</span>
+<a name="ln-160"></a>      <span class="k">implicit none</span>
+<a name="ln-161"></a>
+<a name="ln-162"></a>      <span class="c">! read grid point coordinates</span>
+<a name="ln-163"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk: read_grid&#39;</span><span class="p">)</span>
+<a name="ln-164"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span> <span class="p">)</span> <span class="c">!&#39;DIMENSIONS &#39;, imx, &#39; &#39;, jmx, &#39; &#39;, kmx</span>
+<a name="ln-165"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span> <span class="p">)</span> <span class="c">!&#39;POINTS &#39;, imx*jmx*kmx, &#39; DOUBLE&#39;</span>
+<a name="ln-166"></a>      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span>
+<a name="ln-167"></a>       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span>
+<a name="ln-168"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span>
+<a name="ln-169"></a>          <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!point(i, j, k)%x, &#39; &#39;, point(i, j, k)%y, &#39; &#39;, point(i, j, k)%z</span>
+<a name="ln-170"></a>        <span class="k">end do</span>
+<a name="ln-171"></a><span class="k">       end do</span>
+<a name="ln-172"></a><span class="k">      end do</span>
+<a name="ln-173"></a><span class="k">      read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> 
+<a name="ln-174"></a>
+<a name="ln-175"></a>    <span class="k">end subroutine </span><span class="n">read_grid</span>
+<a name="ln-176"></a>
+<a name="ln-177"></a>    <span class="k">subroutine </span><span class="n">read_velocity</span><span class="p">()</span>
+<a name="ln-178"></a>      <span class="c">!&lt; Read velocity vector from the vtk file</span>
+<a name="ln-179"></a>      <span class="k">implicit none</span>
+<a name="ln-180"></a>
+<a name="ln-181"></a><span class="k">      </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk: read_velocity&#39;</span><span class="p">)</span>
+<a name="ln-182"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;CELL_DATA &#39;, (imx-1)*(jmx-1)*(kmx-1)</span>
+<a name="ln-183"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;VECTORS Velocity FLOAT&#39;</span>
+<a name="ln-184"></a>      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-185"></a>       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-186"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-187"></a>          <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">x_speed</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">y_speed</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">z_speed</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<a name="ln-188"></a>        <span class="k">end do</span>
+<a name="ln-189"></a><span class="k">       end do</span>
+<a name="ln-190"></a><span class="k">      end do</span>
+<a name="ln-191"></a><span class="k">      read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> 
+<a name="ln-192"></a>
+<a name="ln-193"></a>    <span class="k">end subroutine </span><span class="n">read_velocity</span>
+<a name="ln-194"></a>
+<a name="ln-195"></a>    <span class="k">subroutine </span><span class="n">read_scalar</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span>  <span class="nb">index</span><span class="p">)</span>
+<a name="ln-196"></a>      <span class="c">!&lt; Read scalar from the vtk file</span>
+<a name="ln-197"></a>      <span class="k">implicit none</span>
+<a name="ln-198"></a><span class="k">      </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">index</span>
+<a name="ln-199"></a><span class="nb">      </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="nb">index</span><span class="p">:</span><span class="n">imx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">jmx</span><span class="o">-</span><span class="nb">index</span><span class="p">,</span><span class="nb">index</span><span class="p">:</span><span class="n">kmx</span><span class="o">-</span><span class="nb">index</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">var</span>
+<a name="ln-200"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">name</span>
+<a name="ln-201"></a>
+<a name="ln-202"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk&#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+<a name="ln-203"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;SCALARS &#39;//trim(name)//&#39; FLOAT&#39;</span>
+<a name="ln-204"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;LOOKUP_TABLE default&#39;</span>
+<a name="ln-205"></a>      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-206"></a>       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-207"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-208"></a>          <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">var</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<a name="ln-209"></a>        <span class="k">end do</span>
+<a name="ln-210"></a><span class="k">       end do</span>
+<a name="ln-211"></a><span class="k">      end do</span>
+<a name="ln-212"></a><span class="k">      read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<a name="ln-213"></a>
+<a name="ln-214"></a>    <span class="k">end subroutine </span><span class="n">read_scalar</span>
+<a name="ln-215"></a>
+<a name="ln-216"></a>    <span class="k">subroutine </span><span class="n">skip_scalar</span><span class="p">()</span>
+<a name="ln-217"></a>      <span class="c">!&lt; Skip read scalar from the vtk file</span>
+<a name="ln-218"></a>      <span class="k">implicit none</span>
+<a name="ln-219"></a>
+<a name="ln-220"></a><span class="k">      </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;read_output_vtk: skip_scalar&#39;</span><span class="p">)</span>
+<a name="ln-221"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;SCALARS &#39;//trim(name)//&#39; FLOAT&#39;</span>
+<a name="ln-222"></a>      <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="c">!&#39;LOOKUP_TABLE default&#39;</span>
+<a name="ln-223"></a>      <span class="k">do </span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kmx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-224"></a>       <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">jmx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-225"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">imx</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-226"></a>          <span class="k">read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<a name="ln-227"></a>        <span class="k">end do</span>
+<a name="ln-228"></a><span class="k">       end do</span>
+<a name="ln-229"></a><span class="k">      end do</span>
+<a name="ln-230"></a><span class="k">      read</span><span class="p">(</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<a name="ln-231"></a>
+<a name="ln-232"></a>    <span class="k">end subroutine </span><span class="n">skip_scalar</span>
+<a name="ln-233"></a>
+<a name="ln-234"></a><span class="k">end module </span><span class="n">read_output_vtk</span>
 </pre></div>
 
     </section>
@@ -747,7 +742,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-12-28T21:23:55.181614 
+             on 2020-02-10T20:32:54.471560 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

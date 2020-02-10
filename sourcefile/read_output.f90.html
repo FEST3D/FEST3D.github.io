@@ -630,59 +630,48 @@
 <a name="ln-78"></a>        <span class="k">print</span><span class="o">*</span><span class="p">,</span> <span class="s2">&quot;&#39;ASCII&#39; and &#39;BINARY&#39; &quot;</span>
 <a name="ln-79"></a>      <span class="k">end if</span>
 <a name="ln-80"></a>
-<a name="ln-81"></a>      <span class="c">!write(infile,&#39;(a,i4.4,a,i2.2)&#39;) &#39;time_directories/&#39;,start_from,&#39;process_&#39;,process_id</span>
+<a name="ln-81"></a><span class="k">    end subroutine </span><span class="n">setup_file</span>
 <a name="ln-82"></a>
-<a name="ln-83"></a>    <span class="k">end subroutine </span><span class="n">setup_file</span>
-<a name="ln-84"></a>
-<a name="ln-85"></a>    <span class="k">subroutine </span><span class="n">open_file</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
-<a name="ln-86"></a>      <span class="c">!&lt; Open file from the restart folder </span>
-<a name="ln-87"></a>      <span class="k">implicit none</span>
-<a name="ln-88"></a><span class="k">      type</span><span class="p">(</span><span class="n">filetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">files</span>
-<a name="ln-89"></a>      <span class="k">type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
-<a name="ln-90"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;open_file&#39;</span><span class="p">)</span>
-<a name="ln-91"></a>
-<a name="ln-92"></a>      <span class="k">write</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">restartfile</span><span class="p">,</span> <span class="s1">&#39;(A,I4.4,A,I2.2)&#39;</span><span class="p">)</span> <span class="s1">&#39;time_directories/&#39;</span><span class="p">,</span><span class="n">control</span><span class="p">%</span><span class="n">start_from</span><span class="p">,&amp;</span>
-<a name="ln-93"></a>                          <span class="s1">&#39;/restart/process_&#39;</span><span class="p">,</span> <span class="n">process_id</span>
-<a name="ln-94"></a>      <span class="k">open</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">infile</span><span class="p">)</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">file_format</span><span class="p">))</span><span class="c">!, form=trim(data_format))</span>
-<a name="ln-95"></a>      <span class="k">open</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="n">files</span><span class="p">%</span><span class="n">restartfile</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s1">&#39;old&#39;</span><span class="p">)</span>
+<a name="ln-83"></a>    <span class="k">subroutine </span><span class="n">open_file</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
+<a name="ln-84"></a>      <span class="c">!&lt; Open file from the restart folder </span>
+<a name="ln-85"></a>      <span class="k">implicit none</span>
+<a name="ln-86"></a><span class="k">      type</span><span class="p">(</span><span class="n">filetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">files</span>
+<a name="ln-87"></a>      <span class="k">type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
+<a name="ln-88"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;open_file&#39;</span><span class="p">)</span>
+<a name="ln-89"></a>
+<a name="ln-90"></a>      <span class="k">write</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">restartfile</span><span class="p">,</span> <span class="s1">&#39;(A,I4.4,A,I2.2)&#39;</span><span class="p">)</span> <span class="s1">&#39;time_directories/&#39;</span><span class="p">,</span><span class="n">control</span><span class="p">%</span><span class="n">start_from</span><span class="p">,&amp;</span>
+<a name="ln-91"></a>                          <span class="s1">&#39;/restart/process_&#39;</span><span class="p">,</span> <span class="n">process_id</span>
+<a name="ln-92"></a>      <span class="k">open</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">IN_FILE_UNIT</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">infile</span><span class="p">)</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">file_format</span><span class="p">))</span><span class="c">!, form=trim(data_format))</span>
+<a name="ln-93"></a>      <span class="k">open</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="n">files</span><span class="p">%</span><span class="n">restartfile</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s1">&#39;old&#39;</span><span class="p">)</span>
+<a name="ln-94"></a>
+<a name="ln-95"></a>    <span class="k">end subroutine </span><span class="n">open_file</span>
 <a name="ln-96"></a>
-<a name="ln-97"></a>    <span class="k">end subroutine </span><span class="n">open_file</span>
-<a name="ln-98"></a>
-<a name="ln-99"></a>    <span class="k">subroutine </span><span class="n">close_file</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
-<a name="ln-100"></a>      <span class="c">!&lt; Close the file after reading </span>
-<a name="ln-101"></a>      <span class="k">implicit none</span>
-<a name="ln-102"></a><span class="k">      type</span><span class="p">(</span><span class="n">filetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">files</span>
-<a name="ln-103"></a>
-<a name="ln-104"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;close_files&#39;</span><span class="p">)</span>
-<a name="ln-105"></a>      <span class="k">close</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">IN_FILE_UNIT</span><span class="p">)</span>
-<a name="ln-106"></a>      <span class="k">close</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">RESTART_FILE_UNIT</span><span class="p">)</span>
+<a name="ln-97"></a>    <span class="k">subroutine </span><span class="n">close_file</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+<a name="ln-98"></a>      <span class="c">!&lt; Close the file after reading </span>
+<a name="ln-99"></a>      <span class="k">implicit none</span>
+<a name="ln-100"></a><span class="k">      type</span><span class="p">(</span><span class="n">filetype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">files</span>
+<a name="ln-101"></a>
+<a name="ln-102"></a>      <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;close_files&#39;</span><span class="p">)</span>
+<a name="ln-103"></a>      <span class="k">close</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">IN_FILE_UNIT</span><span class="p">)</span>
+<a name="ln-104"></a>      <span class="k">close</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">RESTART_FILE_UNIT</span><span class="p">)</span>
+<a name="ln-105"></a>
+<a name="ln-106"></a>    <span class="k">end subroutine </span><span class="n">close_file</span>
 <a name="ln-107"></a>
-<a name="ln-108"></a>    <span class="k">end subroutine </span><span class="n">close_file</span>
-<a name="ln-109"></a>
-<a name="ln-110"></a>    <span class="k">subroutine </span><span class="n">read_restart_file</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
-<a name="ln-111"></a>      <span class="c">!&lt; Read the sub-directory log file in the restart folder</span>
-<a name="ln-112"></a>      <span class="k">implicit none</span>
-<a name="ln-113"></a><span class="k">      </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">RESTART_FILE_UNIT</span>
-<a name="ln-114"></a>      <span class="k">type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
-<a name="ln-115"></a>      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>
-<a name="ln-116"></a>      <span class="k">read</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">control</span><span class="p">%</span><span class="n">previous_flow_type</span>
-<a name="ln-117"></a>
-<a name="ln-118"></a>      <span class="k">read</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>        <span class="n">control</span><span class="p">%</span><span class="n">last_iter</span>
-<a name="ln-119"></a>      <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">control</span><span class="p">%</span><span class="n">n_var</span><span class="o">+</span><span class="mi">1</span>
-<a name="ln-120"></a>        <span class="k">read</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>  <span class="n">control</span><span class="p">%</span><span class="n">previous_res</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a name="ln-121"></a>      <span class="k">end do</span>
-<a name="ln-122"></a>      <span class="c">!read(RESTART_FILE_UNIT, *)    vis_resnorm_0</span>
-<a name="ln-123"></a>      <span class="c">!read(RESTART_FILE_UNIT, *)   turb_resnorm_0</span>
-<a name="ln-124"></a>      <span class="c">!read(RESTART_FILE_UNIT, *)   cont_resnorm_0</span>
-<a name="ln-125"></a>      <span class="c">!read(RESTART_FILE_UNIT, *)  x_mom_resnorm_0</span>
-<a name="ln-126"></a>      <span class="c">!read(RESTART_FILE_UNIT, *)  y_mom_resnorm_0</span>
-<a name="ln-127"></a>      <span class="c">!read(RESTART_FILE_UNIT, *)  z_mom_resnorm_0</span>
-<a name="ln-128"></a>      <span class="c">!read(RESTART_FILE_UNIT, *) energy_resnorm_0</span>
-<a name="ln-129"></a>      <span class="c">!read(RESTART_FILE_UNIT, *)    TKE_resnorm_0</span>
-<a name="ln-130"></a>      <span class="c">!read(RESTART_FILE_UNIT, *)  omega_resnorm_0</span>
-<a name="ln-131"></a>    <span class="k">end subroutine </span><span class="n">read_restart_file</span>
-<a name="ln-132"></a>
-<a name="ln-133"></a><span class="k">end module </span><span class="n">read_output</span>
+<a name="ln-108"></a>    <span class="k">subroutine </span><span class="n">read_restart_file</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
+<a name="ln-109"></a>      <span class="c">!&lt; Read the sub-directory log file in the restart folder</span>
+<a name="ln-110"></a>      <span class="k">implicit none</span>
+<a name="ln-111"></a><span class="k">      </span><span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">RESTART_FILE_UNIT</span>
+<a name="ln-112"></a>      <span class="k">type</span><span class="p">(</span><span class="n">controltype</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">control</span>
+<a name="ln-113"></a>      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>
+<a name="ln-114"></a>      <span class="k">read</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="n">control</span><span class="p">%</span><span class="n">previous_flow_type</span>
+<a name="ln-115"></a>
+<a name="ln-116"></a>      <span class="k">read</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>        <span class="n">control</span><span class="p">%</span><span class="n">last_iter</span>
+<a name="ln-117"></a>      <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">control</span><span class="p">%</span><span class="n">n_var</span><span class="o">+</span><span class="mi">1</span>
+<a name="ln-118"></a>        <span class="k">read</span><span class="p">(</span><span class="n">RESTART_FILE_UNIT</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>  <span class="n">control</span><span class="p">%</span><span class="n">previous_res</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="ln-119"></a>      <span class="k">end do</span>
+<a name="ln-120"></a><span class="k">    end subroutine </span><span class="n">read_restart_file</span>
+<a name="ln-121"></a>
+<a name="ln-122"></a><span class="k">end module </span><span class="n">read_output</span>
 </pre></div>
 
     </section>
@@ -701,7 +690,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-12-28T21:23:55.181614 
+             on 2020-02-10T20:32:54.471560 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>

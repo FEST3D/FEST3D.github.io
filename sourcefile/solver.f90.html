@@ -143,7 +143,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for source files.">127 statements</a>
+    title=" 0.8% of total for source files.">128 statements</a>
      </li> 
      
      
@@ -1378,30 +1378,30 @@
 <a name="ln-3"></a>  <span class="c">!&lt; allocate/deallcoate memory, initialize, iterate</span>
 <a name="ln-4"></a>  <span class="c">!-------------------------------------------------</span>
 <a name="ln-5"></a>  <span class="k">use </span><span class="n">vartypes</span>
-<a name="ln-6"></a>  <span class="k">use </span><span class="n">CC</span><span class="p">,</span>    <span class="n">only</span><span class="p">:</span> <span class="n">setupCC</span>
-<a name="ln-7"></a>  <span class="k">use read</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">read_input_and_controls</span>
-<a name="ln-8"></a>  <span class="k">use </span><span class="n">grid</span><span class="p">,</span>      <span class="n">only</span> <span class="p">:</span> <span class="n">setup_grid</span><span class="c">!, destroy_grid</span>
-<a name="ln-9"></a>  <span class="k">use </span><span class="n">geometry</span><span class="p">,</span>  <span class="n">only</span> <span class="p">:</span> <span class="n">setup_geometry</span><span class="c">!, destroy_geometry</span>
-<a name="ln-10"></a>  <span class="k">use </span><span class="n">state</span><span class="p">,</span>     <span class="n">only</span> <span class="p">:</span> <span class="n">setup_state</span><span class="c">!, destroy_state</span>
-<a name="ln-11"></a>  <span class="k">use </span><span class="n">gradients</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">setup_gradients</span>
-<a name="ln-12"></a>  <span class="k">use </span><span class="n">Scheme</span><span class="p">,</span>    <span class="n">only</span> <span class="p">:</span> <span class="n">setup_scheme</span><span class="c">!, destroy_scheme</span>
-<a name="ln-13"></a>  <span class="k">use </span><span class="n">wall_dist</span><span class="p">,</span>     <span class="n">only</span><span class="p">:</span> <span class="n">setup_wall_dist</span><span class="p">,</span> <span class="n">find_wall_dist</span>
-<a name="ln-14"></a>  <span class="k">use </span><span class="n">viscous</span><span class="p">,</span>       <span class="n">only</span><span class="p">:</span> <span class="n">compute_viscous_fluxes</span>
-<a name="ln-15"></a>  <span class="k">use </span><span class="n">layout</span><span class="p">,</span>        <span class="n">only</span><span class="p">:</span> <span class="n">get_process_data</span><span class="p">,</span> <span class="n">read_layout_file</span>
-<a name="ln-16"></a>  <span class="k">use </span><span class="n">interface1</span><span class="p">,</span>    <span class="n">only</span> <span class="p">:</span> <span class="n">setup_interface</span>
-<a name="ln-17"></a>  <span class="k">use </span><span class="n">resnorm</span><span class="p">,</span>       <span class="n">only</span> <span class="p">:</span> <span class="n">find_resnorm</span><span class="p">,</span> <span class="n">setup_resnorm</span><span class="c">!, destroy_resnorm</span>
-<a name="ln-18"></a>  <span class="k">use </span><span class="n">dump_solution</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">checkpoint</span>
-<a name="ln-19"></a>  <span class="k">use </span><span class="n">viscosity</span>    <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">setup_viscosity</span>
-<a name="ln-20"></a>  <span class="k">use </span><span class="n">viscosity</span>    <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">calculate_viscosity</span>
-<a name="ln-21"></a>  <span class="k">use </span><span class="n">wall</span>         <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">write_surfnode</span>
-<a name="ln-22"></a>  <span class="k">use </span><span class="n">bc</span><span class="p">,</span>            <span class="n">only</span> <span class="p">:</span> <span class="n">setup_bc</span>
-<a name="ln-23"></a>  <span class="k">use </span><span class="nb">time</span> <span class="p">,</span>         <span class="n">only</span> <span class="p">:</span> <span class="n">setup_time</span>
-<a name="ln-24"></a>  <span class="k">use </span><span class="nb">time</span> <span class="p">,</span>         <span class="n">only</span> <span class="p">:</span> <span class="n">destroy_time</span>
-<a name="ln-25"></a>  <span class="k">use </span><span class="n">update</span><span class="p">,</span>        <span class="n">only</span> <span class="p">:</span> <span class="n">get_next_solution</span>
-<a name="ln-26"></a>  <span class="k">use </span><span class="n">update</span><span class="p">,</span>        <span class="n">only</span> <span class="p">:</span> <span class="n">setup_update</span>
-<a name="ln-27"></a><span class="cp">#include &quot;debug.h&quot;</span>
-<a name="ln-28"></a><span class="cp">#include &quot;error.h&quot;</span>
-<a name="ln-29"></a><span class="cp">#include &quot;mpi.inc&quot;</span>
+<a name="ln-6"></a>  <span class="k">use </span><span class="n">mpi</span>
+<a name="ln-7"></a>  <span class="k">use </span><span class="n">CC</span><span class="p">,</span>            <span class="n">only</span> <span class="p">:</span> <span class="n">setupCC</span>
+<a name="ln-8"></a>  <span class="k">use read</span><span class="p">,</span>          <span class="n">only</span> <span class="p">:</span> <span class="n">read_input_and_controls</span>
+<a name="ln-9"></a>  <span class="k">use </span><span class="n">grid</span><span class="p">,</span>          <span class="n">only</span> <span class="p">:</span> <span class="n">setup_grid</span>
+<a name="ln-10"></a>  <span class="k">use </span><span class="n">geometry</span><span class="p">,</span>      <span class="n">only</span> <span class="p">:</span> <span class="n">setup_geometry</span>
+<a name="ln-11"></a>  <span class="k">use </span><span class="n">state</span><span class="p">,</span>         <span class="n">only</span> <span class="p">:</span> <span class="n">setup_state</span>
+<a name="ln-12"></a>  <span class="k">use </span><span class="n">gradients</span><span class="p">,</span>     <span class="n">only</span> <span class="p">:</span> <span class="n">setup_gradients</span>
+<a name="ln-13"></a>  <span class="k">use </span><span class="n">Scheme</span><span class="p">,</span>        <span class="n">only</span> <span class="p">:</span> <span class="n">setup_scheme</span>
+<a name="ln-14"></a>  <span class="k">use </span><span class="n">wall_dist</span><span class="p">,</span>     <span class="n">only</span> <span class="p">:</span> <span class="n">setup_wall_dist</span><span class="p">,</span> <span class="n">find_wall_dist</span>
+<a name="ln-15"></a>  <span class="k">use </span><span class="n">viscous</span><span class="p">,</span>       <span class="n">only</span> <span class="p">:</span> <span class="n">compute_viscous_fluxes</span>
+<a name="ln-16"></a>  <span class="k">use </span><span class="n">layout</span><span class="p">,</span>        <span class="n">only</span> <span class="p">:</span> <span class="n">get_process_data</span><span class="p">,</span> <span class="n">read_layout_file</span>
+<a name="ln-17"></a>  <span class="k">use </span><span class="n">interface1</span><span class="p">,</span>    <span class="n">only</span> <span class="p">:</span> <span class="n">setup_interface</span>
+<a name="ln-18"></a>  <span class="k">use </span><span class="n">resnorm</span><span class="p">,</span>       <span class="n">only</span> <span class="p">:</span> <span class="n">find_resnorm</span><span class="p">,</span> <span class="n">setup_resnorm</span><span class="c">!, destroy_resnorm</span>
+<a name="ln-19"></a>  <span class="k">use </span><span class="n">dump_solution</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">checkpoint</span>
+<a name="ln-20"></a>  <span class="k">use </span><span class="n">viscosity</span>    <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">setup_viscosity</span>
+<a name="ln-21"></a>  <span class="k">use </span><span class="n">viscosity</span>    <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">calculate_viscosity</span>
+<a name="ln-22"></a>  <span class="k">use </span><span class="n">wall</span>         <span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">write_surfnode</span>
+<a name="ln-23"></a>  <span class="k">use </span><span class="n">bc</span><span class="p">,</span>            <span class="n">only</span> <span class="p">:</span> <span class="n">setup_bc</span>
+<a name="ln-24"></a>  <span class="k">use </span><span class="nb">time</span> <span class="p">,</span>         <span class="n">only</span> <span class="p">:</span> <span class="n">setup_time</span>
+<a name="ln-25"></a>  <span class="k">use </span><span class="nb">time</span> <span class="p">,</span>         <span class="n">only</span> <span class="p">:</span> <span class="n">destroy_time</span>
+<a name="ln-26"></a>  <span class="k">use </span><span class="n">update</span><span class="p">,</span>        <span class="n">only</span> <span class="p">:</span> <span class="n">get_next_solution</span>
+<a name="ln-27"></a>  <span class="k">use </span><span class="n">update</span><span class="p">,</span>        <span class="n">only</span> <span class="p">:</span> <span class="n">setup_update</span>
+<a name="ln-28"></a><span class="cp">#include &quot;debug.h&quot;</span>
+<a name="ln-29"></a><span class="cp">#include &quot;error.h&quot;</span>
 <a name="ln-30"></a>    <span class="k">private</span>
 <a name="ln-31"></a>
 <a name="ln-32"></a><span class="k">    type</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span> <span class="kd">::</span> <span class="n">dims</span>
@@ -1525,75 +1525,53 @@
 <a name="ln-150"></a>            <span class="k">implicit none</span>
 <a name="ln-151"></a><span class="k">            </span>
 <a name="ln-152"></a><span class="k">            </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;destroy_solver&#39;</span><span class="p">)</span>
-<a name="ln-153"></a><span class="c">!</span>
-<a name="ln-154"></a><span class="c">!            if(process_id==0)then</span>
-<a name="ln-155"></a><span class="c">!              close(STOP_FILE_UNIT)</span>
-<a name="ln-156"></a><span class="c">!            end if</span>
-<a name="ln-157"></a><span class="c">!            call destroy_update()</span>
-<a name="ln-158"></a><span class="c">!            call destroy_viscosity()</span>
-<a name="ln-159"></a><span class="c">!            !call destroy_gradients()</span>
-<a name="ln-160"></a><span class="c">!            call destroyCC()</span>
-<a name="ln-161"></a><span class="c">!            if(turbulence /= &#39;none&#39;) then</span>
-<a name="ln-162"></a><span class="c">!              call destroy_wall_dist()</span>
-<a name="ln-163"></a><span class="c">!            end if</span>
-<a name="ln-164"></a><span class="c">!            call destroy_scheme()</span>
-<a name="ln-165"></a><span class="c">!            !call destroy_source()</span>
-<a name="ln-166"></a><span class="c">!            call destroy_state()</span>
-<a name="ln-167"></a><span class="c">!            !call destroy_geometry()</span>
-<a name="ln-168"></a><span class="c">!            !call destroy_grid()</span>
-<a name="ln-169"></a><span class="c">!            call destroy_resnorm()</span>
-<a name="ln-170"></a><span class="c">!            call destroy_interface()</span>
-<a name="ln-171"></a>            <span class="k">call </span><span class="n">destroy_time</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
-<a name="ln-172"></a><span class="c">!            call destroy_bc()</span>
-<a name="ln-173"></a><span class="c">!</span>
-<a name="ln-174"></a><span class="c">!            if(allocated(r_list)) deallocate(r_list)</span>
-<a name="ln-175"></a><span class="c">!            if(allocated(w_list)) deallocate(w_list)</span>
-<a name="ln-176"></a>
-<a name="ln-177"></a>        <span class="k">end subroutine </span><span class="n">destroy_solver</span>
-<a name="ln-178"></a>
-<a name="ln-179"></a>        <span class="k">subroutine </span><span class="n">initmisc</span><span class="p">()</span>
-<a name="ln-180"></a>          <span class="c">!&lt; Initilize miscellaneous variables</span>
-<a name="ln-181"></a>          <span class="c">!----------------------------------</span>
-<a name="ln-182"></a>            
-<a name="ln-183"></a>            <span class="k">implicit none</span>
-<a name="ln-184"></a><span class="k">            </span>
-<a name="ln-185"></a><span class="k">            </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;initmisc&#39;</span><span class="p">)</span>
-<a name="ln-186"></a>
-<a name="ln-187"></a>            <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="ln-188"></a>
-<a name="ln-189"></a>        <span class="k">end subroutine </span><span class="n">initmisc</span>
-<a name="ln-190"></a>
-<a name="ln-191"></a>        
-<a name="ln-192"></a>        <span class="k">subroutine </span><span class="n">iterate_one_more_time_step</span><span class="p">()</span>
-<a name="ln-193"></a>            <span class="c">!&lt; Perform one time step iteration</span>
-<a name="ln-194"></a>            <span class="c">!  This subroutine performs one iteration by stepping through</span>
-<a name="ln-195"></a>            <span class="c">!  time once.</span>
-<a name="ln-196"></a>            <span class="c">!-----------------------------------------------------------</span>
+<a name="ln-153"></a>            <span class="k">call </span><span class="n">destroy_time</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+<a name="ln-154"></a>
+<a name="ln-155"></a>        <span class="k">end subroutine </span><span class="n">destroy_solver</span>
+<a name="ln-156"></a>
+<a name="ln-157"></a>        <span class="k">subroutine </span><span class="n">initmisc</span><span class="p">()</span>
+<a name="ln-158"></a>          <span class="c">!&lt; Initilize miscellaneous variables</span>
+<a name="ln-159"></a>          <span class="c">!----------------------------------</span>
+<a name="ln-160"></a>            
+<a name="ln-161"></a>            <span class="k">implicit none</span>
+<a name="ln-162"></a><span class="k">            </span>
+<a name="ln-163"></a><span class="k">            </span><span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;initmisc&#39;</span><span class="p">)</span>
+<a name="ln-164"></a>
+<a name="ln-165"></a>            <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-166"></a>
+<a name="ln-167"></a>        <span class="k">end subroutine </span><span class="n">initmisc</span>
+<a name="ln-168"></a>
+<a name="ln-169"></a>        
+<a name="ln-170"></a>        <span class="k">subroutine </span><span class="n">iterate_one_more_time_step</span><span class="p">()</span>
+<a name="ln-171"></a>            <span class="c">!&lt; Perform one time step iteration</span>
+<a name="ln-172"></a>            <span class="c">!  This subroutine performs one iteration by stepping through</span>
+<a name="ln-173"></a>            <span class="c">!  time once.</span>
+<a name="ln-174"></a>            <span class="c">!-----------------------------------------------------------</span>
+<a name="ln-175"></a>
+<a name="ln-176"></a>            <span class="k">implicit none</span>
+<a name="ln-177"></a><span class="k">            </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">ierr</span>
+<a name="ln-178"></a>            <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;iterate_one_more_time_step&#39;</span><span class="p">)</span>
+<a name="ln-179"></a>
+<a name="ln-180"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">process_id</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-181"></a><span class="k">              print</span><span class="o">*</span><span class="p">,</span> <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span>
+<a name="ln-182"></a>            <span class="k">end if</span>
+<a name="ln-183"></a>
+<a name="ln-184"></a><span class="k">            call </span><span class="n">get_next_solution</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span><span class="n">control</span><span class="p">,</span> <span class="n">schemes</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">boundary</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+<a name="ln-185"></a>            <span class="k">call </span><span class="n">find_resnorm</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">RESNORM_FILE_UNIT</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">schemes</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+<a name="ln-186"></a>            <span class="k">call </span><span class="n">checkpoint</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">schemes</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
+<a name="ln-187"></a>            <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span> <span class="o">=</span> <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="ln-188"></a>            <span class="k">if</span><span class="p">(</span><span class="n">process_id</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<a name="ln-189"></a><span class="k">              open</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">STOP_FILE_UNIT</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="n">files</span><span class="p">%</span><span class="n">stop_file</span><span class="p">)</span>
+<a name="ln-190"></a>              <span class="k">read</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">STOP_FILE_UNIT</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">control</span><span class="p">%</span><span class="n">want_to_stop</span>
+<a name="ln-191"></a>              <span class="k">close</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">STOP_FILE_UNIT</span><span class="p">)</span>
+<a name="ln-192"></a>            <span class="k">end if</span>
+<a name="ln-193"></a><span class="k">            call </span><span class="n">MPI_BCAST</span><span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">want_to_stop</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">MPI_INTEGER</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
+<a name="ln-194"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">want_to_stop</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="n">control</span><span class="p">%</span><span class="n">Halt</span> <span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+<a name="ln-195"></a>
+<a name="ln-196"></a>        <span class="k">end subroutine </span><span class="n">iterate_one_more_time_step</span>
 <a name="ln-197"></a>
-<a name="ln-198"></a>            <span class="k">implicit none</span>
-<a name="ln-199"></a><span class="k">            </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">ierr</span>
-<a name="ln-200"></a>            <span class="n">DebugCall</span><span class="p">(</span><span class="s1">&#39;iterate_one_more_time_step&#39;</span><span class="p">)</span>
-<a name="ln-201"></a>
-<a name="ln-202"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">process_id</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
-<a name="ln-203"></a><span class="k">              print</span><span class="o">*</span><span class="p">,</span> <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span>
-<a name="ln-204"></a>            <span class="k">end if</span>
-<a name="ln-205"></a>
-<a name="ln-206"></a><span class="k">            call </span><span class="n">get_next_solution</span><span class="p">(</span><span class="n">qp</span><span class="p">,</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">Ifaces</span><span class="p">,</span><span class="n">Jfaces</span><span class="p">,</span><span class="n">Kfaces</span><span class="p">,</span><span class="n">control</span><span class="p">,</span> <span class="n">schemes</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">boundary</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
-<a name="ln-207"></a>            <span class="k">call </span><span class="n">find_resnorm</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">RESNORM_FILE_UNIT</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">H</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">schemes</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
-<a name="ln-208"></a>            <span class="k">call </span><span class="n">checkpoint</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">qp</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">control</span><span class="p">,</span> <span class="n">schemes</span><span class="p">,</span> <span class="n">dims</span><span class="p">)</span>
-<a name="ln-209"></a>            <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span> <span class="o">=</span> <span class="n">control</span><span class="p">%</span><span class="n">current_iter</span> <span class="o">+</span> <span class="mi">1</span>
-<a name="ln-210"></a>            <span class="k">if</span><span class="p">(</span><span class="n">process_id</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
-<a name="ln-211"></a><span class="k">              open</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">STOP_FILE_UNIT</span><span class="p">,</span> <span class="k">file</span><span class="o">=</span><span class="n">files</span><span class="p">%</span><span class="n">stop_file</span><span class="p">)</span>
-<a name="ln-212"></a>              <span class="k">read</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">STOP_FILE_UNIT</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">control</span><span class="p">%</span><span class="n">want_to_stop</span>
-<a name="ln-213"></a>              <span class="k">close</span><span class="p">(</span><span class="n">files</span><span class="p">%</span><span class="n">STOP_FILE_UNIT</span><span class="p">)</span>
-<a name="ln-214"></a>            <span class="k">end if</span>
-<a name="ln-215"></a><span class="k">            call </span><span class="n">MPI_BCAST</span><span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">want_to_stop</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">MPI_INTEGER</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="n">ierr</span><span class="p">)</span>
-<a name="ln-216"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">control</span><span class="p">%</span><span class="n">want_to_stop</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="n">control</span><span class="p">%</span><span class="n">Halt</span> <span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
-<a name="ln-217"></a>
-<a name="ln-218"></a>        <span class="k">end subroutine </span><span class="n">iterate_one_more_time_step</span>
-<a name="ln-219"></a>
-<a name="ln-220"></a>
-<a name="ln-221"></a><span class="k">end module </span><span class="n">solver</span>
+<a name="ln-198"></a>
+<a name="ln-199"></a><span class="k">end module </span><span class="n">solver</span>
 </pre></div>
 
     </section>
@@ -1612,7 +1590,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2019-12-28T21:23:55.181614 
+             on 2020-02-10T20:32:54.471560 
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> FEST-3D was developed by FEST-3D Team</p></div>
